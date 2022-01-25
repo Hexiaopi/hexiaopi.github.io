@@ -1,3 +1,5 @@
 * [文档规范](/project-manager/doc/README)
   * [README文档](/project-manager/doc/README文档)
+  * [项目文档](/project-manager/doc/项目文档)
+  * [接口文档](/project-manager/doc/接口文档)
 * [代码提交规范](/project-manager/commit/README)
