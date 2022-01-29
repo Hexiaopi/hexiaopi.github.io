@@ -20,7 +20,7 @@
 
 Grafana的使用主要围绕Dashboard（仪表板），如图所示：
 
-![dashboard](../picture/dashboard.jpg)
+![dashboard](../image/dashboard.jpg)
 
 > **仪表板**由一组面板（panel）组织排列的视图
 >
@@ -31,7 +31,7 @@ Grafana的使用主要围绕Dashboard（仪表板），如图所示：
 
 #### 2.1.1 Queries （查询）
 
-![panel-query](../picture/panel-query.jpg)
+![panel-query](../image/panel-query.jpg)
 
 查询界面支持选择数据源、查询编辑器以及查询条件，并且支持多条查询；
 
@@ -63,7 +63,7 @@ Grafana的使用主要围绕Dashboard（仪表板），如图所示：
 
 Graph常用来展示多条数据的折线图、条形图，[相关配置参考官网](https://grafana.com/docs/features/panels/graph/)
 
-![graph-general](../picture/graph-general.jpg)
+![graph-general](../image/graph-general.jpg)
 
 - **Draw Modes**：支持三种方式画图：Bars（条形图）、lines（折线图）、Points(点图)；
 
@@ -73,7 +73,7 @@ Graph常用来展示多条数据的折线图、条形图，[相关配置参考�
 
 - **Stacking & Null value**：**Stack**，一条线放在另一条线上面展示；**Null value**: 当数据丢失时可以选择进行弥补，例如connected连接前后线，null as zero将丢失数据设置为空；
 
-![graph-axes](../picture/graph-axes.jpg)
+![graph-axes](../image/graph-axes.jpg)
 
 **Left Y / Right Y**： 
 
@@ -90,7 +90,7 @@ Graph常用来展示多条数据的折线图、条形图，[相关配置参考�
 
 **Y-Axes**：Y轴 ~~(暂无需求)~~
 
-![graph-legend](../picture/graph-legend.jpg)
+![graph-legend](../image/graph-legend.jpg)
 
 - **Options**：**As Table**以表格展示下面Values勾选的值；**To the right**在图的右边展示表；
 
@@ -98,7 +98,7 @@ Graph常用来展示多条数据的折线图、条形图，[相关配置参考�
 
 - **Hide series**：对于一些特定值使用空值或零值隐藏；（~~暂无需求~~）
 
-![graph-time](../picture/graph-time.jpg)
+![graph-time](../image/graph-time.jpg)
 
 - **Thresholds & Time Regions** 可以增加阈值，例如值gt(大于)0.2的时候显示告警；可以突出显示某段时间，例如周一到周五；
 
@@ -146,7 +146,7 @@ Text支持为仪表板制作信息和说明面板，支持三种模式：markdow
 
 ### 2.2 Settings（设置）
 
-![dashboard-settings](../picture/dashboard-settings.jpg)
+![dashboard-settings](../image/dashboard-settings.jpg)
 
 #### 2.2.1 General 
 
@@ -175,7 +175,7 @@ Text支持为仪表板制作信息和说明面板，支持三种模式：markdow
 
 使用方法：选择面板—>按住CTRL或CMD+单击/选择—>填写
 
-![annotation](../picture/annotation.gif)
+![annotation](../image/annotation.gif)
 
 可以用于记录异常情况，稍后进行排查分析
 
@@ -191,7 +191,7 @@ Text支持为仪表板制作信息和说明面板，支持三种模式：markdow
 
 **Example**：如下图红线框所示，可以根据变量IP动态选择展示各个机器的指标数据
 
-![example-variable](../picture/example-variable.jpg)
+![example-variable](../image/example-variable.jpg)
 
 **变量引用（基础）**：
 
@@ -208,7 +208,7 @@ Text支持为仪表板制作信息和说明面板，支持三种模式：markdow
 
 **添加变量**：点击仪表板设置按钮—>Variable—>new
 
-![edit-variable](../picture\edit-variable.jpg)
+![edit-variable](../image\edit-variable.jpg)
 
 **General**
 
@@ -261,7 +261,7 @@ Text支持为仪表板制作信息和说明面板，支持三种模式：markdow
 
 #### 2.3.1 Manage（管理）
 
-![dashboards-manage](../picture/dashboards-manage.jpg)
+![dashboards-manage](../image/dashboards-manage.jpg)
 
 功能：
 
@@ -279,9 +279,9 @@ Text支持为仪表板制作信息和说明面板，支持三种模式：markdow
 
 > 播放列表是一种特殊类型的仪表板，可通过仪表板列表进行旋转。播放列表可以是构建态势感知的好方法，非常适合大屏幕展示。
 
-![playlists](../picture/playlists.jpg)
+![playlists](../image/playlists.jpg)
 
-![edit-playlist](../picture/edit-playlist.jpg)
+![edit-playlist](../image/edit-playlist.jpg)
 
 支持将仪表板加入到播放列表，且支持播放顺序和播放间隔；
 
@@ -289,13 +289,13 @@ Text支持为仪表板制作信息和说明面板，支持三种模式：markdow
 
 > 快照可以提供一种即时方式共享交互式仪表板，我们只需复制URL即可访问仪表板；具体快照设置是在每个仪表板中设置，例如设置过期时间等；
 
-![snapshots](../picture/snapshots.jpg)
+![snapshots](../image/snapshots.jpg)
 
 
 
 ## 3 Grafana管理（高级）
 
-![configuration](../picture/configuration.jpg)
+![configuration](../image/configuration.jpg)
 
 ### 3.1 Configuration（配置）
 
@@ -305,11 +305,11 @@ Text支持为仪表板制作信息和说明面板，支持三种模式：markdow
 
 **支持的数据源：**`Graphite`、`Elasticsearch`、 `OpenTSDB`、`Prometheus`、`InfluxDB`等
 
-![data-source](../picture/data-source.jpg)
+![data-source](../image/data-source.jpg)
 
 这里以Prometheus设置为例：
 
-![datasource-prometheus](../picture/datasource-prometheus.jpg)
+![datasource-prometheus](../image/datasource-prometheus.jpg)
 
 配置项目说明：
 
@@ -376,13 +376,13 @@ Auth相关：
 
 ### 3.2 Server Admin（服务管理）
 
-![server-admin](../picture/server-admin.jpg)
+![server-admin](../image/server-admin.jpg)
 
 #### 3.2.1 Users（用户）
 
 > 是用于用户管理，支持新增用户，修改用户，删除用户；
 
-![edit-user](../picture/edit-user.jpg)
+![edit-user](../image/edit-user.jpg)
 
 修改用户可以更改账户密码等等，最主要是修改用户角色权限，如：`Admin`、`Editor`、`Viewer`（参考2.1.2节）；同时所属组织，一个用户可以加入多个组织；
 
@@ -390,9 +390,9 @@ Auth相关：
 
 > 用于组织的管理，支持新增组织、修改组织、删除组织
 
-![orgs](../picture/orgs.jpg)
+![orgs](../image/orgs.jpg)
 
-![edit-orgs](../picture/edit-orgs.jpg)
+![edit-orgs](../image/edit-orgs.jpg)
 
 编辑组织可以修改组织名称、管理当前组织内用户角色权限等信息；
 
@@ -402,7 +402,7 @@ Auth相关：
 
 > 这里是一些系统设置，保存在grafana.ini或custom.ini中定义，或在环境变量中定义；
 
-![settings](../picture/settings.jpg)
+![settings](../image/settings.jpg)
 
 维护人员需详细了解
 
@@ -412,7 +412,7 @@ Auth相关：
 
 >查看一些统计信息，例如总的用户数，活跃的用户数等
 
-![stats](../picture/stats.jpg)
+![stats](../image/stats.jpg)
 
 维护人员需了解
 
