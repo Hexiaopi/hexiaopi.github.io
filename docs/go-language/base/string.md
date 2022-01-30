@@ -1,4 +1,3 @@
-[TOC]
 
 Go语言的字符串（String）
 
