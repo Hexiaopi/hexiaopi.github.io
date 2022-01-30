@@ -1,7 +1,0 @@
-* [Go语言](/program-language/go/README)
-  * [工程结构](/program-language/go/enviroment)
-  * [变量、常量及命名规则](/program-language/go/variable)
-  * [数据类型](/program-language/go/data-type)
-  * [运算符与表达式](/program-language/go/operator)
-  * [数组与切片](/program-language/go/slice)
-  * [字符串](/program-language/go/string)

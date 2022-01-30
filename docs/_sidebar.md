@@ -1,4 +1,4 @@
-* [编程语言](/program-language/README)
+* [Go语言](/go-language/README)
 * [项目管理](/project-manager/README)
 * [数据库](/database/README)
 * [设计模式](/design-pattern/README)
