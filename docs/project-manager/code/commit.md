@@ -12,6 +12,15 @@ Git每次提交代码，都需要写`Commit message`，好的规范例如：Angu
 <footer>
 ```
 
+> [!NOTE]
+> `<scope>`必须用括号()括起来
+> 
+> `<type>(<scope>)`后必须紧跟冒号，冒号后紧跟空格
+> 
+> `<body>`和`<footer>`之前两个空行也必须要有
+> 
+> 建议每行字符控制在`72`个字符之内
+
 ## Header（必须项）
 示例：
 ```
@@ -21,9 +30,10 @@ fix($compile): couple of unit tests for IE9
 > type用来说明commit的类型：
 - feat：新功能（feature）
 - fix：修补bug
+- perf: 提高代码性能的变更
 - docs：文档（documentation）
 - style： 格式（不影响代码运行的变动）
-- refactor：优化重构（即不是新增功能，也不是修改bug的代码变动）
+- refactor：优化重构（即不是新增功能，也不是修改bug的代码变动，例如：变量重命名、冗余代码删除、代码简化或增加注释）
 - test：增加测试
 - chore：构建过程或辅助工具的变动
 
