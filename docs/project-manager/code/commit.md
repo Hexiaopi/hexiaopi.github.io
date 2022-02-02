@@ -102,3 +102,6 @@ Closes #123, #245, #992
 ```shell
 git-chglog -o CHANGELOG.md
 ```
+
+# SemVer
+可以使用[gsemver](https://github.com/arnaud-deprez/gsemver)工具根据git提交记录生成下一个版本
