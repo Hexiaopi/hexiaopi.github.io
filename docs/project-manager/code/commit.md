@@ -1,3 +1,4 @@
+# Commit Message
 Git每次提交代码，都需要写`Commit message`，好的规范例如：Angular规范，可以帮助我们：
 - 根据摘要信息就可以知道每次变更哪些内容
 - 可以过滤某些commit，例如只关注新增加的功能
@@ -93,4 +94,11 @@ BREAKING CHANGE: isolate scope bindings definition has changed.
 或
 ```
 Closes #123, #245, #992
+```
+
+# Change Log
+我们可以使用一些工具根据git提交记录自动生成`CHANGELOG`，例如：
+[git-chglog](https://github.com/git-chglog/git-chglog)，本项目的`CHANGELOG`就是使用该工具自动生成，非常方便。
+```shell
+git-chglog -o CHANGELOG.md
 ```
