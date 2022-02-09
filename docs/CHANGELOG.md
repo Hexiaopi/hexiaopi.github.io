@@ -1,4 +1,19 @@
 
+<a name="v0.1.0"></a>
+## [v0.1.0](https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.0.1...v0.1.0) (2022-02-09)
+
+### Bug Fixes
+
+* **project-manager:** 修正目录规范
+
+### Features
+
+* **commit:** 增加语义化版本自动生成工具gsemver配置和介绍
+* **commit:** 增加CHANGE LOG自动生产
+* **docs:** 增加变更历史
+* **project-manager:** 增加目录规范
+
+
 <a name="v0.0.1"></a>
 ## v0.0.1 (2022-02-03)
 
