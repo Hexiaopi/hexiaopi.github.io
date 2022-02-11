@@ -1,4 +1,12 @@
 
+<a name="v0.2.0"></a>
+## [v0.2.0](https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.1.0...v0.2.0) (2022-02-11)
+
+### Features
+
+* **project-manager:** 增加分支规范
+
+
 <a name="v0.1.0"></a>
 ## [v0.1.0](https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.0.1...v0.1.0) (2022-02-09)
 
