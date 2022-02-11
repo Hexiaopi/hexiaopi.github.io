@@ -3,5 +3,6 @@
   * [接口规范](/project-manager/doc/api)
   * [版本规范](/project-manager/doc/version)
 * [代码规范](/project-manager/code/README)
-  * [提交规范](/project-manager/code/commit)
   * [目录规范](/project-manager/code/directory)
+  * [提交规范](/project-manager/code/commit)
+  * [分支规范](/project-manager/code/branch)
