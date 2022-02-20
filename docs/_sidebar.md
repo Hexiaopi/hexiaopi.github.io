@@ -1,5 +1,6 @@
 * [Go语言](/go-language/README)
 * [设计模式](/design-pattern/README)
+* [数据结构](/data-structure/README.md)
 * [LeetCode](/leetcode/README)
 * [项目管理](/project-manager/README)
 * [数据库](/database/README)
