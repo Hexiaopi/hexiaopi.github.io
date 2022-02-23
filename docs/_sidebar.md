@@ -5,4 +5,4 @@
 * [**项目管理**:ghost:](/project-manager/README)
 * [**数据库**:zzz:](/database/README)
 * [**监控系统**:ghost:](/monitor-system/README)
-* [**中间件**:ghost:](/middleware/README)
+* [**中间件**:zzz:](/middleware/README)
