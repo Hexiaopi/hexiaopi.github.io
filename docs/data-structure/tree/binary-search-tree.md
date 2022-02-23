@@ -108,19 +108,19 @@ func (n *Node) DeleteNodeRecursion(key int) *Node {
 	}
 	// 替换当前节点的值并删除右子树最小node
 	n.Data = minNode.Data
-	n.Right = n.Right.deleteNode()
+	n.Right = n.Right.deleteMinNode()
 	return n
 }
 
 // 递归删除节点
-func (n *Node) deleteNode() *Node {
+func (n *Node) deleteMinNode() *Node {
 	if n.Left == nil { //左子树为空，则删除当前节点
 		pRight := n.Right
 		n.Right = nil
 		return pRight
 	}
 	// 左子树不为空，则继续删除左子树
-	n.Left = n.Left.deleteNode()
+	n.Left = n.Left.deleteMinNode()
 	return n
 }
 ```
