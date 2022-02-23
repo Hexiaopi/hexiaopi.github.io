@@ -1,4 +1,16 @@
 
+<a name="v0.3.1"></a>
+## [v0.3.1](https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.3.0...v0.3.1) (2022-02-23)
+
+### Bug Fixes
+
+* **data-structure:** 修改二叉搜索树删除节点算法
+
+### Code Refactoring
+
+* **data-structure:** 修改删除最小节点命名
+
+
 <a name="v0.3.0"></a>
 ## [v0.3.0](https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.2.0...v0.3.0) (2022-02-20)
 
