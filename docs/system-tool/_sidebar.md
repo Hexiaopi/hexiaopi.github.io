@@ -1,1 +1,0 @@
-* [confd](/system-tool/confd/README)
