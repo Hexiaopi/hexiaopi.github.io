@@ -75,129 +75,58 @@ func TestNode_Find(t *testing.T) {
 
 ```
 
-## 查找父母节点
+## 删除节点
+
+### 递归版本
 ```go
-func (n *Node) FindParent(value int) *Node {
+// 递归版本
+func (n *Node) DeleteNodeRecursion(key int) *Node {
 	if n == nil {
 		return nil
 	}
-	if n.Left != nil && value < n.Data {
-		if n.Left.Data == value {
-			return n
-		} else {
-			return n.Left.FindParent(value)
-		}
+	// 删除的节点在子树上
+	if key < n.Data {
+		n.Left = n.Left.DeleteNodeRecursion(key)
+		return n
 	}
-	if n.Right != nil && value > n.Data {
-		if n.Right.Data == value {
-			return n
-		} else {
-			return n.Right.FindParent(value)
-		}
+	if key > n.Data {
+		n.Right = n.Right.DeleteNodeRecursion(key)
+		return n
 	}
-	return nil
+	// 删除的节点为当前节点
+	if n.Right == nil { // 只有一个左子树
+		return n.Left
+	}
+	if n.Left == nil { // 只有一个右子树
+		return n.Right
+	}
+	// 有两个子树
+	// 从右子树选择最小的node替换
+	minNode := n.Right
+	for minNode.Left != nil {
+		minNode = minNode.Left
+	}
+	// 替换当前节点的值并删除右子树最小node
+	n.Data = minNode.Data
+	n.Right = n.Right.deleteNode()
+	return n
 }
-```
-测试
-```go
-func TestNode_FindParent(t *testing.T) {
-	var node = &Node{
-		Left:  nil,
-		Data:  10,
-		Right: nil,
-	}
-	node.Add(7)
-	node.Add(8)
-	node.Add(13)
-	node.Add(14)
-	result:=node.FindParent(14)
-	if result == nil || result.Data != 13 {
-		t.Fatal("find parent fail")
-	}
-	t.Log(result.Data, result.Left, result.Right)
-	result=node.FindParent(10)
-	if result!=nil{
-		t.Fatal("should be nil")
-	}
-	var nodeNil *Node
-	result=nodeNil.FindParent(1)
-	if result!=nil{
-		t.Fatal("should be nil")
-	}
-}
-```
 
-## 删除节点
-```go
-func (n *Node) Delete(value int) *Node {
-	node := n.Find(value)
-	if node == nil {
-		return n
+// 递归删除节点
+func (n *Node) deleteNode() *Node {
+	if n.Left == nil { //左子树为空，则删除当前节点
+		pRight := n.Right
+		n.Right = nil
+		return pRight
 	}
-	parent := n.FindParent(value)
-	if parent == nil { // 如果是根节点
-		if node.Left == nil && node.Right == nil { // 根节点没有子树
-			node = nil
-			return nil
-		}
-		if node.Left != nil && node.Right != nil { // 根节点有两个子树
-			// 从右子树找一个最小的值替换该节点的值
-			minNode := node.Right
-			for minNode.Left != nil {
-				minNode = minNode.Left
-			}
-			node.Data = minNode.Data
-			minNode.Delete(minNode.Data)
-			return n
-		}
-		// 根节点节点有一个子树
-		if node.Left != nil { // 有左子树
-			node = node.Left
-		} else if node.Right != nil { //有右子树
-			node = node.Right
-		}
-		return node
-	}
-	// 不是根节点
-	if node.Left == nil && node.Right == nil { // 删除节点没有子树
-		if parent.Left != nil && value == parent.Left.Data { // 删除节点是父节点的左子树
-			parent.Left = nil
-		} else { // // 删除节点是父节点的右子树
-			parent.Right = nil
-		}
-		return n
-	}
-	// 删除节点有左右子树
-	if node.Left != nil && node.Right != nil {
-		// 从右子树找一个最小的值替换该节点的值
-		minNode := node.Right
-		for minNode.Left != nil {
-			minNode = minNode.Left
-		}
-		node.Data = minNode.Data
-		minNode.Delete(minNode.Data)
-		return n
-	}
-	// 删除节点有一个子树
-	if node.Left != nil { //有左子树
-		if parent.Left != nil && parent.Left.Data == value { // 删除节点是父节点的左子树
-			parent.Left = node.Left
-		} else { // 删除节点是父节点的右子树
-			parent.Right = node.Left
-		}
-	} else {                                                 // 有右子树
-		if parent.Left != nil && parent.Left.Data == value { // 删除节点是父节点的左子树
-			parent.Left = node.Right
-		} else { // 删除节点是父节点的右子树
-			parent.Right = node.Right
-		}
-	}
+	// 左子树不为空，则继续删除左子树
+	n.Left = n.Left.deleteNode()
 	return n
 }
 ```
 测试
 ```go
-func ExampleNode_Delete() {
+func ExampleDeleteNodeRecursion() {
 	var node = &Node{
 		Left:  nil,
 		Data:  10,
@@ -209,16 +138,18 @@ func ExampleNode_Delete() {
 	node.Add(14)
 	node.Print()
 	fmt.Println()
-	node = node.Delete(7)
+	node = node.DeleteNodeRecursion(7)
 	node.Print()
 	fmt.Println()
-	node = node.Delete(14)
+	node = node.DeleteNodeRecursion(14)
 	node.Print()
 	fmt.Println()
-	node = node.Delete(8)
+	node = node.DeleteNodeRecursion(8)
 	node.Print()
 	fmt.Println()
-	node = node.Delete(10)
+	node = node.DeleteNodeRecursion(10)
+	node.Print()
+	node = node.DeleteNodeRecursion(13)
 	node.Print()
 	// Output:
 	// 10(7(,8),13(,14))
@@ -226,6 +157,93 @@ func ExampleNode_Delete() {
 	// 10(8,13)
 	// 10(,13)
 	// 13
+}
+```
+
+### 迭代版本
+```go
+// 迭代版本
+func (n *Node) DeleteNodeIteration(key int) *Node {
+	// 特殊情况处理
+	if n == nil {
+		return n
+	}
+	cur := n
+	var pre *Node
+	for cur != nil {
+		if cur.Data == key {
+			break
+		}
+		pre = cur
+		if cur.Data > key {
+			cur = cur.Left
+		} else {
+			cur = cur.Right
+		}
+	}
+	if pre == nil {
+		return cur.deleteOneNode()
+	}
+	// pre 要知道是删除左孩子还有右孩子
+	if pre.Left != nil && pre.Left.Data == key {
+		pre.Left = cur.deleteOneNode()
+	}
+	if pre.Right != nil && pre.Right.Data == key {
+		pre.Right = cur.deleteOneNode()
+	}
+	return n
+}
+
+// 删除一个具体节点
+func (n *Node) deleteOneNode() *Node {
+	if n == nil {
+		return n
+	}
+	if n.Right == nil {
+		return n.Left
+	}
+	cur := n.Right
+	for cur.Left != nil {
+		cur = cur.Left
+	}
+	cur.Left = n.Left
+	return n.Right
+}
+```
+测试
+```go
+func ExampleDeleteNodeIteration() {
+	var node = &Node{
+		Left:  nil,
+		Data:  10,
+		Right: nil,
+	}
+	node.Add(7)
+	node.Add(8)
+	node.Add(13)
+	node.Add(14)
+	node.Print()
+	fmt.Println()
+	node = node.DeleteNodeIteration(7)
+	node.Print()
+	fmt.Println()
+	node = node.DeleteNodeIteration(14)
+	node.Print()
+	fmt.Println()
+	node = node.DeleteNodeIteration(8)
+	node.Print()
+	fmt.Println()
+	node = node.DeleteNodeIteration(10)
+	node.Print()
+	node = node.DeleteNodeIteration(13)
+	node.Print()
+	// Output:
+	// 10(7(,8),13(,14))
+	// 10(8,13(,14))
+	// 10(8,13)
+	// 10(,13)
+	// 13
+	//
 }
 ```
 
