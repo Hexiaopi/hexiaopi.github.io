@@ -1,6 +1,6 @@
 > README文档是项目的门面，通过README文档可以帮助用户快速了解项目。
 
-README文档可以参考以下模板：
+README文档可以参考以下模板，或者通过在线网站生成[readme.so](https://readme.so/)
 ```
 # 项目名称
 <!-- 简介项目 -->
