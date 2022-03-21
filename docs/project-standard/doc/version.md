@@ -11,3 +11,8 @@
 - 修订号（PATCH）：当做了向下兼容的问题修正，一般用于问题修复。
 
 关于语义化版本规范详细内容参考：[semver.org](https://semver.org/lang/zh-CN/)
+
+另外可以使用一些工具规范版本号：
+- [gsemver](https://github.com/arnaud-deprez/gsemver)
+  - 使用`gsemver bump`命令就可以根据Git历史提交约定生成下一个版本
+- [cz-cli](https://github.com/commitizen/cz-cli)
