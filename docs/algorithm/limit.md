@@ -5,8 +5,8 @@
 常用的限流方法：
 - 计数器限流
 - 滑动窗口限流
+- 漏桶限流
 - 令牌桶限流
-- 露桶限流
 
 ## 计数器限流
 > 在一段时间间隔内，对请求进行计数，与阈值进行比较判断是否需要限流
@@ -389,7 +389,7 @@ func main() {
 }
 ```
 
-## 漏桶算法
+## 漏桶限流
 
 > 漏桶算法（Leaky Bucket）主要目的是控制数据注入到网络的速率，平滑网络上的突发流量。
 > 
@@ -421,4 +421,59 @@ func main() {
 		prev = now
 	}
 }
+```
+
+## 令牌桶限流
+> 令牌桶算法包含三个过程：
+> - 生产令牌：以固定的速率向令牌桶中增加令牌，如果桶中令牌个数达到上限，则丢弃多余令牌；
+> - 消费令牌：每来一次请求，就会消耗桶中的令牌，可以对耗时高的请求增加每次消费的令牌个数；
+> - 判断是否通过：请求到来，根据消费的令牌个数是否小于等于桶中令牌个数，如果满足则允许通过，否则不允许通过；
+![](images/token-bucket.png)
+
+### 分布式
+```lua
+-- KEYS[1] target key
+-- ARGV[n = 3] current timestamp, max count, interval
+
+-- HASH: KEYS[1]
+--   field: count
+--   field: limit
+--   field: interval
+--   field: timestamp
+
+local res = {}
+local curr_timestamp = tonumber(ARGV[1])
+local limit = redis.call('hmget', KEYS[1], 'count', 'limit', 'interval', 'timestamp')
+if limit[1] then
+ local count = tonumber(limit[1])
+ local total = tonumber(limit[2])
+ local interval = tonumber(limit[3])
+ local last_timestamp = tonumber(limit[4])
+ --计算上一次放令牌到现在的时间间隔中，一共应该放入多少令牌
+ local increase_token = math.max(0, math.floor((curr_timestamp - last_timestamp) / interval))
+ local token = math.min(total, count + increase_token)
+ res[1] = token
+ --取令牌
+ if token >0 then
+  res[1] = token - 1
+ end
+ --更新当前桶中的令牌数量 
+ redis.call('hset', KEYS[1], 'count', res[1])
+    res[2] = total
+ res[3] = interval
+ res[4] = last_timestamp
+ if increase_token >0 then
+  --如果这次有放入令牌，则更新时间
+  res[4] = curr_timestamp
+  redis.call('hset', KEYS[1], 'timestamp', res[4])
+ end
+else
+ local total = tonumber(ARGV[2])
+ res[1] = total - 1
+ res[2] = total
+ res[3] = tonumber(ARGV[3])
+ res[4] = curr_timestamp
+ redis.call('hmset',KEYS[1],'count',res[1],'limit',res[2],'interval',res[3],'timestamp',res[4])
+end
+return res
 ```
