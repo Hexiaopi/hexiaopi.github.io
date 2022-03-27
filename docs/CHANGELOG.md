@@ -1,4 +1,21 @@
 
+<a name="v0.4.0"></a>
+## [v0.4.0](https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.3.4...v0.4.0) (2022-03-27)
+
+### Bug Fixes
+
+* **algorithm:** 增加限流-令牌桶算法
+* **project-standard:** 增加语义化版本工具
+* **project-standard:** 增加语义化版本详细外链
+* **project-standard:** 增加readme.so外链
+
+### Features
+
+* **database:** 增加MySQL-表连接
+* **go-language:** 增加一些环境变量说明
+* **tools:** 增加CA证书
+
+
 <a name="v0.3.4"></a>
 ## [v0.3.4](https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.3.3...v0.3.4) (2022-03-20)
 
