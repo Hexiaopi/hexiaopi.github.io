@@ -5,5 +5,7 @@
   * [命名规则](/go-language/base/identifier)
   * [数据类型](/go-language/base/data-type)
   * [运算符与表达式](/go-language/base/operator)
-  * [数组与切片](/go-language/base/slice)
+  * [数组](/go-language/base/array)
+  * [切片](/go-language/base/slice)
   * [字符串](/go-language/base/string)
+
