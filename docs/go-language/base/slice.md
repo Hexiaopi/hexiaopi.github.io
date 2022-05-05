@@ -22,7 +22,7 @@ type slice struct {
 
 ```go
 var (
-	a []int							// nil切片，表示不存在的切片
+	a []int							// 指针为nil，len和cap为0
 	b = []int{}					// 空切片，不等于nil，表示空的集合
 	c = []int{1,2,3}		// 指向包含三个元素的数组：[1，2，3]。len和cap为3
 	d = c[:2]						// 与c指向同一个数组，但是len为2，cap为3
@@ -112,8 +112,6 @@ func main() {
 //s1传入SliceRise函数前len和cap均为2，传入后容量不够，申请新的空间，因此s指向的指针已经发生变化，但未作用到s1
 //s2传入SliceRise函数前len为3，cap为4，传入后容量够，因此不需要申请新的空间，因此s2的值会发生变化。
 ```
-
-
 
 #### 删除切片元素
 

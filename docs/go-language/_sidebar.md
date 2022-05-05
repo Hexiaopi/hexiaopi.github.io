@@ -7,5 +7,6 @@
   * [运算符与表达式](/go-language/base/operator)
   * [数组](/go-language/base/array)
   * [切片](/go-language/base/slice)
+  * [字典](/go-language/base/map)
   * [字符串](/go-language/base/string)
 
