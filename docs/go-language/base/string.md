@@ -26,7 +26,12 @@ var str string
 
 ## 遍历
 
-由于字符可以使用两种方式表示：byte来表示ASCII字符，rune来表示Unicode字符；因此Go字符串遍历也支持两种方式：byte和rune
+> 由于字符可以使用两种方式表示：
+>
+> - `byte`来表示ASCII字符
+> - `rune`来表示Unicode字符
+> 
+> 因此Go字符串遍历也支持两种方式：`byte`和`rune`
 
 ### byte遍历
 
@@ -44,3 +49,18 @@ for i,s:=range str{
 }
 ```
 
+## 底层结构
+
+参见`$GOROOT/src/runtime/string.go`
+
+```go
+type stringStruct struct {
+	str unsafe.Pointer
+	len int
+}
+```
+
+- str是指针，指向底层数据结构，其实是`[]byte`
+- len是字符串长度
+
+因此传参是可以将字符串作为参数，而不必传字符串指针。
