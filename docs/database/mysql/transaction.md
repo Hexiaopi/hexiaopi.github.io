@@ -102,3 +102,111 @@ MySQL InnoDB默认级别是可重复度隔离级别，为了解决不可重复�
 
 > InnoDB为插入一行新记录，保存当前事务版本作为行版本号，同时保存当前事务版本号到原来的行座位行删除标识
 
+MVCC多版本在事务启动时用到**一致性读视图(consisten read view)**，那什么是事务的一致性视图呢？
+
+InnoDB每个事务都有唯一的事务ID(transaction id)，它在事务开始的时候向InnoDB的事务系统申请的，是严格按照递增的顺序申请的。
+
+每行数据也都是有多个版本的，每次事务更新数据的时候，都会生成一个新的数据版本，并且将事务ID赋值给这个数据版本的事务ID，同时旧的数据版本要保留。如下图所示：
+
+![](./images/row-version.png)
+
+图中虚线框中同一行数据有4个版本，每个版本均有对应的事务ID。
+
+InnoDB为每个事务构造了一个数组，用来保存这个事务启动瞬间，当前正在**活跃**（启动还为提交）的所有事务ID，数组里面事务ID的最小值记为**低水位**，事务ID的最大值+1记为**高水位**。这个视图数组和高水位就组成了当前事务的一致性视图。
+
+![](./images/read-view.png)
+
+对于数据版本的事务ID，则存在以下情况：
+
+- 如果落在绿色部分，表示这个版本是已提交事务或者当前事务自己生成的，这个版本数据是可见的；
+- 如果落在红色部分，表示这个版本是由将来启动的事务生成的，则不可见；
+- 如果落在黄色部分，存在两种情况
+  - 若row trx_id在数组中，表示这个版本是由**还未提交的事务**生成的，这个版本数据是不可见的；
+  - 若row trx_id不在数组中，表示这个版本是由**已经提交的事务**生成的，这个版本数据是可见的；
+
+示例：
+
+```sql
+create table `t`(
+ `id` int(11) not null,
+ `k` int(11) default null,
+ primary key (`id`)
+)engine=InnoDB;
+insert into t(id,k) values(1,1),(2,2);
+```
+
+我们以**可重复读隔离级别**为例：
+
+|                    事务A                    |                            事务B                             |             事务C              |
+| :-----------------------------------------: | :----------------------------------------------------------: | :----------------------------: |
+| start transaction with consistent snapshot; |                                                              |                                |
+|                                             |         start transaction with consistent snapshot;          |                                |
+|                                             |                                                              | Update t set k=k+1 where id=1; |
+|                                             | update t set k=k+1 where id=1;  <br/>select k from t where id =1; |                                |
+|   select k from t where id=1;<br/>commit;   |                                                              |                                |
+|                                             |                           commit;                            |                                |
+
+这里注意：
+
+`begin/start transaction` 命令并不是一个事务的起点，在执行到它们之后的第一个操作 InnoDB 表的语句，事务才真正启动。如果你想要马上启动一个事务，可以使用 `start transaction with consistent snapshot `这个命令。
+
+这里我们假设事务A、B、C的版本号分别是100、101、102。
+
+id=1这行数据存在以下版本：
+
+| 事务ID | 90（历史事务ID） | 102  | 101  |
+| :----: | :--------------: | :--: | :--: |
+|   值   |        1         |  2   |  3   |
+
+事务A查询的时候，事务B还没有提交，因此3不可见。事务C虽然提交了，但是事务A启动时，就创建了一致性视图，对于事务A来说，它的视图数组是[99,100]，依旧不可见。
+
+对于事务一致性视图来说，除了自己的更新总是可见以为，还有三种情况：
+
+1. 版本未提交，不可见；
+2. 版本已提交，但是是在视图创建后提交的，不可见。
+3. 版本已提交，而且是在视图前提交的，可见。
+
+那么问题来了，事务B更新的时候，如果按照一致性视图，不应该更新k=3呀，这里就需要一条规则：**更新数据都是先读后写**，这个读要属于**当前读**，否则事务C就不生效了。
+
+读存在两种读：**当前读**和**快照读**。
+
+### 快照读
+
+> 读取的是记录的可见版本，不用加锁
+
+简单的select操作，属于快照读，例如：
+
+```sql
+select * from table where ?；
+```
+
+### 当前读
+
+> 读取的是记录的最新版本，并且，当前读返回的记录，都会加上锁，保证其他事务不会再并发修改这条记录。
+
+特殊的读操作，以及插入、更新、删除操作都属于当前读，例如：
+
+```sql
+select * from table where ? lock in share mode;
+select * from table where ? for update;
+insert into table values(...);
+update table set ? where ?;
+delete from table where ?;
+```
+
+我们以**读提交隔离级别**为例：
+
+由于`start transaction with consistent snapshot;`在读提交隔离级别下没有意义，等价于普通的`start transaction`
+
+|                  事务A                  |                            事务B                             |             事务C              |
+| :-------------------------------------: | :----------------------------------------------------------: | :----------------------------: |
+|           start transaction;            |                                                              |                                |
+|                                         |                      start transaction;                      |                                |
+|                                         |                                                              | Update t set k=k+1 where id=1; |
+|                                         | update t set k=k+1 where id=1;  <br/>select k from t where id =1; |                                |
+| select k from t where id=1;<br/>commit; |                                                              |                                |
+|                                         |                           commit;                            |                                |
+
+事务A在执行`select k from t where id=1;`才创建一致性视图，此时事务C已提交，因此k=2;
+
+同样事务B，事务C已提交，因此可见，且自己修改的肯定可见，因此k=3;
