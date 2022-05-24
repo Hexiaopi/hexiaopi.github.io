@@ -1,4 +1,29 @@
 
+<a name="v0.5.0"></a>
+## [v0.5.0](https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.4.0...v0.5.0) (2022-05-24)
+
+### Bug Fixes
+
+* **database:** 增加事务一致性视图
+
+### Code Refactoring
+
+* **go-language:** 修改操作符
+* **go-language:** 调整数组与切片
+* **go-language:** 字符串调整
+* **go-language:** 数组与切片调整
+* **go-language:** 调整变量、常量及命名规则
+
+### Features
+
+* **database:** 增加mysql读过程、写过程和事务
+* **database:** 增加redis大纲
+* **go-language:** 增加break使用说明
+* **go-language:** 增加for-range注意点
+* **go-language:** 增加字符串底层结构
+* **go-language:** 增加map介绍
+
+
 <a name="v0.4.0"></a>
 ## [v0.4.0](https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.3.4...v0.4.0) (2022-03-27)
 
