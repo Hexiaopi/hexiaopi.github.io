@@ -1,0 +1,1 @@
+import{_ as t}from"./plugin-vue_export-helper-c27b6911.js";import{o as c,c as n,e,f as o}from"./app-ac29efd4.js";const r={},s=e("p",null,[o(":todo:"),e("br"),o(" 由于Go语言不支持重载函数，当我们需要使用不同的方式构建对象时，不得不使用多个构造函数进行初始化。")],-1),_=[s];function a(l,i){return c(),n("div",null,_)}const m=t(r,[["render",a],["__file","option.html.vue"]]);export{m as default};
