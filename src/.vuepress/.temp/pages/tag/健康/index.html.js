@@ -1,0 +1,14 @@
+export const data = JSON.parse("{\"key\":\"v-63d1af66\",\"path\":\"/tag/%E5%81%A5%E5%BA%B7/\",\"title\":\"标签: 健康\",\"lang\":\"zh-CN\",\"frontmatter\":{\"title\":\"标签: 健康\",\"dir\":{\"index\":false},\"feed\":false,\"sitemap\":false,\"blog\":{\"type\":\"category\",\"name\":\"健康\",\"key\":\"tag\"},\"layout\":\"BlogCategory\",\"description\":\"\",\"head\":[[\"meta\",{\"property\":\"og:url\",\"content\":\"https://Hexiaopi.github.io/tag/%E5%81%A5%E5%BA%B7/\"}],[\"meta\",{\"property\":\"og:site_name\",\"content\":\"Hexiaopi\"}],[\"meta\",{\"property\":\"og:title\",\"content\":\"标签: 健康\"}],[\"meta\",{\"property\":\"og:type\",\"content\":\"website\"}],[\"meta\",{\"property\":\"og:locale\",\"content\":\"zh-CN\"}],[\"meta\",{\"property\":\"article:author\",\"content\":\"Hexiaopi\"}],[\"script\",{\"type\":\"application/ld+json\"},\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"WebPage\\\",\\\"name\\\":\\\"标签: 健康\\\"}\"]]},\"headers\":[],\"readingTime\":{\"minutes\":0,\"words\":0},\"filePathRelative\":null,\"excerpt\":\"\",\"autoDesc\":true}")
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updatePageData) {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ data }) => {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  })
+}

@@ -1,0 +1,14 @@
+export const data = JSON.parse("{\"key\":\"v-1d1f1c20\",\"path\":\"/go-language/base/goroutine.html\",\"title\":\"goroutine和调度原理\",\"lang\":\"zh-CN\",\"frontmatter\":{\"title\":\"goroutine和调度原理\",\"date\":\"2023-02-13T00:00:00.000Z\",\"tag\":[\"Go\",\"基础\"],\"category\":[\"Go语言\"],\"description\":\"Go语言原生支持并发能力，而goroutine是Go语言原生支持并发的具体实现，本篇将为你揭开goroutine的面纱。 goroutine\",\"head\":[[\"meta\",{\"property\":\"og:url\",\"content\":\"https://Hexiaopi.github.io/go-language/base/goroutine.html\"}],[\"meta\",{\"property\":\"og:site_name\",\"content\":\"Hexiaopi\"}],[\"meta\",{\"property\":\"og:title\",\"content\":\"goroutine和调度原理\"}],[\"meta\",{\"property\":\"og:description\",\"content\":\"Go语言原生支持并发能力，而goroutine是Go语言原生支持并发的具体实现，本篇将为你揭开goroutine的面纱。 goroutine\"}],[\"meta\",{\"property\":\"og:type\",\"content\":\"article\"}],[\"meta\",{\"property\":\"og:locale\",\"content\":\"zh-CN\"}],[\"meta\",{\"property\":\"article:author\",\"content\":\"Hexiaopi\"}],[\"meta\",{\"property\":\"article:tag\",\"content\":\"Go\"}],[\"meta\",{\"property\":\"article:tag\",\"content\":\"基础\"}],[\"meta\",{\"property\":\"article:published_time\",\"content\":\"2023-02-13T00:00:00.000Z\"}],[\"script\",{\"type\":\"application/ld+json\"},\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"Article\\\",\\\"headline\\\":\\\"goroutine和调度原理\\\",\\\"image\\\":[\\\"\\\"],\\\"datePublished\\\":\\\"2023-02-13T00:00:00.000Z\\\",\\\"dateModified\\\":null,\\\"author\\\":[{\\\"@type\\\":\\\"Person\\\",\\\"name\\\":\\\"Hexiaopi\\\",\\\"url\\\":\\\"https://github.com/Hexiaopi\\\"}]}\"]]},\"headers\":[{\"level\":2,\"title\":\"goroutine\",\"slug\":\"goroutine\",\"link\":\"#goroutine\",\"children\":[]},{\"level\":2,\"title\":\"GPM模型\",\"slug\":\"gpm模型\",\"link\":\"#gpm模型\",\"children\":[]},{\"level\":2,\"title\":\"调度策略\",\"slug\":\"调度策略\",\"link\":\"#调度策略\",\"children\":[{\"level\":3,\"title\":\"work stealing机制\",\"slug\":\"work-stealing机制\",\"link\":\"#work-stealing机制\",\"children\":[]},{\"level\":3,\"title\":\"hand off机制\",\"slug\":\"hand-off机制\",\"link\":\"#hand-off机制\",\"children\":[]},{\"level\":3,\"title\":\"抢占调度\",\"slug\":\"抢占调度\",\"link\":\"#抢占调度\",\"children\":[]}]},{\"level\":2,\"title\":\"参考文献\",\"slug\":\"参考文献\",\"link\":\"#参考文献\",\"children\":[]}],\"readingTime\":{\"minutes\":3.22,\"words\":966},\"filePathRelative\":\"go-language/base/goroutine.md\",\"localizedDate\":\"2023年2月13日\",\"excerpt\":\"<p>Go语言原生支持并发能力，而goroutine是Go语言原生支持并发的具体实现，本篇将为你揭开goroutine的面纱。</p>\\n<figure><img src=\\\"http://cdn.cjhe.top/blog/goroutine.png\\\" alt=\\\"goroutine\\\" tabindex=\\\"0\\\" loading=\\\"lazy\\\"><figcaption>goroutine</figcaption></figure>\\n\",\"autoDesc\":true}")
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updatePageData) {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ data }) => {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  })
+}

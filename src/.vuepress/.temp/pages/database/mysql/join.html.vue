@@ -1,0 +1,59 @@
+<template><div><!-- more -->
+<blockquote>
+<p>连接是一种机制，用来在一条SELECT语句中关联表</p>
+</blockquote>
+<h2 id="内连接-inner-join" tabindex="-1"><a class="header-anchor" href="#内连接-inner-join" aria-hidden="true">#</a> 内连接（INNER JOIN）</h2>
+<blockquote>
+<p>内连接又叫等值连接,它将第一个表中的每一行与第二个表中的每一行配对，只返回匹配给定条件的行<br>
+从数据的角度就是求两个集合的交集，如下图所示</p>
+</blockquote>
+<figure><img src="@source/database/mysql/images/inner-join.png" alt="内连接" tabindex="0" loading="lazy"><figcaption>内连接</figcaption></figure>
+<p>示例：</p>
+<div class="language-sql line-numbers-mode" data-ext="sql"><pre v-pre class="language-sql"><code><span class="token keyword">SELECT</span> vend_name<span class="token punctuation">,</span>prod_name<span class="token punctuation">,</span>prod_price
+<span class="token keyword">FROM</span> Vendors
+<span class="token keyword">INNER</span> <span class="token keyword">JOIN</span> Products <span class="token keyword">ON</span> Vendors<span class="token punctuation">.</span>vend_id <span class="token operator">=</span> Products<span class="token punctuation">.</span>vend_id
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="自然连接-nature-join" tabindex="-1"><a class="header-anchor" href="#自然连接-nature-join" aria-hidden="true">#</a> 自然连接（NATURE JOIN）</h2>
+<blockquote>
+<p>自然连接，会自动找出两个表中相同的列作为连接条件进行连接</p>
+</blockquote>
+<p>以下示例语句与内连接语句等价</p>
+<div class="language-sql line-numbers-mode" data-ext="sql"><pre v-pre class="language-sql"><code><span class="token keyword">SELECT</span> Customers<span class="token punctuation">.</span>cust_id<span class="token punctuation">,</span>Orders<span class="token punctuation">.</span>order_num
+<span class="token keyword">FROM</span> Customers
+<span class="token keyword">NATURAL</span> <span class="token keyword">JOIN</span> Orders
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote>
+<p>也可以省略<code v-pre>INNER</code>关键字，即<code v-pre>INNER JOIN</code>和<code v-pre>JOIN</code>等价</p>
+</blockquote>
+<h2 id="叉连接-cross-join" tabindex="-1"><a class="header-anchor" href="#叉连接-cross-join" aria-hidden="true">#</a> 叉连接（CROSS JOIN）</h2>
+<blockquote>
+<p>即返回笛卡尔积的联<br>
+假设第一个表有6行数据，第二个表中有9行数据，那么通过叉连接就可以返回6*9=54条数据</p>
+</blockquote>
+<figure><img src="@source/database/mysql/images/cross-join.png" alt="叉连接" tabindex="0" loading="lazy"><figcaption>叉连接</figcaption></figure>
+<p>示例：</p>
+<div class="language-sql line-numbers-mode" data-ext="sql"><pre v-pre class="language-sql"><code><span class="token keyword">SELECT</span> vend_name<span class="token punctuation">,</span>prod_name<span class="token punctuation">,</span>prod_price
+<span class="token keyword">FROM</span> Vendors
+<span class="token keyword">CROSS</span> <span class="token keyword">JOIN</span> Products
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="外连接-outer-join" tabindex="-1"><a class="header-anchor" href="#外连接-outer-join" aria-hidden="true">#</a> 外连接（OUTER JOIN）</h2>
+<p>可以通过内连接将一个表中的行与另一个表中的行相关联，但有时候需要包含没有关联行的那些行，这就需要外连接了。外连接分为：</p>
+<ul>
+<li>左外连接，内连接并保留左表没有匹配的行（若SELECT中包含右表的字段，则查询结果对应的记录为NULL）</li>
+<li>右外连接，内连接并保留右表没有匹配的行（若SELECT中包含左表的字段，则查询结果对应的记录为NULL）</li>
+</ul>
+<figure><img src="@source/database/mysql/images/outer-join.png" alt="外连接" tabindex="0" loading="lazy"><figcaption>外连接</figcaption></figure>
+<p>左外连接示例：</p>
+<div class="language-sql line-numbers-mode" data-ext="sql"><pre v-pre class="language-sql"><code><span class="token keyword">SELECT</span> Customers<span class="token punctuation">.</span>cust_id<span class="token punctuation">,</span>Orders<span class="token punctuation">.</span>order_num
+<span class="token keyword">FROM</span> Customers
+<span class="token keyword">LEFT</span> <span class="token keyword">OUTER</span> <span class="token keyword">JOIN</span> Orders <span class="token keyword">ON</span> Customers<span class="token punctuation">.</span>cust_id <span class="token operator">=</span> Orders<span class="token punctuation">.</span>cust_id
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote>
+<p><code v-pre>OUTER</code>关键字可以省略，即<code v-pre>LEFT OUTER JOIN</code>和<code v-pre>LEFT JOIN</code>等价</p>
+</blockquote>
+<p>右外连接示例：</p>
+<div class="language-sql line-numbers-mode" data-ext="sql"><pre v-pre class="language-sql"><code><span class="token keyword">SELECT</span> Customers<span class="token punctuation">.</span>cust_id<span class="token punctuation">,</span>Orders<span class="token punctuation">.</span>order_num
+<span class="token keyword">FROM</span> Customers
+<span class="token keyword">LEFT</span> <span class="token keyword">OUTER</span> <span class="token keyword">JOIN</span> Orders <span class="token keyword">ON</span> Customers<span class="token punctuation">.</span>cust_id <span class="token operator">=</span> Orders<span class="token punctuation">.</span>cust_id
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote>
+<p><code v-pre>OUTER</code>关键字可以省略，即<code v-pre>RIGHT OUTER JOIN</code>和<code v-pre>RIGHT JOIN</code>等价</p>
+</blockquote>
+</div></template>
+
+

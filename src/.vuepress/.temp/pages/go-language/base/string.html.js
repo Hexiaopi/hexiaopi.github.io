@@ -1,0 +1,14 @@
+export const data = JSON.parse("{\"key\":\"v-641d49d5\",\"path\":\"/go-language/base/string.html\",\"title\":\"string字符串\",\"lang\":\"zh-CN\",\"frontmatter\":{\"title\":\"string字符串\",\"date\":\"2022-01-23T00:00:00.000Z\",\"tag\":[\"Go\",\"基础\"],\"category\":[\"Go语言\"],\"description\":\"声明 关键字定义： string 零值： \\\"\\\" var str string\",\"head\":[[\"meta\",{\"property\":\"og:url\",\"content\":\"https://Hexiaopi.github.io/go-language/base/string.html\"}],[\"meta\",{\"property\":\"og:site_name\",\"content\":\"Hexiaopi\"}],[\"meta\",{\"property\":\"og:title\",\"content\":\"string字符串\"}],[\"meta\",{\"property\":\"og:description\",\"content\":\"声明 关键字定义： string 零值： \\\"\\\" var str string\"}],[\"meta\",{\"property\":\"og:type\",\"content\":\"article\"}],[\"meta\",{\"property\":\"og:locale\",\"content\":\"zh-CN\"}],[\"meta\",{\"property\":\"article:author\",\"content\":\"Hexiaopi\"}],[\"meta\",{\"property\":\"article:tag\",\"content\":\"Go\"}],[\"meta\",{\"property\":\"article:tag\",\"content\":\"基础\"}],[\"meta\",{\"property\":\"article:published_time\",\"content\":\"2022-01-23T00:00:00.000Z\"}],[\"script\",{\"type\":\"application/ld+json\"},\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"Article\\\",\\\"headline\\\":\\\"string字符串\\\",\\\"image\\\":[\\\"\\\"],\\\"datePublished\\\":\\\"2022-01-23T00:00:00.000Z\\\",\\\"dateModified\\\":null,\\\"author\\\":[{\\\"@type\\\":\\\"Person\\\",\\\"name\\\":\\\"Hexiaopi\\\",\\\"url\\\":\\\"https://github.com/Hexiaopi\\\"}]}\"]]},\"headers\":[{\"level\":2,\"title\":\"声明\",\"slug\":\"声明\",\"link\":\"#声明\",\"children\":[]},{\"level\":2,\"title\":\"操作\",\"slug\":\"操作\",\"link\":\"#操作\",\"children\":[{\"level\":3,\"title\":\"比较\",\"slug\":\"比较\",\"link\":\"#比较\",\"children\":[]},{\"level\":3,\"title\":\"遍历\",\"slug\":\"遍历\",\"link\":\"#遍历\",\"children\":[]}]},{\"level\":2,\"title\":\"底层结构\",\"slug\":\"底层结构\",\"link\":\"#底层结构\",\"children\":[]},{\"level\":2,\"title\":\"字符串高效构造方式\",\"slug\":\"字符串高效构造方式\",\"link\":\"#字符串高效构造方式\",\"children\":[]}],\"readingTime\":{\"minutes\":3.4,\"words\":1019},\"filePathRelative\":\"go-language/base/string.md\",\"localizedDate\":\"2022年1月23日\",\"excerpt\":\"<h2> 声明</h2>\\n<p><strong>关键字定义：</strong> string</p>\\n<p><strong>零值：</strong> \\\"\\\"</p>\\n<div class=\\\"language-go line-numbers-mode\\\" data-ext=\\\"go\\\"><pre class=\\\"language-go\\\"><code><span class=\\\"token keyword\\\">var</span> str <span class=\\\"token builtin\\\">string</span>\\n</code></pre><div class=\\\"line-numbers\\\" aria-hidden=\\\"true\\\"><div class=\\\"line-number\\\"></div></div></div>\",\"autoDesc\":true}")
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updatePageData) {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ data }) => {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  })
+}

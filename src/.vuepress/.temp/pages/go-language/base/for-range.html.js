@@ -1,0 +1,14 @@
+export const data = JSON.parse("{\"key\":\"v-63c643b3\",\"path\":\"/go-language/base/for-range.html\",\"title\":\"for-range避坑指南\",\"lang\":\"zh-CN\",\"frontmatter\":{\"title\":\"for-range避坑指南\",\"date\":\"2023-02-09T00:00:00.000Z\",\"tag\":[\"Go\",\"基础\"],\"category\":[\"Go语言\"],\"description\":\"警告 for range同常使用在遍历：数组、指向数组的指针、切片、字符串、map和channel等表达式 其中有不少坑需要小心！！！\",\"head\":[[\"meta\",{\"property\":\"og:url\",\"content\":\"https://Hexiaopi.github.io/go-language/base/for-range.html\"}],[\"meta\",{\"property\":\"og:site_name\",\"content\":\"Hexiaopi\"}],[\"meta\",{\"property\":\"og:title\",\"content\":\"for-range避坑指南\"}],[\"meta\",{\"property\":\"og:description\",\"content\":\"警告 for range同常使用在遍历：数组、指向数组的指针、切片、字符串、map和channel等表达式 其中有不少坑需要小心！！！\"}],[\"meta\",{\"property\":\"og:type\",\"content\":\"article\"}],[\"meta\",{\"property\":\"og:locale\",\"content\":\"zh-CN\"}],[\"meta\",{\"property\":\"article:author\",\"content\":\"Hexiaopi\"}],[\"meta\",{\"property\":\"article:tag\",\"content\":\"Go\"}],[\"meta\",{\"property\":\"article:tag\",\"content\":\"基础\"}],[\"meta\",{\"property\":\"article:published_time\",\"content\":\"2023-02-09T00:00:00.000Z\"}],[\"script\",{\"type\":\"application/ld+json\"},\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"Article\\\",\\\"headline\\\":\\\"for-range避坑指南\\\",\\\"image\\\":[\\\"\\\"],\\\"datePublished\\\":\\\"2023-02-09T00:00:00.000Z\\\",\\\"dateModified\\\":null,\\\"author\\\":[{\\\"@type\\\":\\\"Person\\\",\\\"name\\\":\\\"Hexiaopi\\\",\\\"url\\\":\\\"https://github.com/Hexiaopi\\\"}]}\"]]},\"headers\":[{\"level\":2,\"title\":\"for range\",\"slug\":\"for-range\",\"link\":\"#for-range\",\"children\":[]},{\"level\":2,\"title\":\"小心短变量声明\",\"slug\":\"小心短变量声明\",\"link\":\"#小心短变量声明\",\"children\":[]},{\"level\":2,\"title\":\"小心遍历过程中的修改\",\"slug\":\"小心遍历过程中的修改\",\"link\":\"#小心遍历过程中的修改\",\"children\":[{\"level\":3,\"title\":\"数组遍历\",\"slug\":\"数组遍历\",\"link\":\"#数组遍历\",\"children\":[]},{\"level\":3,\"title\":\"数组指针遍历\",\"slug\":\"数组指针遍历\",\"link\":\"#数组指针遍历\",\"children\":[]},{\"level\":3,\"title\":\"切片遍历\",\"slug\":\"切片遍历\",\"link\":\"#切片遍历\",\"children\":[]},{\"level\":3,\"title\":\"字符串遍历\",\"slug\":\"字符串遍历\",\"link\":\"#字符串遍历\",\"children\":[]},{\"level\":3,\"title\":\"字典遍历\",\"slug\":\"字典遍历\",\"link\":\"#字典遍历\",\"children\":[]}]}],\"readingTime\":{\"minutes\":4.8,\"words\":1441},\"filePathRelative\":\"go-language/base/for-range.md\",\"localizedDate\":\"2023年2月9日\",\"excerpt\":\"<div class=\\\"hint-container danger\\\">\\n<p class=\\\"hint-container-title\\\">警告</p>\\n<p><code>for range</code>同常使用在遍历：数组、指向数组的指针、切片、字符串、map和channel等表达式</p>\\n<p>其中有不少坑需要小心！！！</p>\\n</div>\\n\",\"autoDesc\":true}")
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updatePageData) {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ data }) => {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  })
+}

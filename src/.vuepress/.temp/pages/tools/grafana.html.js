@@ -1,0 +1,14 @@
+export const data = JSON.parse("{\"key\":\"v-69f51042\",\"path\":\"/tools/grafana.html\",\"title\":\"Grafana\",\"lang\":\"zh-CN\",\"frontmatter\":{\"description\":\"Grafana 1. Grafana简介 1.1 grafana简介 Grafana是适用于所有指标的分析平台，允许用户查询、可视化、提醒和理解指标。 另外一种定义 Grafana是一款开源的、功能丰富的支持Graphite、Elasticsearch、OpenTSDB、Prometheus和InfluxDB等数据源的指标仪表板和图形编辑器。 官网：https://grafana.com/\"},\"headers\":[{\"level\":2,\"title\":\"1. Grafana简介\",\"slug\":\"_1-grafana简介\",\"link\":\"#_1-grafana简介\",\"children\":[{\"level\":3,\"title\":\"1.1 grafana简介\",\"slug\":\"_1-1-grafana简介\",\"link\":\"#_1-1-grafana简介\",\"children\":[]}]},{\"level\":2,\"title\":\"2 Grafana使用（基础）\",\"slug\":\"_2-grafana使用-基础\",\"link\":\"#_2-grafana使用-基础\",\"children\":[{\"level\":3,\"title\":\"2.1 panel（面板）\",\"slug\":\"_2-1-panel-面板\",\"link\":\"#_2-1-panel-面板\",\"children\":[]},{\"level\":3,\"title\":\"2.2 Settings（设置）\",\"slug\":\"_2-2-settings-设置\",\"link\":\"#_2-2-settings-设置\",\"children\":[]},{\"level\":3,\"title\":\"2.3 Dashboards（各个仪表板）\",\"slug\":\"_2-3-dashboards-各个仪表板\",\"link\":\"#_2-3-dashboards-各个仪表板\",\"children\":[]}]},{\"level\":2,\"title\":\"3 Grafana管理（高级）\",\"slug\":\"_3-grafana管理-高级\",\"link\":\"#_3-grafana管理-高级\",\"children\":[{\"level\":3,\"title\":\"3.1 Configuration（配置）\",\"slug\":\"_3-1-configuration-配置\",\"link\":\"#_3-1-configuration-配置\",\"children\":[]},{\"level\":3,\"title\":\"3.2 Server Admin（服务管理）\",\"slug\":\"_3-2-server-admin-服务管理\",\"link\":\"#_3-2-server-admin-服务管理\",\"children\":[]}]}],\"readingTime\":{\"minutes\":12.03,\"words\":3609},\"filePathRelative\":\"tools/grafana.md\",\"excerpt\":\"<h1> Grafana</h1>\\n<h2> 1. Grafana简介</h2>\\n<h3> 1.1 grafana简介</h3>\\n<blockquote>\\n<p>Grafana是适用于所有指标的分析平台，允许用户查询、可视化、提醒和理解指标。</p>\\n</blockquote>\\n<p>另外一种定义</p>\\n<blockquote>\\n<p>Grafana是一款开源的、功能丰富的支持Graphite、Elasticsearch、OpenTSDB、Prometheus和InfluxDB等数据源的指标仪表板和图形编辑器。</p>\\n</blockquote>\\n<p><strong>官网：</strong><code>https://grafana.com/</code></p>\",\"autoDesc\":true}")
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updatePageData) {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ data }) => {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  })
+}
