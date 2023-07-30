@@ -110,11 +110,11 @@ node_load1 3.0703125
 
 即时向量指最新的单个维度的指标数据
 
-![instant-vector-1](../image/instant-vector-1.jpg)
+![instant-vector-1](./images/instant-vector-1.jpg)
 
 范围向量包含一组不同时间戳的指标数据，和时间范围选择有关
 
-![range-vector](../image/range-vector.jpg)
+![range-vector](./images/range-vector.jpg)
 
 ### 2.2 Time series Selectors（时间序列表达式）
 
@@ -124,11 +124,11 @@ node_load1 3.0703125
 
 例如：仅指定指标名称，`prometheus_http_requests_total`
 
-![instant-vector](./image/instant-vector.jpg)
+![instant-vector](./images/instant-vector.jpg)
 
 可以通过一组标签来进一步过滤这些时间序列，使用花括号`{}`。例如：`prometheus_http_requests_total{code="500",job="prometheus"}`
 
-![instant-vector-filter](../image/instant-vector-filter.jpg)
+![instant-vector-filter](./images/instant-vector-filter.jpg)
 
 可以对标签值进行匹配，匹配运算符：
 
@@ -139,7 +139,7 @@ node_load1 3.0703125
 
 例如：`prometheus_http_requests_total{code=~"400|500"}`
 
-![instant-vector-regex](../image/instant-vector-regex.jpg)
+![instant-vector-regex](./images/instant-vector-regex.jpg)
 
 #### 2.2.2 Range Vector Selectors (范围向量选择器)
 

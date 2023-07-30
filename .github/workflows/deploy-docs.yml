@@ -5,7 +5,7 @@ on:
   push:
     branches:
       # 确保这是你正在使用的分支名称
-      - master
+      - main
 
 permissions:
   contents: write
@@ -20,6 +20,9 @@ jobs:
           fetch-depth: 0
           # 如果你文档需要 Git 子模块，取消注释下一行
           # submodules: true
+
+
+
       - name: 设置 Node.js
         uses: actions/setup-node@v3
         with:
@@ -27,7 +30,7 @@ jobs:
           cache: npm
 
       - name: 安装依赖
-        run: export NODE_OPTIONS=--openssl-legacy-provider && npm install
+        run: npm ci
 
       - name: 构建文档
         env:

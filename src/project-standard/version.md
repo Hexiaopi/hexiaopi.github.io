@@ -28,7 +28,7 @@ category:
 - 次版本号（MINOR）：当做了向下兼容的功能性新增及修改。一般用于不影响之前逻辑的功能优化，或者新的功能(New Feature)。
 - 修订号（PATCH）：当做了向下兼容的问题修正，一般用于问题修复(Bug Fix)。
 
-![server](../images/semver.png)
+![server](./images/semver.png)
 
 一些经验：
 

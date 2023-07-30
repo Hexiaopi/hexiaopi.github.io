@@ -5,7 +5,7 @@ tag:
  - 规范
  - 分支
 category:
- -  项目规范
+ - 项目规范
 ---
 
 ![git-model](https://www.ruanyifeng.com/blogimg/asset/2015/bg2015122301.png)
@@ -20,7 +20,7 @@ category:
 我们经常使用Git用于管理版本，但如果没有清晰的流程和规范，会导致难以协调和维护。
 Vincent Driessen 为了解决这个问题，提出[A Successful Git Branching Model](https://nvie.com/posts/a-successful-git-branching-model/)
 
-![git-model](../images/git-model@2x.png)
+![git-model](./images/git-model@2x.png)
 
 ## master分支
 

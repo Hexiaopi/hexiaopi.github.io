@@ -1,8 +1,8 @@
 # Grafana
 
-## 1. Grafana简介
+## Grafana简介
 
-### 1.1 grafana简介
+### grafana简介
 
 > Grafana是适用于所有指标的分析平台，允许用户查询、可视化、提醒和理解指标。
 
@@ -14,24 +14,22 @@
 
 **Github：**`https://github.com/grafana/grafana`
 
-
-
-## 2 Grafana使用（基础）
+## Grafana使用（基础）
 
 Grafana的使用主要围绕Dashboard（仪表板），如图所示：
 
-![dashboard](../image/dashboard.jpg)
+![dashboard](./images/dashboard.jpg)
 
 > **仪表板**由一组面板（panel）组织排列的视图
 >
 > - 支持动态选择可视化数据，如图中左上角的IP下拉选，该功能是由**变量**实现<!--2.2.3会介绍到-->
 > - 支持新增面板、收藏、分享、保存修改、设置、时间选择，如图中右上角展示
 
-### 2.1 panel（面板）
+### panel（面板）
 
-#### 2.1.1 Queries （查询）
+#### Queries （查询）
 
-![panel-query](../image/panel-query.jpg)
+![panel-query](./images/panel-query.jpg)
 
 查询界面支持选择数据源、查询编辑器以及查询条件，并且支持多条查询；
 
@@ -55,7 +53,7 @@ Grafana的使用主要围绕Dashboard（仪表板），如图所示：
 
 - **Time shift** 时间偏移，面板展示到现在之前一段时间，例如：1h之前；
 
-#### 2.1.2 Visualization（可视化）
+#### Visualization（可视化）
 
 可视化支持许多类型的面板：`Graph`、`Singlestat`、`Table`、`Heatmap`、`Alert list`、`Dashboard list`、`Text`等，且支持从社区下载其他类型面板插件，例如饼图、世界地图等；
 
@@ -63,7 +61,7 @@ Grafana的使用主要围绕Dashboard（仪表板），如图所示：
 
 Graph常用来展示多条数据的折线图、条形图，[相关配置参考官网](https://grafana.com/docs/features/panels/graph/)
 
-![graph-general](../image/graph-general.jpg)
+![graph-general](./images/graph-general.jpg)
 
 - **Draw Modes**：支持三种方式画图：Bars（条形图）、lines（折线图）、Points(点图)；
 
@@ -73,7 +71,7 @@ Graph常用来展示多条数据的折线图、条形图，[相关配置参考�
 
 - **Stacking & Null value**：**Stack**，一条线放在另一条线上面展示；**Null value**: 当数据丢失时可以选择进行弥补，例如connected连接前后线，null as zero将丢失数据设置为空；
 
-![graph-axes](../image/graph-axes.jpg)
+![graph-axes](./images/graph-axes.jpg)
 
 **Left Y / Right Y**： 
 
@@ -90,7 +88,7 @@ Graph常用来展示多条数据的折线图、条形图，[相关配置参考�
 
 **Y-Axes**：Y轴 ~~(暂无需求)~~
 
-![graph-legend](../image/graph-legend.jpg)
+![graph-legend](./images/graph-legend.jpg)
 
 - **Options**：**As Table**以表格展示下面Values勾选的值；**To the right**在图的右边展示表；
 
@@ -98,7 +96,7 @@ Graph常用来展示多条数据的折线图、条形图，[相关配置参考�
 
 - **Hide series**：对于一些特定值使用空值或零值隐藏；（~~暂无需求~~）
 
-![graph-time](../image/graph-time.jpg)
+![graph-time](./images/graph-time.jpg)
 
 - **Thresholds & Time Regions** 可以增加阈值，例如值gt(大于)0.2的时候显示告警；可以突出显示某段时间，例如周一到周五；
 
@@ -126,7 +124,7 @@ Dashboard list支持指向其他仪表板的动态链接。该列表可以配置
 
 Text支持为仪表板制作信息和说明面板，支持三种模式：markdown、HTML、text。[相关配置参考官网](https://grafana.com/docs/features/panels/text/)
 
-#### 2.1.3 General
+#### General
 
 1. `Title`：标题，仪表板的名称
 2. `Transparent`：透明，面板是否透明展示；
@@ -140,15 +138,15 @@ Text支持为仪表板制作信息和说明面板，支持三种模式：markdow
 
 支持添加动态链接到其他仪表板或外部URL；
 
-#### 2.1.3 Alert
+#### Alert
 
 ~~暂无需求~~
 
-### 2.2 Settings（设置）
+### Settings（设置）
 
-![dashboard-settings](../image/dashboard-settings.jpg)
+![dashboard-settings](./images/dashboard-settings.jpg)
 
-#### 2.2.1 General 
+#### General
 
 > 一般性设置
 
@@ -169,19 +167,19 @@ Text支持为仪表板制作信息和说明面板，支持三种模式：markdow
 
 - `Graph Tooltip`：图形工具提示~~暂无需求~~
 
-#### 2.2.2 Annotations（注释）
+#### Annotations（注释）
 
 > 可以在图标上标记，描述事件
 
 使用方法：选择面板—>按住CTRL或CMD+单击/选择—>填写
 
-![annotation](../image/annotation.gif)
+![annotation](./images/annotation.gif)
 
 可以用于记录异常情况，稍后进行排查分析
 
 在设置页面可以设置Annotations的颜色，这样在面板上可以很清楚的发现。
 
-#### 2.2.3 Variables（变量）
+#### Variables（变量）
 
 > 变量是值得占位符
 >
@@ -191,7 +189,7 @@ Text支持为仪表板制作信息和说明面板，支持三种模式：markdow
 
 **Example**：如下图红线框所示，可以根据变量IP动态选择展示各个机器的指标数据
 
-![example-variable](../image/example-variable.jpg)
+![example-variable](./images/example-variable.jpg)
 
 **变量引用（基础）**：
 
@@ -208,7 +206,7 @@ Text支持为仪表板制作信息和说明面板，支持三种模式：markdow
 
 **添加变量**：点击仪表板设置按钮—>Variable—>new
 
-![edit-variable](../image\edit-variable.jpg)
+![edit-variable](./images\edit-variable.jpg)
 
 **General**
 
@@ -235,33 +233,33 @@ Text支持为仪表板制作信息和说明面板，支持三种模式：markdow
 
 ~~暂无需求~~
 
-**Preview of Values**	
+**Preview of Values**
 
 预览下拉选择的值
 
-#### 2.2.4 Links（链接）
+#### Links（链接）
 
 ~~暂无需求~~
 
-#### 2.2.5 Versions（版本）
+#### Versions（版本）
 
 > 版本可以看到对仪表板历史操作的版本，可以很方便的回退到某个版本，或者比较两个版本的差别
 
-#### 2.2.6 Permissions （权限）
+#### Permissions （权限）
 
 > 可以对某个用户或某个团队设置该仪表板的权限
 
-#### 2.2.7 JSON Model
+#### JSON Model
 
 > JSON模型是定义仪表板的数据结构。包括设置，面板设置和布局，查询等
 
-### 2.3 Dashboards（各个仪表板）
+### Dashboards（各个仪表板）
 
 提供统一的视图管理仪表板、组织仪表板、播放仪表板、共享仪表板
 
-#### 2.3.1 Manage（管理）
+#### Manage（管理）
 
-![dashboards-manage](../image/dashboards-manage.jpg)
+![dashboards-manage](./images/dashboards-manage.jpg)
 
 功能：
 
@@ -275,41 +273,39 @@ Text支持为仪表板制作信息和说明面板，支持三种模式：markdow
 
 > 文件夹是一种组织和分组仪表板的方法
 
-#### 2.3.2 Playlists（播放列表）
+#### Playlists（播放列表）
 
 > 播放列表是一种特殊类型的仪表板，可通过仪表板列表进行旋转。播放列表可以是构建态势感知的好方法，非常适合大屏幕展示。
 
-![playlists](../image/playlists.jpg)
+![playlists](./images/playlists.jpg)
 
-![edit-playlist](../image/edit-playlist.jpg)
+![edit-playlist](./images/edit-playlist.jpg)
 
 支持将仪表板加入到播放列表，且支持播放顺序和播放间隔；
 
-#### 2.3.3 Snapshots（快照）
+#### Snapshots（快照）
 
 > 快照可以提供一种即时方式共享交互式仪表板，我们只需复制URL即可访问仪表板；具体快照设置是在每个仪表板中设置，例如设置过期时间等；
 
-![snapshots](../image/snapshots.jpg)
+![snapshots](./images/snapshots.jpg)
 
+## Grafana管理（高级）
 
+![configuration](./images/configuration.jpg)
 
-## 3 Grafana管理（高级）
+### Configuration（配置）
 
-![configuration](../image/configuration.jpg)
-
-### 3.1 Configuration（配置）
-
-#### 3.1.1 Data Source（数据源）
+#### Data Source（数据源）
 
 > grafana为每个数据源提供一个特定的查询编辑器，每个数据源的查询语言和功能不同。
 
 **支持的数据源：**`Graphite`、`Elasticsearch`、 `OpenTSDB`、`Prometheus`、`InfluxDB`等
 
-![data-source](../image/data-source.jpg)
+![data-source](./images/data-source.jpg)
 
 这里以Prometheus设置为例：
 
-![datasource-prometheus](../image/datasource-prometheus.jpg)
+![datasource-prometheus](./images/datasource-prometheus.jpg)
 
 配置项目说明：
 
@@ -336,7 +332,7 @@ Auth相关：
 2. `Query timeout`：查询超时时间；
 3. `HTTP Method`：Prometheus >=v2.1.0才支持POST；
 
-#### 3.1.2 User （用户）
+#### User （用户）
 
 > 用户权限管理
 
@@ -358,61 +354,60 @@ Auth相关：
 - 查看仪表板
 - **无法**创建或编辑仪表板或数据源
 
-#### 3.1.3 Teams（团队）
+#### Teams（团队）
 
 > 可以建立多个团队，例如开发团队、测试团队、运维团队，每个团队可以使用不同的UI主题等配置
 
-#### 3.1.4 Plugins（插件）
+#### Plugins（插件）
 
 > 提供许多可视化插件，帮助用户展示指标数据，理解指标数据
 
-#### 3.1.5 Preferences（首选项）
+#### Preferences（首选项）
 
 > 设置组织名、UI主题、首页仪表板、时区等
 
-#### 3.1.6 API keys 
+#### API keys
 
 > 可提供给其他应用程序的仅查看API访问。
 
-### 3.2 Server Admin（服务管理）
+### Server Admin（服务管理）
 
-![server-admin](../image/server-admin.jpg)
+![server-admin](./images/server-admin.jpg)
 
-#### 3.2.1 Users（用户）
+#### Users（用户）
 
 > 是用于用户管理，支持新增用户，修改用户，删除用户；
 
-![edit-user](../image/edit-user.jpg)
+![edit-user](./images/edit-user.jpg)
 
 修改用户可以更改账户密码等等，最主要是修改用户角色权限，如：`Admin`、`Editor`、`Viewer`（参考2.1.2节）；同时所属组织，一个用户可以加入多个组织；
 
-#### 3.2.2 Orgs（组织）
+#### Orgs（组织）
 
 > 用于组织的管理，支持新增组织、修改组织、删除组织
 
-![orgs](../image/orgs.jpg)
+![orgs](./images/orgs.jpg)
 
-![edit-orgs](../image/edit-orgs.jpg)
+![edit-orgs](./images/edit-orgs.jpg)
 
 编辑组织可以修改组织名称、管理当前组织内用户角色权限等信息；
 
 **用户和组织是多对多的关系**
 
-#### 3.2.3 Settings（设置）
+#### Settings（设置）
 
 > 这里是一些系统设置，保存在grafana.ini或custom.ini中定义，或在环境变量中定义；
 
-![settings](../image/settings.jpg)
+![settings](./images/settings.jpg)
 
 维护人员需详细了解
 
 ~~暂无需求~~
 
-#### 3.2.4 Stats（状态）
+#### Stats（状态）
 
 >查看一些统计信息，例如总的用户数，活跃的用户数等
 
-![stats](../image/stats.jpg)
+![stats](./images/stats.jpg)
 
 维护人员需了解
-
