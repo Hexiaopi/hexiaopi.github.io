@@ -1,5 +1,5 @@
 ---
-title: 设计模式-享元
+title: 享元
 date: 2022-12-06
 tag:
  - Go

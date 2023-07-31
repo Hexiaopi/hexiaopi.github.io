@@ -1,5 +1,5 @@
 ---
-title: 设计模式-访问者
+title: 访问者
 date: 2023-05-05
 tag:
  - Go

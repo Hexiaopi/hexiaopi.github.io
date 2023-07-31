@@ -1,5 +1,5 @@
 ---
-title: 设计模式-责任链
+title: 责任链
 date: 2022-12-13
 tag:
  - Go

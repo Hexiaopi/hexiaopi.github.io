@@ -1,5 +1,5 @@
 ---
-title: 设计模式-组合
+title: 组合
 date: 2022-12-03
 tag:
  - Go

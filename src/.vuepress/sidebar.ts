@@ -19,6 +19,7 @@ export default sidebar({
             "simple-factory",
             "factory-method",
             "abstract-factory",
+            "factory-compare",
             "singleton",
             "builder",
             "prototype",

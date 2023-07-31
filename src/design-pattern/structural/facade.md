@@ -1,5 +1,5 @@
 ---
-title: 设计模式-外观
+title: 外观
 date: 2022-12-02
 tag:
  - Go

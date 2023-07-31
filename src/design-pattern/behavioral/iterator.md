@@ -1,5 +1,5 @@
 ---
-title: 设计模式-迭代器
+title: 迭代器
 date: 2022-12-12
 tag:
  - Go

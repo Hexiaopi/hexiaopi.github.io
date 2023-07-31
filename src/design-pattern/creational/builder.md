@@ -1,5 +1,5 @@
 ---
-title: 设计模式-建造者
+title: 建造者
 date: 2022-10-16
 tag:
  - Go

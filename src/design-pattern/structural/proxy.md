@@ -1,5 +1,5 @@
 ---
-title: 设计模式-代理
+title: 代理
 date: 2022-12-10
 tag:
  - Go

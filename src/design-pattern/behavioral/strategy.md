@@ -1,5 +1,5 @@
 ---
-title: 设计模式-策略
+title: 策略
 date: 2022-12-13
 tag:
  - Go

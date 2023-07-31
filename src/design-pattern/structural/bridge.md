@@ -1,5 +1,5 @@
 ---
-title: 设计模式-桥接
+title: 桥接
 date: 2022-12-10
 tag:
  - Go

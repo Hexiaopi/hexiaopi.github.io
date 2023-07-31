@@ -1,5 +1,5 @@
 ---
-title: 设计模式-观察者
+title: 观察者
 date: 2023-05-02
 tag:
  - Go

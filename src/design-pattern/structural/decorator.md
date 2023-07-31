@@ -1,5 +1,5 @@
 ---
-title: 设计模式-装饰器
+title: 装饰器
 date: 2022-12-04
 tag:
  - Go

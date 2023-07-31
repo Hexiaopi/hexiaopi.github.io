@@ -1,5 +1,5 @@
 ---
-title: 设计模式-备忘录
+title: 备忘录
 date: 2023-05-01
 tag:
  - Go

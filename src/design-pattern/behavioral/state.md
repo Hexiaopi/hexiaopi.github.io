@@ -1,5 +1,5 @@
 ---
-title: 设计模式-状态
+title: 状态
 date: 2023-05-04
 tag:
  - Go

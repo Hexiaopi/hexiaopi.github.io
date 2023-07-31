@@ -1,5 +1,5 @@
 ---
-title: 设计模式-中介者
+title: 中介者
 date: 2023-04-29
 tag:
  - Go

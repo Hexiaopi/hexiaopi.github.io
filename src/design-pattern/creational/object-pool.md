@@ -1,5 +1,5 @@
 ---
-title: 设计模式-对象池
+title: 对象池
 date: 2023-04-16
 tag:
  - Go

@@ -1,5 +1,5 @@
 ---
-title: 设计模式-命令
+title: 命令
 date: 2023-04-26
 tag:
  - Go
