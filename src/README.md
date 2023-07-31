@@ -24,5 +24,10 @@ projects:
     desc: 阮老师的博客网站，非常推荐
     link: https://www.ruanyifeng.com
 
+  - icon: friend
+    name: Go语言爱好者周刊
+    desc: Go语言中文网站长发起的周刊
+    link: https://studygolang.com/go/weekly
+
 footer: '<a href="http://beian.miit.gov.cn/" rel="noopener noreferrer" target="_blank">备案号: 皖ICP备2022000616号-1</a> | <a href="/about/site.html">关于网站</a>'
 ---
