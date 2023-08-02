@@ -7,6 +7,9 @@ export default navbar([
     icon: "template",
     prefix: "/design-pattern/",
     children: [
+      "",
+      "principle",
+      "quantity-code",
       {
         text: "创建型模式",
         icon: "class",

@@ -61,7 +61,7 @@ Go语言创建单例的办法
 
 - Sync.Mutex方式，在GetInstance方法中加锁（懒汉方式）
 - init()函数方式，引入singleton包时进行初始化（饿汉方式）
-- sync.Once方式，在GetInstance方法中调用once.Do
+- sync.Once方式，在GetInstance方法中调用once.Do方法
 
 ### Sync.Mutex 方式
 
