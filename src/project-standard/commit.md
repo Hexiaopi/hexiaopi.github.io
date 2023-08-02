@@ -4,7 +4,7 @@ date: 2020-02-02
 tag:
  - 规范
 category:
- -  项目规范
+ - 项目规范
 ---
 
 ## Commit Message

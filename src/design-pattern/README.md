@@ -1,5 +1,5 @@
 ---
-title: 简介
+title: 设计模式
 date: 2022-09-10
 tag:
  - Go

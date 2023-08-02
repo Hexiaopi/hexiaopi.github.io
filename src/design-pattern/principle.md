@@ -6,6 +6,7 @@ tag:
  - 设计原则
 category:
  - 设计模式
+sticky: true
 ---
 
 <!-- more -->

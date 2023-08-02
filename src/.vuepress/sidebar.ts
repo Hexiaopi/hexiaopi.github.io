@@ -86,9 +86,9 @@ export default sidebar({
           link: "directory",
         },
         {
-          text: "项目规范",
-          icon: "layout",
-          link: "project",
+          text: "文档规范",
+          icon: "article",
+          link: "doc",
         },
         {
           text: "版本规范",

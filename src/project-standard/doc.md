@@ -1,12 +1,12 @@
 ---
-title: 项目规范
+title: 文档规范
 date: 2020-01-24
 author: Hexiaopi
 tag:
  - 规范
- - 项目
+ - 文档
 category:
- -  项目规范
+ - 项目规范
 ---
 
 > README文档是项目的门面，通过README文档可以帮助用户快速了解项目。
