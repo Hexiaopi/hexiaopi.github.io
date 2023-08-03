@@ -54,7 +54,7 @@ export default navbar([
     prefix: "/project-standard/",
     children: [
       {
-        text: "API规范",
+        text: "接口规范",
         icon: "api",
         link: "api",
       },
