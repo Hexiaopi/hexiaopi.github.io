@@ -5,6 +5,8 @@ tag:
  - 规范
 category:
  - 项目规范
+sticky: true
+star: true
 ---
 
 ## Commit Message

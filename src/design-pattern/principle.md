@@ -7,6 +7,7 @@ tag:
 category:
  - 设计模式
 sticky: true
+star: true
 ---
 
 <!-- more -->

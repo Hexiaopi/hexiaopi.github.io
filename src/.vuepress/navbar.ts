@@ -85,4 +85,9 @@ export default navbar([
       },
     ]
   },
+  {
+    text: "变更日志",
+    icon: "time",
+    link: "CHANGELOG",
+  },
 ]);

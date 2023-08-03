@@ -6,6 +6,8 @@ tag:
  - 分支
 category:
  - 项目规范
+sticky: true
+star: true
 ---
 
 ![git-model](https://www.ruanyifeng.com/blogimg/asset/2015/bg2015122301.png)

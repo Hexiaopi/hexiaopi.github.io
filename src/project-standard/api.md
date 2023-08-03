@@ -62,7 +62,11 @@ PATCH：更新一个资源（部分更新，例如只更新用户的状态等）
 ```text
 PATCH /user/hexiaopi (更新用户信息)
 [
-  { "op":"replace", "path":"/name", "value":"hexiaojin" }
+    {
+        "op": "replace",
+        "key": "name",
+        "value": "hexiaojin"
+    }
 ]
 ```
 
