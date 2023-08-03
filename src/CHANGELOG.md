@@ -1,4 +1,29 @@
 
+<a name="v0.6.0"></a>
+## [v0.6.0](https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.5.0...v0.6.0) (2023-08-03)
+
+### Bug Fixes
+
+* 修改设计模式
+* 配置页面元数据
+* 自动化部署问题修复
+* 删除临时文件
+* **design-pattern:** 修改设计模式问题
+* **project-stanard:** 修改项目规范一些问题
+
+### Code Refactoring
+
+* 调整侧边栏和导航栏
+* 调整导航栏和侧边栏
+* **databae:** 优化数据库查询
+
+### Features
+
+* 增加变更日志
+* 增加Go语言爱好者周刊友情链接
+* 切换为vuepress-theme-hope
+
+
 <a name="v0.5.0"></a>
 ## [v0.5.0](https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.4.0...v0.5.0) (2022-05-24)
 
