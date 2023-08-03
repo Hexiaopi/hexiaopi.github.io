@@ -59,12 +59,12 @@ export default navbar([
         link: "api",
       },
       {
-        text: "Git分支规范",
+        text: "分支规范",
         icon: "branch",
         link: "branch",
       },
       {
-        text: "Git提交规范",
+        text: "提交规范",
         icon: "git",
         link: "commit",
       },
