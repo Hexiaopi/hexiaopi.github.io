@@ -3,7 +3,7 @@ title: interface底层原理
 date: 2023-02-12
 tag:
  - Go
- - 基础
+ - 进阶
 category:
  - Go语言
 ---
@@ -11,8 +11,6 @@ category:
 ![interface](http://cdn.cjhe.top/blog/interface.png)
 
 <!-- more -->
-
-[[toc]]
 
 ## 接口不为nil的误区
 

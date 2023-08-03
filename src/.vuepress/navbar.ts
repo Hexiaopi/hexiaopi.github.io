@@ -24,9 +24,21 @@ export default navbar([
       },
       {
         text: "行为型模式",
-        icon: "launch",
+        icon: "relation",
         prefix: "behavioral/",
         link: "behavioral/README.md"
+      },
+      {
+        text: "函数模式",
+        icon: "function",
+        prefix: "function/",
+        link: "function/README.md"
+      },
+      {
+        text: "并发模式",
+        icon: "context",
+        prefix: "concurrency/",
+        link: "concurrency/README.md"
       },
     ],
   },

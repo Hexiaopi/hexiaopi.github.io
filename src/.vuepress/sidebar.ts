@@ -101,13 +101,41 @@ export default sidebar({
       text: "Go语言",
       icon: "book",
       prefix: "go-language/",
-      children: "structure",
+      children: [
+        {
+          text: "基础",
+          prefix: "base/",
+          children: "structure",
+        },
+        {
+          text: "进阶",
+          prefix: "advance/",
+          children: "structure",
+        },
+        {
+          text: "推荐",
+          prefix: "recommend/",
+          children: "structure",
+        },
+        {
+          text: "转载",
+          prefix: "reprint/",
+          children: "structure",
+        },
+      ],
     },
     {
       text: "数据库",
       icon: "storage",
       prefix: "database/",
-      children: "structure",
+      children: [
+        {
+          text: "MySQL",
+          icon: "mysql",
+          prefix: "mysql/",
+          children: "structure",
+        },
+      ],
     },
   ],
 });
