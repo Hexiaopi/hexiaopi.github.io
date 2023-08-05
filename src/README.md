@@ -29,5 +29,10 @@ projects:
     desc: Go语言中文网站长发起的周刊
     link: https://studygolang.com/go/weekly
 
+  - icon: friend
+    name: 陈皓的博客网站
+    desc: 永远纪念左耳朵耗子
+    link: https://coolshell.cn
+
 footer: '<a href="http://beian.miit.gov.cn/" rel="noopener noreferrer" target="_blank">备案号: 皖ICP备2022000616号-1</a> | <a href="/about/site.html">关于网站</a>'
 ---
