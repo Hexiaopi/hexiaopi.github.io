@@ -78,7 +78,6 @@ export default hopeTheme({
 
   // page meta
   metaLocales: {
-    docsBranch: "master",
     editLink: "在 GitHub 上编辑此页",
   },
 

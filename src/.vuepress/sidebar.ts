@@ -7,7 +7,8 @@ export default sidebar({
     "slides",
     {
       text: "设计模式",
-      icon: "book",
+      icon: "template",
+      collapsible: true,
       prefix: "design-pattern/",
       children: [
         "",
@@ -16,6 +17,7 @@ export default sidebar({
         {
           text: "创建型模式",
           icon: "class",
+          collapsible: true,
           prefix: "creational/",
           link: "creational/README.md",
           children: [
@@ -32,6 +34,7 @@ export default sidebar({
         {
           text: "结构型模式",
           icon: "structure",
+          collapsible: true,
           prefix: "structural/",
           link: "structural/README.md",
           children: [
@@ -46,6 +49,7 @@ export default sidebar({
         {
           text: "行为型模式",
           icon: "launch",
+          collapsible: true,
           prefix: "behavioral/",
           link: "behavioral/README.md",
           children: [
@@ -63,6 +67,7 @@ export default sidebar({
     {
       text: "项目规范",
       icon: "guide",
+      collapsible: true,
       prefix: "/project-standard/",
       children: [
         {
@@ -99,26 +104,31 @@ export default sidebar({
     },
     {
       text: "Go语言",
-      icon: "book",
+      icon: "language",
+      collapsible: true,
       prefix: "go-language/",
       children: [
         {
           text: "基础",
+          collapsible: true,
           prefix: "base/",
           children: "structure",
         },
         {
           text: "进阶",
+          collapsible: true,
           prefix: "advance/",
           children: "structure",
         },
         {
           text: "推荐",
+          collapsible: true,
           prefix: "recommend/",
           children: "structure",
         },
         {
           text: "转载",
+          collapsible: true,
           prefix: "reprint/",
           children: "structure",
         },
@@ -127,10 +137,12 @@ export default sidebar({
     {
       text: "数据库",
       icon: "storage",
+      collapsible: true,
       prefix: "database/",
       children: [
         {
           text: "MySQL",
+          collapsible: true,
           icon: "mysql",
           prefix: "mysql/",
           children: "structure",
