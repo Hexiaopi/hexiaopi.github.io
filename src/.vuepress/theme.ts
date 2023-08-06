@@ -92,6 +92,12 @@ export default hopeTheme({
       categoryId: "DIC_kwDOEGbkx84CYNSL",
     },
 
+    feed: {
+      atom: true,
+      json: true,
+      rss: true,
+    },
+
     // all features are enabled for demo, only preserve features you need here
     mdEnhance: {
       align: true,
