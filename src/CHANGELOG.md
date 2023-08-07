@@ -1,4 +1,17 @@
 
+<a name="v0.7.0"></a>
+## [v0.7.0](https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.6.0...v0.7.0) (2023-08-07)
+
+### Code Refactoring
+
+* 侧边栏可折叠
+* 调整目录结构
+
+### Features
+
+* **design-pattern:** 增加选项模式
+
+
 <a name="v0.6.0"></a>
 ## [v0.6.0](https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.5.0...v0.6.0) (2023-08-03)
 
