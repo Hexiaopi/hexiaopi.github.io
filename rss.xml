@@ -6,8 +6,8 @@
     <link>https://Hexiaopi.github.io/</link>
     <description>一枚后端攻城狮的个人博客</description>
     <language>zh-CN</language>
-    <pubDate>Sun, 06 Aug 2023 10:19:06 GMT</pubDate>
-    <lastBuildDate>Sun, 06 Aug 2023 10:19:06 GMT</lastBuildDate>
+    <pubDate>Mon, 07 Aug 2023 13:03:35 GMT</pubDate>
+    <lastBuildDate>Mon, 07 Aug 2023 13:03:35 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>设计模式</category>
@@ -432,9 +432,20 @@
       <link>https://Hexiaopi.github.io/CHANGELOG.html</link>
       <guid>https://Hexiaopi.github.io/CHANGELOG.html</guid>
       <source url="https://Hexiaopi.github.io/rss.xml"></source>
-      <description>v0.6.0 (2023-08-03) Bug Fixes 修改设计模式 配置页面元数据 自动化部署问题修复 删除临时文件 design-pattern: 修改设计模式问题 project-stanard: 修改项目规范一些问题</description>
+      <description>v0.7.0 (2023-08-07) Code Refactoring 侧边栏可折叠 调整目录结构 Features design-pattern: 增加选项模式</description>
       <pubDate>Thu, 03 Aug 2023 13:57:06 GMT</pubDate>
-      <content:encoded><![CDATA[<p><a name="v0.6.0"></a></p>
+      <content:encoded><![CDATA[<p><a name="v0.7.0"></a></p>
+<h2> <a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.6.0...v0.7.0" target="_blank" rel="noopener noreferrer">v0.7.0</a> (2023-08-07)</h2>
+<h3> Code Refactoring</h3>
+<ul>
+<li>侧边栏可折叠</li>
+<li>调整目录结构</li>
+</ul>
+<h3> Features</h3>
+<ul>
+<li><strong>design-pattern:</strong> 增加选项模式</li>
+</ul>
+<p><a name="v0.6.0"></a></p>
 <h2> <a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.5.0...v0.6.0" target="_blank" rel="noopener noreferrer">v0.6.0</a> (2023-08-03)</h2>
 <h3> Bug Fixes</h3>
 <ul>

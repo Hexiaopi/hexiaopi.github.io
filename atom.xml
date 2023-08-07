@@ -3,7 +3,7 @@
   <id>https://Hexiaopi.github.io/</id>
   <title>Hexiaopi</title>
   <subtitle>一枚后端攻城狮的个人博客</subtitle>
-  <updated>2023-08-06T10:19:06.571Z</updated>
+  <updated>2023-08-07T13:03:35.024Z</updated>
   <generator>vuepress-plugin-feed2</generator>
   <link rel="self" href="https://Hexiaopi.github.io/atom.xml"/>
   <link rel="alternate" href="https://Hexiaopi.github.io/"/>
@@ -482,19 +482,30 @@
     <title type="text"></title>
     <id>https://Hexiaopi.github.io/CHANGELOG.html</id>
     <link href="https://Hexiaopi.github.io/CHANGELOG.html"/>
-    <updated>2023-08-03T14:06:00.000Z</updated>
-    <summary type="html"><![CDATA[<p><a name="v0.6.0"></a></p>
-<h2> <a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.5.0...v0.6.0" target="_blank" rel="noopener noreferrer">v0.6.0</a> (2023-08-03)</h2>
-<h3> Bug Fixes</h3>
+    <updated>2023-08-07T13:01:26.000Z</updated>
+    <summary type="html"><![CDATA[<p><a name="v0.7.0"></a></p>
+<h2> <a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.6.0...v0.7.0" target="_blank" rel="noopener noreferrer">v0.7.0</a> (2023-08-07)</h2>
+<h3> Code Refactoring</h3>
 <ul>
-<li>修改设计模式</li>
-<li>配置页面元数据</li>
-<li>自动化部署问题修复</li>
-<li>删除临时文件</li>
-<li><strong>design-pattern:</strong> 修改设计模式问题</li>
-<li><strong>project-stanard:</strong> 修改项目规范一些问题</li>
+<li>侧边栏可折叠</li>
+<li>调整目录结构</li>
+</ul>
+<h3> Features</h3>
+<ul>
+<li><strong>design-pattern:</strong> 增加选项模式</li>
 </ul>]]></summary>
-    <content type="html"><![CDATA[<p><a name="v0.6.0"></a></p>
+    <content type="html"><![CDATA[<p><a name="v0.7.0"></a></p>
+<h2> <a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.6.0...v0.7.0" target="_blank" rel="noopener noreferrer">v0.7.0</a> (2023-08-07)</h2>
+<h3> Code Refactoring</h3>
+<ul>
+<li>侧边栏可折叠</li>
+<li>调整目录结构</li>
+</ul>
+<h3> Features</h3>
+<ul>
+<li><strong>design-pattern:</strong> 增加选项模式</li>
+</ul>
+<p><a name="v0.6.0"></a></p>
 <h2> <a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.5.0...v0.6.0" target="_blank" rel="noopener noreferrer">v0.6.0</a> (2023-08-03)</h2>
 <h3> Bug Fixes</h3>
 <ul>
