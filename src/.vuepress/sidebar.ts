@@ -62,6 +62,25 @@ export default sidebar({
             "state",
           ],
         },
+        {
+          text: "函数模式",
+          icon: "function",
+          collapsible: true,
+          prefix: "function/",
+          link: "function/README.md",
+          children: [
+            "option",
+          ],
+        },
+        {
+          text: "并发模式",
+          icon: "context",
+          collapsible: true,
+          prefix: "concurrency/",
+          link: "concurrency/README.md",
+          children: [
+          ],
+        },
       ],
     },
     {
