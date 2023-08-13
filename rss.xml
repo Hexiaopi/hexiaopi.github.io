@@ -6,8 +6,8 @@
     <link>https://Hexiaopi.github.io/</link>
     <description>一枚后端攻城狮的个人博客</description>
     <language>zh-CN</language>
-    <pubDate>Fri, 11 Aug 2023 06:46:05 GMT</pubDate>
-    <lastBuildDate>Fri, 11 Aug 2023 06:46:05 GMT</lastBuildDate>
+    <pubDate>Sun, 13 Aug 2023 15:46:45 GMT</pubDate>
+    <lastBuildDate>Sun, 13 Aug 2023 15:46:45 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>设计模式</category>
@@ -432,9 +432,20 @@
       <link>https://Hexiaopi.github.io/CHANGELOG.html</link>
       <guid>https://Hexiaopi.github.io/CHANGELOG.html</guid>
       <source url="https://Hexiaopi.github.io/rss.xml"></source>
-      <description>v0.7.0 (2023-08-07) Code Refactoring 侧边栏可折叠 调整目录结构 Features design-pattern: 增加选项模式</description>
+      <description>v0.7.1 (2023-08-13) Bug Fixes design-pattern: 修改设计原则 go-language: 修改Go语言基础</description>
       <pubDate>Thu, 03 Aug 2023 13:57:06 GMT</pubDate>
-      <content:encoded><![CDATA[<p><a name="v0.7.0"></a></p>
+      <content:encoded><![CDATA[<p><a name="v0.7.1"></a></p>
+<h2> <a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.7.0...v0.7.1" target="_blank" rel="noopener noreferrer">v0.7.1</a> (2023-08-13)</h2>
+<h3> Bug Fixes</h3>
+<ul>
+<li><strong>design-pattern:</strong> 修改设计原则</li>
+<li><strong>go-language:</strong> 修改Go语言基础</li>
+</ul>
+<h3> Code Refactoring</h3>
+<ul>
+<li>调整函数模式和并发模式</li>
+</ul>
+<p><a name="v0.7.0"></a></p>
 <h2> <a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.6.0...v0.7.0" target="_blank" rel="noopener noreferrer">v0.7.0</a> (2023-08-07)</h2>
 <h3> Code Refactoring</h3>
 <ul>
@@ -1016,27 +1027,34 @@
       <link>https://Hexiaopi.github.io/go-language/</link>
       <guid>https://Hexiaopi.github.io/go-language/</guid>
       <source url="https://Hexiaopi.github.io/rss.xml">简介</source>
-      <description>Go语言是一种开源的静态型、编译型并自带垃圾回收和并发的程序设计语言。 具有以下特点： 1、快速编译 开发人员经常导入一些头文件（include），但是有些内容并未使用，导致编译了不必要的内容，Go语言会在编译时检查判断程序和包之间的联系，如果没有联系则报告异常，从而减少编译内容，加快编译速度。 2、并发设计简单 Go语言原生支持并发、无须使用第三方库。Go语言的并发模型基于CSP模型，使用goroutine轻量级线程实现并发，使用channel实现各个goroutine之间的通信。</description>
+      <description>Go语言最初是由谷歌公司的Robert Griesemer、Ken Thompson、Rob Pike三位大咖于2007年开始设计发明。由于Go语言继承和发扬了C语言的简单哲学，并充分发挥当前时代多核架构的能力，因此，Go语言更多的是被描述为21世纪的C语言。诞生至今，在多个领域尤其是云计算领域有着广泛的应用。 对我的吸引 简单 Go语言的语法非常简答，仅仅20几个关键字即可。相比较学习其他语言时，我觉得更加减轻心智的负担，而不用纠结一些看似高大上的语法糖。Go语言的简单贯彻到整个开发周期中，例如：</description>
       <category>Go语言</category>
       <pubDate>Sat, 22 Jan 2022 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
-<p>Go语言是一种开源的静态型、编译型并自带垃圾回收和并发的程序设计语言。</p>
+<p>Go语言最初是由谷歌公司的Robert Griesemer、Ken Thompson、Rob Pike三位大咖于2007年开始设计发明。由于Go语言继承和发扬了C语言的简单哲学，并充分发挥当前时代多核架构的能力，因此，Go语言更多的是被描述为<strong>21世纪的C语言</strong>。诞生至今，在多个领域尤其是云计算领域有着广泛的应用。</p>
 </blockquote>
-<p>具有以下特点：</p>
-<p>1、快速编译</p>
-<p>开发人员经常导入一些头文件（include），但是有些内容并未使用，导致编译了不必要的内容，Go语言会在编译时检查判断程序和包之间的联系，如果没有联系则报告异常，从而减少编译内容，加快编译速度。</p>
-<p>2、并发设计简单</p>
-<p>Go语言原生支持并发、无须使用第三方库。Go语言的并发模型基于CSP模型，使用goroutine轻量级线程实现并发，使用channel实现各个goroutine之间的通信。</p>
-<p>3、垃圾回收</p>
-<p>Go语言使用了一个简单的标记-清除算法实现了高效快速垃圾回收，帮组开发者无须关心内存问题。</p>
-<p>4、工程规范</p>
-<p>Go语言使用统一的UTF-8编码进行开发，减少因为编码问题导致的一些问题。</p>
-<p>Go语言的项目工程简单，无须解决方案、工程文件和Make File。</p>
-<p>Golang学习帮助</p>
+<h2> 对我的吸引</h2>
+<h3> 简单</h3>
+<p>Go语言的语法非常简答，仅仅20几个关键字即可。相比较学习其他语言时，我觉得更加减轻心智的负担，而不用纠结一些看似高大上的语法糖。Go语言的简单贯彻到整个开发周期中，例如：</p>
 <ul>
-<li><code>https://golang.org</code>Go语言官方网站，提供完善的参考文档；国内访问<code>https://golang.google.cn/</code></li>
-<li><code>https://blog.golang.org</code>Go语言官方博客，不定期发布一些Go 语言实践文章；</li>
-<li><code>http://talks.golang.org</code>收录了各种报告的讲稿；</li>
+<li>类型转换，在Go语言中必须显示的进行转换，不必纠结</li>
+<li>包依赖，Go语言编译时如果书写了未引入的包会报错，这也大大提高项目的构建速度</li>
+<li>函数支持多返回值，就不用写多个函数</li>
+<li>函数作为一等公民，可以传参、赋值、返回。遇到一些多场景问题，直接把函数作为参数进行处理即可</li>
+</ul>
+<h3> 支持并发</h3>
+<p>Go语言天生支持高并发，在多核时代下，能够充分利用多核的能力。而且语法也简单，仅仅使用<code>go xxx()</code>即可启动一个协程异步处理函数。</p>
+<h3> 工具链丰富</h3>
+<p>Go语言有成熟的工具链帮助我们构建、测试、代码检测、下载依赖包等。</p>
+<h3> 支持垃圾回收</h3>
+<p>Go语言在运行态帮助开发者进行垃圾回收，大大降低开发者的心智负担。</p>
+<h2> 后期计划</h2>
+<ul class="task-list-container">
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" id="task-item-0" checked="checked" disabled="disabled"><label class="task-list-item-label" for="task-item-0"> 基础，介绍基础的Go语言知识</label></li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" id="task-item-1" checked="checked" disabled="disabled"><label class="task-list-item-label" for="task-item-1"> 进阶，这里关注一些底层原型</label></li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" id="task-item-2" disabled="disabled"><label class="task-list-item-label" for="task-item-2"> 工具，介绍一些Go语言相关的工具</label></li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" id="task-item-3" checked="checked" disabled="disabled"><label class="task-list-item-label" for="task-item-3"> 推荐，推荐一些Go语言相关的博客、工具、项目等</label></li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" id="task-item-4" checked="checked" disabled="disabled"><label class="task-list-item-label" for="task-item-4"> 转载，转载一些高质量的博文</label></li>
 </ul>
 ]]></content:encoded>
     </item>
@@ -6067,33 +6085,33 @@ LIMIT关键字用于限制查询结果的数量。MySQL只返回前N条符合条
       <description>数组 一个由固定长度的特定类型组成的序列。特定类型可以是：字符串、结构体、函数、接口、通道等。 声明 var a [3]int								//长度为3的int类型数组，元素为[0,0,0] var b = [...]int{1,2,3}			//长度为3的int类型数组，元素为[1,2,3] var c = [...]int{1:2,2:3}		//长度为3的int类型数组，元素为[0,2,3] var d = [...]int{0,2,2:3,4}	//长度为4的int类型数组，元素为[0,2,3,4]</description>
       <category>Go语言</category>
       <pubDate>Thu, 05 May 2022 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[
-<h2> 数组</h2>
+      <content:encoded><![CDATA[<h2> 数组</h2>
 <blockquote>
 <p>一个由固定长度的特定类型组成的序列。特定类型可以是：字符串、结构体、函数、接口、通道等。</p>
 </blockquote>
 <h3> 声明</h3>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>👣</p>
-<p>​	定义数组可以指定长度，例如第1种定义；也可以根据初始化元素的数目自动计算，例如第2、3、4种定义。</p>
-<p>​	初始化数组元素可以按顺序指定，例如第2种定义；也可以根据索引指定元素，例如第3、4种定义。</p>
-<p>​	<code>...</code>可以根据初始化自动推算长度</p>
-<h3> 操作</h3>
-<h4> len()</h4>
-<blockquote>
-<p>len()函数可以用于计算数组的长度。</p>
-</blockquote>
-<h4> cap()</h4>
-<blockquote>
-<p>cap()函数可以用于计算数组的容量。</p>
-</blockquote>
-<p>👣</p>
-<p>​	len()和cap()对于数组来说，结果始终一致。</p>
-<h4> 遍历</h4>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>👣</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="hint-container tip">
+<p class="hint-container-title">提示</p>
+<ul>
+<li>第一种定义：直接初始化长度</li>
+<li>第二种定义：直接初始化数组元素，其中<code>...</code>Go语言编译器根据初始化自动推算长度，例如数组b的长度是3</li>
+<li>第三种定义：根据索引初始化数组元素，其中未使用索引直接初始化的元素的值对应的是<strong>零值</strong>，例如c[0]</li>
+<li>第四种定义：混合使用第二种定义和第三种定义。</li>
+</ul>
+</div>
+<h3> 遍历</h3>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="hint-container tip">
+<p class="hint-container-title">提示</p>
 <ul>
 <li><code>for range</code>方式迭代可以保证不会出现数组越界的情况。</li>
 <li>数组的定义包含长度，因此长度不同的数组，即便类型一致，整个数组仍不是同一类型。</li>
+<li>长度为0的数组并不占用内存</li>
 </ul>
+</div>
+<div class="hint-container warning">
+<p class="hint-container-title">注意</p>
+<p>Go语言中数组是值类型，因此在函数传参中，如果数组比较大，建议传递指针数组，避免数据拷贝开销</p>
+</div>
 ]]></content:encoded>
     </item>
     <item>
@@ -6138,8 +6156,7 @@ LIMIT关键字用于限制查询结果的数量。MySQL只返回前N条符合条
       <description>数据类型 Go语言基本数据类型（Data-types）划分方式有很多，这里按照数据类型进行划分：值类型、复合类型、引用类型 值类型 值类型即基本的数据类型，包括布尔类型（bool）、整型（int）、浮点型（float）、字节型（byte）、复数型（complex）、字符串型（string）和错误类型（error）。 值类型的变量在传递过程中，编译器对该变量的值进行一次拷贝。</description>
       <category>Go语言</category>
       <pubDate>Tue, 03 May 2022 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[
-<h2> 数据类型</h2>
+      <content:encoded><![CDATA[<h2> 数据类型</h2>
 <blockquote>
 <p>Go语言基本数据类型（Data-types）划分方式有很多，这里按照<strong>数据类型</strong>进行划分：值类型、复合类型、引用类型</p>
 </blockquote>
@@ -6430,10 +6447,10 @@ LIMIT关键字用于限制查询结果的数量。MySQL只返回前N条符合条
 <div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
     </item>
     <item>
-      <title>map底层原理和注意事项</title>
+      <title>散列map</title>
       <link>https://Hexiaopi.github.io/go-language/base/map.html</link>
       <guid>https://Hexiaopi.github.io/go-language/base/map.html</guid>
-      <source url="https://Hexiaopi.github.io/rss.xml">map底层原理和注意事项</source>
+      <source url="https://Hexiaopi.github.io/rss.xml">散列map</source>
       <description>map</description>
       <category>Go语言</category>
       <pubDate>Mon, 06 Feb 2023 00:00:00 GMT</pubDate>
@@ -6447,27 +6464,25 @@ LIMIT关键字用于限制查询结果的数量。MySQL只返回前N条符合条
 <p><strong>零值</strong>：<code>nil</code></p>
 <div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><div class="hint-container warning">
 <p class="hint-container-title">注意</p>
-<p>map对于<code>value</code>的类型没有限制，但是对<code>key</code>的类型有严格的要求：<strong>key的类型必须支持"=="和"!="两个操作符的数据类型</strong>，因此：函数、map、切片不能作为key类型。</p>
+<p>map对于<code>value</code>的类型没有限制，但是对<code>key</code>的类型有严格的要求：<br>
+<code>key</code>的类型必须支持<code>==</code>和<code>!=</code>两个操作符的数据类型<br>
+因此，函数、map、切片等不能作为<code>key</code>类型。</p>
 </div>
-<div class="hint-container warning">
+<h2> 初始化</h2>
+<p>字面量初始化</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>内置函数make()初始化</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h2> 操作</h2>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="hint-container warning">
 <p class="hint-container-title">注意</p>
 <p>向<code>nil</code>（未初始化）的map类型里添加数据会导致<code>panic</code></p>
 </div>
-<h2> 初始化</h2>
-<ul>
-<li>
-<p>字面量初始化</p>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div></li>
-<li>
-<p>内置函数make()初始化</p>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div></li>
-</ul>
-<h2> 操作</h2>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>👀</p>
+<div class="hint-container tip">
+<p class="hint-container-title">提示</p>
 <ul>
 <li>删除不存在的key不会导致panic；</li>
-<li>查询不存在的key，如果未使用<strong>comma ok</strong>语法，则会返回value类型对应的零值</li>
+<li>查询不存在的key，如果未使用<strong>comma ok</strong>语法，则会返回value类型对应的<strong>零值</strong></li>
 </ul>
+</div>
 <h2> 底层原理</h2>
 <p>参见<code>$GOROOT/src/runtime/map.go</code></p>
 <h3> map的数据结构</h3>
@@ -6825,28 +6840,28 @@ LIMIT关键字用于限制查询结果的数量。MySQL只返回前N条符合条
 ]]></content:encoded>
     </item>
     <item>
-      <title>切片slice底层原理和操作</title>
+      <title>切片slice</title>
       <link>https://Hexiaopi.github.io/go-language/base/slice.html</link>
       <guid>https://Hexiaopi.github.io/go-language/base/slice.html</guid>
-      <source url="https://Hexiaopi.github.io/rss.xml">切片slice底层原理和操作</source>
+      <source url="https://Hexiaopi.github.io/rss.xml">切片slice</source>
       <description>slice</description>
       <category>Go语言</category>
       <pubDate>Fri, 03 Feb 2023 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[<figure><img src="http://cdn.cjhe.top/blog/slice-1.png" alt="slice" tabindex="0" loading="lazy"><figcaption>slice</figcaption></figure>
 <!-- more -->
-
 <blockquote>
 <p>切片（slice）简称动态数组，既然是动态，切片的长度可以动态伸缩。</p>
 </blockquote>
 <p>在Go语言编程过程中，我经常使用切片而非数组，因为切片相比较数组更加<strong>灵活</strong>和<strong>高效</strong>。</p>
 <h2> 声明</h2>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>👀</p>
-<div class="hint-container danger">
-<p class="hint-container-title">切片声明时未初始化，此时不能对切片进行索引操作!</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="hint-container danger">
+<p class="hint-container-title">警告</p>
+<p>切片声明时未初始化，此时不能对切片进行索引操作!</p>
 <div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div></div>
 <p>但是</p>
 <div class="hint-container tip">
-<p class="hint-container-title">append可以对未初始化的切片进行操作，因为append操作会对底层数据进行扩容。</p>
+<p class="hint-container-title">提示</p>
+<p>append可以对未初始化的切片进行操作，因为append操作会对底层数据进行扩容。</p>
 <div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div></div>
 <h2> 底层结构</h2>
 <p>切片的结构定义：<code>$GOROOT/src/runtime/slice.go</code></p>
@@ -6865,39 +6880,51 @@ LIMIT关键字用于限制查询结果的数量。MySQL只返回前N条符合条
 </div>
 <p>既然我们已经知道切片的底层结构是数组，那么我们就可以基于数组创建切片</p>
 <div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><figure><figcaption>slice底层结构</figcaption></figure>
-<div class="hint-container warning">
-<p class="hint-container-title">注意</p>
-<p>如果多个切片共用同一个底层数组,某个切片的操作对其他切片都是<strong>可见的</strong></p>
-</div>
-<h2> Append扩容原理</h2>
+<h2> append扩容原理</h2>
 <div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>其执行逻辑如下图所示：</p>
 <figure><figcaption>slice扩容</figcaption></figure>
 <div class="hint-container warning">
 <p class="hint-container-title">注意</p>
-<p>Append在当前数组容量无法满足时，会分配新的数组，新的数组容量会按一定的算法扩展（参见<code>$GOROOT/src/runtime/slice.go</code>的<code>growslice</code>函数），将旧数组中的数据复制到新数组之后，切片array指针指向新的数组，之后旧的数组就如果未被使用或其他切片引用会被垃圾回收掉。</p>
+<p><code>append</code>函数在当前数组容量无法满足时，会分配新的数组，新的数组容量会按一定的算法扩展（参见<code>$GOROOT/src/runtime/slice.go</code>的<code>growslice</code>函数），将旧数组中的数据复制到新数组之后，切片array指针指向新的数组，之后旧的数组就如果未被使用或其他切片引用会被垃圾回收掉。</p>
 </div>
-<div class="hint-container danger">
-<p class="hint-container-title">警告</p>
-<p>一旦底层数组容量无法满足某个切片的容量需求，该切片与底层数组关系就会<strong>解除绑定</strong></p>
-</div>
+<h2> append的注意事项</h2>
 <div class="language-go line-numbers-mode" data-ext="go"><div class="highlight-lines"><br><br><br><br><br><div class="highlight-line">&nbsp;</div><br><br><br><br><br><br><br><br><div class="highlight-line">&nbsp;</div><br><br><br><br><br></div><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
 <li>第15行，由于s2需要的存储空间超过s1的存储空间，因此重新申请了一块空间，至此s1和s2不再共享同一底层数组；</li>
 <li><code>SliceRise</code>函数第一步，进行扩容，由于s1传参的底层数组不满足存储空间，因此s切片和s1将不再共享同一空间，然而s2传参的底层数组满足存储空间，因此s切片和s2共享底层数据，因此对s切片的操作会影响到底层数据，进行影响s2；</li>
 </ul>
-<p>append扩容会重新分配底层数组并复制元素，当元素较多时，操作代价还是很大的。避免这种场景的方法是对切片的容量规模进行预估，并以cap参数的形式进行创建：<code>s:=make([]T, len, cap)</code></p>
-<p>我们将未预估容量的append操作与预估容量的append操作进行压测如下：</p>
+<div class="hint-container danger">
+<p class="hint-container-title">警告</p>
+<p>一旦底层数组容量无法满足某个切片的容量需求，该切片与底层数组关系就会<strong>解除绑定</strong>，例如：</p>
+<ul>
+<li>15行的s2和s1的底层数组解除绑定</li>
+<li>16行调用SliceRise(s1)，其中s和s1的底层数组解除绑定</li>
+</ul>
+</div>
+<div class="hint-container warning">
+<p class="hint-container-title">注意</p>
+<p>如果多个切片共用同一个底层数组,某个切片的操作对其他切片都是<strong>可见的</strong>，例如：</p>
+<ul>
+<li>17行调用SliceRise(s2)，s2和s共用底层数组，因此s的修改，s2是可见的。</li>
+</ul>
+</div>
+<h2> append的性能</h2>
+<p>append扩容会重新分配底层数组并复制元素，当元素较多时，操作代价还是很大的。避免这种场景的方法是对切片的容量规模进行预估，并以cap参数的形式进行创建：</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>我们将未预估容量的append操作与预估容量的append操作进行压测如下：</p>
 <div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>其结果如下：</p>
 <div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
 <li>不带cap的append操作的平均性能是62965 ns/op，是带cap的append操作的<code>4</code>倍左右；</li>
 <li>不带cap的append操作每次操作分配357625B内存，而带cap的append操作仅分配81920B；</li>
 <li>不带cap的append操作平均每次分配19次内存，而带cap的append操作仅需一次内存分配；</li>
 </ul>
-<h2> Append操作</h2>
+<h2> append的非常规操作</h2>
 <p>和数组类似，可以使用<code>len()</code>和<code>cap()</code>函数获取切片的长度和容量。此外可以使用<code>append()</code>对切片追加元素，但<code>append()</code>远不止这个功能。</p>
 <h3> 添加切片元素</h3>
 <h4> 在切片尾部追加元素</h4>
 <div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4> 在切片头部追加元素</h4>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>在切片开头追加元素会导致内存的重新分配，已有的元素会复制一份。因此从切片的头部追加元素的性能很差，也很少使用到。</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="hint-container tip">
+<p class="hint-container-title">提示</p>
+<p>在切片开头追加元素会导致内存的重新分配，已有的元素会复制一份。因此从切片的头部追加元素的性能很差，也很少使用到。</p>
+</div>
 <h4> 在切片中间追加元素</h4>
 <div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>同样，在切片中间追加元素，会创建许多临时切片，性能比较差。可以使用<code>copy()</code>函数完成类似的功能：</p>
 <div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><code>copy(target,source)</code>函数，将source的内容复制到target，相比较append，节省了临时切片的创建。</p>
@@ -6912,10 +6939,10 @@ LIMIT关键字用于限制查询结果的数量。MySQL只返回前N条符合条
       <enclosure url="http://cdn.cjhe.top/blog/slice-1.png" type="image/png"/>
     </item>
     <item>
-      <title>string字符串</title>
+      <title>字符串</title>
       <link>https://Hexiaopi.github.io/go-language/base/string.html</link>
       <guid>https://Hexiaopi.github.io/go-language/base/string.html</guid>
-      <source url="https://Hexiaopi.github.io/rss.xml">string字符串</source>
+      <source url="https://Hexiaopi.github.io/rss.xml">字符串</source>
       <description>声明 关键字定义： string 零值： &amp;quot;&amp;quot; var str string</description>
       <category>Go语言</category>
       <pubDate>Sun, 23 Jan 2022 00:00:00 GMT</pubDate>
@@ -6956,31 +6983,38 @@ LIMIT关键字用于限制查询结果的数量。MySQL只返回前N条符合条
 </table>
 <h3> 比较</h3>
 <p>支持各种比较关系运算符: <code>==</code>、<code>!=</code>、<code>&gt;=</code>、<code>&lt;=</code>、<code>&gt;</code>、<code>&lt;</code></p>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 遍历</h3>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 遍历</h3>
 <div class="hint-container tip">
 <p class="hint-container-title">提示</p>
-<p>Go语言支持UTF-8格式编码，因此字符串中字符可以是ASCII字符，也可以是Unicode字符</p>
+<p>Go语言支持UTF-8格式编码，因此字符串中字符可以是<code>ASCII</code>字符，也可以是<code>Unicode</code>字符，其中：</p>
 <ul>
-<li><code>byte</code>类型来表示ASCII字符</li>
-<li><code>rune</code>类型来表示Unicode字符</li>
+<li><code>byte</code>类型来表示<code>ASCII</code>字符</li>
+<li><code>rune</code>类型来表示<code>Unicode</code>字符</li>
 </ul>
 </div>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>因此Go字符串遍历也支持两种方式：<code>byte</code>和<code>rune</code></p>
 <h4> byte遍历</h4>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="hint-container warning">
+<p>英文字符串遍历</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>中文字符串遍历</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="hint-container warning">
 <p class="hint-container-title">注意</p>
 <p>由于UTF-8中，大多数中文字符都使用三字节表示，因此通过rune方式遍历中文字符串是不可取的</p>
 </div>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4> rune遍历</h4>
-<div class="hint-container tip">
+<h4> rune遍历</h4>
+<p>英文字符串遍历</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="hint-container tip">
 <p class="hint-container-title">提示</p>
-<p>rune实际上类型是int32，因此打印时展示的是数字类型</p>
+<p>rune实际上类型是int32，因此打印时展示的是数字类型，因此需要显示转换成string类型</p>
 </div>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="hint-container warning">
+<p>中文字符串遍历</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="hint-container warning">
 <p class="hint-container-title">注意</p>
-<p>遍历中文字符索引的变化</p>
+<p>遍历中文字符索引的变化：</p>
+<ul>
+<li><code>你</code>的索引在0</li>
+<li><code>好</code>的索引在3</li>
+</ul>
 </div>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 底层结构</h2>
+<h2> 底层结构</h2>
 <p>参见<code>$GOROOT/src/runtime/string.go</code></p>
 <div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
 <li>str是指针，指向底层数据结构，其实是<code>[]byte</code></li>
@@ -6991,7 +7025,7 @@ LIMIT关键字用于限制查询结果的数量。MySQL只返回前N条符合条
 <p class="hint-container-title">注意</p>
 <p>字符串的内容可以用类似数组下标的方式获取，例如str[0]，但与数组不同，字符串的内容初始化后不可修改</p>
 </div>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 字符串高效构造方式</h2>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 高效构造方式</h2>
 <p>Go语言构造字符串的方式有：</p>
 <ul>
 <li><code>+</code></li>
@@ -7001,7 +7035,7 @@ LIMIT关键字用于限制查询结果的数量。MySQL只返回前N条符合条
 <li><code>bytes.Buffer</code></li>
 </ul>
 <p>但哪种方法最为高效呢？</p>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>我们进行基准测试如下：</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>我们进行基准测试如下：</p>
 <div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>测试结果</p>
 <div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>👀</p>
 <ul>
