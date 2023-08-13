@@ -1,4 +1,17 @@
 
+<a name="v0.7.1"></a>
+## [v0.7.1](https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.7.0...v0.7.1) (2023-08-13)
+
+### Bug Fixes
+
+* **design-pattern:** 修改设计原则
+* **go-language:** 修改Go语言基础
+
+### Code Refactoring
+
+* 调整函数模式和并发模式
+
+
 <a name="v0.7.0"></a>
 ## [v0.7.0](https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.6.0...v0.7.0) (2023-08-07)
 
