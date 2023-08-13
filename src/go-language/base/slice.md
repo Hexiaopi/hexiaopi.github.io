@@ -1,5 +1,5 @@
 ---
-title: 切片slice底层原理和操作
+title: 切片slice
 date: 2023-02-03
 tag:
  - Go
@@ -11,8 +11,6 @@ category:
 ![slice](http://cdn.cjhe.top/blog/slice-1.png)
 
 <!-- more -->
-
-[[toc]]
 
 > 切片（slice）简称动态数组，既然是动态，切片的长度可以动态伸缩。
 
@@ -34,9 +32,8 @@ var (
 	)
 ```
 
-:eyes:<Badge text="注意" type="warning"/>
-
-::: danger 切片声明时未初始化，此时不能对切片进行索引操作!
+::: danger
+切片声明时未初始化，此时不能对切片进行索引操作!
 
 ```go
 var a []int
@@ -44,8 +41,11 @@ a[0] = 1 //panic: runtime error: index out of range [0] with length 0
 ```
 
 :::
+
 但是
-::: tip append可以对未初始化的切片进行操作，因为append操作会对底层数据进行扩容。
+
+::: tip
+append可以对未初始化的切片进行操作，因为append操作会对底层数据进行扩容。
 
 ```go
 var a []int
@@ -88,11 +88,7 @@ fmt.Println(s, len(s), cap(s))  //[14 15 16 17] 4 7
 
 ![slice底层结构](./images/slice-1.png)
 
-::: warning
-如果多个切片共用同一个底层数组,某个切片的操作对其他切片都是**可见的**<Badge text="注意" type="warning"/>
-:::
-
-## Append扩容原理
+## append扩容原理
 
 ```go
 var s []int
@@ -114,12 +110,10 @@ fmt.Println(len(s), cap(s)) // 5 8
 ![slice扩容](./images/slice-2.png)
 
 ::: warning
-Append在当前数组容量无法满足时，会分配新的数组，新的数组容量会按一定的算法扩展（参见`$GOROOT/src/runtime/slice.go`的`growslice`函数），将旧数组中的数据复制到新数组之后，切片array指针指向新的数组，之后旧的数组就如果未被使用或其他切片引用会被垃圾回收掉。
+`append`函数在当前数组容量无法满足时，会分配新的数组，新的数组容量会按一定的算法扩展（参见`$GOROOT/src/runtime/slice.go`的`growslice`函数），将旧数组中的数据复制到新数组之后，切片array指针指向新的数组，之后旧的数组就如果未被使用或其他切片引用会被垃圾回收掉。
 :::
 
-::: danger
-一旦底层数组容量无法满足某个切片的容量需求，该切片与底层数组关系就会**解除绑定**<Badge text="注意" type="warning"/>
-:::
+## append的注意事项
 
 ```go {6,15}
 package main
@@ -147,7 +141,26 @@ func main() {
 - 第15行，由于s2需要的存储空间超过s1的存储空间，因此重新申请了一块空间，至此s1和s2不再共享同一底层数组；
 - `SliceRise`函数第一步，进行扩容，由于s1传参的底层数组不满足存储空间，因此s切片和s1将不再共享同一空间，然而s2传参的底层数组满足存储空间，因此s切片和s2共享底层数据，因此对s切片的操作会影响到底层数据，进行影响s2；
 
-append扩容会重新分配底层数组并复制元素，当元素较多时，操作代价还是很大的。避免这种场景的方法是对切片的容量规模进行预估，并以cap参数的形式进行创建：`s:=make([]T, len, cap)`
+::: danger
+一旦底层数组容量无法满足某个切片的容量需求，该切片与底层数组关系就会**解除绑定**，例如：
+
+- 15行的s2和s1的底层数组解除绑定
+- 16行调用SliceRise(s1)，其中s和s1的底层数组解除绑定
+:::
+
+::: warning
+如果多个切片共用同一个底层数组,某个切片的操作对其他切片都是**可见的**，例如：
+
+- 17行调用SliceRise(s2)，s2和s共用底层数组，因此s的修改，s2是可见的。
+:::
+
+## append的性能
+
+append扩容会重新分配底层数组并复制元素，当元素较多时，操作代价还是很大的。避免这种场景的方法是对切片的容量规模进行预估，并以cap参数的形式进行创建：
+
+```go
+s:=make([]T, len, cap)
+```
 
 我们将未预估容量的append操作与预估容量的append操作进行压测如下：
 
@@ -196,7 +209,7 @@ ok      command-line-arguments  3.630s
 - 不带cap的append操作每次操作分配357625B内存，而带cap的append操作仅分配81920B；
 - 不带cap的append操作平均每次分配19次内存，而带cap的append操作仅需一次内存分配；
 
-## Append操作
+## append的非常规操作
 
 和数组类似，可以使用`len()`和`cap()`函数获取切片的长度和容量。此外可以使用`append()`对切片追加元素，但`append()`远不止这个功能。
 
@@ -221,7 +234,9 @@ a = append([]int{-3, -2, -1}, a...) //在开头添加一个切片，len为7，ca
 fmt.Println(a)                      //[-3 -2 -1 0 1 2 3]
 ```
 
+::: tip
 在切片开头追加元素会导致内存的重新分配，已有的元素会复制一份。因此从切片的头部追加元素的性能很差，也很少使用到。
+:::
 
 #### 在切片中间追加元素
 

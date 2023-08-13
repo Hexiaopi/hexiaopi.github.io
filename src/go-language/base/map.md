@@ -1,5 +1,5 @@
 ---
-title: map底层原理和注意事项
+title: 散列map
 date: 2023-02-06
 tag:
  - Go
@@ -25,26 +25,24 @@ var m map[string]int
 ```
 
 ::: warning
-map对于`value`的类型没有限制，但是对`key`的类型有严格的要求：**key的类型必须支持"=="和"!="两个操作符的数据类型**，因此：函数、map、切片不能作为key类型。
-:::
-
-::: warning
-向`nil`（未初始化）的map类型里添加数据会导致`panic`<Badge text="注意" type="warning"/>
+map对于`value`的类型没有限制，但是对`key`的类型有严格的要求：
+`key`的类型必须支持`==`和`!=`两个操作符的数据类型
+因此，函数、map、切片等不能作为`key`类型。
 :::
 
 ## 初始化
 
-- 字面量初始化
+字面量初始化
 
-  ```go
-  m:=map[string]int{"apple":2,"banana":3}
-  ```
+```go
+m:=map[string]int{"apple":2,"banana":3}
+```
 
-- 内置函数make()初始化
+内置函数make()初始化
 
-  ```go
-  m:=make(map[string]int,10)
-  ```
+```go
+m:=make(map[string]int,10)
+```
 
 ## 操作
 
@@ -69,10 +67,15 @@ func main() {
 }
 ```
 
-:eyes:
+::: warning
+向`nil`（未初始化）的map类型里添加数据会导致`panic`
+:::
+
+::: tip
 
 - 删除不存在的key不会导致panic；
-- 查询不存在的key，如果未使用**comma ok**语法，则会返回value类型对应的零值
+- 查询不存在的key，如果未使用**comma ok**语法，则会返回value类型对应的**零值**
+:::
 
 ## 底层原理
 

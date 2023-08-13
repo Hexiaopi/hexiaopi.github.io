@@ -1,5 +1,5 @@
 ---
-title: string字符串
+title: 字符串
 date: 2022-01-23
 tag:
  - Go
@@ -33,51 +33,39 @@ var str string
 支持各种比较关系运算符: `==`、`!=`、`>=`、`<=`、`>`、`<`
 
 ```go
-package main
-
-import "fmt"
-
-func main() {
-	// ==
+func PrintStringCompare() {
 	s1 := "世界和平"
 	s2 := "世界" + "和平"
-	fmt.Println(s1 == s2) // true
+	fmt.Println(s1 == s2) //true
 
-	// !=
 	s1 = "Go"
-	s2 = "C"
-	fmt.Println(s1 != s2) // true
+	s2 = "c"
+	fmt.Println(s1 != s2) //true
 
-	// < and <=
 	s1 = "12345"
 	s2 = "23456"
-	fmt.Println(s1 < s2)  // true
-	fmt.Println(s1 <= s2) // true
+	fmt.Println(s1 < s2)  //true
+	fmt.Println(s1 <= s2) //true
 
-	// > and >=
 	s1 = "12345"
 	s2 = "123"
-	fmt.Println(s1 > s2)  // true
-	fmt.Println(s1 >= s2) // true
+	fmt.Println(s1 > s2)  //true
+	fmt.Println(s1 >= s2) //true
 }
 ```
 
 ### 遍历
 
 ::: tip
-Go语言支持UTF-8格式编码，因此字符串中字符可以是ASCII字符，也可以是Unicode字符
+Go语言支持UTF-8格式编码，因此字符串中字符可以是`ASCII`字符，也可以是`Unicode`字符，其中：
 
-- `byte`类型来表示ASCII字符
-- `rune`类型来表示Unicode字符
+- `byte`类型来表示`ASCII`字符
+- `rune`类型来表示`Unicode`字符
 :::
 
-```go
-str := "中国欢迎您"
-```
-
-因此Go字符串遍历也支持两种方式：`byte`和`rune`
-
 #### byte遍历
+
+英文字符串遍历
 
 ```go
   str := "hello"
@@ -91,9 +79,7 @@ str := "中国欢迎您"
   // 4 o
 ```
 
-::: warning
-由于UTF-8中，大多数中文字符都使用三字节表示，因此通过rune方式遍历中文字符串是不可取的<Badge text="注意" type="warning"/>
-:::
+中文字符串遍历
 
 ```go
 	str := "你好"
@@ -108,11 +94,13 @@ str := "中国欢迎您"
 	// 5 ½
 ```
 
+::: warning
+由于UTF-8中，大多数中文字符都使用三字节表示，因此通过rune方式遍历中文字符串是不可取的
+:::
+
 #### rune遍历
 
-::: tip
-rune实际上类型是int32，因此打印时展示的是数字类型
-:::
+英文字符串遍历
 
 ```go
   str := "hello"
@@ -126,9 +114,11 @@ rune实际上类型是int32，因此打印时展示的是数字类型
   // 4 o
 ```
 
-::: warning
-遍历中文字符索引的变化<Badge text="注意" type="warning"/>
+::: tip
+rune实际上类型是int32，因此打印时展示的是数字类型，因此需要显示转换成string类型
 :::
+
+中文字符串遍历
 
 ```go
   str := "你好"
@@ -138,6 +128,13 @@ rune实际上类型是int32，因此打印时展示的是数字类型
   //0 20320 你
   //3 22909 好
 ```
+
+::: warning
+遍历中文字符索引的变化：
+
+- `你`的索引在0
+- `好`的索引在3
+:::
 
 ## 底层结构
 
@@ -154,6 +151,7 @@ type stringStruct struct {
 - len是字符串长度，因此len(s)是O(1)复杂度的操作
 
 因此传参是可以将字符串作为参数，而不必传字符串指针。
+
 ::: warning
 字符串的内容可以用类似数组下标的方式获取，例如str[0]，但与数组不同，字符串的内容初始化后不可修改<Badge text="注意" type="warning"/>，只能重新构造新的字符串，带来的好处是线程安全
 :::
@@ -171,7 +169,7 @@ func main() {
 }
 ```
 
-## 字符串高效构造方式
+## 高效构造方式
 
 Go语言构造字符串的方式有：
 
@@ -184,6 +182,8 @@ Go语言构造字符串的方式有：
 但哪种方法最为高效呢？
 
 ```go
+package concat
+
 import (
 	"bytes"
 	"fmt"
