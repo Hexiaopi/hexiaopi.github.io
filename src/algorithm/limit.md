@@ -1,4 +1,12 @@
-# 限流
+---
+title: 限流算法
+date: 2023-08-14
+tag:
+ - Go
+ - 算法
+category:
+ - 算法
+---
 
 > 限流，是一种自我保护的机制，服务端通过一些限流手段控制并发访问请求，目的是为了防止系统因突发流量导致服务不可用或者崩溃。
 
@@ -86,7 +94,7 @@ func TestCounterLimiter_Allow(t *testing.T) {
 
 测试结果，由于我们限制了每秒种只能处理5个请求，前5个运行通过，后5个由于限流，不允许通过
 
-```
+```text
 === RUN   TestCounterLimiter_Allow
     counter_test.go:17: allow
     counter_test.go:17: allow
@@ -138,7 +146,7 @@ func TestCounterLimiter_Allow2(t *testing.T) {
 
 测试结果：
 
-```
+```text
 === RUN   TestCounterLimiter_Allow2
     counter_test.go:35: allow
     counter_test.go:35: allow
@@ -322,6 +330,7 @@ return res
 ```
 
 测试
+
 ```go
 package main
 

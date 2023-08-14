@@ -12,10 +12,12 @@ category:
 <!-- more -->
 
 ## 分布式锁
+
 > 分布式锁即在分布式环境下不同实例之间抢一把锁，相比较单一实例的锁，分布式环境下带来的问题更多，例如网络问题。
 > 分布式锁可以通过多种途径实现，例如:Zookeeper等。由于Redis是经常使用的中间件，本篇内容基于Redis实现分布式锁。
 
 特性：
+
 - 互斥性：任意时刻，只有一个客户端能持有锁；
 - 锁超时释放：持有锁超时，可以释放，防止不必要的资源浪费，也可以防止死锁；
 - 可重入性：一个线程如果获取了锁之后，可以再次对其请求加锁；
@@ -23,10 +25,11 @@ category:
 - 安全性：锁只能被持有的客户端释放，不能被其他客户端释放
 
 ### 简单版本
+
 > 锁的特性就是排他性，这里可以通过Redis的命令：`SETNX`，该命令：
+>  
 > - 只在键key不存在的情况下，将键的值设置为value，返回1；
 > - 若键key已存在，则SETNX命令不做任何操作，返回0；
-
 
 ```go
 package redislock
@@ -92,11 +95,13 @@ func (c *Lock) Release(ctx context.Context) error {
 ```
 
 但是这里的释放其实是存在问题的：
+
 - 当redis存储的是别人的锁，直接删除key这就会导致删除别人的锁问题
 
 ### 解决锁释放问题
+
 > 方法就是生产唯一的value，只有当前redis存储的value是自己的才可以删除
-> 
+>
 > 为了保证原子性，即查询redis的value和删除动作是一起进行操作，这里采用lua脚本去保证
 
 ```go
@@ -172,7 +177,9 @@ func (c *lock) Release(ctx context.Context) error {
 	return nil
 }
 ```
+
 release.lua脚本
+
 ```lua
 -- 获得的value和期望的value是一致的说明是自己的锁
 if redis.call("get", KEYS[1]) == ARGV[1] then
@@ -183,8 +190,9 @@ end
 ```
 
 ### 解决超时问题
+
 > 极端场景下业务很可能执行超时，例如：分布式锁一分钟，但业务执行一小时，导致这一个小时之内，有60个业务拿到分布式锁，和我们期望1个业务执行不一致。
-> 
+>
 > 解决超时问题，那么我们可以通过续约的方式，不断延长分布式锁的有效期来解决业务超时问题，保证业务执行过程锁不会自动释放。
 
 ```go
@@ -248,7 +256,9 @@ func (c *lock) Refresh(ctx context.Context) error {
 	return nil
 }
 ```
+
 refresh.lua脚本
+
 ```lua
 --续约分布式锁
 if redis.call("get", KEYS[1]) == ARGV[1] then
@@ -257,12 +267,15 @@ else
   return 0
 end
 ```
+
 ### 解决无限续约问题
+
 > 当续约遇见网络超时问题，总不能一直续约，须有合理的方式告知业务方错误
-> 
+>
 > 因此需增加策略去重试续约
 
 我们定义策略
+
 ```go
 package redislock
 
@@ -298,7 +311,9 @@ func NoRetry() RetryStrategy {
 	return &noRetry{}
 }
 ```
+
 使用带策略的续约方式
+
 ```go
 func (c *Client) TryLock(ctx context.Context, key string, expiration time.Duration, try RetryStrategy) (*lock, error) {
 	value := uuid.New().String()
@@ -334,7 +349,9 @@ func (c *Client) TryLock(ctx context.Context, key string, expiration time.Durati
 	}
 }
 ```
+
 lock.lua脚本
+
 ```lua
 local val = redis.call('get', KEYS[1])
 -- 在加锁的重试的时候，要判断自己上一次是不是加锁成功了
@@ -349,6 +366,7 @@ end
 ```
 
 ### 进一步优化获取锁
+
 >当并发量很大场景时，为了减缓DB的压力，我们可以在单个实例上面，只允许一个协程获取分布式锁，即：单一实例先筛选一个协程，不同的实例再去竞争分布式锁
 
 ```go {3,9}

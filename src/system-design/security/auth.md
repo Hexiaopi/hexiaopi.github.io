@@ -8,21 +8,25 @@ category:
 ---
 
 ## 认证
+
 > 我们有多种途径来保障应用的安全，例如：网咯隔离、设置防火墙、设置IP黑名单等。而**认证**是软件层面保护应用安全的一种措施。
-> 
+>
 > 当前有四种认证方式，分别是：`Basic`、`Digest`、`OAuth`和`Bearer`
 
 ### Basic认证
+
 > Basic认证（基础认证）是一种简单的认证方式。将`用户名:密码`进行base64编码，放到HTTP Authorization Header中。
-> 
+>
 > 但是base64不是加密技术，入侵者可以通过截获base64字符串，并反编码获取用户名和密码；其次即便进行了加密了用户名和密码，入侵者可以通过加重放攻击。
 
 因此Basic认证非常不安全。在设计系统时，要遵循一个通用的原则：不要在请求参数中使用明文密码，也不要在任何存储中保存明文密码。
 
 ### Digest认证
+
 > Digest认证（摘要认证）是一种HTTP认证协议，它与Basic认证兼容，但修复了Basic认证的严重缺陷。
 
 **特点**
+
 - 绝不会用明文的方式在网络上发送密码
 - 可以有效防止恶意用户进行重放攻击
 - 可以有效的防止对报文内容进行篡改
@@ -124,8 +128,7 @@ OAuth当前是2.0版本，分为四种授权方式：密码式、隐藏式、凭
 
 JWT格式由三部分组成，分别是Header、Payload和Signature，它们之间用圆点.连接，例如：
 
-```
-
+```text
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJpYW0uYXBpLm1hcm1vdGVkdS5jb20iLCJleHAiOjE2NDI4NTY2MzcsImlkZW50aXR5IjoiYWRtaW4iLCJpc3MiOiJpYW0tYXBpc2VydmVyIiwib3JpZ19pYXQiOjE2MzUwODA2MzcsInN1YiI6ImFkbWluIn0.Shw27RKENE_2MVBq7-c8OmgYdF92UmdwS8xE-Fts2FM
 ```
 
@@ -145,7 +148,7 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJpYW0uYXBpLm1hcm1vdGVkdS5jb20iLCJ
 
 将Header进行base64编码：
 
-```
+```shell
 $ echo -n '{"typ":"JWT","alg":"HS256"}'|base64
 eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9
 ```
@@ -186,7 +189,7 @@ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9
 
 将payload进行base64编码：
 
-```
+```shell
 $ echo -n '{"aud":"iam.authz.marmotedu.com","exp":1604158987,"iat":1604151787,"iss":"iamctl","nbf":1604151787}'|base64
 eyJhdWQiOiJpYW0uYXV0aHoubWFybW90ZWR1LmNvbSIsImV4cCI6MTYwNDE1ODk4NywiaWF0Ijox
 NjA0MTUxNzg3LCJpc3MiOiJpYW1jdGwiLCJuYmYiOjE2MDQxNTE3ODd9
@@ -200,7 +203,7 @@ Signature是Token的签名部分，通过如下方式生成：将 Header 和 Pay
 
 签名后服务端会返回生成的 Token，客户端下次请求会携带该 Token。服务端收到 Token 后会解析出 header.payload，然后用相同的加密算法和密钥对 header.payload 再进行一次加密，例如：
 
-```
+```shell
 HMACSHA256(base64UrlEncode(header)+"."+base64UrlEncode(payload),secret)
 ```
 
