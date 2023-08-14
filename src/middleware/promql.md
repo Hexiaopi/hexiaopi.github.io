@@ -1,4 +1,14 @@
-# PromQL
+---
+title: PromQL语法
+date: 2023-08-14
+tag:
+ - Prometheus
+ - PromQL
+category:
+ - 中间件
+---
+
+> PromQL是Prometheus的查询语言，类似SQL是MySQL的语言
 
 ## 1. 名词解释
 
