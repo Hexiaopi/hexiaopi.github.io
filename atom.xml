@@ -3,7 +3,7 @@
   <id>https://Hexiaopi.github.io/</id>
   <title>Hexiaopi</title>
   <subtitle>一枚后端攻城狮的个人博客</subtitle>
-  <updated>2023-08-14T07:26:20.946Z</updated>
+  <updated>2023-08-14T15:57:12.434Z</updated>
   <generator>vuepress-plugin-feed2</generator>
   <link rel="self" href="https://Hexiaopi.github.io/atom.xml"/>
   <link rel="alternate" href="https://Hexiaopi.github.io/"/>
@@ -11,6 +11,7 @@
   <category term="设计模式"/>
   <category term="Go语言"/>
   <category term="项目规范"/>
+  <category term="算法"/>
   <category term="网络"/>
   <category term="转载"/>
   <category term="系统设计"/>
@@ -1514,12 +1515,11 @@
     <published>2023-07-30T09:20:01.000Z</published>
   </entry>
   <entry>
-    <title type="text">限流</title>
+    <title type="text">限流算法</title>
     <id>https://Hexiaopi.github.io/algorithm/limit.html</id>
     <link href="https://Hexiaopi.github.io/algorithm/limit.html"/>
-    <updated>2023-07-30T10:52:56.000Z</updated>
-    <summary type="html"><![CDATA[<h1> 限流</h1>
-<blockquote>
+    <updated>2023-08-14T13:05:37.000Z</updated>
+    <summary type="html"><![CDATA[<blockquote>
 <p>限流，是一种自我保护的机制，服务端通过一些限流手段控制并发访问请求，目的是为了防止系统因突发流量导致服务不可用或者崩溃。</p>
 </blockquote>
 <p>常用的限流方法：</p>
@@ -1534,9 +1534,9 @@
 <p>在一段时间间隔内，对请求进行计数，与阈值进行比较判断是否需要限流<br>
 时间结束后重置计数器<br>
 因此计数器限流也叫固定时间限流</p>
-</blockquote>]]></summary>
-    <content type="html"><![CDATA[<h1> 限流</h1>
-<blockquote>
+</blockquote>
+]]></summary>
+    <content type="html"><![CDATA[<blockquote>
 <p>限流，是一种自我保护的机制，服务端通过一些限流手段控制并发访问请求，目的是为了防止系统因突发流量导致服务不可用或者崩溃。</p>
 </blockquote>
 <p>常用的限流方法：</p>
@@ -1599,7 +1599,8 @@
 <figure><figcaption>token-bucket</figcaption></figure>
 <h3> 分布式</h3>
 <div class="language-lua line-numbers-mode" data-ext="lua"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content>
-    <published>2023-07-30T09:20:01.000Z</published>
+    <category term="算法"/>
+    <published>2023-08-14T00:00:00.000Z</published>
   </entry>
   <entry>
     <title type="text">设计模式</title>
@@ -3489,7 +3490,7 @@ Vincent Driessen 为了解决这个问题，提出<a href="https://nvie.com/post
     <title type="text">基于Redis的分布式锁</title>
     <id>https://Hexiaopi.github.io/system-design/distribute-lock.html</id>
     <link href="https://Hexiaopi.github.io/system-design/distribute-lock.html"/>
-    <updated>2023-07-30T09:20:01.000Z</updated>
+    <updated>2023-08-14T13:05:37.000Z</updated>
     <summary type="text">分布式锁 分布式锁即在分布式环境下不同实例之间抢一把锁，相比较单一实例的锁，分布式环境下带来的问题更多，例如网络问题。 分布式锁可以通过多种途径实现，例如:Zookeeper等。由于Redis是经常使用的中间件，本篇内容基于Redis实现分布式锁。 特性： 互斥性：任意时刻，只有一个客户端能持有锁；; 锁超时释放：持有锁超时，可以释放，防止不必要的资源...</summary>
     <content type="html"><![CDATA[<!-- more -->
 <h2> 分布式锁</h2>
@@ -3549,9 +3550,8 @@ Vincent Driessen 为了解决这个问题，提出<a href="https://nvie.com/post
     <title type="text">CA证书</title>
     <id>https://Hexiaopi.github.io/tools/ca.html</id>
     <link href="https://Hexiaopi.github.io/tools/ca.html"/>
-    <updated>2023-07-30T09:20:01.000Z</updated>
-    <summary type="html"><![CDATA[<h1> CA证书</h1>
-<h2> 安装工具</h2>
+    <updated>2023-08-14T13:05:37.000Z</updated>
+    <summary type="html"><![CDATA[<h2> 安装工具</h2>
 <blockquote>
 <p>使用CloudFlare的PKI和TLS工具包cfssl来创建证书</p>
 </blockquote>
@@ -3560,10 +3560,9 @@ Vincent Driessen 为了解决这个问题，提出<a href="https://nvie.com/post
 <blockquote>
 <p>cfssl：证书签发工具</p>
 </blockquote>
-<div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>go get github.com/cloudflare/cfssl/cmd/cfssl
+<div class="language-bash line-numbers-mode" data-ext="sh"><pre class="language-bash"><code>go get github.com/cloudflare/cfssl/cmd/cfssl
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div>]]></summary>
-    <content type="html"><![CDATA[<h1> CA证书</h1>
-<h2> 安装工具</h2>
+    <content type="html"><![CDATA[<h2> 安装工具</h2>
 <blockquote>
 <p>使用CloudFlare的PKI和TLS工具包cfssl来创建证书</p>
 </blockquote>
@@ -3572,11 +3571,11 @@ Vincent Driessen 为了解决这个问题，提出<a href="https://nvie.com/post
 <blockquote>
 <p>cfssl：证书签发工具</p>
 </blockquote>
-<div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><blockquote>
+<div class="language-bash line-numbers-mode" data-ext="sh"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><blockquote>
 <p>cfssljson：将cfssl生产的证书（json格式）变为文件承载式证书</p>
 </blockquote>
-<div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>或者直接安装所有工具</p>
-<div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3> 创建配置文件</h3>
+<div class="language-bash line-numbers-mode" data-ext="sh"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>或者直接安装所有工具</p>
+<div class="language-bash line-numbers-mode" data-ext="sh"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3> 创建配置文件</h3>
 <blockquote>
 <p>CA配置文件是用来配置根证书的使用场景（profile）和具体参数（usage、过期时间、服务端认证、客户端认证、加密等）<br>
 创建文件：ca-config.json</p>
@@ -3601,9 +3600,10 @@ Vincent Driessen 为了解决这个问题，提出<a href="https://nvie.com/post
 <li>OU：Company Division，部门/单位</li>
 </ul>
 <h3> 创建CA证书和私钥</h3>
-<div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>上述命令会创建运行CA所必须的文件<code>ca-key.pem</code>（私钥）和 <code>ca.pem</code>（证书），还会生成<code>ca.csr</code>(证书签名请求)，用于交叉签名或重新签名。</p>
+<div class="language-bash line-numbers-mode" data-ext="sh"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>上述命令会创建运行CA所必须的文件<code>ca-key.pem</code>（私钥）和 <code>ca.pem</code>（证书），还会生成<code>ca.csr</code>(证书签名请求)，用于交叉签名或重新签名。</p>
 ]]></content>
-    <published>2023-07-30T09:20:01.000Z</published>
+    <category term="工具"/>
+    <published>2023-08-14T00:00:00.000Z</published>
   </entry>
   <entry>
     <title type="text">confd简介</title>
@@ -3762,7 +3762,7 @@ Vincent Driessen 为了解决这个问题，提出<a href="https://nvie.com/post
     <title type="text">vscode leetcode插件</title>
     <id>https://Hexiaopi.github.io/tools/vscode-leetcode.html</id>
     <link href="https://Hexiaopi.github.io/tools/vscode-leetcode.html"/>
-    <updated>2023-07-30T09:20:01.000Z</updated>
+    <updated>2023-08-14T13:05:37.000Z</updated>
     <summary type="html"><![CDATA[<div class="hint-container tip">
 <p class="hint-container-title">提示</p>
 <p>vscode这款插件太香了，终于可以沉浸式刷leetcode😄</p>
@@ -3784,7 +3784,7 @@ Vincent Driessen 为了解决这个问题，提出<a href="https://nvie.com/post
 <br>
 这里我选择账户方式，按照提示填写邮箱、密码即可登录</p>
 <h3> 预览</h3>
-<figure><figcaption></figcaption></figure>
+<figure><figcaption>leetcode-preview</figcaption></figure>
 <blockquote>
 <p>在左侧，该插件按照五个分类将题目进行了分类，比如：按照难易程度(简单、中等、难)、按照标签(数据、二叉搜索等)、按照公司(Google、Facebook等)</p>
 <p>且题目根据难易程度有不同的颜色进行区分，如果已经完成相关的练习，还会用✔️提示</p>
@@ -3795,7 +3795,7 @@ Vincent Driessen 为了解决这个问题，提出<a href="https://nvie.com/post
 <p><br>
 点击Code Now，选择一种编程语言就可以开始了</p>
 <h3> 编写代码</h3>
-<figure><figcaption></figcaption></figure>
+<figure><figcaption>leetcode-code</figcaption></figure>
 <h3> 测试代码</h3>
 <p>点击代码下方的<code>Test</code>标签即可进行测试代码（再也不用编写大量的单元测试用例了）<br>
 </p>
@@ -7251,7 +7251,7 @@ LIMIT关键字用于限制查询结果的数量。MySQL只返回前N条符合条
     <title type="text">切片slice</title>
     <id>https://Hexiaopi.github.io/go-language/base/slice.html</id>
     <link href="https://Hexiaopi.github.io/go-language/base/slice.html"/>
-    <updated>2023-08-13T15:30:36.000Z</updated>
+    <updated>2023-08-14T15:50:08.000Z</updated>
     <summary type="html"><![CDATA[<figure><img src="http://cdn.cjhe.top/blog/slice-1.png" alt="slice" tabindex="0" loading="lazy"><figcaption>slice</figcaption></figure>
 ]]></summary>
     <content type="html"><![CDATA[<figure><img src="http://cdn.cjhe.top/blog/slice-1.png" alt="slice" tabindex="0" loading="lazy"><figcaption>slice</figcaption></figure>
@@ -7299,21 +7299,23 @@ LIMIT关键字用于限制查询结果的数量。MySQL只返回前N条符合条
 <li>第15行，由于s2需要的存储空间超过s1的存储空间，因此重新申请了一块空间，至此s1和s2不再共享同一底层数组；</li>
 <li><code>SliceRise</code>函数第一步，进行扩容，由于s1传参的底层数组不满足存储空间，因此s切片和s1将不再共享同一空间，然而s2传参的底层数组满足存储空间，因此s切片和s2共享底层数据，因此对s切片的操作会影响到底层数据，进行影响s2；</li>
 </ul>
-<div class="hint-container danger">
-<p class="hint-container-title">警告</p>
+<div class="hint-container warning">
+<p class="hint-container-title">注意</p>
 <p>一旦底层数组容量无法满足某个切片的容量需求，该切片与底层数组关系就会<strong>解除绑定</strong>，例如：</p>
 <ul>
 <li>15行的s2和s1的底层数组解除绑定</li>
 <li>16行调用SliceRise(s1)，其中s和s1的底层数组解除绑定</li>
 </ul>
 </div>
-<div class="hint-container warning">
-<p class="hint-container-title">注意</p>
+<div class="hint-container danger">
+<p class="hint-container-title">警告</p>
 <p>如果多个切片共用同一个底层数组,某个切片的操作对其他切片都是<strong>可见的</strong>，例如：</p>
 <ul>
 <li>17行调用SliceRise(s2)，s2和s共用底层数组，因此s的修改，s2是可见的。</li>
 </ul>
 </div>
+<p>再举一个影响是<strong>可见的</strong>例子</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>b切片共用a切片的底层数组，且append操作并未超过b切片的容量，因此会影响到a切片：<code>a[3]</code>由原来的4变为0。</p>
 <h2> append的性能</h2>
 <p>append扩容会重新分配底层数组并复制元素，当元素较多时，操作代价还是很大的。避免这种场景的方法是对切片的容量规模进行预估，并以cap参数的形式进行创建：</p>
 <div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>我们将未预估容量的append操作与预估容量的append操作进行压测如下：</p>
@@ -7328,21 +7330,22 @@ LIMIT关键字用于限制查询结果的数量。MySQL只返回前N条符合条
 <h3> 添加切片元素</h3>
 <h4> 在切片尾部追加元素</h4>
 <div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4> 在切片头部追加元素</h4>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="hint-container tip">
-<p class="hint-container-title">提示</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="hint-container warning">
+<p class="hint-container-title">注意</p>
 <p>在切片开头追加元素会导致内存的重新分配，已有的元素会复制一份。因此从切片的头部追加元素的性能很差，也很少使用到。</p>
 </div>
 <h4> 在切片中间追加元素</h4>
 <div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>同样，在切片中间追加元素，会创建许多临时切片，性能比较差。可以使用<code>copy()</code>函数完成类似的功能：</p>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><code>copy(target,source)</code>函数，将source的内容复制到target，相比较append，节省了临时切片的创建。</p>
-<h3> 删除切片元素</h3>
+<p>在i的位置上插入一个元素</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><code>copy(target,source)</code>函数，将source的内容复制到target，相比较append，节省了临时切片的创建。</p>
+<p>在i的位置上插入多个元素: x</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 删除切片元素</h3>
 <h4> 在切片头部删除元素</h4>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>这里的len和cap都为2，是因为重新分配了内存空间</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>或者</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>这里的len和cap都为2，是因为重新分配了内存空间</p>
 <h4> 在切片中部删除元素</h4>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4> 在切片尾部删除元素</h4>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4> 删除尾部一个元素</h4>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h4> 删除尾部N个元素</h4>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div>]]></content>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4> 在切片尾部删除元素</h4>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content>
     <category term="Go语言"/>
     <published>2023-02-03T00:00:00.000Z</published>
   </entry>
@@ -9191,7 +9194,7 @@ use one vs other -->
     <title type="text">认证方案</title>
     <id>https://Hexiaopi.github.io/system-design/security/auth.html</id>
     <link href="https://Hexiaopi.github.io/system-design/security/auth.html"/>
-    <updated>2023-07-30T09:20:01.000Z</updated>
+    <updated>2023-08-14T13:05:37.000Z</updated>
     <summary type="html"><![CDATA[<h2> 认证</h2>
 <blockquote>
 <p>我们有多种途径来保障应用的安全，例如：网咯隔离、设置防火墙、设置IP黑名单等。而<strong>认证</strong>是软件层面保护应用安全的一种措施。</p>
@@ -9351,14 +9354,14 @@ use one vs other -->
 <li>服务端收到请求后，会验证请求中的 Token，验证通过则进行业务逻辑处理，处理完后返回处理后的结果</li>
 </ol>
 <p>JWT格式由三部分组成，分别是Header、Payload和Signature，它们之间用圆点.连接，例如：</p>
-<div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>Header</strong></p>
+<div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><strong>Header</strong></p>
 <p>包含两部分信息：一个是Token的类型，二是Token所使用的加密算法，例如：</p>
 <div class="language-json line-numbers-mode" data-ext="json"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
 <li>typ：说明Token的类型；</li>
 <li>alg: 说明Token的加密算法；</li>
 </ul>
 <p>将Header进行base64编码：</p>
-<div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>在某些场景下，可能还会有kid选项，用来标识一个秘钥ID，例如：</p>
+<div class="language-bash line-numbers-mode" data-ext="sh"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>在某些场景下，可能还会有kid选项，用来标识一个秘钥ID，例如：</p>
 <div class="language-json line-numbers-mode" data-ext="json"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>Payload</strong></p>
 <p>有效载荷部分，是JWT的主体内容部分，也是一个JSON对象，包含需要传递的数据。</p>
 <ul>
@@ -9372,11 +9375,11 @@ use one vs other -->
 </ul>
 <p>例如：</p>
 <div class="language-json line-numbers-mode" data-ext="json"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>将payload进行base64编码：</p>
-<div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>这些预定义的字段并不要求强制使用，此外，我们还可以自定义私有字段，一般会把包含用户信息的数据放到payload中。注意，不要添加敏感信息，此外私有声明是客户端和服务端所共同定义的声明。</p>
+<div class="language-bash line-numbers-mode" data-ext="sh"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>这些预定义的字段并不要求强制使用，此外，我们还可以自定义私有字段，一般会把包含用户信息的数据放到payload中。注意，不要添加敏感信息，此外私有声明是客户端和服务端所共同定义的声明。</p>
 <p><strong>Signature</strong></p>
 <p>Signature是Token的签名部分，通过如下方式生成：将 Header 和 Payload 分别 base64 编码后，用 . 连接。然后再使用 Header 中声明的加密方式，利用 secretKey 对连接后的字符串进行加密，加密后的字符串即为最终的 Signature。secretKey 是密钥，保存在服务器中，一般通过配置文件来保存。</p>
 <p>签名后服务端会返回生成的 Token，客户端下次请求会携带该 Token。服务端收到 Token 后会解析出 header.payload，然后用相同的加密算法和密钥对 header.payload 再进行一次加密，例如：</p>
-<div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>得到 Signature。并且，对比加密后的 Signature 和收到的 Signature 是否相同，如果相同则验证通过，不相同则返回 HTTP 401 Unauthorized 的错误。</p>
+<div class="language-bash line-numbers-mode" data-ext="sh"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>得到 Signature。并且，对比加密后的 Signature 和收到的 Signature 是否相同，如果相同则验证通过，不相同则返回 HTTP 401 Unauthorized 的错误。</p>
 ]]></content>
     <category term="系统设计"/>
     <published>2022-09-18T00:00:00.000Z</published>
