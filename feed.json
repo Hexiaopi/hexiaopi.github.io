@@ -6,6 +6,20 @@
   "description": "一枚后端攻城狮的个人博客",
   "items": [
     {
+      "title": "Go箴言",
+      "url": "https://Hexiaopi.github.io/go-language/reprint/proverb.html",
+      "id": "https://Hexiaopi.github.io/go-language/reprint/proverb.html",
+      "summary": "【转】原文链接 Go 语言之父 Rob Pike 在 2015 年分享的主题《Go Proverbs》 核心理念是：简单、诗意、简洁（Simple, Poetic, Pithy）。 译文 Don't communicate by sharing memory, share memory by communicating. 不要通过共享内存进行通信，通过通信共享内存",
+      "content_html": "<p>【转】<a href=\"http://go-proverbs.github.io/\" target=\"_blank\" rel=\"noopener noreferrer\">原文链接</a></p>\n<blockquote>\n<p>Go 语言之父 Rob Pike 在 2015 年分享的主题《Go Proverbs》</p>\n<p>核心理念是：简单、诗意、简洁（Simple, Poetic, Pithy）。</p>\n</blockquote>\n<h2> 译文</h2>\n<p>Don't communicate by sharing memory, share memory by communicating.<br>\n不要通过共享内存进行通信，通过通信共享内存</p>\n<p>Concurrency is not parallelism.<br>\n并发不是并行</p>\n<p>Channels orchestrate; mutexes serialize.<br>\n管道用于协调；互斥锁用于同步</p>\n<p>The bigger the interface, the weaker the abstraction.<br>\n接口越大，抽象就越弱</p>\n<p>Make the zero value useful.<br>\n利用好零值</p>\n<p>interface{} says nothing.<br>\n空接口 interface{} 没有任何类型约束</p>\n<p>Gofmt's style is no one's favorite, yet gofmt is everyone's favorite.<br>\nGofmt 的风格不是人们最喜欢的，但 gofmt 是每个人的最爱</p>\n<p>A little copying is better than a little dependency.<br>\n允许一点点重复比引入一点点依赖更好</p>\n<p>Syscall must always be guarded with build tags.<br>\n系统调用必须始终使用构建标记进行保护</p>\n<p>Cgo must always be guarded with build tags.<br>\n必须始终使用构建标记保护 Cgo</p>\n<p>Cgo is not Go.<br>\nCgo 不是 Go。</p>\n<p>With the unsafe package there are no guarantees.<br>\n使用标准库的 unsafe 包，不能保证能如期运行</p>\n<p>Clear is better than clever.<br>\n清晰比聪明更好</p>\n<p>Reflection is never clear.<br>\n反射永远不清晰</p>\n<p>Errors are values.<br>\n错误是值</p>\n<p>Don't just check errors, handle them gracefully.<br>\n不要只检查错误，还要优雅地处理它们</p>\n<p>Design the architecture, name the components, document the details.<br>\n设计架构，命名组件，文档记录细节</p>\n<p>Documentation is for users.<br>\n文档是供用户使用的</p>\n<p>Don't panic.<br>\n不要使用 panic</p>\n<h2> 参考文献</h2>\n<p><a href=\"http://go-proverbs.github.io/\" target=\"_blank\" rel=\"noopener noreferrer\">原文链接</a><br>\n<a href=\"https://zhuanlan.zhihu.com/p/514680942\" target=\"_blank\" rel=\"noopener noreferrer\">中文译文</a></p>\n",
+      "date_published": "2023-08-15T00:00:00.000Z",
+      "date_modified": "2023-08-15T03:08:15.000Z",
+      "authors": [],
+      "tags": [
+        "Go语言",
+        "转载"
+      ]
+    },
+    {
       "title": "Grafana",
       "url": "https://Hexiaopi.github.io/middleware/grafana.html",
       "id": "https://Hexiaopi.github.io/middleware/grafana.html",
