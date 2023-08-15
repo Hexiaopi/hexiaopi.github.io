@@ -34,5 +34,10 @@ projects:
     desc: 永远纪念左耳朵耗子
     link: https://coolshell.cn
 
+  - icon: friend
+    name: 白明的博客网站
+    desc: Tony Bai老师的书和文章质量很高，非常推荐
+    link: https://tonybai.com
+
 footer: '<a href="http://beian.miit.gov.cn/" rel="noopener noreferrer" target="_blank">备案号: 皖ICP备2022000616号-1</a> | <a href="/about/site.html">关于网站</a>'
 ---
