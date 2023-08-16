@@ -8,7 +8,7 @@ category:
  - 转载
 ---
 
-> Python的核心开发成员之一Tim Peter写下的《Python之禅》，成为Python编程和设计的指导原则。Go语言步道师Dave Cheney 2020年发表了名为《The Zen of Go》
+> Python的核心开发成员之一Tim Peter写下的《The Zen of Python》，成为Python编程和设计的指导原则。Go语言步道师Dave Cheney 2020年发表了名为《The Zen of Go》
 
 ## 译文
 
@@ -45,7 +45,7 @@ Seek to be explicit, reduce coupling, and spooky action at a distance by providi
 ### Simplicity matters 简单很重要
 
 Simplicity is not a synonym for unsophisticated. Simple doesn’t mean crude, it means readable and maintainable. When it is possible to choose, defer to the simpler solution.
-简单不是老练的同义词。简单并不意味着粗糙，它意味着可读性和可维护性。如果可以选择，请遵循较简单的解决方案。
+简单不是容易（不复杂）的同义词。简单并不意味着粗糙，它意味着可读性和可维护性。如果可以选择，请遵循较简单的解决方案。
 
 ### Write tests to lock in the behaviour of your package’s API 编写测试以确定包API的行为
 
@@ -62,7 +62,7 @@ So many crimes against maintainability are committed in the name of performance.
 Use goroutines, channels, locks, interfaces, embedding, in moderation.
 适度使用goroutines、channels、locks、interfaces、embedded。
 
-### Maintainability counts 可维护性计数
+### Maintainability counts 可维护性很重要
 
 Clarity, readability, simplicity, are all aspects of maintainability. Can the thing you worked hard to build be maintained after you’re gone? What can you do today to make it easier for those that come after you?
 清晰度、可读性、简洁性都是可维护性的体现。你辛辛苦苦创建的东西在你离开后还能被维护吗？你今天能做些什么来让你的后人更容易地维护它？
