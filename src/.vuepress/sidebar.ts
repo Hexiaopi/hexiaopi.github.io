@@ -79,6 +79,10 @@ export default sidebar({
           prefix: "concurrency/",
           link: "concurrency/README.md",
           children: [
+            "exit",
+            "producer-consumer",
+            "pipeline",
+            "fan-in-fan-out"
           ],
         },
       ],
