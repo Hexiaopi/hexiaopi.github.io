@@ -3,14 +3,14 @@
   <id>https://Hexiaopi.github.io/</id>
   <title>Hexiaopi</title>
   <subtitle>一枚后端攻城狮的个人博客</subtitle>
-  <updated>2023-08-16T03:26:27.942Z</updated>
+  <updated>2023-08-22T14:18:35.796Z</updated>
   <generator>vuepress-plugin-feed2</generator>
   <link rel="self" href="https://Hexiaopi.github.io/atom.xml"/>
   <link rel="alternate" href="https://Hexiaopi.github.io/"/>
+  <category term="设计模式"/>
   <category term="Go语言"/>
   <category term="转载"/>
   <category term="中间件"/>
-  <category term="设计模式"/>
   <category term="项目规范"/>
   <category term="算法"/>
   <category term="网络"/>
@@ -20,6 +20,174 @@
   <contributor>
     <name>Hexiaopi</name>
   </contributor>
+  <entry>
+    <title type="text">退出模式</title>
+    <id>https://Hexiaopi.github.io/design-pattern/concurrency/exit.html</id>
+    <link href="https://Hexiaopi.github.io/design-pattern/concurrency/exit.html"/>
+    <updated>2023-08-22T14:05:24.000Z</updated>
+    <summary type="html"><![CDATA[<h2> 退出模式</h2>
+<p>使用关键字<code>go</code>很容易启动goroutine，这样创建的协程和当前协程已经分离，我们并不知道</p>
+<h3> 等待指定协程退出</h3>
+<div class="language-go line-numbers-mode" data-ext="go"><pre go="" class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">"fmt"</span>
+	<span class="token string">"time"</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">type</span> signal <span class="token keyword">struct</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">worker</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"worker is working..."</span><span class="token punctuation">)</span>
+	time<span class="token punctuation">.</span><span class="token function">Sleep</span><span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">*</span> time<span class="token punctuation">.</span>Second<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">spawn</span><span class="token punctuation">(</span>f <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&lt;-</span><span class="token keyword">chan</span> signal <span class="token punctuation">{</span>
+	c <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token keyword">chan</span> signal<span class="token punctuation">)</span>
+	<span class="token keyword">go</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"worker start to work..."</span><span class="token punctuation">)</span>
+		<span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+		c <span class="token operator">&lt;-</span> <span class="token function">signal</span><span class="token punctuation">(</span><span class="token keyword">struct</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token keyword">return</span> c
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"start a worker..."</span><span class="token punctuation">)</span>
+	c <span class="token operator">:=</span> <span class="token function">spawn</span><span class="token punctuation">(</span>worker<span class="token punctuation">)</span>
+	<span class="token operator">&lt;-</span>c
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"worker work done!"</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="highlight-lines"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><div class="highlight-line">&nbsp;</div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></summary>
+    <content type="html"><![CDATA[<h2> 退出模式</h2>
+<p>使用关键字<code>go</code>很容易启动goroutine，这样创建的协程和当前协程已经分离，我们并不知道</p>
+<h3> 等待指定协程退出</h3>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="highlight-lines"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><div class="highlight-line">&nbsp;</div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="hint-container tip">
+<p class="hint-container-title">提示</p>
+<p>spawn函数创建的新goroutine与调用spawn函数的goroutine（main goroutine）之间通过channel建立了联系。</p>
+</div>
+<h3> 等待多个协程退出</h3>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="highlight-lines"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><div class="highlight-line">&nbsp;</div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="hint-container tip">
+<p class="hint-container-title">提示</p>
+<p>通过sync.WaitGroup，对于每一个协程处理前进行wg.Add(1)，退出时执行wg.Done()，并等待所有的协程退出wg.Wait()。保障所有的协程都会结束。</p>
+</div>
+]]></content>
+    <category term="设计模式"/>
+    <published>2023-08-22T00:00:00.000Z</published>
+  </entry>
+  <entry>
+    <title type="text">扇入/扇出模型</title>
+    <id>https://Hexiaopi.github.io/design-pattern/concurrency/fan-in-fan-out.html</id>
+    <link href="https://Hexiaopi.github.io/design-pattern/concurrency/fan-in-fan-out.html"/>
+    <updated>2023-08-22T14:05:24.000Z</updated>
+    <summary type="html"><![CDATA[<h2> 扇出模式</h2>
+<p>即多个相同goroutine从同一个channel读取数据并处理</p>
+<figure><figcaption>fan-out</figcaption></figure>
+<div class="language-go line-numbers-mode" data-ext="go"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">TestFanOut</span><span class="token punctuation">(</span>t <span class="token operator">*</span>testing<span class="token punctuation">.</span>T<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">var</span> nums <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">}</span>
+	in <span class="token operator">:=</span> <span class="token function">echo</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span>
+	c1 <span class="token operator">:=</span> <span class="token function">odd</span><span class="token punctuation">(</span>in<span class="token punctuation">)</span>
+	c2 <span class="token operator">:=</span> <span class="token function">odd</span><span class="token punctuation">(</span>in<span class="token punctuation">)</span>
+	c3 <span class="token operator">:=</span> <span class="token function">odd</span><span class="token punctuation">(</span>in<span class="token punctuation">)</span>
+	t<span class="token punctuation">.</span><span class="token function">Log</span><span class="token punctuation">(</span><span class="token string">"c1"</span><span class="token punctuation">)</span>
+	<span class="token keyword">for</span> n <span class="token operator">:=</span> <span class="token keyword">range</span> c1 <span class="token punctuation">{</span>
+		t<span class="token punctuation">.</span><span class="token function">Log</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+	t<span class="token punctuation">.</span><span class="token function">Log</span><span class="token punctuation">(</span><span class="token string">"c2"</span><span class="token punctuation">)</span>
+	<span class="token keyword">for</span> n <span class="token operator">:=</span> <span class="token keyword">range</span> c2 <span class="token punctuation">{</span>
+		t<span class="token punctuation">.</span><span class="token function">Log</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+	t<span class="token punctuation">.</span><span class="token function">Log</span><span class="token punctuation">(</span><span class="token string">"c3"</span><span class="token punctuation">)</span>
+	<span class="token keyword">for</span> n <span class="token operator">:=</span> <span class="token keyword">range</span> c3 <span class="token punctuation">{</span>
+		t<span class="token punctuation">.</span><span class="token function">Log</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></summary>
+    <content type="html"><![CDATA[<h2> 扇出模式</h2>
+<p>即多个相同goroutine从同一个channel读取数据并处理</p>
+<figure><figcaption>fan-out</figcaption></figure>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>输出结果</p>
+<div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>我们使用三个协程从一个channel中过滤2的倍数，分别放在三个channel输出。由于Go语言调度不确定性，因此测试结果可能不一致。</p>
+<h2> 扇入模式</h2>
+<p>从多个channel读取数据并处理，将结果放入一个channel</p>
+<figure><figcaption>fan-in</figcaption></figure>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>扇入使用示例：</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>输出结果为：</p>
+<div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>其中：</p>
+<ul>
+<li>c1、c2是两个相同的goroutine从同一个channel取数据进行平方计算，这就是扇出；</li>
+<li>merge从c1、c2两个channel里取数据合并到一个channel里，这就是扇入；</li>
+</ul>
+]]></content>
+    <category term="设计模式"/>
+    <published>2023-08-22T00:00:00.000Z</published>
+  </entry>
+  <entry>
+    <title type="text">管道模式</title>
+    <id>https://Hexiaopi.github.io/design-pattern/concurrency/pipeline.html</id>
+    <link href="https://Hexiaopi.github.io/design-pattern/concurrency/pipeline.html"/>
+    <updated>2023-08-22T14:05:24.000Z</updated>
+    <summary type="html"><![CDATA[<p>管道是Unix/Linux上一种典型的并发程序设计模式，也是Unix崇尚<strong>组合</strong>设计哲学的具体体现，例如执行：</p>
+<div class="language-bash line-numbers-mode" data-ext="sh"><pre class="language-bash"><code><span class="token function">ls</span> <span class="token parameter variable">-l</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">"\.go"</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div>]]></summary>
+    <content type="html"><![CDATA[<p>管道是Unix/Linux上一种典型的并发程序设计模式，也是Unix崇尚<strong>组合</strong>设计哲学的具体体现，例如执行：</p>
+<div class="language-bash line-numbers-mode" data-ext="sh"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>就可以利用管道机制过滤出当前路径下以".go"结尾的文件列表。</p>
+<p><code>ls -l</code>的输出作为<code>grep "\.go"</code>的输入很容易将两个功能模块串在一起。</p>
+<h2> 管道模式</h2>
+<figure><figcaption>pipeline</figcaption></figure>
+<p>Go通常使用channel原语构建管道模式</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>管道模式使用示例</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>输出结果</p>
+<div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><code>echo</code>将数组切片转换为channel，其结果作为<code>odd</code>的入参，<code>odd</code>过滤2的倍数，剩余的数作为<code>square</code>的入参，<code>square</code>将数字求得平方。<br>
+从上面我们可以看出管道模式有良好的<strong>可扩展性</strong>，我们很容易扩展其他功能函数。</p>
+<h2> 参考资料</h2>
+<p><a href="https://go.dev/blog/pipelines" target="_blank" rel="noopener noreferrer">Go Concurrency Patterns: Pipelines and cancellation</a><br>
+<a href="https://coolshell.cn/articles/21228.html" target="_blank" rel="noopener noreferrer">GO编程模式：PIPELINE</a></p>
+]]></content>
+    <category term="设计模式"/>
+    <published>2023-08-22T00:00:00.000Z</published>
+  </entry>
+  <entry>
+    <title type="text">生产者/消费者模式</title>
+    <id>https://Hexiaopi.github.io/design-pattern/concurrency/producer-consumer.html</id>
+    <link href="https://Hexiaopi.github.io/design-pattern/concurrency/producer-consumer.html"/>
+    <updated>2023-08-22T14:05:24.000Z</updated>
+    <summary type="html"><![CDATA[<p><strong>生产者/消费者</strong>模式是并发编程中常见的模型，该模型主要通过平衡生产者和消费者来提高程序的整体处理数据的能力</p>
+<h2> 生产者/消费者模式</h2>
+<p>该模型中：生产者生产数据，放到队列中，消费者从队列中取数据。这样生产者和消费者变成异步的两个过程。</p>
+<figure><figcaption>producer-consumer</figcaption></figure>
+<p>定义生产者</p>
+<div class="language-go line-numbers-mode" data-ext="go"><pre class="language-go"><code><span class="token comment">// Producer: 生产factor倍数</span>
+<span class="token keyword">func</span> <span class="token function">Producer</span><span class="token punctuation">(</span>factor <span class="token builtin">int</span><span class="token punctuation">,</span> out <span class="token keyword">chan</span><span class="token operator">&lt;-</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>
+		out <span class="token operator">&lt;-</span> i <span class="token operator">*</span> factor
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></summary>
+    <content type="html"><![CDATA[<p><strong>生产者/消费者</strong>模式是并发编程中常见的模型，该模型主要通过平衡生产者和消费者来提高程序的整体处理数据的能力</p>
+<h2> 生产者/消费者模式</h2>
+<p>该模型中：生产者生产数据，放到队列中，消费者从队列中取数据。这样生产者和消费者变成异步的两个过程。</p>
+<figure><figcaption>producer-consumer</figcaption></figure>
+<p>定义生产者</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>定义消费者</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>启动生产者和消费者模型</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>在这个例子中，我们启动：</p>
+<ul>
+<li>两个生产者，分别生产3的倍数、5的倍数</li>
+<li>一个消费者，打印队列中的数据</li>
+</ul>
+]]></content>
+    <category term="设计模式"/>
+    <published>2023-08-22T00:00:00.000Z</published>
+  </entry>
+  <entry>
+    <title type="text">defer注意事项</title>
+    <id>https://Hexiaopi.github.io/go-language/base/defer.html</id>
+    <link href="https://Hexiaopi.github.io/go-language/base/defer.html"/>
+    <updated>2023-08-22T14:05:24.000Z</updated>
+    <category term="Go语言"/>
+    <published>2023-08-14T00:00:00.000Z</published>
+  </entry>
   <entry>
     <title type="text">Go之禅</title>
     <id>https://Hexiaopi.github.io/go-language/reprint/zen.html</id>
@@ -850,7 +1018,7 @@ Cgo 不是 Go。</p>
     <title type="text">并发模式</title>
     <id>https://Hexiaopi.github.io/design-pattern/concurrency/</id>
     <link href="https://Hexiaopi.github.io/design-pattern/concurrency/"/>
-    <updated>2023-08-03T14:52:58.000Z</updated>
+    <updated>2023-08-22T14:05:24.000Z</updated>
     <summary type="html"><![CDATA[<p>Go语言推荐CSP模型进行并发处理，而非通过共享内存。这里总结一些并发模式或者称作范式，去管理控制协程。</p>
 ]]></summary>
     <content type="html"><![CDATA[<p>Go语言推荐CSP模型进行并发处理，而非通过共享内存。这里总结一些并发模式或者称作范式，去管理控制协程。</p>
@@ -858,36 +1026,6 @@ Cgo 不是 Go。</p>
 <h2> Go并发模式</h2>
 <p>我们都知道Go语言开启协程只需要<code>go func(){ }</code>，有时候需要与goroutine之间建立联系，方便进一步控制与处理。<br>
 因此总结一些范式，优雅的管理goroutine。</p>
-<h3> 退出模式</h3>
-<p>使用关键字<code>go</code>很容易启动goroutine，这样创建的协程和当前协程已经分离，我们并不知道</p>
-<h4> 等待指定协程退出</h4>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="highlight-lines"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><div class="highlight-line">&nbsp;</div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="hint-container tip">
-<p class="hint-container-title">提示</p>
-<p>spawn函数创建的新goroutine与调用spawn函数的goroutine（main goroutine）之间通过channel建立了联系。</p>
-</div>
-<h4> 等待多个协程退出</h4>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="highlight-lines"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><div class="highlight-line">&nbsp;</div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="hint-container tip">
-<p class="hint-container-title">提示</p>
-<p>通过sync.WaitGroup，对于每一个协程处理前进行wg.Add(1)，退出时执行wg.Done()，并等待所有的协程退出wg.Wait()。保障所有的协程都会结束。</p>
-</div>
-<h3> 管道模式-pipeline</h3>
-<p>管道是Unix/Linux上一种典型的并发程序设计模式，例如执行：</p>
-<div class="language-bash line-numbers-mode" data-ext="sh"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>就可以利用管道机制过滤出当前路径下以".go"结尾的文件列表。</p>
-<p><code>ls -l</code>的输出作为<code>grep "\.go"</code>的输入很容易将两个功能模块串在一起。</p>
-<div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>Go通常使用channel原语构建管道模式</p>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><code>echo</code>的结果作为<code>odd</code>的入参，<code>odd</code>的结果作为<code>square</code>的入参。这样我们很容易扩展其他功能函数，例如：<code>sum</code></p>
-<p>参考资料：</p>
-<p><a href="https://go.dev/blog/pipelines" target="_blank" rel="noopener noreferrer">Go Concurrency Patterns: Pipelines and cancellation</a></p>
-<p><a href="https://coolshell.cn/articles/21228.html" target="_blank" rel="noopener noreferrer">GO编程模式：PIPELINE</a></p>
-<h3> 扇出，扇入模式</h3>
-<p>扇出模式，即多个相同goroutine从同一个channel读取数据并处理</p>
-<div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>扇入模式，从多个channel读取数据并处理，将结果放入一个channel</p>
-<div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>其中：</p>
-<ul>
-<li>c1、c2是两个相同的goroutine从同一个channel取数据进行平方计算，这就是扇出；</li>
-<li>merge从c1、c2两个channel里取数据合并到一个channel里，这就是扇入；</li>
-</ul>
-<h2> 超时与取消模式</h2>
 ]]></content>
     <category term="设计模式"/>
     <published>2023-02-26T00:00:00.000Z</published>
@@ -1310,15 +1448,35 @@ Cgo 不是 Go。</p>
     <title type="text"></title>
     <id>https://Hexiaopi.github.io/CHANGELOG.html</id>
     <link href="https://Hexiaopi.github.io/CHANGELOG.html"/>
-    <updated>2023-08-13T15:38:36.000Z</updated>
-    <summary type="html"><![CDATA[<p><a name="v0.7.1"></a></p>
-<h2> <a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.7.0...v0.7.1" target="_blank" rel="noopener noreferrer">v0.7.1</a> (2023-08-13)</h2>
+    <updated>2023-08-22T14:08:21.000Z</updated>
+    <summary type="html"><![CDATA[<p><a name="v0.8.0"></a></p>
+<h2> <a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.7.1...v0.8.0" target="_blank" rel="noopener noreferrer">v0.8.0</a> (2023-08-22)</h2>
 <h3> Bug Fixes</h3>
 <ul>
-<li><strong>design-pattern:</strong> 修改设计原则</li>
-<li><strong>go-language:</strong> 修改Go语言基础</li>
+<li><strong>design-pattern:</strong> 修改并发模式</li>
+<li><strong>go-language:</strong> 修改Go之禅中模糊的含义</li>
+<li><strong>go-language:</strong> 修改slice</li>
+<li><strong>middleware:</strong> 修改监控系统至中间件</li>
 </ul>]]></summary>
-    <content type="html"><![CDATA[<p><a name="v0.7.1"></a></p>
+    <content type="html"><![CDATA[<p><a name="v0.8.0"></a></p>
+<h2> <a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.7.1...v0.8.0" target="_blank" rel="noopener noreferrer">v0.8.0</a> (2023-08-22)</h2>
+<h3> Bug Fixes</h3>
+<ul>
+<li><strong>design-pattern:</strong> 修改并发模式</li>
+<li><strong>go-language:</strong> 修改Go之禅中模糊的含义</li>
+<li><strong>go-language:</strong> 修改slice</li>
+<li><strong>middleware:</strong> 修改监控系统至中间件</li>
+</ul>
+<h3> Code Refactoring</h3>
+<ul>
+<li>markdown格式优化</li>
+</ul>
+<h3> Features</h3>
+<ul>
+<li><strong>go-language:</strong> 增加Go之禅</li>
+<li><strong>go-language:</strong> 转载Go箴言</li>
+</ul>
+<p><a name="v0.7.1"></a></p>
 <h2> <a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.7.0...v0.7.1" target="_blank" rel="noopener noreferrer">v0.7.1</a> (2023-08-13)</h2>
 <h3> Bug Fixes</h3>
 <ul>
