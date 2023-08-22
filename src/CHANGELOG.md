@@ -1,4 +1,24 @@
 
+<a name="v0.8.0"></a>
+## [v0.8.0](https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.7.1...v0.8.0) (2023-08-22)
+
+### Bug Fixes
+
+* **design-pattern:** 修改并发模式
+* **go-language:** 修改Go之禅中模糊的含义
+* **go-language:** 修改slice
+* **middleware:** 修改监控系统至中间件
+
+### Code Refactoring
+
+* markdown格式优化
+
+### Features
+
+* **go-language:** 增加Go之禅
+* **go-language:** 转载Go箴言
+
+
 <a name="v0.7.1"></a>
 ## [v0.7.1](https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.7.0...v0.7.1) (2023-08-13)
 
