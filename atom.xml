@@ -3,13 +3,13 @@
   <id>https://Hexiaopi.github.io/</id>
   <title>Hexiaopi</title>
   <subtitle>一枚后端攻城狮的个人博客</subtitle>
-  <updated>2023-08-24T06:25:18.107Z</updated>
+  <updated>2023-08-24T08:02:05.755Z</updated>
   <generator>vuepress-plugin-feed2</generator>
   <link rel="self" href="https://Hexiaopi.github.io/atom.xml"/>
   <link rel="alternate" href="https://Hexiaopi.github.io/"/>
-  <category term="设计模式"/>
   <category term="Go语言"/>
   <category term="转载"/>
+  <category term="设计模式"/>
   <category term="中间件"/>
   <category term="项目规范"/>
   <category term="算法"/>
@@ -20,6 +20,39 @@
   <contributor>
     <name>Hexiaopi</name>
   </contributor>
+  <entry>
+    <title type="text">进阶</title>
+    <id>https://Hexiaopi.github.io/go-language/advance/</id>
+    <link href="https://Hexiaopi.github.io/go-language/advance/"/>
+    <updated>2023-08-24T08:00:27.000Z</updated>
+    <summary type="html"><![CDATA[<blockquote>
+<p>介绍Go语言进阶知识，包括遇到的一些坑和底层原理，进阶知识对于入门童鞋来说可以不用了解，并不会影响日常开发，属于深度探讨</p>
+</blockquote>
+]]></summary>
+    <content type="html"><![CDATA[<blockquote>
+<p>介绍Go语言进阶知识，包括遇到的一些坑和底层原理，进阶知识对于入门童鞋来说可以不用了解，并不会影响日常开发，属于深度探讨</p>
+</blockquote>
+]]></content>
+    <category term="Go语言"/>
+    <published>2023-08-24T00:00:00.000Z</published>
+  </entry>
+  <entry>
+    <title type="text">转载</title>
+    <id>https://Hexiaopi.github.io/go-language/reprint/</id>
+    <link href="https://Hexiaopi.github.io/go-language/reprint/"/>
+    <updated>2023-08-24T08:00:27.000Z</updated>
+    <summary type="html"><![CDATA[<blockquote>
+<p>这里会转载我认为比较好的博文</p>
+</blockquote>
+]]></summary>
+    <content type="html"><![CDATA[<blockquote>
+<p>这里会转载我认为比较好的博文</p>
+</blockquote>
+]]></content>
+    <category term="Go语言"/>
+    <category term="转载"/>
+    <published>2023-08-24T00:00:00.000Z</published>
+  </entry>
   <entry>
     <title type="text">退出模式</title>
     <id>https://Hexiaopi.github.io/design-pattern/concurrency/exit.html</id>

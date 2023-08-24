@@ -6,13 +6,13 @@
     <link>https://Hexiaopi.github.io/</link>
     <description>一枚后端攻城狮的个人博客</description>
     <language>zh-CN</language>
-    <pubDate>Thu, 24 Aug 2023 06:25:18 GMT</pubDate>
-    <lastBuildDate>Thu, 24 Aug 2023 06:25:18 GMT</lastBuildDate>
+    <pubDate>Thu, 24 Aug 2023 08:02:05 GMT</pubDate>
+    <lastBuildDate>Thu, 24 Aug 2023 08:02:05 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
-    <category>设计模式</category>
     <category>Go语言</category>
     <category>转载</category>
+    <category>设计模式</category>
     <category>中间件</category>
     <category>项目规范</category>
     <category>算法</category>
@@ -20,6 +20,33 @@
     <category>系统设计</category>
     <category>工具</category>
     <category>数据库</category>
+    <item>
+      <title>进阶</title>
+      <link>https://Hexiaopi.github.io/go-language/advance/</link>
+      <guid>https://Hexiaopi.github.io/go-language/advance/</guid>
+      <source url="https://Hexiaopi.github.io/rss.xml">进阶</source>
+      <description>介绍Go语言进阶知识，包括遇到的一些坑和底层原理，进阶知识对于入门童鞋来说可以不用了解，并不会影响日常开发，属于深度探讨</description>
+      <category>Go语言</category>
+      <pubDate>Thu, 24 Aug 2023 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<blockquote>
+<p>介绍Go语言进阶知识，包括遇到的一些坑和底层原理，进阶知识对于入门童鞋来说可以不用了解，并不会影响日常开发，属于深度探讨</p>
+</blockquote>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>转载</title>
+      <link>https://Hexiaopi.github.io/go-language/reprint/</link>
+      <guid>https://Hexiaopi.github.io/go-language/reprint/</guid>
+      <source url="https://Hexiaopi.github.io/rss.xml">转载</source>
+      <description>这里会转载我认为比较好的博文</description>
+      <category>Go语言</category>
+      <category>转载</category>
+      <pubDate>Thu, 24 Aug 2023 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<blockquote>
+<p>这里会转载我认为比较好的博文</p>
+</blockquote>
+]]></content:encoded>
+    </item>
     <item>
       <title>退出模式</title>
       <link>https://Hexiaopi.github.io/design-pattern/concurrency/exit.html</link>

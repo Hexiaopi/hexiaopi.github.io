@@ -6,6 +6,33 @@
   "description": "一枚后端攻城狮的个人博客",
   "items": [
     {
+      "title": "进阶",
+      "url": "https://Hexiaopi.github.io/go-language/advance/",
+      "id": "https://Hexiaopi.github.io/go-language/advance/",
+      "summary": "介绍Go语言进阶知识，包括遇到的一些坑和底层原理，进阶知识对于入门童鞋来说可以不用了解，并不会影响日常开发，属于深度探讨",
+      "content_html": "<blockquote>\n<p>介绍Go语言进阶知识，包括遇到的一些坑和底层原理，进阶知识对于入门童鞋来说可以不用了解，并不会影响日常开发，属于深度探讨</p>\n</blockquote>\n",
+      "date_published": "2023-08-24T00:00:00.000Z",
+      "date_modified": "2023-08-24T08:00:27.000Z",
+      "authors": [],
+      "tags": [
+        "Go语言"
+      ]
+    },
+    {
+      "title": "转载",
+      "url": "https://Hexiaopi.github.io/go-language/reprint/",
+      "id": "https://Hexiaopi.github.io/go-language/reprint/",
+      "summary": "这里会转载我认为比较好的博文",
+      "content_html": "<blockquote>\n<p>这里会转载我认为比较好的博文</p>\n</blockquote>\n",
+      "date_published": "2023-08-24T00:00:00.000Z",
+      "date_modified": "2023-08-24T08:00:27.000Z",
+      "authors": [],
+      "tags": [
+        "Go语言",
+        "转载"
+      ]
+    },
+    {
       "title": "退出模式",
       "url": "https://Hexiaopi.github.io/design-pattern/concurrency/exit.html",
       "id": "https://Hexiaopi.github.io/design-pattern/concurrency/exit.html",
