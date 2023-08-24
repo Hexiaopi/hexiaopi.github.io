@@ -1,5 +1,5 @@
 ---
-title: MySQL-查询过程
+title: 查询过程
 icon: mysql
 date: 2022-10-22
 tag:

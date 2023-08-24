@@ -1,5 +1,5 @@
 ---
-title: MySQL-表连接
+title: 表连接
 icon: mysql
 date: 2022-10-22
 tag:

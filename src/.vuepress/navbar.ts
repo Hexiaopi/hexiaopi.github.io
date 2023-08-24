@@ -55,7 +55,7 @@ export default navbar([
       {
         text: "MySQL",
         icon: "mysql",
-        link: "mysql/engine.md",
+        link: "mysql/README.md",
         activeMatch: "^/database/mysql",
       }
     ]

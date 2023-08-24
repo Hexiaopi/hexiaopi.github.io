@@ -1,5 +1,5 @@
 ---
-title: MySQL-写入过程
+title: 写入过程
 icon: mysql
 date: 2022-10-22
 tag:

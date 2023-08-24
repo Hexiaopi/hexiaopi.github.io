@@ -1,5 +1,5 @@
 ---
-title: MySQL-索引
+title: 索引
 icon: mysql
 date: 2023-03-15
 tag:
