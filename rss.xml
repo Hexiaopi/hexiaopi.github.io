@@ -6,20 +6,99 @@
     <link>https://Hexiaopi.github.io/</link>
     <description>一枚后端攻城狮的个人博客</description>
     <language>zh-CN</language>
-    <pubDate>Thu, 24 Aug 2023 08:02:05 GMT</pubDate>
-    <lastBuildDate>Thu, 24 Aug 2023 08:02:05 GMT</lastBuildDate>
+    <pubDate>Sat, 26 Aug 2023 15:37:55 GMT</pubDate>
+    <lastBuildDate>Sat, 26 Aug 2023 15:37:55 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+    <category>数据库</category>
+    <category>项目规范</category>
     <category>Go语言</category>
     <category>转载</category>
     <category>设计模式</category>
     <category>中间件</category>
-    <category>项目规范</category>
     <category>算法</category>
     <category>网络</category>
     <category>系统设计</category>
     <category>工具</category>
-    <category>数据库</category>
+    <item>
+      <title>数据库</title>
+      <link>https://Hexiaopi.github.io/database/</link>
+      <guid>https://Hexiaopi.github.io/database/</guid>
+      <source url="https://Hexiaopi.github.io/rss.xml">数据库</source>
+      <description>记录学习数据库的过程 计划： MySQL MongoDB Redis Prometheus</description>
+      <category>数据库</category>
+      <pubDate>Thu, 24 Aug 2023 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<blockquote>
+<p>记录学习数据库的过程</p>
+</blockquote>
+<p>计划：</p>
+<ul class="task-list-container">
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" id="task-item-0" checked="checked" disabled="disabled"><label class="task-list-item-label" for="task-item-0"> MySQL</label></li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" id="task-item-1" disabled="disabled"><label class="task-list-item-label" for="task-item-1"> MongoDB</label></li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" id="task-item-2" disabled="disabled"><label class="task-list-item-label" for="task-item-2"> Redis</label></li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" id="task-item-3" disabled="disabled"><label class="task-list-item-label" for="task-item-3"> Prometheus</label></li>
+</ul>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>MySQL</title>
+      <link>https://Hexiaopi.github.io/database/mysql/</link>
+      <guid>https://Hexiaopi.github.io/database/mysql/</guid>
+      <source url="https://Hexiaopi.github.io/rss.xml">MySQL</source>
+      <description>MySQL是一种流行的关系型数据库管理系统，具有以下几个优点： 开源免费: MySQL采用开源许可证，可以免费获得和使用。这使得MySQL成为许多个人开发者、初创公司和中小型企业的首选数据库，可以降低成本并提高灵活性。 可靠性和稳定性: MySQL经过了广泛测试和市场验证，具有良好的稳定性和可靠性。它支持事务处理和ACID（原子性、一致性、隔离性和持久性）属性，保证数据的一致性和安全。 高性能: MySQL具有出色的性能特点，能够处理大规模的并发请求。它为多用户并发操作提供了有效的解决方案，并且优化了处理大量数据的能力。 可扩展性: MySQL支持水平和垂直扩展，可以根据需要增加更多的服务器、节点和存储，以应对不断增长的数据需求。它还提供了复制和分片等机制，以实现数据的复制和分布式存储。 灵活性: MySQL支持多种操作系统，包括Windows、Linux、macOS等，可以在各种环境中运行。它还支持多种编程语言的驱动程序和API，如Python、Java、PHP等，提供了广泛的开发和集成选项。 社区支持和生态系统: MySQL拥有庞大的开发者社区和活跃的生态系统，有许多开源工具、第三方库和插件可供选择。这意味着可以获得丰富的资源和支持，能够更快地解决问题和开发应用。</description>
+      <category>数据库</category>
+      <pubDate>Thu, 24 Aug 2023 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<p>MySQL是一种流行的关系型数据库管理系统，具有以下几个优点：</p>
+<ul>
+<li>
+<p>开源免费: MySQL采用开源许可证，可以免费获得和使用。这使得MySQL成为许多个人开发者、初创公司和中小型企业的首选数据库，可以降低成本并提高灵活性。</p>
+</li>
+<li>
+<p>可靠性和稳定性: MySQL经过了广泛测试和市场验证，具有良好的稳定性和可靠性。它支持事务处理和ACID（原子性、一致性、隔离性和持久性）属性，保证数据的一致性和安全。</p>
+</li>
+<li>
+<p>高性能: MySQL具有出色的性能特点，能够处理大规模的并发请求。它为多用户并发操作提供了有效的解决方案，并且优化了处理大量数据的能力。</p>
+</li>
+<li>
+<p>可扩展性: MySQL支持水平和垂直扩展，可以根据需要增加更多的服务器、节点和存储，以应对不断增长的数据需求。它还提供了复制和分片等机制，以实现数据的复制和分布式存储。</p>
+</li>
+<li>
+<p>灵活性: MySQL支持多种操作系统，包括Windows、Linux、macOS等，可以在各种环境中运行。它还支持多种编程语言的驱动程序和API，如Python、Java、PHP等，提供了广泛的开发和集成选项。</p>
+</li>
+<li>
+<p>社区支持和生态系统: MySQL拥有庞大的开发者社区和活跃的生态系统，有许多开源工具、第三方库和插件可供选择。这意味着可以获得丰富的资源和支持，能够更快地解决问题和开发应用。</p>
+</li>
+</ul>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>项目规范</title>
+      <link>https://Hexiaopi.github.io/project-standard/</link>
+      <guid>https://Hexiaopi.github.io/project-standard/</guid>
+      <source url="https://Hexiaopi.github.io/rss.xml">项目规范</source>
+      <description>这里记录平时开发过程中的项目规范，好的规范有助于： 一致性: 项目规范确保团队成员在工作中遵循相同的标准和做法，使得代码、文档、命名等保持一致。这有助于提高代码的可读性和可维护性，减少混乱和错误。 提高效率: 项目规范定义了已经验证过的最佳实践和指导原则，可以减少重复劳动和不必要的思考，提高团队成员的工作效率。规范化的流程和模板也能减少沟通成本，使得团队更高效地协同工作。 可维护性: 项目规范通常包括命名约定、代码结构、注释规范等，这些指导可以提高代码的可维护性。当新成员加入或者团队成员变动时，他们能够更快地理解项目的结构和代码，减轻维护负担。 质量控制: 项目规范可以确保项目符合良好的软件工程实践和行业标准，从而提高项目的质量。规范化的代码和流程可以减少潜在的 bug 和问题，并且提供了一致的评估标准，有助于提前发现和纠正问题。 可扩展性: 通过定义良好的规范并遵循它们，项目可以更容易地进行扩展和维护。合理的架构设计和规范化的开发实践可以使得项目更易于扩展，并且降低了引入新功能、改进和优化的风险。</description>
+      <category>项目规范</category>
+      <pubDate>Wed, 23 Aug 2023 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<p>这里记录平时开发过程中的项目规范，好的规范有助于：</p>
+<ul>
+<li>
+<p>一致性: 项目规范确保团队成员在工作中遵循相同的标准和做法，使得代码、文档、命名等保持一致。这有助于提高代码的可读性和可维护性，减少混乱和错误。</p>
+</li>
+<li>
+<p>提高效率: 项目规范定义了已经验证过的最佳实践和指导原则，可以减少重复劳动和不必要的思考，提高团队成员的工作效率。规范化的流程和模板也能减少沟通成本，使得团队更高效地协同工作。</p>
+</li>
+<li>
+<p>可维护性: 项目规范通常包括命名约定、代码结构、注释规范等，这些指导可以提高代码的可维护性。当新成员加入或者团队成员变动时，他们能够更快地理解项目的结构和代码，减轻维护负担。</p>
+</li>
+<li>
+<p>质量控制: 项目规范可以确保项目符合良好的软件工程实践和行业标准，从而提高项目的质量。规范化的代码和流程可以减少潜在的 bug 和问题，并且提供了一致的评估标准，有助于提前发现和纠正问题。</p>
+</li>
+<li>
+<p>可扩展性: 通过定义良好的规范并遵循它们，项目可以更容易地进行扩展和维护。合理的架构设计和规范化的开发实践可以使得项目更易于扩展，并且降低了引入新功能、改进和优化的风险。</p>
+</li>
+</ul>
+]]></content:encoded>
+    </item>
     <item>
       <title>进阶</title>
       <link>https://Hexiaopi.github.io/go-language/advance/</link>
@@ -3937,10 +4016,10 @@ Vincent Driessen 为了解决这个问题，提出<a href="https://nvie.com/post
 <div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
     </item>
     <item>
-      <title>MySQL-存储引擎</title>
+      <title>存储引擎</title>
       <link>https://Hexiaopi.github.io/database/mysql/engine.html</link>
       <guid>https://Hexiaopi.github.io/database/mysql/engine.html</guid>
-      <source url="https://Hexiaopi.github.io/rss.xml">MySQL-存储引擎</source>
+      <source url="https://Hexiaopi.github.io/rss.xml">存储引擎</source>
       <description>MySQL是常用的关系型数据库 MySQL架构 MySQL架构 存储引擎 存储引擎是MySQL区别于其他数据库的一个重要特性，MySQL有诸多存储引擎，且存储引擎是基于表的，而不是数据(同一个数据库下面的各个表可以使用不同的引擎); 存储引擎是底层物理结构的实现，每个存储引擎开发者可以按照自己的意愿开发，具有各自的特点; 对于MySQL使用者来说，存储...</description>
       <category>数据库</category>
       <pubDate>Sat, 22 Oct 2022 00:00:00 GMT</pubDate>
@@ -4057,10 +4136,10 @@ Vincent Driessen 为了解决这个问题，提出<a href="https://nvie.com/post
 ]]></content:encoded>
     </item>
     <item>
-      <title>MySQL-索引</title>
+      <title>索引</title>
       <link>https://Hexiaopi.github.io/database/mysql/idx.html</link>
       <guid>https://Hexiaopi.github.io/database/mysql/idx.html</guid>
-      <source url="https://Hexiaopi.github.io/rss.xml">MySQL-索引</source>
+      <source url="https://Hexiaopi.github.io/rss.xml">索引</source>
       <description>索引是一种数据结构，帮助SQL高效获取数据的。类似一本书的目录，可以快速对特定值进行定位和查找，从而大大加快数据查询的效率。</description>
       <category>数据库</category>
       <pubDate>Wed, 15 Mar 2023 00:00:00 GMT</pubDate>
@@ -4147,10 +4226,10 @@ Vincent Driessen 为了解决这个问题，提出<a href="https://nvie.com/post
 ]]></content:encoded>
     </item>
     <item>
-      <title>MySQL-表连接</title>
+      <title>表连接</title>
       <link>https://Hexiaopi.github.io/database/mysql/join.html</link>
       <guid>https://Hexiaopi.github.io/database/mysql/join.html</guid>
-      <source url="https://Hexiaopi.github.io/rss.xml">MySQL-表连接</source>
+      <source url="https://Hexiaopi.github.io/rss.xml">表连接</source>
       <description>连接是一种机制，用来在一条SELECT语句中关联表 内连接（INNER JOIN） 内连接又叫等值连接,它将第一个表中的每一行与第二个表中的每一行配对，只返回匹配给定条件的行 从数据的角度就是求两个集合的交集，如下图所示 内连接 示例： 自然连接（NATURE JOIN） 自然连接，会自动找出两个表中相同的列作为连接条件进行连接 以下示例语句与内连接语...</description>
       <category>数据库</category>
       <pubDate>Sat, 22 Oct 2022 00:00:00 GMT</pubDate>
@@ -4198,10 +4277,10 @@ Vincent Driessen 为了解决这个问题，提出<a href="https://nvie.com/post
 ]]></content:encoded>
     </item>
     <item>
-      <title>MySQL-查询过程</title>
+      <title>查询过程</title>
       <link>https://Hexiaopi.github.io/database/mysql/read-process.html</link>
       <guid>https://Hexiaopi.github.io/database/mysql/read-process.html</guid>
-      <source url="https://Hexiaopi.github.io/rss.xml">MySQL-查询过程</source>
+      <source url="https://Hexiaopi.github.io/rss.xml">查询过程</source>
       <description>read</description>
       <category>数据库</category>
       <pubDate>Sat, 22 Oct 2022 00:00:00 GMT</pubDate>
@@ -4334,10 +4413,10 @@ LIMIT关键字用于限制查询结果的数量。MySQL只返回前N条符合条
       <enclosure url="https://jvns.ca/images/sql-queries.jpeg" type="image/jpeg"/>
     </item>
     <item>
-      <title>MySQL-事务</title>
+      <title>事务</title>
       <link>https://Hexiaopi.github.io/database/mysql/transaction.html</link>
       <guid>https://Hexiaopi.github.io/database/mysql/transaction.html</guid>
-      <source url="https://Hexiaopi.github.io/rss.xml">MySQL-事务</source>
+      <source url="https://Hexiaopi.github.io/rss.xml">事务</source>
       <description>事务的特性 原子性(Atomicity): 事务中的所有操作要么全部完成，要么全部不完成（回滚），不会在事务中间遇到错误而中断。 一致性(Consistency): 事务开始和结束时，数据都必须保持一致状态，即符合约束、完整性、默认值以及其它定义的规则。事务执行的结果不能破坏数据库的完整性和一致性。 隔离性(Isolation): 各个事务互相隔离，每个事务的执行都不会影响其它事务的执行或者结果。 持久性(Durability): 一个事务一旦提交成功，它对数据库中的数据的改变就是永久性的，即使发生数据库故障也不应该对其产生影响。</description>
       <category>数据库</category>
       <pubDate>Sun, 23 Oct 2022 00:00:00 GMT</pubDate>
@@ -4758,10 +4837,10 @@ LIMIT关键字用于限制查询结果的数量。MySQL只返回前N条符合条
 ]]></content:encoded>
     </item>
     <item>
-      <title>MySQL-写入过程</title>
+      <title>写入过程</title>
       <link>https://Hexiaopi.github.io/database/mysql/write-process.html</link>
       <guid>https://Hexiaopi.github.io/database/mysql/write-process.html</guid>
-      <source url="https://Hexiaopi.github.io/rss.xml">MySQL-写入过程</source>
+      <source url="https://Hexiaopi.github.io/rss.xml">写入过程</source>
       <description>执行流程 查询语句执行的流程，更新语句也会执行类似的过程，稍有差别的地方是更新语句会将更新表的所有缓存清理，这就是为什么不建议使用查询缓存。 交互流程 日志模块 更重要的是MySQL的日志模块，这是数据库提供高可用以及事务的重要模块 我们以InnoDB引擎和一条更新语句为例 写流程 蓝色框是MySQL服务层处理过程; 绿色框是InnoDB引擎层处理过程...</description>
       <category>数据库</category>
       <pubDate>Sat, 22 Oct 2022 00:00:00 GMT</pubDate>
