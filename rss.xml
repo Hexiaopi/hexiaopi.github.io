@@ -6,20 +6,48 @@
     <link>https://Hexiaopi.github.io/</link>
     <description>一枚后端攻城狮的个人博客</description>
     <language>zh-CN</language>
-    <pubDate>Sat, 26 Aug 2023 16:01:15 GMT</pubDate>
-    <lastBuildDate>Sat, 26 Aug 2023 16:01:15 GMT</lastBuildDate>
+    <pubDate>Sun, 27 Aug 2023 02:50:00 GMT</pubDate>
+    <lastBuildDate>Sun, 27 Aug 2023 02:50:00 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+    <category>Go语言</category>
     <category>网络</category>
     <category>数据库</category>
     <category>项目规范</category>
-    <category>Go语言</category>
     <category>转载</category>
     <category>设计模式</category>
     <category>中间件</category>
     <category>算法</category>
     <category>系统设计</category>
     <category>工具</category>
+    <item>
+      <title>package</title>
+      <link>https://Hexiaopi.github.io/go-language/base/package.html</link>
+      <guid>https://Hexiaopi.github.io/go-language/base/package.html</guid>
+      <source url="https://Hexiaopi.github.io/rss.xml">package</source>
+      <description>Go语言使用包（package）作为基本单元来组织源码。 package的优点 编译速度快 Go要求每个源文件在开头显示地列出所有依赖的包，如果引入了未使用的包，Go语言编译器会报错。 Go要求包之间不能存在循环依赖，这样包的依赖关系便形成了一张有向无环图，这样每个包可以单独编译也可并行编译 已编译的Go包不仅记录了该包的信息，还记录了依赖包的信息。只需读取缓存的编译产物即可。 初始化顺序 Go语言内置函数init()，常用于包级数据初始化以及初始状态的检查工作。</description>
+      <category>Go语言</category>
+      <pubDate>Sun, 27 Aug 2023 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<p>Go语言使用包（package）作为基本单元来组织源码。</p>
+<h2> package的优点</h2>
+<h3> 编译速度快</h3>
+<ul>
+<li>Go要求每个源文件在开头显示地列出所有依赖的包，如果引入了未使用的包，Go语言编译器会报错。</li>
+<li>Go要求包之间不能存在循环依赖，这样包的依赖关系便形成了一张有向无环图，这样每个包可以单独编译也可并行编译</li>
+<li>已编译的Go包不仅记录了该包的信息，还记录了依赖包的信息。只需读取缓存的编译产物即可。</li>
+</ul>
+<h2> 初始化顺序</h2>
+<p>Go语言内置函数<code>init()</code>，常用于包级数据初始化以及初始状态的检查工作。</p>
+<ul>
+<li>一个Go包可以有多个init()函数</li>
+<li>init()函数不可显示的调用，否则会编译期间报错</li>
+<li>init()只会执行一次</li>
+</ul>
+<p>Go包引入其他包，初始化时按照一定的次序逐一调用该包的init函数。</p>
+<figure><figcaption>package-init</figcaption></figure>
+<p>Go语言运行时按照常量-&gt;变量-&gt;init()顺序进行初始化。</p>
+]]></content:encoded>
+    </item>
     <item>
       <title>MQTT协议</title>
       <link>https://Hexiaopi.github.io/network/MQTT.html</link>

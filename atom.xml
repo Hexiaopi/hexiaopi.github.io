@@ -3,14 +3,14 @@
   <id>https://Hexiaopi.github.io/</id>
   <title>Hexiaopi</title>
   <subtitle>一枚后端攻城狮的个人博客</subtitle>
-  <updated>2023-08-26T16:01:15.855Z</updated>
+  <updated>2023-08-27T02:50:00.476Z</updated>
   <generator>vuepress-plugin-feed2</generator>
   <link rel="self" href="https://Hexiaopi.github.io/atom.xml"/>
   <link rel="alternate" href="https://Hexiaopi.github.io/"/>
+  <category term="Go语言"/>
   <category term="网络"/>
   <category term="数据库"/>
   <category term="项目规范"/>
-  <category term="Go语言"/>
   <category term="转载"/>
   <category term="设计模式"/>
   <category term="中间件"/>
@@ -20,6 +20,43 @@
   <contributor>
     <name>Hexiaopi</name>
   </contributor>
+  <entry>
+    <title type="text">package</title>
+    <id>https://Hexiaopi.github.io/go-language/base/package.html</id>
+    <link href="https://Hexiaopi.github.io/go-language/base/package.html"/>
+    <updated>2023-08-27T02:48:23.000Z</updated>
+    <summary type="html"><![CDATA[<p>Go语言使用包（package）作为基本单元来组织源码。</p>
+<h2> package的优点</h2>
+<h3> 编译速度快</h3>
+<ul>
+<li>Go要求每个源文件在开头显示地列出所有依赖的包，如果引入了未使用的包，Go语言编译器会报错。</li>
+<li>Go要求包之间不能存在循环依赖，这样包的依赖关系便形成了一张有向无环图，这样每个包可以单独编译也可并行编译</li>
+<li>已编译的Go包不仅记录了该包的信息，还记录了依赖包的信息。只需读取缓存的编译产物即可。</li>
+</ul>
+<h2> 初始化顺序</h2>
+<p>Go语言内置函数<code>init()</code>，常用于包级数据初始化以及初始状态的检查工作。</p>]]></summary>
+    <content type="html"><![CDATA[<p>Go语言使用包（package）作为基本单元来组织源码。</p>
+<h2> package的优点</h2>
+<h3> 编译速度快</h3>
+<ul>
+<li>Go要求每个源文件在开头显示地列出所有依赖的包，如果引入了未使用的包，Go语言编译器会报错。</li>
+<li>Go要求包之间不能存在循环依赖，这样包的依赖关系便形成了一张有向无环图，这样每个包可以单独编译也可并行编译</li>
+<li>已编译的Go包不仅记录了该包的信息，还记录了依赖包的信息。只需读取缓存的编译产物即可。</li>
+</ul>
+<h2> 初始化顺序</h2>
+<p>Go语言内置函数<code>init()</code>，常用于包级数据初始化以及初始状态的检查工作。</p>
+<ul>
+<li>一个Go包可以有多个init()函数</li>
+<li>init()函数不可显示的调用，否则会编译期间报错</li>
+<li>init()只会执行一次</li>
+</ul>
+<p>Go包引入其他包，初始化时按照一定的次序逐一调用该包的init函数。</p>
+<figure><figcaption>package-init</figcaption></figure>
+<p>Go语言运行时按照常量-&gt;变量-&gt;init()顺序进行初始化。</p>
+]]></content>
+    <category term="Go语言"/>
+    <published>2023-08-27T00:00:00.000Z</published>
+  </entry>
   <entry>
     <title type="text">MQTT协议</title>
     <id>https://Hexiaopi.github.io/network/MQTT.html</id>

@@ -6,6 +6,19 @@
   "description": "一枚后端攻城狮的个人博客",
   "items": [
     {
+      "title": "package",
+      "url": "https://Hexiaopi.github.io/go-language/base/package.html",
+      "id": "https://Hexiaopi.github.io/go-language/base/package.html",
+      "summary": "Go语言使用包（package）作为基本单元来组织源码。 package的优点 编译速度快 Go要求每个源文件在开头显示地列出所有依赖的包，如果引入了未使用的包，Go语言编译器会报错。 Go要求包之间不能存在循环依赖，这样包的依赖关系便形成了一张有向无环图，这样每个包可以单独编译也可并行编译 已编译的Go包不仅记录了该包的信息，还记录了依赖包的信息。只需读取缓存的编译产物即可。 初始化顺序 Go语言内置函数init()，常用于包级数据初始化以及初始状态的检查工作。",
+      "content_html": "<p>Go语言使用包（package）作为基本单元来组织源码。</p>\n<h2> package的优点</h2>\n<h3> 编译速度快</h3>\n<ul>\n<li>Go要求每个源文件在开头显示地列出所有依赖的包，如果引入了未使用的包，Go语言编译器会报错。</li>\n<li>Go要求包之间不能存在循环依赖，这样包的依赖关系便形成了一张有向无环图，这样每个包可以单独编译也可并行编译</li>\n<li>已编译的Go包不仅记录了该包的信息，还记录了依赖包的信息。只需读取缓存的编译产物即可。</li>\n</ul>\n<h2> 初始化顺序</h2>\n<p>Go语言内置函数<code>init()</code>，常用于包级数据初始化以及初始状态的检查工作。</p>\n<ul>\n<li>一个Go包可以有多个init()函数</li>\n<li>init()函数不可显示的调用，否则会编译期间报错</li>\n<li>init()只会执行一次</li>\n</ul>\n<p>Go包引入其他包，初始化时按照一定的次序逐一调用该包的init函数。</p>\n<figure><figcaption>package-init</figcaption></figure>\n<p>Go语言运行时按照常量-&gt;变量-&gt;init()顺序进行初始化。</p>\n",
+      "date_published": "2023-08-27T00:00:00.000Z",
+      "date_modified": "2023-08-27T02:48:23.000Z",
+      "authors": [],
+      "tags": [
+        "Go语言"
+      ]
+    },
+    {
       "title": "MQTT协议",
       "url": "https://Hexiaopi.github.io/network/MQTT.html",
       "id": "https://Hexiaopi.github.io/network/MQTT.html",
