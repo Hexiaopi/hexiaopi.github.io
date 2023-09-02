@@ -1,4 +1,18 @@
 
+<a name="v0.9.0"></a>
+## [v0.9.0](https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.8.0...v0.9.0) (2023-09-02)
+
+### Bug Fixes
+
+* **go-language:** 修改Go语言简介
+
+### Features
+
+* **go-language:** 增加defer和recover注意事项
+* **go-language:** 增加package介绍
+* **network:** 增加MQTT介绍
+
+
 <a name="v0.8.0"></a>
 ## [v0.8.0](https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.7.1...v0.8.0) (2023-08-22)
 
