@@ -1,4 +1,12 @@
 
+<a name="v0.9.1"></a>
+## [v0.9.1](https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.9.0...v0.9.1) (2023-09-05)
+
+### Bug Fixes
+
+* **design-pattern:** 修改创建型设计模式
+
+
 <a name="v0.9.0"></a>
 ## [v0.9.0](https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.8.0...v0.9.0) (2023-09-02)
 
