@@ -144,6 +144,12 @@ export default sidebar({
           children: "structure",
         },
         {
+          text: "标准库",
+          collapsible: true,
+          prefix: "standard-library/",
+          children: "structure",
+        },
+        {
           text: "推荐",
           collapsible: true,
           prefix: "recommend/",
