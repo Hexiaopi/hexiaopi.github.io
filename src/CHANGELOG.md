@@ -1,4 +1,17 @@
 
+<a name="v0.9.2"></a>
+## [v0.9.2](https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.9.1...v0.9.2) (2023-09-11)
+
+### Bug Fixes
+
+* **go-language:** flag增加子命令
+* **go-language:** 修改flag
+
+### Features
+
+* 增加Go语言标准库
+
+
 <a name="v0.9.1"></a>
 ## [v0.9.1](https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.9.0...v0.9.1) (2023-09-05)
 
