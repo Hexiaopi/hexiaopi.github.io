@@ -3,7 +3,7 @@
   <id>https://Hexiaopi.github.io/</id>
   <title>Hexiaopi</title>
   <subtitle>一枚后端攻城狮的个人博客</subtitle>
-  <updated>2023-09-07T12:27:30.281Z</updated>
+  <updated>2023-09-11T14:36:54.814Z</updated>
   <generator>vuepress-plugin-feed2</generator>
   <link rel="self" href="https://Hexiaopi.github.io/atom.xml"/>
   <link rel="alternate" href="https://Hexiaopi.github.io/"/>
@@ -24,77 +24,76 @@
     <title type="text">flag使用</title>
     <id>https://Hexiaopi.github.io/go-language/standard-library/flag.html</id>
     <link href="https://Hexiaopi.github.io/go-language/standard-library/flag.html"/>
-    <updated>2023-09-07T12:24:15.000Z</updated>
+    <updated>2023-09-11T14:34:51.000Z</updated>
     <summary type="html"><![CDATA[<blockquote>
 <p>flag库实现命令行参数解析</p>
 </blockquote>
 <h2> 简单用法</h2>
-<div class="language-go line-numbers-mode" data-ext="go"><pre class="language-go"><code><span class="token keyword">package</span> main
-
-<span class="token keyword">import</span> <span class="token punctuation">(</span>
-	<span class="token string">"flag"</span>
-	<span class="token string">"fmt"</span>
-	<span class="token string">"time"</span>
-<span class="token punctuation">)</span>
-
-<span class="token comment">// Example1：flag.String 返回指针类型字符串</span>
-<span class="token keyword">var</span> flagStrA <span class="token operator">=</span> flag<span class="token punctuation">.</span><span class="token function">String</span><span class="token punctuation">(</span><span class="token string">"str-a"</span><span class="token punctuation">,</span> <span class="token string">"str-a"</span><span class="token punctuation">,</span> <span class="token string">"flag test *string"</span><span class="token punctuation">)</span>
-
-<span class="token comment">// Example2：如果期望定义字符串类型，可以通过init函数初始化</span>
-<span class="token keyword">var</span> flagStrB <span class="token builtin">string</span>
-
-<span class="token keyword">func</span> <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token comment">// flag.StringVar可以绑定已有的变量</span>
-	flag<span class="token punctuation">.</span><span class="token function">StringVar</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>flagStrB<span class="token punctuation">,</span> <span class="token string">"str-b"</span><span class="token punctuation">,</span> <span class="token string">"str-b"</span><span class="token punctuation">,</span> <span class="token string">"flag test string"</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment">// Example3：int类型变量</span>
-<span class="token keyword">var</span> flagInt <span class="token operator">=</span> flag<span class="token punctuation">.</span><span class="token function">Int</span><span class="token punctuation">(</span><span class="token string">"int"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"flag test *int"</span><span class="token punctuation">)</span>
-
-<span class="token comment">// Example4: bool类型变量，注意使用</span>
-<span class="token keyword">var</span> flagBool <span class="token operator">=</span> flag<span class="token punctuation">.</span><span class="token function">Bool</span><span class="token punctuation">(</span><span class="token string">"bool"</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token string">"flag test *bool"</span><span class="token punctuation">)</span>
-
-<span class="token comment">// Example5：duration类型变量</span>
-<span class="token keyword">var</span> flagDuration <span class="token operator">=</span> flag<span class="token punctuation">.</span><span class="token function">Duration</span><span class="token punctuation">(</span><span class="token string">"duration"</span><span class="token punctuation">,</span> time<span class="token punctuation">.</span>Minute<span class="token operator">*</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"flag test duration"</span><span class="token punctuation">)</span>
-
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	flag<span class="token punctuation">.</span><span class="token function">Parse</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token operator">*</span>flagStrA<span class="token punctuation">)</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>flagStrB<span class="token punctuation">)</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token operator">*</span>flagInt<span class="token punctuation">)</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token operator">*</span>flagBool<span class="token punctuation">)</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token operator">*</span>flagDuration<span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></summary>
-    <content type="html"><![CDATA[<blockquote>
-<p>flag库实现命令行参数解析</p>
-</blockquote>
-<h2> 简单用法</h2>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="hint-container tip">
-<p class="hint-container-title">falg参数使用语法</p>
+<div class="hint-container tip">
+<p class="hint-container-title">flag参数使用语法</p>
 <p>-flag    // 破折号，使用默认值<br>
 --flag   // 双破折号<br>
 -flag=x  // 指定参数值<br>
 -flag x  // non-boolean flags only</p>
 </div>
-<h3> 注意事项</h3>
+<h3> 字符串类型</h3>
+<div class="language-go line-numbers-mode" data-ext="go"><pre class="language-go"><code><span class="token comment">// Example1：flag.String 返回指针类型字符串</span>
+<span class="token keyword">var</span> flagStrA <span class="token operator">=</span> flag<span class="token punctuation">.</span><span class="token function">String</span><span class="token punctuation">(</span><span class="token string">"str-a"</span><span class="token punctuation">,</span> <span class="token string">"str-a"</span><span class="token punctuation">,</span> <span class="token string">"flag test *string"</span><span class="token punctuation">)</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div>]]></summary>
+    <content type="html"><![CDATA[<blockquote>
+<p>flag库实现命令行参数解析</p>
+</blockquote>
+<h2> 简单用法</h2>
+<div class="hint-container tip">
+<p class="hint-container-title">flag参数使用语法</p>
+<p>-flag    // 破折号，使用默认值<br>
+--flag   // 双破折号<br>
+-flag=x  // 指定参数值<br>
+-flag x  // non-boolean flags only</p>
+</div>
+<h3> 字符串类型</h3>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>使用示例</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>不过由于flag.String()返回的是指针类型的字符串，因此，也可以使用下面方式定义</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>使用示例</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> int类型</h3>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>使用示例</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> Bool类型</h3>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><div class="hint-container tip">
+<p class="hint-container-title">bool类型可以使用以下字面量</p>
+<p>1, 0, t, f, T, F, true, false, TRUE, FALSE, True, False</p>
+</div>
+<p>使用示例</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>注意事项</p>
 <h4> bool类型不可使用：-flag x形式</h4>
 <div class="hint-container warning">
 <p class="hint-container-title">注意</p>
-<div class="language-bash line-numbers-mode" data-ext="sh"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>执行结果如下：</p>
-<div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></div>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>虽然显示的传入<code>false</code>，但是最终结果是<code>true</code></p>
+</div>
 <h4> bool类型：-flag形式，认为true</h4>
 <div class="hint-container warning">
 <p class="hint-container-title">注意</p>
-<div class="language-bash line-numbers-mode" data-ext="sh"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>执行结果如下：</p>
-<div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></div>
-<h4> bool类型可以使用以下字面量</h4>
-<div class="hint-container tip">
-<p class="hint-container-title">提示</p>
-<p>1, 0, t, f, T, F, true, false, TRUE, FALSE, True, False</p>
-<div class="language-bash line-numbers-mode" data-ext="sh"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>执行结果如下：</p>
-<div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></div>
-]]></content>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></div>
+<h3> duration类型</h3>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>使用示例</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 高阶用法</h2>
+<p>flag标准库提供了基础的数据类型参数，如下：</p>
+<ul>
+<li>bool</li>
+<li>int</li>
+<li>int64</li>
+<li>uint</li>
+<li>uint64</li>
+<li>string</li>
+<li>float64</li>
+<li>duration</li>
+</ul>
+<h3> 自定义类型</h3>
+<p>如果需要自定义类型，需要实现<code>flag.Value</code>接口</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>使用示例</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 子命令</h3>
+<p>这里参考网站示例：<a href="https://gobyexample.com/command-line-subcommands" target="_blank" rel="noopener noreferrer">gobyexample</a></p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>使用示例</p>
+<div class="language-bash line-numbers-mode" data-ext="sh"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-bash line-numbers-mode" data-ext="sh"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content>
     <category term="Go语言"/>
     <published>2023-09-05T00:00:00.000Z</published>
   </entry>

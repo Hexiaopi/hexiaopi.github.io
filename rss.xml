@@ -6,8 +6,8 @@
     <link>https://Hexiaopi.github.io/</link>
     <description>一枚后端攻城狮的个人博客</description>
     <language>zh-CN</language>
-    <pubDate>Thu, 07 Sep 2023 12:27:30 GMT</pubDate>
-    <lastBuildDate>Thu, 07 Sep 2023 12:27:30 GMT</lastBuildDate>
+    <pubDate>Mon, 11 Sep 2023 14:36:54 GMT</pubDate>
+    <lastBuildDate>Mon, 11 Sep 2023 14:36:54 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Go语言</category>
@@ -25,38 +25,63 @@
       <link>https://Hexiaopi.github.io/go-language/standard-library/flag.html</link>
       <guid>https://Hexiaopi.github.io/go-language/standard-library/flag.html</guid>
       <source url="https://Hexiaopi.github.io/rss.xml">flag使用</source>
-      <description>flag库实现命令行参数解析 简单用法 package main import ( 	&amp;quot;flag&amp;quot; 	&amp;quot;fmt&amp;quot; 	&amp;quot;time&amp;quot; ) // Example1：flag.String 返回指针类型字符串 var flagStrA = flag.String(&amp;quot;str-a&amp;quot;, &amp;quot;str-a&amp;quot;, &amp;quot;flag test *string&amp;quot;) // Example2：如果期望定义字符串类型，可以通过init函数初始化 var flagStrB string func init() { 	// flag.StringVar可以绑定已有的变量 	flag.StringVar(&amp;amp;flagStrB, &amp;quot;str-b&amp;quot;, &amp;quot;str-b&amp;quot;, &amp;quot;flag test string&amp;quot;) } // Example3：int类型变量 var flagInt = flag.Int(&amp;quot;int&amp;quot;, 1, &amp;quot;flag test *int&amp;quot;) // Example4: bool类型变量，注意使用 var flagBool = flag.Bool(&amp;quot;bool&amp;quot;, false, &amp;quot;flag test *bool&amp;quot;) // Example5：duration类型变量 var flagDuration = flag.Duration(&amp;quot;duration&amp;quot;, time.Minute*1, &amp;quot;flag test duration&amp;quot;) func main() { 	flag.Parse() 	fmt.Println(*flagStrA) 	fmt.Println(flagStrB) 	fmt.Println(*flagInt) 	fmt.Println(*flagBool) 	fmt.Println(*flagDuration) }</description>
+      <description>flag库实现命令行参数解析 简单用法 flag参数使用语法 -flag // 破折号，使用默认值 --flag // 双破折号 -flag=x // 指定参数值 -flag x // non-boolean flags only 字符串类型 // Example1：flag.String 返回指针类型字符串 var flagStrA = flag.String(&amp;quot;str-a&amp;quot;, &amp;quot;str-a&amp;quot;, &amp;quot;flag test *string&amp;quot;)</description>
       <category>Go语言</category>
       <pubDate>Tue, 05 Sep 2023 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p>flag库实现命令行参数解析</p>
 </blockquote>
 <h2> 简单用法</h2>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="hint-container tip">
-<p class="hint-container-title">falg参数使用语法</p>
+<div class="hint-container tip">
+<p class="hint-container-title">flag参数使用语法</p>
 <p>-flag    // 破折号，使用默认值<br>
 --flag   // 双破折号<br>
 -flag=x  // 指定参数值<br>
 -flag x  // non-boolean flags only</p>
 </div>
-<h3> 注意事项</h3>
+<h3> 字符串类型</h3>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>使用示例</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>不过由于flag.String()返回的是指针类型的字符串，因此，也可以使用下面方式定义</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>使用示例</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> int类型</h3>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>使用示例</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> Bool类型</h3>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><div class="hint-container tip">
+<p class="hint-container-title">bool类型可以使用以下字面量</p>
+<p>1, 0, t, f, T, F, true, false, TRUE, FALSE, True, False</p>
+</div>
+<p>使用示例</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>注意事项</p>
 <h4> bool类型不可使用：-flag x形式</h4>
 <div class="hint-container warning">
 <p class="hint-container-title">注意</p>
-<div class="language-bash line-numbers-mode" data-ext="sh"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>执行结果如下：</p>
-<div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></div>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>虽然显示的传入<code>false</code>，但是最终结果是<code>true</code></p>
+</div>
 <h4> bool类型：-flag形式，认为true</h4>
 <div class="hint-container warning">
 <p class="hint-container-title">注意</p>
-<div class="language-bash line-numbers-mode" data-ext="sh"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>执行结果如下：</p>
-<div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></div>
-<h4> bool类型可以使用以下字面量</h4>
-<div class="hint-container tip">
-<p class="hint-container-title">提示</p>
-<p>1, 0, t, f, T, F, true, false, TRUE, FALSE, True, False</p>
-<div class="language-bash line-numbers-mode" data-ext="sh"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>执行结果如下：</p>
-<div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></div>
-]]></content:encoded>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></div>
+<h3> duration类型</h3>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>使用示例</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 高阶用法</h2>
+<p>flag标准库提供了基础的数据类型参数，如下：</p>
+<ul>
+<li>bool</li>
+<li>int</li>
+<li>int64</li>
+<li>uint</li>
+<li>uint64</li>
+<li>string</li>
+<li>float64</li>
+<li>duration</li>
+</ul>
+<h3> 自定义类型</h3>
+<p>如果需要自定义类型，需要实现<code>flag.Value</code>接口</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>使用示例</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 子命令</h3>
+<p>这里参考网站示例：<a href="https://gobyexample.com/command-line-subcommands" target="_blank" rel="noopener noreferrer">gobyexample</a></p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>使用示例</p>
+<div class="language-bash line-numbers-mode" data-ext="sh"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-bash line-numbers-mode" data-ext="sh"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
     </item>
     <item>
       <title>基础</title>
