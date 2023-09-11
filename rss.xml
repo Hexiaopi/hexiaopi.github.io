@@ -6,8 +6,8 @@
     <link>https://Hexiaopi.github.io/</link>
     <description>一枚后端攻城狮的个人博客</description>
     <language>zh-CN</language>
-    <pubDate>Mon, 11 Sep 2023 14:36:54 GMT</pubDate>
-    <lastBuildDate>Mon, 11 Sep 2023 14:36:54 GMT</lastBuildDate>
+    <pubDate>Mon, 11 Sep 2023 14:46:48 GMT</pubDate>
+    <lastBuildDate>Mon, 11 Sep 2023 14:46:48 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Go语言</category>
@@ -2371,9 +2371,20 @@ Cgo 不是 Go。</p>
       <link>https://Hexiaopi.github.io/CHANGELOG.html</link>
       <guid>https://Hexiaopi.github.io/CHANGELOG.html</guid>
       <source url="https://Hexiaopi.github.io/rss.xml"></source>
-      <description>v0.9.1 (2023-09-05) Bug Fixes design-pattern: 修改创建型设计模式 v0.9.0 (2023-09-02)</description>
+      <description>v0.9.2 (2023-09-11) Bug Fixes go-language: flag增加子命令 go-language: 修改flag</description>
       <pubDate>Thu, 03 Aug 2023 13:57:06 GMT</pubDate>
-      <content:encoded><![CDATA[<p><a name="v0.9.1"></a></p>
+      <content:encoded><![CDATA[<p><a name="v0.9.2"></a></p>
+<h2> <a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.9.1...v0.9.2" target="_blank" rel="noopener noreferrer">v0.9.2</a> (2023-09-11)</h2>
+<h3> Bug Fixes</h3>
+<ul>
+<li><strong>go-language:</strong> flag增加子命令</li>
+<li><strong>go-language:</strong> 修改flag</li>
+</ul>
+<h3> Features</h3>
+<ul>
+<li>增加Go语言标准库</li>
+</ul>
+<p><a name="v0.9.1"></a></p>
 <h2> <a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.9.0...v0.9.1" target="_blank" rel="noopener noreferrer">v0.9.1</a> (2023-09-05)</h2>
 <h3> Bug Fixes</h3>
 <ul>
