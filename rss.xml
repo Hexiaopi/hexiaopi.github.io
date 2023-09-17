@@ -6,8 +6,8 @@
     <link>https://Hexiaopi.github.io/</link>
     <description>一枚后端攻城狮的个人博客</description>
     <language>zh-CN</language>
-    <pubDate>Sun, 17 Sep 2023 02:27:35 GMT</pubDate>
-    <lastBuildDate>Sun, 17 Sep 2023 02:27:35 GMT</lastBuildDate>
+    <pubDate>Sun, 17 Sep 2023 13:55:44 GMT</pubDate>
+    <lastBuildDate>Sun, 17 Sep 2023 13:55:44 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Go语言</category>
@@ -4337,10 +4337,14 @@ Vincent Driessen 为了解决这个问题，提出<a href="https://nvie.com/post
 </blockquote>
 <div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>或</p>
 <div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h2> Change Log</h2>
-<p>我们可以使用一些工具根据git提交记录自动生成<code>CHANGELOG</code>，例如：<br>
+<p>我们可以使用一些工具根据git提交记录自动生成<code>CHANGELOG</code>变更日志，例如：<br>
 <a href="https://github.com/git-chglog/git-chglog" target="_blank" rel="noopener noreferrer">git-chglog</a>，本项目的<code>CHANGELOG</code>就是使用该工具自动生成，非常方便。</p>
 <div class="language-bash line-numbers-mode" data-ext="sh"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h2> SemVer</h2>
 <p>可以使用<a href="https://github.com/arnaud-deprez/gsemver" target="_blank" rel="noopener noreferrer">gsemver</a>工具根据git提交记录生成下一个版本</p>
+<h2> 参考文献</h2>
+<ul>
+<li><a href="https://www.conventionalcommits.org/zh-hans/v1.0.0/" target="_blank" rel="noopener noreferrer">约定式提交</a></li>
+</ul>
 ]]></content:encoded>
     </item>
     <item>
