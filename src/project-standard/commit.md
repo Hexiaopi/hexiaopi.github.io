@@ -127,7 +127,7 @@ Closes #123, #245, #992
 
 ## Change Log
 
-我们可以使用一些工具根据git提交记录自动生成`CHANGELOG`，例如：
+我们可以使用一些工具根据git提交记录自动生成`CHANGELOG`变更日志，例如：
 [git-chglog](https://github.com/git-chglog/git-chglog)，本项目的`CHANGELOG`就是使用该工具自动生成，非常方便。
 
 ```shell
@@ -137,3 +137,7 @@ git-chglog -o CHANGELOG.md
 ## SemVer
 
 可以使用[gsemver](https://github.com/arnaud-deprez/gsemver)工具根据git提交记录生成下一个版本
+
+## 参考文献
+
+- [约定式提交](https://www.conventionalcommits.org/zh-hans/v1.0.0/)
