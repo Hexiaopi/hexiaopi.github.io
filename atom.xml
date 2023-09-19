@@ -3,7 +3,7 @@
   <id>https://Hexiaopi.github.io/</id>
   <title>Hexiaopi</title>
   <subtitle>一枚后端攻城狮的个人博客</subtitle>
-  <updated>2023-09-17T13:55:44.346Z</updated>
+  <updated>2023-09-19T12:46:38.669Z</updated>
   <generator>vuepress-plugin-feed2</generator>
   <link rel="self" href="https://Hexiaopi.github.io/atom.xml"/>
   <link rel="alternate" href="https://Hexiaopi.github.io/"/>
@@ -20,6 +20,18 @@
   <contributor>
     <name>Hexiaopi</name>
   </contributor>
+  <entry>
+    <title type="text">标准库</title>
+    <id>https://Hexiaopi.github.io/go-language/standard-library/</id>
+    <link href="https://Hexiaopi.github.io/go-language/standard-library/"/>
+    <updated>2023-09-19T12:44:30.000Z</updated>
+    <summary type="html"><![CDATA[<p>这里会记录Go语言标准库的使用和注意事项，当然最值的关注的是如何设计这些标准库的</p>
+]]></summary>
+    <content type="html"><![CDATA[<p>这里会记录Go语言标准库的使用和注意事项，当然最值的关注的是如何设计这些标准库的</p>
+]]></content>
+    <category term="Go语言"/>
+    <published>2023-09-19T00:00:00.000Z</published>
+  </entry>
   <entry>
     <title type="text">flag使用</title>
     <id>https://Hexiaopi.github.io/go-language/standard-library/flag.html</id>
@@ -9250,268 +9262,5 @@ LIMIT关键字用于限制查询结果的数量。MySQL只返回前N条符合条
 ]]></content>
     <category term="Go语言"/>
     <published>2022-09-08T00:00:00.000Z</published>
-  </entry>
-  <entry>
-    <title type="text">Go安全指南-腾讯</title>
-    <id>https://Hexiaopi.github.io/go-language/reprint/tencent-secguide.html</id>
-    <link href="https://Hexiaopi.github.io/go-language/reprint/tencent-secguide.html"/>
-    <updated>2023-07-30T09:20:01.000Z</updated>
-    <summary type="html"><![CDATA[<p>【转】<a href="https://github.com/Tencent/secguide" target="_blank" rel="noopener noreferrer">原文链接</a></p>
-]]></summary>
-    <content type="html"><![CDATA[<p>【转】<a href="https://github.com/Tencent/secguide" target="_blank" rel="noopener noreferrer">原文链接</a></p>
-<!-- more -->
-
-<p>Go安全指南</p>
-<h2> 通用类</h2>
-<h3> 1.1 内存管理</h3>
-<h4> 1.1.1【必须】切片长度校验</h4>
-<ul>
-<li>在对slice进行操作时，必须判断长度是否合法，防止程序panic</li>
-</ul>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4> 1.1.2【必须】nil指针判断</h4>
-<ul>
-<li>进行指针操作时，必须判断该指针是否为nil，防止程序panic，尤其在进行结构体Unmarshal时</li>
-</ul>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4> 1.1.3【必须】整数安全</h4>
-<ul>
-<li>
-<p>在进行数字运算操作时，需要做好长度限制，防止外部输入运算导致异常：</p>
-<ul>
-<li>确保无符号整数运算时不会反转</li>
-<li>确保有符号整数运算时不会出现溢出</li>
-<li>确保整型转换时不会出现截断错误</li>
-<li>确保整型转换时不会出现符号错误</li>
-</ul>
-</li>
-<li>
-<p>以下场景必须严格进行长度限制：</p>
-<ul>
-<li>作为数组索引</li>
-<li>作为对象的长度或者大小</li>
-<li>作为数组的边界（如作为循环计数器）</li>
-</ul>
-</li>
-</ul>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4> 1.1.4【必须】make分配长度验证</h4>
-<ul>
-<li>在进行make分配内存时，需要对外部可控的长度进行校验，防止程序panic。</li>
-</ul>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4> 1.1.5【必须】禁止SetFinalizer和指针循环引用同时使用</h4>
-<ul>
-<li>当一个对象从被GC选中到移除内存之前，runtime.SetFinalizer()都不会执行，即使程序正常结束或者发生错误。由指针构成的“循环引用”虽然能被GC正确处理，但由于无法确定Finalizer依赖顺序，从而无法调用runtime.SetFinalizer()，导致目标对象无法变成可达状态，从而造成内存无法被回收。</li>
-</ul>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4> 1.1.6【必须】禁止重复释放channel</h4>
-<ul>
-<li>重复释放一般存在于异常流程判断中，如果恶意攻击者构造出异常条件使程序重复释放channel，则会触发运行时panic，从而造成DoS攻击。</li>
-</ul>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4> 1.1.7【必须】确保每个协程都能退出</h4>
-<ul>
-<li>启动一个协程就会做一个入栈操作，在系统不退出的情况下，协程也没有设置退出条件，则相当于协程失去了控制，它占用的资源无法回收，可能会导致内存泄露。</li>
-</ul>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4> 1.1.8【推荐】不使用unsafe包</h4>
-<ul>
-<li>由于unsafe包绕过了 Golang 的内存安全原则，一般来说使用该库是不安全的，可导致内存破坏，尽量避免使用该包。若必须要使用unsafe操作指针，必须做好安全校验。</li>
-</ul>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4> 1.1.9【推荐】不使用slice作为函数入参</h4>
-<ul>
-<li>slice在作为函数入参时，函数内对slice的修改可能会影响原始数据</li>
-</ul>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 1.2 文件操作</h3>
-<h4> 1.2.1【必须】 路径穿越检查</h4>
-<ul>
-<li>在进行文件操作时，如果对外部传入的文件名未做限制，可能导致任意文件读取或者任意文件写入，严重可能导致代码执行。</li>
-</ul>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4> 1.2.2【必须】 文件访问权限</h4>
-<ul>
-<li>根据创建文件的敏感性设置不同级别的访问权限，以防止敏感数据被任意权限用户读取。例如，设置文件权限为：<code>-rw-r-----</code></li>
-</ul>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3> 1.3 系统接口</h3>
-<h4> 1.3.1【必须】命令执行检查</h4>
-<ul>
-<li>使用<code>exec.Command</code>、<code>exec.CommandContext</code>、<code>syscall.StartProcess</code>、<code>os.StartProcess</code>等函数时，第一个参数（path）直接取外部输入值时，应使用白名单限定可执行的命令范围，不允许传入<code>bash</code>、<code>cmd</code>、<code>sh</code>等命令；</li>
-<li>使用<code>exec.Command</code>、<code>exec.CommandContext</code>等函数时，通过<code>bash</code>、<code>cmd</code>、<code>sh</code>等创建shell，-c后的参数（arg）拼接外部输入，应过滤\n  $  &amp;  ;  |  '  "  ( )  `等潜在恶意字符；</li>
-</ul>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 1.4 通信安全</h3>
-<h4> 1.4.1【必须】网络通信采用TLS方式</h4>
-<ul>
-<li>明文传输的通信协议目前已被验证存在较大安全风险，被中间人劫持后可能导致许多安全风险，因此必须采用至少TLS的安全通信方式保证通信安全，例如gRPC/Websocket都使用TLS1.3。</li>
-</ul>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4> 1.4.2【推荐】TLS启用证书验证</h4>
-<ul>
-<li>TLS证书应当是有效的、未过期的，且配置正确的域名，生产环境的服务端应启用证书验证。</li>
-</ul>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 1.5 敏感数据保护</h3>
-<h4> 1.5.1【必须】敏感信息访问</h4>
-<ul>
-<li>禁止将敏感信息硬编码在程序中，既可能会将敏感信息暴露给攻击者，也会增加代码管理和维护的难度</li>
-<li>使用配置中心系统统一托管密钥等敏感信息</li>
-</ul>
-<h4> 1.5.2【必须】敏感数据输出</h4>
-<ul>
-<li>只输出必要的最小数据集，避免多余字段暴露引起敏感信息泄露</li>
-<li>不能在日志保存密码（包括明文密码和密文密码）、密钥和其它敏感信息</li>
-<li>对于必须输出的敏感信息，必须进行合理脱敏展示</li>
-</ul>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
-<li>避免通过GET方法、代码注释、自动填充、缓存等方式泄露敏感信息</li>
-</ul>
-<h4> 1.5.3【必须】敏感数据存储</h4>
-<ul>
-<li>敏感数据应使用SHA2、RSA等算法进行加密存储</li>
-<li>敏感数据应使用独立的存储层，并在访问层开启访问控制</li>
-<li>包含敏感信息的临时文件或缓存一旦不再需要应立刻删除</li>
-</ul>
-<h4> 1.5.4【必须】异常处理和日志记录</h4>
-<ul>
-<li>应合理使用panic、recover、defer处理系统异常，避免出错信息输出到前端</li>
-</ul>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
-<li>对外环境禁止开启debug模式，或将程序运行日志输出到前端</li>
-</ul>
-<div class="language-bash line-numbers-mode" data-ext="sh"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 1.6 加密解密</h3>
-<h4> 1.6.1【必须】不得硬编码密码/密钥</h4>
-<ul>
-<li>在进行用户登陆，加解密算法等操作时，不得在代码里硬编码密钥或密码，可通过变换算法或者配置等方式设置密码或者密钥。</li>
-</ul>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4> 1.6.2【必须】密钥存储安全</h4>
-<ul>
-<li>在使用对称密码算法时，需要保护好加密密钥。当算法涉及敏感、业务数据时，可通过非对称算法协商加密密钥。其他较为不敏感的数据加密，可以通过变换算法等方式保护密钥。</li>
-</ul>
-<h4> 1.6.3【推荐】不使用弱密码算法</h4>
-<ul>
-<li>在使用加密算法时，不建议使用加密强度较弱的算法。</li>
-</ul>
-<div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 1.7 正则表达式</h3>
-<h4> 1.7.1【推荐】使用regexp进行正则表达式匹配</h4>
-<ul>
-<li>正则表达式编写不恰当可被用于DoS攻击，造成服务不可用，推荐使用regexp包进行正则表达式匹配。regexp保证了线性时间性能和优雅的失败：对解析器、编译器和执行引擎都进行了内存限制。但regexp不支持以下正则表达式特性，如业务依赖这些特性，则regexp不适合使用。
-<ul>
-<li>回溯引用<a href="https://www.regular-expressions.info/backref.html" target="_blank" rel="noopener noreferrer">Backreferences</a></li>
-<li>查看<a href="https://www.regular-expressions.info/lookaround.html" target="_blank" rel="noopener noreferrer">Lookaround</a></li>
-</ul>
-</li>
-</ul>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 后台类</h2>
-<h3> 1.1 输入校验</h3>
-<h4> 1.1.1【必须】按类型进行数据校验</h4>
-<ul>
-<li>所有外部输入的参数，应使用<code>validator</code>进行白名单校验，校验内容包括但不限于数据长度、数据范围、数据类型与格式，校验不通过的应当拒绝</li>
-</ul>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
-<li>无法通过白名单校验的应使用<code>html.EscapeString</code>、<code>text/template</code>或<code>bluemonday</code>对<code>&lt;, &gt;, &amp;, ',"</code>等字符进行过滤或编码</li>
-</ul>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 1.2 SQL操作</h3>
-<h4> 1.2.1【必须】SQL语句默认使用预编译并绑定变量</h4>
-<ul>
-<li>使用<code>database/sql</code>的prepare、Query或使用GORM等ORM执行SQL操作</li>
-</ul>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
-<li>使用参数化查询，禁止拼接SQL语句，另外对于传入参数用于order by或表名的需要通过校验</li>
-</ul>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 1.3 网络请求</h3>
-<h4> 1.3.1【必须】资源请求过滤验证</h4>
-<ul>
-<li>
-<p>使用<code>"net/http"</code>下的方法<code>http.Get(url)</code>、<code>http.Post(url, contentType, body)</code>、<code>http.Head(url)</code>、<code>http.PostForm(url, data)</code>、<code>http.Do(req)</code>时，如变量值外部可控（指从参数中动态获取），应对请求目标进行严格的安全校验。</p>
-</li>
-<li>
-<p>如请求资源域名归属固定的范围，如只允许<code>a.qq.com</code>和<code>b.qq.com</code>，应做白名单限制。如不适用白名单，则推荐的校验逻辑步骤是：</p>
-<ul>
-<li>
-<p>第 1 步、只允许HTTP或HTTPS协议</p>
-</li>
-<li>
-<p>第 2 步、解析目标URL，获取其HOST</p>
-</li>
-<li>
-<p>第 3 步、解析HOST，获取HOST指向的IP地址转换成Long型</p>
-</li>
-<li>
-<p>第 4 步、检查IP地址是否为内网IP，网段有：</p>
-<div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></li>
-<li>
-<p>第 5 步、请求URL</p>
-</li>
-<li>
-<p>第 6 步、如有跳转，跳转后执行1，否则绑定经校验的ip和域名，对URL发起请求</p>
-</li>
-</ul>
-</li>
-<li>
-<p>官方库<code>encoding/xml</code>不支持外部实体引用，使用该库可避免xxe漏洞</p>
-</li>
-</ul>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 1.4 服务器端渲染</h3>
-<h4> 1.4.1【必须】模板渲染过滤验证</h4>
-<ul>
-<li>使用<code>text/template</code>或者<code>html/template</code>渲染模板时禁止将外部输入参数引入模板，或仅允许引入白名单内字符。</li>
-</ul>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 1.5 Web跨域</h3>
-<h4> 1.5.1【必须】跨域资源共享CORS限制请求来源</h4>
-<ul>
-<li>CORS请求保护不当可导致敏感信息泄漏，因此应当严格设置Access-Control-Allow-Origin使用同源策略进行保护。</li>
-</ul>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 1.6 响应输出</h3>
-<h4> 1.6.1 【必须】设置正确的HTTP响应包类型</h4>
-<ul>
-<li>响应头Content-Type与实际响应内容，应保持一致。如：API响应数据类型是json，则响应头使用<code>application/json</code>；若为xml，则设置为<code>text/xml</code>。</li>
-</ul>
-<h4> 1.6.2 【必须】添加安全响应头</h4>
-<ul>
-<li>所有接口、页面，添加响应头 <code>X-Content-Type-Options: nosniff</code>。</li>
-<li>所有接口、页面，添加响应头<code>X-Frame-Options</code>。按需合理设置其允许范围，包括：<code>DENY</code>、<code>SAMEORIGIN</code>、<code>ALLOW-FROM origin</code>。用法参考：<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/X-Frame-Options" target="_blank" rel="noopener noreferrer">MDN文档</a></li>
-</ul>
-<h4> 1.6.3【必须】外部输入拼接到HTTP响应头中需进行过滤</h4>
-<ul>
-<li>应尽量避免外部可控参数拼接到HTTP响应头中，如业务需要则需要过滤掉<code>\r</code>、<code>\n</code>等换行符，或者拒绝携带换行符号的外部输入。</li>
-</ul>
-<h4> 1.6.4【必须】外部输入拼接到response页面前进行编码处理</h4>
-<ul>
-<li>直出html页面或使用模板生成html页面的，推荐使用<code>text/template</code>自动编码，或者使用<code>html.EscapeString</code>或<code>text/template</code>对<code>&lt;, &gt;, &amp;, ',"</code>等字符进行编码。</li>
-</ul>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 1.7 会话管理</h3>
-<h4> 1.7.1【必须】安全维护session信息</h4>
-<ul>
-<li>用户登录时应重新生成session，退出登录后应清理session。</li>
-</ul>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4> 1.7.2【必须】CSRF防护</h4>
-<ul>
-<li>涉及系统敏感操作或可读取敏感信息的接口应校验<code>Referer</code>或添加<code>csrf_token</code>。</li>
-</ul>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 1.8 访问控制</h3>
-<h4> 1.8.1【必须】默认鉴权</h4>
-<ul>
-<li>
-<p>除非资源完全可对外开放，否则系统默认进行身份认证，使用白名单的方式放开不需要认证的接口或页面。</p>
-</li>
-<li>
-<p>根据资源的机密程度和用户角色，以最小权限原则，设置不同级别的权限，如完全公开、登录可读、登录可写、特定用户可读、特定用户可写等</p>
-</li>
-<li>
-<p>涉及用户自身相关的数据的读写必须验证登录态用户身份及其权限，避免越权操作</p>
-<div class="language-sql line-numbers-mode" data-ext="sql"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div></li>
-<li>
-<p>没有独立账号体系的外网服务使用<code>QQ</code>或<code>微信</code>登录，内网服务使用<code>统一登录服务</code>登录，其他使用账号密码登录的服务需要增加验证码等二次验证</p>
-</li>
-</ul>
-<h3> 1.9 并发保护</h3>
-<h4> 1.9.1【必须】禁止在闭包中直接调用循环变量</h4>
-<ul>
-<li>在循环中启动协程，当协程中使用到了循环的索引值，由于多个协程同时使用同一个变量会产生数据竞争，造成执行结果异常。</li>
-</ul>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4> 1.9.2【必须】禁止并发写map</h4>
-<ul>
-<li>并发写map容易造成程序崩溃并异常退出，建议加锁保护</li>
-</ul>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4> 1.9.3【必须】确保并发安全</h4>
-<p>敏感操作如果未作并发安全限制，可导致数据读写异常，造成业务逻辑限制被绕过。可通过同步锁或者原子操作进行防护。</p>
-<p>通过同步锁共享内存</p>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
-<li>使用<code>sync/atomic</code>执行原子操作</li>
-</ul>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content>
-    <category term="Go语言"/>
-    <category term="转载"/>
-    <published>2023-03-03T00:00:00.000Z</published>
   </entry>
 </feed>
