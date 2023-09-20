@@ -6,8 +6,8 @@
     <link>https://Hexiaopi.github.io/</link>
     <description>一枚后端攻城狮的个人博客</description>
     <language>zh-CN</language>
-    <pubDate>Tue, 19 Sep 2023 12:46:38 GMT</pubDate>
-    <lastBuildDate>Tue, 19 Sep 2023 12:46:38 GMT</lastBuildDate>
+    <pubDate>Wed, 20 Sep 2023 15:44:03 GMT</pubDate>
+    <lastBuildDate>Wed, 20 Sep 2023 15:44:03 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Go语言</category>
@@ -20,6 +20,60 @@
     <category>算法</category>
     <category>系统设计</category>
     <category>工具</category>
+    <item>
+      <title>三方库</title>
+      <link>https://Hexiaopi.github.io/go-language/third-party/</link>
+      <guid>https://Hexiaopi.github.io/go-language/third-party/</guid>
+      <source url="https://Hexiaopi.github.io/rss.xml">三方库</source>
+      <description>这里介绍业界优秀的Go语言三方库，需要思考的是优秀在哪里</description>
+      <category>Go语言</category>
+      <pubDate>Wed, 20 Sep 2023 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<p>这里介绍业界优秀的Go语言三方库，需要思考的是优秀在哪里</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>pflag</title>
+      <link>https://Hexiaopi.github.io/go-language/third-party/pflag.html</link>
+      <guid>https://Hexiaopi.github.io/go-language/third-party/pflag.html</guid>
+      <source url="https://Hexiaopi.github.io/rss.xml">pflag</source>
+      <description>我在标准库中介绍了flag使用，对于小型的项目flag能够基本满足需求，但是在某些大型项目或者特殊场景下flag有些力不从心。主要在于： flag的子命令需要自己解析 flag的短命令需要定义两个变量 不支持一些参数废弃说明，这在更新的工具中对用户有更好的引导作用 因此业界开源的pflag受到广大爱好者的使用，在一些耳熟能详的开源项目里也都在使用pflag，例如：Kubernetes、Istio、Helm、Docker、Etcd等。</description>
+      <category>Go语言</category>
+      <pubDate>Wed, 20 Sep 2023 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<p>我在标准库中介绍了<a href="/go-language/standard-library/flag.html" target="blank">flag使用</a>，对于小型的项目flag能够基本满足需求，但是在某些大型项目或者特殊场景下flag有些力不从心。主要在于：</p>
+<ul>
+<li>flag的子命令需要自己解析</li>
+<li>flag的短命令需要定义两个变量</li>
+<li>不支持一些参数废弃说明，这在更新的工具中对用户有更好的引导作用</li>
+</ul>
+<p>因此业界开源的<a href="https://github.com/spf13/pflag" target="_blank" rel="noopener noreferrer">pflag</a>受到广大爱好者的使用，在一些耳熟能详的开源项目里也都在使用pflag，例如：Kubernetes、Istio、Helm、Docker、Etcd等。</p>
+<h2> 简单用法</h2>
+<h3> 支持标准库flag用法</h3>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>使用示例：</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="hint-container warning">
+<p class="hint-container-title">注意</p>
+<p>注意是长选项，即参数为<code>--xxx</code></p>
+</div>
+<h3> 支持短选项</h3>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>使用示例：</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 支持绑定到已有变量</h3>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>使用示例：</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 标记命令行参数已废弃</h3>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>打印Usage()</p>
+<div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><h3> 指定了参数却没有传值场景下的默认值改写</h3>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>使用示例：</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>::: notice</p>
+<ul>
+<li>当输入--age 10，age变量值为：10；</li>
+<li>当输入--age，age变量值为：25；</li>
+<li>当没输入--age，age变量值为：30；</li>
+</ul>
+<p>:::</p>
+<h3> 支持隐藏参数</h3>
+<blockquote>
+<p>隐藏的参数不会显示在usage/help中</p>
+</blockquote>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div>]]></content:encoded>
+    </item>
     <item>
       <title>标准库</title>
       <link>https://Hexiaopi.github.io/go-language/standard-library/</link>
@@ -2382,9 +2436,20 @@ Cgo 不是 Go。</p>
       <link>https://Hexiaopi.github.io/CHANGELOG.html</link>
       <guid>https://Hexiaopi.github.io/CHANGELOG.html</guid>
       <source url="https://Hexiaopi.github.io/rss.xml"></source>
-      <description>v0.9.2 (2023-09-11) Bug Fixes go-language: flag增加子命令 go-language: 修改flag</description>
+      <description>v0.10.0 (2023-09-20) Bug Fixes go-language: 修改第三方库 project-language: 提交规范增加参考文献</description>
       <pubDate>Thu, 03 Aug 2023 13:57:06 GMT</pubDate>
-      <content:encoded><![CDATA[<p><a name="v0.9.2"></a></p>
+      <content:encoded><![CDATA[<p><a name="v0.10.0"></a></p>
+<h2> <a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.9.2...v0.10.0" target="_blank" rel="noopener noreferrer">v0.10.0</a> (2023-09-20)</h2>
+<h3> Bug Fixes</h3>
+<ul>
+<li><strong>go-language:</strong> 修改第三方库</li>
+<li><strong>project-language:</strong> 提交规范增加参考文献</li>
+</ul>
+<h3> Features</h3>
+<ul>
+<li><strong>go-language:</strong> 增加三方库pflag介绍</li>
+</ul>
+<p><a name="v0.9.2"></a></p>
 <h2> <a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.9.1...v0.9.2" target="_blank" rel="noopener noreferrer">v0.9.2</a> (2023-09-11)</h2>
 <h3> Bug Fixes</h3>
 <ul>
@@ -8471,181 +8536,6 @@ LIMIT关键字用于限制查询结果的数量。MySQL只返回前N条符合条
 </blockquote>
 <p>例如：<code>$GORROT/src/net/http/request.go</code></p>
 <div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
-    </item>
-    <item>
-      <title>Go语言推荐博客</title>
-      <link>https://Hexiaopi.github.io/go-language/recommend/blog.html</link>
-      <guid>https://Hexiaopi.github.io/go-language/recommend/blog.html</guid>
-      <source url="https://Hexiaopi.github.io/rss.xml">Go语言推荐博客</source>
-      <description>提示 收集的一些关于Go语言的博客文章，前行不再迷茫</description>
-      <category>Go语言</category>
-      <pubDate>Sat, 04 Mar 2023 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<div class="hint-container tip">
-<p class="hint-container-title">提示</p>
-<p>收集的一些关于Go语言的博客文章，前行不再迷茫</p>
-</div>
-<!-- more -->
-<h2> Go社区</h2>
-<p>Go语言官方网站<a href="https://golang.google.cn/" target="_blank" rel="noopener noreferrer">Go官方</a></p>
-<p>GoCN社区会分享一些文章和招聘<a href="https://gocn.vip/" target="_blank" rel="noopener noreferrer">GoCN社区</a></p>
-<p>Go语言中文网分享一些文章<a href="https://studygolang.com/" target="_blank" rel="noopener noreferrer">Go语言中文网</a></p>
-<p>Go夜读会定期的组织阅读Go项目源码<a href="https://talkgo.org/" target="_blank" rel="noopener noreferrer">Go夜读</a></p>
-<p>Go的一些书籍<a href="https://topgoer.cn/" target="_blank" rel="noopener noreferrer">地鼠文档</a></p>
-<p>腾讯云开发者社区Go教程<a href="https://cloud.tencent.com/developer/doc/1101" target="_blank" rel="noopener noreferrer">腾讯云</a></p>
-<p>Go Blog中文翻译<a href="https://learnku.com/docs/go-blog" target="_blank" rel="noopener noreferrer"></a></p>
-<p>learnku<a href="https://learnku.com/" target="_blank" rel="noopener noreferrer"></a></p>
-<h2> Go语言规范</h2>
-<p><a href="https://github.com/xxjwxc/uber_go_guide_cn" target="_blank" rel="noopener noreferrer">Uber公司Go语言编码规范</a></p>
-<p><a href="https://github.com/golang/go/wiki/CodeReviewComments" target="_blank" rel="noopener noreferrer">Go代码评审常见错误清单</a></p>
-<p><a href="https://rakyll.org/style-packages/" target="_blank" rel="noopener noreferrer">Go包规范</a></p>
-<p>稀土掘进-如何写出优雅的Golang代码<a href="https://juejin.cn/post/6844903976509390856" target="_blank" rel="noopener noreferrer"></a></p>
-<p>稀土掘进-Go语言实践：编写可维护的程序的建议<a href="https://juejin.cn/post/6844904035611328520" target="_blank" rel="noopener noreferrer"></a></p>
-<p>Go官方代码审查<a href="https://github.com/golang/go/wiki/CodeReviewComments" target="_blank" rel="noopener noreferrer"></a></p>
-<h2> Go博客</h2>
-<p>threedots<a href="https://threedots.tech/" target="_blank" rel="noopener noreferrer"></a></p>
-<p>Dave Cheney<a href="https://dave.cheney.net/" target="_blank" rel="noopener noreferrer"></a></p>
-<p>Go数据结构<a href="https://www.interviewcake.com/data-structures-reference" target="_blank" rel="noopener noreferrer">data-structures-reference</a></p>
-<p>煎鱼，文章质量很高<a href="https://eddycjy.com/" target="_blank" rel="noopener noreferrer">eddycjy</a></p>
-<p>峰云就她了，专注Go、Kubernetes、NoSQL、Istio<a href="https://xiaorui.cc/" target="_blank" rel="noopener noreferrer"></a></p>
-<p>鸟窝<a href="https://colobu.com/" target="_blank" rel="noopener noreferrer"></a></p>
-<p>EricZhou，有系列的Go文章<a href="https://mojotv.cn/" target="_blank" rel="noopener noreferrer"></a></p>
-<p>傅小黑<a href="https://fuxiaohei.me/" target="_blank" rel="noopener noreferrer"></a></p>
-<p>polarisxu<a href="https://polarisxu.studygolang.com/" target="_blank" rel="noopener noreferrer"></a></p>
-<p>mohuishou<a href="https://lailin.xyz/" target="_blank" rel="noopener noreferrer"></a></p>
-<p>一支人<a href="https://yizhi.ren/" target="_blank" rel="noopener noreferrer"></a></p>
-<p>可汗学院<a href="https://blog.khanacademy.org/engineering/" target="_blank" rel="noopener noreferrer"></a></p>
-<p>Mark<a href="https://www.integralist.co.uk/" target="_blank" rel="noopener noreferrer"></a></p>
-<p>qcrao<a href="https://qcrao.com/" target="_blank" rel="noopener noreferrer"></a></p>
-<p>冰霜之地<a href="https://halfrost.com/" target="_blank" rel="noopener noreferrer"></a></p>
-<p>chai2010<a href="https://chai2010.cn/" target="_blank" rel="noopener noreferrer"></a></p>
-<h2> Go练习</h2>
-<p>Go的一些练习项目<a href="https://gophercises.com/" target="_blank" rel="noopener noreferrer">gophercises</a></p>
-<p>Go的示例，有上千个示例<a href="https://golangexample.com/" target="_blank" rel="noopener noreferrer">golangexample</a></p>
-<p>Go语言一些示例<a href="https://gobyexample.com/" target="_blank" rel="noopener noreferrer">gobyexample</a></p>
-<p>Go Web开发示例<a href="https://gowebexamples.com/" target="_blank" rel="noopener noreferrer">gowebexamples</a></p>
-<p>ReposHub网站的Go练习<a href="https://reposhub.com/go" target="_blank" rel="noopener noreferrer"></a></p>
-<p>英文的Go练习<a href="https://www.golangprograms.com/" target="_blank" rel="noopener noreferrer"></a></p>
-<h2> Go书籍</h2>
-<p>Go高级编程<a href="https://books.studygolang.com/advanced-go-programming-book/" target="_blank" rel="noopener noreferrer"></a></p>
-<p>Go语言设计与实现<a href="https://draveness.me/golang/" target="_blank" rel="noopener noreferrer"></a></p>
-<p>Go语言四十二章经<a href="https://github.com/ffhelicopter/Go42" target="_blank" rel="noopener noreferrer"></a></p>
-<p>Mastering Go<a href="https://wskdsgcf.gitbook.io/mastering-go-zh-cn/" target="_blank" rel="noopener noreferrer"></a></p>
-<p>ApacheCN Golang 译文集<a href="https://go.apachecn.org/#/" target="_blank" rel="noopener noreferrer"></a></p>
-<p>Go Patterns<a href="https://hxangel.gitbooks.io/go-patterns/content/" target="_blank" rel="noopener noreferrer"></a></p>
-<p>Go语言标准库<a href="https://books.studygolang.com/The-Golang-Standard-Library-by-Example/" target="_blank" rel="noopener noreferrer"></a></p>
-<p>Go测试驱动开发<a href="https://studygolang.gitbook.io/learn-go-with-tests/" target="_blank" rel="noopener noreferrer"></a></p>
-<p>Go练习<a href="https://www.practical-go-lessons.com/" target="_blank" rel="noopener noreferrer"></a></p>
-<p>Go语言原本<a href="https://golang.design/under-the-hood/" target="_blank" rel="noopener noreferrer"></a></p>
-<p>Go语言编程之旅<a href="https://golang2.eddycjy.com/" target="_blank" rel="noopener noreferrer"></a></p>
-<p>Go程序员面试<a href="https://golang.design/go-questions/" target="_blank" rel="noopener noreferrer"></a></p>
-<h2> 知识图谱</h2>
-<p>processon<a href="https://www.processon.com/view/link/5a9ba4c8e4b0a9d22eb3bdf0#map" target="_blank" rel="noopener noreferrer"></a></p>
-<h2> 资料收集</h2>
-<p>简书<a href="https://www.jianshu.com/p/9895e6434819" target="_blank" rel="noopener noreferrer"></a></p>
-<p>英文Go博客收集<a href="https://draft.dev/learn/golang-blogs" target="_blank" rel="noopener noreferrer"></a></p>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>Go语言推荐工具</title>
-      <link>https://Hexiaopi.github.io/go-language/recommend/tool.html</link>
-      <guid>https://Hexiaopi.github.io/go-language/recommend/tool.html</guid>
-      <source url="https://Hexiaopi.github.io/rss.xml">Go语言推荐工具</source>
-      <description>提示 好的工具将解放我们的生产力！</description>
-      <category>Go语言</category>
-      <pubDate>Thu, 08 Sep 2022 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<div class="hint-container tip">
-<p class="hint-container-title">提示</p>
-<p>好的工具将解放我们的生产力！</p>
-</div>
-<!-- more -->
-<h2> 工具</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">工具</th>
-<th style="text-align:center">功能</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><a href="https://github.com/segmentio/golines" target="_blank" rel="noopener noreferrer">golines</a></td>
-<td style="text-align:center">格式化Go代码中长行变成短行</td>
-</tr>
-<tr>
-<td style="text-align:center"><a href="https://github.com/bradfitz/goimports" target="_blank" rel="noopener noreferrer">goimports</a></td>
-<td style="text-align:center">自动格式化Go代码并对所有引入的包进行管理，包括自动增删依赖的包、将依赖包按字母序排序并分类</td>
-</tr>
-<tr>
-<td style="text-align:center"><a href="https://github.com/golang/mock" target="_blank" rel="noopener noreferrer">mockgen</a></td>
-<td style="text-align:center">接口Mock工具</td>
-</tr>
-<tr>
-<td style="text-align:center"><a href="https://github.com/cweill/gotests" target="_blank" rel="noopener noreferrer">gotests</a></td>
-<td style="text-align:center">根据Go代码自动生成单元测试模板</td>
-</tr>
-<tr>
-<td style="text-align:center"><a href="https://github.com/jstemmer/go-junit-report" target="_blank" rel="noopener noreferrer">go-junit-report</a></td>
-<td style="text-align:center">将go test的输出转化为junit xml</td>
-</tr>
-<tr>
-<td style="text-align:center"><a href="https://github.com/kyoh86/richgo" target="_blank" rel="noopener noreferrer">richgo</a></td>
-<td style="text-align:center">用文本装饰丰富go test的输出</td>
-</tr>
-<tr>
-<td style="text-align:center"><a href="https://github.com/golangci/golangci-lint" target="_blank" rel="noopener noreferrer">golangci-lint</a></td>
-<td style="text-align:center">静态代码检查工具</td>
-</tr>
-<tr>
-<td style="text-align:center"><a href="github.com/galeone/rts">rts</a></td>
-<td style="text-align:center">根据服务端的响应生成Go结构体</td>
-</tr>
-<tr>
-<td style="text-align:center"><a href="https://github.com/favadi/protoc-go-inject-tag" target="_blank" rel="noopener noreferrer">protoc-go-inject-tag</a></td>
-<td style="text-align:center">往通过protoc工具生成的pb.go文件中注入自定义标签</td>
-</tr>
-<tr>
-<td style="text-align:center"><a href="https://github.com/Shelnutt2/db2struct" target="_blank" rel="noopener noreferrer">db2struct</a></td>
-<td style="text-align:center">根据数据库表一键转换Go结构体，支持自定义Tag和多种命名格式</td>
-</tr>
-<tr>
-<td style="text-align:center"><a href="https://github.com/arnaud-deprez/gsemver" target="_blank" rel="noopener noreferrer">gsemver</a></td>
-<td style="text-align:center">根据git commit规范自动生成语义化版本</td>
-</tr>
-<tr>
-<td style="text-align:center"><a href="https://github.com/git-chglog/git-chglog" target="_blank" rel="noopener noreferrer">git-chglog</a></td>
-<td style="text-align:center">根据git commit自动生成CHANGELOG</td>
-</tr>
-<tr>
-<td style="text-align:center"><a href="github.com/github-release/github-release">github-release</a></td>
-<td style="text-align:center">命令行工具，用来创建、修改github release</td>
-</tr>
-<tr>
-<td style="text-align:center"><a href="https://github.com/psampaz/go-mod-outdated" target="_blank" rel="noopener noreferrer">go-mod-outdated</a></td>
-<td style="text-align:center">检查依赖包是否有更新</td>
-</tr>
-<tr>
-<td style="text-align:center"><a href="https://github.com/ofabry/go-callvis" target="_blank" rel="noopener noreferrer">go-callvis</a></td>
-<td style="text-align:center">可视化显示Go调用关系</td>
-</tr>
-<tr>
-<td style="text-align:center"><a href="https://github.com/KyleBanks/depth" target="_blank" rel="noopener noreferrer">depth</a></td>
-<td style="text-align:center">通过分析导入的库，将某个包的依赖关系用树状结构显示出来</td>
-</tr>
-<tr>
-<td style="text-align:center"><a href="https://github.com/cloudflare/cfssl" target="_blank" rel="noopener noreferrer">cfssl</a></td>
-<td style="text-align:center">Cloudflare的PKI和TLS工具集</td>
-</tr>
-<tr>
-<td style="text-align:center"><a href="https://github.com/go-swagger/go-swagger/" target="_blank" rel="noopener noreferrer">go-swagger</a></td>
-<td style="text-align:center">自动生成Go Swagger文档</td>
-</tr>
-<tr>
-<td style="text-align:center"><a href="https://github.com/ribice/glice" target="_blank" rel="noopener noreferrer">glice</a></td>
-<td style="text-align:center">分析导入的库，并打印出许可证</td>
-</tr>
-</tbody>
-</table>
-]]></content:encoded>
     </item>
   </channel>
 </rss>
