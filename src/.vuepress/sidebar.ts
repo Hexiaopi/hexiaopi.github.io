@@ -150,6 +150,12 @@ export default sidebar({
           children: "structure",
         },
         {
+          text: "三方库",
+          collapsible: true,
+          prefix: "third-party/",
+          children: "structure",
+        },
+        {
           text: "推荐",
           collapsible: true,
           prefix: "recommend/",
