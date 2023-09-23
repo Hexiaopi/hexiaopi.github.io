@@ -3,7 +3,7 @@
   <id>https://Hexiaopi.github.io/</id>
   <title>Hexiaopi</title>
   <subtitle>一枚后端攻城狮的个人博客</subtitle>
-  <updated>2023-09-23T05:55:48.295Z</updated>
+  <updated>2023-09-23T14:29:49.770Z</updated>
   <generator>vuepress-plugin-feed2</generator>
   <link rel="self" href="https://Hexiaopi.github.io/atom.xml"/>
   <link rel="alternate" href="https://Hexiaopi.github.io/"/>
@@ -109,7 +109,7 @@
     <title type="text">flag使用</title>
     <id>https://Hexiaopi.github.io/go-language/standard-library/flag.html</id>
     <link href="https://Hexiaopi.github.io/go-language/standard-library/flag.html"/>
-    <updated>2023-09-11T14:34:51.000Z</updated>
+    <updated>2023-09-23T14:26:21.000Z</updated>
     <summary type="html"><![CDATA[<blockquote>
 <p>flag库实现命令行参数解析</p>
 </blockquote>
@@ -178,7 +178,43 @@
 <div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 子命令</h3>
 <p>这里参考网站示例：<a href="https://gobyexample.com/command-line-subcommands" target="_blank" rel="noopener noreferrer">gobyexample</a></p>
 <div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>使用示例</p>
-<div class="language-bash line-numbers-mode" data-ext="sh"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-bash line-numbers-mode" data-ext="sh"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content>
+<div class="language-bash line-numbers-mode" data-ext="sh"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-bash line-numbers-mode" data-ext="sh"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 底层结构</h2>
+<p>Flag代表一个标志，例如:<code>--version</code></p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>FlagSet 代表标志的集合，例如：<code>--name</code>、<code>--age</code>...</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>FlagSet包含一系列方法：</p>
+<ul>
+<li>BoolVar(p *bool,name string,value bool,usage string)</li>
+<li>Bool(name string,value bool,usage string) *bool</li>
+<li>IntVar(p *int,name string,value int,usage string)</li>
+<li>Int(name string,value int,usage string) *int</li>
+<li>Int64Var(p *int64,name string,value int64,usage string)</li>
+<li>Int64(name string,value int64,usage string) *int64</li>
+<li>UIntVar(p *uint,name string,value uint,usage string)</li>
+<li>UInt(name string,value uint,usage string) *Uint</li>
+<li>UInt64Var(p *uint64,name string,value uint64,usage string)</li>
+<li>UInt64(name string,value uint64,usage string) *Uint64</li>
+<li>StringVar(p *string,name string,value string,usage string)</li>
+<li>String(name string,value string,usage string) *string</li>
+<li>Float64Var(p *float64,name string,value float64,usage string)</li>
+<li>Float64(name string,value float64,usage string) *float64</li>
+<li>DurationVar(p *time.Duration,name string,value time.Duration,usage string)</li>
+<li>Duration(name string,value time.Duration,usage string) *time.Duration</li>
+<li>TextVar(p encoding.TextUnmarshaler,name string,value encoding.TextMarshaler,usage string)</li>
+<li>Var(value Value, name string, usage string)</li>
+</ul>
+<p>而我们常常使用的是flag库中的以下方法，例如：<code>flag.StringVar()</code></p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>其本质上是调用<code>CommandLine.Var</code>方法，而CommandLine是FlagSet的一个实例：</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><ul>
+<li><code>os.Args[0]</code>：是程序运行时的名称。</li>
+<li><code>ExitOnError</code>：是解析参数时遇到错误时退出</li>
+</ul>
+<p><code>flag.Parse</code>其本质上也是调用CommandLine的解析，如下：</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>它将<code>os.Args[1:]</code>，即除了程序名称外，其余的参数传给CommandLine进行解析。</p>
+<p>最为核心的代码莫过于参数的解析，如下：</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>这里循环解析每一个Flag，即：<code>f.parseOne()</code>。</p>
+<p>最后总结其中的关系图:</p>
+<figure><figcaption>flag</figcaption></figure>
+]]></content>
     <category term="Go语言"/>
     <published>2023-09-05T00:00:00.000Z</published>
   </entry>
@@ -2712,15 +2748,25 @@ Cgo 不是 Go。</p>
     <title type="text"></title>
     <id>https://Hexiaopi.github.io/CHANGELOG.html</id>
     <link href="https://Hexiaopi.github.io/CHANGELOG.html"/>
-    <updated>2023-09-20T15:38:13.000Z</updated>
-    <summary type="html"><![CDATA[<p><a name="v0.10.0"></a></p>
-<h2> <a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.9.2...v0.10.0" target="_blank" rel="noopener noreferrer">v0.10.0</a> (2023-09-20)</h2>
+    <updated>2023-09-23T14:27:47.000Z</updated>
+    <summary type="html"><![CDATA[<p><a name="v0.10.1"></a></p>
+<h2> <a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.10.0...v0.10.1" target="_blank" rel="noopener noreferrer">v0.10.1</a> (2023-09-23)</h2>
 <h3> Bug Fixes</h3>
 <ul>
-<li><strong>go-language:</strong> 修改第三方库</li>
-<li><strong>project-language:</strong> 提交规范增加参考文献</li>
-</ul>]]></summary>
-    <content type="html"><![CDATA[<p><a name="v0.10.0"></a></p>
+<li><strong>go-language:</strong> 修改flag标准库，增加底层原理</li>
+</ul>
+<h3> Code Refactoring</h3>]]></summary>
+    <content type="html"><![CDATA[<p><a name="v0.10.1"></a></p>
+<h2> <a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.10.0...v0.10.1" target="_blank" rel="noopener noreferrer">v0.10.1</a> (2023-09-23)</h2>
+<h3> Bug Fixes</h3>
+<ul>
+<li><strong>go-language:</strong> 修改flag标准库，增加底层原理</li>
+</ul>
+<h3> Code Refactoring</h3>
+<ul>
+<li>调整目录顺序</li>
+</ul>
+<p><a name="v0.10.0"></a></p>
 <h2> <a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.9.2...v0.10.0" target="_blank" rel="noopener noreferrer">v0.10.0</a> (2023-09-20)</h2>
 <h3> Bug Fixes</h3>
 <ul>

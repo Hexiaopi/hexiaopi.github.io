@@ -1,0 +1,1 @@
+import{_ as e}from"./plugin-vue_export-helper-c27b6911.js";import{o,c as t,a as c}from"./app-94395bf6.js";const n={},_=c("p",null,"这里会记录Go语言标准库的使用和注意事项，当然最值的关注的是如何设计这些标准库的",-1),s=[_];function r(a,l){return o(),t("div",null,s)}const f=e(n,[["render",r],["__file","index.html.vue"]]);export{f as default};
