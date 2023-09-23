@@ -284,3 +284,123 @@ subcommand 'bar'
   level: 8
   tail: [a1]
 ```
+
+## 底层结构
+
+Flag代表一个标志，例如:`--version`
+
+```go
+// A Flag represents the state of a flag.
+type Flag struct {
+	Name     string // name as it appears on command line
+	Usage    string // help message
+	Value    Value  // value as set
+	DefValue string // default value (as text); for usage message
+}
+```
+
+FlagSet 代表标志的集合，例如：`--name`、`--age`...
+
+```go
+type FlagSet struct {
+	// Usage is the function called when an error occurs while parsing flags.
+	// The field is a function (not a method) that may be changed to point to
+	// a custom error handler. What happens after Usage is called depends
+	// on the ErrorHandling setting; for the command line, this defaults
+	// to ExitOnError, which exits the program after calling Usage.
+	Usage func()
+
+	name          string
+	parsed        bool
+	actual        map[string]*Flag
+	formal        map[string]*Flag
+	args          []string // arguments after flags
+	errorHandling ErrorHandling
+	output        io.Writer // nil means stderr; use Output() accessor
+}
+```
+
+FlagSet包含一系列方法：
+
+- BoolVar(p *bool,name string,value bool,usage string)
+- Bool(name string,value bool,usage string) *bool
+- IntVar(p *int,name string,value int,usage string)
+- Int(name string,value int,usage string) *int
+- Int64Var(p *int64,name string,value int64,usage string)
+- Int64(name string,value int64,usage string) *int64
+- UIntVar(p *uint,name string,value uint,usage string)
+- UInt(name string,value uint,usage string) *Uint
+- UInt64Var(p *uint64,name string,value uint64,usage string)
+- UInt64(name string,value uint64,usage string) *Uint64
+- StringVar(p *string,name string,value string,usage string)
+- String(name string,value string,usage string) *string
+- Float64Var(p *float64,name string,value float64,usage string)
+- Float64(name string,value float64,usage string) *float64
+- DurationVar(p *time.Duration,name string,value time.Duration,usage string)
+- Duration(name string,value time.Duration,usage string) *time.Duration
+- TextVar(p encoding.TextUnmarshaler,name string,value encoding.TextMarshaler,usage string)
+- Var(value Value, name string, usage string)
+
+而我们常常使用的是flag库中的以下方法，例如：`flag.StringVar()`
+
+```go
+func StringVar(p *string, name string, value string, usage string) {
+	CommandLine.Var(newStringValue(value, p), name, usage)
+}
+```
+
+其本质上是调用`CommandLine.Var`方法，而CommandLine是FlagSet的一个实例：
+
+```go
+var CommandLine = NewFlagSet(os.Args[0], ExitOnError)
+```
+
+- `os.Args[0]`：是程序运行时的名称。
+- `ExitOnError`：是解析参数时遇到错误时退出
+
+`flag.Parse`其本质上也是调用CommandLine的解析，如下：
+
+```go
+func Parse() {
+	// Ignore errors; CommandLine is set for ExitOnError.
+	CommandLine.Parse(os.Args[1:])
+}
+```
+
+它将`os.Args[1:]`，即除了程序名称外，其余的参数传给CommandLine进行解析。
+
+最为核心的代码莫过于参数的解析，如下：
+
+```go
+func (f *FlagSet) Parse(arguments []string) error {
+	f.parsed = true
+	f.args = arguments
+	for {
+		seen, err := f.parseOne()
+		if seen {
+			continue
+		}
+		if err == nil {
+			break
+		}
+		switch f.errorHandling {
+		case ContinueOnError:
+			return err
+		case ExitOnError:
+			if err == ErrHelp {
+				os.Exit(0)
+			}
+			os.Exit(2)
+		case PanicOnError:
+			panic(err)
+		}
+	}
+	return nil
+}
+```
+
+这里循环解析每一个Flag，即：`f.parseOne()`。
+
+最后总结其中的关系图:
+
+![flag](./images/flag.png)
