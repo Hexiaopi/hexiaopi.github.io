@@ -61,6 +61,15 @@ export default navbar([
     ]
   },
   {
+    text: "网络",
+    icon: "network",
+    prefix: "/network/",
+    children: [
+      "websocket",
+      "MQTT",
+    ]
+  },
+  {
     text: "项目规范",
     icon: "guide",
     prefix: "/project-standard/",
