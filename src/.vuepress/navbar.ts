@@ -75,6 +75,7 @@ export default navbar([
     prefix: "/devops/",
     children: [
       "prometheus-k8s-deploy",
+      "node-exporter-k8s-deploy",
     ]
   },
   {
