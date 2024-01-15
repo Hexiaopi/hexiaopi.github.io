@@ -248,6 +248,7 @@ export default sidebar({
       children: [
         "prometheus-k8s-deploy",
         "node-exporter-k8s-deploy",
+        "cadvisor-k8s-deploy",
       ]
     },
   ],
