@@ -6,8 +6,8 @@
     <link>https://Hexiaopi.github.io/</link>
     <description>一枚后端攻城狮的个人博客</description>
     <language>zh-CN</language>
-    <pubDate>Mon, 15 Jan 2024 12:41:40 GMT</pubDate>
-    <lastBuildDate>Mon, 15 Jan 2024 12:41:40 GMT</lastBuildDate>
+    <pubDate>Mon, 15 Jan 2024 14:34:07 GMT</pubDate>
+    <lastBuildDate>Mon, 15 Jan 2024 14:34:07 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>devops</category>
@@ -21,6 +21,24 @@
     <category>算法</category>
     <category>系统设计</category>
     <category>工具</category>
+    <item>
+      <title>kube-state-metrics k8s 部署</title>
+      <link>https://Hexiaopi.github.io/devops/kube-state-metrics-k8s-deploy.html</link>
+      <guid>https://Hexiaopi.github.io/devops/kube-state-metrics-k8s-deploy.html</guid>
+      <source url="https://Hexiaopi.github.io/rss.xml">kube-state-metrics k8s 部署</source>
+      <description>kube-state-metrics用于监控k8s 1、部署cluster-role apiVersion: rbac.authorization.k8s.io/v1 kind: ClusterRole metadata: labels: app.kubernetes.io/component: exporter app.kubernetes.io/name: kube-state-metrics app.kubernetes.io/version: 2.10.0 name: kube-state-metrics rules: - apiGroups: - &amp;quot;&amp;quot; resources: - configmaps - secrets - nodes - pods - services - serviceaccounts - resourcequotas - replicationcontrollers - limitranges - persistentvolumeclaims - persistentvolumes - namespaces - endpoints verbs: - list - watch - apiGroups: - apps resources: - statefulsets - daemonsets - deployments - replicasets verbs: - list - watch - apiGroups: - batch resources: - cronjobs - jobs verbs: - list - watch - apiGroups: - autoscaling resources: - horizontalpodautoscalers verbs: - list - watch - apiGroups: - authentication.k8s.io resources: - tokenreviews verbs: - create - apiGroups: - authorization.k8s.io resources: - subjectaccessreviews verbs: - create - apiGroups: - policy resources: - poddisruptionbudgets verbs: - list - watch - apiGroups: - certificates.k8s.io resources: - certificatesigningrequests verbs: - list - watch - apiGroups: - discovery.k8s.io resources: - endpointslices verbs: - list - watch - apiGroups: - storage.k8s.io resources: - storageclasses - volumeattachments verbs: - list - watch - apiGroups: - admissionregistration.k8s.io resources: - mutatingwebhookconfigurations - validatingwebhookconfigurations verbs: - list - watch - apiGroups: - networking.k8s.io resources: - networkpolicies - ingressclasses - ingresses verbs: - list - watch - apiGroups: - coordination.k8s.io resources: - leases verbs: - list - watch - apiGroups: - rbac.authorization.k8s.io resources: - clusterrolebindings - clusterroles - rolebindings - roles verbs: - list - watch</description>
+      <category>devops</category>
+      <pubDate>Mon, 15 Jan 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<p>kube-state-metrics用于监控k8s</p>
+<p>1、部署cluster-role</p>
+<div class="language-yaml line-numbers-mode" data-ext="yml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>2、部署cluster-role-binding</p>
+<div class="language-yaml line-numbers-mode" data-ext="yml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>3、部署deployment</p>
+<p>👁️ 由于国外网络原因，注意需要修改镜像地址</p>
+<div class="language-yaml line-numbers-mode" data-ext="yml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>4、部署service</p>
+<p>注意，需要设置annotation，让Prometheus自动发现</p>
+<div class="language-yaml line-numbers-mode" data-ext="yml"><div class="highlight-lines"><br><br><br><br><br><br><br><br><br><br><div class="highlight-line">&nbsp;</div><br><br><br><br><br><br><br><br><br><br><br></div><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>5、部署service-account</p>
+<div class="language-yaml line-numbers-mode" data-ext="yml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
+    </item>
     <item>
       <title>cadvisor k8s 部署</title>
       <link>https://Hexiaopi.github.io/devops/cadvisor-k8s-deploy.html</link>
@@ -7932,42 +7950,6 @@ LIMIT关键字用于限制查询结果的数量。MySQL只返回前N条符合条
 <li>大小写敏感，比如<code>x</code>和<code>X</code>是两个不一样的标识符；</li>
 </ul>
 ]]></content:encoded>
-    </item>
-    <item>
-      <title>魔幻的iota枚举</title>
-      <link>https://Hexiaopi.github.io/go-language/base/iota.html</link>
-      <guid>https://Hexiaopi.github.io/go-language/base/iota.html</guid>
-      <source url="https://Hexiaopi.github.io/rss.xml">魔幻的iota枚举</source>
-      <description>提示 iota的出现使得枚举值更加方便，但注意哦，并不简单。主要是对iota定义不理解，我整理了一些iota的使用注意事项</description>
-      <category>Go语言</category>
-      <pubDate>Fri, 03 Feb 2023 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<div class="hint-container tip">
-<p class="hint-container-title">提示</p>
-<p>iota的出现使得枚举值更加方便，但注意哦，并不简单。主要是对iota定义不理解，我整理了一些iota的使用注意事项</p>
-</div>
-<!-- more -->
-<h2> iota</h2>
-<blockquote>
-<p>iota是Go语言的一个预定义标识符，它表示的是const声明块或声明行中每个常量所处位置的<strong>偏移值</strong>（从0开始）。</p>
-</blockquote>
-<h3> 规则：如果按行递增，可省略后续的iota关键字</h3>
-<p>例如：</p>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>这与常量的规则：<strong>如果不指定类型和初始化值，则默认表示使用上行的赋值表达式</strong>一致</p>
-<p>上面等价于</p>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 规则：iota只跟常量组的偏移位置有关</h3>
-<p>‼️</p>
-<p>例如：</p>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>虽然c是第一次使用iota标识符定义，但在const块中位置属于第3，此时iota为2；</p>
-<p>d与e之间虽然有空行，但e的偏移位置属于第5，因此iota为4；</p>
-<h3> 规则：每遇到一个const关键字，iota就会重置为0</h3>
-<p>例如：</p>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><h3> 规则：iota跟个数无关，即便是同一行，值也都一样</h3>
-<p>‼️</p>
-<p>例如：</p>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>虽然g,h是两个常量，但由于在同一行，iota的值一样</p>
-<h3> 规则：如果想从1开始，则可以通过<code>_</code>忽略第一个iota</h3>
-<p>例如：</p>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
     </item>
   </channel>
 </rss>
