@@ -6,8 +6,8 @@
     <link>https://Hexiaopi.github.io/</link>
     <description>一枚后端攻城狮的个人博客</description>
     <language>zh-CN</language>
-    <pubDate>Mon, 15 Jan 2024 12:33:59 GMT</pubDate>
-    <lastBuildDate>Mon, 15 Jan 2024 12:33:59 GMT</lastBuildDate>
+    <pubDate>Mon, 15 Jan 2024 12:41:40 GMT</pubDate>
+    <lastBuildDate>Mon, 15 Jan 2024 12:41:40 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>devops</category>
@@ -21,6 +21,17 @@
     <category>算法</category>
     <category>系统设计</category>
     <category>工具</category>
+    <item>
+      <title>cadvisor k8s 部署</title>
+      <link>https://Hexiaopi.github.io/devops/cadvisor-k8s-deploy.html</link>
+      <guid>https://Hexiaopi.github.io/devops/cadvisor-k8s-deploy.html</guid>
+      <source url="https://Hexiaopi.github.io/rss.xml">cadvisor k8s 部署</source>
+      <description>cadvisor 是谷歌公司用来分析运行中的 Docker 容器的资源占用以及性能特性的工具，简单来说是用于监控 Docker 容器。 apiVersion: apps/v1 kind: DaemonSet metadata: name: cadvisor namespace: monitor spec: selector: matchLabels: app: cAdvisor template: metadata: labels: app: cAdvisor spec: tolerations: #污点容忍,忽略master的NoSchedule - effect: NoSchedule key: node-role.kubernetes.io/master hostNetwork: true restartPolicy: Always containers: - name: cadvisor image: google/cadvisor:latest imagePullPolicy: IfNotPresent ports: - containerPort: 8080 volumeMounts: - name: root mountPath: /rootfs - name: run mountPath: /var/run - name: sys mountPath: /sys - name: docker mountPath: /var/lib/containerd volumes: - name: root hostPath: path: / - name: run hostPath: path: /var/run - name: sys hostPath: path: /sys - name: docker hostPath: path: /var/lib/containerd</description>
+      <category>devops</category>
+      <pubDate>Mon, 15 Jan 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<p>cadvisor 是谷歌公司用来分析运行中的 Docker 容器的资源占用以及性能特性的工具，简单来说是用于监控 Docker 容器。</p>
+<div class="language-yaml line-numbers-mode" data-ext="yml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
+    </item>
     <item>
       <title>node-exporter k8s 部署</title>
       <link>https://Hexiaopi.github.io/devops/node-exporter-k8s-deploy.html</link>
@@ -5051,6 +5062,145 @@ Vincent Driessen 为了解决这个问题，提出<a href="https://nvie.com/post
 ]]></content:encoded>
     </item>
     <item>
+      <title>二叉搜索树</title>
+      <link>https://Hexiaopi.github.io/data-structure/tree/binary-search-tree.html</link>
+      <guid>https://Hexiaopi.github.io/data-structure/tree/binary-search-tree.html</guid>
+      <source url="https://Hexiaopi.github.io/rss.xml">二叉搜索树</source>
+      <description>二叉搜索树 简介 二叉搜索树（Binary Search Tree,BST）又叫二叉排序树，基于二分法查找思想设计的树。它的定义如下： 它是一棵二叉树 左子树的所有节点的值都小于它的根节点，右子树的所有节点的值都大于它的根节点 左右子树也是一棵二叉搜索树 增加节点 func (n *Node) Add(value int) { 	if value &amp;gt; n.Data { 		if n.Right == nil { 			n.Right = &amp;amp;Node{ 				Left: nil, 				Data: value, 				Right: nil, 			} 		} else { 			n.Right.Add(value) 		} 	} else if value &amp;lt; n.Data { 		if n.Left == nil { 			n.Left = &amp;amp;Node{ 				Left: nil, 				Data: value, 				Right: nil, 			} 		} else { 			n.Left.Add(value) 		} 	} else { 		fmt.Println(value, &amp;quot; already exist&amp;quot;) 	} }</description>
+      <pubDate>Sun, 30 Jul 2023 09:20:01 GMT</pubDate>
+      <content:encoded><![CDATA[<h1> 二叉搜索树</h1>
+<h2> 简介</h2>
+<blockquote>
+<p>二叉搜索树（Binary Search Tree,BST）又叫二叉排序树，基于二分法查找思想设计的树。它的定义如下：</p>
+<ol>
+<li>它是一棵二叉树</li>
+<li>左子树的所有节点的值都小于它的根节点，右子树的所有节点的值都大于它的根节点</li>
+<li>左右子树也是一棵二叉搜索树</li>
+</ol>
+</blockquote>
+<h2> 增加节点</h2>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 查找节点</h2>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>测试</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 删除节点</h2>
+<h3> 递归版本</h3>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>测试</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h1> 总结</h1>
+<blockquote>
+<p>二叉搜素树采用二分法思想，查找效率高</p>
+<p>但是二叉搜索树具有不平衡性，容易出现斜树</p>
+</blockquote>
+<figure><figcaption>斜树</figcaption></figure>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>二叉树</title>
+      <link>https://Hexiaopi.github.io/data-structure/tree/binary-tree.html</link>
+      <guid>https://Hexiaopi.github.io/data-structure/tree/binary-tree.html</guid>
+      <source url="https://Hexiaopi.github.io/rss.xml">二叉树</source>
+      <description>二叉树 满足以下两个条件的树就是二叉树： 本身是有序树 树中包含的各个节点的度不能超过2，即只能是：0、1、2 定义二叉树的结构 type Node struct { 	Left *Node 	Data interface{} 	Right *Node }</description>
+      <pubDate>Sun, 30 Jul 2023 09:20:01 GMT</pubDate>
+      <content:encoded><![CDATA[<h1> 二叉树</h1>
+<blockquote>
+<p>满足以下两个条件的树就是二叉树：</p>
+<ul>
+<li>本身是有序树</li>
+<li>树中包含的各个节点的度不能超过2，即只能是：0、1、2</li>
+</ul>
+</blockquote>
+<p>定义二叉树的结构</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><figure><figcaption></figcaption></figure>
+<h2> 先序遍历</h2>
+<blockquote>
+<p>其思想是：</p>
+<ol>
+<li>访问根节点；</li>
+<li>访问当前节点的左子树；</li>
+<li>若当前节点无左子树，则访问当前节点的右子树；</li>
+</ol>
+</blockquote>
+<p>以图为例：</p>
+<ol>
+<li>访问该二叉树的根节点，找到节点1；</li>
+<li>访问节点1的左子树，找到节点2；</li>
+<li>访问节点2的左子树，找到节点4；</li>
+<li>访问节点4的左子树失败，访问节点4的右子树失败，结束节点4的查询。继续查找节点2的右子树，找到节点5；</li>
+<li>访问节点5的左子树失败，访问节点5的右子树失败，结束节点5的查询。结束节点2的查询，查询节点1的右子树，找到节点3；</li>
+<li>访问节点3的左子树，找到节点6；</li>
+<li>访问节点6的左子树失败，访问节点6的右子树失败，结束节点6的查询。继续查找节点3右子树，知道节点7；</li>
+<li>访问节点7的左子树失败，访问节点7的右子树失败，结束节点7的查询。结束节点3的查询，结束节点1的查询；</li>
+</ol>
+<p>!&gt; 顺序如下：1、2、4、5、3、6、7</p>
+<h3> 递归实现</h3>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 示例测试</h3>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 中序遍历</h2>
+<blockquote>
+<p>其实想是：</p>
+<ol>
+<li>访问当前节点的左子树；</li>
+<li>访问当前节点；</li>
+<li>访问当前节点的右子树；</li>
+</ol>
+</blockquote>
+<p>以图为例：</p>
+<ol>
+<li>访问根节点，遍历找到左子树直到失败；找到节点4，找到节点4的右子树失败，结束节点4的遍历；</li>
+<li>访问节点4的根节点，找到节点2；</li>
+<li>访问节点2的右子树，遍历找左子树失败，找到节点5，遍历找到右子树失败，结束节点5的遍历，也结束节点2的遍历；</li>
+<li>结束节点1的左子树查询，找到节点1；</li>
+<li>遍历节点1的右子树，遍历找到左子树为6，结束节点6的遍历；</li>
+<li>找到节点3；</li>
+<li>遍历节点3的右子树，遍历找到左子树失败；找到节点7，遍历节点7的右子树失败，结束节点7的遍历；</li>
+</ol>
+<p>!&gt; 顺序如下：4，2，5，1，6，3，7</p>
+<h3> 递归实现</h3>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 示例测试</h3>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 后续遍历</h2>
+<blockquote>
+<p>其思想是：</p>
+<ol>
+<li>遍历访问当前节点的左子树；</li>
+<li>遍历访问当前节点的右子树；</li>
+<li>访问当前节点；</li>
+</ol>
+</blockquote>
+<p>以图为例：</p>
+<ol>
+<li>从根节点开始，遍历左子树直到失败，1-&gt;2-&gt;4，找到节点4，结束节点4的查询；</li>
+<li>回退到节点2，遍历右子树，找到节点5的左子树失败、右子树失败，找到节点5，结束节点5的查询；</li>
+<li>节点2的左右子树遍历完成，找到节点2，结束节点2的查询；</li>
+<li>回退到节点1，遍历右子树，1-&gt;3-&gt;6，找到节点6的左子树失败、右子树失败，找到节点6，结束节点6的查询；</li>
+<li>回到到节点3，遍历右子树，3-&gt;7，找到节点7的左子树失败、右子树失败，找到节点7，结束节点7的查询；</li>
+<li>节点3左右子树遍历完成，找到节点3，结束节点3的查询；</li>
+<li>回退到节点1，节点1左右子树遍历完成，找到节点1，结束节点1的查询；</li>
+</ol>
+<p>!&gt; 顺序为：4、5、2、6、7、3、1</p>
+<h3> 递归实现</h3>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 示例测试</h3>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 层次遍历</h2>
+<blockquote>
+<p>其思想是：</p>
+<ol>
+<li>节点入队；</li>
+<li>节点出队，节点左孩子和右孩子入队；</li>
+<li>知道所有节点出队；</li>
+</ol>
+</blockquote>
+<p>以图为例：</p>
+<ol>
+<li>根节点1入队；</li>
+<li>根节点1出队，找到节点1，根节点1的左孩子节点2和右孩子3节点入队；</li>
+<li>节点2出队，找到节点2，节点2的左孩子节点4和右孩子节点5入队；</li>
+<li>节点3出队，找到节点3，节点3的左孩子节点6和右孩子节点7入队；</li>
+<li>节点4出队，没有左右孩子，找到节点4；</li>
+<li>节点5出队，没有左右孩子，找到节点5；</li>
+<li>节点6出队，没有左右孩子，找到节点6；</li>
+<li>节点7出队，没有左右孩子，找到节点7；</li>
+</ol>
+<h3> 队列实现</h3>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 示例测试</h3>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
+    </item>
+    <item>
       <title>存储引擎</title>
       <link>https://Hexiaopi.github.io/database/mysql/engine.html</link>
       <guid>https://Hexiaopi.github.io/database/mysql/engine.html</guid>
@@ -5911,145 +6061,6 @@ LIMIT关键字用于限制查询结果的数量。MySQL只返回前N条符合条
 </ol>
 <p>redolog的写入拆成了两个步骤：prepare和commit，这就是<strong>两阶段提交</strong></p>
 ]]></content:encoded>
-    </item>
-    <item>
-      <title>二叉搜索树</title>
-      <link>https://Hexiaopi.github.io/data-structure/tree/binary-search-tree.html</link>
-      <guid>https://Hexiaopi.github.io/data-structure/tree/binary-search-tree.html</guid>
-      <source url="https://Hexiaopi.github.io/rss.xml">二叉搜索树</source>
-      <description>二叉搜索树 简介 二叉搜索树（Binary Search Tree,BST）又叫二叉排序树，基于二分法查找思想设计的树。它的定义如下： 它是一棵二叉树 左子树的所有节点的值都小于它的根节点，右子树的所有节点的值都大于它的根节点 左右子树也是一棵二叉搜索树 增加节点 func (n *Node) Add(value int) { 	if value &amp;gt; n.Data { 		if n.Right == nil { 			n.Right = &amp;amp;Node{ 				Left: nil, 				Data: value, 				Right: nil, 			} 		} else { 			n.Right.Add(value) 		} 	} else if value &amp;lt; n.Data { 		if n.Left == nil { 			n.Left = &amp;amp;Node{ 				Left: nil, 				Data: value, 				Right: nil, 			} 		} else { 			n.Left.Add(value) 		} 	} else { 		fmt.Println(value, &amp;quot; already exist&amp;quot;) 	} }</description>
-      <pubDate>Sun, 30 Jul 2023 09:20:01 GMT</pubDate>
-      <content:encoded><![CDATA[<h1> 二叉搜索树</h1>
-<h2> 简介</h2>
-<blockquote>
-<p>二叉搜索树（Binary Search Tree,BST）又叫二叉排序树，基于二分法查找思想设计的树。它的定义如下：</p>
-<ol>
-<li>它是一棵二叉树</li>
-<li>左子树的所有节点的值都小于它的根节点，右子树的所有节点的值都大于它的根节点</li>
-<li>左右子树也是一棵二叉搜索树</li>
-</ol>
-</blockquote>
-<h2> 增加节点</h2>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 查找节点</h2>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>测试</p>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 删除节点</h2>
-<h3> 递归版本</h3>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>测试</p>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h1> 总结</h1>
-<blockquote>
-<p>二叉搜素树采用二分法思想，查找效率高</p>
-<p>但是二叉搜索树具有不平衡性，容易出现斜树</p>
-</blockquote>
-<figure><figcaption>斜树</figcaption></figure>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>二叉树</title>
-      <link>https://Hexiaopi.github.io/data-structure/tree/binary-tree.html</link>
-      <guid>https://Hexiaopi.github.io/data-structure/tree/binary-tree.html</guid>
-      <source url="https://Hexiaopi.github.io/rss.xml">二叉树</source>
-      <description>二叉树 满足以下两个条件的树就是二叉树： 本身是有序树 树中包含的各个节点的度不能超过2，即只能是：0、1、2 定义二叉树的结构 type Node struct { 	Left *Node 	Data interface{} 	Right *Node }</description>
-      <pubDate>Sun, 30 Jul 2023 09:20:01 GMT</pubDate>
-      <content:encoded><![CDATA[<h1> 二叉树</h1>
-<blockquote>
-<p>满足以下两个条件的树就是二叉树：</p>
-<ul>
-<li>本身是有序树</li>
-<li>树中包含的各个节点的度不能超过2，即只能是：0、1、2</li>
-</ul>
-</blockquote>
-<p>定义二叉树的结构</p>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><figure><figcaption></figcaption></figure>
-<h2> 先序遍历</h2>
-<blockquote>
-<p>其思想是：</p>
-<ol>
-<li>访问根节点；</li>
-<li>访问当前节点的左子树；</li>
-<li>若当前节点无左子树，则访问当前节点的右子树；</li>
-</ol>
-</blockquote>
-<p>以图为例：</p>
-<ol>
-<li>访问该二叉树的根节点，找到节点1；</li>
-<li>访问节点1的左子树，找到节点2；</li>
-<li>访问节点2的左子树，找到节点4；</li>
-<li>访问节点4的左子树失败，访问节点4的右子树失败，结束节点4的查询。继续查找节点2的右子树，找到节点5；</li>
-<li>访问节点5的左子树失败，访问节点5的右子树失败，结束节点5的查询。结束节点2的查询，查询节点1的右子树，找到节点3；</li>
-<li>访问节点3的左子树，找到节点6；</li>
-<li>访问节点6的左子树失败，访问节点6的右子树失败，结束节点6的查询。继续查找节点3右子树，知道节点7；</li>
-<li>访问节点7的左子树失败，访问节点7的右子树失败，结束节点7的查询。结束节点3的查询，结束节点1的查询；</li>
-</ol>
-<p>!&gt; 顺序如下：1、2、4、5、3、6、7</p>
-<h3> 递归实现</h3>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 示例测试</h3>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 中序遍历</h2>
-<blockquote>
-<p>其实想是：</p>
-<ol>
-<li>访问当前节点的左子树；</li>
-<li>访问当前节点；</li>
-<li>访问当前节点的右子树；</li>
-</ol>
-</blockquote>
-<p>以图为例：</p>
-<ol>
-<li>访问根节点，遍历找到左子树直到失败；找到节点4，找到节点4的右子树失败，结束节点4的遍历；</li>
-<li>访问节点4的根节点，找到节点2；</li>
-<li>访问节点2的右子树，遍历找左子树失败，找到节点5，遍历找到右子树失败，结束节点5的遍历，也结束节点2的遍历；</li>
-<li>结束节点1的左子树查询，找到节点1；</li>
-<li>遍历节点1的右子树，遍历找到左子树为6，结束节点6的遍历；</li>
-<li>找到节点3；</li>
-<li>遍历节点3的右子树，遍历找到左子树失败；找到节点7，遍历节点7的右子树失败，结束节点7的遍历；</li>
-</ol>
-<p>!&gt; 顺序如下：4，2，5，1，6，3，7</p>
-<h3> 递归实现</h3>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 示例测试</h3>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 后续遍历</h2>
-<blockquote>
-<p>其思想是：</p>
-<ol>
-<li>遍历访问当前节点的左子树；</li>
-<li>遍历访问当前节点的右子树；</li>
-<li>访问当前节点；</li>
-</ol>
-</blockquote>
-<p>以图为例：</p>
-<ol>
-<li>从根节点开始，遍历左子树直到失败，1-&gt;2-&gt;4，找到节点4，结束节点4的查询；</li>
-<li>回退到节点2，遍历右子树，找到节点5的左子树失败、右子树失败，找到节点5，结束节点5的查询；</li>
-<li>节点2的左右子树遍历完成，找到节点2，结束节点2的查询；</li>
-<li>回退到节点1，遍历右子树，1-&gt;3-&gt;6，找到节点6的左子树失败、右子树失败，找到节点6，结束节点6的查询；</li>
-<li>回到到节点3，遍历右子树，3-&gt;7，找到节点7的左子树失败、右子树失败，找到节点7，结束节点7的查询；</li>
-<li>节点3左右子树遍历完成，找到节点3，结束节点3的查询；</li>
-<li>回退到节点1，节点1左右子树遍历完成，找到节点1，结束节点1的查询；</li>
-</ol>
-<p>!&gt; 顺序为：4、5、2、6、7、3、1</p>
-<h3> 递归实现</h3>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 示例测试</h3>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 层次遍历</h2>
-<blockquote>
-<p>其思想是：</p>
-<ol>
-<li>节点入队；</li>
-<li>节点出队，节点左孩子和右孩子入队；</li>
-<li>知道所有节点出队；</li>
-</ol>
-</blockquote>
-<p>以图为例：</p>
-<ol>
-<li>根节点1入队；</li>
-<li>根节点1出队，找到节点1，根节点1的左孩子节点2和右孩子3节点入队；</li>
-<li>节点2出队，找到节点2，节点2的左孩子节点4和右孩子节点5入队；</li>
-<li>节点3出队，找到节点3，节点3的左孩子节点6和右孩子节点7入队；</li>
-<li>节点4出队，没有左右孩子，找到节点4；</li>
-<li>节点5出队，没有左右孩子，找到节点5；</li>
-<li>节点6出队，没有左右孩子，找到节点6；</li>
-<li>节点7出队，没有左右孩子，找到节点7；</li>
-</ol>
-<h3> 队列实现</h3>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 示例测试</h3>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
     </item>
     <item>
       <title>行为型模式</title>
@@ -7957,151 +7968,6 @@ LIMIT关键字用于限制查询结果的数量。MySQL只返回前N条符合条
 <h3> 规则：如果想从1开始，则可以通过<code>_</code>忽略第一个iota</h3>
 <p>例如：</p>
 <div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
-    </item>
-    <item>
-      <title>散列map</title>
-      <link>https://Hexiaopi.github.io/go-language/base/map.html</link>
-      <guid>https://Hexiaopi.github.io/go-language/base/map.html</guid>
-      <source url="https://Hexiaopi.github.io/rss.xml">散列map</source>
-      <description>map</description>
-      <category>Go语言</category>
-      <pubDate>Mon, 06 Feb 2023 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<figure><img src="http://cdn.cjhe.top/blog/map.png" alt="map" tabindex="0" loading="lazy"><figcaption>map</figcaption></figure>
-<!-- more -->
-<blockquote>
-<p>map是Go语言提供的一种抽象数据类型，它表示一组无序的键值对(key-value)</p>
-</blockquote>
-<h2> 声明</h2>
-<p><strong>关键字定义</strong>：<code>map</code></p>
-<p><strong>零值</strong>：<code>nil</code></p>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><div class="hint-container warning">
-<p class="hint-container-title">注意</p>
-<p>map对于<code>value</code>的类型没有限制，但是对<code>key</code>的类型有严格的要求：<br>
-<code>key</code>的类型必须支持<code>==</code>和<code>!=</code>两个操作符的数据类型<br>
-因此，函数、map、切片等不能作为<code>key</code>类型。</p>
-</div>
-<h2> 初始化</h2>
-<p>字面量初始化</p>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>内置函数make()初始化</p>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h2> 操作</h2>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="hint-container warning">
-<p class="hint-container-title">注意</p>
-<p>向<code>nil</code>（未初始化）的map类型里添加数据会导致<code>panic</code></p>
-</div>
-<div class="hint-container tip">
-<p class="hint-container-title">提示</p>
-<ul>
-<li>删除不存在的key不会导致panic；</li>
-<li>查询不存在的key，如果未使用<strong>comma ok</strong>语法，则会返回value类型对应的<strong>零值</strong></li>
-</ul>
-</div>
-<h2> 底层原理</h2>
-<p>参见<code>$GOROOT/src/runtime/map.go</code></p>
-<h3> map的数据结构</h3>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> bucket的数据结构</h3>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><figure><figcaption>map</figcaption></figure>
-<p>key和value分开存储，目的是为了减少内存对齐带来的内存浪费，以map[int8]int64为例：</p>
-<figure><figcaption>map-memory</figcaption></figure>
-<p>每个bucket可以存储8个键值对，超过就会创建一个新的bucket，通过overflow链接</p>
-<p>当有两个或以上数量的键被<code>Hash</code>到了同一个bucket时，我们称这些键发生了冲突，Go语言使用链表解决键冲突。</p>
-<p>hash冲突并不是好事情，它降低了存取效率，好的Hash算法可以保证Hash值得随机性，但无论使用哪种Hash算法，冲突终究不可避免，当冲突较多的时候就需要采取一些措施来减少冲突。</p>
-<h3> 负载因子LoadFactor</h3>
-<blockquote>
-<p>负载因子用于衡量一个Hash表的冲突情况，计算公式如下：</p>
-<p>负载因子 = 键数量 / bucket数量</p>
-</blockquote>
-<ul>
-<li>负载因子过小，空间利用率低；</li>
-<li>负载因子过大，说明冲突严重，存取效率低；</li>
-</ul>
-<p>当Hash表的负载因子过大时需要rehash，即申请更多的bucket，并对所有的键值对重新组织，使其均匀的分布在这些bucket中。</p>
-<ul>
-<li>redis的负载因子大于1时就会触发rehash，因为redis的每个bucket只能存1个键值对；</li>
-<li>go的负载因子大于6.5时才会触发rehash，因为go的每个bucket可以存8个键值对；</li>
-</ul>
-<h3> 扩容</h3>
-<p>条件：</p>
-<ul>
-<li>负载因子大于6.5时</li>
-<li>overflow的数量大于2^15=32768</li>
-</ul>
-<p>map的扩缩容的主要区别在于hmap.B的容量大小改变，而缩容由于hmap.B压根不变，内存占用依然存在。这就导致在删除元素时，并不会释放内存，使得分配的总内存不断增加，如果不注意，内存就很容易爆了。</p>
-<h4> 增量扩容</h4>
-<blockquote>
-<p>通过将bucket数组扩大一倍实现，并搬迁键值对</p>
-</blockquote>
-<ol>
-<li>oldbuckets指向现有bucket数组；</li>
-<li>创建一个两倍现有规模的bucket数组；</li>
-<li>buckets指向新的bucket数组；</li>
-<li>将oldbuckets的键值对搬迁到新的bucket数组；</li>
-<li>释放oldbuckets；</li>
-</ol>
-<figure><figcaption>map-expand</figcaption></figure>
-<h4> 等量扩容</h4>
-<blockquote>
-<p>用于解决一个bucket链接很多bucket，overflow数量过高</p>
-<p>bucket数组大小不变，重新排列键值对，分散到不同的bucket数组中</p>
-<p>这样就提高了访问效率</p>
-</blockquote>
-<h3> 增删改查</h3>
-<h4> 查找过程</h4>
-<ul>
-<li>根据key计算hash值；</li>
-<li>取hash值低位与hmap.B取模来确定bucket的位置；</li>
-<li>取hash值高位，在tophash数组中查询；</li>
-<li>如果tophash[i]中存储的hash值与当前key的hash值相等，则获取tophash[i]的key值进行比较；</li>
-<li>当前bucket没有找到，则依次从溢出的bucket中查找；</li>
-</ul>
-<div class="hint-container tip">
-<p class="hint-container-title">提示</p>
-<p>如果当前map处于搬迁过程中，那么查找时从oldbuckets数组中查找，不再从新的buckets数组中查找</p>
-</div>
-<h4> 添加过程</h4>
-<ul>
-<li>根据key计算hash值；</li>
-<li>取hash值低位与hmap.B取模来确定bucket的位置；</li>
-<li>查找该key是否存在
-<ul>
-<li>如果存在，则直接更新；</li>
-<li>如果不存在，则从该bucket中寻找空余位置并插入；</li>
-</ul>
-</li>
-</ul>
-<div class="hint-container tip">
-<p class="hint-container-title">提示</p>
-<p>如果当前map处于搬迁过程中，那么直接添加到新的buckets数组中</p>
-</div>
-<h4> 删除过程</h4>
-<ul>
-<li>查找key是否存在
-<ul>
-<li>存在，则删除；</li>
-<li>不存在，则什么也不做；</li>
-</ul>
-</li>
-</ul>
-<h2> map注意事项</h2>
-<h3> 非并发读写安全的</h3>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>运行报错：<code>fatal error: concurrent map iteration and map write</code></p>
-<div class="hint-container tip">
-<p class="hint-container-title">提示</p>
-<p>Go 在 map 的实现中增加了读写检查机制，一旦发现读写冲突立即触发 panic</p>
-<p>如果想使用并发的map：</p>
-<ul>
-<li>可以使用Go 1.9版本中引入支持并发写安全的<code>sync.Map</code>类型；</li>
-<li>可以使用map时增加锁；</li>
-</ul>
-</div>
-<h3> 无法通过索引直接获取value的地址</h3>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="highlight-lines"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><div class="highlight-line">&nbsp;</div><br></div><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="hint-container tip">
-<p class="hint-container-title">提示</p>
-<p>这是由于map会扩容，map中的数据元素的value地址可能在扩容过程中发生变化，因此获取这个地址没有意义，Go语言为了防止出现该问题，在编译期间就检测是否有获取地址行为，避免出现问题。</p>
-</div>
-<h3> 尽量使用cap参数初始化map</h3>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>性能基准测试结果如下：</p>
-<div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
-      <enclosure url="http://cdn.cjhe.top/blog/map.png" type="image/png"/>
     </item>
   </channel>
 </rss>
