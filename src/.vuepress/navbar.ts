@@ -77,6 +77,7 @@ export default navbar([
       "prometheus-k8s-deploy",
       "node-exporter-k8s-deploy",
       "cadvisor-k8s-deploy",
+      "kube-state-metrics-k8s-deploy",
     ]
   },
   {
