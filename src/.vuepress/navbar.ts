@@ -70,6 +70,14 @@ export default navbar([
     ]
   },
   {
+    text: "devops",
+    icon: "any",
+    prefix: "/devops/",
+    children: [
+      "prometheus-k8s-deploy",
+    ]
+  },
+  {
     text: "项目规范",
     icon: "guide",
     prefix: "/project-standard/",

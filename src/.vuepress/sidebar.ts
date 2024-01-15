@@ -239,5 +239,15 @@ export default sidebar({
         "MQTT",
       ]
     },
+    {
+      text: "devops",
+      icon: "any",
+      collapsible: true,
+      prefix: "devops/",
+      link: "devops/README.md",
+      children: [
+        "prometheus-k8s-deploy",
+      ]
+    },
   ],
 });
