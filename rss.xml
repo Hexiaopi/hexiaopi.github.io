@@ -6,8 +6,8 @@
     <link>https://Hexiaopi.github.io/</link>
     <description>一枚后端攻城狮的个人博客</description>
     <language>zh-CN</language>
-    <pubDate>Sun, 18 Feb 2024 06:03:58 GMT</pubDate>
-    <lastBuildDate>Sun, 18 Feb 2024 06:03:58 GMT</lastBuildDate>
+    <pubDate>Mon, 26 Feb 2024 13:41:56 GMT</pubDate>
+    <lastBuildDate>Mon, 26 Feb 2024 13:41:56 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>devops</category>
@@ -7694,12 +7694,15 @@ LIMIT关键字用于限制查询结果的数量。MySQL只返回前N条符合条
       <link>https://Hexiaopi.github.io/go-language/base/data-type.html</link>
       <guid>https://Hexiaopi.github.io/go-language/base/data-type.html</guid>
       <source url="https://Hexiaopi.github.io/rss.xml">数据类型</source>
-      <description>数据类型 Go语言基本数据类型（Data-types）划分方式有很多，这里按照数据类型进行划分：值类型、复合类型、引用类型 值类型 值类型即基本的数据类型，包括布尔类型（bool）、整型（int）、浮点型（float）、字节型（byte）、复数型（complex）、字符串型（string）和错误类型（error）。 值类型的变量在传递过程中，编译器对该变量的值进行一次拷贝。</description>
+      <description>数据类型 Go语言基本数据类型（Data-types）划分方式有很多，这里按照数据类型进行划分：值类型、复合类型、引用类型 左耳朵耗子说：类型的本质是对内存的一种抽象，不同的类型会有不同的内存布局和内存分配的策略。不同的类型有不同的操作。 值类型 值类型即基本的数据类型，包括布尔类型（bool）、整型（int）、浮点型（float）、字节型（byte）、复数型（complex）、字符串型（string）和错误类型（error）。 值类型的变量在传递过程中，编译器对该变量的值进行一次拷贝。</description>
       <category>Go语言</category>
       <pubDate>Tue, 03 May 2022 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[<h2> 数据类型</h2>
 <blockquote>
 <p>Go语言基本数据类型（Data-types）划分方式有很多，这里按照<strong>数据类型</strong>进行划分：值类型、复合类型、引用类型</p>
+</blockquote>
+<blockquote>
+<p>左耳朵耗子说：类型的本质是对内存的一种抽象，不同的类型会有不同的内存布局和内存分配的策略。不同的类型有不同的操作。</p>
 </blockquote>
 <h3> 值类型</h3>
 <blockquote>

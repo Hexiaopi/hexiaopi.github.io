@@ -3,7 +3,7 @@
   <id>https://Hexiaopi.github.io/</id>
   <title>Hexiaopi</title>
   <subtitle>一枚后端攻城狮的个人博客</subtitle>
-  <updated>2024-02-18T06:03:58.964Z</updated>
+  <updated>2024-02-26T13:41:56.321Z</updated>
   <generator>vuepress-plugin-feed2</generator>
   <link rel="self" href="https://Hexiaopi.github.io/atom.xml"/>
   <link rel="alternate" href="https://Hexiaopi.github.io/"/>
@@ -8503,10 +8503,13 @@ LIMIT关键字用于限制查询结果的数量。MySQL只返回前N条符合条
     <title type="text">数据类型</title>
     <id>https://Hexiaopi.github.io/go-language/base/data-type.html</id>
     <link href="https://Hexiaopi.github.io/go-language/base/data-type.html"/>
-    <updated>2023-08-13T15:30:36.000Z</updated>
+    <updated>2024-02-26T13:40:23.000Z</updated>
     <summary type="html"><![CDATA[<h2> 数据类型</h2>
 <blockquote>
 <p>Go语言基本数据类型（Data-types）划分方式有很多，这里按照<strong>数据类型</strong>进行划分：值类型、复合类型、引用类型</p>
+</blockquote>
+<blockquote>
+<p>左耳朵耗子说：类型的本质是对内存的一种抽象，不同的类型会有不同的内存布局和内存分配的策略。不同的类型有不同的操作。</p>
 </blockquote>
 <h3> 值类型</h3>
 <blockquote>
@@ -8516,6 +8519,9 @@ LIMIT关键字用于限制查询结果的数量。MySQL只返回前N条符合条
     <content type="html"><![CDATA[<h2> 数据类型</h2>
 <blockquote>
 <p>Go语言基本数据类型（Data-types）划分方式有很多，这里按照<strong>数据类型</strong>进行划分：值类型、复合类型、引用类型</p>
+</blockquote>
+<blockquote>
+<p>左耳朵耗子说：类型的本质是对内存的一种抽象，不同的类型会有不同的内存布局和内存分配的策略。不同的类型有不同的操作。</p>
 </blockquote>
 <h3> 值类型</h3>
 <blockquote>
