@@ -78,6 +78,7 @@ export default navbar([
       "node-exporter-k8s-deploy",
       "cadvisor-k8s-deploy",
       "kube-state-metrics-k8s-deploy",
+      "helm-dashboard",
     ]
   },
   {

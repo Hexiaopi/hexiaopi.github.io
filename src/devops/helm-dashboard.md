@@ -41,4 +41,4 @@ helm-dashboard依赖的前端静态资源如：
 - https://cdn.jsdelivr.net/npm/diff2html/bundles/css/diff2html.min.css
 
 
-由于国内网路原因，偶尔访问不到，导致页面加载不出来。因此需要将这些cdn资源改为本地引用。[代码修改详见](https://github.com/Hexiaopi/helm-dashboard/commit/4eb18e1655606cd80ce1eb8001f03eaca6a55dc7)
+由于国内网络原因，偶尔访问不到，导致页面加载不出来，影响使用。因此需要将这些cdn资源改为本地引用。[代码修改详见](https://github.com/Hexiaopi/helm-dashboard/commit/4eb18e1655606cd80ce1eb8001f03eaca6a55dc7)
