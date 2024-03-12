@@ -3,7 +3,7 @@
   <id>https://Hexiaopi.github.io/</id>
   <title>Hexiaopi</title>
   <subtitle>一枚后端攻城狮的个人博客</subtitle>
-  <updated>2024-02-26T14:08:41.680Z</updated>
+  <updated>2024-03-12T10:06:05.065Z</updated>
   <generator>vuepress-plugin-feed2</generator>
   <link rel="self" href="https://Hexiaopi.github.io/atom.xml"/>
   <link rel="alternate" href="https://Hexiaopi.github.io/"/>
@@ -22,142 +22,48 @@
     <name>Hexiaopi</name>
   </contributor>
   <entry>
+    <title type="text">Helm Dashboard简介</title>
+    <id>https://Hexiaopi.github.io/devops/helm-dashboard.html</id>
+    <link href="https://Hexiaopi.github.io/devops/helm-dashboard.html"/>
+    <updated>2024-03-12T10:04:31.000Z</updated>
+    <summary type="html"><![CDATA[<p>helm-dashboard是helm的可视化界面，可以查看集群内通过helm部署的chart包。好处：不需要登录机器就可以升级、回滚chart包。</p>
+]]></summary>
+    <content type="html"><![CDATA[<p>helm-dashboard是helm的可视化界面，可以查看集群内通过helm部署的chart包。好处：不需要登录机器就可以升级、回滚chart包。</p>
+<!-- more -->
+<h2> Helm Dashboard简介</h2>
+<h3> 常用特性</h3>
+<ul>
+<li>查看、升级、回滚chart包及其内容</li>
+<li>查看各个版本之间的区别</li>
+</ul>
+<h3> 查看已安装的chart包</h3>
+<figure><figcaption></figcaption></figure>
+<h3> 单个chart包的升级、回滚和修改配置</h3>
+<figure><figcaption></figcaption></figure>
+<h3> 比较各个版本之前的区别</h3>
+<figure><figcaption></figcaption></figure>
+<h3> Helm Dadshboard 魔改</h3>
+<p>helm-dashboard依赖的前端静态资源如：</p>
+<ul>
+<li><a href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/github.min.css" target="_blank" rel="noopener noreferrer">https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/github.min.css</a></li>
+<li><a href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/lightfair.min.css" target="_blank" rel="noopener noreferrer">https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/lightfair.min.css</a></li>
+<li><a href="https://cdn.jsdelivr.net/npm/diff2html/bundles/css/diff2html.min.css" target="_blank" rel="noopener noreferrer">https://cdn.jsdelivr.net/npm/diff2html/bundles/css/diff2html.min.css</a></li>
+</ul>
+<p>由于国内网路原因，偶尔访问不到，导致页面加载不出来。因此需要将这些cdn资源改为本地引用。<a href="https://github.com/Hexiaopi/helm-dashboard/commit/4eb18e1655606cd80ce1eb8001f03eaca6a55dc7" target="_blank" rel="noopener noreferrer">代码修改详见</a></p>
+]]></content>
+    <category term="devops"/>
+    <published>2024-03-12T00:00:00.000Z</published>
+  </entry>
+  <entry>
     <title type="text">kube-state-metrics k8s 部署</title>
     <id>https://Hexiaopi.github.io/devops/kube-state-metrics-k8s-deploy.html</id>
     <link href="https://Hexiaopi.github.io/devops/kube-state-metrics-k8s-deploy.html"/>
-    <updated>2024-01-15T14:32:40.000Z</updated>
-    <summary type="html"><![CDATA[<p>kube-state-metrics用于监控k8s</p>
-<p>1、部署cluster-role</p>
-<div class="language-yaml line-numbers-mode" data-ext="yml"><pre class="language-yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> rbac.authorization.k8s.io/v1
-<span class="token key atrule">kind</span><span class="token punctuation">:</span> ClusterRole
-<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
-  <span class="token key atrule">labels</span><span class="token punctuation">:</span>
-    <span class="token key atrule">app.kubernetes.io/component</span><span class="token punctuation">:</span> exporter
-    <span class="token key atrule">app.kubernetes.io/name</span><span class="token punctuation">:</span> kube<span class="token punctuation">-</span>state<span class="token punctuation">-</span>metrics
-    <span class="token key atrule">app.kubernetes.io/version</span><span class="token punctuation">:</span> 2.10.0
-  <span class="token key atrule">name</span><span class="token punctuation">:</span> kube<span class="token punctuation">-</span>state<span class="token punctuation">-</span>metrics
-<span class="token key atrule">rules</span><span class="token punctuation">:</span>
-<span class="token punctuation">-</span> <span class="token key atrule">apiGroups</span><span class="token punctuation">:</span>
-  <span class="token punctuation">-</span> <span class="token string">""</span>
-  <span class="token key atrule">resources</span><span class="token punctuation">:</span>
-  <span class="token punctuation">-</span> configmaps
-  <span class="token punctuation">-</span> secrets
-  <span class="token punctuation">-</span> nodes
-  <span class="token punctuation">-</span> pods
-  <span class="token punctuation">-</span> services
-  <span class="token punctuation">-</span> serviceaccounts
-  <span class="token punctuation">-</span> resourcequotas
-  <span class="token punctuation">-</span> replicationcontrollers
-  <span class="token punctuation">-</span> limitranges
-  <span class="token punctuation">-</span> persistentvolumeclaims
-  <span class="token punctuation">-</span> persistentvolumes
-  <span class="token punctuation">-</span> namespaces
-  <span class="token punctuation">-</span> endpoints
-  <span class="token key atrule">verbs</span><span class="token punctuation">:</span>
-  <span class="token punctuation">-</span> list
-  <span class="token punctuation">-</span> watch
-<span class="token punctuation">-</span> <span class="token key atrule">apiGroups</span><span class="token punctuation">:</span>
-  <span class="token punctuation">-</span> apps
-  <span class="token key atrule">resources</span><span class="token punctuation">:</span>
-  <span class="token punctuation">-</span> statefulsets
-  <span class="token punctuation">-</span> daemonsets
-  <span class="token punctuation">-</span> deployments
-  <span class="token punctuation">-</span> replicasets
-  <span class="token key atrule">verbs</span><span class="token punctuation">:</span>
-  <span class="token punctuation">-</span> list
-  <span class="token punctuation">-</span> watch
-<span class="token punctuation">-</span> <span class="token key atrule">apiGroups</span><span class="token punctuation">:</span>
-  <span class="token punctuation">-</span> batch
-  <span class="token key atrule">resources</span><span class="token punctuation">:</span>
-  <span class="token punctuation">-</span> cronjobs
-  <span class="token punctuation">-</span> jobs
-  <span class="token key atrule">verbs</span><span class="token punctuation">:</span>
-  <span class="token punctuation">-</span> list
-  <span class="token punctuation">-</span> watch
-<span class="token punctuation">-</span> <span class="token key atrule">apiGroups</span><span class="token punctuation">:</span>
-  <span class="token punctuation">-</span> autoscaling
-  <span class="token key atrule">resources</span><span class="token punctuation">:</span>
-  <span class="token punctuation">-</span> horizontalpodautoscalers
-  <span class="token key atrule">verbs</span><span class="token punctuation">:</span>
-  <span class="token punctuation">-</span> list
-  <span class="token punctuation">-</span> watch
-<span class="token punctuation">-</span> <span class="token key atrule">apiGroups</span><span class="token punctuation">:</span>
-  <span class="token punctuation">-</span> authentication.k8s.io
-  <span class="token key atrule">resources</span><span class="token punctuation">:</span>
-  <span class="token punctuation">-</span> tokenreviews
-  <span class="token key atrule">verbs</span><span class="token punctuation">:</span>
-  <span class="token punctuation">-</span> create
-<span class="token punctuation">-</span> <span class="token key atrule">apiGroups</span><span class="token punctuation">:</span>
-  <span class="token punctuation">-</span> authorization.k8s.io
-  <span class="token key atrule">resources</span><span class="token punctuation">:</span>
-  <span class="token punctuation">-</span> subjectaccessreviews
-  <span class="token key atrule">verbs</span><span class="token punctuation">:</span>
-  <span class="token punctuation">-</span> create
-<span class="token punctuation">-</span> <span class="token key atrule">apiGroups</span><span class="token punctuation">:</span>
-  <span class="token punctuation">-</span> policy
-  <span class="token key atrule">resources</span><span class="token punctuation">:</span>
-  <span class="token punctuation">-</span> poddisruptionbudgets
-  <span class="token key atrule">verbs</span><span class="token punctuation">:</span>
-  <span class="token punctuation">-</span> list
-  <span class="token punctuation">-</span> watch
-<span class="token punctuation">-</span> <span class="token key atrule">apiGroups</span><span class="token punctuation">:</span>
-  <span class="token punctuation">-</span> certificates.k8s.io
-  <span class="token key atrule">resources</span><span class="token punctuation">:</span>
-  <span class="token punctuation">-</span> certificatesigningrequests
-  <span class="token key atrule">verbs</span><span class="token punctuation">:</span>
-  <span class="token punctuation">-</span> list
-  <span class="token punctuation">-</span> watch
-<span class="token punctuation">-</span> <span class="token key atrule">apiGroups</span><span class="token punctuation">:</span>
-  <span class="token punctuation">-</span> discovery.k8s.io
-  <span class="token key atrule">resources</span><span class="token punctuation">:</span>
-  <span class="token punctuation">-</span> endpointslices
-  <span class="token key atrule">verbs</span><span class="token punctuation">:</span>
-  <span class="token punctuation">-</span> list
-  <span class="token punctuation">-</span> watch
-<span class="token punctuation">-</span> <span class="token key atrule">apiGroups</span><span class="token punctuation">:</span>
-  <span class="token punctuation">-</span> storage.k8s.io
-  <span class="token key atrule">resources</span><span class="token punctuation">:</span>
-  <span class="token punctuation">-</span> storageclasses
-  <span class="token punctuation">-</span> volumeattachments
-  <span class="token key atrule">verbs</span><span class="token punctuation">:</span>
-  <span class="token punctuation">-</span> list
-  <span class="token punctuation">-</span> watch
-<span class="token punctuation">-</span> <span class="token key atrule">apiGroups</span><span class="token punctuation">:</span>
-  <span class="token punctuation">-</span> admissionregistration.k8s.io
-  <span class="token key atrule">resources</span><span class="token punctuation">:</span>
-  <span class="token punctuation">-</span> mutatingwebhookconfigurations
-  <span class="token punctuation">-</span> validatingwebhookconfigurations
-  <span class="token key atrule">verbs</span><span class="token punctuation">:</span>
-  <span class="token punctuation">-</span> list
-  <span class="token punctuation">-</span> watch
-<span class="token punctuation">-</span> <span class="token key atrule">apiGroups</span><span class="token punctuation">:</span>
-  <span class="token punctuation">-</span> networking.k8s.io
-  <span class="token key atrule">resources</span><span class="token punctuation">:</span>
-  <span class="token punctuation">-</span> networkpolicies
-  <span class="token punctuation">-</span> ingressclasses
-  <span class="token punctuation">-</span> ingresses
-  <span class="token key atrule">verbs</span><span class="token punctuation">:</span>
-  <span class="token punctuation">-</span> list
-  <span class="token punctuation">-</span> watch
-<span class="token punctuation">-</span> <span class="token key atrule">apiGroups</span><span class="token punctuation">:</span>
-  <span class="token punctuation">-</span> coordination.k8s.io
-  <span class="token key atrule">resources</span><span class="token punctuation">:</span>
-  <span class="token punctuation">-</span> leases
-  <span class="token key atrule">verbs</span><span class="token punctuation">:</span>
-  <span class="token punctuation">-</span> list
-  <span class="token punctuation">-</span> watch
-<span class="token punctuation">-</span> <span class="token key atrule">apiGroups</span><span class="token punctuation">:</span>
-  <span class="token punctuation">-</span> rbac.authorization.k8s.io
-  <span class="token key atrule">resources</span><span class="token punctuation">:</span>
-  <span class="token punctuation">-</span> clusterrolebindings
-  <span class="token punctuation">-</span> clusterroles
-  <span class="token punctuation">-</span> rolebindings
-  <span class="token punctuation">-</span> roles
-  <span class="token key atrule">verbs</span><span class="token punctuation">:</span>
-  <span class="token punctuation">-</span> list
-  <span class="token punctuation">-</span> watch
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></summary>
-    <content type="html"><![CDATA[<p>kube-state-metrics用于监控k8s</p>
+    <updated>2024-03-12T10:04:31.000Z</updated>
+    <summary type="html"><![CDATA[<p>kube-state-metrics用于监控k8s相关指标</p>
+]]></summary>
+    <content type="html"><![CDATA[<p>kube-state-metrics用于监控k8s相关指标</p>
+<!-- more -->
+<h2> k8s部署</h2>
 <p>1、部署cluster-role</p>
 <div class="language-yaml line-numbers-mode" data-ext="yml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>2、部署cluster-role-binding</p>
 <div class="language-yaml line-numbers-mode" data-ext="yml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>3、部署deployment</p>
@@ -173,57 +79,12 @@
     <title type="text">cadvisor k8s 部署</title>
     <id>https://Hexiaopi.github.io/devops/cadvisor-k8s-deploy.html</id>
     <link href="https://Hexiaopi.github.io/devops/cadvisor-k8s-deploy.html"/>
-    <updated>2024-01-15T12:40:19.000Z</updated>
+    <updated>2024-03-12T10:04:31.000Z</updated>
     <summary type="html"><![CDATA[<p>cadvisor 是谷歌公司用来分析运行中的 Docker 容器的资源占用以及性能特性的工具，简单来说是用于监控 Docker 容器。</p>
-<div class="language-yaml line-numbers-mode" data-ext="yml"><pre class="language-yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> apps/v1
-<span class="token key atrule">kind</span><span class="token punctuation">:</span> DaemonSet
-<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
-  <span class="token key atrule">name</span><span class="token punctuation">:</span> cadvisor
-  <span class="token key atrule">namespace</span><span class="token punctuation">:</span> monitor
-<span class="token key atrule">spec</span><span class="token punctuation">:</span>
-  <span class="token key atrule">selector</span><span class="token punctuation">:</span>
-    <span class="token key atrule">matchLabels</span><span class="token punctuation">:</span>
-      <span class="token key atrule">app</span><span class="token punctuation">:</span> cAdvisor
-  <span class="token key atrule">template</span><span class="token punctuation">:</span>
-    <span class="token key atrule">metadata</span><span class="token punctuation">:</span>
-      <span class="token key atrule">labels</span><span class="token punctuation">:</span>
-        <span class="token key atrule">app</span><span class="token punctuation">:</span> cAdvisor
-    <span class="token key atrule">spec</span><span class="token punctuation">:</span>
-      <span class="token key atrule">tolerations</span><span class="token punctuation">:</span>    <span class="token comment">#污点容忍,忽略master的NoSchedule</span>
-        <span class="token punctuation">-</span> <span class="token key atrule">effect</span><span class="token punctuation">:</span> NoSchedule
-          <span class="token key atrule">key</span><span class="token punctuation">:</span> node<span class="token punctuation">-</span>role.kubernetes.io/master
-      <span class="token key atrule">hostNetwork</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-      <span class="token key atrule">restartPolicy</span><span class="token punctuation">:</span> Always
-      <span class="token key atrule">containers</span><span class="token punctuation">:</span>
-      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> cadvisor
-        <span class="token key atrule">image</span><span class="token punctuation">:</span> google/cadvisor<span class="token punctuation">:</span>latest
-        <span class="token key atrule">imagePullPolicy</span><span class="token punctuation">:</span> IfNotPresent 
-        <span class="token key atrule">ports</span><span class="token punctuation">:</span>
-        <span class="token punctuation">-</span> <span class="token key atrule">containerPort</span><span class="token punctuation">:</span> <span class="token number">8080</span>
-        <span class="token key atrule">volumeMounts</span><span class="token punctuation">:</span>
-          <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> root
-            <span class="token key atrule">mountPath</span><span class="token punctuation">:</span> /rootfs
-          <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> run
-            <span class="token key atrule">mountPath</span><span class="token punctuation">:</span> /var/run
-          <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> sys
-            <span class="token key atrule">mountPath</span><span class="token punctuation">:</span> /sys
-          <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> docker
-            <span class="token key atrule">mountPath</span><span class="token punctuation">:</span> /var/lib/containerd
-      <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
-      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> root
-        <span class="token key atrule">hostPath</span><span class="token punctuation">:</span>
-          <span class="token key atrule">path</span><span class="token punctuation">:</span> /
-      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> run
-        <span class="token key atrule">hostPath</span><span class="token punctuation">:</span>
-          <span class="token key atrule">path</span><span class="token punctuation">:</span> /var/run
-      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> sys
-        <span class="token key atrule">hostPath</span><span class="token punctuation">:</span>
-          <span class="token key atrule">path</span><span class="token punctuation">:</span> /sys
-      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> docker
-        <span class="token key atrule">hostPath</span><span class="token punctuation">:</span>
-          <span class="token key atrule">path</span><span class="token punctuation">:</span> /var/lib/containerd
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></summary>
+]]></summary>
     <content type="html"><![CDATA[<p>cadvisor 是谷歌公司用来分析运行中的 Docker 容器的资源占用以及性能特性的工具，简单来说是用于监控 Docker 容器。</p>
+<!-- more -->
+<h2> k8s部署</h2>
 <div class="language-yaml line-numbers-mode" data-ext="yml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content>
     <category term="devops"/>
     <published>2024-01-15T00:00:00.000Z</published>
@@ -232,80 +93,12 @@
     <title type="text">node-exporter k8s 部署</title>
     <id>https://Hexiaopi.github.io/devops/node-exporter-k8s-deploy.html</id>
     <link href="https://Hexiaopi.github.io/devops/node-exporter-k8s-deploy.html"/>
-    <updated>2024-01-15T12:32:28.000Z</updated>
-    <summary type="html"><![CDATA[<p>由于需要每个节点都部署node-exporter，因此kind选择DaemonSet，它会保障每个节点有一个相同的实例。</p>
-<div class="language-yaml line-numbers-mode" data-ext="yml"><pre class="language-yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> apps/v1
-<span class="token key atrule">kind</span><span class="token punctuation">:</span> DaemonSet
-<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
-  <span class="token key atrule">name</span><span class="token punctuation">:</span> node<span class="token punctuation">-</span>exporter
-  <span class="token key atrule">namespace</span><span class="token punctuation">:</span> monitor
-  <span class="token key atrule">labels</span><span class="token punctuation">:</span>
-    <span class="token key atrule">k8s-app</span><span class="token punctuation">:</span> node<span class="token punctuation">-</span>exporter
-<span class="token key atrule">spec</span><span class="token punctuation">:</span>
-  <span class="token key atrule">selector</span><span class="token punctuation">:</span>
-    <span class="token key atrule">matchLabels</span><span class="token punctuation">:</span>
-        <span class="token key atrule">k8s-app</span><span class="token punctuation">:</span> node<span class="token punctuation">-</span>exporter
-  <span class="token key atrule">template</span><span class="token punctuation">:</span>
-    <span class="token key atrule">metadata</span><span class="token punctuation">:</span>
-      <span class="token key atrule">labels</span><span class="token punctuation">:</span>
-        <span class="token key atrule">k8s-app</span><span class="token punctuation">:</span> node<span class="token punctuation">-</span>exporter
-    <span class="token key atrule">spec</span><span class="token punctuation">:</span>
-      <span class="token key atrule">tolerations</span><span class="token punctuation">:</span>
-        <span class="token punctuation">-</span> <span class="token key atrule">effect</span><span class="token punctuation">:</span> NoSchedule
-          <span class="token key atrule">key</span><span class="token punctuation">:</span> node<span class="token punctuation">-</span>role.kubernetes.io/master
-      <span class="token key atrule">containers</span><span class="token punctuation">:</span>
-      <span class="token punctuation">-</span> <span class="token key atrule">image</span><span class="token punctuation">:</span> prom/node<span class="token punctuation">-</span>exporter<span class="token punctuation">:</span>latest
-        <span class="token key atrule">imagePullPolicy</span><span class="token punctuation">:</span> IfNotPresent
-        <span class="token key atrule">name</span><span class="token punctuation">:</span> prometheus<span class="token punctuation">-</span>node<span class="token punctuation">-</span>exporter
-        <span class="token key atrule">ports</span><span class="token punctuation">:</span>
-        <span class="token punctuation">-</span> <span class="token key atrule">containerPort</span><span class="token punctuation">:</span> <span class="token number">9100</span>
-          <span class="token key atrule">hostPort</span><span class="token punctuation">:</span> <span class="token number">9100</span>
-          <span class="token key atrule">protocol</span><span class="token punctuation">:</span> TCP
-          <span class="token key atrule">name</span><span class="token punctuation">:</span> metrics
-        <span class="token key atrule">volumeMounts</span><span class="token punctuation">:</span>
-        <span class="token punctuation">-</span> <span class="token key atrule">mountPath</span><span class="token punctuation">:</span> /host/proc
-          <span class="token key atrule">name</span><span class="token punctuation">:</span> proc
-        <span class="token punctuation">-</span> <span class="token key atrule">mountPath</span><span class="token punctuation">:</span> /host/sys
-          <span class="token key atrule">name</span><span class="token punctuation">:</span> sys
-        <span class="token punctuation">-</span> <span class="token key atrule">mountPath</span><span class="token punctuation">:</span> /host
-          <span class="token key atrule">name</span><span class="token punctuation">:</span> rootfs
-        <span class="token key atrule">args</span><span class="token punctuation">:</span>
-        <span class="token punctuation">-</span> <span class="token punctuation">-</span><span class="token punctuation">-</span>path.procfs=/host/proc
-        <span class="token punctuation">-</span> <span class="token punctuation">-</span><span class="token punctuation">-</span>path.sysfs=/host/sys
-        <span class="token punctuation">-</span> <span class="token punctuation">-</span><span class="token punctuation">-</span>path.rootfs=/host
-      <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
-        <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> proc
-          <span class="token key atrule">hostPath</span><span class="token punctuation">:</span>
-            <span class="token key atrule">path</span><span class="token punctuation">:</span> /proc
-        <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> sys
-          <span class="token key atrule">hostPath</span><span class="token punctuation">:</span>
-            <span class="token key atrule">path</span><span class="token punctuation">:</span> /sys
-        <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> rootfs
-          <span class="token key atrule">hostPath</span><span class="token punctuation">:</span>
-            <span class="token key atrule">path</span><span class="token punctuation">:</span> /
-      <span class="token key atrule">hostNetwork</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-      <span class="token key atrule">hostPID</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-<span class="token punctuation">---</span>
-<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
-<span class="token key atrule">kind</span><span class="token punctuation">:</span> Service
-<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
-  <span class="token key atrule">annotations</span><span class="token punctuation">:</span>
-    <span class="token key atrule">prometheus.io/scrape</span><span class="token punctuation">:</span> <span class="token string">"true"</span>
-  <span class="token key atrule">labels</span><span class="token punctuation">:</span>
-    <span class="token key atrule">k8s-app</span><span class="token punctuation">:</span> node<span class="token punctuation">-</span>exporter
-  <span class="token key atrule">name</span><span class="token punctuation">:</span> node<span class="token punctuation">-</span>exporter
-  <span class="token key atrule">namespace</span><span class="token punctuation">:</span> monitor
-<span class="token key atrule">spec</span><span class="token punctuation">:</span>
-  <span class="token key atrule">type</span><span class="token punctuation">:</span> NodePort
-  <span class="token key atrule">ports</span><span class="token punctuation">:</span>
-  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> http
-    <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">9100</span>
-    <span class="token key atrule">nodePort</span><span class="token punctuation">:</span> <span class="token number">39100</span>
-    <span class="token key atrule">protocol</span><span class="token punctuation">:</span> TCP
-  <span class="token key atrule">selector</span><span class="token punctuation">:</span>
-    <span class="token key atrule">k8s-app</span><span class="token punctuation">:</span> node<span class="token punctuation">-</span>exporter
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></summary>
-    <content type="html"><![CDATA[<p>由于需要每个节点都部署node-exporter，因此kind选择DaemonSet，它会保障每个节点有一个相同的实例。</p>
+    <updated>2024-03-12T10:04:31.000Z</updated>
+    <summary type="html"><![CDATA[<p>node-exporter用于暴露各个节点的指标，由于需要每个节点都部署node-exporter，因此kind选择DaemonSet，它会保障每个节点有一个相同的实例。</p>
+]]></summary>
+    <content type="html"><![CDATA[<p>node-exporter用于暴露各个节点的指标，由于需要每个节点都部署node-exporter，因此kind选择DaemonSet，它会保障每个节点有一个相同的实例。</p>
+<!-- more -->
+<h2> k8s部署</h2>
 <div class="language-yaml line-numbers-mode" data-ext="yml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content>
     <category term="devops"/>
     <published>2024-01-15T00:00:00.000Z</published>
@@ -326,12 +119,13 @@
     <title type="text">Prometheus k8s 部署</title>
     <id>https://Hexiaopi.github.io/devops/prometheus-k8s-deploy.html</id>
     <link href="https://Hexiaopi.github.io/devops/prometheus-k8s-deploy.html"/>
-    <updated>2024-01-15T12:27:05.000Z</updated>
-    <summary type="html"><![CDATA[<p>步骤一、创建数据存储</p>
-<div class="language-bash line-numbers-mode" data-ext="sh"><pre class="language-bash"><code><span class="token function">mkdir</span> /home/data/prometheus
-<span class="token function">chmod</span> <span class="token number">777</span> /home/data/prometheus
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div>]]></summary>
-    <content type="html"><![CDATA[<p>步骤一、创建数据存储</p>
+    <updated>2024-03-12T10:04:31.000Z</updated>
+    <summary type="html"><![CDATA[<p>Prometheus是个优秀的监控系统，基于时序数据库，这里记录k8s部署</p>
+]]></summary>
+    <content type="html"><![CDATA[<p>Prometheus是个优秀的监控系统，基于时序数据库，这里记录k8s部署</p>
+<!-- more -->
+<h2> k8s部署</h2>
+<p>步骤一、创建数据存储</p>
 <div class="language-bash line-numbers-mode" data-ext="sh"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>步骤二、创建serviceaccount和clusterrolebinding</p>
 <div class="language-bash line-numbers-mode" data-ext="sh"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>步骤三、创建Prometheus configmap用于存储抓取配置</p>
 <div class="language-yaml line-numbers-mode" data-ext="yml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>步骤四、创建Prometheus deployment，注意将存储卷挂载在机器磁盘上。</p>
@@ -5669,195 +5463,6 @@ Vincent Driessen 为了解决这个问题，提出<a href="https://nvie.com/post
     <published>2022-08-10T00:00:00.000Z</published>
   </entry>
   <entry>
-    <title type="text">二叉搜索树</title>
-    <id>https://Hexiaopi.github.io/data-structure/tree/binary-search-tree.html</id>
-    <link href="https://Hexiaopi.github.io/data-structure/tree/binary-search-tree.html"/>
-    <updated>2023-07-30T09:20:01.000Z</updated>
-    <summary type="html"><![CDATA[<h1> 二叉搜索树</h1>
-<h2> 简介</h2>
-<blockquote>
-<p>二叉搜索树（Binary Search Tree,BST）又叫二叉排序树，基于二分法查找思想设计的树。它的定义如下：</p>
-<ol>
-<li>它是一棵二叉树</li>
-<li>左子树的所有节点的值都小于它的根节点，右子树的所有节点的值都大于它的根节点</li>
-<li>左右子树也是一棵二叉搜索树</li>
-</ol>
-</blockquote>
-<h2> 增加节点</h2>
-<div class="language-go line-numbers-mode" data-ext="go"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token punctuation">(</span>n <span class="token operator">*</span>Node<span class="token punctuation">)</span> <span class="token function">Add</span><span class="token punctuation">(</span>value <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token keyword">if</span> value <span class="token operator">&gt;</span> n<span class="token punctuation">.</span>Data <span class="token punctuation">{</span>
-		<span class="token keyword">if</span> n<span class="token punctuation">.</span>Right <span class="token operator">==</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
-			n<span class="token punctuation">.</span>Right <span class="token operator">=</span> <span class="token operator">&amp;</span>Node<span class="token punctuation">{</span>
-				Left<span class="token punctuation">:</span>  <span class="token boolean">nil</span><span class="token punctuation">,</span>
-				Data<span class="token punctuation">:</span>  value<span class="token punctuation">,</span>
-				Right<span class="token punctuation">:</span> <span class="token boolean">nil</span><span class="token punctuation">,</span>
-			<span class="token punctuation">}</span>
-		<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-			n<span class="token punctuation">.</span>Right<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span>
-		<span class="token punctuation">}</span>
-	<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> value <span class="token operator">&lt;</span> n<span class="token punctuation">.</span>Data <span class="token punctuation">{</span>
-		<span class="token keyword">if</span> n<span class="token punctuation">.</span>Left <span class="token operator">==</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
-			n<span class="token punctuation">.</span>Left <span class="token operator">=</span> <span class="token operator">&amp;</span>Node<span class="token punctuation">{</span>
-				Left<span class="token punctuation">:</span>  <span class="token boolean">nil</span><span class="token punctuation">,</span>
-				Data<span class="token punctuation">:</span>  value<span class="token punctuation">,</span>
-				Right<span class="token punctuation">:</span> <span class="token boolean">nil</span><span class="token punctuation">,</span>
-			<span class="token punctuation">}</span>
-		<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-			n<span class="token punctuation">.</span>Left<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span>
-		<span class="token punctuation">}</span>
-	<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>value<span class="token punctuation">,</span> <span class="token string">" already exist"</span><span class="token punctuation">)</span>
-	<span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></summary>
-    <content type="html"><![CDATA[<h1> 二叉搜索树</h1>
-<h2> 简介</h2>
-<blockquote>
-<p>二叉搜索树（Binary Search Tree,BST）又叫二叉排序树，基于二分法查找思想设计的树。它的定义如下：</p>
-<ol>
-<li>它是一棵二叉树</li>
-<li>左子树的所有节点的值都小于它的根节点，右子树的所有节点的值都大于它的根节点</li>
-<li>左右子树也是一棵二叉搜索树</li>
-</ol>
-</blockquote>
-<h2> 增加节点</h2>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 查找节点</h2>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>测试</p>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 删除节点</h2>
-<h3> 递归版本</h3>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>测试</p>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h1> 总结</h1>
-<blockquote>
-<p>二叉搜素树采用二分法思想，查找效率高</p>
-<p>但是二叉搜索树具有不平衡性，容易出现斜树</p>
-</blockquote>
-<figure><figcaption>斜树</figcaption></figure>
-]]></content>
-    <published>2023-07-30T09:20:01.000Z</published>
-  </entry>
-  <entry>
-    <title type="text">二叉树</title>
-    <id>https://Hexiaopi.github.io/data-structure/tree/binary-tree.html</id>
-    <link href="https://Hexiaopi.github.io/data-structure/tree/binary-tree.html"/>
-    <updated>2023-07-30T09:20:01.000Z</updated>
-    <summary type="html"><![CDATA[<h1> 二叉树</h1>
-<blockquote>
-<p>满足以下两个条件的树就是二叉树：</p>
-<ul>
-<li>本身是有序树</li>
-<li>树中包含的各个节点的度不能超过2，即只能是：0、1、2</li>
-</ul>
-</blockquote>
-<p>定义二叉树的结构</p>
-<div class="language-go line-numbers-mode" data-ext="go"><pre class="language-go"><code><span class="token keyword">type</span> Node <span class="token keyword">struct</span> <span class="token punctuation">{</span>
-	Left  <span class="token operator">*</span>Node
-	Data  <span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
-	Right <span class="token operator">*</span>Node
-<span class="token punctuation">}</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></summary>
-    <content type="html"><![CDATA[<h1> 二叉树</h1>
-<blockquote>
-<p>满足以下两个条件的树就是二叉树：</p>
-<ul>
-<li>本身是有序树</li>
-<li>树中包含的各个节点的度不能超过2，即只能是：0、1、2</li>
-</ul>
-</blockquote>
-<p>定义二叉树的结构</p>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><figure><figcaption></figcaption></figure>
-<h2> 先序遍历</h2>
-<blockquote>
-<p>其思想是：</p>
-<ol>
-<li>访问根节点；</li>
-<li>访问当前节点的左子树；</li>
-<li>若当前节点无左子树，则访问当前节点的右子树；</li>
-</ol>
-</blockquote>
-<p>以图为例：</p>
-<ol>
-<li>访问该二叉树的根节点，找到节点1；</li>
-<li>访问节点1的左子树，找到节点2；</li>
-<li>访问节点2的左子树，找到节点4；</li>
-<li>访问节点4的左子树失败，访问节点4的右子树失败，结束节点4的查询。继续查找节点2的右子树，找到节点5；</li>
-<li>访问节点5的左子树失败，访问节点5的右子树失败，结束节点5的查询。结束节点2的查询，查询节点1的右子树，找到节点3；</li>
-<li>访问节点3的左子树，找到节点6；</li>
-<li>访问节点6的左子树失败，访问节点6的右子树失败，结束节点6的查询。继续查找节点3右子树，知道节点7；</li>
-<li>访问节点7的左子树失败，访问节点7的右子树失败，结束节点7的查询。结束节点3的查询，结束节点1的查询；</li>
-</ol>
-<p>!&gt; 顺序如下：1、2、4、5、3、6、7</p>
-<h3> 递归实现</h3>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 示例测试</h3>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 中序遍历</h2>
-<blockquote>
-<p>其实想是：</p>
-<ol>
-<li>访问当前节点的左子树；</li>
-<li>访问当前节点；</li>
-<li>访问当前节点的右子树；</li>
-</ol>
-</blockquote>
-<p>以图为例：</p>
-<ol>
-<li>访问根节点，遍历找到左子树直到失败；找到节点4，找到节点4的右子树失败，结束节点4的遍历；</li>
-<li>访问节点4的根节点，找到节点2；</li>
-<li>访问节点2的右子树，遍历找左子树失败，找到节点5，遍历找到右子树失败，结束节点5的遍历，也结束节点2的遍历；</li>
-<li>结束节点1的左子树查询，找到节点1；</li>
-<li>遍历节点1的右子树，遍历找到左子树为6，结束节点6的遍历；</li>
-<li>找到节点3；</li>
-<li>遍历节点3的右子树，遍历找到左子树失败；找到节点7，遍历节点7的右子树失败，结束节点7的遍历；</li>
-</ol>
-<p>!&gt; 顺序如下：4，2，5，1，6，3，7</p>
-<h3> 递归实现</h3>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 示例测试</h3>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 后续遍历</h2>
-<blockquote>
-<p>其思想是：</p>
-<ol>
-<li>遍历访问当前节点的左子树；</li>
-<li>遍历访问当前节点的右子树；</li>
-<li>访问当前节点；</li>
-</ol>
-</blockquote>
-<p>以图为例：</p>
-<ol>
-<li>从根节点开始，遍历左子树直到失败，1-&gt;2-&gt;4，找到节点4，结束节点4的查询；</li>
-<li>回退到节点2，遍历右子树，找到节点5的左子树失败、右子树失败，找到节点5，结束节点5的查询；</li>
-<li>节点2的左右子树遍历完成，找到节点2，结束节点2的查询；</li>
-<li>回退到节点1，遍历右子树，1-&gt;3-&gt;6，找到节点6的左子树失败、右子树失败，找到节点6，结束节点6的查询；</li>
-<li>回到到节点3，遍历右子树，3-&gt;7，找到节点7的左子树失败、右子树失败，找到节点7，结束节点7的查询；</li>
-<li>节点3左右子树遍历完成，找到节点3，结束节点3的查询；</li>
-<li>回退到节点1，节点1左右子树遍历完成，找到节点1，结束节点1的查询；</li>
-</ol>
-<p>!&gt; 顺序为：4、5、2、6、7、3、1</p>
-<h3> 递归实现</h3>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 示例测试</h3>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 层次遍历</h2>
-<blockquote>
-<p>其思想是：</p>
-<ol>
-<li>节点入队；</li>
-<li>节点出队，节点左孩子和右孩子入队；</li>
-<li>知道所有节点出队；</li>
-</ol>
-</blockquote>
-<p>以图为例：</p>
-<ol>
-<li>根节点1入队；</li>
-<li>根节点1出队，找到节点1，根节点1的左孩子节点2和右孩子3节点入队；</li>
-<li>节点2出队，找到节点2，节点2的左孩子节点4和右孩子节点5入队；</li>
-<li>节点3出队，找到节点3，节点3的左孩子节点6和右孩子节点7入队；</li>
-<li>节点4出队，没有左右孩子，找到节点4；</li>
-<li>节点5出队，没有左右孩子，找到节点5；</li>
-<li>节点6出队，没有左右孩子，找到节点6；</li>
-<li>节点7出队，没有左右孩子，找到节点7；</li>
-</ol>
-<h3> 队列实现</h3>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 示例测试</h3>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content>
-    <published>2023-07-30T09:20:01.000Z</published>
-  </entry>
-  <entry>
     <title type="text">存储引擎</title>
     <id>https://Hexiaopi.github.io/database/mysql/engine.html</id>
     <link href="https://Hexiaopi.github.io/database/mysql/engine.html"/>
@@ -6725,6 +6330,195 @@ LIMIT关键字用于限制查询结果的数量。MySQL只返回前N条符合条
 ]]></content>
     <category term="数据库"/>
     <published>2022-10-22T00:00:00.000Z</published>
+  </entry>
+  <entry>
+    <title type="text">二叉搜索树</title>
+    <id>https://Hexiaopi.github.io/data-structure/tree/binary-search-tree.html</id>
+    <link href="https://Hexiaopi.github.io/data-structure/tree/binary-search-tree.html"/>
+    <updated>2023-07-30T09:20:01.000Z</updated>
+    <summary type="html"><![CDATA[<h1> 二叉搜索树</h1>
+<h2> 简介</h2>
+<blockquote>
+<p>二叉搜索树（Binary Search Tree,BST）又叫二叉排序树，基于二分法查找思想设计的树。它的定义如下：</p>
+<ol>
+<li>它是一棵二叉树</li>
+<li>左子树的所有节点的值都小于它的根节点，右子树的所有节点的值都大于它的根节点</li>
+<li>左右子树也是一棵二叉搜索树</li>
+</ol>
+</blockquote>
+<h2> 增加节点</h2>
+<div class="language-go line-numbers-mode" data-ext="go"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token punctuation">(</span>n <span class="token operator">*</span>Node<span class="token punctuation">)</span> <span class="token function">Add</span><span class="token punctuation">(</span>value <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">if</span> value <span class="token operator">&gt;</span> n<span class="token punctuation">.</span>Data <span class="token punctuation">{</span>
+		<span class="token keyword">if</span> n<span class="token punctuation">.</span>Right <span class="token operator">==</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+			n<span class="token punctuation">.</span>Right <span class="token operator">=</span> <span class="token operator">&amp;</span>Node<span class="token punctuation">{</span>
+				Left<span class="token punctuation">:</span>  <span class="token boolean">nil</span><span class="token punctuation">,</span>
+				Data<span class="token punctuation">:</span>  value<span class="token punctuation">,</span>
+				Right<span class="token punctuation">:</span> <span class="token boolean">nil</span><span class="token punctuation">,</span>
+			<span class="token punctuation">}</span>
+		<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+			n<span class="token punctuation">.</span>Right<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> value <span class="token operator">&lt;</span> n<span class="token punctuation">.</span>Data <span class="token punctuation">{</span>
+		<span class="token keyword">if</span> n<span class="token punctuation">.</span>Left <span class="token operator">==</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+			n<span class="token punctuation">.</span>Left <span class="token operator">=</span> <span class="token operator">&amp;</span>Node<span class="token punctuation">{</span>
+				Left<span class="token punctuation">:</span>  <span class="token boolean">nil</span><span class="token punctuation">,</span>
+				Data<span class="token punctuation">:</span>  value<span class="token punctuation">,</span>
+				Right<span class="token punctuation">:</span> <span class="token boolean">nil</span><span class="token punctuation">,</span>
+			<span class="token punctuation">}</span>
+		<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+			n<span class="token punctuation">.</span>Left<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>value<span class="token punctuation">,</span> <span class="token string">" already exist"</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></summary>
+    <content type="html"><![CDATA[<h1> 二叉搜索树</h1>
+<h2> 简介</h2>
+<blockquote>
+<p>二叉搜索树（Binary Search Tree,BST）又叫二叉排序树，基于二分法查找思想设计的树。它的定义如下：</p>
+<ol>
+<li>它是一棵二叉树</li>
+<li>左子树的所有节点的值都小于它的根节点，右子树的所有节点的值都大于它的根节点</li>
+<li>左右子树也是一棵二叉搜索树</li>
+</ol>
+</blockquote>
+<h2> 增加节点</h2>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 查找节点</h2>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>测试</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 删除节点</h2>
+<h3> 递归版本</h3>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>测试</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h1> 总结</h1>
+<blockquote>
+<p>二叉搜素树采用二分法思想，查找效率高</p>
+<p>但是二叉搜索树具有不平衡性，容易出现斜树</p>
+</blockquote>
+<figure><figcaption>斜树</figcaption></figure>
+]]></content>
+    <published>2023-07-30T09:20:01.000Z</published>
+  </entry>
+  <entry>
+    <title type="text">二叉树</title>
+    <id>https://Hexiaopi.github.io/data-structure/tree/binary-tree.html</id>
+    <link href="https://Hexiaopi.github.io/data-structure/tree/binary-tree.html"/>
+    <updated>2023-07-30T09:20:01.000Z</updated>
+    <summary type="html"><![CDATA[<h1> 二叉树</h1>
+<blockquote>
+<p>满足以下两个条件的树就是二叉树：</p>
+<ul>
+<li>本身是有序树</li>
+<li>树中包含的各个节点的度不能超过2，即只能是：0、1、2</li>
+</ul>
+</blockquote>
+<p>定义二叉树的结构</p>
+<div class="language-go line-numbers-mode" data-ext="go"><pre class="language-go"><code><span class="token keyword">type</span> Node <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+	Left  <span class="token operator">*</span>Node
+	Data  <span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+	Right <span class="token operator">*</span>Node
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></summary>
+    <content type="html"><![CDATA[<h1> 二叉树</h1>
+<blockquote>
+<p>满足以下两个条件的树就是二叉树：</p>
+<ul>
+<li>本身是有序树</li>
+<li>树中包含的各个节点的度不能超过2，即只能是：0、1、2</li>
+</ul>
+</blockquote>
+<p>定义二叉树的结构</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><figure><figcaption></figcaption></figure>
+<h2> 先序遍历</h2>
+<blockquote>
+<p>其思想是：</p>
+<ol>
+<li>访问根节点；</li>
+<li>访问当前节点的左子树；</li>
+<li>若当前节点无左子树，则访问当前节点的右子树；</li>
+</ol>
+</blockquote>
+<p>以图为例：</p>
+<ol>
+<li>访问该二叉树的根节点，找到节点1；</li>
+<li>访问节点1的左子树，找到节点2；</li>
+<li>访问节点2的左子树，找到节点4；</li>
+<li>访问节点4的左子树失败，访问节点4的右子树失败，结束节点4的查询。继续查找节点2的右子树，找到节点5；</li>
+<li>访问节点5的左子树失败，访问节点5的右子树失败，结束节点5的查询。结束节点2的查询，查询节点1的右子树，找到节点3；</li>
+<li>访问节点3的左子树，找到节点6；</li>
+<li>访问节点6的左子树失败，访问节点6的右子树失败，结束节点6的查询。继续查找节点3右子树，知道节点7；</li>
+<li>访问节点7的左子树失败，访问节点7的右子树失败，结束节点7的查询。结束节点3的查询，结束节点1的查询；</li>
+</ol>
+<p>!&gt; 顺序如下：1、2、4、5、3、6、7</p>
+<h3> 递归实现</h3>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 示例测试</h3>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 中序遍历</h2>
+<blockquote>
+<p>其实想是：</p>
+<ol>
+<li>访问当前节点的左子树；</li>
+<li>访问当前节点；</li>
+<li>访问当前节点的右子树；</li>
+</ol>
+</blockquote>
+<p>以图为例：</p>
+<ol>
+<li>访问根节点，遍历找到左子树直到失败；找到节点4，找到节点4的右子树失败，结束节点4的遍历；</li>
+<li>访问节点4的根节点，找到节点2；</li>
+<li>访问节点2的右子树，遍历找左子树失败，找到节点5，遍历找到右子树失败，结束节点5的遍历，也结束节点2的遍历；</li>
+<li>结束节点1的左子树查询，找到节点1；</li>
+<li>遍历节点1的右子树，遍历找到左子树为6，结束节点6的遍历；</li>
+<li>找到节点3；</li>
+<li>遍历节点3的右子树，遍历找到左子树失败；找到节点7，遍历节点7的右子树失败，结束节点7的遍历；</li>
+</ol>
+<p>!&gt; 顺序如下：4，2，5，1，6，3，7</p>
+<h3> 递归实现</h3>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 示例测试</h3>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 后续遍历</h2>
+<blockquote>
+<p>其思想是：</p>
+<ol>
+<li>遍历访问当前节点的左子树；</li>
+<li>遍历访问当前节点的右子树；</li>
+<li>访问当前节点；</li>
+</ol>
+</blockquote>
+<p>以图为例：</p>
+<ol>
+<li>从根节点开始，遍历左子树直到失败，1-&gt;2-&gt;4，找到节点4，结束节点4的查询；</li>
+<li>回退到节点2，遍历右子树，找到节点5的左子树失败、右子树失败，找到节点5，结束节点5的查询；</li>
+<li>节点2的左右子树遍历完成，找到节点2，结束节点2的查询；</li>
+<li>回退到节点1，遍历右子树，1-&gt;3-&gt;6，找到节点6的左子树失败、右子树失败，找到节点6，结束节点6的查询；</li>
+<li>回到到节点3，遍历右子树，3-&gt;7，找到节点7的左子树失败、右子树失败，找到节点7，结束节点7的查询；</li>
+<li>节点3左右子树遍历完成，找到节点3，结束节点3的查询；</li>
+<li>回退到节点1，节点1左右子树遍历完成，找到节点1，结束节点1的查询；</li>
+</ol>
+<p>!&gt; 顺序为：4、5、2、6、7、3、1</p>
+<h3> 递归实现</h3>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 示例测试</h3>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 层次遍历</h2>
+<blockquote>
+<p>其思想是：</p>
+<ol>
+<li>节点入队；</li>
+<li>节点出队，节点左孩子和右孩子入队；</li>
+<li>知道所有节点出队；</li>
+</ol>
+</blockquote>
+<p>以图为例：</p>
+<ol>
+<li>根节点1入队；</li>
+<li>根节点1出队，找到节点1，根节点1的左孩子节点2和右孩子3节点入队；</li>
+<li>节点2出队，找到节点2，节点2的左孩子节点4和右孩子节点5入队；</li>
+<li>节点3出队，找到节点3，节点3的左孩子节点6和右孩子节点7入队；</li>
+<li>节点4出队，没有左右孩子，找到节点4；</li>
+<li>节点5出队，没有左右孩子，找到节点5；</li>
+<li>节点6出队，没有左右孩子，找到节点6；</li>
+<li>节点7出队，没有左右孩子，找到节点7；</li>
+</ol>
+<h3> 队列实现</h3>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 示例测试</h3>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content>
+    <published>2023-07-30T09:20:01.000Z</published>
   </entry>
   <entry>
     <title type="text">行为型模式</title>
@@ -8664,36 +8458,5 @@ LIMIT关键字用于限制查询结果的数量。MySQL只返回前N条符合条
 ]]></content>
     <category term="Go语言"/>
     <published>2022-01-23T00:00:00.000Z</published>
-  </entry>
-  <entry>
-    <title type="text">命名规则</title>
-    <id>https://Hexiaopi.github.io/go-language/base/identifier.html</id>
-    <link href="https://Hexiaopi.github.io/go-language/base/identifier.html"/>
-    <updated>2023-07-30T09:20:01.000Z</updated>
-    <summary type="html"><![CDATA[<h2> 命名规则</h2>
-<blockquote>
-<p>Go语言中用来对符号常量、变量、函数、数组、切片、通道等数据对象命名的有效字符序列统称为标识符（Identifier）即数据对象的名字。</p>
-</blockquote>
-<p>Go语言的命名规则：</p>
-<ul>
-<li>变量名必须以字母或下划线开始；</li>
-<li>必须使用英文字母、数字、下划线组成，不能出现空格或制表符；</li>
-<li>不能使用Go语言内置关键字和保留字，如：go、func、break、defer等；</li>
-<li>大小写敏感，比如<code>x</code>和<code>X</code>是两个不一样的标识符；</li>
-</ul>]]></summary>
-    <content type="html"><![CDATA[<h2> 命名规则</h2>
-<blockquote>
-<p>Go语言中用来对符号常量、变量、函数、数组、切片、通道等数据对象命名的有效字符序列统称为标识符（Identifier）即数据对象的名字。</p>
-</blockquote>
-<p>Go语言的命名规则：</p>
-<ul>
-<li>变量名必须以字母或下划线开始；</li>
-<li>必须使用英文字母、数字、下划线组成，不能出现空格或制表符；</li>
-<li>不能使用Go语言内置关键字和保留字，如：go、func、break、defer等；</li>
-<li>大小写敏感，比如<code>x</code>和<code>X</code>是两个不一样的标识符；</li>
-</ul>
-]]></content>
-    <category term="Go语言"/>
-    <published>2022-05-03T00:00:00.000Z</published>
   </entry>
 </feed>
