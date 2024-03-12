@@ -10,6 +10,11 @@ category:
 
 cadvisor 是谷歌公司用来分析运行中的 Docker 容器的资源占用以及性能特性的工具，简单来说是用于监控 Docker 容器。
 
+
+<!-- more -->
+
+## k8s部署
+
 ```yaml
 apiVersion: apps/v1
 kind: DaemonSet

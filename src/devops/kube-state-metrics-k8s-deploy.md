@@ -8,7 +8,12 @@ category:
  - devops
 ---
 
-kube-state-metrics用于监控k8s
+kube-state-metrics用于监控k8s相关指标
+
+
+<!-- more -->
+
+## k8s部署
 
 1、部署cluster-role
 
