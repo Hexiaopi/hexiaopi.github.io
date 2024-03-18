@@ -246,11 +246,20 @@ export default sidebar({
       prefix: "devops/",
       link: "devops/README.md",
       children: [
-        "prometheus-k8s-deploy",
-        "node-exporter-k8s-deploy",
-        "cadvisor-k8s-deploy",
-        "kube-state-metrics-k8s-deploy",
-        "helm-dashboard"
+        {
+          text: "k8s",
+          icon: "emmet",
+          collapsible: true,
+          prefix: "k8s/",
+          link: "k8s/README.md",
+          children: [
+            "prometheus-k8s-deploy",
+            "node-exporter-k8s-deploy",
+            "cadvisor-k8s-deploy",
+            "kube-state-metrics-k8s-deploy",
+            "helm-dashboard",
+          ],
+        }
       ]
     },
   ],

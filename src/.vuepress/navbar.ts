@@ -74,11 +74,12 @@ export default navbar([
     icon: "any",
     prefix: "/devops/",
     children: [
-      "prometheus-k8s-deploy",
-      "node-exporter-k8s-deploy",
-      "cadvisor-k8s-deploy",
-      "kube-state-metrics-k8s-deploy",
-      "helm-dashboard",
+      {
+        text: "k8s",
+        icon: "emmet",
+        link: "k8s/README.md",
+        activeMatch: "^/devops/k8s",
+      }
     ]
   },
   {
