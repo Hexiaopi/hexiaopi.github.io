@@ -259,6 +259,16 @@ export default sidebar({
             "kube-state-metrics-k8s-deploy",
             "helm-dashboard",
           ],
+        },
+        {
+          text: "docker",
+          icon: "overflow",
+          collapsible: true,
+          prefix: "docker/",
+          link: "docker/README.md",
+          children: [
+            "shell-line-break",
+          ],
         }
       ]
     },

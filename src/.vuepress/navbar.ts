@@ -79,7 +79,13 @@ export default navbar([
         icon: "emmet",
         link: "k8s/README.md",
         activeMatch: "^/devops/k8s",
-      }
+      },
+      {
+        text: "docker",
+        icon: "overflow",
+        link: "docker/README.md",
+        activeMatch: "^/devops/docker",
+      },
     ]
   },
   {
