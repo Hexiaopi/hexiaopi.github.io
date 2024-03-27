@@ -6,8 +6,8 @@
     <link>https://Hexiaopi.github.io/</link>
     <description>一枚后端攻城狮的个人博客</description>
     <language>zh-CN</language>
-    <pubDate>Mon, 18 Mar 2024 11:55:57 GMT</pubDate>
-    <lastBuildDate>Mon, 18 Mar 2024 11:55:57 GMT</lastBuildDate>
+    <pubDate>Wed, 27 Mar 2024 01:07:14 GMT</pubDate>
+    <lastBuildDate>Wed, 27 Mar 2024 01:07:14 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>devops</category>
@@ -1430,6 +1430,12 @@
 </div>
 <div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><details class="hint-container details"><summary>执行结果</summary>
 <p>1</p>
+</details>
+<h3> 遇见os.Exit</h3>
+<p>主动调用os.Exit(int)退出进程时，defer将不再被执行</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><details class="hint-container details"><summary>执行结果</summary>
+<p>some thing...<br>
+exit status 1</p>
 </details>
 <h3> 延迟函数体</h3>
 <h4> 延迟函数体未传参</h4>
@@ -5039,6 +5045,145 @@ Vincent Driessen 为了解决这个问题，提出<a href="https://nvie.com/post
 ]]></content:encoded>
     </item>
     <item>
+      <title>二叉搜索树</title>
+      <link>https://Hexiaopi.github.io/data-structure/tree/binary-search-tree.html</link>
+      <guid>https://Hexiaopi.github.io/data-structure/tree/binary-search-tree.html</guid>
+      <source url="https://Hexiaopi.github.io/rss.xml">二叉搜索树</source>
+      <description>二叉搜索树 简介 二叉搜索树（Binary Search Tree,BST）又叫二叉排序树，基于二分法查找思想设计的树。它的定义如下： 它是一棵二叉树 左子树的所有节点的值都小于它的根节点，右子树的所有节点的值都大于它的根节点 左右子树也是一棵二叉搜索树 增加节点 func (n *Node) Add(value int) { 	if value &amp;gt; n.Data { 		if n.Right == nil { 			n.Right = &amp;amp;Node{ 				Left: nil, 				Data: value, 				Right: nil, 			} 		} else { 			n.Right.Add(value) 		} 	} else if value &amp;lt; n.Data { 		if n.Left == nil { 			n.Left = &amp;amp;Node{ 				Left: nil, 				Data: value, 				Right: nil, 			} 		} else { 			n.Left.Add(value) 		} 	} else { 		fmt.Println(value, &amp;quot; already exist&amp;quot;) 	} }</description>
+      <pubDate>Sun, 30 Jul 2023 09:20:01 GMT</pubDate>
+      <content:encoded><![CDATA[<h1> 二叉搜索树</h1>
+<h2> 简介</h2>
+<blockquote>
+<p>二叉搜索树（Binary Search Tree,BST）又叫二叉排序树，基于二分法查找思想设计的树。它的定义如下：</p>
+<ol>
+<li>它是一棵二叉树</li>
+<li>左子树的所有节点的值都小于它的根节点，右子树的所有节点的值都大于它的根节点</li>
+<li>左右子树也是一棵二叉搜索树</li>
+</ol>
+</blockquote>
+<h2> 增加节点</h2>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 查找节点</h2>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>测试</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 删除节点</h2>
+<h3> 递归版本</h3>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>测试</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h1> 总结</h1>
+<blockquote>
+<p>二叉搜素树采用二分法思想，查找效率高</p>
+<p>但是二叉搜索树具有不平衡性，容易出现斜树</p>
+</blockquote>
+<figure><figcaption>斜树</figcaption></figure>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>二叉树</title>
+      <link>https://Hexiaopi.github.io/data-structure/tree/binary-tree.html</link>
+      <guid>https://Hexiaopi.github.io/data-structure/tree/binary-tree.html</guid>
+      <source url="https://Hexiaopi.github.io/rss.xml">二叉树</source>
+      <description>二叉树 满足以下两个条件的树就是二叉树： 本身是有序树 树中包含的各个节点的度不能超过2，即只能是：0、1、2 定义二叉树的结构 type Node struct { 	Left *Node 	Data interface{} 	Right *Node }</description>
+      <pubDate>Sun, 30 Jul 2023 09:20:01 GMT</pubDate>
+      <content:encoded><![CDATA[<h1> 二叉树</h1>
+<blockquote>
+<p>满足以下两个条件的树就是二叉树：</p>
+<ul>
+<li>本身是有序树</li>
+<li>树中包含的各个节点的度不能超过2，即只能是：0、1、2</li>
+</ul>
+</blockquote>
+<p>定义二叉树的结构</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><figure><figcaption></figcaption></figure>
+<h2> 先序遍历</h2>
+<blockquote>
+<p>其思想是：</p>
+<ol>
+<li>访问根节点；</li>
+<li>访问当前节点的左子树；</li>
+<li>若当前节点无左子树，则访问当前节点的右子树；</li>
+</ol>
+</blockquote>
+<p>以图为例：</p>
+<ol>
+<li>访问该二叉树的根节点，找到节点1；</li>
+<li>访问节点1的左子树，找到节点2；</li>
+<li>访问节点2的左子树，找到节点4；</li>
+<li>访问节点4的左子树失败，访问节点4的右子树失败，结束节点4的查询。继续查找节点2的右子树，找到节点5；</li>
+<li>访问节点5的左子树失败，访问节点5的右子树失败，结束节点5的查询。结束节点2的查询，查询节点1的右子树，找到节点3；</li>
+<li>访问节点3的左子树，找到节点6；</li>
+<li>访问节点6的左子树失败，访问节点6的右子树失败，结束节点6的查询。继续查找节点3右子树，知道节点7；</li>
+<li>访问节点7的左子树失败，访问节点7的右子树失败，结束节点7的查询。结束节点3的查询，结束节点1的查询；</li>
+</ol>
+<p>!&gt; 顺序如下：1、2、4、5、3、6、7</p>
+<h3> 递归实现</h3>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 示例测试</h3>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 中序遍历</h2>
+<blockquote>
+<p>其实想是：</p>
+<ol>
+<li>访问当前节点的左子树；</li>
+<li>访问当前节点；</li>
+<li>访问当前节点的右子树；</li>
+</ol>
+</blockquote>
+<p>以图为例：</p>
+<ol>
+<li>访问根节点，遍历找到左子树直到失败；找到节点4，找到节点4的右子树失败，结束节点4的遍历；</li>
+<li>访问节点4的根节点，找到节点2；</li>
+<li>访问节点2的右子树，遍历找左子树失败，找到节点5，遍历找到右子树失败，结束节点5的遍历，也结束节点2的遍历；</li>
+<li>结束节点1的左子树查询，找到节点1；</li>
+<li>遍历节点1的右子树，遍历找到左子树为6，结束节点6的遍历；</li>
+<li>找到节点3；</li>
+<li>遍历节点3的右子树，遍历找到左子树失败；找到节点7，遍历节点7的右子树失败，结束节点7的遍历；</li>
+</ol>
+<p>!&gt; 顺序如下：4，2，5，1，6，3，7</p>
+<h3> 递归实现</h3>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 示例测试</h3>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 后续遍历</h2>
+<blockquote>
+<p>其思想是：</p>
+<ol>
+<li>遍历访问当前节点的左子树；</li>
+<li>遍历访问当前节点的右子树；</li>
+<li>访问当前节点；</li>
+</ol>
+</blockquote>
+<p>以图为例：</p>
+<ol>
+<li>从根节点开始，遍历左子树直到失败，1-&gt;2-&gt;4，找到节点4，结束节点4的查询；</li>
+<li>回退到节点2，遍历右子树，找到节点5的左子树失败、右子树失败，找到节点5，结束节点5的查询；</li>
+<li>节点2的左右子树遍历完成，找到节点2，结束节点2的查询；</li>
+<li>回退到节点1，遍历右子树，1-&gt;3-&gt;6，找到节点6的左子树失败、右子树失败，找到节点6，结束节点6的查询；</li>
+<li>回到到节点3，遍历右子树，3-&gt;7，找到节点7的左子树失败、右子树失败，找到节点7，结束节点7的查询；</li>
+<li>节点3左右子树遍历完成，找到节点3，结束节点3的查询；</li>
+<li>回退到节点1，节点1左右子树遍历完成，找到节点1，结束节点1的查询；</li>
+</ol>
+<p>!&gt; 顺序为：4、5、2、6、7、3、1</p>
+<h3> 递归实现</h3>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 示例测试</h3>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 层次遍历</h2>
+<blockquote>
+<p>其思想是：</p>
+<ol>
+<li>节点入队；</li>
+<li>节点出队，节点左孩子和右孩子入队；</li>
+<li>知道所有节点出队；</li>
+</ol>
+</blockquote>
+<p>以图为例：</p>
+<ol>
+<li>根节点1入队；</li>
+<li>根节点1出队，找到节点1，根节点1的左孩子节点2和右孩子3节点入队；</li>
+<li>节点2出队，找到节点2，节点2的左孩子节点4和右孩子节点5入队；</li>
+<li>节点3出队，找到节点3，节点3的左孩子节点6和右孩子节点7入队；</li>
+<li>节点4出队，没有左右孩子，找到节点4；</li>
+<li>节点5出队，没有左右孩子，找到节点5；</li>
+<li>节点6出队，没有左右孩子，找到节点6；</li>
+<li>节点7出队，没有左右孩子，找到节点7；</li>
+</ol>
+<h3> 队列实现</h3>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 示例测试</h3>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
+    </item>
+    <item>
       <title>存储引擎</title>
       <link>https://Hexiaopi.github.io/database/mysql/engine.html</link>
       <guid>https://Hexiaopi.github.io/database/mysql/engine.html</guid>
@@ -5899,145 +6044,6 @@ LIMIT关键字用于限制查询结果的数量。MySQL只返回前N条符合条
 </ol>
 <p>redolog的写入拆成了两个步骤：prepare和commit，这就是<strong>两阶段提交</strong></p>
 ]]></content:encoded>
-    </item>
-    <item>
-      <title>二叉搜索树</title>
-      <link>https://Hexiaopi.github.io/data-structure/tree/binary-search-tree.html</link>
-      <guid>https://Hexiaopi.github.io/data-structure/tree/binary-search-tree.html</guid>
-      <source url="https://Hexiaopi.github.io/rss.xml">二叉搜索树</source>
-      <description>二叉搜索树 简介 二叉搜索树（Binary Search Tree,BST）又叫二叉排序树，基于二分法查找思想设计的树。它的定义如下： 它是一棵二叉树 左子树的所有节点的值都小于它的根节点，右子树的所有节点的值都大于它的根节点 左右子树也是一棵二叉搜索树 增加节点 func (n *Node) Add(value int) { 	if value &amp;gt; n.Data { 		if n.Right == nil { 			n.Right = &amp;amp;Node{ 				Left: nil, 				Data: value, 				Right: nil, 			} 		} else { 			n.Right.Add(value) 		} 	} else if value &amp;lt; n.Data { 		if n.Left == nil { 			n.Left = &amp;amp;Node{ 				Left: nil, 				Data: value, 				Right: nil, 			} 		} else { 			n.Left.Add(value) 		} 	} else { 		fmt.Println(value, &amp;quot; already exist&amp;quot;) 	} }</description>
-      <pubDate>Sun, 30 Jul 2023 09:20:01 GMT</pubDate>
-      <content:encoded><![CDATA[<h1> 二叉搜索树</h1>
-<h2> 简介</h2>
-<blockquote>
-<p>二叉搜索树（Binary Search Tree,BST）又叫二叉排序树，基于二分法查找思想设计的树。它的定义如下：</p>
-<ol>
-<li>它是一棵二叉树</li>
-<li>左子树的所有节点的值都小于它的根节点，右子树的所有节点的值都大于它的根节点</li>
-<li>左右子树也是一棵二叉搜索树</li>
-</ol>
-</blockquote>
-<h2> 增加节点</h2>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 查找节点</h2>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>测试</p>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 删除节点</h2>
-<h3> 递归版本</h3>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>测试</p>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h1> 总结</h1>
-<blockquote>
-<p>二叉搜素树采用二分法思想，查找效率高</p>
-<p>但是二叉搜索树具有不平衡性，容易出现斜树</p>
-</blockquote>
-<figure><figcaption>斜树</figcaption></figure>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>二叉树</title>
-      <link>https://Hexiaopi.github.io/data-structure/tree/binary-tree.html</link>
-      <guid>https://Hexiaopi.github.io/data-structure/tree/binary-tree.html</guid>
-      <source url="https://Hexiaopi.github.io/rss.xml">二叉树</source>
-      <description>二叉树 满足以下两个条件的树就是二叉树： 本身是有序树 树中包含的各个节点的度不能超过2，即只能是：0、1、2 定义二叉树的结构 type Node struct { 	Left *Node 	Data interface{} 	Right *Node }</description>
-      <pubDate>Sun, 30 Jul 2023 09:20:01 GMT</pubDate>
-      <content:encoded><![CDATA[<h1> 二叉树</h1>
-<blockquote>
-<p>满足以下两个条件的树就是二叉树：</p>
-<ul>
-<li>本身是有序树</li>
-<li>树中包含的各个节点的度不能超过2，即只能是：0、1、2</li>
-</ul>
-</blockquote>
-<p>定义二叉树的结构</p>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><figure><figcaption></figcaption></figure>
-<h2> 先序遍历</h2>
-<blockquote>
-<p>其思想是：</p>
-<ol>
-<li>访问根节点；</li>
-<li>访问当前节点的左子树；</li>
-<li>若当前节点无左子树，则访问当前节点的右子树；</li>
-</ol>
-</blockquote>
-<p>以图为例：</p>
-<ol>
-<li>访问该二叉树的根节点，找到节点1；</li>
-<li>访问节点1的左子树，找到节点2；</li>
-<li>访问节点2的左子树，找到节点4；</li>
-<li>访问节点4的左子树失败，访问节点4的右子树失败，结束节点4的查询。继续查找节点2的右子树，找到节点5；</li>
-<li>访问节点5的左子树失败，访问节点5的右子树失败，结束节点5的查询。结束节点2的查询，查询节点1的右子树，找到节点3；</li>
-<li>访问节点3的左子树，找到节点6；</li>
-<li>访问节点6的左子树失败，访问节点6的右子树失败，结束节点6的查询。继续查找节点3右子树，知道节点7；</li>
-<li>访问节点7的左子树失败，访问节点7的右子树失败，结束节点7的查询。结束节点3的查询，结束节点1的查询；</li>
-</ol>
-<p>!&gt; 顺序如下：1、2、4、5、3、6、7</p>
-<h3> 递归实现</h3>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 示例测试</h3>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 中序遍历</h2>
-<blockquote>
-<p>其实想是：</p>
-<ol>
-<li>访问当前节点的左子树；</li>
-<li>访问当前节点；</li>
-<li>访问当前节点的右子树；</li>
-</ol>
-</blockquote>
-<p>以图为例：</p>
-<ol>
-<li>访问根节点，遍历找到左子树直到失败；找到节点4，找到节点4的右子树失败，结束节点4的遍历；</li>
-<li>访问节点4的根节点，找到节点2；</li>
-<li>访问节点2的右子树，遍历找左子树失败，找到节点5，遍历找到右子树失败，结束节点5的遍历，也结束节点2的遍历；</li>
-<li>结束节点1的左子树查询，找到节点1；</li>
-<li>遍历节点1的右子树，遍历找到左子树为6，结束节点6的遍历；</li>
-<li>找到节点3；</li>
-<li>遍历节点3的右子树，遍历找到左子树失败；找到节点7，遍历节点7的右子树失败，结束节点7的遍历；</li>
-</ol>
-<p>!&gt; 顺序如下：4，2，5，1，6，3，7</p>
-<h3> 递归实现</h3>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 示例测试</h3>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 后续遍历</h2>
-<blockquote>
-<p>其思想是：</p>
-<ol>
-<li>遍历访问当前节点的左子树；</li>
-<li>遍历访问当前节点的右子树；</li>
-<li>访问当前节点；</li>
-</ol>
-</blockquote>
-<p>以图为例：</p>
-<ol>
-<li>从根节点开始，遍历左子树直到失败，1-&gt;2-&gt;4，找到节点4，结束节点4的查询；</li>
-<li>回退到节点2，遍历右子树，找到节点5的左子树失败、右子树失败，找到节点5，结束节点5的查询；</li>
-<li>节点2的左右子树遍历完成，找到节点2，结束节点2的查询；</li>
-<li>回退到节点1，遍历右子树，1-&gt;3-&gt;6，找到节点6的左子树失败、右子树失败，找到节点6，结束节点6的查询；</li>
-<li>回到到节点3，遍历右子树，3-&gt;7，找到节点7的左子树失败、右子树失败，找到节点7，结束节点7的查询；</li>
-<li>节点3左右子树遍历完成，找到节点3，结束节点3的查询；</li>
-<li>回退到节点1，节点1左右子树遍历完成，找到节点1，结束节点1的查询；</li>
-</ol>
-<p>!&gt; 顺序为：4、5、2、6、7、3、1</p>
-<h3> 递归实现</h3>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 示例测试</h3>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 层次遍历</h2>
-<blockquote>
-<p>其思想是：</p>
-<ol>
-<li>节点入队；</li>
-<li>节点出队，节点左孩子和右孩子入队；</li>
-<li>知道所有节点出队；</li>
-</ol>
-</blockquote>
-<p>以图为例：</p>
-<ol>
-<li>根节点1入队；</li>
-<li>根节点1出队，找到节点1，根节点1的左孩子节点2和右孩子3节点入队；</li>
-<li>节点2出队，找到节点2，节点2的左孩子节点4和右孩子节点5入队；</li>
-<li>节点3出队，找到节点3，节点3的左孩子节点6和右孩子节点7入队；</li>
-<li>节点4出队，没有左右孩子，找到节点4；</li>
-<li>节点5出队，没有左右孩子，找到节点5；</li>
-<li>节点6出队，没有左右孩子，找到节点6；</li>
-<li>节点7出队，没有左右孩子，找到节点7；</li>
-</ol>
-<h3> 队列实现</h3>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 示例测试</h3>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
     </item>
     <item>
       <title>行为型模式</title>
