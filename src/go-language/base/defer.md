@@ -48,6 +48,32 @@ func DeferDemo2() {
 1
 :::
 
+### 遇见os.Exit
+
+主动调用os.Exit(int)退出进程时，defer将不再被执行
+
+```go
+package main
+
+import (
+	"fmt"
+	"os"
+)
+
+func main() {
+	defer func() {
+		fmt.Println("defer")
+	}()
+	fmt.Println("some thing...")
+	os.Exit(1)
+}
+```
+
+::: details 执行结果
+some thing...
+exit status 1
+:::
+
 ### 延迟函数体
 
 #### 延迟函数体未传参
