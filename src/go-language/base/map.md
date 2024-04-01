@@ -206,7 +206,7 @@ map的扩缩容的主要区别在于hmap.B的容量大小改变，而缩容由�
 
 ### map的value是struct自定义类型，无法通过索引的方式直接修改
 
-```go{14}
+```go{12}
 func MapDemo1() {
 	type User struct {
 		name string
@@ -225,7 +225,7 @@ func MapDemo1() {
 ```
 
 :::warning
-14行，如果通过索引的方式直接修改，编辑器会报错：[UnaddressableFieldAssign](https://pkg.go.dev/golang.org/x/tools/internal/typesinternal#UnaddressableFieldAssign)，并且官网也给了详细的说明：
+12行，如果通过索引的方式直接修改，编辑器会报错：[UnaddressableFieldAssign](https://pkg.go.dev/golang.org/x/tools/internal/typesinternal#UnaddressableFieldAssign)，并且官网也给了详细的说明：
 ```
 	// UnaddressableFieldAssign occurs when trying to assign to a struct field
 	// in a map value.
