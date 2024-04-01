@@ -17,7 +17,7 @@ projects:
   - name: VuePress Theme Hope
     desc: 一个功能强大的 VuePress 主题✨
     link: https://theme-hope.vuejs.press/zh/
-    icon: https://theme-hope.vuejs.press/logo.svg
+    icon: https://theme-hope-assets.vuejs.press/logo.svg
 
   - icon: friend
     name: 阮一峰的个人网站
