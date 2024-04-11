@@ -242,6 +242,7 @@ export default sidebar({
           prefix: "application-layer/",
           link: "application-layer/README.md",
           children: [
+            "HTTP",
             "websocket",
             "MQTT",
           ]
