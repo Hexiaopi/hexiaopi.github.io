@@ -235,8 +235,37 @@ export default sidebar({
       prefix: "network/",
       link: "network/README.md",
       children: [
-        "websocket",
-        "MQTT",
+        {
+          text: "应用层协议",
+          collapsible: true,
+          icon: "safari",
+          prefix: "application-layer/",
+          link: "application-layer/README.md",
+          children: [
+            "websocket",
+            "MQTT",
+          ]
+        },
+        {
+          text: "传输层协议",
+          collapsible: true,
+          icon: "extend",
+          prefix: "transport-layer/",
+          link: "transport-layer/README.md",
+        },
+        {
+          text: "网络层协议",
+          collapsible: true,
+          icon: "state",
+          prefix: "internet-layer/",
+          link: "internet-layer/README.md",
+        },
+        {
+          text: "链路层协议",
+          icon: "api",
+          prefix: "link-layer/",
+          link: "link-layer/README.md",
+        },
       ]
     },
     {

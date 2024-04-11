@@ -65,8 +65,30 @@ export default navbar([
     icon: "network",
     prefix: "/network/",
     children: [
-      "websocket",
-      "MQTT",
+      {
+        text: "应用层协议",
+        icon: "safari",
+        prefix: "application-layer/",
+        link: "application-layer/README.md",
+      },
+      {
+        text: "传输层协议",
+        icon: "extend",
+        prefix: "transport-layer/",
+        link: "transport-layer/README.md",
+      },
+      {
+        text: "网络层协议",
+        icon: "state",
+        prefix: "internet-layer/",
+        link: "internet-layer/README.md",
+      },
+      {
+        text: "链路层协议",
+        icon: "api",
+        prefix: "link-layer/",
+        link: "link-layer/README.md",
+      },
     ]
   },
   {
