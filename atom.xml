@@ -3,12 +3,12 @@
   <id>https://Hexiaopi.github.io/</id>
   <title>Hexiaopi</title>
   <subtitle>一枚后端攻城狮的个人博客</subtitle>
-  <updated>2024-04-01T07:52:25.677Z</updated>
+  <updated>2024-04-11T06:40:21.524Z</updated>
   <generator>vuepress-plugin-feed2</generator>
   <link rel="self" href="https://Hexiaopi.github.io/atom.xml"/>
   <link rel="alternate" href="https://Hexiaopi.github.io/"/>
-  <category term="devops"/>
   <category term="网络"/>
+  <category term="devops"/>
   <category term="Go语言"/>
   <category term="数据库"/>
   <category term="项目规范"/>
@@ -22,469 +22,24 @@
     <name>Hexiaopi</name>
   </contributor>
   <entry>
-    <title type="text">docker</title>
-    <id>https://Hexiaopi.github.io/devops/docker/</id>
-    <link href="https://Hexiaopi.github.io/devops/docker/"/>
-    <updated>2024-03-18T11:54:34.000Z</updated>
-    <summary type="html"><![CDATA[<p>这里记录工作中学习到的docker相关知识</p>
+    <title type="text">ICMP协议</title>
+    <id>https://Hexiaopi.github.io/network/ICMP.html</id>
+    <link href="https://Hexiaopi.github.io/network/ICMP.html"/>
+    <updated>2024-04-11T06:38:26.000Z</updated>
+    <summary type="html"><![CDATA[<p>ICMP(Internet Control Message Protocol,互联网控制协议)，属于网络层协议。主要用于在IP主机和路由器之间传递控制信息，例如：主机是否可达、路由是否可用等。</p>
+<p>ICMP使用IP协议发送信息，它虽然属于网络层协议，但严格来说，它位于IP之上。</p>
 ]]></summary>
-    <content type="html"><![CDATA[<p>这里记录工作中学习到的docker相关知识</p>
-]]></content>
-    <category term="devops"/>
-    <published>2024-03-18T00:00:00.000Z</published>
-  </entry>
-  <entry>
-    <title type="text">容器执行报&amp;quot;no such file or directory&amp;quot;问题</title>
-    <id>https://Hexiaopi.github.io/devops/docker/shell-line-break.html</id>
-    <link href="https://Hexiaopi.github.io/devops/docker/shell-line-break.html"/>
-    <updated>2024-03-18T11:54:34.000Z</updated>
-    <summary type="html"><![CDATA[<p>同事运行docker镜像时，控制台报错"no such file or directory"，但是查看该文件确实存在，本文记录该问题的定位和解决。</p>
-]]></summary>
-    <content type="html"><![CDATA[<p>同事运行docker镜像时，控制台报错"no such file or directory"，但是查看该文件确实存在，本文记录该问题的定位和解决。</p>
-<!-- more -->
-<h3> 查看镜像使用方式</h3>
-<div class="language-yaml line-numbers-mode" data-ext="yml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>这里查看dockerfile，采用的是脚本方式启动服务进程，使用方式上并没有什么问题</p>
-<h3> 根据报错信息查看文件是否存在</h3>
-<p>通过新增RUN命令:<code>RUN ls -al</code>,打印当前路径文件的方式确认是有<code>run.sh</code>脚本文件</p>
-<h3> 检查脚本文件</h3>
-<p>对比了服务器的脚本文件和开发使用的脚本文件，仔细观察发现脚本文件唯一不同的是换行符不一样</p>
-<ul>
-<li>开发使用的是windows系统，换行符为<strong>CRLF</strong>,对应为:<code>\r\n</code></li>
-<li>服务器使用的linux系统，换行符为<strong>LF</strong>，对应为:<code>\n</code></li>
-</ul>
-<h3> 关键问题</h3>
-<p>脚本第一行</p>
-<div class="language-bash line-numbers-mode" data-ext="sh"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>表明使用<code>/bin/bash</code>来解释脚本，但如何后面有windows的换行符导致无法识别，因此会报错：“no such file or directory”</p>
-<h3> 问题结局</h3>
-<p>通过修改<code>run.sh</code>的换行符为<strong>LF</strong>，问题得以解决。</p>
-<div class="hint-container tip">
-<p class="hint-container-title">提示</p>
-<p>代码提交时，将文件换行符设置为LF格式。</p>
-</div>
-]]></content>
-    <category term="devops"/>
-    <published>2024-03-18T00:00:00.000Z</published>
-  </entry>
-  <entry>
-    <title type="text">k8s</title>
-    <id>https://Hexiaopi.github.io/devops/k8s/</id>
-    <link href="https://Hexiaopi.github.io/devops/k8s/"/>
-    <updated>2024-03-18T08:34:44.000Z</updated>
-    <summary type="html"><![CDATA[<p>这里记录工作中学习到的k8s相关知识</p>
-]]></summary>
-    <content type="html"><![CDATA[<p>这里记录工作中学习到的k8s相关知识</p>
-]]></content>
-    <category term="devops"/>
-    <published>2024-03-18T00:00:00.000Z</published>
-  </entry>
-  <entry>
-    <title type="text">cadvisor k8s 部署</title>
-    <id>https://Hexiaopi.github.io/devops/k8s/cadvisor-k8s-deploy.html</id>
-    <link href="https://Hexiaopi.github.io/devops/k8s/cadvisor-k8s-deploy.html"/>
-    <updated>2024-03-18T08:34:44.000Z</updated>
-    <summary type="html"><![CDATA[<p>cadvisor 是谷歌公司用来分析运行中的 Docker 容器的资源占用以及性能特性的工具，简单来说是用于监控 Docker 容器。</p>
-]]></summary>
-    <content type="html"><![CDATA[<p>cadvisor 是谷歌公司用来分析运行中的 Docker 容器的资源占用以及性能特性的工具，简单来说是用于监控 Docker 容器。</p>
-<!-- more -->
-<h2> k8s部署</h2>
-<div class="language-yaml line-numbers-mode" data-ext="yml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content>
-    <category term="devops"/>
-    <published>2024-01-15T00:00:00.000Z</published>
-  </entry>
-  <entry>
-    <title type="text">Helm Dashboard简介</title>
-    <id>https://Hexiaopi.github.io/devops/k8s/helm-dashboard.html</id>
-    <link href="https://Hexiaopi.github.io/devops/k8s/helm-dashboard.html"/>
-    <updated>2024-03-18T08:34:44.000Z</updated>
-    <summary type="html"><![CDATA[<p>helm-dashboard是helm的可视化界面，可以查看集群内通过helm部署的chart包。好处：不需要登录机器就可以升级、回滚chart包。</p>
-]]></summary>
-    <content type="html"><![CDATA[<p>helm-dashboard是helm的可视化界面，可以查看集群内通过helm部署的chart包。好处：不需要登录机器就可以升级、回滚chart包。</p>
-<!-- more -->
-<h2> Helm Dashboard简介</h2>
-<h3> 常用特性</h3>
-<ul>
-<li>查看、升级、回滚chart包及其内容</li>
-<li>查看各个版本之间的区别</li>
-</ul>
-<h3> 查看已安装的chart包</h3>
-<figure><figcaption></figcaption></figure>
-<h3> 单个chart包的升级、回滚和修改配置</h3>
-<figure><figcaption></figcaption></figure>
-<h3> 比较各个版本之前的区别</h3>
-<figure><figcaption></figcaption></figure>
-<h3> Helm Dadshboard 魔改</h3>
-<p>helm-dashboard依赖的前端静态资源如：</p>
-<ul>
-<li><a href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/github.min.css" target="_blank" rel="noopener noreferrer">https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/github.min.css</a></li>
-<li><a href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/lightfair.min.css" target="_blank" rel="noopener noreferrer">https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/lightfair.min.css</a></li>
-<li><a href="https://cdn.jsdelivr.net/npm/diff2html/bundles/css/diff2html.min.css" target="_blank" rel="noopener noreferrer">https://cdn.jsdelivr.net/npm/diff2html/bundles/css/diff2html.min.css</a></li>
-</ul>
-<p>由于国内网络原因，偶尔访问不到，导致页面加载不出来，影响使用。因此需要将这些cdn资源改为本地引用。<a href="https://github.com/Hexiaopi/helm-dashboard/commit/4eb18e1655606cd80ce1eb8001f03eaca6a55dc7" target="_blank" rel="noopener noreferrer">代码修改详见</a></p>
-]]></content>
-    <category term="devops"/>
-    <published>2024-03-12T00:00:00.000Z</published>
-  </entry>
-  <entry>
-    <title type="text">kube-state-metrics k8s 部署</title>
-    <id>https://Hexiaopi.github.io/devops/k8s/kube-state-metrics-k8s-deploy.html</id>
-    <link href="https://Hexiaopi.github.io/devops/k8s/kube-state-metrics-k8s-deploy.html"/>
-    <updated>2024-03-18T08:34:44.000Z</updated>
-    <summary type="html"><![CDATA[<p>kube-state-metrics用于监控k8s相关指标</p>
-]]></summary>
-    <content type="html"><![CDATA[<p>kube-state-metrics用于监控k8s相关指标</p>
-<!-- more -->
-<h2> k8s部署</h2>
-<p>1、部署cluster-role</p>
-<div class="language-yaml line-numbers-mode" data-ext="yml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>2、部署cluster-role-binding</p>
-<div class="language-yaml line-numbers-mode" data-ext="yml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>3、部署deployment</p>
-<p>👁️ 由于国外网络原因，注意需要修改镜像地址</p>
-<div class="language-yaml line-numbers-mode" data-ext="yml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>4、部署service</p>
-<p>注意，需要设置annotation，让Prometheus自动发现</p>
-<div class="language-yaml line-numbers-mode" data-ext="yml"><div class="highlight-lines"><br><br><br><br><br><br><br><br><br><br><div class="highlight-line">&nbsp;</div><br><br><br><br><br><br><br><br><br><br><br></div><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>5、部署service-account</p>
-<div class="language-yaml line-numbers-mode" data-ext="yml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content>
-    <category term="devops"/>
-    <published>2024-01-15T00:00:00.000Z</published>
-  </entry>
-  <entry>
-    <title type="text">node-exporter k8s 部署</title>
-    <id>https://Hexiaopi.github.io/devops/k8s/node-exporter-k8s-deploy.html</id>
-    <link href="https://Hexiaopi.github.io/devops/k8s/node-exporter-k8s-deploy.html"/>
-    <updated>2024-03-18T08:34:44.000Z</updated>
-    <summary type="html"><![CDATA[<p>node-exporter用于暴露各个节点的指标，由于需要每个节点都部署node-exporter，因此kind选择DaemonSet，它会保障每个节点有一个相同的实例。</p>
-]]></summary>
-    <content type="html"><![CDATA[<p>node-exporter用于暴露各个节点的指标，由于需要每个节点都部署node-exporter，因此kind选择DaemonSet，它会保障每个节点有一个相同的实例。</p>
-<!-- more -->
-<h2> k8s部署</h2>
-<div class="language-yaml line-numbers-mode" data-ext="yml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content>
-    <category term="devops"/>
-    <published>2024-01-15T00:00:00.000Z</published>
-  </entry>
-  <entry>
-    <title type="text">Prometheus k8s 部署</title>
-    <id>https://Hexiaopi.github.io/devops/k8s/prometheus-k8s-deploy.html</id>
-    <link href="https://Hexiaopi.github.io/devops/k8s/prometheus-k8s-deploy.html"/>
-    <updated>2024-03-18T08:34:44.000Z</updated>
-    <summary type="html"><![CDATA[<p>Prometheus是个优秀的监控系统，基于时序数据库，这里记录k8s部署</p>
-]]></summary>
-    <content type="html"><![CDATA[<p>Prometheus是个优秀的监控系统，基于时序数据库，这里记录k8s部署</p>
-<!-- more -->
-<h2> k8s部署</h2>
-<p>步骤一、创建数据存储</p>
-<div class="language-bash line-numbers-mode" data-ext="sh"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>步骤二、创建serviceaccount和clusterrolebinding</p>
-<div class="language-bash line-numbers-mode" data-ext="sh"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>步骤三、创建Prometheus configmap用于存储抓取配置</p>
-<div class="language-yaml line-numbers-mode" data-ext="yml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>步骤四、创建Prometheus deployment，注意将存储卷挂载在机器磁盘上。</p>
-<div class="language-yaml line-numbers-mode" data-ext="yml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>步骤五、创建Prometheus service用于访问</p>
-<div class="language-yaml line-numbers-mode" data-ext="yml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content>
-    <category term="devops"/>
-    <published>2024-01-15T00:00:00.000Z</published>
-  </entry>
-  <entry>
-    <title type="text">devops</title>
-    <id>https://Hexiaopi.github.io/devops/</id>
-    <link href="https://Hexiaopi.github.io/devops/"/>
-    <updated>2024-01-15T12:27:05.000Z</updated>
-    <summary type="html"><![CDATA[<p>这里记录工作中学习到的devops基础知识</p>
-]]></summary>
-    <content type="html"><![CDATA[<p>这里记录工作中学习到的devops基础知识</p>
-]]></content>
-    <category term="devops"/>
-    <published>2024-01-15T00:00:00.000Z</published>
-  </entry>
-  <entry>
-    <title type="text">网络</title>
-    <id>https://Hexiaopi.github.io/network/</id>
-    <link href="https://Hexiaopi.github.io/network/"/>
-    <updated>2023-09-23T05:53:36.000Z</updated>
-    <summary type="html"><![CDATA[<p>这里记录工作中学习到的网络基础知识</p>
-]]></summary>
-    <content type="html"><![CDATA[<p>这里记录工作中学习到的网络基础知识</p>
+    <content type="html"><![CDATA[<p>ICMP(Internet Control Message Protocol,互联网控制协议)，属于网络层协议。主要用于在IP主机和路由器之间传递控制信息，例如：主机是否可达、路由是否可用等。</p>
+<p>ICMP使用IP协议发送信息，它虽然属于网络层协议，但严格来说，它位于IP之上。</p>
 ]]></content>
     <category term="网络"/>
-    <published>2023-09-23T00:00:00.000Z</published>
-  </entry>
-  <entry>
-    <title type="text">三方库</title>
-    <id>https://Hexiaopi.github.io/go-language/third-party/</id>
-    <link href="https://Hexiaopi.github.io/go-language/third-party/"/>
-    <updated>2023-09-20T15:35:18.000Z</updated>
-    <summary type="html"><![CDATA[<p>这里介绍业界优秀的Go语言三方库，需要思考的是优秀在哪里</p>
-]]></summary>
-    <content type="html"><![CDATA[<p>这里介绍业界优秀的Go语言三方库，需要思考的是优秀在哪里</p>
-]]></content>
-    <category term="Go语言"/>
-    <published>2023-09-20T00:00:00.000Z</published>
-  </entry>
-  <entry>
-    <title type="text">pflag</title>
-    <id>https://Hexiaopi.github.io/go-language/third-party/pflag.html</id>
-    <link href="https://Hexiaopi.github.io/go-language/third-party/pflag.html"/>
-    <updated>2023-09-20T15:35:18.000Z</updated>
-    <summary type="html"><![CDATA[<p>我在标准库中介绍了<a href="/go-language/standard-library/flag.html" target="blank">flag使用</a>，对于小型的项目flag能够基本满足需求，但是在某些大型项目或者特殊场景下flag有些力不从心。主要在于：</p>
-<ul>
-<li>flag的子命令需要自己解析</li>
-<li>flag的短命令需要定义两个变量</li>
-<li>不支持一些参数废弃说明，这在更新的工具中对用户有更好的引导作用</li>
-</ul>
-<p>因此业界开源的<a href="https://github.com/spf13/pflag" target="_blank" rel="noopener noreferrer">pflag</a>受到广大爱好者的使用，在一些耳熟能详的开源项目里也都在使用pflag，例如：Kubernetes、Istio、Helm、Docker、Etcd等。</p>]]></summary>
-    <content type="html"><![CDATA[<p>我在标准库中介绍了<a href="/go-language/standard-library/flag.html" target="blank">flag使用</a>，对于小型的项目flag能够基本满足需求，但是在某些大型项目或者特殊场景下flag有些力不从心。主要在于：</p>
-<ul>
-<li>flag的子命令需要自己解析</li>
-<li>flag的短命令需要定义两个变量</li>
-<li>不支持一些参数废弃说明，这在更新的工具中对用户有更好的引导作用</li>
-</ul>
-<p>因此业界开源的<a href="https://github.com/spf13/pflag" target="_blank" rel="noopener noreferrer">pflag</a>受到广大爱好者的使用，在一些耳熟能详的开源项目里也都在使用pflag，例如：Kubernetes、Istio、Helm、Docker、Etcd等。</p>
-<h2> 简单用法</h2>
-<h3> 支持标准库flag用法</h3>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>使用示例：</p>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="hint-container warning">
-<p class="hint-container-title">注意</p>
-<p>注意是长选项，即参数为<code>--xxx</code></p>
-</div>
-<h3> 支持短选项</h3>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>使用示例：</p>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 支持绑定到已有变量</h3>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>使用示例：</p>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 标记命令行参数已废弃</h3>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>打印Usage()</p>
-<div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><h3> 指定了参数却没有传值场景下的默认值改写</h3>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>使用示例：</p>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>::: notice</p>
-<ul>
-<li>当输入--age 10，age变量值为：10；</li>
-<li>当输入--age，age变量值为：25；</li>
-<li>当没输入--age，age变量值为：30；</li>
-</ul>
-<p>:::</p>
-<h3> 支持隐藏参数</h3>
-<blockquote>
-<p>隐藏的参数不会显示在usage/help中</p>
-</blockquote>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div>]]></content>
-    <category term="Go语言"/>
-    <published>2023-09-20T00:00:00.000Z</published>
-  </entry>
-  <entry>
-    <title type="text">标准库</title>
-    <id>https://Hexiaopi.github.io/go-language/standard-library/</id>
-    <link href="https://Hexiaopi.github.io/go-language/standard-library/"/>
-    <updated>2023-09-19T12:44:30.000Z</updated>
-    <summary type="html"><![CDATA[<p>这里会记录Go语言标准库的使用和注意事项，当然最值的关注的是如何设计这些标准库的</p>
-]]></summary>
-    <content type="html"><![CDATA[<p>这里会记录Go语言标准库的使用和注意事项，当然最值的关注的是如何设计这些标准库的</p>
-]]></content>
-    <category term="Go语言"/>
-    <published>2023-09-19T00:00:00.000Z</published>
-  </entry>
-  <entry>
-    <title type="text">flag使用</title>
-    <id>https://Hexiaopi.github.io/go-language/standard-library/flag.html</id>
-    <link href="https://Hexiaopi.github.io/go-language/standard-library/flag.html"/>
-    <updated>2023-09-23T14:26:21.000Z</updated>
-    <summary type="html"><![CDATA[<blockquote>
-<p>flag库实现命令行参数解析</p>
-</blockquote>
-<h2> 简单用法</h2>
-<div class="hint-container tip">
-<p class="hint-container-title">flag参数使用语法</p>
-<p>-flag    // 破折号，使用默认值<br>
---flag   // 双破折号<br>
--flag=x  // 指定参数值<br>
--flag x  // non-boolean flags only</p>
-</div>
-<h3> 字符串类型</h3>
-<div class="language-go line-numbers-mode" data-ext="go"><pre class="language-go"><code><span class="token comment">// Example1：flag.String 返回指针类型字符串</span>
-<span class="token keyword">var</span> flagStrA <span class="token operator">=</span> flag<span class="token punctuation">.</span><span class="token function">String</span><span class="token punctuation">(</span><span class="token string">"str-a"</span><span class="token punctuation">,</span> <span class="token string">"str-a"</span><span class="token punctuation">,</span> <span class="token string">"flag test *string"</span><span class="token punctuation">)</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div>]]></summary>
-    <content type="html"><![CDATA[<blockquote>
-<p>flag库实现命令行参数解析</p>
-</blockquote>
-<h2> 简单用法</h2>
-<div class="hint-container tip">
-<p class="hint-container-title">flag参数使用语法</p>
-<p>-flag    // 破折号，使用默认值<br>
---flag   // 双破折号<br>
--flag=x  // 指定参数值<br>
--flag x  // non-boolean flags only</p>
-</div>
-<h3> 字符串类型</h3>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>使用示例</p>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>不过由于flag.String()返回的是指针类型的字符串，因此，也可以使用下面方式定义</p>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>使用示例</p>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> int类型</h3>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>使用示例</p>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> Bool类型</h3>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><div class="hint-container tip">
-<p class="hint-container-title">bool类型可以使用以下字面量</p>
-<p>1, 0, t, f, T, F, true, false, TRUE, FALSE, True, False</p>
-</div>
-<p>使用示例</p>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>注意事项</p>
-<h4> bool类型不可使用：-flag x形式</h4>
-<div class="hint-container warning">
-<p class="hint-container-title">注意</p>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>虽然显示的传入<code>false</code>，但是最终结果是<code>true</code></p>
-</div>
-<h4> bool类型：-flag形式，认为true</h4>
-<div class="hint-container warning">
-<p class="hint-container-title">注意</p>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></div>
-<h3> duration类型</h3>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>使用示例</p>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 高阶用法</h2>
-<p>flag标准库提供了基础的数据类型参数，如下：</p>
-<ul>
-<li>bool</li>
-<li>int</li>
-<li>int64</li>
-<li>uint</li>
-<li>uint64</li>
-<li>string</li>
-<li>float64</li>
-<li>duration</li>
-</ul>
-<h3> 自定义类型</h3>
-<p>如果需要自定义类型，需要实现<code>flag.Value</code>接口</p>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>使用示例</p>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 子命令</h3>
-<p>这里参考网站示例：<a href="https://gobyexample.com/command-line-subcommands" target="_blank" rel="noopener noreferrer">gobyexample</a></p>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>使用示例</p>
-<div class="language-bash line-numbers-mode" data-ext="sh"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-bash line-numbers-mode" data-ext="sh"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 底层结构</h2>
-<p>Flag代表一个标志，例如:<code>--version</code></p>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>FlagSet 代表标志的集合，例如：<code>--name</code>、<code>--age</code>...</p>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>FlagSet包含一系列方法：</p>
-<ul>
-<li>BoolVar(p *bool,name string,value bool,usage string)</li>
-<li>Bool(name string,value bool,usage string) *bool</li>
-<li>IntVar(p *int,name string,value int,usage string)</li>
-<li>Int(name string,value int,usage string) *int</li>
-<li>Int64Var(p *int64,name string,value int64,usage string)</li>
-<li>Int64(name string,value int64,usage string) *int64</li>
-<li>UIntVar(p *uint,name string,value uint,usage string)</li>
-<li>UInt(name string,value uint,usage string) *Uint</li>
-<li>UInt64Var(p *uint64,name string,value uint64,usage string)</li>
-<li>UInt64(name string,value uint64,usage string) *Uint64</li>
-<li>StringVar(p *string,name string,value string,usage string)</li>
-<li>String(name string,value string,usage string) *string</li>
-<li>Float64Var(p *float64,name string,value float64,usage string)</li>
-<li>Float64(name string,value float64,usage string) *float64</li>
-<li>DurationVar(p *time.Duration,name string,value time.Duration,usage string)</li>
-<li>Duration(name string,value time.Duration,usage string) *time.Duration</li>
-<li>TextVar(p encoding.TextUnmarshaler,name string,value encoding.TextMarshaler,usage string)</li>
-<li>Var(value Value, name string, usage string)</li>
-</ul>
-<p>而我们常常使用的是flag库中的以下方法，例如：<code>flag.StringVar()</code></p>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>其本质上是调用<code>CommandLine.Var</code>方法，而CommandLine是FlagSet的一个实例：</p>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><ul>
-<li><code>os.Args[0]</code>：是程序运行时的名称。</li>
-<li><code>ExitOnError</code>：是解析参数时遇到错误时退出</li>
-</ul>
-<p><code>flag.Parse</code>其本质上也是调用CommandLine的解析，如下：</p>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>它将<code>os.Args[1:]</code>，即除了程序名称外，其余的参数传给CommandLine进行解析。</p>
-<p>最为核心的代码莫过于参数的解析，如下：</p>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>这里循环解析每一个Flag，即：<code>f.parseOne()</code>。</p>
-<p>最后总结其中的关系图:</p>
-<figure><figcaption>flag</figcaption></figure>
-]]></content>
-    <category term="Go语言"/>
-    <published>2023-09-05T00:00:00.000Z</published>
-  </entry>
-  <entry>
-    <title type="text">基础</title>
-    <id>https://Hexiaopi.github.io/go-language/base/</id>
-    <link href="https://Hexiaopi.github.io/go-language/base/"/>
-    <updated>2023-08-28T05:56:06.000Z</updated>
-    <summary type="html"><![CDATA[<blockquote>
-<p>介绍Go语言基础知识，也会涉及到底层原理，这些是我认为要掌握的知识。</p>
-</blockquote>
-]]></summary>
-    <content type="html"><![CDATA[<blockquote>
-<p>介绍Go语言基础知识，也会涉及到底层原理，这些是我认为要掌握的知识。</p>
-</blockquote>
-]]></content>
-    <category term="Go语言"/>
-    <published>2023-08-24T00:00:00.000Z</published>
-  </entry>
-  <entry>
-    <title type="text">recover注意事项</title>
-    <id>https://Hexiaopi.github.io/go-language/base/recover.html</id>
-    <link href="https://Hexiaopi.github.io/go-language/base/recover.html"/>
-    <updated>2023-08-27T14:17:28.000Z</updated>
-    <summary type="html"><![CDATA[<blockquote>
-<p>defer结合recover通常用于捕获panic</p>
-</blockquote>
-<h2> 正确使用示例</h2>
-<div class="language-go line-numbers-mode" data-ext="go"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">PrintRecover</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token keyword">defer</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-		<span class="token keyword">if</span> err <span class="token operator">:=</span> <span class="token function">recover</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
-			fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
-		<span class="token punctuation">}</span>
-	<span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">)</span>
-	<span class="token function">panic</span><span class="token punctuation">(</span><span class="token string">"some thing"</span><span class="token punctuation">)</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"b"</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></summary>
-    <content type="html"><![CDATA[<blockquote>
-<p>defer结合recover通常用于捕获panic</p>
-</blockquote>
-<h2> 正确使用示例</h2>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>使用示例</p>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 错误用例：不使用defer</h2>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="hint-container danger">
-<p class="hint-container-title">警告</p>
-<p>不使用defer 方式，将无法捕获异常，程序陷入panic</p>
-</div>
-<h2> 错误用例：recover 在 defer 嵌套函数中</h2>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="hint-container danger">
-<p class="hint-container-title">警告</p>
-<p>defer recover和panic不在同一层级，导致无法捕获异常，程序陷入panic</p>
-</div>
-]]></content>
-    <category term="Go语言"/>
-    <published>2023-08-27T00:00:00.000Z</published>
-  </entry>
-  <entry>
-    <title type="text">package</title>
-    <id>https://Hexiaopi.github.io/go-language/base/package.html</id>
-    <link href="https://Hexiaopi.github.io/go-language/base/package.html"/>
-    <updated>2023-08-27T02:48:23.000Z</updated>
-    <summary type="html"><![CDATA[<p>Go语言使用包（package）作为基本单元来组织源码。</p>
-<h2> package的优点</h2>
-<h3> 编译速度快</h3>
-<ul>
-<li>Go要求每个源文件在开头显示地列出所有依赖的包，如果引入了未使用的包，Go语言编译器会报错。</li>
-<li>Go要求包之间不能存在循环依赖，这样包的依赖关系便形成了一张有向无环图，这样每个包可以单独编译也可并行编译</li>
-<li>已编译的Go包不仅记录了该包的信息，还记录了依赖包的信息。只需读取缓存的编译产物即可。</li>
-</ul>
-<h2> 初始化顺序</h2>
-<p>Go语言内置函数<code>init()</code>，常用于包级数据初始化以及初始状态的检查工作。</p>]]></summary>
-    <content type="html"><![CDATA[<p>Go语言使用包（package）作为基本单元来组织源码。</p>
-<h2> package的优点</h2>
-<h3> 编译速度快</h3>
-<ul>
-<li>Go要求每个源文件在开头显示地列出所有依赖的包，如果引入了未使用的包，Go语言编译器会报错。</li>
-<li>Go要求包之间不能存在循环依赖，这样包的依赖关系便形成了一张有向无环图，这样每个包可以单独编译也可并行编译</li>
-<li>已编译的Go包不仅记录了该包的信息，还记录了依赖包的信息。只需读取缓存的编译产物即可。</li>
-</ul>
-<h2> 初始化顺序</h2>
-<p>Go语言内置函数<code>init()</code>，常用于包级数据初始化以及初始状态的检查工作。</p>
-<ul>
-<li>一个Go包可以有多个init()函数</li>
-<li>init()函数不可显示的调用，否则会编译期间报错</li>
-<li>init()只会执行一次</li>
-</ul>
-<p>Go包引入其他包，初始化时按照一定的次序逐一调用该包的init函数。</p>
-<figure><figcaption>package-init</figcaption></figure>
-<p>Go语言运行时按照常量-&gt;变量-&gt;init()顺序进行初始化。</p>
-]]></content>
-    <category term="Go语言"/>
-    <published>2023-08-27T00:00:00.000Z</published>
+    <published>2023-11-13T00:00:00.000Z</published>
   </entry>
   <entry>
     <title type="text">MQTT协议</title>
-    <id>https://Hexiaopi.github.io/network/MQTT.html</id>
-    <link href="https://Hexiaopi.github.io/network/MQTT.html"/>
-    <updated>2023-08-26T15:57:12.000Z</updated>
+    <id>https://Hexiaopi.github.io/network/application-layer/MQTT.html</id>
+    <link href="https://Hexiaopi.github.io/network/application-layer/MQTT.html"/>
+    <updated>2024-04-11T06:38:26.000Z</updated>
     <summary type="html"><![CDATA[<blockquote>
 <p>MQTT(Mesage Queuing Telemetry Transport，消息队列遥测传输协议)，是一种基于发布/订阅模式的轻量级通讯协议，该协议构建于TCP/IP协议上。</p>
 </blockquote>
@@ -1273,6 +828,705 @@
 ]]></content>
     <category term="网络"/>
     <published>2023-08-26T00:00:00.000Z</published>
+  </entry>
+  <entry>
+    <title type="text">应用层协议</title>
+    <id>https://Hexiaopi.github.io/network/application-layer/</id>
+    <link href="https://Hexiaopi.github.io/network/application-layer/"/>
+    <updated>2024-04-11T06:38:26.000Z</updated>
+    <summary type="html"><![CDATA[<blockquote>
+<p>本篇介绍计算机网络应用层协议</p>
+</blockquote>
+<p>常见的应用层协议：</p>
+<ul>
+<li>HTTP</li>
+<li>DNS</li>
+<li>Telnet</li>
+<li>SSH</li>
+<li>FTP</li>
+<li>POP3</li>
+<li>IMAP</li>
+</ul>
+]]></summary>
+    <content type="html"><![CDATA[<blockquote>
+<p>本篇介绍计算机网络应用层协议</p>
+</blockquote>
+<p>常见的应用层协议：</p>
+<ul>
+<li>HTTP</li>
+<li>DNS</li>
+<li>Telnet</li>
+<li>SSH</li>
+<li>FTP</li>
+<li>POP3</li>
+<li>IMAP</li>
+</ul>
+]]></content>
+    <category term="网络"/>
+    <published>2024-04-11T00:00:00.000Z</published>
+  </entry>
+  <entry>
+    <title type="text">WebSocket协议</title>
+    <id>https://Hexiaopi.github.io/network/application-layer/websocket.html</id>
+    <link href="https://Hexiaopi.github.io/network/application-layer/websocket.html"/>
+    <updated>2024-04-11T06:38:26.000Z</updated>
+    <summary type="html"><![CDATA[<blockquote>
+<p>WebSocket是为了提供web应用程序和服务端全双工通信而专门定制的一种网络协议，和HTTP协议一样位于OSI模型的应用层协议。</p>
+</blockquote>
+<h2> 特点</h2>
+<ul>
+<li>建立在TCP协议之上</li>
+<li>与HTTP协议有着良好的兼容性，握手阶段采用HTTP协议，默认端口是80和443</li>
+<li>数据格式比较轻量，性能开销小、通信高效</li>
+<li>可以发送文本，也可以发送二进制数据</li>
+<li>没有同源限制，客户端可以与任意服务器通信</li>
+<li>协议标识符是ws(如果加密，则为wss)，形式：ws://echo.websocket.org</li>
+</ul>]]></summary>
+    <content type="html"><![CDATA[<blockquote>
+<p>WebSocket是为了提供web应用程序和服务端全双工通信而专门定制的一种网络协议，和HTTP协议一样位于OSI模型的应用层协议。</p>
+</blockquote>
+<h2> 特点</h2>
+<ul>
+<li>建立在TCP协议之上</li>
+<li>与HTTP协议有着良好的兼容性，握手阶段采用HTTP协议，默认端口是80和443</li>
+<li>数据格式比较轻量，性能开销小、通信高效</li>
+<li>可以发送文本，也可以发送二进制数据</li>
+<li>没有同源限制，客户端可以与任意服务器通信</li>
+<li>协议标识符是ws(如果加密，则为wss)，形式：ws://echo.websocket.org</li>
+</ul>
+<h2> 交互时序</h2>
+<figure><figcaption>websocket</figcaption></figure>
+<h2> 抓包分析</h2>
+<h3> HTTP请求</h3>
+<div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li><code>Connection: Upgrade</code>表明要升级协议</li>
+<li><code>Upgrade:  websocket</code>表明升级至websocket协议</li>
+<li><code>Sec-Websocket-Key</code>是客户端发送的一个base64编码的秘文，要求服务端返回一个对应加密的<code>Sec-Websocket-Accept</code>应答，否则客户端会抛出“Error during WebSocket handshake”错误，并关闭连接</li>
+<li><code>Sec-Websocket-Version: 13</code>表示 websocket的版本，如果服务端不支持该版本，需要返回一个Sec-Websocket-Version里面包含服务端支持的版本号</li>
+</ul>
+<h3> HTTP返回</h3>
+<div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>Sec-Websocket-Accept是服务端采用与客户端一致的秘钥计算出来后返回客户端，计算公式</li>
+</ul>
+<blockquote>
+<p>toBase64(sha1(Sec-WebSocket-Key + 258EAFA5-E914-47DA-95CA-C5AB0DC85B11))</p>
+</blockquote>
+<ul>
+<li><code>HTTP/1.1 101 Switching Protocols</code>表示服务端接受WebSocket协议的客户端连接</li>
+</ul>
+<h2> 数据帧格式</h2>
+<blockquote>
+<p>从左到右，单位是比特。比如<code>FIN</code>、<code>RSV1</code>、<code>RSV2</code>、<code>RSV3</code>各占据1比特，<code>opcode</code>占据4比特</p>
+<p>内容包括了标识、操作代码、掩码、数据长度</p>
+</blockquote>
+<div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>
+<p><code>FIN</code>：1个比特</p>
+<ul>
+<li>
+<p>如果是1：表示这是消息的最后一个分片；</p>
+</li>
+<li>
+<p>如果是0：标识这不是消息的最后一个分片；</p>
+</li>
+</ul>
+</li>
+<li>
+<p><code>RSV1</code>、<code>RSV2</code>、<code>RSV3</code>：各占1个比特</p>
+<ul>
+<li>
+<p>一般情况下全为0，当客户端、服务端协商采用websocket扩展时，这三个标志位可以非0，且值得含义由扩展进行定义；</p>
+</li>
+<li>
+<p>如果出现非零的值，且并没有采用websocket扩展，连接出错</p>
+</li>
+</ul>
+</li>
+<li>
+<p><code>Opcode</code>：4个比特</p>
+<ul>
+<li>%x0：表示一个延续帧。当Opcode为0时，表示本次数据传输采用了数据分片，当前收到的数据帧为其中一个数据分片。</li>
+<li>%x1：表示这是一个文本帧（frame）</li>
+<li>%x2：表示这是一个二进制帧（frame）</li>
+<li>%x3-7：保留的操作代码，用于后续定义的非控制帧。</li>
+<li>%x8：表示连接断开。</li>
+<li>%x9：表示这是一个ping操作。</li>
+<li>%xA：表示这是一个pong操作。</li>
+<li>%xB-F：保留的操作代码，用于后续定义的控制帧。</li>
+</ul>
+</li>
+<li>
+<p><code>Mask</code>：1个比特</p>
+<blockquote>
+<p>表示是否要对数据载荷进行掩码操作</p>
+<ul>
+<li>从客户端向服务端发送数据时，需要对数据进行掩码操作；</li>
+<li>从服务端向客户端发送数据时，不需要对数据进行掩码操作；</li>
+</ul>
+<p>如果服务端接收到的数据没有进行掩码操作，服务端需要断开连接</p>
+<p>如果Mask是1，那么Masking-key中会定义一个掩码键，并用这个掩码键对数据载荷进行反掩码。</p>
+</blockquote>
+</li>
+<li>
+<p><code>Payload length</code>：数据载荷的长度，单位是字节。为7位、或2✖️8位，或8✖️8位</p>
+<ul>
+<li>[0,126)：数据的长度就是Payload length的大小；</li>
+<li>126：后续2个字节为数据的长度；</li>
+<li>127：后续8个字节为数据的长度；</li>
+</ul>
+</li>
+<li>
+<p><code>Masking-key</code>：0或4字节</p>
+<ul>
+<li><code>Mask</code>为1，则包含4字节的<code>Masking-key</code></li>
+<li><code>Mask</code>为0，则不包含<code>Masking-key</code></li>
+</ul>
+</li>
+<li>
+<p><code>Payload data</code>：扩展数据+应用数据</p>
+<ul>
+<li>如果没有协商使用扩展的话，扩展数据为0字节；</li>
+<li>所有的扩展都必须声明扩展数据的长度，扩展如何使用必须在握手阶段就协商好；</li>
+</ul>
+</li>
+</ul>
+<h2> 参考链接</h2>
+<p><a href="http://www.52im.net/thread-831-1-1.html" target="_blank" rel="noopener noreferrer">新手快速入门：WebSocket简明教程</a></p>
+<p><a href="https://www.cnblogs.com/chyingp/p/websocket-deep-in.html" target="_blank" rel="noopener noreferrer">WebSocket协议：5分钟从入门到精通</a></p>
+]]></content>
+    <category term="网络"/>
+    <published>2023-03-19T00:00:00.000Z</published>
+  </entry>
+  <entry>
+    <title type="text">网络层协议</title>
+    <id>https://Hexiaopi.github.io/network/internet-layer/</id>
+    <link href="https://Hexiaopi.github.io/network/internet-layer/"/>
+    <updated>2024-04-11T06:38:26.000Z</updated>
+    <summary type="html"><![CDATA[<blockquote>
+<p>本篇介绍计算机网络网络层协议</p>
+</blockquote>
+<p>常见的网络层协议：</p>
+<ul>
+<li>IP</li>
+<li>IPv6</li>
+<li>ICMP</li>
+<li>ARP</li>
+</ul>
+]]></summary>
+    <content type="html"><![CDATA[<blockquote>
+<p>本篇介绍计算机网络网络层协议</p>
+</blockquote>
+<p>常见的网络层协议：</p>
+<ul>
+<li>IP</li>
+<li>IPv6</li>
+<li>ICMP</li>
+<li>ARP</li>
+</ul>
+]]></content>
+    <category term="网络"/>
+    <published>2024-04-11T00:00:00.000Z</published>
+  </entry>
+  <entry>
+    <title type="text">链路层协议</title>
+    <id>https://Hexiaopi.github.io/network/link-layer/</id>
+    <link href="https://Hexiaopi.github.io/network/link-layer/"/>
+    <updated>2024-04-11T06:38:26.000Z</updated>
+    <summary type="html"><![CDATA[<blockquote>
+<p>链路层协议比较偏底层，有机会再介绍</p>
+</blockquote>
+]]></summary>
+    <content type="html"><![CDATA[<blockquote>
+<p>链路层协议比较偏底层，有机会再介绍</p>
+</blockquote>
+]]></content>
+    <category term="网络"/>
+    <published>2024-04-11T00:00:00.000Z</published>
+  </entry>
+  <entry>
+    <title type="text">传输层协议</title>
+    <id>https://Hexiaopi.github.io/network/transport-layer/</id>
+    <link href="https://Hexiaopi.github.io/network/transport-layer/"/>
+    <updated>2024-04-11T06:38:26.000Z</updated>
+    <summary type="html"><![CDATA[<blockquote>
+<p>本篇介绍计算机网络传输层协议</p>
+</blockquote>
+<p>常见的传输层协议：</p>
+<ul>
+<li>TCP</li>
+<li>UDP</li>
+</ul>
+]]></summary>
+    <content type="html"><![CDATA[<blockquote>
+<p>本篇介绍计算机网络传输层协议</p>
+</blockquote>
+<p>常见的传输层协议：</p>
+<ul>
+<li>TCP</li>
+<li>UDP</li>
+</ul>
+]]></content>
+    <category term="网络"/>
+    <published>2024-04-11T00:00:00.000Z</published>
+  </entry>
+  <entry>
+    <title type="text">docker</title>
+    <id>https://Hexiaopi.github.io/devops/docker/</id>
+    <link href="https://Hexiaopi.github.io/devops/docker/"/>
+    <updated>2024-03-18T11:54:34.000Z</updated>
+    <summary type="html"><![CDATA[<p>这里记录工作中学习到的docker相关知识</p>
+]]></summary>
+    <content type="html"><![CDATA[<p>这里记录工作中学习到的docker相关知识</p>
+]]></content>
+    <category term="devops"/>
+    <published>2024-03-18T00:00:00.000Z</published>
+  </entry>
+  <entry>
+    <title type="text">容器执行报&amp;quot;no such file or directory&amp;quot;问题</title>
+    <id>https://Hexiaopi.github.io/devops/docker/shell-line-break.html</id>
+    <link href="https://Hexiaopi.github.io/devops/docker/shell-line-break.html"/>
+    <updated>2024-03-18T11:54:34.000Z</updated>
+    <summary type="html"><![CDATA[<p>同事运行docker镜像时，控制台报错"no such file or directory"，但是查看该文件确实存在，本文记录该问题的定位和解决。</p>
+]]></summary>
+    <content type="html"><![CDATA[<p>同事运行docker镜像时，控制台报错"no such file or directory"，但是查看该文件确实存在，本文记录该问题的定位和解决。</p>
+<!-- more -->
+<h3> 查看镜像使用方式</h3>
+<div class="language-yaml line-numbers-mode" data-ext="yml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>这里查看dockerfile，采用的是脚本方式启动服务进程，使用方式上并没有什么问题</p>
+<h3> 根据报错信息查看文件是否存在</h3>
+<p>通过新增RUN命令:<code>RUN ls -al</code>,打印当前路径文件的方式确认是有<code>run.sh</code>脚本文件</p>
+<h3> 检查脚本文件</h3>
+<p>对比了服务器的脚本文件和开发使用的脚本文件，仔细观察发现脚本文件唯一不同的是换行符不一样</p>
+<ul>
+<li>开发使用的是windows系统，换行符为<strong>CRLF</strong>,对应为:<code>\r\n</code></li>
+<li>服务器使用的linux系统，换行符为<strong>LF</strong>，对应为:<code>\n</code></li>
+</ul>
+<h3> 关键问题</h3>
+<p>脚本第一行</p>
+<div class="language-bash line-numbers-mode" data-ext="sh"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>表明使用<code>/bin/bash</code>来解释脚本，但如何后面有windows的换行符导致无法识别，因此会报错：“no such file or directory”</p>
+<h3> 问题结局</h3>
+<p>通过修改<code>run.sh</code>的换行符为<strong>LF</strong>，问题得以解决。</p>
+<div class="hint-container tip">
+<p class="hint-container-title">提示</p>
+<p>代码提交时，将文件换行符设置为LF格式。</p>
+</div>
+]]></content>
+    <category term="devops"/>
+    <published>2024-03-18T00:00:00.000Z</published>
+  </entry>
+  <entry>
+    <title type="text">k8s</title>
+    <id>https://Hexiaopi.github.io/devops/k8s/</id>
+    <link href="https://Hexiaopi.github.io/devops/k8s/"/>
+    <updated>2024-03-18T08:34:44.000Z</updated>
+    <summary type="html"><![CDATA[<p>这里记录工作中学习到的k8s相关知识</p>
+]]></summary>
+    <content type="html"><![CDATA[<p>这里记录工作中学习到的k8s相关知识</p>
+]]></content>
+    <category term="devops"/>
+    <published>2024-03-18T00:00:00.000Z</published>
+  </entry>
+  <entry>
+    <title type="text">cadvisor k8s 部署</title>
+    <id>https://Hexiaopi.github.io/devops/k8s/cadvisor-k8s-deploy.html</id>
+    <link href="https://Hexiaopi.github.io/devops/k8s/cadvisor-k8s-deploy.html"/>
+    <updated>2024-03-18T08:34:44.000Z</updated>
+    <summary type="html"><![CDATA[<p>cadvisor 是谷歌公司用来分析运行中的 Docker 容器的资源占用以及性能特性的工具，简单来说是用于监控 Docker 容器。</p>
+]]></summary>
+    <content type="html"><![CDATA[<p>cadvisor 是谷歌公司用来分析运行中的 Docker 容器的资源占用以及性能特性的工具，简单来说是用于监控 Docker 容器。</p>
+<!-- more -->
+<h2> k8s部署</h2>
+<div class="language-yaml line-numbers-mode" data-ext="yml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content>
+    <category term="devops"/>
+    <published>2024-01-15T00:00:00.000Z</published>
+  </entry>
+  <entry>
+    <title type="text">Helm Dashboard简介</title>
+    <id>https://Hexiaopi.github.io/devops/k8s/helm-dashboard.html</id>
+    <link href="https://Hexiaopi.github.io/devops/k8s/helm-dashboard.html"/>
+    <updated>2024-03-18T08:34:44.000Z</updated>
+    <summary type="html"><![CDATA[<p>helm-dashboard是helm的可视化界面，可以查看集群内通过helm部署的chart包。好处：不需要登录机器就可以升级、回滚chart包。</p>
+]]></summary>
+    <content type="html"><![CDATA[<p>helm-dashboard是helm的可视化界面，可以查看集群内通过helm部署的chart包。好处：不需要登录机器就可以升级、回滚chart包。</p>
+<!-- more -->
+<h2> Helm Dashboard简介</h2>
+<h3> 常用特性</h3>
+<ul>
+<li>查看、升级、回滚chart包及其内容</li>
+<li>查看各个版本之间的区别</li>
+</ul>
+<h3> 查看已安装的chart包</h3>
+<figure><figcaption></figcaption></figure>
+<h3> 单个chart包的升级、回滚和修改配置</h3>
+<figure><figcaption></figcaption></figure>
+<h3> 比较各个版本之前的区别</h3>
+<figure><figcaption></figcaption></figure>
+<h3> Helm Dadshboard 魔改</h3>
+<p>helm-dashboard依赖的前端静态资源如：</p>
+<ul>
+<li><a href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/github.min.css" target="_blank" rel="noopener noreferrer">https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/github.min.css</a></li>
+<li><a href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/lightfair.min.css" target="_blank" rel="noopener noreferrer">https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/lightfair.min.css</a></li>
+<li><a href="https://cdn.jsdelivr.net/npm/diff2html/bundles/css/diff2html.min.css" target="_blank" rel="noopener noreferrer">https://cdn.jsdelivr.net/npm/diff2html/bundles/css/diff2html.min.css</a></li>
+</ul>
+<p>由于国内网络原因，偶尔访问不到，导致页面加载不出来，影响使用。因此需要将这些cdn资源改为本地引用。<a href="https://github.com/Hexiaopi/helm-dashboard/commit/4eb18e1655606cd80ce1eb8001f03eaca6a55dc7" target="_blank" rel="noopener noreferrer">代码修改详见</a></p>
+]]></content>
+    <category term="devops"/>
+    <published>2024-03-12T00:00:00.000Z</published>
+  </entry>
+  <entry>
+    <title type="text">kube-state-metrics k8s 部署</title>
+    <id>https://Hexiaopi.github.io/devops/k8s/kube-state-metrics-k8s-deploy.html</id>
+    <link href="https://Hexiaopi.github.io/devops/k8s/kube-state-metrics-k8s-deploy.html"/>
+    <updated>2024-03-18T08:34:44.000Z</updated>
+    <summary type="html"><![CDATA[<p>kube-state-metrics用于监控k8s相关指标</p>
+]]></summary>
+    <content type="html"><![CDATA[<p>kube-state-metrics用于监控k8s相关指标</p>
+<!-- more -->
+<h2> k8s部署</h2>
+<p>1、部署cluster-role</p>
+<div class="language-yaml line-numbers-mode" data-ext="yml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>2、部署cluster-role-binding</p>
+<div class="language-yaml line-numbers-mode" data-ext="yml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>3、部署deployment</p>
+<p>👁️ 由于国外网络原因，注意需要修改镜像地址</p>
+<div class="language-yaml line-numbers-mode" data-ext="yml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>4、部署service</p>
+<p>注意，需要设置annotation，让Prometheus自动发现</p>
+<div class="language-yaml line-numbers-mode" data-ext="yml"><div class="highlight-lines"><br><br><br><br><br><br><br><br><br><br><div class="highlight-line">&nbsp;</div><br><br><br><br><br><br><br><br><br><br><br></div><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>5、部署service-account</p>
+<div class="language-yaml line-numbers-mode" data-ext="yml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content>
+    <category term="devops"/>
+    <published>2024-01-15T00:00:00.000Z</published>
+  </entry>
+  <entry>
+    <title type="text">node-exporter k8s 部署</title>
+    <id>https://Hexiaopi.github.io/devops/k8s/node-exporter-k8s-deploy.html</id>
+    <link href="https://Hexiaopi.github.io/devops/k8s/node-exporter-k8s-deploy.html"/>
+    <updated>2024-03-18T08:34:44.000Z</updated>
+    <summary type="html"><![CDATA[<p>node-exporter用于暴露各个节点的指标，由于需要每个节点都部署node-exporter，因此kind选择DaemonSet，它会保障每个节点有一个相同的实例。</p>
+]]></summary>
+    <content type="html"><![CDATA[<p>node-exporter用于暴露各个节点的指标，由于需要每个节点都部署node-exporter，因此kind选择DaemonSet，它会保障每个节点有一个相同的实例。</p>
+<!-- more -->
+<h2> k8s部署</h2>
+<div class="language-yaml line-numbers-mode" data-ext="yml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content>
+    <category term="devops"/>
+    <published>2024-01-15T00:00:00.000Z</published>
+  </entry>
+  <entry>
+    <title type="text">Prometheus k8s 部署</title>
+    <id>https://Hexiaopi.github.io/devops/k8s/prometheus-k8s-deploy.html</id>
+    <link href="https://Hexiaopi.github.io/devops/k8s/prometheus-k8s-deploy.html"/>
+    <updated>2024-03-18T08:34:44.000Z</updated>
+    <summary type="html"><![CDATA[<p>Prometheus是个优秀的监控系统，基于时序数据库，这里记录k8s部署</p>
+]]></summary>
+    <content type="html"><![CDATA[<p>Prometheus是个优秀的监控系统，基于时序数据库，这里记录k8s部署</p>
+<!-- more -->
+<h2> k8s部署</h2>
+<p>步骤一、创建数据存储</p>
+<div class="language-bash line-numbers-mode" data-ext="sh"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>步骤二、创建serviceaccount和clusterrolebinding</p>
+<div class="language-bash line-numbers-mode" data-ext="sh"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>步骤三、创建Prometheus configmap用于存储抓取配置</p>
+<div class="language-yaml line-numbers-mode" data-ext="yml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>步骤四、创建Prometheus deployment，注意将存储卷挂载在机器磁盘上。</p>
+<div class="language-yaml line-numbers-mode" data-ext="yml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>步骤五、创建Prometheus service用于访问</p>
+<div class="language-yaml line-numbers-mode" data-ext="yml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content>
+    <category term="devops"/>
+    <published>2024-01-15T00:00:00.000Z</published>
+  </entry>
+  <entry>
+    <title type="text">devops</title>
+    <id>https://Hexiaopi.github.io/devops/</id>
+    <link href="https://Hexiaopi.github.io/devops/"/>
+    <updated>2024-01-15T12:27:05.000Z</updated>
+    <summary type="html"><![CDATA[<p>这里记录工作中学习到的devops基础知识</p>
+]]></summary>
+    <content type="html"><![CDATA[<p>这里记录工作中学习到的devops基础知识</p>
+]]></content>
+    <category term="devops"/>
+    <published>2024-01-15T00:00:00.000Z</published>
+  </entry>
+  <entry>
+    <title type="text">网络</title>
+    <id>https://Hexiaopi.github.io/network/</id>
+    <link href="https://Hexiaopi.github.io/network/"/>
+    <updated>2023-09-23T05:53:36.000Z</updated>
+    <summary type="html"><![CDATA[<p>这里记录工作中学习到的网络基础知识</p>
+]]></summary>
+    <content type="html"><![CDATA[<p>这里记录工作中学习到的网络基础知识</p>
+]]></content>
+    <category term="网络"/>
+    <published>2023-09-23T00:00:00.000Z</published>
+  </entry>
+  <entry>
+    <title type="text">三方库</title>
+    <id>https://Hexiaopi.github.io/go-language/third-party/</id>
+    <link href="https://Hexiaopi.github.io/go-language/third-party/"/>
+    <updated>2023-09-20T15:35:18.000Z</updated>
+    <summary type="html"><![CDATA[<p>这里介绍业界优秀的Go语言三方库，需要思考的是优秀在哪里</p>
+]]></summary>
+    <content type="html"><![CDATA[<p>这里介绍业界优秀的Go语言三方库，需要思考的是优秀在哪里</p>
+]]></content>
+    <category term="Go语言"/>
+    <published>2023-09-20T00:00:00.000Z</published>
+  </entry>
+  <entry>
+    <title type="text">pflag</title>
+    <id>https://Hexiaopi.github.io/go-language/third-party/pflag.html</id>
+    <link href="https://Hexiaopi.github.io/go-language/third-party/pflag.html"/>
+    <updated>2023-09-20T15:35:18.000Z</updated>
+    <summary type="html"><![CDATA[<p>我在标准库中介绍了<a href="/go-language/standard-library/flag.html" target="blank">flag使用</a>，对于小型的项目flag能够基本满足需求，但是在某些大型项目或者特殊场景下flag有些力不从心。主要在于：</p>
+<ul>
+<li>flag的子命令需要自己解析</li>
+<li>flag的短命令需要定义两个变量</li>
+<li>不支持一些参数废弃说明，这在更新的工具中对用户有更好的引导作用</li>
+</ul>
+<p>因此业界开源的<a href="https://github.com/spf13/pflag" target="_blank" rel="noopener noreferrer">pflag</a>受到广大爱好者的使用，在一些耳熟能详的开源项目里也都在使用pflag，例如：Kubernetes、Istio、Helm、Docker、Etcd等。</p>]]></summary>
+    <content type="html"><![CDATA[<p>我在标准库中介绍了<a href="/go-language/standard-library/flag.html" target="blank">flag使用</a>，对于小型的项目flag能够基本满足需求，但是在某些大型项目或者特殊场景下flag有些力不从心。主要在于：</p>
+<ul>
+<li>flag的子命令需要自己解析</li>
+<li>flag的短命令需要定义两个变量</li>
+<li>不支持一些参数废弃说明，这在更新的工具中对用户有更好的引导作用</li>
+</ul>
+<p>因此业界开源的<a href="https://github.com/spf13/pflag" target="_blank" rel="noopener noreferrer">pflag</a>受到广大爱好者的使用，在一些耳熟能详的开源项目里也都在使用pflag，例如：Kubernetes、Istio、Helm、Docker、Etcd等。</p>
+<h2> 简单用法</h2>
+<h3> 支持标准库flag用法</h3>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>使用示例：</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="hint-container warning">
+<p class="hint-container-title">注意</p>
+<p>注意是长选项，即参数为<code>--xxx</code></p>
+</div>
+<h3> 支持短选项</h3>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>使用示例：</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 支持绑定到已有变量</h3>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>使用示例：</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 标记命令行参数已废弃</h3>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>打印Usage()</p>
+<div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><h3> 指定了参数却没有传值场景下的默认值改写</h3>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>使用示例：</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>::: notice</p>
+<ul>
+<li>当输入--age 10，age变量值为：10；</li>
+<li>当输入--age，age变量值为：25；</li>
+<li>当没输入--age，age变量值为：30；</li>
+</ul>
+<p>:::</p>
+<h3> 支持隐藏参数</h3>
+<blockquote>
+<p>隐藏的参数不会显示在usage/help中</p>
+</blockquote>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div>]]></content>
+    <category term="Go语言"/>
+    <published>2023-09-20T00:00:00.000Z</published>
+  </entry>
+  <entry>
+    <title type="text">标准库</title>
+    <id>https://Hexiaopi.github.io/go-language/standard-library/</id>
+    <link href="https://Hexiaopi.github.io/go-language/standard-library/"/>
+    <updated>2023-09-19T12:44:30.000Z</updated>
+    <summary type="html"><![CDATA[<p>这里会记录Go语言标准库的使用和注意事项，当然最值的关注的是如何设计这些标准库的</p>
+]]></summary>
+    <content type="html"><![CDATA[<p>这里会记录Go语言标准库的使用和注意事项，当然最值的关注的是如何设计这些标准库的</p>
+]]></content>
+    <category term="Go语言"/>
+    <published>2023-09-19T00:00:00.000Z</published>
+  </entry>
+  <entry>
+    <title type="text">flag使用</title>
+    <id>https://Hexiaopi.github.io/go-language/standard-library/flag.html</id>
+    <link href="https://Hexiaopi.github.io/go-language/standard-library/flag.html"/>
+    <updated>2023-09-23T14:26:21.000Z</updated>
+    <summary type="html"><![CDATA[<blockquote>
+<p>flag库实现命令行参数解析</p>
+</blockquote>
+<h2> 简单用法</h2>
+<div class="hint-container tip">
+<p class="hint-container-title">flag参数使用语法</p>
+<p>-flag    // 破折号，使用默认值<br>
+--flag   // 双破折号<br>
+-flag=x  // 指定参数值<br>
+-flag x  // non-boolean flags only</p>
+</div>
+<h3> 字符串类型</h3>
+<div class="language-go line-numbers-mode" data-ext="go"><pre class="language-go"><code><span class="token comment">// Example1：flag.String 返回指针类型字符串</span>
+<span class="token keyword">var</span> flagStrA <span class="token operator">=</span> flag<span class="token punctuation">.</span><span class="token function">String</span><span class="token punctuation">(</span><span class="token string">"str-a"</span><span class="token punctuation">,</span> <span class="token string">"str-a"</span><span class="token punctuation">,</span> <span class="token string">"flag test *string"</span><span class="token punctuation">)</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div>]]></summary>
+    <content type="html"><![CDATA[<blockquote>
+<p>flag库实现命令行参数解析</p>
+</blockquote>
+<h2> 简单用法</h2>
+<div class="hint-container tip">
+<p class="hint-container-title">flag参数使用语法</p>
+<p>-flag    // 破折号，使用默认值<br>
+--flag   // 双破折号<br>
+-flag=x  // 指定参数值<br>
+-flag x  // non-boolean flags only</p>
+</div>
+<h3> 字符串类型</h3>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>使用示例</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>不过由于flag.String()返回的是指针类型的字符串，因此，也可以使用下面方式定义</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>使用示例</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> int类型</h3>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>使用示例</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> Bool类型</h3>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><div class="hint-container tip">
+<p class="hint-container-title">bool类型可以使用以下字面量</p>
+<p>1, 0, t, f, T, F, true, false, TRUE, FALSE, True, False</p>
+</div>
+<p>使用示例</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>注意事项</p>
+<h4> bool类型不可使用：-flag x形式</h4>
+<div class="hint-container warning">
+<p class="hint-container-title">注意</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>虽然显示的传入<code>false</code>，但是最终结果是<code>true</code></p>
+</div>
+<h4> bool类型：-flag形式，认为true</h4>
+<div class="hint-container warning">
+<p class="hint-container-title">注意</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></div>
+<h3> duration类型</h3>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>使用示例</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 高阶用法</h2>
+<p>flag标准库提供了基础的数据类型参数，如下：</p>
+<ul>
+<li>bool</li>
+<li>int</li>
+<li>int64</li>
+<li>uint</li>
+<li>uint64</li>
+<li>string</li>
+<li>float64</li>
+<li>duration</li>
+</ul>
+<h3> 自定义类型</h3>
+<p>如果需要自定义类型，需要实现<code>flag.Value</code>接口</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>使用示例</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 子命令</h3>
+<p>这里参考网站示例：<a href="https://gobyexample.com/command-line-subcommands" target="_blank" rel="noopener noreferrer">gobyexample</a></p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>使用示例</p>
+<div class="language-bash line-numbers-mode" data-ext="sh"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-bash line-numbers-mode" data-ext="sh"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 底层结构</h2>
+<p>Flag代表一个标志，例如:<code>--version</code></p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>FlagSet 代表标志的集合，例如：<code>--name</code>、<code>--age</code>...</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>FlagSet包含一系列方法：</p>
+<ul>
+<li>BoolVar(p *bool,name string,value bool,usage string)</li>
+<li>Bool(name string,value bool,usage string) *bool</li>
+<li>IntVar(p *int,name string,value int,usage string)</li>
+<li>Int(name string,value int,usage string) *int</li>
+<li>Int64Var(p *int64,name string,value int64,usage string)</li>
+<li>Int64(name string,value int64,usage string) *int64</li>
+<li>UIntVar(p *uint,name string,value uint,usage string)</li>
+<li>UInt(name string,value uint,usage string) *Uint</li>
+<li>UInt64Var(p *uint64,name string,value uint64,usage string)</li>
+<li>UInt64(name string,value uint64,usage string) *Uint64</li>
+<li>StringVar(p *string,name string,value string,usage string)</li>
+<li>String(name string,value string,usage string) *string</li>
+<li>Float64Var(p *float64,name string,value float64,usage string)</li>
+<li>Float64(name string,value float64,usage string) *float64</li>
+<li>DurationVar(p *time.Duration,name string,value time.Duration,usage string)</li>
+<li>Duration(name string,value time.Duration,usage string) *time.Duration</li>
+<li>TextVar(p encoding.TextUnmarshaler,name string,value encoding.TextMarshaler,usage string)</li>
+<li>Var(value Value, name string, usage string)</li>
+</ul>
+<p>而我们常常使用的是flag库中的以下方法，例如：<code>flag.StringVar()</code></p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>其本质上是调用<code>CommandLine.Var</code>方法，而CommandLine是FlagSet的一个实例：</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><ul>
+<li><code>os.Args[0]</code>：是程序运行时的名称。</li>
+<li><code>ExitOnError</code>：是解析参数时遇到错误时退出</li>
+</ul>
+<p><code>flag.Parse</code>其本质上也是调用CommandLine的解析，如下：</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>它将<code>os.Args[1:]</code>，即除了程序名称外，其余的参数传给CommandLine进行解析。</p>
+<p>最为核心的代码莫过于参数的解析，如下：</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>这里循环解析每一个Flag，即：<code>f.parseOne()</code>。</p>
+<p>最后总结其中的关系图:</p>
+<figure><figcaption>flag</figcaption></figure>
+]]></content>
+    <category term="Go语言"/>
+    <published>2023-09-05T00:00:00.000Z</published>
+  </entry>
+  <entry>
+    <title type="text">基础</title>
+    <id>https://Hexiaopi.github.io/go-language/base/</id>
+    <link href="https://Hexiaopi.github.io/go-language/base/"/>
+    <updated>2023-08-28T05:56:06.000Z</updated>
+    <summary type="html"><![CDATA[<blockquote>
+<p>介绍Go语言基础知识，也会涉及到底层原理，这些是我认为要掌握的知识。</p>
+</blockquote>
+]]></summary>
+    <content type="html"><![CDATA[<blockquote>
+<p>介绍Go语言基础知识，也会涉及到底层原理，这些是我认为要掌握的知识。</p>
+</blockquote>
+]]></content>
+    <category term="Go语言"/>
+    <published>2023-08-24T00:00:00.000Z</published>
+  </entry>
+  <entry>
+    <title type="text">recover注意事项</title>
+    <id>https://Hexiaopi.github.io/go-language/base/recover.html</id>
+    <link href="https://Hexiaopi.github.io/go-language/base/recover.html"/>
+    <updated>2023-08-27T14:17:28.000Z</updated>
+    <summary type="html"><![CDATA[<blockquote>
+<p>defer结合recover通常用于捕获panic</p>
+</blockquote>
+<h2> 正确使用示例</h2>
+<div class="language-go line-numbers-mode" data-ext="go"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">PrintRecover</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">defer</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">if</span> err <span class="token operator">:=</span> <span class="token function">recover</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+			fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">)</span>
+	<span class="token function">panic</span><span class="token punctuation">(</span><span class="token string">"some thing"</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"b"</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></summary>
+    <content type="html"><![CDATA[<blockquote>
+<p>defer结合recover通常用于捕获panic</p>
+</blockquote>
+<h2> 正确使用示例</h2>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>使用示例</p>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 错误用例：不使用defer</h2>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="hint-container danger">
+<p class="hint-container-title">警告</p>
+<p>不使用defer 方式，将无法捕获异常，程序陷入panic</p>
+</div>
+<h2> 错误用例：recover 在 defer 嵌套函数中</h2>
+<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="hint-container danger">
+<p class="hint-container-title">警告</p>
+<p>defer recover和panic不在同一层级，导致无法捕获异常，程序陷入panic</p>
+</div>
+]]></content>
+    <category term="Go语言"/>
+    <published>2023-08-27T00:00:00.000Z</published>
+  </entry>
+  <entry>
+    <title type="text">package</title>
+    <id>https://Hexiaopi.github.io/go-language/base/package.html</id>
+    <link href="https://Hexiaopi.github.io/go-language/base/package.html"/>
+    <updated>2023-08-27T02:48:23.000Z</updated>
+    <summary type="html"><![CDATA[<p>Go语言使用包（package）作为基本单元来组织源码。</p>
+<h2> package的优点</h2>
+<h3> 编译速度快</h3>
+<ul>
+<li>Go要求每个源文件在开头显示地列出所有依赖的包，如果引入了未使用的包，Go语言编译器会报错。</li>
+<li>Go要求包之间不能存在循环依赖，这样包的依赖关系便形成了一张有向无环图，这样每个包可以单独编译也可并行编译</li>
+<li>已编译的Go包不仅记录了该包的信息，还记录了依赖包的信息。只需读取缓存的编译产物即可。</li>
+</ul>
+<h2> 初始化顺序</h2>
+<p>Go语言内置函数<code>init()</code>，常用于包级数据初始化以及初始状态的检查工作。</p>]]></summary>
+    <content type="html"><![CDATA[<p>Go语言使用包（package）作为基本单元来组织源码。</p>
+<h2> package的优点</h2>
+<h3> 编译速度快</h3>
+<ul>
+<li>Go要求每个源文件在开头显示地列出所有依赖的包，如果引入了未使用的包，Go语言编译器会报错。</li>
+<li>Go要求包之间不能存在循环依赖，这样包的依赖关系便形成了一张有向无环图，这样每个包可以单独编译也可并行编译</li>
+<li>已编译的Go包不仅记录了该包的信息，还记录了依赖包的信息。只需读取缓存的编译产物即可。</li>
+</ul>
+<h2> 初始化顺序</h2>
+<p>Go语言内置函数<code>init()</code>，常用于包级数据初始化以及初始状态的检查工作。</p>
+<ul>
+<li>一个Go包可以有多个init()函数</li>
+<li>init()函数不可显示的调用，否则会编译期间报错</li>
+<li>init()只会执行一次</li>
+</ul>
+<p>Go包引入其他包，初始化时按照一定的次序逐一调用该包的init函数。</p>
+<figure><figcaption>package-init</figcaption></figure>
+<p>Go语言运行时按照常量-&gt;变量-&gt;init()顺序进行初始化。</p>
+]]></content>
+    <category term="Go语言"/>
+    <published>2023-08-27T00:00:00.000Z</published>
   </entry>
   <entry>
     <title type="text">数据库</title>
@@ -3631,138 +3885,6 @@ Cgo 不是 Go。</p>
 ]]></content>
     <category term="Go语言"/>
     <published>2022-01-22T00:00:00.000Z</published>
-  </entry>
-  <entry>
-    <title type="text">WebSocket协议</title>
-    <id>https://Hexiaopi.github.io/network/websocket.html</id>
-    <link href="https://Hexiaopi.github.io/network/websocket.html"/>
-    <updated>2023-07-30T09:20:01.000Z</updated>
-    <summary type="html"><![CDATA[<blockquote>
-<p>WebSocket是为了提供web应用程序和服务端全双工通信而专门定制的一种网络协议，和HTTP协议一样位于OSI模型的应用层协议。</p>
-</blockquote>
-<h2> 特点</h2>
-<ul>
-<li>建立在TCP协议之上</li>
-<li>与HTTP协议有着良好的兼容性，握手阶段采用HTTP协议，默认端口是80和443</li>
-<li>数据格式比较轻量，性能开销小、通信高效</li>
-<li>可以发送文本，也可以发送二进制数据</li>
-<li>没有同源限制，客户端可以与任意服务器通信</li>
-<li>协议标识符是ws(如果加密，则为wss)，形式：ws://echo.websocket.org</li>
-</ul>]]></summary>
-    <content type="html"><![CDATA[<blockquote>
-<p>WebSocket是为了提供web应用程序和服务端全双工通信而专门定制的一种网络协议，和HTTP协议一样位于OSI模型的应用层协议。</p>
-</blockquote>
-<h2> 特点</h2>
-<ul>
-<li>建立在TCP协议之上</li>
-<li>与HTTP协议有着良好的兼容性，握手阶段采用HTTP协议，默认端口是80和443</li>
-<li>数据格式比较轻量，性能开销小、通信高效</li>
-<li>可以发送文本，也可以发送二进制数据</li>
-<li>没有同源限制，客户端可以与任意服务器通信</li>
-<li>协议标识符是ws(如果加密，则为wss)，形式：ws://echo.websocket.org</li>
-</ul>
-<h2> 交互时序</h2>
-<figure><figcaption>websocket</figcaption></figure>
-<h2> 抓包分析</h2>
-<h3> HTTP请求</h3>
-<div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
-<li><code>Connection: Upgrade</code>表明要升级协议</li>
-<li><code>Upgrade:  websocket</code>表明升级至websocket协议</li>
-<li><code>Sec-Websocket-Key</code>是客户端发送的一个base64编码的秘文，要求服务端返回一个对应加密的<code>Sec-Websocket-Accept</code>应答，否则客户端会抛出“Error during WebSocket handshake”错误，并关闭连接</li>
-<li><code>Sec-Websocket-Version: 13</code>表示 websocket的版本，如果服务端不支持该版本，需要返回一个Sec-Websocket-Version里面包含服务端支持的版本号</li>
-</ul>
-<h3> HTTP返回</h3>
-<div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
-<li>Sec-Websocket-Accept是服务端采用与客户端一致的秘钥计算出来后返回客户端，计算公式</li>
-</ul>
-<blockquote>
-<p>toBase64(sha1(Sec-WebSocket-Key + 258EAFA5-E914-47DA-95CA-C5AB0DC85B11))</p>
-</blockquote>
-<ul>
-<li><code>HTTP/1.1 101 Switching Protocols</code>表示服务端接受WebSocket协议的客户端连接</li>
-</ul>
-<h2> 数据帧格式</h2>
-<blockquote>
-<p>从左到右，单位是比特。比如<code>FIN</code>、<code>RSV1</code>、<code>RSV2</code>、<code>RSV3</code>各占据1比特，<code>opcode</code>占据4比特</p>
-<p>内容包括了标识、操作代码、掩码、数据长度</p>
-</blockquote>
-<div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
-<li>
-<p><code>FIN</code>：1个比特</p>
-<ul>
-<li>
-<p>如果是1：表示这是消息的最后一个分片；</p>
-</li>
-<li>
-<p>如果是0：标识这不是消息的最后一个分片；</p>
-</li>
-</ul>
-</li>
-<li>
-<p><code>RSV1</code>、<code>RSV2</code>、<code>RSV3</code>：各占1个比特</p>
-<ul>
-<li>
-<p>一般情况下全为0，当客户端、服务端协商采用websocket扩展时，这三个标志位可以非0，且值得含义由扩展进行定义；</p>
-</li>
-<li>
-<p>如果出现非零的值，且并没有采用websocket扩展，连接出错</p>
-</li>
-</ul>
-</li>
-<li>
-<p><code>Opcode</code>：4个比特</p>
-<ul>
-<li>%x0：表示一个延续帧。当Opcode为0时，表示本次数据传输采用了数据分片，当前收到的数据帧为其中一个数据分片。</li>
-<li>%x1：表示这是一个文本帧（frame）</li>
-<li>%x2：表示这是一个二进制帧（frame）</li>
-<li>%x3-7：保留的操作代码，用于后续定义的非控制帧。</li>
-<li>%x8：表示连接断开。</li>
-<li>%x9：表示这是一个ping操作。</li>
-<li>%xA：表示这是一个pong操作。</li>
-<li>%xB-F：保留的操作代码，用于后续定义的控制帧。</li>
-</ul>
-</li>
-<li>
-<p><code>Mask</code>：1个比特</p>
-<blockquote>
-<p>表示是否要对数据载荷进行掩码操作</p>
-<ul>
-<li>从客户端向服务端发送数据时，需要对数据进行掩码操作；</li>
-<li>从服务端向客户端发送数据时，不需要对数据进行掩码操作；</li>
-</ul>
-<p>如果服务端接收到的数据没有进行掩码操作，服务端需要断开连接</p>
-<p>如果Mask是1，那么Masking-key中会定义一个掩码键，并用这个掩码键对数据载荷进行反掩码。</p>
-</blockquote>
-</li>
-<li>
-<p><code>Payload length</code>：数据载荷的长度，单位是字节。为7位、或2✖️8位，或8✖️8位</p>
-<ul>
-<li>[0,126)：数据的长度就是Payload length的大小；</li>
-<li>126：后续2个字节为数据的长度；</li>
-<li>127：后续8个字节为数据的长度；</li>
-</ul>
-</li>
-<li>
-<p><code>Masking-key</code>：0或4字节</p>
-<ul>
-<li><code>Mask</code>为1，则包含4字节的<code>Masking-key</code></li>
-<li><code>Mask</code>为0，则不包含<code>Masking-key</code></li>
-</ul>
-</li>
-<li>
-<p><code>Payload data</code>：扩展数据+应用数据</p>
-<ul>
-<li>如果没有协商使用扩展的话，扩展数据为0字节；</li>
-<li>所有的扩展都必须声明扩展数据的长度，扩展如何使用必须在握手阶段就协商好；</li>
-</ul>
-</li>
-</ul>
-<h2> 参考链接</h2>
-<p><a href="http://www.52im.net/thread-831-1-1.html" target="_blank" rel="noopener noreferrer">新手快速入门：WebSocket简明教程</a></p>
-<p><a href="https://www.cnblogs.com/chyingp/p/websocket-deep-in.html" target="_blank" rel="noopener noreferrer">WebSocket协议：5分钟从入门到精通</a></p>
-]]></content>
-    <category term="网络"/>
-    <published>2023-03-19T00:00:00.000Z</published>
   </entry>
   <entry>
     <title type="text">如何不靠运气变得富有</title>
@@ -7924,293 +8046,5 @@ LIMIT关键字用于限制查询结果的数量。MySQL只返回前N条符合条
 ]]></content>
     <category term="设计模式"/>
     <published>2022-12-03T00:00:00.000Z</published>
-  </entry>
-  <entry>
-    <title type="text">装饰器</title>
-    <id>https://Hexiaopi.github.io/design-pattern/structural/decorator.html</id>
-    <link href="https://Hexiaopi.github.io/design-pattern/structural/decorator.html"/>
-    <updated>2023-07-31T14:52:38.000Z</updated>
-    <summary type="html"><![CDATA[<figure><img src="https://refactoringguru.cn/images/patterns/content/decorator/decorator-2x.png" alt="decorator" tabindex="0" loading="lazy"><figcaption>decorator</figcaption></figure>
-]]></summary>
-    <content type="html"><![CDATA[<figure><img src="https://refactoringguru.cn/images/patterns/content/decorator/decorator-2x.png" alt="decorator" tabindex="0" loading="lazy"><figcaption>decorator</figcaption></figure>
-<!-- more -->
-<h2> 什么是装饰器模式</h2>
-<p>装饰器模式(Decorator Pattern)：它可以在不改变原有对象的结构和功能的情况下，动态地给对象添加新的功能或者增强原有功能。装饰器设计模式的核心思想是使用一个装饰器对象来包装原有对象，从而实现对原有对象的功能扩展或修改。</p>
-<p>装饰器非常类似于<strong>继承</strong>，它们都是为了增强原始对象的功能，区别在于方式的不同，后者是在编译时(compile-time)静态地通过对原始类的继承完成，而前者则是在程序运行时(run-time)通过对原始对象地<strong>包装</strong>完成。</p>
-<h3> 包含哪些角色</h3>
-<figure><figcaption>decorator</figcaption></figure>
-<ul>
-<li>
-<p>Component: 组件接口</p>
-<p>所有被装饰组件及装饰器对应的接口标准</p>
-</li>
-<li>
-<p>ConcreteComponent: 具体组件</p>
-<p>需要被装饰的组件，实现组件接口标准</p>
-</li>
-<li>
-<p>Decorator: 装饰器</p>
-<p>持有一个组件（Component）对象的实例，并定义一个与组件接口一致的接口。</p>
-</li>
-<li>
-<p>ConcreteDecorator: 装饰器实现</p>
-<p>继承自装饰器抽象类的具体子类装饰器，可以有多种实现，在被装饰组件对象的基础上为其添加新的特性。</p>
-</li>
-</ul>
-<h3> 代码示例</h3>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>使用示例</p>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 应用场景</h3>
-<ul>
-<li>当需要在不改变原有对象的结构和功能的情况下，给对象添加新的功能或者增强原有功能时。</li>
-<li>当需要根据不同的需求，灵活地组合不同的功能扩展或修改时。</li>
-<li>当需要保持原有对象的接口不变，保证了装饰后的对象和原有对象的兼容性时。</li>
-</ul>
-<h3> 有哪些优缺点</h3>
-<h4> 优点</h4>
-<ul>
-<li>可以在不修改原有对象的代码的情况下，给对象添加新的功能或者增强原有功能，符合开闭原则。</li>
-<li>可以保持原有对象的接口不变，保证了装饰后的对象和原有对象的兼容性。</li>
-<li>可以根据需要灵活地组合不同的装饰器对象，实现多种功能扩展或修改。</li>
-</ul>
-<h4> 缺点</h4>
-<ul>
-<li>会增加系统的复杂度，因为需要创建多个装饰器对象和管理它们之间的关系。</li>
-<li>会增加系统的运行时开销，因为每次调用原有对象的方法时，都需要经过装饰器对象的转发和处理。</li>
-</ul>
-<h2> 总结</h2>
-<h3> 装饰器设计模式和适配器设计模式</h3>
-<p>装饰器模式和适配器模式的区别在于它们的应用场景和目的不同。装饰器模式可以应用于任何需要对对象进行功能扩展或修改的场景，例如日志记录、缓存、验证等。适配器模式主要应用于两个不兼容的接口之间的转换，例如不同类型的电源插头、不同格式的数据源等。</p>
-]]></content>
-    <category term="设计模式"/>
-    <published>2022-12-04T00:00:00.000Z</published>
-  </entry>
-  <entry>
-    <title type="text">外观</title>
-    <id>https://Hexiaopi.github.io/design-pattern/structural/facade.html</id>
-    <link href="https://Hexiaopi.github.io/design-pattern/structural/facade.html"/>
-    <updated>2023-07-31T14:52:38.000Z</updated>
-    <summary type="html"><![CDATA[<figure><img src="https://refactoringguru.cn/images/patterns/content/facade/facade-2x.png" alt="facade" tabindex="0" loading="lazy"><figcaption>facade</figcaption></figure>
-]]></summary>
-    <content type="html"><![CDATA[<figure><img src="https://refactoringguru.cn/images/patterns/content/facade/facade-2x.png" alt="facade" tabindex="0" loading="lazy"><figcaption>facade</figcaption></figure>
-<!-- more -->
-<h2> 什么是外观模式</h2>
-<p>外观模式（Facade Pattern）：又叫作门面模式，是一种通过为多个复杂的子系统提供一个一致的接口，而使这些子系统更加容易被访问的模式。该模式对外有一个统一接口，外部应用程序不用关心内部子系统的具体细节，这样会大大降低应用程序的复杂度，提高了程序的可维护性。</p>
-<figure><figcaption>外观</figcaption></figure>
-<p>外观模式经常在我们不知不觉中使用，例如：MVC架构中，Controller层对外提供简单的接口，Controller层包含多个Service层进行功能划分，每个Service层也可能包含多个Dao层进行数据操作。</p>
-<figure><figcaption>mvc</figcaption></figure>
-<h3> 包含哪些角色</h3>
-<ul>
-<li>
-<p>Facade: 外观角色</p>
-<p>定义一个简单的接口</p>
-</li>
-<li>
-<p>Subsystem：子系统角色</p>
-</li>
-</ul>
-<h3> 代码示例</h3>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>使用示例</p>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 总结</h2>
-<h3> 优点</h3>
-<ul>
-<li>降低了子系统与客户端之间的耦合度，使得子系统的变化不会影响调用它的客户类。</li>
-<li>对客户屏蔽了子系统组件，减少了客户处理的对象数目，并使得子系统使用起来更加容易。</li>
-<li>降低了大型软件系统中的编译依赖性，简化了系统在不同平台之间的移植过程，因为编译一个子系统不会影响其他的子系统，也不会影响外观对象。</li>
-<li>只是提供了一个访问子系统的统一入口，并不影响用户直接使用子系统类。</li>
-</ul>
-<h3> 缺点</h3>
-<ul>
-<li>不能很好地限制客户使用子系统类，如果对客户访问子系统类做太多的限制则减少了可变性和灵活性。</li>
-<li>在不引入抽象外观类的情况下，增加新的子系统可能需要修改外观类或客户端的源代码，违背了<strong>开闭原则</strong>。</li>
-</ul>
-]]></content>
-    <category term="设计模式"/>
-    <published>2022-12-02T00:00:00.000Z</published>
-  </entry>
-  <entry>
-    <title type="text">享元</title>
-    <id>https://Hexiaopi.github.io/design-pattern/structural/flyweight.html</id>
-    <link href="https://Hexiaopi.github.io/design-pattern/structural/flyweight.html"/>
-    <updated>2023-07-31T14:52:38.000Z</updated>
-    <summary type="html"><![CDATA[<figure><img src="https://refactoringguru.cn/images/patterns/content/flyweight/flyweight-zh-2x.png" alt="flyweight" tabindex="0" loading="lazy"><figcaption>flyweight</figcaption></figure>
-]]></summary>
-    <content type="html"><![CDATA[<figure><img src="https://refactoringguru.cn/images/patterns/content/flyweight/flyweight-zh-2x.png" alt="flyweight" tabindex="0" loading="lazy"><figcaption>flyweight</figcaption></figure>
-<!-- more -->
-<h2> 什么是享元模式</h2>
-<p>享元模式（Flyweight Pattern）：有效地支持大量细粒度对象的复用,通过共享已经存在的对象来大幅度减少需要创建的对象数量、避免大量相似类的开销，从而提高系统资源的利用率。</p>
-<p>享元对象能做到共享的关键是区分：内蕴状态（Internal State）和外蕴状态（External State），内蕴状态是存储在享元对象内部，并且不会随环境改变而改变，因此可以共享，外蕴状态是随着环境改变而改变，因此不可以共享。</p>
-<h3> 包含哪些角色</h3>
-<figure><figcaption>flyweight</figcaption></figure>
-<ul>
-<li>
-<p>Flyweight: 享元接口</p>
-<p>所有元件的高层规范，声明与外蕴状态互动的接口标准</p>
-</li>
-<li>
-<p>ConcreteFlyweight: 享元实现类</p>
-<p>自身维护着内蕴状态，且能接受并相应外蕴状态，可以有多个实现。一个享元对象可以被称作一个<strong>元</strong>。</p>
-</li>
-<li>
-<p>UnsharedFlyweight: 非享元角色</p>
-<p>是不可以共享的外部状态，它以参数的形式注入具体享元的相关方法中</p>
-</li>
-<li>
-<p>FlyweightFactory: 享元工厂</p>
-<p>用来维护享元对象的工厂，负责对享元对象实例进行创建于管理，并对外提供获取享元对象的服务。</p>
-</li>
-<li>
-<p>Client: 客户端</p>
-<p>享元的使用者，负责维护外蕴状态。</p>
-</li>
-</ul>
-<h3> 代码示例</h3>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>使用示例</p>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 总结</h2>
-<p>享元模式只是一种优化。在应用该模式之前，你要确定程序中存在与大量类似对象同时占用内存相关的内存消耗问题，并且确保该问题无法使用其他更好的方式来解决。</p>
-<h3> 优点</h3>
-<ul>
-<li>享元模式的优点在于它可以极大减少内存中对象的数量，使得相同对象或相似对象在内存中只保存一份。</li>
-<li>享元模式的外部状态相对独立，而且不会影响其内部状态，从而使得享元对象可以在不同的环境中被共享。</li>
-</ul>
-<h3> 缺点</h3>
-<ul>
-<li>增加系统复杂性。享元模式需要维护共享对象的状态，增加了代码的复杂度，同时也增加了系统的维护难度。</li>
-<li>内部状态和外部状态的区分。享元模式需要区分内部状态和外部状态，内部状态可以被共享，但外部状态必须通过参数传递，增加了对象的可定制性，但也增加了系统的复杂度。</li>
-</ul>
-]]></content>
-    <category term="设计模式"/>
-    <published>2022-12-06T00:00:00.000Z</published>
-  </entry>
-  <entry>
-    <title type="text">代理</title>
-    <id>https://Hexiaopi.github.io/design-pattern/structural/proxy.html</id>
-    <link href="https://Hexiaopi.github.io/design-pattern/structural/proxy.html"/>
-    <updated>2023-07-31T14:52:38.000Z</updated>
-    <summary type="html"><![CDATA[<figure><img src="https://refactoringguru.cn/images/patterns/content/proxy/proxy-2x.png" alt="proxy" tabindex="0" loading="lazy"><figcaption>proxy</figcaption></figure>
-]]></summary>
-    <content type="html"><![CDATA[<figure><img src="https://refactoringguru.cn/images/patterns/content/proxy/proxy-2x.png" alt="proxy" tabindex="0" loading="lazy"><figcaption>proxy</figcaption></figure>
-<!-- more -->
-<h2> 什么是代理模式</h2>
-<p>代理模式(Proxy Pattern)：它的主要思想是通过一个代理对象来代替真实对象的访问，从而在不修改原目标对象的前提下，提供额外的功能操作，扩展目标对象的功能。</p>
-<h3> 包含哪些角色</h3>
-<figure><figcaption>代理模式</figcaption></figure>
-<ul>
-<li>
-<p>Subject: 抽象主题</p>
-<p>通过接口或抽象类声明真实主题和代理对象实现的业务方法</p>
-</li>
-<li>
-<p>RealSubject: 真实主题</p>
-<p>实现了抽象主题中的具体业务，是代理对象所代表的真实对象，是最终要引用的对象</p>
-</li>
-<li>
-<p>Proxy: 代理类</p>
-<p>提供了与真实主题相同的接口，其内部包含有对真实主题的引用，它可以访问、控制或扩展真实主题的功能。</p>
-</li>
-</ul>
-<h3> 代码示例</h3>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>使用示例如下：</p>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 使用场景</h2>
-<ul>
-<li>
-<p>静态代理：代理对象和目标对象在编译期就已经确定，代理对象需要实现和目标对象相同的接口，并持有目标对象的引用。静态代理的优点是简单易实现，缺点是代码冗余，每个代理类都需要重新编写。</p>
-</li>
-<li>
-<p>远程代理：为一个位于不同地址空间的对象提供一个本地的代理对象，使客户端可以通过本地代理对象来访问远程对象，屏蔽了网络通信的细节。</p>
-</li>
-<li>
-<p>虚拟代理：当一个对象的创建或者加载时需要很长时间，可以使用虚拟代理来延迟对象的加载或者创建，直到真正需要使用该对象时再进行加载或者创建。</p>
-</li>
-<li>
-<p>保护代理：当对一个对象的访问需要进行安全控制时，可以使用安全代理来控制对象的访问权限，例如在对象被访问时需要进行认证或授权等。</p>
-</li>
-<li>
-<p>缓存代理：当需要缓存一些计算结果时，可以使用缓存代理，以便在后续的访问中直接返回缓存的结果，避免重复计算。</p>
-</li>
-<li>
-<p>日志记录代理：在访问被代理对象的过程中，使用日志记录代理可以记录所有访问记录，以便于问题排查和系统优化等。</p>
-</li>
-</ul>
-<h3> 远程代理</h3>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>通过这种方式，我们可以将客户端和远程对象之间的耦合度降低，增加了系统的可维护性和可扩展性。</p>
-<h3> 虚拟代理</h3>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>通过这种方式，我们可以延迟 RealImage 对象的加载或者创建，直到客户端真正需要访问该对象时才进行加载或者创建，从而减少了系统的资源消耗，优化了系统的性能。</p>
-<h3> 保护代理</h3>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>我们通过认证和授权等操作来控制对 RealSubject 对象的访问权限，只有认证和授权成功之后才能访问 RealSubject 对象，否则返回授权失败的提示消息。通过这种方式，我们可以对系统中的访问进行更加细粒度的控制，增加了系统的安全性和鲁棒性。</p>
-<h3> 缓存代理</h3>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>通过这种方式，我们可以减少一些需要重复计算的操作，优化了系统的性能，并且可以快速响应客户端的请求。</p>
-<h3> 日志记录代理</h3>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>通过这种方式，我们可以在系统中记录每一次对特定对象或方法的调用，以便后续系统调试或问题排查。</p>
-<h3> 有哪些优缺点</h3>
-<h4> 优点</h4>
-<ul>
-<li>代理模式能够协调调用者和被调用者，在一定程度上降低了系统的耦合度。</li>
-<li>远程代理使得客户端可以访问在远程机器上的对象，远程机器坑具有更好的计算性能与处理速度，可以加快相应并处理客户端请求。</li>
-<li>虚拟代理通过使用一个小对象来代表一个大对象，可以减少系统资源的消耗，对系统进行优化并提高运行速度。</li>
-<li>保护代理可以控制对真实对象的使用权限。</li>
-</ul>
-<h4> 缺点</h4>
-<ul>
-<li>由于客户端和真实主题之间增加了代理对象，因此有些类型的代理模式可能会造成请求的处理速度变慢。</li>
-<li>实现代理模式需要额外的工作，有些代理模式的实现非常复杂。</li>
-</ul>
-<h2> 总结</h2>
-<h3> 代理模式和装饰器模式</h3>
-<ul>
-<li>语义上：代理模式是为了控制对被代理对象的访问，而装饰器模式是为了增加被装饰对象的功能。</li>
-<li>使用方式上：装饰器模式需要将被装饰者作为参数传给装饰者的构造器，而被代理对象由代理对象创建，客户端不需要知道被代理类的存在。</li>
-<li>使用者角度上：被代理对象是已经确定的，而被装饰者则在使用时根据需求进行组合。</li>
-</ul>
-<h3> 代理模式和 Middleware</h3>
-<p>代理设计模式和 Middleware 之间存在相似之处，这两个模式都是为了实现对象间松耦合，增强维护性和扩展性。例如：日志记录、访问控制、速率限制等。唯一不同的地方是：代理模式是通过引入被代理类扩展其功能，而Go语言middleware是通过函数和闭包实现扩展函数功能，这归功于Go语言中函数是一等公民。</p>
-]]></content>
-    <category term="设计模式"/>
-    <published>2022-12-10T00:00:00.000Z</published>
-  </entry>
-  <entry>
-    <title type="text">数组</title>
-    <id>https://Hexiaopi.github.io/go-language/base/array.html</id>
-    <link href="https://Hexiaopi.github.io/go-language/base/array.html"/>
-    <updated>2023-08-13T15:30:36.000Z</updated>
-    <summary type="html"><![CDATA[<h2> 数组</h2>
-<blockquote>
-<p>一个由固定长度的特定类型组成的序列。特定类型可以是：字符串、结构体、函数、接口、通道等。</p>
-</blockquote>
-<h3> 声明</h3>
-<div class="language-go line-numbers-mode" data-ext="go"><pre class="language-go"><code><span class="token keyword">var</span> a <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token builtin">int</span>								<span class="token comment">//长度为3的int类型数组，元素为[0,0,0]</span>
-<span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">}</span>			<span class="token comment">//长度为3的int类型数组，元素为[1,2,3]</span>
-<span class="token keyword">var</span> c <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">}</span>		<span class="token comment">//长度为3的int类型数组，元素为[0,2,3]</span>
-<span class="token keyword">var</span> d <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">}</span>	<span class="token comment">//长度为4的int类型数组，元素为[0,2,3,4]</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></summary>
-    <content type="html"><![CDATA[<h2> 数组</h2>
-<blockquote>
-<p>一个由固定长度的特定类型组成的序列。特定类型可以是：字符串、结构体、函数、接口、通道等。</p>
-</blockquote>
-<h3> 声明</h3>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="hint-container tip">
-<p class="hint-container-title">提示</p>
-<ul>
-<li>第一种定义：直接初始化长度</li>
-<li>第二种定义：直接初始化数组元素，其中<code>...</code>Go语言编译器根据初始化自动推算长度，例如数组b的长度是3</li>
-<li>第三种定义：根据索引初始化数组元素，其中未使用索引直接初始化的元素的值对应的是<strong>零值</strong>，例如c[0]</li>
-<li>第四种定义：混合使用第二种定义和第三种定义。</li>
-</ul>
-</div>
-<h3> 遍历</h3>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="hint-container tip">
-<p class="hint-container-title">提示</p>
-<ul>
-<li><code>for range</code>方式迭代可以保证不会出现数组越界的情况。</li>
-<li>数组的定义包含长度，因此长度不同的数组，即便类型一致，整个数组仍不是同一类型。</li>
-<li>长度为0的数组并不占用内存</li>
-</ul>
-</div>
-<div class="hint-container warning">
-<p class="hint-container-title">注意</p>
-<p>Go语言中数组是值类型，因此在函数传参中，如果数组比较大，建议传递指针数组，避免数据拷贝开销</p>
-</div>
-]]></content>
-    <category term="Go语言"/>
-    <published>2022-05-05T00:00:00.000Z</published>
   </entry>
 </feed>
