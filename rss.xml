@@ -6,12 +6,12 @@
     <link>https://Hexiaopi.github.io/</link>
     <description>一枚后端攻城狮的个人博客</description>
     <language>zh-CN</language>
-    <pubDate>Thu, 11 Apr 2024 07:07:44 GMT</pubDate>
-    <lastBuildDate>Thu, 11 Apr 2024 07:07:44 GMT</lastBuildDate>
+    <pubDate>Fri, 12 Apr 2024 08:12:02 GMT</pubDate>
+    <lastBuildDate>Fri, 12 Apr 2024 08:12:02 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
-    <category>网络</category>
     <category>devops</category>
+    <category>网络</category>
     <category>Go语言</category>
     <category>数据库</category>
     <category>项目规范</category>
@@ -21,6 +21,35 @@
     <category>算法</category>
     <category>系统设计</category>
     <category>工具</category>
+    <item>
+      <title>MySQL监控</title>
+      <link>https://Hexiaopi.github.io/devops/docker/mysql-exporter.html</link>
+      <guid>https://Hexiaopi.github.io/devops/docker/mysql-exporter.html</guid>
+      <source url="https://Hexiaopi.github.io/rss.xml">MySQL监控</source>
+      <description>MySQL监控 我们通过mysqld-exporter去将MySQL相关状态转换成指标，从而进行监控 mysql-exporter部署 docker run -d --name mysql_exporter --restart always -p 9104:9104 -v ./.my.cnf:/.my.cnf prom/mysqld-exporter</description>
+      <category>devops</category>
+      <pubDate>Fri, 12 Apr 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<h2> MySQL监控</h2>
+<p>我们通过mysqld-exporter去将MySQL相关状态转换成指标，从而进行监控</p>
+<h2> mysql-exporter部署</h2>
+<div class="language-bash line-numbers-mode" data-ext="sh"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>其中**.my.cnf**配置数据库连接信息，其内容如下：<br>
+[client]<br>
+host=your host<br>
+port=your port<br>
+user=your username<br>
+password=your password</p>
+<h2> mysql-grafana面板</h2>
+<figure><figcaption>mysql-dashboard</figcaption></figure>
+<h2> mysql常见监控语句</h2>
+<h3> 监控数据库是否宕机</h3>
+<div class="language-promQL line-numbers-mode" data-ext="promQL"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3> 监控数据库是否超过最大连接数80%</h3>
+<div class="language-promQL line-numbers-mode" data-ext="promQL"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><div class="hint-container warning">
+<p class="hint-container-title">注意</p>
+<p>如果超过最大连接数，会报<strong>Too many connections</strong>错误</p>
+</div>
+<h3> 数据库慢查询</h3>
+<div class="language-promQL line-numbers-mode" data-ext="promQL"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div>]]></content:encoded>
+    </item>
     <item>
       <title>HTTP协议</title>
       <link>https://Hexiaopi.github.io/network/application-layer/HTTP.html</link>
@@ -7405,83 +7434,6 @@ LIMIT关键字用于限制查询结果的数量。MySQL只返回前N条符合条
 </ul>
 ]]></content:encoded>
       <enclosure url="https://refactoringguru.cn/images/patterns/content/adapter/adapter-zh-2x.png" type="image/png"/>
-    </item>
-    <item>
-      <title>桥接</title>
-      <link>https://Hexiaopi.github.io/design-pattern/structural/bridge.html</link>
-      <guid>https://Hexiaopi.github.io/design-pattern/structural/bridge.html</guid>
-      <source url="https://Hexiaopi.github.io/rss.xml">桥接</source>
-      <description>bridge</description>
-      <category>设计模式</category>
-      <pubDate>Sat, 10 Dec 2022 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<figure><img src="https://refactoringguru.cn/images/patterns/content/bridge/bridge-2x.png" alt="bridge" tabindex="0" loading="lazy"><figcaption>bridge</figcaption></figure>
-<!-- more -->
-<h2> 场景问题</h2>
-<p>假设你有一个几何形状类Shape，从它扩展出两个子类：圆形Cicle和方形Square，你希望对这样的类进行扩展使其包含两种颜色：Blue、Red。</p>
-<figure><figcaption>bridge-question</figcaption></figure>
-<p>很快你会发现，如果新增形状类，例如: 三角形，椭圆形。或者新增颜色，子类的数量将会暴躁式增长。</p>
-<p>为了解决这些问题，我们可以用桥接模式来将图形的形状和颜色分离为两个层次结构，让它们可以独立地变化。</p>
-<h2> 什么是桥接模式</h2>
-<p>桥接模式(Bridge Pattern)：是一种结构型设计模式，能将抽象与实现分离，使二者可以各自单独变化而不受对方约束，使用时再将它们组合起来，就像架设桥梁一样链接它们的功能，如此降低了抽象与实现这两个可变维度的耦合度，以保证系统的可扩展性。</p>
-<p>桥接模式通过将继承改为组合的方式来解决这个问题，具体来说，就是抽取其中一个维度并使之成为独立的类层次，这样就可以在初始类中引用这个新层次的对象，从而使得一个类不必拥有所有的状态和行为。</p>
-<h3> 包含哪些角色</h3>
-<figure><figcaption>bridge</figcaption></figure>
-<ul>
-<li>
-<p>Abstraction: 抽象角色</p>
-<p>定义抽象类，并包含一个对实现对象的引用</p>
-</li>
-<li>
-<p>RefinedAbstraction: 扩展抽象角色</p>
-<p>抽象角色的子类，实现父类中的业务方法，并通过组合关系调用实现角色中的业务方法。</p>
-</li>
-<li>
-<p>Implementor: 实现角色</p>
-<p>定义实现类的接口，该接口不一定要与抽象角色的接口完全一致，而是根据实际情况来设计</p>
-</li>
-<li>
-<p>ConCreteImplementor: 具体实现角色</p>
-<p>实现角色接口的具体实现</p>
-</li>
-</ul>
-<h3> 代码示例</h3>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>使用示例如下：</p>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 解决场景问题</h3>
-<p>回到本文前面的问题，那么我们如何使用桥接模式解决该问题呢</p>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>使用示例</p>
-<div class="language-go line-numbers-mode" data-ext="go"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 有哪些优缺点</h3>
-<h4> 优点</h4>
-<ul>
-<li>实现了抽象和实现部分的分离，从而极大地提高了系统的灵活性，让抽象部分和实现部分独立开来，这有助于系统进行分层设计，从而产生更好的结构化系统。</li>
-<li>符合开闭原则，抽象部分和实现部分可以分别独立地扩展，而不会相互影响，对系统的修改是通过增加代码进行的，而不是修改原有代码。</li>
-<li>符合合成复用原则，可以使用不同的实现部分来组合不同的抽象部分，实现更多的功能组合。</li>
-<li>其实现细节对客户透明，客户只需要关心抽象部分的接口，不用了解具体的实现细节。</li>
-</ul>
-<h4> 缺点</h4>
-<ul>
-<li>增加了系统的理解和设计难度，由于关联关系建立在抽象层，要求开发者一开始就针对抽象层进行设计和编程，能正确地识别出系统中两个独立变化的维度，这增加了系统的复杂性和学习成本。</li>
-<li>要求正确识别出系统中两个独立变化的维度，因此其使用范围有一定的局限性，如果系统中只有一个变化维度或者两个变化维度之间有很强的耦合关系，那么桥接模式就不适用了。</li>
-</ul>
-<h2> 总结</h2>
-<h3> 桥接设计模式和适配器设计模式的区别</h3>
-<p>适配器模式是为了复用已有接口的功能，而通过适配将已有接口功能引入到所需接口的一种模式，目的是能够结合。适配器是先定义了新接口，然后才与旧接口进行适配，即先接口后关系。</p>
-<p>桥接模式是在一个系统中解决多个维度独立变化的类之间的耦合度问题，先定义了一个桥（即实现和抽象的关系），通过多个实现的不同组合达到其灵活性的目的，即先关系后组合。</p>
-<ul>
-<li>
-<p>适配器模式中适配器角色只需要一个，解决两个接口适配问题。</p>
-</li>
-<li>
-<p>桥接模式中扩展抽象角色通常有多个，解决抽象和实现组合爆炸问题。</p>
-</li>
-<li>
-<p>适配器模式中适配者通常只有一个。</p>
-</li>
-<li>
-<p>桥接模式中具体抽象和实现的关系可以有多个，使得多个维度独立变化。</p>
-</li>
-</ul>
-]]></content:encoded>
-      <enclosure url="https://refactoringguru.cn/images/patterns/content/bridge/bridge-2x.png" type="image/png"/>
     </item>
   </channel>
 </rss>
