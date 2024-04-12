@@ -299,6 +299,7 @@ export default sidebar({
           children: [
             "shell-line-break",
             "mysql-exporter",
+            "redis-exporter",
           ],
         }
       ]
