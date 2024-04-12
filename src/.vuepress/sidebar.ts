@@ -298,6 +298,7 @@ export default sidebar({
           link: "docker/README.md",
           children: [
             "shell-line-break",
+            "mysql-exporter",
           ],
         }
       ]
