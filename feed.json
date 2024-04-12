@@ -6,6 +6,19 @@
   "description": "一枚后端攻城狮的个人博客",
   "items": [
     {
+      "title": "Redis监控",
+      "url": "https://Hexiaopi.github.io/devops/docker/redis-exporter.html",
+      "id": "https://Hexiaopi.github.io/devops/docker/redis-exporter.html",
+      "summary": "Redis监控 我们通过redis-exporter监控redis状态 redis-exporter部署 redis-dashboard redis-dashboard redis常见监控语句 监控Redis是否宕机 Redis连接数过多",
+      "content_html": "<!-- more -->\n<h2> Redis监控</h2>\n<p>我们通过redis-exporter监控redis状态</p>\n<h2> redis-exporter部署</h2>\n<div class=\"language-bash line-numbers-mode\" data-ext=\"sh\"><div class=\"line-numbers\" aria-hidden=\"true\"><div class=\"line-number\"></div></div></div><h2> redis-dashboard</h2>\n<figure><figcaption>redis-dashboard</figcaption></figure>\n<h2> redis常见监控语句</h2>\n<h3> 监控Redis是否宕机</h3>\n<div class=\"language-promQL line-numbers-mode\" data-ext=\"promQL\"><div class=\"line-numbers\" aria-hidden=\"true\"><div class=\"line-number\"></div></div></div><h3> Redis连接数过多</h3>\n<div class=\"language-promQL line-numbers-mode\" data-ext=\"promQL\"><div class=\"line-numbers\" aria-hidden=\"true\"><div class=\"line-number\"></div></div></div>",
+      "date_published": "2024-04-12T00:00:00.000Z",
+      "date_modified": "2024-04-12T09:12:23.000Z",
+      "authors": [],
+      "tags": [
+        "devops"
+      ]
+    },
+    {
       "title": "MySQL监控",
       "url": "https://Hexiaopi.github.io/devops/docker/mysql-exporter.html",
       "id": "https://Hexiaopi.github.io/devops/docker/mysql-exporter.html",
@@ -1307,20 +1320,6 @@
       "summary": "结构型设计模式 结构型设计模式是一组用于组织类和对象之间关系的设计模式，它们通常用于提高代码的可维护性、可扩展性和可重用性。结构型设计模式分为类结构型模式和对象结构型模式。 其中： 类结构型模式关注类之间的组合，例如装饰器模式、适配器模式、代理模式等；而对象结构型模式关注对象之间的组合，例如组合模式、享元模式等。 类结构型模式更侧重于对象之间的静态关系，即在编译时期已经确定相关类之间的关系，而对象结构型模式更侧重于对象之间的动态关系，即在运行时期可以动态添加或移除对象。 类结构型模式的使用场景更为广泛，适用于不同的问题领域；而对象结构型模式更加专注于一些具体的问题场景。",
       "content_html": "<h2> 结构型设计模式</h2>\n<blockquote>\n<p>结构型设计模式是一组用于组织类和对象之间关系的设计模式，它们通常用于提高代码的可维护性、可扩展性和可重用性。结构型设计模式分为<code>类结构型模式</code>和<code>对象结构型模式</code>。</p>\n</blockquote>\n<p>其中：</p>\n<ul>\n<li><code>类结构型模式</code>关注类之间的组合，例如装饰器模式、适配器模式、代理模式等；而<code>对象结构型模式</code>关注对象之间的组合，例如组合模式、享元模式等。</li>\n<li><code>类结构型模式</code>更侧重于对象之间的静态关系，即在编译时期已经确定相关类之间的关系，而<code>对象结构型模式</code>更侧重于对象之间的动态关系，即在运行时期可以动态添加或移除对象。</li>\n<li><code>类结构型模式</code>的使用场景更为广泛，适用于不同的问题领域；而<code>对象结构型模式</code>更加专注于一些具体的问题场景。</li>\n</ul>\n<h3> 相同点</h3>\n<ul>\n<li>都可以用于组织和组合类之间的关系；</li>\n<li>在代码中提供了高度模块化的方式，便于代码的重用和维护；</li>\n<li>通过组合、代理、继承等方式，可以更加灵活地设计类的层次结构；</li>\n<li>可以降低系统的复杂度，提高代码的可读性和可维护性。</li>\n</ul>\n<h3> 不同点</h3>\n<ul>\n<li>代理模式旨在控制对对象的访问，为使用者提供简化的接口，同时也可以提升对象的访问效率；</li>\n<li>适配器模式旨在将不同对象之间的接口协调起来，使它们能够协同工作；</li>\n<li>桥接模式旨在将类的抽象和实现分离出来，使得两者可以独立地变化；</li>\n<li>装饰器模式旨在动态地添加类的额外行为，而无需修改类的接口和实现；</li>\n<li>外观模式旨在将一组紧密相关的类中的复杂逻辑抽象出来，提供一个简单的接口给使用者；</li>\n<li>享元模式旨在共享多个具有相同状态的对象，以减少内存的占用。</li>\n</ul>\n",
       "date_published": "2023-07-31T00:00:00.000Z",
-      "date_modified": "2023-07-31T14:52:38.000Z",
-      "authors": [],
-      "tags": [
-        "设计模式"
-      ]
-    },
-    {
-      "title": "适配器",
-      "url": "https://Hexiaopi.github.io/design-pattern/structural/adapter.html",
-      "id": "https://Hexiaopi.github.io/design-pattern/structural/adapter.html",
-      "summary": "adapter",
-      "content_html": "<figure><img src=\"https://refactoringguru.cn/images/patterns/content/adapter/adapter-zh-2x.png\" alt=\"adapter\" tabindex=\"0\" loading=\"lazy\"><figcaption>adapter</figcaption></figure>\n<!-- more -->\n<h2> 什么是适配器模式</h2>\n<p>适配器模式(Adapter Pattern)：它将一个接口转换成用户期望的另一个接口，使的接口不兼容的那些类可以相互合作。</p>\n<h3> 包含哪些角色</h3>\n<figure><figcaption>适配器</figcaption></figure>\n<ul>\n<li>\n<p>Target: 目标角色</p>\n<p>该角色定义是用户期望的接口</p>\n</li>\n<li>\n<p>Adapter: 适配器角色</p>\n<p>将适配者的接口转换为目标接口的类，它是适配器模式的核心</p>\n</li>\n<li>\n<p>Adaptee: 适配者</p>\n<p>需要被适配的接口，它与目标角色接口不一致</p>\n</li>\n</ul>\n<h3> 代码示例</h3>\n<div class=\"language-go line-numbers-mode\" data-ext=\"go\"><div class=\"line-numbers\" aria-hidden=\"true\"><div class=\"line-number\"></div><div class=\"line-number\"></div><div class=\"line-number\"></div><div class=\"line-number\"></div><div class=\"line-number\"></div><div class=\"line-number\"></div><div class=\"line-number\"></div><div class=\"line-number\"></div><div class=\"line-number\"></div><div class=\"line-number\"></div><div class=\"line-number\"></div><div class=\"line-number\"></div><div class=\"line-number\"></div><div class=\"line-number\"></div><div class=\"line-number\"></div><div class=\"line-number\"></div><div class=\"line-number\"></div><div class=\"line-number\"></div><div class=\"line-number\"></div><div class=\"line-number\"></div><div class=\"line-number\"></div><div class=\"line-number\"></div><div class=\"line-number\"></div><div class=\"line-number\"></div><div class=\"line-number\"></div><div class=\"line-number\"></div><div class=\"line-number\"></div><div class=\"line-number\"></div><div class=\"line-number\"></div><div class=\"line-number\"></div><div class=\"line-number\"></div><div class=\"line-number\"></div><div class=\"line-number\"></div><div class=\"line-number\"></div><div class=\"line-number\"></div><div class=\"line-number\"></div><div class=\"line-number\"></div><div class=\"line-number\"></div><div class=\"line-number\"></div><div class=\"line-number\"></div></div></div><p>使用示例如下：</p>\n<div class=\"language-go line-numbers-mode\" data-ext=\"go\"><div class=\"line-numbers\" aria-hidden=\"true\"><div class=\"line-number\"></div><div class=\"line-number\"></div><div class=\"line-number\"></div><div class=\"line-number\"></div><div class=\"line-number\"></div><div class=\"line-number\"></div><div class=\"line-number\"></div><div class=\"line-number\"></div><div class=\"line-number\"></div></div></div><h3> 应用场景</h3>\n<ul>\n<li>当我们想要使用一个已经存在的类，但是它的接口不符合我们的需求时，我们可以使用适配器来转换接口，而不需要修改原来的类。</li>\n<li>当我们想要复用一些已有的功能，但是这些功能来自于不同的系统或者库时，我们可以使用适配器来统一接口，而不需要修改原来的系统或者库。</li>\n<li>当我们想要在不同的环境中使用同一个类时，我们可以使用适配器来适应不同的环境，而不需要修改原来的类。</li>\n</ul>\n<h3> 有哪些优缺点</h3>\n<h4> 优点</h4>\n<ul>\n<li>提高代码的重用性：适配器设计模式可以将已经存在的代码与新的代码进行整合，提高了现有代码的重用率。</li>\n<li>可以让不兼容的代码协同工作：适配器设计模式可以将一个类的接口转换成另一个类的接口，让其它不兼容的代码可以一起工作。</li>\n<li>保证系统的稳定性：适配器设计模式可以让已有的系统保持稳定，不必对其进行修改，只是增加新的功能，满足<code>开闭原则</code>。</li>\n</ul>\n<h4> 缺点</h4>\n<ul>\n<li>增加代码复杂性：适配器设计模式需要在原有的类和适配器类中定义大量的代码，会增加系统的复杂度。</li>\n<li>降低代码的可读性：适配器设计模式在现有类的基础上增加了适配器类，使得代码的可读性下降。</li>\n<li>新增了一个中间层，可能会影响系统的性能：适配器设计模式新增了适配器类，可能会影响系统的性能，增加系统的运行开销。</li>\n</ul>\n",
-      "image": "https://refactoringguru.cn/images/patterns/content/adapter/adapter-zh-2x.png",
-      "date_published": "2022-10-18T00:00:00.000Z",
       "date_modified": "2023-07-31T14:52:38.000Z",
       "authors": [],
       "tags": [
