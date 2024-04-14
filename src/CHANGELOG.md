@@ -1,18 +1,32 @@
 
-<a name="v0.1.0"></a>
-## [v0.1.0](https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.10.1...v0.1.0) (2024-02-26)
+<a name="v0.11.0"></a>
+## [v0.11.0](https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.10.1...v0.11.0) (2024-04-14)
 
 ### Bug Fixes
 
+* 修改vuepress icon
+* 修复bug
+* **devops:** 修改helm-dashboard
+* **go-language:** 修改map，增加一些注意事项
+* **go-language:** defer增加遇见os.Exit
 * **go-language:** 修改数据类型
+
+### Code Refactoring
+
+* 调整devops到k8s子类
 
 ### Features
 
+* **devops:** 增加redis监控
+* **devops:** 增加mysql监控
+* **devops:** 增加记录docker执行报错问题
+* **devops:** 增加helm-dashboard简介
 * **devops:** 增加kube-state-metrics k8s 部署
 * **devops:** 增加cadvisor k8s部署
 * **devops:** 增加node-exporter k8s部署
 * **devops:** 增加Prometheus k8s部署
 * **go-language:** 增加Go项目脚手架
+* **network:** 增加HTTP协议介绍
 
 
 <a name="v0.10.1"></a>
