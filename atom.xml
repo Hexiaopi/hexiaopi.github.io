@@ -3,7 +3,7 @@
   <id>https://Hexiaopi.github.io/</id>
   <title>Hexiaopi</title>
   <subtitle>一枚后端攻城狮的个人博客</subtitle>
-  <updated>2024-04-14T09:14:45.219Z</updated>
+  <updated>2024-04-14T09:20:46.771Z</updated>
   <generator>vuepress-plugin-feed2</generator>
   <link rel="self" href="https://Hexiaopi.github.io/atom.xml"/>
   <link rel="alternate" href="https://Hexiaopi.github.io/"/>
@@ -3337,34 +3337,45 @@ Cgo 不是 Go。</p>
     <title type="text"></title>
     <id>https://Hexiaopi.github.io/CHANGELOG.html</id>
     <link href="https://Hexiaopi.github.io/CHANGELOG.html"/>
-    <updated>2024-04-14T09:13:03.000Z</updated>
-    <summary type="html"><![CDATA[<p><a name="v0.1.0"></a></p>
-<h2> <a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.10.1...v0.1.0" target="_blank" rel="noopener noreferrer">v0.1.0</a> (2024-02-26)</h2>
+    <updated>2024-04-14T09:19:00.000Z</updated>
+    <summary type="html"><![CDATA[<p><a name="v0.11.0"></a></p>
+<h2> <a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.10.1...v0.11.0" target="_blank" rel="noopener noreferrer">v0.11.0</a> (2024-04-14)</h2>
 <h3> Bug Fixes</h3>
 <ul>
+<li>修改vuepress icon</li>
+<li>修复bug</li>
+<li><strong>devops:</strong> 修改helm-dashboard</li>
+<li><strong>go-language:</strong> 修改map，增加一些注意事项</li>
+<li><strong>go-language:</strong> defer增加遇见os.Exit</li>
 <li><strong>go-language:</strong> 修改数据类型</li>
-</ul>
-<h3> Features</h3>
-<ul>
-<li><strong>devops:</strong> 增加kube-state-metrics k8s 部署</li>
-<li><strong>devops:</strong> 增加cadvisor k8s部署</li>
-<li><strong>devops:</strong> 增加node-exporter k8s部署</li>
-<li><strong>devops:</strong> 增加Prometheus k8s部署</li>
-<li><strong>go-language:</strong> 增加Go项目脚手架</li>
 </ul>]]></summary>
-    <content type="html"><![CDATA[<p><a name="v0.1.0"></a></p>
-<h2> <a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.10.1...v0.1.0" target="_blank" rel="noopener noreferrer">v0.1.0</a> (2024-02-26)</h2>
+    <content type="html"><![CDATA[<p><a name="v0.11.0"></a></p>
+<h2> <a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.10.1...v0.11.0" target="_blank" rel="noopener noreferrer">v0.11.0</a> (2024-04-14)</h2>
 <h3> Bug Fixes</h3>
 <ul>
+<li>修改vuepress icon</li>
+<li>修复bug</li>
+<li><strong>devops:</strong> 修改helm-dashboard</li>
+<li><strong>go-language:</strong> 修改map，增加一些注意事项</li>
+<li><strong>go-language:</strong> defer增加遇见os.Exit</li>
 <li><strong>go-language:</strong> 修改数据类型</li>
+</ul>
+<h3> Code Refactoring</h3>
+<ul>
+<li>调整devops到k8s子类</li>
 </ul>
 <h3> Features</h3>
 <ul>
+<li><strong>devops:</strong> 增加redis监控</li>
+<li><strong>devops:</strong> 增加mysql监控</li>
+<li><strong>devops:</strong> 增加记录docker执行报错问题</li>
+<li><strong>devops:</strong> 增加helm-dashboard简介</li>
 <li><strong>devops:</strong> 增加kube-state-metrics k8s 部署</li>
 <li><strong>devops:</strong> 增加cadvisor k8s部署</li>
 <li><strong>devops:</strong> 增加node-exporter k8s部署</li>
 <li><strong>devops:</strong> 增加Prometheus k8s部署</li>
 <li><strong>go-language:</strong> 增加Go项目脚手架</li>
+<li><strong>network:</strong> 增加HTTP协议介绍</li>
 </ul>
 <p><a name="v0.10.1"></a></p>
 <h2> <a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.10.0...v0.10.1" target="_blank" rel="noopener noreferrer">v0.10.1</a> (2023-09-23)</h2>
