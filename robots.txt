@@ -2,4 +2,4 @@
 User-agent:*
 Disallow:
 
-Sitemap: https://Hexiaopi.github.io/sitemap.xml
+Sitemap: http://blog.cjhe.top/sitemap.xml
