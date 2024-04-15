@@ -1,6 +1,5 @@
 ---
 title: 表连接
-icon: mysql
 date: 2022-10-22
 tag:
  - MySQL

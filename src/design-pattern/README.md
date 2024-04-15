@@ -1,5 +1,6 @@
 ---
 title: 设计模式
+icon: project-diagram
 date: 2022-09-10
 tag:
  - Go
@@ -50,3 +51,5 @@ category:
 ## 具体分类
 
 ![分类](./images/design-pattern.png)
+
+<Catalog />

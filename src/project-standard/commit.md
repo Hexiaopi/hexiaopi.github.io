@@ -1,5 +1,6 @@
 ---
 title: 提交规范
+icon: code-commit
 date: 2020-02-02
 tag:
  - 规范

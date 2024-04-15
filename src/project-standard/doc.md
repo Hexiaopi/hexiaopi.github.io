@@ -1,5 +1,6 @@
 ---
 title: 文档规范
+icon: file
 date: 2020-01-24
 author: Hexiaopi
 tag:

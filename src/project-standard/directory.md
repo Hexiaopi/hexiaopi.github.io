@@ -1,5 +1,6 @@
 ---
 title: 目录规范
+icon: folder
 date: 2020-02-09
 tag:
  - 规范

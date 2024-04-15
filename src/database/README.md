@@ -1,5 +1,6 @@
 ---
 title: 数据库
+icon: database
 date: 2023-08-24
 tag:
  - 数据库
@@ -16,3 +17,5 @@ category:
 - [ ] MongoDB
 - [ ] Redis
 - [ ] Prometheus
+
+<Catalog />

@@ -1,6 +1,5 @@
 ---
 title: 事务
-icon: mysql
 date: 2022-10-23
 tag:
  - MySQL

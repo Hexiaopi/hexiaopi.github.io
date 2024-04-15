@@ -1,21 +1,24 @@
 {
   "name": "blog",
   "version": "1.0.0",
-  "description": "个人博客",
+  "description": "hexiaopi's nlog",
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "docs:build": "vuepress build src",
-    "docs:clean-dev": "vuepress dev src --clean-cache",
-    "docs:dev": "vuepress dev src",
-    "docs:update-package": "npx vp-update"
+    "docs:build": "vuepress-vite build src",
+    "docs:clean-dev": "vuepress-vite dev src --clean-cache",
+    "docs:dev": "vuepress-vite dev src",
+    "docs:update-package": "pnpm dlx vp-update"
   },
   "devDependencies": {
-    "@vuepress/client": "2.0.0-beta.67",
-    "nodejs-jieba": "^0.0.2",
-    "vue": "^3.3.4",
-    "vuepress": "2.0.0-beta.67",
-    "vuepress-plugin-search-pro": "2.0.0-beta.237",
-    "vuepress-theme-hope": "2.0.0-beta.237"
+    "@vuepress/bundler-vite": "2.0.0-rc.9",
+    "@vuepress/plugin-feed": "2.0.0-rc.24",
+    "vue": "^3.4.21",
+    "vuepress": "2.0.0-rc.9",
+    "vuepress-plugin-search-pro": "2.0.0-rc.36",
+    "vuepress-theme-hope": "2.0.0-rc.36"
+  },
+  "dependencies": {
+    "reveal.js": "^5.1.0"
   }
 }

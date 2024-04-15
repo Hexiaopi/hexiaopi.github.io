@@ -5,9 +5,9 @@ icon: home
 title: 博客主页
 heroImage: /logo.png
 bgImage: https://img2.baidu.com/it/u=3790341833,2407789859&fm=253&fmt=auto&app=120&f=JPEG?w=1422&h=800
-heroText: 何小进童鞋
+heroText: 知行合一
 heroFullScreen: true
-tagline: 书山有路“趣”为径，学海无涯“乐”作舟
+tagline: 知之真切笃实处即是行，行之明觉精察处即是知。
 projects:
   - name: VuePress
     desc: 基于 Vue 的静态文档构建器

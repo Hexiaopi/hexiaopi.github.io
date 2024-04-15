@@ -1,5 +1,6 @@
 ---
 title: k8s
+icon: anchor
 date: 2024-03-18
 tag:
  - k8s

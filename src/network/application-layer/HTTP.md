@@ -1,7 +1,6 @@
 ---
 title: HTTP协议
 date: 2024-04-11
-icon: http
 tag:
  - 应用层协议
  - HTTP

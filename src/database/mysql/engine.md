@@ -1,6 +1,5 @@
 ---
 title: 存储引擎
-icon: mysql
 date: 2022-10-22
 tag:
  - MySQL

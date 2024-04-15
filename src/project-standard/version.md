@@ -1,5 +1,6 @@
 ---
 title: 版本规范
+icon: tag
 date: 2020-01-25
 tag:
  - 规范

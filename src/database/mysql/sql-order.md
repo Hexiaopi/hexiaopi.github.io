@@ -1,6 +1,5 @@
 ---
 title: SQL查询顺序
-icon: mysql
 date: 2023-03-09
 tag:
  - 数据库
