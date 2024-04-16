@@ -1,9 +1,9 @@
 {
   "version": "https://jsonfeed.org/version/1.1",
-  "title": "博客演示",
+  "title": "个人博客",
   "home_page_url": "http://blog.cjhe.top/",
   "feed_url": "http://blog.cjhe.top/feed.json",
-  "description": "vuepress-theme-hope 的博客演示",
+  "description": "何小进童鞋的个人博客",
   "items": [
     {
       "title": "Go语言推荐书籍",

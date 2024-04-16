@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="http://blog.cjhe.top/atom.xsl"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
   <id>http://blog.cjhe.top/</id>
-  <title>博客演示</title>
-  <subtitle>vuepress-theme-hope 的博客演示</subtitle>
-  <updated>2024-04-16T06:34:54.331Z</updated>
+  <title>个人博客</title>
+  <subtitle>何小进童鞋的个人博客</subtitle>
+  <updated>2024-04-16T06:45:22.457Z</updated>
   <generator>@vuepress/plugin-feed</generator>
   <link rel="self" href="http://blog.cjhe.top/atom.xml"/>
   <link rel="alternate" href="http://blog.cjhe.top/"/>
