@@ -1,5 +1,6 @@
 ---
 title: Go语言推荐博客
+icon: blog
 date: 2023-03-04
 tag:
  - Go
@@ -102,31 +103,6 @@ nunu也是一个基于模版生成项目的工具，集成了主流的框架[nun
 
 sponge基于页面方式生成项目[sponge](https://github.com/zhufuyi/sponge)
 
-## Go书籍
-
-Go高级编程[](https://books.studygolang.com/advanced-go-programming-book/)
-
-Go语言设计与实现[](https://draveness.me/golang/)
-
-Go语言四十二章经[](https://github.com/ffhelicopter/Go42)
-
-Mastering Go[](https://wskdsgcf.gitbook.io/mastering-go-zh-cn/)
-
-ApacheCN Golang 译文集[](https://go.apachecn.org/#/)
-
-Go Patterns[](https://hxangel.gitbooks.io/go-patterns/content/)
-
-Go语言标准库[](https://books.studygolang.com/The-Golang-Standard-Library-by-Example/)
-
-Go测试驱动开发[](https://studygolang.gitbook.io/learn-go-with-tests/)
-
-Go练习[](https://www.practical-go-lessons.com/)
-
-Go语言原本[](https://golang.design/under-the-hood/)
-
-Go语言编程之旅[](https://golang2.eddycjy.com/)
-
-Go程序员面试[](https://golang.design/go-questions/)
 
 ## 知识图谱
 

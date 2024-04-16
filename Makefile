@@ -4,7 +4,7 @@ version:
 	@echo $(GIT_VERSION)
 
 run: 
-	npm run docs:dev
+	pnpm run docs:dev
 
 install:
 	go install github.com/arnaud-deprez/gsemver@latest

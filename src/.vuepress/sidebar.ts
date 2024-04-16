@@ -87,6 +87,7 @@ export default sidebar({
         },
         {
           text: "推荐",
+          icon: "share-square",
           collapsible: true,
           prefix: "recommend/",
           link: "recommend/README.md",
