@@ -6,12 +6,12 @@
     <link>http://blog.cjhe.top/</link>
     <description>vuepress-theme-hope 的博客演示</description>
     <language>zh-CN</language>
-    <pubDate>Mon, 15 Apr 2024 09:58:50 GMT</pubDate>
-    <lastBuildDate>Mon, 15 Apr 2024 09:58:50 GMT</lastBuildDate>
+    <pubDate>Tue, 16 Apr 2024 03:32:52 GMT</pubDate>
+    <lastBuildDate>Tue, 16 Apr 2024 03:32:52 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
-    <category>Go语言</category>
     <category>devops</category>
+    <category>Go语言</category>
     <category>网络</category>
     <category>数据库</category>
     <category>项目规范</category>
@@ -19,6 +19,30 @@
     <category>设计模式</category>
     <category>系统设计</category>
     <category>工具</category>
+    <item>
+      <title>MongoDB监控</title>
+      <link>http://blog.cjhe.top/devops/docker/mongodb-exporter.html</link>
+      <guid>http://blog.cjhe.top/devops/docker/mongodb-exporter.html</guid>
+      <source url="http://blog.cjhe.top/rss.xml">MongoDB监控</source>
+      <description>MongoDB监控 我们通过mongodb-exporter监控mongodb状态 mongodb-exporter部署 注意： --collect-all，参数用于收集所有指标 --compatible-mode，用于兼容旧的指标，否则部分grafana的dashboard展示不兼容 mongodb-dashboard mongodb-dashboa...</description>
+      <category>devops</category>
+      <pubDate>Tue, 16 Apr 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<h2>MongoDB监控</h2>
+<p>我们通过mongodb-exporter监控mongodb状态</p>
+<h2>mongodb-exporter部署</h2>
+<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code><span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token parameter variable">-p</span> <span class="token number">9216</span>:9216 <span class="token parameter variable">-p</span> <span class="token number">17001</span>:17001 <span class="token parameter variable">--restart</span><span class="token operator">=</span>always <span class="token parameter variable">--name</span><span class="token operator">=</span>mongodb_exporter percona/mongodb_exporter:0.40 <span class="token parameter variable">--mongodb.uri</span><span class="token operator">=</span>mongodb://172.87.7.247:27017/admin?ssl<span class="token operator">=</span>false --collect-all --compatible-mode
+</code></pre></div><p>注意：</p>
+<ul>
+<li>--collect-all，参数用于收集所有指标</li>
+<li>--compatible-mode，用于兼容旧的指标，否则部分grafana的dashboard展示不兼容</li>
+</ul>
+<h2>mongodb-dashboard</h2>
+<figure><figcaption>mongodb-dashboard</figcaption></figure>
+<h2>mongodb常用监控语句</h2>
+<h3>监控数据库是否宕机</h3>
+<div class="language-promQL" data-ext="promQL" data-title="promQL"><pre class="language-promQL"><code>mongodb_up == 0
+</code></pre></div>]]></content:encoded>
+    </item>
     <item>
       <title>推荐</title>
       <link>http://blog.cjhe.top/go-language/recommend/</link>
@@ -11223,36 +11247,6 @@ Sec-Websocket-Accept: YLcYR/p/mS8hENqlgMXtFTggdv8=
 <p>|        参数         |                                                                   说明                                                                   |
 | :</p>
 ]]></content:encoded>
-    </item>
-    <item>
-      <title>查询过程</title>
-      <link>http://blog.cjhe.top/database/mysql/read-process.html</link>
-      <guid>http://blog.cjhe.top/database/mysql/read-process.html</guid>
-      <source url="http://blog.cjhe.top/rss.xml">查询过程</source>
-      <description>readread</description>
-      <category>数据库</category>
-      <pubDate>Sat, 22 Oct 2022 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<figure><img src="https://cdn.cjhe.top/blog/MySQL-Read-Simple.png" alt="read" tabindex="0" loading="lazy"><figcaption>read</figcaption></figure>
-<!-- more -->
-<h2>执行流程</h2>
-<p>简单的查询过程如下：</p>
-<figure><figcaption>MySQL交互流程</figcaption></figure>
-<p>详细的查询过程如下：</p>
-<figure><figcaption>MySQL查询流程</figcaption></figure>
-<h3>连接器</h3>
-<blockquote>
-<p>连接器负责跟客户端建立连接、获取权限、维持和管理连接。</p>
-</blockquote>
-<p>我们使用以下命令和MySQL建立连接</p>
-<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code>mysql -h<span class="token variable">$ip</span> -p<span class="token variable">$port</span> -u<span class="token variable">$user</span> <span class="token parameter variable">-P</span>
-</code></pre></div><ul>
-<li>如果用户名或密码不对，就会收到一个<code>Access denied for user</code>的错误</li>
-<li>如果用户名密码认证通过，连接器会到权限表里查出当前用户的权限。</li>
-</ul>
-<p>我们使用<code>show processlist</code>命令可以查看当前建立的连接以及执行的动作</p>
-<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code>mysql<span class="token operator">&gt;</span> show processlist<span class="token punctuation">;</span>
-+</code></pre></div>]]></content:encoded>
-      <enclosure url="https://cdn.cjhe.top/blog/MySQL-Read-Simple.png" type="image/png"/>
     </item>
   </channel>
 </rss>

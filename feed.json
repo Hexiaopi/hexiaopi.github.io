@@ -6,6 +6,19 @@
   "description": "vuepress-theme-hope 的博客演示",
   "items": [
     {
+      "title": "MongoDB监控",
+      "url": "http://blog.cjhe.top/devops/docker/mongodb-exporter.html",
+      "id": "http://blog.cjhe.top/devops/docker/mongodb-exporter.html",
+      "summary": "MongoDB监控 我们通过mongodb-exporter监控mongodb状态 mongodb-exporter部署 注意： --collect-all，参数用于收集所有指标 --compatible-mode，用于兼容旧的指标，否则部分grafana的dashboard展示不兼容 mongodb-dashboard mongodb-dashboa...",
+      "content_html": "<h2>MongoDB监控</h2>\n<p>我们通过mongodb-exporter监控mongodb状态</p>\n<h2>mongodb-exporter部署</h2>\n<div class=\"language-bash\" data-ext=\"sh\" data-title=\"sh\"><pre class=\"language-bash\"><code><span class=\"token function\">docker</span> run <span class=\"token parameter variable\">-d</span> <span class=\"token parameter variable\">-p</span> <span class=\"token number\">9216</span>:9216 <span class=\"token parameter variable\">-p</span> <span class=\"token number\">17001</span>:17001 <span class=\"token parameter variable\">--restart</span><span class=\"token operator\">=</span>always <span class=\"token parameter variable\">--name</span><span class=\"token operator\">=</span>mongodb_exporter percona/mongodb_exporter:0.40 <span class=\"token parameter variable\">--mongodb.uri</span><span class=\"token operator\">=</span>mongodb://172.87.7.247:27017/admin?ssl<span class=\"token operator\">=</span>false --collect-all --compatible-mode\n</code></pre></div><p>注意：</p>\n<ul>\n<li>--collect-all，参数用于收集所有指标</li>\n<li>--compatible-mode，用于兼容旧的指标，否则部分grafana的dashboard展示不兼容</li>\n</ul>\n<h2>mongodb-dashboard</h2>\n<figure><figcaption>mongodb-dashboard</figcaption></figure>\n<h2>mongodb常用监控语句</h2>\n<h3>监控数据库是否宕机</h3>\n<div class=\"language-promQL\" data-ext=\"promQL\" data-title=\"promQL\"><pre class=\"language-promQL\"><code>mongodb_up == 0\n</code></pre></div>",
+      "date_published": "2024-04-16T00:00:00.000Z",
+      "date_modified": "2024-04-16T03:31:43.000Z",
+      "authors": [],
+      "tags": [
+        "devops"
+      ]
+    },
+    {
       "title": "推荐",
       "url": "http://blog.cjhe.top/go-language/recommend/",
       "id": "http://blog.cjhe.top/go-language/recommend/",
@@ -219,7 +232,7 @@
       "summary": "这里记录工作中学习到的devops基础知识",
       "content_html": "<p>这里记录工作中学习到的devops基础知识</p>\n",
       "date_published": "2024-01-15T00:00:00.000Z",
-      "date_modified": "2024-04-15T09:57:53.000Z",
+      "date_modified": "2024-04-16T03:31:43.000Z",
       "authors": [],
       "tags": [
         "devops"
@@ -245,7 +258,7 @@
       "summary": "这里记录工作中学习到的网络基础知识",
       "content_html": "<p>这里记录工作中学习到的网络基础知识</p>\n",
       "date_published": "2023-09-23T00:00:00.000Z",
-      "date_modified": "2024-04-15T09:57:53.000Z",
+      "date_modified": "2024-04-16T03:31:43.000Z",
       "authors": [],
       "tags": [
         "网络"
@@ -1318,20 +1331,6 @@
       "authors": [],
       "tags": [
         "系统设计"
-      ]
-    },
-    {
-      "title": "查询过程",
-      "url": "http://blog.cjhe.top/database/mysql/read-process.html",
-      "id": "http://blog.cjhe.top/database/mysql/read-process.html",
-      "summary": "readread",
-      "content_html": "<figure><img src=\"https://cdn.cjhe.top/blog/MySQL-Read-Simple.png\" alt=\"read\" tabindex=\"0\" loading=\"lazy\"><figcaption>read</figcaption></figure>\n<!-- more -->\n<h2>执行流程</h2>\n<p>简单的查询过程如下：</p>\n<figure><figcaption>MySQL交互流程</figcaption></figure>\n<p>详细的查询过程如下：</p>\n<figure><figcaption>MySQL查询流程</figcaption></figure>\n<h3>连接器</h3>\n<blockquote>\n<p>连接器负责跟客户端建立连接、获取权限、维持和管理连接。</p>\n</blockquote>\n<p>我们使用以下命令和MySQL建立连接</p>\n<div class=\"language-bash\" data-ext=\"sh\" data-title=\"sh\"><pre class=\"language-bash\"><code>mysql -h<span class=\"token variable\">$ip</span> -p<span class=\"token variable\">$port</span> -u<span class=\"token variable\">$user</span> <span class=\"token parameter variable\">-P</span>\n</code></pre></div><ul>\n<li>如果用户名或密码不对，就会收到一个<code>Access denied for user</code>的错误</li>\n<li>如果用户名密码认证通过，连接器会到权限表里查出当前用户的权限。</li>\n</ul>\n<p>我们使用<code>show processlist</code>命令可以查看当前建立的连接以及执行的动作</p>\n<div class=\"language-bash\" data-ext=\"sh\" data-title=\"sh\"><pre class=\"language-bash\"><code>mysql<span class=\"token operator\">&gt;</span> show processlist<span class=\"token punctuation\">;</span>\n+</code></pre></div>",
-      "image": "https://cdn.cjhe.top/blog/MySQL-Read-Simple.png",
-      "date_published": "2022-10-22T00:00:00.000Z",
-      "date_modified": "2024-04-15T09:57:53.000Z",
-      "authors": [],
-      "tags": [
-        "数据库"
       ]
     }
   ]
