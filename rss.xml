@@ -6,8 +6,8 @@
     <link>http://blog.cjhe.top/</link>
     <description>何小进童鞋的个人博客</description>
     <language>zh-CN</language>
-    <pubDate>Tue, 16 Apr 2024 06:45:22 GMT</pubDate>
-    <lastBuildDate>Tue, 16 Apr 2024 06:45:22 GMT</lastBuildDate>
+    <pubDate>Wed, 17 Apr 2024 01:13:23 GMT</pubDate>
+    <lastBuildDate>Wed, 17 Apr 2024 01:13:23 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Go语言</category>
@@ -10174,10 +10174,10 @@ fmt<span class="token punctuation">.</span><span class="token function">Println<
 ]]></content:encoded>
     </item>
     <item>
-      <title>Go安全指南-腾讯</title>
+      <title>Go安全指南</title>
       <link>http://blog.cjhe.top/go-language/reprint/tencent-secguide.html</link>
       <guid>http://blog.cjhe.top/go-language/reprint/tencent-secguide.html</guid>
-      <source url="http://blog.cjhe.top/rss.xml">Go安全指南-腾讯</source>
+      <source url="http://blog.cjhe.top/rss.xml">Go安全指南</source>
       <description>【转】原文链接</description>
       <category>Go语言</category>
       <category>转载</category>
@@ -10505,10 +10505,10 @@ fmt<span class="token punctuation">.</span><span class="token function">Println<
 ]]></content:encoded>
     </item>
     <item>
-      <title>Go语言编码规范-uber</title>
+      <title>Go语言编码规范</title>
       <link>http://blog.cjhe.top/go-language/reprint/uber-guide.html</link>
       <guid>http://blog.cjhe.top/go-language/reprint/uber-guide.html</guid>
-      <source url="http://blog.cjhe.top/rss.xml">Go语言编码规范-uber</source>
+      <source url="http://blog.cjhe.top/rss.xml">Go语言编码规范</source>
       <description>【转】原文链接</description>
       <category>Go语言</category>
       <category>转载</category>

@@ -3,7 +3,7 @@
   <id>http://blog.cjhe.top/</id>
   <title>个人博客</title>
   <subtitle>何小进童鞋的个人博客</subtitle>
-  <updated>2024-04-16T06:45:22.457Z</updated>
+  <updated>2024-04-17T01:13:23.466Z</updated>
   <generator>@vuepress/plugin-feed</generator>
   <link rel="self" href="http://blog.cjhe.top/atom.xml"/>
   <link rel="alternate" href="http://blog.cjhe.top/"/>
@@ -16,6 +16,18 @@
   <category term="设计模式"/>
   <category term="系统设计"/>
   <category term="工具"/>
+  <contributor>
+    <name>Dave Cheney</name>
+  </contributor>
+  <contributor>
+    <name>Rob Pike</name>
+  </contributor>
+  <contributor>
+    <name>Tencent</name>
+  </contributor>
+  <contributor>
+    <name>uber</name>
+  </contributor>
   <entry>
     <title type="text">Go语言推荐书籍</title>
     <id>http://blog.cjhe.top/go-language/recommend/book.html</id>
@@ -2269,7 +2281,7 @@ exit status 1</p>
     <title type="text">Go之禅</title>
     <id>http://blog.cjhe.top/go-language/reprint/zen.html</id>
     <link href="http://blog.cjhe.top/go-language/reprint/zen.html"/>
-    <updated>2023-08-16T03:24:53.000Z</updated>
+    <updated>2024-04-17T01:12:28.000Z</updated>
     <summary type="html"><![CDATA[<blockquote>
 <p>Python的核心开发成员之一Tim Peter写下的《The Zen of Python》，成为Python编程和设计的指导原则。Go语言步道师Dave Cheney 2020年发表了名为《The Zen of Go》</p>
 </blockquote>
@@ -2318,15 +2330,22 @@ goroutine 拥有锁、变量、内存等资源。释放这些资源的可靠方�
 <p><a href="https://the-zen-of-go.netlify.app" target="_blank" rel="noopener noreferrer">简洁版</a>
 <a href="https://dave.cheney.net/2020/02/23/the-zen-of-go" target="_blank" rel="noopener noreferrer">完整版</a></p>
 ]]></content>
+    <author>
+      <name>Dave Cheney</name>
+    </author>
     <category term="Go语言"/>
     <category term="转载"/>
+    <contributor>
+      <name>Dave Cheney</name>
+    </contributor>
     <published>2023-08-15T00:00:00.000Z</published>
+    <rights>Copyright by Dave Cheney</rights>
   </entry>
   <entry>
     <title type="text">Go箴言</title>
     <id>http://blog.cjhe.top/go-language/reprint/proverb.html</id>
     <link href="http://blog.cjhe.top/go-language/reprint/proverb.html"/>
-    <updated>2023-08-15T03:08:15.000Z</updated>
+    <updated>2024-04-17T01:12:28.000Z</updated>
     <summary type="html"><![CDATA[<p>【转】<a href="http://go-proverbs.github.io/" target="_blank" rel="noopener noreferrer">原文链接</a></p>
 <blockquote>
 <p>Go 语言之父 Rob Pike 在 2015 年分享的主题《Go Proverbs》</p>
@@ -2383,9 +2402,16 @@ Cgo 不是 Go。</p>
 <p><a href="http://go-proverbs.github.io/" target="_blank" rel="noopener noreferrer">原文链接</a>
 <a href="https://zhuanlan.zhihu.com/p/514680942" target="_blank" rel="noopener noreferrer">中文译文</a></p>
 ]]></content>
+    <author>
+      <name>Rob Pike</name>
+    </author>
     <category term="Go语言"/>
     <category term="转载"/>
+    <contributor>
+      <name>Rob Pike</name>
+    </contributor>
     <published>2023-08-15T00:00:00.000Z</published>
+    <rights>Copyright by Rob Pike</rights>
   </entry>
   <entry>
     <title type="text"></title>
@@ -10574,10 +10600,10 @@ fmt<span class="token punctuation">.</span><span class="token function">Println<
     <published>2022-09-08T00:00:00.000Z</published>
   </entry>
   <entry>
-    <title type="text">Go安全指南-腾讯</title>
+    <title type="text">Go安全指南</title>
     <id>http://blog.cjhe.top/go-language/reprint/tencent-secguide.html</id>
     <link href="http://blog.cjhe.top/go-language/reprint/tencent-secguide.html"/>
-    <updated>2023-07-30T09:20:01.000Z</updated>
+    <updated>2024-04-17T01:12:28.000Z</updated>
     <summary type="html"><![CDATA[<p>【转】<a href="https://github.com/Tencent/secguide" target="_blank" rel="noopener noreferrer">原文链接</a></p>
 ]]></summary>
     <content type="html"><![CDATA[<p>【转】<a href="https://github.com/Tencent/secguide" target="_blank" rel="noopener noreferrer">原文链接</a></p>
@@ -10901,15 +10927,22 @@ fmt<span class="token punctuation">.</span><span class="token function">Println<
 <li>根据创建文件的敏感性设置不同级别的访问权限，以防止敏感数据被任意权限用户读取。例如，设置文件权限为：`-rw-r</li>
 </ul>
 ]]></content>
+    <author>
+      <name>Tencent</name>
+    </author>
     <category term="Go语言"/>
     <category term="转载"/>
+    <contributor>
+      <name>Tencent</name>
+    </contributor>
     <published>2023-03-03T00:00:00.000Z</published>
+    <rights>Copyright by Tencent</rights>
   </entry>
   <entry>
-    <title type="text">Go语言编码规范-uber</title>
+    <title type="text">Go语言编码规范</title>
     <id>http://blog.cjhe.top/go-language/reprint/uber-guide.html</id>
     <link href="http://blog.cjhe.top/go-language/reprint/uber-guide.html"/>
-    <updated>2023-07-30T09:20:01.000Z</updated>
+    <updated>2024-04-17T01:12:28.000Z</updated>
     <summary type="html"><![CDATA[<p>【转】<a href="https://github.com/xxjwxc/uber_go_guide_cn" target="_blank" rel="noopener noreferrer">原文链接</a></p>
 ]]></summary>
     <content type="html"><![CDATA[<p>【转】<a href="https://github.com/xxjwxc/uber_go_guide_cn" target="_blank" rel="noopener noreferrer">原文链接</a></p>
@@ -11555,9 +11588,16 @@ maybeNewDay <span class="token operator">:=</span> t<span class="token punctuati
 <p>| 错误匹配？ | 错误消息 | 指导                                |
 |</p>
 ]]></content>
+    <author>
+      <name>uber</name>
+    </author>
     <category term="Go语言"/>
     <category term="转载"/>
+    <contributor>
+      <name>uber</name>
+    </contributor>
     <published>2023-03-04T00:00:00.000Z</published>
+    <rights>Copyright by uber</rights>
   </entry>
   <entry>
     <title type="text">WebSocket协议</title>
