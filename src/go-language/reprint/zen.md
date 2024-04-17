@@ -1,5 +1,6 @@
 ---
 title: Go之禅
+author: Dave Cheney
 date: 2023-08-15
 tag:
  - Go

@@ -1,5 +1,6 @@
 ---
-title: Go语言编码规范-uber
+title: Go语言编码规范
+author: uber
 date: 2023-03-04
 tag:
  - Go

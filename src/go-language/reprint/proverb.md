@@ -1,5 +1,6 @@
 ---
 title: Go箴言
+author: Rob Pike
 date: 2023-08-15
 tag:
  - Go

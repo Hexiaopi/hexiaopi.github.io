@@ -3,7 +3,7 @@ home: true
 layout: BlogHome
 icon: home
 title: 博客主页
-heroImage: /logo.png
+#heroImage: /logo.png
 bgImage: https://img2.baidu.com/it/u=3790341833,2407789859&fm=253&fmt=auto&app=120&f=JPEG?w=1422&h=800
 heroText: 知行合一
 heroFullScreen: true
