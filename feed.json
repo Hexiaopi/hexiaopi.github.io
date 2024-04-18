@@ -6,6 +6,19 @@
   "description": "何小进童鞋的个人博客",
   "items": [
     {
+      "title": "Minio监控",
+      "url": "http://blog.cjhe.top/devops/docker/minio-monitor.html",
+      "id": "http://blog.cjhe.top/devops/docker/minio-monitor.html",
+      "summary": "Minio监控 运行Minio Client(mc)容器 设置别名 输出结果： 生成 Prometheus 抓取目标配置 输出结果： 我们可以看到是通过bearer_token的方式获取指标，将上面生成的抓取目标配置同步到Prometheus minio-dashboard minio-dashboardminio-dashboard minio常用监...",
+      "content_html": "<h2>Minio监控</h2>\n<p>运行Minio Client(mc)容器</p>\n<div class=\"language-bash\" data-ext=\"sh\" data-title=\"sh\"><pre class=\"language-bash\"><code><span class=\"token function\">docker</span> run <span class=\"token parameter variable\">-it</span> <span class=\"token parameter variable\">--entrypoint</span><span class=\"token operator\">=</span>/bin/sh minio/mc\n</code></pre></div><p>设置别名</p>\n<div class=\"language-bash\" data-ext=\"sh\" data-title=\"sh\"><pre class=\"language-bash\"><code><span class=\"token function\">mc</span> <span class=\"token builtin class-name\">alias</span> <span class=\"token builtin class-name\">set</span> minio http://172.100.2.65:9000 minioadmin minioadmin\n</code></pre></div><p>输出结果：</p>\n<div class=\"language-text\" data-ext=\"text\" data-title=\"text\"><pre class=\"language-text\"><code>mc: Configuration written to `/root/.mc/config.json`. Please update your access credentials.\nmc: Successfully created `/root/.mc/share`.\nmc: Initialized share uploads `/root/.mc/share/uploads.json` file.\nmc: Initialized share downloads `/root/.mc/share/downloads.json` file.\nAdded `minio` successfully.\n</code></pre></div><p>生成 Prometheus 抓取目标配置</p>\n<div class=\"language-bash\" data-ext=\"sh\" data-title=\"sh\"><pre class=\"language-bash\"><code><span class=\"token function\">mc</span> admin prometheus generate minio\n</code></pre></div><p>输出结果：</p>\n<div class=\"language-bash\" data-ext=\"sh\" data-title=\"sh\"><pre class=\"language-bash\"><code>scrape_configs:\n- job_name: minio-job\n  bearer_token: eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJwcm9tZXRoZXVzIiwic3ViIjoibWluaW9hZG1pbiIsImV4cCI6NDg2NzAyNTgyOX0.QgEjjQvA1ieHhM8sxMxMhYGGOcmsN4dQT1lIcOHGe5Lo4ZTeTsgzKAq65HPBkFQ1RayMzolQ_R2J3aByVe_ZNw\n  metrics_path: /minio/v2/metrics/cluster\n  scheme: http\n  static_configs:\n  - targets: <span class=\"token punctuation\">[</span><span class=\"token string\">'172.100.2.65:9000'</span><span class=\"token punctuation\">]</span>\n</code></pre></div><p>我们可以看到是通过<code>bearer_token</code>的方式获取指标，将上面生成的抓取目标配置同步到Prometheus</p>\n<h2>minio-dashboard</h2>\n<figure><figcaption>minio-dashboard</figcaption></figure>\n<h2>minio常用监控语句</h2>\n<h3>minio集群节点离线</h3>\n<div class=\"language-promQL\" data-ext=\"promQL\" data-title=\"promQL\"><pre class=\"language-promQL\"><code>minio_cluster_nodes_offline_total &gt; 0\n</code></pre></div><h3>minio集群磁盘离线</h3>\n<div class=\"language-promQL\" data-ext=\"promQL\" data-title=\"promQL\"><pre class=\"language-promQL\"><code>minio_cluster_drive_offline_total &gt; 0\n</code></pre></div><h2>参考文献</h2>\n<p><a href=\"https://min.io/docs/minio/linux/operations/monitoring/collect-minio-metrics-using-prometheus.html?ref=docs-redirect\" target=\"_blank\" rel=\"noopener noreferrer\">Prometheus官方文档</a></p>\n<p><a href=\"https://www.cnblogs.com/zmh520/p/17771438.html\" target=\"_blank\" rel=\"noopener noreferrer\">minio部署及监控</a></p>\n",
+      "date_published": "2024-04-18T00:00:00.000Z",
+      "date_modified": "2024-04-18T09:03:40.000Z",
+      "authors": [],
+      "tags": [
+        "devops"
+      ]
+    },
+    {
       "title": "Go语言推荐书籍",
       "url": "http://blog.cjhe.top/go-language/recommend/book.html",
       "id": "http://blog.cjhe.top/go-language/recommend/book.html",
@@ -1334,19 +1347,6 @@
       "tags": [
         "Go语言",
         "转载"
-      ]
-    },
-    {
-      "title": "WebSocket协议",
-      "url": "http://blog.cjhe.top/network/application-layer/websocket.html",
-      "id": "http://blog.cjhe.top/network/application-layer/websocket.html",
-      "summary": "WebSocket是为了提供web应用程序和服务端全双工通信而专门定制的一种网络协议，和HTTP协议一样位于OSI模型的应用层协议。 特点 建立在TCP协议之上 与HTTP协议有着良好的兼容性，握手阶段采用HTTP协议，默认端口是80和443 数据格式比较轻量，性能开销小、通信高效 可以发送文本，也可以发送二进制数据 没有同源限制，客户端可以与任意服务...",
-      "content_html": "<blockquote>\n<p>WebSocket是为了提供web应用程序和服务端全双工通信而专门定制的一种网络协议，和HTTP协议一样位于OSI模型的应用层协议。</p>\n</blockquote>\n<h2>特点</h2>\n<ul>\n<li>建立在TCP协议之上</li>\n<li>与HTTP协议有着良好的兼容性，握手阶段采用HTTP协议，默认端口是80和443</li>\n<li>数据格式比较轻量，性能开销小、通信高效</li>\n<li>可以发送文本，也可以发送二进制数据</li>\n<li>没有同源限制，客户端可以与任意服务器通信</li>\n<li>协议标识符是ws(如果加密，则为wss)，形式：ws://echo.websocket.org</li>\n</ul>\n<h2>交互时序</h2>\n<figure><figcaption>websocket</figcaption></figure>\n<h2>抓包分析</h2>\n<h3>HTTP请求</h3>\n<div class=\"language-text\" data-ext=\"text\" data-title=\"text\"><pre class=\"language-text\"><code>GET /ws hTTP/1.1\nHost: localhost:2021\nUpgrade: websocket\nConnection: Upgrade\nSec-Websocket-Key: mViTimINUhcF0fBHeX+wqA==\nSec-Websocket-Version: 13\n</code></pre></div><ul>\n<li><code>Connection: Upgrade</code>表明要升级协议</li>\n<li><code>Upgrade:  websocket</code>表明升级至websocket协议</li>\n<li><code>Sec-Websocket-Key</code>是客户端发送的一个base64编码的秘文，要求服务端返回一个对应加密的<code>Sec-Websocket-Accept</code>应答，否则客户端会抛出“Error during WebSocket handshake”错误，并关闭连接</li>\n<li><code>Sec-Websocket-Version: 13</code>表示 websocket的版本，如果服务端不支持该版本，需要返回一个Sec-Websocket-Version里面包含服务端支持的版本号</li>\n</ul>\n<h3>HTTP返回</h3>\n<div class=\"language-text\" data-ext=\"text\" data-title=\"text\"><pre class=\"language-text\"><code>HTTP/1.1 101 Switching Protocols\nConnection: Upgrade\nUpgrade: websocket\nSec-Websocket-Accept: YLcYR/p/mS8hENqlgMXtFTggdv8=\n</code></pre></div><ul>\n<li>Sec-Websocket-Accept是服务端采用与客户端一致的秘钥计算出来后返回客户端，计算公式</li>\n</ul>\n<blockquote>\n<p>toBase64(sha1(Sec-WebSocket-Key + 258EAFA5-E914-47DA-95CA-C5AB0DC85B11))</p>\n</blockquote>\n<ul>\n<li><code>HTTP/1.1 101 Switching Protocols</code>表示服务端接受WebSocket协议的客户端连接</li>\n</ul>\n<h2>数据帧格式</h2>\n<blockquote>\n<p>从左到右，单位是比特。比如<code>FIN</code>、<code>RSV1</code>、<code>RSV2</code>、<code>RSV3</code>各占据1比特，<code>opcode</code>占据4比特</p>\n<p>内容包括了标识、操作代码、掩码、数据长度</p>\n</blockquote>\n<div class=\"language-text\" data-ext=\"text\" data-title=\"text\"><pre class=\"language-text\"><code>  0                   1                   2                   3\n  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1\n +-+-+-+-+</code></pre></div>",
-      "date_published": "2023-03-19T00:00:00.000Z",
-      "date_modified": "2024-04-11T06:38:26.000Z",
-      "authors": [],
-      "tags": [
-        "网络"
       ]
     }
   ]
