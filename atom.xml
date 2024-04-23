@@ -3,7 +3,7 @@
   <id>http://blog.cjhe.top/</id>
   <title>个人博客</title>
   <subtitle>何小进童鞋的个人博客</subtitle>
-  <updated>2024-04-23T01:36:36.124Z</updated>
+  <updated>2024-04-23T03:02:08.099Z</updated>
   <generator>@vuepress/plugin-feed</generator>
   <link rel="self" href="http://blog.cjhe.top/atom.xml"/>
   <link rel="alternate" href="http://blog.cjhe.top/"/>
@@ -2462,10 +2462,10 @@ Cgo 不是 Go。</p>
     <title type="text"></title>
     <id>http://blog.cjhe.top/CHANGELOG.html</id>
     <link href="http://blog.cjhe.top/CHANGELOG.html"/>
-    <updated>2024-04-14T09:19:00.000Z</updated>
+    <updated>2024-04-23T03:01:07.000Z</updated>
     <summary type="html"><![CDATA[<p><a name="v0.11.0"></a></p>
 <h2><a class="header-anchor" href="#v0-11-0-2024-04-14"><span></span></a><a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.10.1...v0.11.0" target="_blank" rel="noopener noreferrer">v0.11.0</a> (2024-04-14)</h2>
-<h3>Bug Fixes</h3>
+<h3>🐛Bug Fixes</h3>
 <ul>
 <li>修改vuepress icon</li>
 <li>修复bug</li>
@@ -2476,7 +2476,7 @@ Cgo 不是 Go。</p>
 </ul>]]></summary>
     <content type="html"><![CDATA[<p><a name="v0.11.0"></a></p>
 <h2><a class="header-anchor" href="#v0-11-0-2024-04-14"><span></span></a><a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.10.1...v0.11.0" target="_blank" rel="noopener noreferrer">v0.11.0</a> (2024-04-14)</h2>
-<h3>Bug Fixes</h3>
+<h3>🐛Bug Fixes</h3>
 <ul>
 <li>修改vuepress icon</li>
 <li>修复bug</li>
@@ -2485,11 +2485,11 @@ Cgo 不是 Go。</p>
 <li><strong>go-language:</strong> defer增加遇见os.Exit</li>
 <li><strong>go-language:</strong> 修改数据类型</li>
 </ul>
-<h3>Code Refactoring</h3>
+<h3>♻️Code Refactoring</h3>
 <ul>
 <li>调整devops到k8s子类</li>
 </ul>
-<h3>Features</h3>
+<h3>✨Features</h3>
 <ul>
 <li><strong>devops:</strong> 增加redis监控</li>
 <li><strong>devops:</strong> 增加mysql监控</li>
@@ -2504,49 +2504,49 @@ Cgo 不是 Go。</p>
 </ul>
 <p><a name="v0.10.1"></a></p>
 <h2><a class="header-anchor" href="#v0-10-1-2023-09-23"><span></span></a><a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.10.0...v0.10.1" target="_blank" rel="noopener noreferrer">v0.10.1</a> (2023-09-23)</h2>
-<h3>Bug Fixes</h3>
+<h3>🐛Bug Fixes</h3>
 <ul>
 <li><strong>go-language:</strong> 修改flag标准库，增加底层原理</li>
 </ul>
-<h3>Code Refactoring</h3>
+<h3>♻️Code Refactoring</h3>
 <ul>
 <li>调整目录顺序</li>
 </ul>
 <p><a name="v0.10.0"></a></p>
 <h2><a class="header-anchor" href="#v0-10-0-2023-09-20"><span></span></a><a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.9.2...v0.10.0" target="_blank" rel="noopener noreferrer">v0.10.0</a> (2023-09-20)</h2>
-<h3>Bug Fixes</h3>
+<h3>🐛Bug Fixes</h3>
 <ul>
 <li><strong>go-language:</strong> 修改第三方库</li>
 <li><strong>project-language:</strong> 提交规范增加参考文献</li>
 </ul>
-<h3>Features</h3>
+<h3>✨Features</h3>
 <ul>
 <li><strong>go-language:</strong> 增加三方库pflag介绍</li>
 </ul>
 <p><a name="v0.9.2"></a></p>
 <h2><a class="header-anchor" href="#v0-9-2-2023-09-11"><span></span></a><a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.9.1...v0.9.2" target="_blank" rel="noopener noreferrer">v0.9.2</a> (2023-09-11)</h2>
-<h3>Bug Fixes</h3>
+<h3>🐛Bug Fixes</h3>
 <ul>
 <li><strong>go-language:</strong> flag增加子命令</li>
 <li><strong>go-language:</strong> 修改flag</li>
 </ul>
-<h3>Features</h3>
+<h3>✨Features</h3>
 <ul>
 <li>增加Go语言标准库</li>
 </ul>
 <p><a name="v0.9.1"></a></p>
 <h2><a class="header-anchor" href="#v0-9-1-2023-09-05"><span></span></a><a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.9.0...v0.9.1" target="_blank" rel="noopener noreferrer">v0.9.1</a> (2023-09-05)</h2>
-<h3>Bug Fixes</h3>
+<h3>🐛Bug Fixes</h3>
 <ul>
 <li><strong>design-pattern:</strong> 修改创建型设计模式</li>
 </ul>
 <p><a name="v0.9.0"></a></p>
 <h2><a class="header-anchor" href="#v0-9-0-2023-09-02"><span></span></a><a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.8.0...v0.9.0" target="_blank" rel="noopener noreferrer">v0.9.0</a> (2023-09-02)</h2>
-<h3>Bug Fixes</h3>
+<h3>🐛Bug Fixes</h3>
 <ul>
 <li><strong>go-language:</strong> 修改Go语言简介</li>
 </ul>
-<h3>Features</h3>
+<h3>✨Features</h3>
 <ul>
 <li><strong>go-language:</strong> 增加defer和recover注意事项</li>
 <li><strong>go-language:</strong> 增加package介绍</li>
@@ -2554,47 +2554,47 @@ Cgo 不是 Go。</p>
 </ul>
 <p><a name="v0.8.0"></a></p>
 <h2><a class="header-anchor" href="#v0-8-0-2023-08-22"><span></span></a><a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.7.1...v0.8.0" target="_blank" rel="noopener noreferrer">v0.8.0</a> (2023-08-22)</h2>
-<h3>Bug Fixes</h3>
+<h3>🐛Bug Fixes</h3>
 <ul>
 <li><strong>design-pattern:</strong> 修改并发模式</li>
 <li><strong>go-language:</strong> 修改Go之禅中模糊的含义</li>
 <li><strong>go-language:</strong> 修改slice</li>
 <li><strong>middleware:</strong> 修改监控系统至中间件</li>
 </ul>
-<h3>Code Refactoring</h3>
+<h3>♻️Code Refactoring</h3>
 <ul>
 <li>markdown格式优化</li>
 </ul>
-<h3>Features</h3>
+<h3>✨Features</h3>
 <ul>
 <li><strong>go-language:</strong> 增加Go之禅</li>
 <li><strong>go-language:</strong> 转载Go箴言</li>
 </ul>
 <p><a name="v0.7.1"></a></p>
 <h2><a class="header-anchor" href="#v0-7-1-2023-08-13"><span></span></a><a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.7.0...v0.7.1" target="_blank" rel="noopener noreferrer">v0.7.1</a> (2023-08-13)</h2>
-<h3>Bug Fixes</h3>
+<h3>🐛Bug Fixes</h3>
 <ul>
 <li><strong>design-pattern:</strong> 修改设计原则</li>
 <li><strong>go-language:</strong> 修改Go语言基础</li>
 </ul>
-<h3>Code Refactoring</h3>
+<h3>♻️Code Refactoring</h3>
 <ul>
 <li>调整函数模式和并发模式</li>
 </ul>
 <p><a name="v0.7.0"></a></p>
 <h2><a class="header-anchor" href="#v0-7-0-2023-08-07"><span></span></a><a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.6.0...v0.7.0" target="_blank" rel="noopener noreferrer">v0.7.0</a> (2023-08-07)</h2>
-<h3>Code Refactoring</h3>
+<h3>♻️Code Refactoring</h3>
 <ul>
 <li>侧边栏可折叠</li>
 <li>调整目录结构</li>
 </ul>
-<h3>Features</h3>
+<h3>✨Features</h3>
 <ul>
 <li><strong>design-pattern:</strong> 增加选项模式</li>
 </ul>
 <p><a name="v0.6.0"></a></p>
 <h2><a class="header-anchor" href="#v0-6-0-2023-08-03"><span></span></a><a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.5.0...v0.6.0" target="_blank" rel="noopener noreferrer">v0.6.0</a> (2023-08-03)</h2>
-<h3>Bug Fixes</h3>
+<h3>🐛Bug Fixes</h3>
 <ul>
 <li>修改设计模式</li>
 <li>配置页面元数据</li>
@@ -2603,13 +2603,13 @@ Cgo 不是 Go。</p>
 <li><strong>design-pattern:</strong> 修改设计模式问题</li>
 <li><strong>project-stanard:</strong> 修改项目规范一些问题</li>
 </ul>
-<h3>Code Refactoring</h3>
+<h3>♻️Code Refactoring</h3>
 <ul>
 <li>调整侧边栏和导航栏</li>
 <li>调整导航栏和侧边栏</li>
 <li><strong>databae:</strong> 优化数据库查询</li>
 </ul>
-<h3>Features</h3>
+<h3>✨Features</h3>
 <ul>
 <li>增加变更日志</li>
 <li>增加Go语言爱好者周刊友情链接</li>
@@ -2617,11 +2617,11 @@ Cgo 不是 Go。</p>
 </ul>
 <p><a name="v0.5.0"></a></p>
 <h2><a class="header-anchor" href="#v0-5-0-2022-05-24"><span></span></a><a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.4.0...v0.5.0" target="_blank" rel="noopener noreferrer">v0.5.0</a> (2022-05-24)</h2>
-<h3>Bug Fixes</h3>
+<h3>🐛Bug Fixes</h3>
 <ul>
 <li><strong>database:</strong> 增加事务一致性视图</li>
 </ul>
-<h3>Code Refactoring</h3>
+<h3>♻️Code Refactoring</h3>
 <ul>
 <li><strong>go-language:</strong> 修改操作符</li>
 <li><strong>go-language:</strong> 调整数组与切片</li>
@@ -2629,7 +2629,7 @@ Cgo 不是 Go。</p>
 <li><strong>go-language:</strong> 数组与切片调整</li>
 <li><strong>go-language:</strong> 调整变量、常量及命名规则</li>
 </ul>
-<h3>Features</h3>
+<h3>✨Features</h3>
 <ul>
 <li><strong>database:</strong> 增加mysql读过程、写过程和事务</li>
 <li><strong>database:</strong> 增加redis大纲</li>
@@ -2640,14 +2640,14 @@ Cgo 不是 Go。</p>
 </ul>
 <p><a name="v0.4.0"></a></p>
 <h2><a class="header-anchor" href="#v0-4-0-2022-03-27"><span></span></a><a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.3.4...v0.4.0" target="_blank" rel="noopener noreferrer">v0.4.0</a> (2022-03-27)</h2>
-<h3>Bug Fixes</h3>
+<h3>🐛Bug Fixes</h3>
 <ul>
 <li><strong>algorithm:</strong> 增加限流-令牌桶算法</li>
 <li><strong>project-standard:</strong> 增加语义化版本工具</li>
 <li><strong>project-standard:</strong> 增加语义化版本详细外链</li>
 <li><strong>project-standard:</strong> 增加readme.so外链</li>
 </ul>
-<h3>Features</h3>
+<h3>✨Features</h3>
 <ul>
 <li><strong>database:</strong> 增加MySQL-表连接</li>
 <li><strong>go-language:</strong> 增加一些环境变量说明</li>
@@ -2655,64 +2655,69 @@ Cgo 不是 Go。</p>
 </ul>
 <p><a name="v0.3.4"></a></p>
 <h2><a class="header-anchor" href="#v0-3-4-2022-03-20"><span></span></a><a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.3.3...v0.3.4" target="_blank" rel="noopener noreferrer">v0.3.4</a> (2022-03-20)</h2>
-<h3>Features</h3>
+<h3>✨Features</h3>
 <ul>
 <li><strong>algorithm:</strong> 增加限流算法</li>
 </ul>
 <p><a name="v0.3.3"></a></p>
 <h2><a class="header-anchor" href="#v0-3-3-2022-03-03"><span></span></a><a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.3.2...v0.3.3" target="_blank" rel="noopener noreferrer">v0.3.3</a> (2022-03-03)</h2>
-<h3>Bug Fixes</h3>
+<h3>🐛Bug Fixes</h3>
 <ul>
 <li><strong>project-standard:</strong> 项目管理改为项目规范</li>
 </ul>
 <p><a name="v0.3.2"></a></p>
 <h2><a class="header-anchor" href="#v0-3-2-2022-02-23"><span></span></a><a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.3.1...v0.3.2" target="_blank" rel="noopener noreferrer">v0.3.2</a> (2022-02-23)</h2>
-<h3>Bug Fixes</h3>
+<h3>🐛Bug Fixes</h3>
 <ul>
 <li><strong>data-structure:</strong> 删除二叉搜索树迭代版本</li>
 </ul>
-<h3>Code Refactoring</h3>
+<h3>♻️Code Refactoring</h3>
 <ul>
 <li>调整结构和描述</li>
 </ul>
 <p><a name="v0.3.1"></a></p>
 <h2><a class="header-anchor" href="#v0-3-1-2022-02-23"><span></span></a><a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.3.0...v0.3.1" target="_blank" rel="noopener noreferrer">v0.3.1</a> (2022-02-23)</h2>
-<h3>Bug Fixes</h3>
+<h3>🐛Bug Fixes</h3>
 <ul>
 <li><strong>data-structure:</strong> 修改二叉搜索树删除节点算法</li>
 </ul>
-<h3>Code Refactoring</h3>
+<h3>♻️Code Refactoring</h3>
 <ul>
 <li><strong>data-structure:</strong> 修改删除最小节点命名</li>
 </ul>
 <p><a name="v0.3.0"></a></p>
 <h2><a class="header-anchor" href="#v0-3-0-2022-02-20"><span></span></a><a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.2.0...v0.3.0" target="_blank" rel="noopener noreferrer">v0.3.0</a> (2022-02-20)</h2>
-<h3>Bug Fixes</h3>
+<h3>🐛Bug Fixes</h3>
 <ul>
 <li><strong>data-structure:</strong> 侧边栏修复</li>
 </ul>
-<h3>Features</h3>
+<h3>✨Features</h3>
 <ul>
 <li><strong>data-structure:</strong> 增加二叉搜索树</li>
 <li><strong>data-structure:</strong> 增加二叉树</li>
 </ul>
 <p><a name="v0.2.0"></a></p>
-<h2><a class="header-anchor" href="#v0-2-0-2022-02-11"><span></span></a><a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.0.1...v0.2.0" target="_blank" rel="noopener noreferrer">v0.2.0</a> (2022-02-11)</h2>
-<h3>Bug Fixes</h3>
+<h2><a class="header-anchor" href="#v0-2-0-2022-02-11"><span></span></a><a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.1.0...v0.2.0" target="_blank" rel="noopener noreferrer">v0.2.0</a> (2022-02-11)</h2>
+<h3>✨Features</h3>
+<ul>
+<li><strong>project-manager:</strong> 增加分支规范</li>
+</ul>
+<p><a name="v0.1.0"></a></p>
+<h2><a class="header-anchor" href="#v0-1-0-2022-02-09"><span></span></a><a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.0.1...v0.1.0" target="_blank" rel="noopener noreferrer">v0.1.0</a> (2022-02-09)</h2>
+<h3>🐛Bug Fixes</h3>
 <ul>
 <li><strong>project-manager:</strong> 修正目录规范</li>
 </ul>
-<h3>Features</h3>
+<h3>✨Features</h3>
 <ul>
 <li><strong>commit:</strong> 增加语义化版本自动生成工具gsemver配置和介绍</li>
 <li><strong>commit:</strong> 增加CHANGE LOG自动生产</li>
 <li><strong>docs:</strong> 增加变更历史</li>
-<li><strong>project-manager:</strong> 增加分支规范</li>
 <li><strong>project-manager:</strong> 增加目录规范</li>
 </ul>
 <p><a name="v0.0.1"></a></p>
 <h2>v0.0.1 (2022-02-03)</h2>
-<h3>Bug Fixes</h3>
+<h3>🐛Bug Fixes</h3>
 <ul>
 <li>更新侧边栏</li>
 <li>update sidebar</li>
@@ -2721,12 +2726,12 @@ Cgo 不是 Go。</p>
 <li><strong>project-manager:</strong> 更新提交规范</li>
 <li><strong>project-manager:</strong> update version</li>
 </ul>
-<h3>Code Refactoring</h3>
+<h3>♻️Code Refactoring</h3>
 <ul>
 <li><strong>go-language:</strong> 调整结构</li>
 <li><strong>go-language:</strong> 调整结构</li>
 </ul>
-<h3>Features</h3>
+<h3>✨Features</h3>
 <ul>
 <li>增加CHANGE LOG</li>
 <li>增加版本规范</li>
