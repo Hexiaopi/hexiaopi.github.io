@@ -6,8 +6,8 @@
     <link>http://blog.cjhe.top/</link>
     <description>何小进童鞋的个人博客</description>
     <language>zh-CN</language>
-    <pubDate>Tue, 23 Apr 2024 03:02:08 GMT</pubDate>
-    <lastBuildDate>Tue, 23 Apr 2024 03:02:08 GMT</lastBuildDate>
+    <pubDate>Tue, 23 Apr 2024 03:17:40 GMT</pubDate>
+    <lastBuildDate>Tue, 23 Apr 2024 03:17:40 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>devops</category>
@@ -2181,12 +2181,12 @@ Cgo 不是 Go。</p>
 ]]></content:encoded>
     </item>
     <item>
-      <title></title>
+      <title>变更日志</title>
       <link>http://blog.cjhe.top/CHANGELOG.html</link>
       <guid>http://blog.cjhe.top/CHANGELOG.html</guid>
-      <source url="http://blog.cjhe.top/rss.xml"></source>
+      <source url="http://blog.cjhe.top/rss.xml">变更日志</source>
       <description>v0.11.0 (2024-04-14) 🐛Bug Fixes 修改vuepress icon 修复bug devops: 修改helm-dashboard go-language: 修改map，增加一些注意事项 go-language: defer增加遇见os.Exit go-language: 修改数据类型 ♻️Code Refactoring ...</description>
-      <pubDate>Thu, 03 Aug 2023 13:57:06 GMT</pubDate>
+      <pubDate>Tue, 23 Apr 2024 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[<p><a name="v0.11.0"></a></p>
 <h2><a class="header-anchor" href="#v0-11-0-2024-04-14"><span></span></a><a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.10.1...v0.11.0" target="_blank" rel="noopener noreferrer">v0.11.0</a> (2024-04-14)</h2>
 <h3>🐛Bug Fixes</h3>

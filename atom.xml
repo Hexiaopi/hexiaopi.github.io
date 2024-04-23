@@ -3,7 +3,7 @@
   <id>http://blog.cjhe.top/</id>
   <title>个人博客</title>
   <subtitle>何小进童鞋的个人博客</subtitle>
-  <updated>2024-04-23T03:02:08.099Z</updated>
+  <updated>2024-04-23T03:17:40.898Z</updated>
   <generator>@vuepress/plugin-feed</generator>
   <link rel="self" href="http://blog.cjhe.top/atom.xml"/>
   <link rel="alternate" href="http://blog.cjhe.top/"/>
@@ -2459,10 +2459,10 @@ Cgo 不是 Go。</p>
     <rights>Copyright by Rob Pike</rights>
   </entry>
   <entry>
-    <title type="text"></title>
+    <title type="text">变更日志</title>
     <id>http://blog.cjhe.top/CHANGELOG.html</id>
     <link href="http://blog.cjhe.top/CHANGELOG.html"/>
-    <updated>2024-04-23T03:01:07.000Z</updated>
+    <updated>2024-04-23T03:16:39.000Z</updated>
     <summary type="html"><![CDATA[<p><a name="v0.11.0"></a></p>
 <h2><a class="header-anchor" href="#v0-11-0-2024-04-14"><span></span></a><a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.10.1...v0.11.0" target="_blank" rel="noopener noreferrer">v0.11.0</a> (2024-04-14)</h2>
 <h3>🐛Bug Fixes</h3>
@@ -2744,7 +2744,7 @@ Cgo 不是 Go。</p>
 <li><strong>project-manager:</strong> add commit standard</li>
 </ul>
 ]]></content>
-    <published>2023-08-03T13:57:06.000Z</published>
+    <published>2024-04-23T00:00:00.000Z</published>
   </entry>
   <entry>
     <title type="text">工厂模式的比较</title>
