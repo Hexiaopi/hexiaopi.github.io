@@ -16,10 +16,24 @@ options:
     group_by: Type
     sort_by: Title
     title_maps:
-      feat: Features
-      fix: Bug Fixes
-      perf: Performance Improvements
-      refactor: Code Refactoring
+      feat: :sparkles:Features
+      fix: :bug:Bug Fixes
+      perf: :zap:Performance Improvements
+      refactor: :recycle:Code Refactoring
+      BREAKING CHANGE: :boom:Breaking Changes
+      build: :hammer:Build System
+      chore: :house:Chores
+      docs: :memo:Documentation
+      style: :nail_care:Styles
+      ci: :green_heart:Continuous Integration
+      revert: :rewind:Reverts
+      WIP: :construction:Work In Progress
+  scopes:
+    - :bug: Bug Fixes
+    - :feature: Features
+    - :docs: Documentation
+    - :style: Styles
+    - :refactor: Code Refactoring
   header:
     pattern: "^(\\w*)(?:\\(([\\w\\$\\.\\-\\*\\s]*)\\))?\\:\\s(.*)$"
     pattern_maps:
