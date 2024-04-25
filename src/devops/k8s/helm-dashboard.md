@@ -42,3 +42,26 @@ helm-dashboard依赖的前端静态资源如：
 
 
 由于国内网络原因，偶尔访问不到，导致页面加载不出来，影响使用。因此需要将这些cdn资源改为本地引用。[代码修改详见](https://github.com/Hexiaopi/helm-dashboard/commit/4eb18e1655606cd80ce1eb8001f03eaca6a55dc7)
+
+### 支持先行版本
+
+常见的语义化版本格式是：**X.Y.Z**，如：
+
+- 1.0.0
+- 2.0.0
+- 3.0.0
+
+但有时候需要支持先行版本，如：
+
+- 1.0.0-alpha.1
+- 1.0.0-beta.2
+- 1.0.0-rc.1
+
+helm-dashboard通过语义化版本判断最新版本是哪个，对于先行版本会导致页面报错白屏，因此如果需要支持先行版本，需要在chart包value.yaml增加`--devel`参数，详见如下：
+
+```yaml{4}
+extraArgs:
+    - --no-browser
+    - --bind=0.0.0.0
+    - --devel
+```
