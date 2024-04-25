@@ -6,8 +6,8 @@
     <link>http://blog.cjhe.top/</link>
     <description>何小进童鞋的个人博客</description>
     <language>zh-CN</language>
-    <pubDate>Tue, 23 Apr 2024 06:29:19 GMT</pubDate>
-    <lastBuildDate>Tue, 23 Apr 2024 06:29:19 GMT</lastBuildDate>
+    <pubDate>Thu, 25 Apr 2024 10:52:45 GMT</pubDate>
+    <lastBuildDate>Thu, 25 Apr 2024 10:52:45 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>devops</category>
@@ -468,7 +468,25 @@ ENTRYPOINT <span class="token punctuation">[</span><span class="token string">"/
 <li>https://cdn.jsdelivr.net/npm/diff2html/bundles/css/diff2html.min.css</li>
 </ul>
 <p>由于国内网络原因，偶尔访问不到，导致页面加载不出来，影响使用。因此需要将这些cdn资源改为本地引用。<a href="https://github.com/Hexiaopi/helm-dashboard/commit/4eb18e1655606cd80ce1eb8001f03eaca6a55dc7" target="_blank" rel="noopener noreferrer">代码修改详见</a></p>
-]]></content:encoded>
+<h3>支持先行版本</h3>
+<p>常见的语义化版本格式是：<strong>X.Y.Z</strong>，如：</p>
+<ul>
+<li>1.0.0</li>
+<li>2.0.0</li>
+<li>3.0.0</li>
+</ul>
+<p>但有时候需要支持先行版本，如：</p>
+<ul>
+<li>1.0.0-alpha.1</li>
+<li>1.0.0-beta.2</li>
+<li>1.0.0-rc.1</li>
+</ul>
+<p>helm-dashboard通过语义化版本判断最新版本是哪个，对于先行版本会导致页面报错白屏，因此如果需要支持先行版本，需要在chart包value.yaml增加<code>--devel</code>参数，详见如下：</p>
+<div class="language-yaml" data-ext="yml" data-title="yml"><pre class="language-yaml"><code><span class="token key atrule">extraArgs</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token punctuation">-</span><span class="token punctuation">-</span>no<span class="token punctuation">-</span>browser
+    <span class="token punctuation">-</span> <span class="token punctuation">-</span><span class="token punctuation">-</span>bind=0.0.0.0
+    <span class="token punctuation">-</span> <span class="token punctuation">-</span><span class="token punctuation">-</span>devel
+</code></pre></div>]]></content:encoded>
     </item>
     <item>
       <title>kube-state-metrics k8s 部署</title>

@@ -3,7 +3,7 @@
   <id>http://blog.cjhe.top/</id>
   <title>个人博客</title>
   <subtitle>何小进童鞋的个人博客</subtitle>
-  <updated>2024-04-23T06:29:19.280Z</updated>
+  <updated>2024-04-25T10:52:45.990Z</updated>
   <generator>@vuepress/plugin-feed</generator>
   <link rel="self" href="http://blog.cjhe.top/atom.xml"/>
   <link rel="alternate" href="http://blog.cjhe.top/"/>
@@ -504,7 +504,7 @@ ENTRYPOINT <span class="token punctuation">[</span><span class="token string">"/
     <title type="text">Helm Dashboard简介</title>
     <id>http://blog.cjhe.top/devops/k8s/helm-dashboard.html</id>
     <link href="http://blog.cjhe.top/devops/k8s/helm-dashboard.html"/>
-    <updated>2024-03-18T08:34:44.000Z</updated>
+    <updated>2024-04-25T10:51:45.000Z</updated>
     <summary type="html"><![CDATA[<p>helm-dashboard是helm的可视化界面，可以查看集群内通过helm部署的chart包。好处：不需要登录机器就可以升级、回滚chart包。</p>
 ]]></summary>
     <content type="html"><![CDATA[<p>helm-dashboard是helm的可视化界面，可以查看集群内通过helm部署的chart包。好处：不需要登录机器就可以升级、回滚chart包。</p>
@@ -529,7 +529,25 @@ ENTRYPOINT <span class="token punctuation">[</span><span class="token string">"/
 <li>https://cdn.jsdelivr.net/npm/diff2html/bundles/css/diff2html.min.css</li>
 </ul>
 <p>由于国内网络原因，偶尔访问不到，导致页面加载不出来，影响使用。因此需要将这些cdn资源改为本地引用。<a href="https://github.com/Hexiaopi/helm-dashboard/commit/4eb18e1655606cd80ce1eb8001f03eaca6a55dc7" target="_blank" rel="noopener noreferrer">代码修改详见</a></p>
-]]></content>
+<h3>支持先行版本</h3>
+<p>常见的语义化版本格式是：<strong>X.Y.Z</strong>，如：</p>
+<ul>
+<li>1.0.0</li>
+<li>2.0.0</li>
+<li>3.0.0</li>
+</ul>
+<p>但有时候需要支持先行版本，如：</p>
+<ul>
+<li>1.0.0-alpha.1</li>
+<li>1.0.0-beta.2</li>
+<li>1.0.0-rc.1</li>
+</ul>
+<p>helm-dashboard通过语义化版本判断最新版本是哪个，对于先行版本会导致页面报错白屏，因此如果需要支持先行版本，需要在chart包value.yaml增加<code>--devel</code>参数，详见如下：</p>
+<div class="language-yaml" data-ext="yml" data-title="yml"><pre class="language-yaml"><code><span class="token key atrule">extraArgs</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token punctuation">-</span><span class="token punctuation">-</span>no<span class="token punctuation">-</span>browser
+    <span class="token punctuation">-</span> <span class="token punctuation">-</span><span class="token punctuation">-</span>bind=0.0.0.0
+    <span class="token punctuation">-</span> <span class="token punctuation">-</span><span class="token punctuation">-</span>devel
+</code></pre></div>]]></content>
     <category term="devops"/>
     <published>2024-03-12T00:00:00.000Z</published>
   </entry>
