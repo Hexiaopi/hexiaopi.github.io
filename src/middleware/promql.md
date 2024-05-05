@@ -10,6 +10,8 @@ category:
 
 > PromQL是Prometheus的查询语言，类似SQL是MySQL的语言
 
+<!-- more -->
+
 ## 1. 名词解释
 
 > **指标**是软件或硬件组件属性的度量。

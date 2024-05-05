@@ -114,6 +114,7 @@ export default sidebar({
         {
           text: "MySQL",
           collapsible: true,
+          icon: "/assets/icon/mysql.svg",
           prefix: "mysql/",
           link: "mysql/README.md",
           children: "structure",
@@ -166,7 +167,7 @@ export default sidebar({
       children: [
         {
           text: "k8s",
-          icon: "anchor",
+          icon: "/assets/icon/k8s.svg",
           collapsible: true,
           prefix: "k8s/",
           link: "k8s/README.md",
@@ -174,7 +175,7 @@ export default sidebar({
         },
         {
           text: "docker",
-          icon: "sitemap",
+          icon: "/assets/icon/docker.svg",
           collapsible: true,
           prefix: "docker/",
           link: "docker/README.md",

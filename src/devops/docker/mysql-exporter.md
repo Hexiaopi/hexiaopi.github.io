@@ -8,6 +8,8 @@ category:
  - devops
 ---
 
+<!-- more -->
+
 ## MySQL监控
 
 我们通过mysqld-exporter去将MySQL相关状态转换成指标，从而进行监控

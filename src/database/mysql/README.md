@@ -1,5 +1,6 @@
 ---
 title: MySQL
+icon: /assets/icon/mysql.svg
 date: 2023-08-24
 tag:
  - MySQL
@@ -7,6 +8,8 @@ tag:
 category:
  - 数据库
 ---
+
+<!-- more -->
 
 MySQL是一种流行的关系型数据库管理系统，具有以下几个优点：
 

@@ -8,6 +8,8 @@ category:
  - devops
 ---
 
+<!-- more -->
+
 ## Minio监控
 
 运行Minio Client(mc)容器

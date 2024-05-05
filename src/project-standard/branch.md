@@ -7,7 +7,6 @@ tag:
  - 分支
 category:
  - 项目规范
-sticky: true
 star: true
 ---
 

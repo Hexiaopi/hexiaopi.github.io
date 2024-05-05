@@ -7,6 +7,8 @@ category:
  - 工具
 ---
 
+<!-- more -->
+
 ## confd 简介
 
 > confd是一个轻量级配置管理工具，通过加载存储在etcd、consul、redis、zookeeper等的数据，结合配置模板动态更新配置文件。

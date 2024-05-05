@@ -8,6 +8,8 @@ category:
  - devops
 ---
 
+<!-- more -->
+
 ## MongoDB监控
 
 我们通过mongodb-exporter监控mongodb状态

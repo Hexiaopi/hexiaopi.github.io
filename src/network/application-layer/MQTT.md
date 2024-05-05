@@ -7,6 +7,8 @@ category:
  - 网络
 ---
 
+<!-- more -->
+
 > MQTT(Mesage Queuing Telemetry Transport，消息队列遥测传输协议)，是一种基于发布/订阅模式的轻量级通讯协议，该协议构建于TCP/IP协议上。
 
 ## 发展历史

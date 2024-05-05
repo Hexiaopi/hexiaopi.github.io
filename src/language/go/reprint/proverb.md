@@ -10,6 +10,8 @@ category:
 
 【转】[原文链接](http://go-proverbs.github.io/)
 
+<!-- more -->
+
 > Go 语言之父 Rob Pike 在 2015 年分享的主题《Go Proverbs》
 >
 > 核心理念是：简单、诗意、简洁（Simple, Poetic, Pithy）。

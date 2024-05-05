@@ -10,6 +10,8 @@ category:
 
 Go语言使用包（package）作为基本单元来组织源码。
 
+<!-- more -->
+
 ## package的优点
 
 ### 编译速度快

@@ -9,6 +9,8 @@ category:
  - 编程语言
 ---
 
+<!-- more -->
+
 ## 在线书籍
 
 Go高级编程[](https://books.studygolang.com/advanced-go-programming-book/)

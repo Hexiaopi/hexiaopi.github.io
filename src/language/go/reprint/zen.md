@@ -10,6 +10,8 @@ category:
 
 > Python的核心开发成员之一Tim Peter写下的《The Zen of Python》，成为Python编程和设计的指导原则。Go语言步道师Dave Cheney 2020年发表了名为《The Zen of Go》
 
+<!-- more -->
+
 ## 译文
 
 ### Each package fulfils a single purpose 每一个package实现单一目标

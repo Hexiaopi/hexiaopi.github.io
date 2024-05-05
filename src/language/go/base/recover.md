@@ -10,6 +10,8 @@ category:
 
 > defer结合recover通常用于捕获panic
 
+<!-- more -->
+
 ## 正确使用示例
 
 ```go

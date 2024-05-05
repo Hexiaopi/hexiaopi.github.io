@@ -8,6 +8,8 @@ category:
  - 编程语言
 ---
 
+<!-- more -->
+
 我在标准库中介绍了[flag使用](../standard-library/flag.md)，对于小型的项目flag能够基本满足需求，但是在某些大型项目或者特殊场景下flag有些力不从心。主要在于：
 
 - flag的子命令需要自己解析

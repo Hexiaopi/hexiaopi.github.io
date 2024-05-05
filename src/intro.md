@@ -3,6 +3,8 @@ icon: circle-info
 cover: /assets/images/cover3.jpg
 ---
 
+<!-- more -->
+
 # 介绍页
 
 ![profile-details](https://raw.githubusercontent.com/Hexiaopi/Hexiaopi/master/profile-summary-card-output/github/0-profile-details.svg)
