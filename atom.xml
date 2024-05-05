@@ -3,7 +3,7 @@
   <id>http://blog.cjhe.top/</id>
   <title>个人博客</title>
   <subtitle>何小进童鞋的个人博客</subtitle>
-  <updated>2024-05-05T15:06:11.506Z</updated>
+  <updated>2024-05-05T15:53:20.484Z</updated>
   <generator>@vuepress/plugin-feed</generator>
   <link rel="self" href="http://blog.cjhe.top/atom.xml"/>
   <link rel="alternate" href="http://blog.cjhe.top/"/>
@@ -258,12 +258,19 @@ export default $bus;
     <title type="text">Minio监控</title>
     <id>http://blog.cjhe.top/devops/docker/minio-monitor.html</id>
     <link href="http://blog.cjhe.top/devops/docker/minio-monitor.html"/>
-    <updated>2024-04-18T09:03:40.000Z</updated>
-    <summary type="html"><![CDATA[<h2>Minio监控</h2>
-<p>运行Minio Client(mc)容器</p>
-<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code><span class="token function">docker</span> run <span class="token parameter variable">-it</span> <span class="token parameter variable">--entrypoint</span><span class="token operator">=</span>/bin/sh minio/mc
-</code></pre></div>]]></summary>
-    <content type="html"><![CDATA[<h2>Minio监控</h2>
+    <updated>2024-05-05T15:52:14.000Z</updated>
+    <summary type="text">Minio监控
+运行Minio Client(mc)容器
+设置别名
+输出结果：
+生成 Prometheus 抓取目标配置
+输出结果：
+我们可以看到是通过bearer_token的方式获取指标，将上面生成的抓取目标配置同步到Prometheus
+minio-dashboard
+minio-dashboardminio-dashboard
+minio常用监...</summary>
+    <content type="html"><![CDATA[<!-- more -->
+<h2>Minio监控</h2>
 <p>运行Minio Client(mc)容器</p>
 <div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code><span class="token function">docker</span> run <span class="token parameter variable">-it</span> <span class="token parameter variable">--entrypoint</span><span class="token operator">=</span>/bin/sh minio/mc
 </code></pre></div><p>设置别名</p>
@@ -303,12 +310,23 @@ Added `minio` successfully.
     <title type="text">Go语言推荐书籍</title>
     <id>http://blog.cjhe.top/language/go/recommend/book.html</id>
     <link href="http://blog.cjhe.top/language/go/recommend/book.html"/>
-    <updated>2024-04-29T08:04:28.000Z</updated>
-    <summary type="html"><![CDATA[<h2>在线书籍</h2>
-<p>Go高级编程<a href="https://books.studygolang.com/advanced-go-programming-book/" target="_blank" rel="noopener noreferrer"></a></p>
-<p>Go语言设计与实现<a href="https://draveness.me/golang/" target="_blank" rel="noopener noreferrer"></a></p>
-<p>Go语言四十二章经<a href="https://github.com/ffhelicopter/Go42" target="_blank" rel="noopener noreferrer"></a></p>]]></summary>
-    <content type="html"><![CDATA[<h2>在线书籍</h2>
+    <updated>2024-05-05T15:52:14.000Z</updated>
+    <summary type="text">在线书籍
+Go高级编程
+Go语言设计与实现
+Go语言四十二章经
+Mastering Go
+ApacheCN Golang 译文集
+Go Patterns
+Go语言标准库
+Go测试驱动开发
+Go练习
+Go语言原本
+Go语言编程之旅
+Go程序员面试
+go语言190题</summary>
+    <content type="html"><![CDATA[<!-- more -->
+<h2>在线书籍</h2>
 <p>Go高级编程<a href="https://books.studygolang.com/advanced-go-programming-book/" target="_blank" rel="noopener noreferrer"></a></p>
 <p>Go语言设计与实现<a href="https://draveness.me/golang/" target="_blank" rel="noopener noreferrer"></a></p>
 <p>Go语言四十二章经<a href="https://github.com/ffhelicopter/Go42" target="_blank" rel="noopener noreferrer"></a></p>
@@ -330,13 +348,19 @@ Added `minio` successfully.
     <title type="text">MongoDB监控</title>
     <id>http://blog.cjhe.top/devops/docker/mongodb-exporter.html</id>
     <link href="http://blog.cjhe.top/devops/docker/mongodb-exporter.html"/>
-    <updated>2024-04-16T03:31:43.000Z</updated>
-    <summary type="html"><![CDATA[<h2>MongoDB监控</h2>
-<p>我们通过mongodb-exporter监控mongodb状态</p>
-<h2>mongodb-exporter部署</h2>
-<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code><span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token parameter variable">-p</span> <span class="token number">9216</span>:9216 <span class="token parameter variable">-p</span> <span class="token number">17001</span>:17001 <span class="token parameter variable">--restart</span><span class="token operator">=</span>always <span class="token parameter variable">--name</span><span class="token operator">=</span>mongodb_exporter percona/mongodb_exporter:0.40 <span class="token parameter variable">--mongodb.uri</span><span class="token operator">=</span>mongodb://172.87.7.247:27017/admin?ssl<span class="token operator">=</span>false --collect-all --compatible-mode
-</code></pre></div>]]></summary>
-    <content type="html"><![CDATA[<h2>MongoDB监控</h2>
+    <updated>2024-05-05T15:52:14.000Z</updated>
+    <summary type="text">MongoDB监控
+我们通过mongodb-exporter监控mongodb状态
+mongodb-exporter部署
+注意：
+
+--collect-all，参数用于收集所有指标
+--compatible-mode，用于兼容旧的指标，否则部分grafana的dashboard展示不兼容
+
+mongodb-dashboard
+mongodb-dashb...</summary>
+    <content type="html"><![CDATA[<!-- more -->
+<h2>MongoDB监控</h2>
 <p>我们通过mongodb-exporter监控mongodb状态</p>
 <h2>mongodb-exporter部署</h2>
 <div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code><span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token parameter variable">-p</span> <span class="token number">9216</span>:9216 <span class="token parameter variable">-p</span> <span class="token number">17001</span>:17001 <span class="token parameter variable">--restart</span><span class="token operator">=</span>always <span class="token parameter variable">--name</span><span class="token operator">=</span>mongodb_exporter percona/mongodb_exporter:0.40 <span class="token parameter variable">--mongodb.uri</span><span class="token operator">=</span>mongodb://172.87.7.247:27017/admin?ssl<span class="token operator">=</span>false --collect-all --compatible-mode
@@ -395,13 +419,18 @@ Redis连接数过多</summary>
     <title type="text">MySQL监控</title>
     <id>http://blog.cjhe.top/devops/docker/mysql-exporter.html</id>
     <link href="http://blog.cjhe.top/devops/docker/mysql-exporter.html"/>
-    <updated>2024-04-12T08:10:19.000Z</updated>
-    <summary type="html"><![CDATA[<h2>MySQL监控</h2>
-<p>我们通过mysqld-exporter去将MySQL相关状态转换成指标，从而进行监控</p>
-<h2>mysql-exporter部署</h2>
-<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code><span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token parameter variable">--name</span> mysql_exporter <span class="token parameter variable">--restart</span> always <span class="token parameter variable">-p</span> <span class="token number">9104</span>:9104 <span class="token parameter variable">-v</span> ./.my.cnf:/.my.cnf prom/mysqld-exporter
-</code></pre></div>]]></summary>
-    <content type="html"><![CDATA[<h2>MySQL监控</h2>
+    <updated>2024-05-05T15:52:14.000Z</updated>
+    <summary type="text">MySQL监控
+我们通过mysqld-exporter去将MySQL相关状态转换成指标，从而进行监控
+mysql-exporter部署
+其中**.my.cnf**配置数据库连接信息，其内容如下：
+[client]
+host=your host
+port=your port
+user=your username
+password=your passwor...</summary>
+    <content type="html"><![CDATA[<!-- more -->
+<h2>MySQL监控</h2>
 <p>我们通过mysqld-exporter去将MySQL相关状态转换成指标，从而进行监控</p>
 <h2>mysql-exporter部署</h2>
 <div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code><span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token parameter variable">--name</span> mysql_exporter <span class="token parameter variable">--restart</span> always <span class="token parameter variable">-p</span> <span class="token number">9104</span>:9104 <span class="token parameter variable">-v</span> ./.my.cnf:/.my.cnf prom/mysqld-exporter
@@ -546,7 +575,7 @@ HTTP发展简史
     <title type="text">应用层协议</title>
     <id>http://blog.cjhe.top/network/application-layer/</id>
     <link href="http://blog.cjhe.top/network/application-layer/"/>
-    <updated>2024-04-11T06:38:26.000Z</updated>
+    <updated>2024-05-05T15:52:14.000Z</updated>
     <summary type="html"><![CDATA[<blockquote>
 <p>本篇介绍计算机网络应用层协议</p>
 </blockquote>
@@ -582,11 +611,11 @@ HTTP发展简史
     <title type="text">ICMP协议</title>
     <id>http://blog.cjhe.top/network/internet-layer/ICMP.html</id>
     <link href="http://blog.cjhe.top/network/internet-layer/ICMP.html"/>
-    <updated>2024-04-23T01:35:41.000Z</updated>
-    <summary type="html"><![CDATA[<p>ICMP(Internet Control Message Protocol,互联网控制协议)，属于网络层协议。主要用于在IP主机和路由器之间传递控制信息，例如：主机是否可达、路由是否可用等。</p>
-<p>ICMP使用IP协议发送信息，它虽然属于网络层协议，但严格来说，它位于IP之上。</p>
-]]></summary>
-    <content type="html"><![CDATA[<p>ICMP(Internet Control Message Protocol,互联网控制协议)，属于网络层协议。主要用于在IP主机和路由器之间传递控制信息，例如：主机是否可达、路由是否可用等。</p>
+    <updated>2024-05-05T15:52:14.000Z</updated>
+    <summary type="text">ICMP(Internet Control Message Protocol,互联网控制协议)，属于网络层协议。主要用于在IP主机和路由器之间传递控制信息，例如：主机是否可达、路由是否可用等。
+ICMP使用IP协议发送信息，它虽然属于网络层协议，但严格来说，它位于IP之上。</summary>
+    <content type="html"><![CDATA[<!-- more -->
+<p>ICMP(Internet Control Message Protocol,互联网控制协议)，属于网络层协议。主要用于在IP主机和路由器之间传递控制信息，例如：主机是否可达、路由是否可用等。</p>
 <p>ICMP使用IP协议发送信息，它虽然属于网络层协议，但严格来说，它位于IP之上。</p>
 ]]></content>
     <category term="网络"/>
@@ -596,7 +625,7 @@ HTTP发展简史
     <title type="text">网络层协议</title>
     <id>http://blog.cjhe.top/network/internet-layer/</id>
     <link href="http://blog.cjhe.top/network/internet-layer/"/>
-    <updated>2024-04-11T06:38:26.000Z</updated>
+    <updated>2024-05-05T15:52:14.000Z</updated>
     <summary type="html"><![CDATA[<blockquote>
 <p>本篇介绍计算机网络网络层协议</p>
 </blockquote>
@@ -626,7 +655,7 @@ HTTP发展简史
     <title type="text">链路层协议</title>
     <id>http://blog.cjhe.top/network/link-layer/</id>
     <link href="http://blog.cjhe.top/network/link-layer/"/>
-    <updated>2024-04-11T06:38:26.000Z</updated>
+    <updated>2024-05-05T15:52:14.000Z</updated>
     <summary type="html"><![CDATA[<blockquote>
 <p>链路层协议比较偏底层，有机会再介绍</p>
 </blockquote>
@@ -642,7 +671,7 @@ HTTP发展简史
     <title type="text">传输层协议</title>
     <id>http://blog.cjhe.top/network/transport-layer/</id>
     <link href="http://blog.cjhe.top/network/transport-layer/"/>
-    <updated>2024-04-11T06:38:26.000Z</updated>
+    <updated>2024-05-05T15:52:14.000Z</updated>
     <summary type="html"><![CDATA[<blockquote>
 <p>本篇介绍计算机网络传输层协议</p>
 </blockquote>
@@ -668,11 +697,7 @@ HTTP发展简史
     <title type="text">docker</title>
     <id>http://blog.cjhe.top/devops/docker/</id>
     <link href="http://blog.cjhe.top/devops/docker/"/>
-    <updated>2024-04-15T09:57:53.000Z</updated>
-    <summary type="html"><![CDATA[<p>这里记录工作中学习到的docker相关知识</p>
-]]></summary>
-    <content type="html"><![CDATA[<p>这里记录工作中学习到的docker相关知识</p>
-]]></content>
+    <updated>2024-05-05T15:52:14.000Z</updated>
     <category term="devops"/>
     <published>2024-03-18T00:00:00.000Z</published>
   </entry>
@@ -718,11 +743,7 @@ ENTRYPOINT <span class="token punctuation">[</span><span class="token string">"/
     <title type="text">k8s</title>
     <id>http://blog.cjhe.top/devops/k8s/</id>
     <link href="http://blog.cjhe.top/devops/k8s/"/>
-    <updated>2024-04-15T09:57:53.000Z</updated>
-    <summary type="html"><![CDATA[<p>这里记录工作中学习到的k8s相关知识</p>
-]]></summary>
-    <content type="html"><![CDATA[<p>这里记录工作中学习到的k8s相关知识</p>
-]]></content>
+    <updated>2024-05-05T15:52:14.000Z</updated>
     <category term="devops"/>
     <published>2024-03-18T00:00:00.000Z</published>
   </entry>
@@ -1213,15 +1234,16 @@ kubectl create clusterrolebinding monitor-clusterrolebinding <span class="token 
     <title type="text">pflag</title>
     <id>http://blog.cjhe.top/language/go/third-party/pflag.html</id>
     <link href="http://blog.cjhe.top/language/go/third-party/pflag.html"/>
-    <updated>2024-04-29T08:04:28.000Z</updated>
-    <summary type="html"><![CDATA[<p>我在标准库中介绍了<a href="/language/go/standard-library/flag.html" target="_blank">flag使用</a>，对于小型的项目flag能够基本满足需求，但是在某些大型项目或者特殊场景下flag有些力不从心。主要在于：</p>
-<ul>
-<li>flag的子命令需要自己解析</li>
-<li>flag的短命令需要定义两个变量</li>
-<li>不支持一些参数废弃说明，这在更新的工具中对用户有更好的引导作用</li>
-</ul>
-<p>因此业界开源的<a href="https://github.com/spf13/pflag" target="_blank" rel="noopener noreferrer">pflag</a>受到广大爱好者的使用，在一些耳熟能详的开源项目里也都在使用pflag，例如：Kubernetes、Istio、Helm、Docker、Etcd等。</p>]]></summary>
-    <content type="html"><![CDATA[<p>我在标准库中介绍了<a href="/language/go/standard-library/flag.html" target="_blank">flag使用</a>，对于小型的项目flag能够基本满足需求，但是在某些大型项目或者特殊场景下flag有些力不从心。主要在于：</p>
+    <updated>2024-05-05T15:52:14.000Z</updated>
+    <summary type="text">我在标准库中介绍了，对于小型的项目flag能够基本满足需求，但是在某些大型项目或者特殊场景下flag有些力不从心。主要在于：
+
+flag的子命令需要自己解析
+flag的短命令需要定义两个变量
+不支持一些参数废弃说明，这在更新的工具中对用户有更好的引导作用
+
+因此业界开源的pflag受到广大爱好者的使用，在一些耳熟能详的开源项目里也都在使用pflag，例...</summary>
+    <content type="html"><![CDATA[<!-- more -->
+<p>我在标准库中介绍了<a href="/language/go/standard-library/flag.html" target="_blank">flag使用</a>，对于小型的项目flag能够基本满足需求，但是在某些大型项目或者特殊场景下flag有些力不从心。主要在于：</p>
 <ul>
 <li>flag的子命令需要自己解析</li>
 <li>flag的短命令需要定义两个变量</li>
@@ -1324,23 +1346,22 @@ Flag shorthand -b has been deprecated, please use --str-b instead
     <title type="text">flag使用</title>
     <id>http://blog.cjhe.top/language/go/standard-library/flag.html</id>
     <link href="http://blog.cjhe.top/language/go/standard-library/flag.html"/>
-    <updated>2024-04-29T08:04:28.000Z</updated>
-    <summary type="html"><![CDATA[<blockquote>
-<p>flag库实现命令行参数解析</p>
-</blockquote>
-<h2>简单用法</h2>
-<div class="hint-container tip">
-<p class="hint-container-title">flag参数使用语法</p>
-<p>-flag    // 破折号，使用默认值
+    <updated>2024-05-05T15:52:14.000Z</updated>
+    <summary type="text">flag库实现命令行参数解析
+
+简单用法
+
+flag参数使用语法
+-flag    // 破折号，使用默认值
 --flag   // 双破折号
 -flag=x  // 指定参数值
--flag x  // non-boolean flags only</p>
-</div>
-<h3>字符串类型</h3>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token comment">// Example1：flag.String 返回指针类型字符串</span>
-<span class="token keyword">var</span> flagStrA <span class="token operator">=</span> flag<span class="token punctuation">.</span><span class="token function">String</span><span class="token punctuation">(</span><span class="token string">"str-a"</span><span class="token punctuation">,</span> <span class="token string">"str-a"</span><span class="token punctuation">,</span> <span class="token string">"flag test *string"</span><span class="token punctuation">)</span>
-</code></pre></div>]]></summary>
-    <content type="html"><![CDATA[<blockquote>
+-flag x  // non-boolean flags only
+
+字符串类型
+使用示例
+不过由于flag.String()返回的是指针类型的字符串，因此，也可以使用下面...</summary>
+    <content type="html"><![CDATA[<!-- more -->
+<blockquote>
 <p>flag库实现命令行参数解析</p>
 </blockquote>
 <h2>简单用法</h2>
@@ -1635,25 +1656,15 @@ Flag shorthand -b has been deprecated, please use --str-b instead
     <title type="text">recover注意事项</title>
     <id>http://blog.cjhe.top/language/go/base/recover.html</id>
     <link href="http://blog.cjhe.top/language/go/base/recover.html"/>
-    <updated>2024-04-29T08:04:28.000Z</updated>
+    <updated>2024-05-05T15:52:14.000Z</updated>
     <summary type="html"><![CDATA[<blockquote>
 <p>defer结合recover通常用于捕获panic</p>
 </blockquote>
-<h2>正确使用示例</h2>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">PrintRecover</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token keyword">defer</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-		<span class="token keyword">if</span> err <span class="token operator">:=</span> <span class="token function">recover</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
-			fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
-		<span class="token punctuation">}</span>
-	<span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">)</span>
-	<span class="token function">panic</span><span class="token punctuation">(</span><span class="token string">"some thing"</span><span class="token punctuation">)</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"b"</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-</code></pre></div>]]></summary>
+]]></summary>
     <content type="html"><![CDATA[<blockquote>
 <p>defer结合recover通常用于捕获panic</p>
 </blockquote>
+<!-- more -->
 <h2>正确使用示例</h2>
 <div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">PrintRecover</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
 	<span class="token keyword">defer</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -1710,18 +1721,11 @@ Flag shorthand -b has been deprecated, please use --str-b instead
     <title type="text">package</title>
     <id>http://blog.cjhe.top/language/go/base/package.html</id>
     <link href="http://blog.cjhe.top/language/go/base/package.html"/>
-    <updated>2024-04-29T08:04:28.000Z</updated>
+    <updated>2024-05-05T15:52:14.000Z</updated>
     <summary type="html"><![CDATA[<p>Go语言使用包（package）作为基本单元来组织源码。</p>
-<h2>package的优点</h2>
-<h3>编译速度快</h3>
-<ul>
-<li>Go要求每个源文件在开头显示地列出所有依赖的包，如果引入了未使用的包，Go语言编译器会报错。</li>
-<li>Go要求包之间不能存在循环依赖，这样包的依赖关系便形成了一张有向无环图，这样每个包可以单独编译也可并行编译</li>
-<li>已编译的Go包不仅记录了该包的信息，还记录了依赖包的信息。只需读取缓存的编译产物即可。</li>
-</ul>
-<h2>初始化顺序</h2>
-<p>Go语言内置函数<code>init()</code>，常用于包级数据初始化以及初始状态的检查工作。</p>]]></summary>
+]]></summary>
     <content type="html"><![CDATA[<p>Go语言使用包（package）作为基本单元来组织源码。</p>
+<!-- more -->
 <h2>package的优点</h2>
 <h3>编译速度快</h3>
 <ul>
@@ -1747,18 +1751,16 @@ Flag shorthand -b has been deprecated, please use --str-b instead
     <title type="text">MQTT协议</title>
     <id>http://blog.cjhe.top/network/application-layer/MQTT.html</id>
     <link href="http://blog.cjhe.top/network/application-layer/MQTT.html"/>
-    <updated>2024-04-11T06:38:26.000Z</updated>
-    <summary type="html"><![CDATA[<blockquote>
-<p>MQTT(Mesage Queuing Telemetry Transport，消息队列遥测传输协议)，是一种基于发布/订阅模式的轻量级通讯协议，该协议构建于TCP/IP协议上。</p>
-</blockquote>
-<h2>发展历史</h2>
-<ul>
-<li>1999年由IBM发明，起初用于原油管道数据采集监控系统，解决卫星与原油管道检测数据的传输问题。</li>
-<li>2010 发布MQTT 3.1。</li>
-<li>2014年在 <strong>OASIS</strong> 标准化组织的推动下于公布了 <a href="https://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html" target="_blank" rel="noopener noreferrer"><code>V3.1.1</code></a> 版本规范。</li>
-<li>2019年3月发布了最新的 <a href="https://docs.oasis-open.org/mqtt/mqtt/v5.0/cs02/mqtt-v5.0-cs02.html" target="_blank" rel="noopener noreferrer"><code>V5.0</code></a> 版本规范。</li>
-</ul>]]></summary>
-    <content type="html"><![CDATA[<blockquote>
+    <updated>2024-05-05T15:52:14.000Z</updated>
+    <summary type="text">MQTT(Mesage Queuing Telemetry Transport，消息队列遥测传输协议)，是一种基于发布/订阅模式的轻量级通讯协议，该协议构建于TCP/IP协议上。
+
+发展历史
+
+1999年由IBM发明，起初用于原油管道数据采集监控系统，解决卫星与原油管道检测数据的传输问题。
+2010 发布MQTT 3.1。
+2014年在 OASIS 标...</summary>
+    <content type="html"><![CDATA[<!-- more -->
+<blockquote>
 <p>MQTT(Mesage Queuing Telemetry Transport，消息队列遥测传输协议)，是一种基于发布/订阅模式的轻量级通讯协议，该协议构建于TCP/IP协议上。</p>
 </blockquote>
 <h2>发展历史</h2>
@@ -1953,29 +1955,16 @@ Flag shorthand -b has been deprecated, please use --str-b instead
     <title type="text">MySQL</title>
     <id>http://blog.cjhe.top/database/mysql/</id>
     <link href="http://blog.cjhe.top/database/mysql/"/>
-    <updated>2024-04-15T09:57:53.000Z</updated>
-    <summary type="html"><![CDATA[<p>MySQL是一种流行的关系型数据库管理系统，具有以下几个优点：</p>
-<ul>
-<li>
-<p>开源免费: MySQL采用开源许可证，可以免费获得和使用。这使得MySQL成为许多个人开发者、初创公司和中小型企业的首选数据库，可以降低成本并提高灵活性。</p>
-</li>
-<li>
-<p>可靠性和稳定性: MySQL经过了广泛测试和市场验证，具有良好的稳定性和可靠性。它支持事务处理和ACID（原子性、一致性、隔离性和持久性）属性，保证数据的一致性和安全。</p>
-</li>
-<li>
-<p>高性能: MySQL具有出色的性能特点，能够处理大规模的并发请求。它为多用户并发操作提供了有效的解决方案，并且优化了处理大量数据的能力。</p>
-</li>
-<li>
-<p>可扩展性: MySQL支持水平和垂直扩展，可以根据需要增加更多的服务器、节点和存储，以应对不断增长的数据需求。它还提供了复制和分片等机制，以实现数据的复制和分布式存储。</p>
-</li>
-<li>
-<p>灵活性: MySQL支持多种操作系统，包括Windows、Linux、macOS等，可以在各种环境中运行。它还支持多种编程语言的驱动程序和API，如Python、Java、PHP等，提供了广泛的开发和集成选项。</p>
-</li>
-<li>
-<p>社区支持和生态系统: MySQL拥有庞大的开发者社区和活跃的生态系统，有许多开源工具、第三方库和插件可供选择。这意味着可以获得丰富的资源和支持，能够更快地解决问题和开发应用。</p>
-</li>
-</ul>]]></summary>
-    <content type="html"><![CDATA[<p>MySQL是一种流行的关系型数据库管理系统，具有以下几个优点：</p>
+    <updated>2024-05-05T15:52:14.000Z</updated>
+    <summary type="text">MySQL是一种流行的关系型数据库管理系统，具有以下几个优点：
+
+
+开源免费: MySQL采用开源许可证，可以免费获得和使用。这使得MySQL成为许多个人开发者、初创公司和中小型企业的首选数据库，可以降低成本并提高灵活性。
+
+
+可靠性和稳定性: MySQL经过了广泛测试和市场验证，具有良好的稳定性和可靠性。它支持事务处理和ACID（原子性、一致性、隔离...</summary>
+    <content type="html"><![CDATA[<!-- more -->
+<p>MySQL是一种流行的关系型数据库管理系统，具有以下几个优点：</p>
 <ul>
 <li>
 <p>开源免费: MySQL采用开源许可证，可以免费获得和使用。这使得MySQL成为许多个人开发者、初创公司和中小型企业的首选数据库，可以降低成本并提高灵活性。</p>
@@ -2004,26 +1993,16 @@ Flag shorthand -b has been deprecated, please use --str-b instead
     <title type="text">项目规范</title>
     <id>http://blog.cjhe.top/project-standard/</id>
     <link href="http://blog.cjhe.top/project-standard/"/>
-    <updated>2024-04-15T09:57:53.000Z</updated>
-    <summary type="html"><![CDATA[<p>这里记录平时开发过程中的项目规范，好的规范有助于：</p>
-<ul>
-<li>
-<p>一致性: 项目规范确保团队成员在工作中遵循相同的标准和做法，使得代码、文档、命名等保持一致。这有助于提高代码的可读性和可维护性，减少混乱和错误。</p>
-</li>
-<li>
-<p>提高效率: 项目规范定义了已经验证过的最佳实践和指导原则，可以减少重复劳动和不必要的思考，提高团队成员的工作效率。规范化的流程和模板也能减少沟通成本，使得团队更高效地协同工作。</p>
-</li>
-<li>
-<p>可维护性: 项目规范通常包括命名约定、代码结构、注释规范等，这些指导可以提高代码的可维护性。当新成员加入或者团队成员变动时，他们能够更快地理解项目的结构和代码，减轻维护负担。</p>
-</li>
-<li>
-<p>质量控制: 项目规范可以确保项目符合良好的软件工程实践和行业标准，从而提高项目的质量。规范化的代码和流程可以减少潜在的 bug 和问题，并且提供了一致的评估标准，有助于提前发现和纠正问题。</p>
-</li>
-<li>
-<p>可扩展性: 通过定义良好的规范并遵循它们，项目可以更容易地进行扩展和维护。合理的架构设计和规范化的开发实践可以使得项目更易于扩展，并且降低了引入新功能、改进和优化的风险。</p>
-</li>
-</ul>]]></summary>
-    <content type="html"><![CDATA[<p>这里记录平时开发过程中的项目规范，好的规范有助于：</p>
+    <updated>2024-05-05T15:52:14.000Z</updated>
+    <summary type="text">这里记录平时开发过程中的项目规范，好的规范有助于：
+
+
+一致性: 项目规范确保团队成员在工作中遵循相同的标准和做法，使得代码、文档、命名等保持一致。这有助于提高代码的可读性和可维护性，减少混乱和错误。
+
+
+提高效率: 项目规范定义了已经验证过的最佳实践和指导原则，可以减少重复劳动和不必要的思考，提高团队成员的工作效率。规范化的流程和模板也能减少沟通成本...</summary>
+    <content type="html"><![CDATA[<!-- more -->
+<p>这里记录平时开发过程中的项目规范，好的规范有助于：</p>
 <ul>
 <li>
 <p>一致性: 项目规范确保团队成员在工作中遵循相同的标准和做法，使得代码、文档、命名等保持一致。这有助于提高代码的可读性和可维护性，减少混乱和错误。</p>
@@ -2049,7 +2028,7 @@ Flag shorthand -b has been deprecated, please use --str-b instead
     <title type="text">进阶</title>
     <id>http://blog.cjhe.top/language/go/advance/</id>
     <link href="http://blog.cjhe.top/language/go/advance/"/>
-    <updated>2024-04-29T08:04:28.000Z</updated>
+    <updated>2024-05-05T15:52:14.000Z</updated>
     <summary type="html"><![CDATA[<blockquote>
 <p>介绍Go语言进阶知识，包括遇到的一些坑和底层原理，进阶知识对于入门童鞋来说可以不用了解，并不会影响日常开发，属于深度探讨</p>
 </blockquote>
@@ -2097,42 +2076,20 @@ Flag shorthand -b has been deprecated, please use --str-b instead
     <title type="text">退出模式</title>
     <id>http://blog.cjhe.top/design-pattern/concurrency/exit.html</id>
     <link href="http://blog.cjhe.top/design-pattern/concurrency/exit.html"/>
-    <updated>2023-08-22T14:05:24.000Z</updated>
-    <summary type="html"><![CDATA[<h2>退出模式</h2>
-<p>使用关键字<code>go</code>很容易启动goroutine，这样创建的协程和当前协程已经分离，我们并不知道</p>
-<h3>等待指定协程退出</h3>
-<div class="language-go" data-ext="go" data-title="go"><pre go="" class="language-go"><code><span class="token keyword">package</span> main
+    <updated>2024-05-05T15:52:14.000Z</updated>
+    <summary type="text">退出模式
+使用关键字go很容易启动goroutine，这样创建的协程和当前协程已经分离，我们并不知道
+等待指定协程退出
+ 
+提示
+spawn函数创建的新goroutine与调用spawn函数的goroutine（main goroutine）之间通过channel建立了联系。
 
-<span class="token keyword">import</span> <span class="token punctuation">(</span>
-	<span class="token string">"fmt"</span>
-	<span class="token string">"time"</span>
-<span class="token punctuation">)</span>
-
-<span class="token keyword">type</span> signal <span class="token keyword">struct</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token function">worker</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"worker is working..."</span><span class="token punctuation">)</span>
-	time<span class="token punctuation">.</span><span class="token function">Sleep</span><span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">*</span> time<span class="token punctuation">.</span>Second<span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token function">spawn</span><span class="token punctuation">(</span>f <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&lt;-</span><span class="token keyword">chan</span> signal <span class="token punctuation">{</span>
-	c <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token keyword">chan</span> signal<span class="token punctuation">)</span>
-	<span class="token keyword">go</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-		<span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"worker start to work..."</span><span class="token punctuation">)</span>
-		<span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-		c <span class="token operator">&lt;-</span> <span class="token function">signal</span><span class="token punctuation">(</span><span class="token keyword">struct</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
-	<span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-	<span class="token keyword">return</span> c
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"start a worker..."</span><span class="token punctuation">)</span>
-	c <span class="token operator">:=</span> <span class="token function">spawn</span><span class="token punctuation">(</span>worker<span class="token punctuation">)</span>
-	<span class="token operator">&lt;-</span>c
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"worker work done!"</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-</code></pre></div>]]></summary>
-    <content type="html"><![CDATA[<h2>退出模式</h2>
+等待多个协程退出
+ 
+提示
+通过sync.WaitGroup，对于每一个协...</summary>
+    <content type="html"><![CDATA[<!-- more -->
+<h2>退出模式</h2>
 <p>使用关键字<code>go</code>很容易启动goroutine，这样创建的协程和当前协程已经分离，我们并不知道</p>
 <h3>等待指定协程退出</h3>
 <div class="language-go" data-ext="go" data-title="go"><pre go="" class="language-go"><code><span class="token keyword">package</span> main
@@ -2224,31 +2181,18 @@ Flag shorthand -b has been deprecated, please use --str-b instead
     <title type="text">扇入/扇出模型</title>
     <id>http://blog.cjhe.top/design-pattern/concurrency/fan-in-fan-out.html</id>
     <link href="http://blog.cjhe.top/design-pattern/concurrency/fan-in-fan-out.html"/>
-    <updated>2023-08-22T14:05:24.000Z</updated>
-    <summary type="html"><![CDATA[<h2>扇出模式</h2>
-<p>即多个相同goroutine从同一个channel读取数据并处理</p>
-<figure><figcaption>fan-out</figcaption></figure>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">TestFanOut</span><span class="token punctuation">(</span>t <span class="token operator">*</span>testing<span class="token punctuation">.</span>T<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token keyword">var</span> nums <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">}</span>
-	in <span class="token operator">:=</span> <span class="token function">echo</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span>
-	c1 <span class="token operator">:=</span> <span class="token function">odd</span><span class="token punctuation">(</span>in<span class="token punctuation">)</span>
-	c2 <span class="token operator">:=</span> <span class="token function">odd</span><span class="token punctuation">(</span>in<span class="token punctuation">)</span>
-	c3 <span class="token operator">:=</span> <span class="token function">odd</span><span class="token punctuation">(</span>in<span class="token punctuation">)</span>
-	t<span class="token punctuation">.</span><span class="token function">Log</span><span class="token punctuation">(</span><span class="token string">"c1"</span><span class="token punctuation">)</span>
-	<span class="token keyword">for</span> n <span class="token operator">:=</span> <span class="token keyword">range</span> c1 <span class="token punctuation">{</span>
-		t<span class="token punctuation">.</span><span class="token function">Log</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span>
-	<span class="token punctuation">}</span>
-	t<span class="token punctuation">.</span><span class="token function">Log</span><span class="token punctuation">(</span><span class="token string">"c2"</span><span class="token punctuation">)</span>
-	<span class="token keyword">for</span> n <span class="token operator">:=</span> <span class="token keyword">range</span> c2 <span class="token punctuation">{</span>
-		t<span class="token punctuation">.</span><span class="token function">Log</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span>
-	<span class="token punctuation">}</span>
-	t<span class="token punctuation">.</span><span class="token function">Log</span><span class="token punctuation">(</span><span class="token string">"c3"</span><span class="token punctuation">)</span>
-	<span class="token keyword">for</span> n <span class="token operator">:=</span> <span class="token keyword">range</span> c3 <span class="token punctuation">{</span>
-		t<span class="token punctuation">.</span><span class="token function">Log</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span>
-	<span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre></div>]]></summary>
-    <content type="html"><![CDATA[<h2>扇出模式</h2>
+    <updated>2024-05-05T15:52:14.000Z</updated>
+    <summary type="text">扇出模式
+即多个相同goroutine从同一个channel读取数据并处理
+fan-outfan-out
+输出结果
+我们使用三个协程从一个channel中过滤2的倍数，分别放在三个channel输出。由于Go语言调度不确定性，因此测试结果可能不一致。
+扇入模式
+从多个channel读取数据并处理，将结果放入一个channel
+fan-infan-in
+...</summary>
+    <content type="html"><![CDATA[<!-- more -->
+<h2>扇出模式</h2>
 <p>即多个相同goroutine从同一个channel读取数据并处理</p>
 <figure><figcaption>fan-out</figcaption></figure>
 <div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">TestFanOut</span><span class="token punctuation">(</span>t <span class="token operator">*</span>testing<span class="token punctuation">.</span>T<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -2288,11 +2232,16 @@ Flag shorthand -b has been deprecated, please use --str-b instead
     <title type="text">管道模式</title>
     <id>http://blog.cjhe.top/design-pattern/concurrency/pipeline.html</id>
     <link href="http://blog.cjhe.top/design-pattern/concurrency/pipeline.html"/>
-    <updated>2023-08-22T14:05:24.000Z</updated>
-    <summary type="html"><![CDATA[<p>管道是Unix/Linux上一种典型的并发程序设计模式，也是Unix崇尚<strong>组合</strong>设计哲学的具体体现，例如执行：</p>
-<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code><span class="token function">ls</span> <span class="token parameter variable">-l</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">"\.go"</span>
-</code></pre></div>]]></summary>
-    <content type="html"><![CDATA[<p>管道是Unix/Linux上一种典型的并发程序设计模式，也是Unix崇尚<strong>组合</strong>设计哲学的具体体现，例如执行：</p>
+    <updated>2024-05-05T15:52:14.000Z</updated>
+    <summary type="text">管道是Unix/Linux上一种典型的并发程序设计模式，也是Unix崇尚组合设计哲学的具体体现，例如执行：
+就可以利用管道机制过滤出当前路径下以&amp;quot;.go&amp;quot;结尾的文件列表。
+ls -l的输出作为grep &amp;quot;\.go&amp;quot;的输入很容易将两个功能模块串在一起。
+管道模式
+pipelinepipeline
+Go通常使用channel原语构建管道模式
+管道模式使用示...</summary>
+    <content type="html"><![CDATA[<!-- more -->
+<p>管道是Unix/Linux上一种典型的并发程序设计模式，也是Unix崇尚<strong>组合</strong>设计哲学的具体体现，例如执行：</p>
 <div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code><span class="token function">ls</span> <span class="token parameter variable">-l</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">"\.go"</span>
 </code></pre></div><p>就可以利用管道机制过滤出当前路径下以".go"结尾的文件列表。</p>
 <p><code>ls -l</code>的输出作为<code>grep "\.go"</code>的输入很容易将两个功能模块串在一起。</p>
@@ -2361,20 +2310,17 @@ Flag shorthand -b has been deprecated, please use --str-b instead
     <title type="text">生产者/消费者模式</title>
     <id>http://blog.cjhe.top/design-pattern/concurrency/producer-consumer.html</id>
     <link href="http://blog.cjhe.top/design-pattern/concurrency/producer-consumer.html"/>
-    <updated>2023-08-22T14:05:24.000Z</updated>
-    <summary type="html"><![CDATA[<p><strong>生产者/消费者</strong>模式是并发编程中常见的模型，该模型主要通过平衡生产者和消费者来提高程序的整体处理数据的能力</p>
-<h2>生产者/消费者模式</h2>
-<p>该模型中：生产者生产数据，放到队列中，消费者从队列中取数据。这样生产者和消费者变成异步的两个过程。</p>
-<figure><figcaption>producer-consumer</figcaption></figure>
-<p>定义生产者</p>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token comment">// Producer: 生产factor倍数</span>
-<span class="token keyword">func</span> <span class="token function">Producer</span><span class="token punctuation">(</span>factor <span class="token builtin">int</span><span class="token punctuation">,</span> out <span class="token keyword">chan</span><span class="token operator">&lt;-</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>
-		out <span class="token operator">&lt;-</span> i <span class="token operator">*</span> factor
-	<span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre></div>]]></summary>
-    <content type="html"><![CDATA[<p><strong>生产者/消费者</strong>模式是并发编程中常见的模型，该模型主要通过平衡生产者和消费者来提高程序的整体处理数据的能力</p>
+    <updated>2024-05-05T15:52:14.000Z</updated>
+    <summary type="text">生产者/消费者模式是并发编程中常见的模型，该模型主要通过平衡生产者和消费者来提高程序的整体处理数据的能力
+生产者/消费者模式
+该模型中：生产者生产数据，放到队列中，消费者从队列中取数据。这样生产者和消费者变成异步的两个过程。
+producer-consumerproducer-consumer
+定义生产者
+定义消费者
+启动生产者和消费者模型
+在这个例子...</summary>
+    <content type="html"><![CDATA[<!-- more -->
+<p><strong>生产者/消费者</strong>模式是并发编程中常见的模型，该模型主要通过平衡生产者和消费者来提高程序的整体处理数据的能力</p>
 <h2>生产者/消费者模式</h2>
 <p>该模型中：生产者生产数据，放到队列中，消费者从队列中取数据。这样生产者和消费者变成异步的两个过程。</p>
 <figure><figcaption>producer-consumer</figcaption></figure>
@@ -2411,16 +2357,23 @@ Flag shorthand -b has been deprecated, please use --str-b instead
     <title type="text">defer注意事项</title>
     <id>http://blog.cjhe.top/language/go/base/defer.html</id>
     <link href="http://blog.cjhe.top/language/go/base/defer.html"/>
-    <updated>2024-04-29T08:04:28.000Z</updated>
-    <summary type="html"><![CDATA[<p>defer 语句能够帮助我们确保在函数结束时执行一些必要的操作，比如：<strong>关闭文件句柄</strong>、<strong>释放资源</strong>、<strong>解锁互斥锁</strong>等。defer 关键字只能作用函数或函数调用。</p>
-<h2>注意事项</h2>
-<h3>执行顺序</h3>
-<div class="hint-container warning">
-<p class="hint-container-title">注意</p>
-<p>defer 语句的执行顺序是按照先进后出（FILO）的，即先进去 defer 语句将最后执行。</p>
-</div>
-]]></summary>
-    <content type="html"><![CDATA[<p>defer 语句能够帮助我们确保在函数结束时执行一些必要的操作，比如：<strong>关闭文件句柄</strong>、<strong>释放资源</strong>、<strong>解锁互斥锁</strong>等。defer 关键字只能作用函数或函数调用。</p>
+    <updated>2024-05-05T15:52:14.000Z</updated>
+    <summary type="text">defer 语句能够帮助我们确保在函数结束时执行一些必要的操作，比如：关闭文件句柄、释放资源、解锁互斥锁等。defer 关键字只能作用函数或函数调用。
+注意事项
+执行顺序
+
+注意
+defer 语句的执行顺序是按照先进后出（FILO）的，即先进去 defer 语句将最后执行。
+
+执行结果
+43210
+
+参数计算时机
+
+注意
+defer 语句中的函数参数会...</summary>
+    <content type="html"><![CDATA[<!-- more -->
+<p>defer 语句能够帮助我们确保在函数结束时执行一些必要的操作，比如：<strong>关闭文件句柄</strong>、<strong>释放资源</strong>、<strong>解锁互斥锁</strong>等。defer 关键字只能作用函数或函数调用。</p>
 <h2>注意事项</h2>
 <h3>执行顺序</h3>
 <div class="hint-container warning">
@@ -2569,17 +2522,15 @@ exit status 1</p>
     <title type="text">Go之禅</title>
     <id>http://blog.cjhe.top/language/go/reprint/zen.html</id>
     <link href="http://blog.cjhe.top/language/go/reprint/zen.html"/>
-    <updated>2024-04-29T08:04:28.000Z</updated>
+    <updated>2024-05-05T15:52:14.000Z</updated>
     <summary type="html"><![CDATA[<blockquote>
 <p>Python的核心开发成员之一Tim Peter写下的《The Zen of Python》，成为Python编程和设计的指导原则。Go语言步道师Dave Cheney 2020年发表了名为《The Zen of Go》</p>
 </blockquote>
-<h2>译文</h2>
-<h3>Each package fulfils a single purpose 每一个package实现单一目标</h3>
-<p>A well designed Go package provides a single idea, a set of related behaviours. A good Go package starts by choosing a good name. Think of your package’s name as an elevator pitch to describe what it provides, using just one word.
-精心设计的Go软件包只提供单一功能和一系列相关的行为。一个好的Go软件包从选择一个好的名字开始。把你的包的名字想象成一个电梯广告，仅用一个词来描述它所提供的功能。</p>]]></summary>
+]]></summary>
     <content type="html"><![CDATA[<blockquote>
 <p>Python的核心开发成员之一Tim Peter写下的《The Zen of Python》，成为Python编程和设计的指导原则。Go语言步道师Dave Cheney 2020年发表了名为《The Zen of Go》</p>
 </blockquote>
+<!-- more -->
 <h2>译文</h2>
 <h3>Each package fulfils a single purpose 每一个package实现单一目标</h3>
 <p>A well designed Go package provides a single idea, a set of related behaviours. A good Go package starts by choosing a good name. Think of your package’s name as an elevator pitch to describe what it provides, using just one word.
@@ -2632,16 +2583,11 @@ goroutine 拥有锁、变量、内存等资源。释放这些资源的可靠方�
     <title type="text">Go箴言</title>
     <id>http://blog.cjhe.top/language/go/reprint/proverb.html</id>
     <link href="http://blog.cjhe.top/language/go/reprint/proverb.html"/>
-    <updated>2024-04-29T08:04:28.000Z</updated>
+    <updated>2024-05-05T15:52:14.000Z</updated>
     <summary type="html"><![CDATA[<p>【转】<a href="http://go-proverbs.github.io/" target="_blank" rel="noopener noreferrer">原文链接</a></p>
-<blockquote>
-<p>Go 语言之父 Rob Pike 在 2015 年分享的主题《Go Proverbs》</p>
-<p>核心理念是：简单、诗意、简洁（Simple, Poetic, Pithy）。</p>
-</blockquote>
-<h2>译文</h2>
-<p>Don't communicate by sharing memory, share memory by communicating.
-不要通过共享内存进行通信，通过通信共享内存</p>]]></summary>
+]]></summary>
     <content type="html"><![CDATA[<p>【转】<a href="http://go-proverbs.github.io/" target="_blank" rel="noopener noreferrer">原文链接</a></p>
+<!-- more -->
 <blockquote>
 <p>Go 语言之父 Rob Pike 在 2015 年分享的主题《Go Proverbs》</p>
 <p>核心理念是：简单、诗意、简洁（Simple, Poetic, Pithy）。</p>
@@ -2703,19 +2649,20 @@ Cgo 不是 Go。</p>
     <title type="text">变更日志</title>
     <id>http://blog.cjhe.top/CHANGELOG.html</id>
     <link href="http://blog.cjhe.top/CHANGELOG.html"/>
-    <updated>2024-04-23T03:16:39.000Z</updated>
-    <summary type="html"><![CDATA[<p><a name="v0.11.0"></a></p>
-<h2><a class="header-anchor" href="#v0-11-0-2024-04-14"><span></span></a><a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.10.1...v0.11.0" target="_blank" rel="noopener noreferrer">v0.11.0</a> (2024-04-14)</h2>
-<h3>🐛Bug Fixes</h3>
-<ul>
-<li>修改vuepress icon</li>
-<li>修复bug</li>
-<li><strong>devops:</strong> 修改helm-dashboard</li>
-<li><strong>go-language:</strong> 修改map，增加一些注意事项</li>
-<li><strong>go-language:</strong> defer增加遇见os.Exit</li>
-<li><strong>go-language:</strong> 修改数据类型</li>
-</ul>]]></summary>
-    <content type="html"><![CDATA[<p><a name="v0.11.0"></a></p>
+    <updated>2024-05-05T15:52:14.000Z</updated>
+    <summary type="text">v0.11.0 (2024-04-14)
+🐛Bug Fixes
+
+修改vuepress icon
+修复bug
+devops: 修改helm-dashboard
+go-language: 修改map，增加一些注意事项
+go-language: defer增加遇见os.Exit
+go-language: 修改数据类型
+
+♻️Code Refactorin...</summary>
+    <content type="html"><![CDATA[<!-- more -->
+<p><a name="v0.11.0"></a></p>
 <h2><a class="header-anchor" href="#v0-11-0-2024-04-14"><span></span></a><a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.10.1...v0.11.0" target="_blank" rel="noopener noreferrer">v0.11.0</a> (2024-04-14)</h2>
 <h3>🐛Bug Fixes</h3>
 <ul>
@@ -2991,13 +2938,13 @@ Cgo 不是 Go。</p>
     <title type="text">工厂模式的比较</title>
     <id>http://blog.cjhe.top/design-pattern/creational/factory-compare.html</id>
     <link href="http://blog.cjhe.top/design-pattern/creational/factory-compare.html"/>
-    <updated>2023-09-05T04:05:01.000Z</updated>
-    <summary type="html"><![CDATA[<p>简单工厂模式、工厂方法模式、抽象工厂模式都可以统称为工厂模式，其中：</p>
-<p>简单工厂模式：适用于需要根据客户端的输入来创建对象的场景，但不符合<code>开闭原则</code>，随着产品的增加需要修改工厂类。</p>
-<p>工厂方法模式：通过将具体产品的创建延迟到子类中实现，符合<code>开闭原则</code>，每个具体工厂类负责创建一个具体产品。</p>
-<p>抽象工厂模式：适用于需要创建一组相关产品对象的场景，每个具体工厂类负责创建一组相关产品。</p>
-<p>选择适合的创建型设计模式取决于具体的项目需求和设计考虑，简单工厂模式简单易懂但可扩展性差，工厂方法模式更灵活但需要额外的子类，而抽象工厂模式适用于创建一组相关的产品对象。</p>]]></summary>
-    <content type="html"><![CDATA[<p>简单工厂模式、工厂方法模式、抽象工厂模式都可以统称为工厂模式，其中：</p>
+    <updated>2024-05-05T15:52:14.000Z</updated>
+    <summary type="text">简单工厂模式、工厂方法模式、抽象工厂模式都可以统称为工厂模式，其中：
+简单工厂模式：适用于需要根据客户端的输入来创建对象的场景，但不符合开闭原则，随着产品的增加需要修改工厂类。
+工厂方法模式：通过将具体产品的创建延迟到子类中实现，符合开闭原则，每个具体工厂类负责创建一个具体产品。
+抽象工厂模式：适用于需要创建一组相关产品对象的场景，每个具体工厂类负责创...</summary>
+    <content type="html"><![CDATA[<!-- more -->
+<p>简单工厂模式、工厂方法模式、抽象工厂模式都可以统称为工厂模式，其中：</p>
 <p>简单工厂模式：适用于需要根据客户端的输入来创建对象的场景，但不符合<code>开闭原则</code>，随着产品的增加需要修改工厂类。</p>
 <p>工厂方法模式：通过将具体产品的创建延迟到子类中实现，符合<code>开闭原则</code>，每个具体工厂类负责创建一个具体产品。</p>
 <p>抽象工厂模式：适用于需要创建一组相关产品对象的场景，每个具体工厂类负责创建一组相关产品。</p>
@@ -3010,14 +2957,15 @@ Cgo 不是 Go。</p>
     <title type="text">介绍页</title>
     <id>http://blog.cjhe.top/intro.html</id>
     <link href="http://blog.cjhe.top/intro.html"/>
-    <updated>2024-04-15T09:57:53.000Z</updated>
-    <summary type="html"><![CDATA[
-<p><img src="https://raw.githubusercontent.com/Hexiaopi/Hexiaopi/master/profile-summary-card-output/github/0-profile-details.svg" alt="profile-details" loading="lazy">
-<img src="https://raw.githubusercontent.com/Hexiaopi/Hexiaopi/master/profile-summary-card-output/github/1-repos-per-language.svg" alt="profile-language" loading="lazy">
-<img src="https://raw.githubusercontent.com/Hexiaopi/Hexiaopi/master/profile-summary-card-output/github/2-most-commit-language.svg" alt="commit-language" loading="lazy">
-<img src="https://raw.githubusercontent.com/Hexiaopi/Hexiaopi/master/profile-summary-card-output/github/3-stats.svg" alt="stats" loading="lazy">
-<img src="https://raw.githubusercontent.com/Hexiaopi/Hexiaopi/master/profile-summary-card-output/github/4-productive-time.svg" alt="time" loading="lazy"></p>]]></summary>
-    <content type="html"><![CDATA[
+    <updated>2024-05-05T15:52:14.000Z</updated>
+    <summary type="text">介绍页
+profile-details
+profile-language
+commit-language
+stats
+time</summary>
+    <content type="html"><![CDATA[<!-- more -->
+<h1>介绍页</h1>
 <p><img src="https://raw.githubusercontent.com/Hexiaopi/Hexiaopi/master/profile-summary-card-output/github/0-profile-details.svg" alt="profile-details" loading="lazy">
 <img src="https://raw.githubusercontent.com/Hexiaopi/Hexiaopi/master/profile-summary-card-output/github/1-repos-per-language.svg" alt="profile-language" loading="lazy">
 <img src="https://raw.githubusercontent.com/Hexiaopi/Hexiaopi/master/profile-summary-card-output/github/2-most-commit-language.svg" alt="commit-language" loading="lazy">
@@ -3094,8 +3042,14 @@ Cgo 不是 Go。</p>
     <title type="text">设计原则</title>
     <id>http://blog.cjhe.top/design-pattern/principle.html</id>
     <link href="http://blog.cjhe.top/design-pattern/principle.html"/>
-    <updated>2023-08-07T14:03:54.000Z</updated>
-    <summary type="html"><![CDATA[<p>设计原则是心法，对于构建高质量的软件系统提供<strong>指导</strong>和<strong>约束</strong>，它具有以下作用：</p>
+    <updated>2024-05-05T15:52:14.000Z</updated>
+    <summary type="text">设计原则是心法，对于构建高质量的软件系统提供指导和约束，它具有以下作用：
+
+提高代码质量：设计原则强调代码的清晰性、可读性和可维护性。通过遵循设计原则，可以编写出更结构化、更模块化的代码，减少代码重复和冗余。
+降低耦合度：设计原则鼓励松散耦合的设计，将系统划分为更小的、相互独立的模块。这样可以减少模块之间的依赖关系，提高系统的灵活性和可扩展性。
+促进代...</summary>
+    <content type="html"><![CDATA[<!-- more -->
+<p>设计原则是心法，对于构建高质量的软件系统提供<strong>指导</strong>和<strong>约束</strong>，它具有以下作用：</p>
 <ul>
 <li>提高代码质量：设计原则强调代码的清晰性、可读性和可维护性。通过遵循设计原则，可以编写出更结构化、更模块化的代码，减少代码重复和冗余。</li>
 <li>降低耦合度：设计原则鼓励松散耦合的设计，将系统划分为更小的、相互独立的模块。这样可以减少模块之间的依赖关系，提高系统的灵活性和可扩展性。</li>
@@ -3103,16 +3057,6 @@ Cgo 不是 Go。</p>
 <li>简化系统维护：良好的设计原则可以减少系统的耦合和复杂度，使系统更易于理解和维护。当需要对系统进行修改或扩展时，通过遵循设计原则，可以更快速、更安全地进行变更。</li>
 <li>提高团队协作效率：设计原则提供了一种通用的设计思维和规范，使整个团队在设计和开发过程中能够更好地进行交流和协作。团队成员可以共同理解和遵循设计原则，降低沟通成本，提高开发效率。</li>
 </ul>
-]]></summary>
-    <content type="html"><![CDATA[<p>设计原则是心法，对于构建高质量的软件系统提供<strong>指导</strong>和<strong>约束</strong>，它具有以下作用：</p>
-<ul>
-<li>提高代码质量：设计原则强调代码的清晰性、可读性和可维护性。通过遵循设计原则，可以编写出更结构化、更模块化的代码，减少代码重复和冗余。</li>
-<li>降低耦合度：设计原则鼓励松散耦合的设计，将系统划分为更小的、相互独立的模块。这样可以减少模块之间的依赖关系，提高系统的灵活性和可扩展性。</li>
-<li>促进代码重用：设计原则推崇封装、继承、多态等面向对象的特性，使得代码更易于重用。通过设计模式和设计原则，可以将通用的解决方案抽象出来，并在不同的场景中重复应用。</li>
-<li>简化系统维护：良好的设计原则可以减少系统的耦合和复杂度，使系统更易于理解和维护。当需要对系统进行修改或扩展时，通过遵循设计原则，可以更快速、更安全地进行变更。</li>
-<li>提高团队协作效率：设计原则提供了一种通用的设计思维和规范，使整个团队在设计和开发过程中能够更好地进行交流和协作。团队成员可以共同理解和遵循设计原则，降低沟通成本，提高开发效率。</li>
-</ul>
-<!-- more -->
 <h2>SOLID原则</h2>
 <p>SOLID原则是由罗伯特·C·马丁在21世纪早期引入，指代了面向对象编程和面向对象设计的五个基本原则。遵循SOLID原则可以确保我们设计的代码是易维护、易扩展、易阅读的。SOLID原则同样也适用于Go程序设计。具体SOLID编码原则见下表：</p>
 <p>| 简写 | 全称                                | 中文描述     |
@@ -4106,12 +4050,31 @@ Nivi：除了把时间租出去之外，还有其他无助于致富的事情吗?
     <title type="text">收集的一些网站</title>
     <id>http://blog.cjhe.top/other/website.html</id>
     <link href="http://blog.cjhe.top/other/website.html"/>
-    <updated>2023-07-30T09:20:01.000Z</updated>
-    <summary type="html"><![CDATA[<h2>算法</h2>
-<p>数据结构和算法动态可视化<a href="https://visualgo.net/zh" target="_blank" rel="noopener noreferrer"></a></p>
-<p>算法可视化<a href="https://www.chrislaux.com/" target="_blank" rel="noopener noreferrer"></a></p>
-<p>在线运行代码的算法可视化<a href="https://algorithm-visualizer.org/" target="_blank" rel="noopener noreferrer"></a></p>]]></summary>
-    <content type="html"><![CDATA[<h2>算法</h2>
+    <updated>2024-05-05T15:52:14.000Z</updated>
+    <summary type="text">算法
+数据结构和算法动态可视化
+算法可视化
+在线运行代码的算法可视化
+数据结构可视化
+算法实现
+Linux
+鸟哥的Linux私房菜
+TLCL
+精彩的Linux命令
+命令行的艺术
+CURL使用
+设计模式
+图说设计模式
+Go设计模式
+Go设计模式
+设计模式
+容器化
+Docker-从入门到实践
+Docker中文文档
+从Docker到kubernetes进阶
+...</summary>
+    <content type="html"><![CDATA[<!-- more -->
+<h2>算法</h2>
 <p>数据结构和算法动态可视化<a href="https://visualgo.net/zh" target="_blank" rel="noopener noreferrer"></a></p>
 <p>算法可视化<a href="https://www.chrislaux.com/" target="_blank" rel="noopener noreferrer"></a></p>
 <p>在线运行代码的算法可视化<a href="https://algorithm-visualizer.org/" target="_blank" rel="noopener noreferrer"></a></p>
@@ -4144,7 +4107,7 @@ Nivi：除了把时间租出去之外，还有其他无助于致富的事情吗?
     <title type="text">分支规范</title>
     <id>http://blog.cjhe.top/project-standard/branch.html</id>
     <link href="http://blog.cjhe.top/project-standard/branch.html"/>
-    <updated>2024-04-15T09:57:53.000Z</updated>
+    <updated>2024-05-05T15:52:14.000Z</updated>
     <summary type="html"><![CDATA[<figure><img src="https://www.ruanyifeng.com/blogimg/asset/2015/bg2015122301.png" alt="git-model" tabindex="0" loading="lazy"><figcaption>git-model</figcaption></figure>
 <div class="hint-container tip">
 <p class="hint-container-title">提示</p>
@@ -4214,7 +4177,7 @@ Vincent Driessen 为了解决这个问题，提出<a href="https://nvie.com/post
     <title type="text">目录规范</title>
     <id>http://blog.cjhe.top/project-standard/directory.html</id>
     <link href="http://blog.cjhe.top/project-standard/directory.html"/>
-    <updated>2024-04-15T09:57:53.000Z</updated>
+    <updated>2024-05-05T15:52:14.000Z</updated>
     <summary type="html"><![CDATA[<div class="hint-container tip">
 <p class="hint-container-title">提示</p>
 <p>Go语言项目业界公认的目录结构是怎样的❓</p>
@@ -5213,15 +5176,14 @@ LIMIT关键字用于限制查询结果的数量。MySQL只返回前N条符合条
     <title type="text">事务</title>
     <id>http://blog.cjhe.top/database/mysql/transaction.html</id>
     <link href="http://blog.cjhe.top/database/mysql/transaction.html"/>
-    <updated>2024-04-15T09:57:53.000Z</updated>
-    <summary type="html"><![CDATA[<h2>事务的特性</h2>
-<ul>
-<li>原子性(Atomicity): 事务中的所有操作要么全部完成，要么全部不完成（回滚），不会在事务中间遇到错误而中断。</li>
-<li>一致性(Consistency): 事务开始和结束时，数据都必须保持一致状态，即符合约束、完整性、默认值以及其它定义的规则。事务执行的结果不能破坏数据库的完整性和一致性。</li>
-<li>隔离性(Isolation): 各个事务互相隔离，每个事务的执行都不会影响其它事务的执行或者结果。</li>
-<li>持久性(Durability): 一个事务一旦提交成功，它对数据库中的数据的改变就是永久性的，即使发生数据库故障也不应该对其产生影响。</li>
-</ul>]]></summary>
-    <content type="html"><![CDATA[<h2>事务的特性</h2>
+    <updated>2024-05-05T15:52:14.000Z</updated>
+    <summary type="text">事务的特性
+
+原子性(Atomicity): 事务中的所有操作要么全部完成，要么全部不完成（回滚），不会在事务中间遇到错误而中断。
+一致性(Consistency): 事务开始和结束时，数据都必须保持一致状态，即符合约束、完整性、默认值以及其它定义的规则。事务执行的结果不能破坏数据库的完整性和一致性。
+隔离性(Isolation): 各个事务互相隔离，...</summary>
+    <content type="html"><![CDATA[<!-- more -->
+<h2>事务的特性</h2>
 <ul>
 <li>原子性(Atomicity): 事务中的所有操作要么全部完成，要么全部不完成（回滚），不会在事务中间遇到错误而中断。</li>
 <li>一致性(Consistency): 事务开始和结束时，数据都必须保持一致状态，即符合约束、完整性、默认值以及其它定义的规则。事务执行的结果不能破坏数据库的完整性和一致性。</li>
@@ -7942,26 +7904,17 @@ Pool：对...</summary>
     <title type="text">选项模式</title>
     <id>http://blog.cjhe.top/design-pattern/function/option.html</id>
     <link href="http://blog.cjhe.top/design-pattern/function/option.html"/>
-    <updated>2023-08-06T08:10:45.000Z</updated>
+    <updated>2024-05-05T15:52:14.000Z</updated>
     <summary type="html"><![CDATA[<div class="hint-container tip">
 <p class="hint-container-title">提示</p>
 <p>由于Go语言不支持重载函数，当我们需要使用不同的方式构建对象时，不得不使用多个构造函数进行初始化。</p>
 </div>
-<h2>对于多参数的类的初始化遇到哪些困境？</h2>
-<p>例如：HTTP Server的初始化</p>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">type</span> Server <span class="token keyword">struct</span> <span class="token punctuation">{</span>
-	Addr     <span class="token builtin">string</span>
-	Port     <span class="token builtin">int</span>
-	Protocol <span class="token builtin">string</span>
-	Timeout  time<span class="token punctuation">.</span>Duration
-	MaxConns <span class="token builtin">int</span>
-	TLS      <span class="token operator">*</span>tls<span class="token punctuation">.</span>Config
-<span class="token punctuation">}</span>
-</code></pre></div>]]></summary>
+]]></summary>
     <content type="html"><![CDATA[<div class="hint-container tip">
 <p class="hint-container-title">提示</p>
 <p>由于Go语言不支持重载函数，当我们需要使用不同的方式构建对象时，不得不使用多个构造函数进行初始化。</p>
 </div>
+<!-- more -->
 <h2>对于多参数的类的初始化遇到哪些困境？</h2>
 <p>例如：HTTP Server的初始化</p>
 <div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">type</span> Server <span class="token keyword">struct</span> <span class="token punctuation">{</span>
@@ -9211,20 +9164,18 @@ s3<span class="token punctuation">,</span> <span class="token boolean">_</span> 
     <title type="text">WebSocket协议</title>
     <id>http://blog.cjhe.top/network/application-layer/websocket.html</id>
     <link href="http://blog.cjhe.top/network/application-layer/websocket.html"/>
-    <updated>2024-04-11T06:38:26.000Z</updated>
-    <summary type="html"><![CDATA[<blockquote>
-<p>WebSocket是为了提供web应用程序和服务端全双工通信而专门定制的一种网络协议，和HTTP协议一样位于OSI模型的应用层协议。</p>
-</blockquote>
-<h2>特点</h2>
-<ul>
-<li>建立在TCP协议之上</li>
-<li>与HTTP协议有着良好的兼容性，握手阶段采用HTTP协议，默认端口是80和443</li>
-<li>数据格式比较轻量，性能开销小、通信高效</li>
-<li>可以发送文本，也可以发送二进制数据</li>
-<li>没有同源限制，客户端可以与任意服务器通信</li>
-<li>协议标识符是ws(如果加密，则为wss)，形式：ws://echo.websocket.org</li>
-</ul>]]></summary>
-    <content type="html"><![CDATA[<blockquote>
+    <updated>2024-05-05T15:52:14.000Z</updated>
+    <summary type="text">WebSocket是为了提供web应用程序和服务端全双工通信而专门定制的一种网络协议，和HTTP协议一样位于OSI模型的应用层协议。
+
+特点
+
+建立在TCP协议之上
+与HTTP协议有着良好的兼容性，握手阶段采用HTTP协议，默认端口是80和443
+数据格式比较轻量，性能开销小、通信高效
+可以发送文本，也可以发送二进制数据
+没有同源限制，客户端可以与任意...</summary>
+    <content type="html"><![CDATA[<!-- more -->
+<blockquote>
 <p>WebSocket是为了提供web应用程序和服务端全双工通信而专门定制的一种网络协议，和HTTP协议一样位于OSI模型的应用层协议。</p>
 </blockquote>
 <h2>特点</h2>
@@ -9281,18 +9232,17 @@ Sec-Websocket-Accept: YLcYR/p/mS8hENqlgMXtFTggdv8=
     <title type="text">认证方案</title>
     <id>http://blog.cjhe.top/system-design/security/auth.html</id>
     <link href="http://blog.cjhe.top/system-design/security/auth.html"/>
-    <updated>2023-08-14T13:05:37.000Z</updated>
-    <summary type="html"><![CDATA[<h2>认证</h2>
-<blockquote>
-<p>我们有多种途径来保障应用的安全，例如：网咯隔离、设置防火墙、设置IP黑名单等。而<strong>认证</strong>是软件层面保护应用安全的一种措施。</p>
-<p>当前有四种认证方式，分别是：<code>Basic</code>、<code>Digest</code>、<code>OAuth</code>和<code>Bearer</code></p>
-</blockquote>
-<h3>Basic认证</h3>
-<blockquote>
-<p>Basic认证（基础认证）是一种简单的认证方式。将<code>用户名:密码</code>进行base64编码，放到HTTP Authorization Header中。</p>
-<p>但是base64不是加密技术，入侵者可以通过截获base64字符串，并反编码获取用户名和密码；其次即便进行了加密了用户名和密码，入侵者可以通过加重放攻击。</p>
-</blockquote>]]></summary>
-    <content type="html"><![CDATA[<h2>认证</h2>
+    <updated>2024-05-05T15:52:14.000Z</updated>
+    <summary type="text">认证
+
+我们有多种途径来保障应用的安全，例如：网咯隔离、设置防火墙、设置IP黑名单等。而认证是软件层面保护应用安全的一种措施。
+当前有四种认证方式，分别是：Basic、Digest、OAuth和Bearer
+
+Basic认证
+
+Basic认证（基础认证）是一种简单的认证方式。将用户名:密码进行base64编码，放到HTTP Authorization ...</summary>
+    <content type="html"><![CDATA[<!-- more -->
+<h2>认证</h2>
 <blockquote>
 <p>我们有多种途径来保障应用的安全，例如：网咯隔离、设置防火墙、设置IP黑名单等。而<strong>认证</strong>是软件层面保护应用安全的一种措施。</p>
 <p>当前有四种认证方式，分别是：<code>Basic</code>、<code>Digest</code>、<code>OAuth</code>和<code>Bearer</code></p>
@@ -9332,39 +9282,24 @@ Sec-Websocket-Accept: YLcYR/p/mS8hENqlgMXtFTggdv8=
     <title type="text">小心break🤦‍♂️</title>
     <id>http://blog.cjhe.top/language/go/advance/break.html</id>
     <link href="http://blog.cjhe.top/language/go/advance/break.html"/>
-    <updated>2024-04-29T08:04:28.000Z</updated>
-    <summary type="html"><![CDATA[<p>这里展示break的一个例子</p>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> main
+    <updated>2024-05-05T15:52:14.000Z</updated>
+    <summary type="text">这里展示break的一个例子
+ 查看执行结果
 
-<span class="token keyword">import</span> <span class="token punctuation">(</span>
-	<span class="token string">"fmt"</span>
-	<span class="token string">"time"</span>
-<span class="token punctuation">)</span>
 
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	exit <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token keyword">chan</span> <span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+警告
+按道理当收到exit信号时，协程应该退出，但此时协程仍旧在打印tick
+其实break语句只是跳出最内部的for、swich或select的执行。例子中只是跳出了select语句，并未跳出for循环
 
-	<span class="token keyword">go</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-		<span class="token keyword">for</span> <span class="token punctuation">{</span>
-			<span class="token keyword">select</span> <span class="token punctuation">{</span>
-			<span class="token keyword">case</span> <span class="token operator">&lt;-</span>time<span class="token punctuation">.</span><span class="token function">After</span><span class="token punctuation">(</span>time<span class="token punctuation">.</span>Second<span class="token punctuation">)</span><span class="token punctuation">:</span>
-				fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"tick"</span><span class="token punctuation">)</span>
-			<span class="token keyword">case</span> <span class="token operator">&lt;-</span>exit<span class="token punctuation">:</span>
-				fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"exiting..."</span><span class="token punctuation">)</span>
-				<span class="token keyword">break</span>
-			<span class="token punctuation">}</span>
-		<span class="token punctuation">}</span>
-		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"exit!"</span><span class="token punctuation">)</span>
-	<span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+那么我们该怎么跳到最外层呢？
+1、通过break [label]
+  查看执行结果
 
-	time<span class="token punctuation">.</span><span class="token function">Sleep</span><span class="token punctuation">(</span><span class="token number">3</span> <span class="token operator">*</span> time<span class="token punctuation">.</span>Second<span class="token punctuation">)</span>
-	exit <span class="token operator">&lt;-</span> <span class="token keyword">struct</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
 
-	<span class="token comment">// wait child goroutine exit</span>
-	time<span class="token punctuation">.</span><span class="token function">Sleep</span><span class="token punctuation">(</span><span class="token number">3</span> <span class="token operator">*</span> time<span class="token punctuation">.</span>Second<span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-</code></pre></div>]]></summary>
-    <content type="html"><![CDATA[<p>这里展示break的一个例子</p>
+提示
+代...</summary>
+    <content type="html"><![CDATA[<!-- more -->
+<p>这里展示break的一个例子</p>
 <div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> main
 
 <span class="token keyword">import</span> <span class="token punctuation">(</span>
@@ -10060,8 +9995,29 @@ eif = err: false
     <title type="text">深入了解Go锁原理</title>
     <id>http://blog.cjhe.top/language/go/advance/mutex.html</id>
     <link href="http://blog.cjhe.top/language/go/advance/mutex.html"/>
-    <updated>2024-04-29T08:04:28.000Z</updated>
-    <summary type="html"><![CDATA[<p>Go语言sync包提供了两种锁：</p>
+    <updated>2024-05-05T15:52:14.000Z</updated>
+    <summary type="text">Go语言sync包提供了两种锁：
+
+互斥锁 Mutex:
+
+加锁时，其他加锁协程均阻塞
+
+
+读写锁 RWMutex:
+
+加读锁时，加写锁协程阻塞，加读锁协程不阻塞
+加写锁时，其他加读写协程均阻塞
+
+
+
+互斥锁 Mutex
+Mutex数据结构
+参见$GOROOT/src/sync/mutex.go
+其中：
+
+state: 表示互斥锁的状态，比如是否被锁定...</summary>
+    <content type="html"><![CDATA[<!-- more -->
+<p>Go语言sync包提供了两种锁：</p>
 <ul>
 <li>互斥锁 Mutex:
 <ul>
@@ -10075,22 +10031,6 @@ eif = err: false
 </ul>
 </li>
 </ul>
-]]></summary>
-    <content type="html"><![CDATA[<p>Go语言sync包提供了两种锁：</p>
-<ul>
-<li>互斥锁 Mutex:
-<ul>
-<li>加锁时，其他加锁协程均阻塞</li>
-</ul>
-</li>
-<li>读写锁 RWMutex:
-<ul>
-<li>加读锁时，加写锁协程阻塞，加读锁协程不阻塞</li>
-<li>加写锁时，其他加读写协程均阻塞</li>
-</ul>
-</li>
-</ul>
-<!-- more -->
 <h2>互斥锁 Mutex</h2>
 <h3>Mutex数据结构</h3>
 <p>参见<code>$GOROOT/src/sync/mutex.go</code></p>
