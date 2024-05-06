@@ -216,3 +216,52 @@ onMounted(() => {
 })
 </script>
 ```
+
+
+### v-model
+
+> 父子组件双向数据同步，相当于：
+> - 通过props传递modelValue，实现父到子传递数据
+> - 通过emit触发update:modelValue，实现子到父传递数据
+
+父组件
+
+```vue{5-6}
+<template>
+    <div class="parent">
+        <h1>父组件</h1>
+        {{ msg }}
+        <Child v-model="msg" />
+        <Child :modelValue="msg" @update:modelValue="msg = $event" />
+    </div>
+</template>
+
+<script setup>
+import Child from './Child.vue'
+import { ref } from 'vue'
+
+const msg = ref('Hello World')
+</script>
+```
+
+子组件
+
+```vue{11-12}
+<template>
+    <div class="child">
+        <h1>子组件</h1>
+        <h6>msg:{{ props.modelValue }}</h6>
+        <button @click="handler">改变</button>
+    </div>
+</template>
+
+<script setup lang="ts">
+import { defineProps } from 'vue'
+let props = defineProps(['modelValue']);
+let $emit = defineEmits(['update:modelValue'])
+const handler = () => {
+    let msg = props.modelValue + ' hello '
+    $emit('update:modelValue', msg)
+};
+</script>
+```
