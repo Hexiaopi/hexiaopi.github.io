@@ -370,3 +370,62 @@ const handle = ($parent: any) => {
 }
 </script>
 ```
+
+
+### provide和inject
+
+> 常用于祖孙组件之间通信
+
+父组件
+
+```vue{14}
+<template>
+    <div class="parent">
+        <h1>父组件</h1>
+        <p>{{ count }}</p>
+        <Child />
+    </div>
+</template>
+
+<script setup>
+import Child from './Child.vue'
+import { ref, provide } from 'vue'
+
+const count = ref(123)
+provide('count', count)
+</script>
+```
+
+子组件
+```vue{4}
+<template>
+    <div class="child">
+        <h1>子组件</h1>
+        <GrandChild></GrandChild>
+    </div>
+</template>
+
+<script setup lang="ts">
+import GrandChild from './GrandChild.vue';
+</script>
+```
+
+孙组件
+
+```vue{10}
+<template>
+    <div class="grandchild">
+        <h1>孙组件</h1>
+        <button @click="handler">count:{{ count }}</button>
+    </div>
+</template>
+
+<script setup lang="ts">
+import { inject } from 'vue'
+let count = inject('count', 0)
+
+const handler = () => {
+    count.value += 1
+};
+</script>
+```
