@@ -265,3 +265,58 @@ const handler = () => {
 };
 </script>
 ```
+
+### useAttrs
+
+> 用于传递属性和事件
+
+父组件
+
+```vue{4}
+<template>
+    <div class="parent">
+        <h1>父组件</h1>
+        <Child :msg="msg" :count="count" @xxx="handle" />
+    </div>
+</template>
+
+<script setup>
+import Child from './Child.vue'
+import { ref } from 'vue'
+
+const msg = ref('Hello World')
+const count = ref(0)
+const handle = () => {
+    count.value++
+    console.log(count.value)
+}
+</script>
+```
+
+子组件
+
+```vue{4-5}
+<template>
+    <div class="child">
+        <h1>子组件</h1>
+        <h6>msg:{{ $attrs.msg }}</h6>
+        <button @click="$attrs.onXxx">count:{{ $attrs.count }}</button>
+    </div>
+</template>
+
+<script setup lang="ts">
+import { useAttrs } from 'vue'
+let $attrs = useAttrs();
+</script>
+```
+
+::: tip useAttrs和defineProps的区别
+- 和使用 defineProps 接收属性时相比，useAttrs 的优先级要低
+- useAttrs：方法能够接收到所有属性，包括未在组件中声明的属性，但不能够对接收到的属性进行类型校验和默认值设置。
+- defineProps：方法只能接收到在组件中声明的属性，但能够对接收到的属性进行类型校验和默认值设置，使得组件能够更加健壮。
+:::
+
+### $refs和$parent
+
+> $refs用于：父->子
+> $parent用于：子->父
