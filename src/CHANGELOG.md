@@ -1,10 +1,49 @@
 ---
 title: 变更日志
 icon: clock
-date: 2024-04-23
+date: 2024-05-06
 ---
 
 <!-- more -->
+
+
+<a name="v0.11.2"></a>
+## [v0.11.2](https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.11.1...v0.11.2) (2024-05-06)
+
+### :bug:Bug Fixes
+
+* 增加icon
+* 样式调整
+* **devops:** helm-dashboard支持先行版本
+
+### :recycle:Code Refactoring
+
+* 调整编程语言
+
+### :sparkles:Features
+
+* **language:** vue增加组件通信
+
+
+<a name="v0.11.1"></a>
+## [v0.11.1](https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.11.0...v0.11.1) (2024-04-23)
+
+### :bug:Bug Fixes
+
+* 修改作者
+* 修改title
+* **network:** 移动ICMP协议
+
+### :recycle:Code Refactoring
+
+* 优化changelog
+
+### :sparkles:Features
+
+* **devops:** 增加minio监控
+* **devops:** 增加mongodb监控
+* **go-language:** 增加在线书籍
+
 
 <a name="v0.11.0"></a>
 ## [v0.11.0](https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.10.1...v0.11.0) (2024-04-14)
