@@ -1,5 +1,6 @@
 ---
 title: 并发模式
+icon: shuffle
 date: 2023-02-26
 tag:
  - Go

@@ -1,5 +1,6 @@
 ---
 title: 行为型模式
+icon: person-digging
 date: 2023-07-31
 tag:
  - Go

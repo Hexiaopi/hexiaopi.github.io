@@ -1,5 +1,6 @@
 ---
 title: 高质量代码
+icon: thumbs-up
 date: 2022-11-01
 tag:
  - 代码质量

@@ -1,5 +1,6 @@
 ---
 title: 结构型模式
+icon: sitemap
 date: 2023-07-31
 tag:
  - Go

@@ -1,6 +1,6 @@
 ---
 title: 接口规范
-icon: server
+icon: /assets/icon/api.svg
 date: 2020-01-24
 tag:
  - 规范
@@ -116,3 +116,7 @@ DELETE /user/:id
 >
 > - /api/v1/user
 > - /api/v2/user
+
+## 参考文献
+
+- Google API设计指南[](https://www.bookstack.cn/read/API-design-guide/API-design-guide-README.md)

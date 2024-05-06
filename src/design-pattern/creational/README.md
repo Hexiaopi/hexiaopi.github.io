@@ -1,5 +1,6 @@
 ---
 title: 创建型模式
+icon: seedling
 date: 2023-07-31
 tag:
  - Go

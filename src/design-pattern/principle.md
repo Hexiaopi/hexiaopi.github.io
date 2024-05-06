@@ -1,5 +1,6 @@
 ---
 title: 设计原则
+icon: handshake
 date: 2022-10-15
 tag:
  - Go

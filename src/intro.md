@@ -1,11 +1,14 @@
 ---
-icon: circle-info
-cover: /assets/images/cover3.jpg
+title: 关于我
+icon: face-smile
+cover: /assets/images/cover.gif
 ---
 
 <!-- more -->
 
-# 介绍页
+> 一枚后端攻城狮，热爱Go、Vue等技术栈。
+
+## 介绍页
 
 ![profile-details](https://raw.githubusercontent.com/Hexiaopi/Hexiaopi/master/profile-summary-card-output/github/0-profile-details.svg)
 ![profile-language](https://raw.githubusercontent.com/Hexiaopi/Hexiaopi/master/profile-summary-card-output/github/1-repos-per-language.svg)

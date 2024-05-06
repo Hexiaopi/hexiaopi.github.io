@@ -16,6 +16,7 @@ export default sidebar({
         "quantity-code",
         {
           text: "创建型模式",
+          icon: "seedling",
           collapsible: true,
           prefix: "creational/",
           link: "creational/README.md",
@@ -23,6 +24,7 @@ export default sidebar({
         },
         {
           text: "结构型模式",
+          icon: "sitemap",
           collapsible: true,
           prefix: "structural/",
           link: "structural/README.md",
@@ -30,6 +32,7 @@ export default sidebar({
         },
         {
           text: "行为型模式",
+          icon: "person-digging",
           collapsible: true,
           prefix: "behavioral/",
           link: "behavioral/README.md",
@@ -37,6 +40,7 @@ export default sidebar({
         },
         {
           text: "函数模式",
+          icon: "/assets/icon/function.svg",
           collapsible: true,
           prefix: "function/",
           link: "function/README.md",
@@ -44,6 +48,7 @@ export default sidebar({
         },
         {
           text: "并发模式",
+          icon: "shuffle",
           collapsible: true,
           prefix: "concurrency/",
           link: "concurrency/README.md",
@@ -73,35 +78,6 @@ export default sidebar({
           link: "vue/README.md",
           children: "structure",
         },
-        // {
-        //   text: "标准库",
-        //   collapsible: true,
-        //   prefix: "standard-library/",
-        //   link: "standard-library/README.md",
-        //   children: "structure",
-        // },
-        // {
-        //   text: "三方库",
-        //   collapsible: true,
-        //   prefix: "third-party/",
-        //   link: "third-party/README.md",
-        //   children: "structure",
-        // },
-        // {
-        //   text: "推荐",
-        //   icon: "share-square",
-        //   collapsible: true,
-        //   prefix: "recommend/",
-        //   link: "recommend/README.md",
-        //   children: "structure",
-        // },
-        // {
-        //   text: "转载",
-        //   collapsible: true,
-        //   prefix: "reprint/",
-        //   link: "reprint/README.md",
-        //   children: "structure",
-        // },
       ],
     },
     {
@@ -127,36 +103,7 @@ export default sidebar({
       collapsible: true,
       prefix: "network/",
       link: "network/README.md",
-      children: [
-        {
-          text: "应用层协议",
-          collapsible: true,
-          prefix: "application-layer/",
-          link: "application-layer/README.md",
-          children: "structure",
-        },
-        {
-          text: "传输层协议",
-          collapsible: true,
-          prefix: "transport-layer/",
-          link: "transport-layer/README.md",
-          children: "structure",
-        },
-        {
-          text: "网络层协议",
-          collapsible: true,
-          prefix: "internet-layer/",
-          link: "internet-layer/README.md",
-          children: "structure",
-        },
-        {
-          text: "链路层协议",
-          collapsible: true,
-          prefix: "link-layer/",
-          link: "link-layer/README.md",
-          children: "structure",
-        },
-      ]
+      children: "structure",
     },
     {
       text: "devops",
@@ -189,6 +136,14 @@ export default sidebar({
       collapsible: true,
       prefix: "project-standard/",
       link: "project-standard/README.md",
+      children: "structure",
+    },
+    {
+      text: "转载",
+      icon: "share-square",
+      collapsible: true,
+      prefix: "share/",
+      link: "share/README.md",
       children: "structure",
     },
   ],
