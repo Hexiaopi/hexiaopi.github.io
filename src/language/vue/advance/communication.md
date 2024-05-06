@@ -316,7 +316,57 @@ let $attrs = useAttrs();
 - defineProps：方法只能接收到在组件中声明的属性，但能够对接收到的属性进行类型校验和默认值设置，使得组件能够更加健壮。
 :::
 
-### $refs和$parent
+### ref和$parent
 
-> $refs用于：父->子
+> ref用于：父->子
 > $parent用于：子->父
+
+父组件
+
+```vue{5,15,17,20}
+<template>
+    <div class="parent">
+        <h1>父组件</h1>
+        <p> 工资: {{ money }}</p>
+        <button @click="handle">给孩子生活费</button>
+        <Child ref="son" />
+    </div>
+</template>
+
+<script setup>
+import Child from './Child.vue'
+import { ref } from 'vue'
+
+const money = ref(1000)
+defineExpose({ money })
+
+let son = ref()
+const handle = () => {
+    money.value -= 100
+    son.value.money += 100
+}
+</script>
+```
+
+子组件
+
+```vue{5,16}
+<template>
+    <div class="child">
+        <h1>子组件</h1>
+        <p> 生活费: {{ money }}</p>
+        <button @click="handle($parent)">要生活费</button>
+    </div>
+</template>
+
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const money = ref(10)
+defineExpose({ money })
+const handle = ($parent: any) => {
+    money.value += 100
+    $parent.money -= 100
+}
+</script>
+```
