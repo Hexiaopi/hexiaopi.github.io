@@ -1,6 +1,6 @@
 ---
 title: 设计模式
-icon: project-diagram
+icon: palette
 date: 2022-09-10
 tag:
  - Go

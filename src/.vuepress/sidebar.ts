@@ -7,7 +7,7 @@ export default sidebar({
     "slides",
     {
       text: "设计模式",
-      icon: "project-diagram",
+      icon: "palette",
       collapsible: true,
       prefix: "design-pattern/",
       link: "design-pattern/README.md",
