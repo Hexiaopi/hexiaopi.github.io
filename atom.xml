@@ -3,25 +3,165 @@
   <id>http://blog.cjhe.top/</id>
   <title>个人博客</title>
   <subtitle>何小进童鞋的个人博客</subtitle>
-  <updated>2024-05-05T15:53:20.484Z</updated>
+  <updated>2024-05-06T02:48:30.761Z</updated>
   <generator>@vuepress/plugin-feed</generator>
   <link rel="self" href="http://blog.cjhe.top/atom.xml"/>
   <link rel="alternate" href="http://blog.cjhe.top/"/>
-  <category term="编程语言"/>
+  <category term="算法"/>
+  <category term="设计模式"/>
+  <category term="中间件"/>
+  <category term="转载"/>
+  <category term="工具"/>
   <category term="devops"/>
+  <category term="编程语言"/>
   <category term="网络"/>
   <category term="数据库"/>
   <category term="项目规范"/>
-  <category term="设计模式"/>
-  <category term="转载"/>
   <category term="系统设计"/>
-  <category term="工具"/>
   <contributor>
     <name>Dave Cheney</name>
   </contributor>
   <contributor>
     <name>Rob Pike</name>
   </contributor>
+  <entry>
+    <title type="text">算法推荐</title>
+    <id>http://blog.cjhe.top/algorithm/recommend.html</id>
+    <link href="http://blog.cjhe.top/algorithm/recommend.html"/>
+    <updated>2024-05-06T02:44:40.000Z</updated>
+    <summary type="text">在线书籍
+
+数据结构和算法动态可视化
+算法可视化
+在线运行代码的算法可视化
+数据结构可视化
+算法实现</summary>
+    <content type="html"><![CDATA[<!-- more -->
+<h2>在线书籍</h2>
+<ul>
+<li>数据结构和算法动态可视化<a href="https://visualgo.net/zh" target="_blank" rel="noopener noreferrer"></a></li>
+<li>算法可视化<a href="https://www.chrislaux.com/" target="_blank" rel="noopener noreferrer"></a></li>
+<li>在线运行代码的算法可视化<a href="https://algorithm-visualizer.org/" target="_blank" rel="noopener noreferrer"></a></li>
+<li>数据结构可视化<a href="https://www.cs.usfca.edu/~galles/visualization/Algorithms.html" target="_blank" rel="noopener noreferrer"></a></li>
+<li>算法实现<a href="https://the-algorithms.com/" target="_blank" rel="noopener noreferrer"></a></li>
+</ul>
+]]></content>
+    <category term="算法"/>
+    <published>2024-05-06T00:00:00.000Z</published>
+  </entry>
+  <entry>
+    <title type="text">设计模式推荐</title>
+    <id>http://blog.cjhe.top/design-pattern/recommend.html</id>
+    <link href="http://blog.cjhe.top/design-pattern/recommend.html"/>
+    <updated>2024-05-06T02:44:40.000Z</updated>
+    <summary type="text">在线书籍
+
+图说设计模式
+Go设计模式
+Go设计模式
+设计模式</summary>
+    <content type="html"><![CDATA[<!-- more -->
+<h2>在线书籍</h2>
+<ul>
+<li>图说设计模式<a href="https://design-patterns.readthedocs.io/zh_CN/latest/" target="_blank" rel="noopener noreferrer"></a></li>
+<li>Go设计模式<a href="https://golangbyexample.com/all-design-patterns-golang/" target="_blank" rel="noopener noreferrer"></a></li>
+<li>Go设计模式<a href="https://dev.to/gopher/go-all-design-patterns-code-with-workflow-ea1" target="_blank" rel="noopener noreferrer"></a></li>
+<li>设计模式<a href="https://refactoringguru.cn/design-patterns" target="_blank" rel="noopener noreferrer"></a></li>
+</ul>
+]]></content>
+    <category term="设计模式"/>
+    <published>2024-05-06T00:00:00.000Z</published>
+  </entry>
+  <entry>
+    <title type="text">中间件推荐</title>
+    <id>http://blog.cjhe.top/middleware/recommend.html</id>
+    <link href="http://blog.cjhe.top/middleware/recommend.html"/>
+    <updated>2024-05-06T02:44:40.000Z</updated>
+    <summary type="text">在线书籍
+
+Prometheus告警</summary>
+    <content type="html"><![CDATA[<!-- more -->
+<h2>在线书籍</h2>
+<ul>
+<li>Prometheus告警<a href="https://awesome-prometheus-alerts.grep.to/" target="_blank" rel="noopener noreferrer"></a></li>
+</ul>
+]]></content>
+    <category term="中间件"/>
+    <published>2024-05-06T00:00:00.000Z</published>
+  </entry>
+  <entry>
+    <title type="text">转载</title>
+    <id>http://blog.cjhe.top/share/</id>
+    <link href="http://blog.cjhe.top/share/"/>
+    <updated>2024-05-06T02:44:40.000Z</updated>
+    <content type="html"><![CDATA[<!-- more -->
+]]></content>
+    <category term="转载"/>
+    <published>2023-03-04T00:00:00.000Z</published>
+  </entry>
+  <entry>
+    <title type="text">工具推荐</title>
+    <id>http://blog.cjhe.top/tools/recommend.html</id>
+    <link href="http://blog.cjhe.top/tools/recommend.html"/>
+    <updated>2024-05-06T02:44:40.000Z</updated>
+    <summary type="text">在线书籍
+
+鸟哥的Linux私房菜
+TLCL
+精彩的Linux命令
+命令行的艺术
+CURL使用</summary>
+    <content type="html"><![CDATA[<!-- more -->
+<h2>在线书籍</h2>
+<ul>
+<li>鸟哥的Linux私房菜<a href="http://cn.linux.vbird.org/linux_basic/linux_basic.php" target="_blank" rel="noopener noreferrer"></a></li>
+<li>TLCL<a href="http://billie66.github.io/TLCL/book/" target="_blank" rel="noopener noreferrer"></a></li>
+<li>精彩的Linux命令<a href="https://www.cnblogs.com/nineep/p/6795650.html" target="_blank" rel="noopener noreferrer"></a></li>
+<li>命令行的艺术<a href="https://github.com/jlevy/the-art-of-command-line/blob/master/README-zh.md" target="_blank" rel="noopener noreferrer"></a></li>
+<li>CURL使用<a href="https://everything.curl.dev/" target="_blank" rel="noopener noreferrer"></a></li>
+</ul>
+]]></content>
+    <category term="工具"/>
+    <published>2024-05-06T00:00:00.000Z</published>
+  </entry>
+  <entry>
+    <title type="text">docker推荐</title>
+    <id>http://blog.cjhe.top/devops/docker/recommand.html</id>
+    <link href="http://blog.cjhe.top/devops/docker/recommand.html"/>
+    <updated>2024-05-06T02:44:40.000Z</updated>
+    <summary type="text">在线书籍
+
+Docker-从入门到实践
+Docker中文文档</summary>
+    <content type="html"><![CDATA[<!-- more -->
+<h2>在线书籍</h2>
+<ul>
+<li>Docker-从入门到实践<a href="https://www.cntofu.com/book/139/index.html" target="_blank" rel="noopener noreferrer"></a></li>
+<li>Docker中文文档<a href="http://www.dockerinfo.net/document" target="_blank" rel="noopener noreferrer"></a></li>
+</ul>
+]]></content>
+    <category term="devops"/>
+    <published>2024-05-06T00:00:00.000Z</published>
+  </entry>
+  <entry>
+    <title type="text">k8s推荐</title>
+    <id>http://blog.cjhe.top/devops/k8s/recommand.html</id>
+    <link href="http://blog.cjhe.top/devops/k8s/recommand.html"/>
+    <updated>2024-05-06T02:44:40.000Z</updated>
+    <summary type="text">在线书籍
+
+从Docker到kubernetes进阶
+Kubernetes中文指南</summary>
+    <content type="html"><![CDATA[<!-- more -->
+<h2>在线书籍</h2>
+<ul>
+<li>从Docker到kubernetes进阶<a href="https://www.qikqiak.com/k8s-book/" target="_blank" rel="noopener noreferrer"></a></li>
+<li>Kubernetes中文指南<a href="https://jimmysong.io/kubernetes-handbook/" target="_blank" rel="noopener noreferrer"></a></li>
+</ul>
+]]></content>
+    <category term="devops"/>
+    <published>2024-05-06T00:00:00.000Z</published>
+  </entry>
   <entry>
     <title type="text">组件通信</title>
     <id>http://blog.cjhe.top/language/vue/advance/communication.html</id>
@@ -575,7 +715,7 @@ HTTP发展简史
     <title type="text">应用层协议</title>
     <id>http://blog.cjhe.top/network/application-layer/</id>
     <link href="http://blog.cjhe.top/network/application-layer/"/>
-    <updated>2024-05-05T15:52:14.000Z</updated>
+    <updated>2024-05-06T02:44:40.000Z</updated>
     <summary type="html"><![CDATA[<blockquote>
 <p>本篇介绍计算机网络应用层协议</p>
 </blockquote>
@@ -625,7 +765,7 @@ ICMP使用IP协议发送信息，它虽然属于网络层协议，但严格来�
     <title type="text">网络层协议</title>
     <id>http://blog.cjhe.top/network/internet-layer/</id>
     <link href="http://blog.cjhe.top/network/internet-layer/"/>
-    <updated>2024-05-05T15:52:14.000Z</updated>
+    <updated>2024-05-06T02:44:40.000Z</updated>
     <summary type="html"><![CDATA[<blockquote>
 <p>本篇介绍计算机网络网络层协议</p>
 </blockquote>
@@ -655,7 +795,7 @@ ICMP使用IP协议发送信息，它虽然属于网络层协议，但严格来�
     <title type="text">链路层协议</title>
     <id>http://blog.cjhe.top/network/link-layer/</id>
     <link href="http://blog.cjhe.top/network/link-layer/"/>
-    <updated>2024-05-05T15:52:14.000Z</updated>
+    <updated>2024-05-06T02:44:40.000Z</updated>
     <summary type="html"><![CDATA[<blockquote>
 <p>链路层协议比较偏底层，有机会再介绍</p>
 </blockquote>
@@ -671,7 +811,7 @@ ICMP使用IP协议发送信息，它虽然属于网络层协议，但严格来�
     <title type="text">传输层协议</title>
     <id>http://blog.cjhe.top/network/transport-layer/</id>
     <link href="http://blog.cjhe.top/network/transport-layer/"/>
-    <updated>2024-05-05T15:52:14.000Z</updated>
+    <updated>2024-05-06T02:44:40.000Z</updated>
     <summary type="html"><![CDATA[<blockquote>
 <p>本篇介绍计算机网络传输层协议</p>
 </blockquote>
@@ -2649,19 +2789,63 @@ Cgo 不是 Go。</p>
     <title type="text">变更日志</title>
     <id>http://blog.cjhe.top/CHANGELOG.html</id>
     <link href="http://blog.cjhe.top/CHANGELOG.html"/>
-    <updated>2024-05-05T15:52:14.000Z</updated>
-    <summary type="text">v0.11.0 (2024-04-14)
+    <updated>2024-05-06T02:47:23.000Z</updated>
+    <summary type="text">v0.11.2 (2024-05-06)
 🐛Bug Fixes
 
-修改vuepress icon
-修复bug
-devops: 修改helm-dashboard
-go-language: 修改map，增加一些注意事项
-go-language: defer增加遇见os.Exit
-go-language: 修改数据类型
+增加icon
+样式调整
+devops: helm-dashboard支持先行版本
 
-♻️Code Refactorin...</summary>
+♻️Code Refactoring
+
+调整编程语言
+
+✨Features
+
+language: vue增加组件通信
+
+
+v0.11.1 (2024-04-23)
+🐛Bug Fixes
+
+修改作者
+修...</summary>
     <content type="html"><![CDATA[<!-- more -->
+<p><a name="v0.11.2"></a></p>
+<h2><a class="header-anchor" href="#v0-11-2-2024-05-06"><span></span></a><a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.11.1...v0.11.2" target="_blank" rel="noopener noreferrer">v0.11.2</a> (2024-05-06)</h2>
+<h3>🐛Bug Fixes</h3>
+<ul>
+<li>增加icon</li>
+<li>样式调整</li>
+<li><strong>devops:</strong> helm-dashboard支持先行版本</li>
+</ul>
+<h3>♻️Code Refactoring</h3>
+<ul>
+<li>调整编程语言</li>
+</ul>
+<h3>✨Features</h3>
+<ul>
+<li><strong>language:</strong> vue增加组件通信</li>
+</ul>
+<p><a name="v0.11.1"></a></p>
+<h2><a class="header-anchor" href="#v0-11-1-2024-04-23"><span></span></a><a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.11.0...v0.11.1" target="_blank" rel="noopener noreferrer">v0.11.1</a> (2024-04-23)</h2>
+<h3>🐛Bug Fixes</h3>
+<ul>
+<li>修改作者</li>
+<li>修改title</li>
+<li><strong>network:</strong> 移动ICMP协议</li>
+</ul>
+<h3>♻️Code Refactoring</h3>
+<ul>
+<li>优化changelog</li>
+</ul>
+<h3>✨Features</h3>
+<ul>
+<li><strong>devops:</strong> 增加minio监控</li>
+<li><strong>devops:</strong> 增加mongodb监控</li>
+<li><strong>go-language:</strong> 增加在线书籍</li>
+</ul>
 <p><a name="v0.11.0"></a></p>
 <h2><a class="header-anchor" href="#v0-11-0-2024-04-14"><span></span></a><a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.10.1...v0.11.0" target="_blank" rel="noopener noreferrer">v0.11.0</a> (2024-04-14)</h2>
 <h3>🐛Bug Fixes</h3>
@@ -2932,7 +3116,7 @@ go-language: 修改数据类型
 <li><strong>project-manager:</strong> add commit standard</li>
 </ul>
 ]]></content>
-    <published>2024-04-23T00:00:00.000Z</published>
+    <published>2024-05-06T00:00:00.000Z</published>
   </entry>
   <entry>
     <title type="text">工厂模式的比较</title>
@@ -2954,18 +3138,23 @@ go-language: 修改数据类型
     <published>2023-07-31T00:00:00.000Z</published>
   </entry>
   <entry>
-    <title type="text">介绍页</title>
+    <title type="text">关于我</title>
     <id>http://blog.cjhe.top/intro.html</id>
     <link href="http://blog.cjhe.top/intro.html"/>
-    <updated>2024-05-05T15:52:14.000Z</updated>
-    <summary type="text">介绍页
+    <updated>2024-05-06T02:44:40.000Z</updated>
+    <summary type="text">一枚后端攻城狮，热爱Go、Vue等技术栈。
+
+介绍页
 profile-details
 profile-language
 commit-language
 stats
 time</summary>
     <content type="html"><![CDATA[<!-- more -->
-<h1>介绍页</h1>
+<blockquote>
+<p>一枚后端攻城狮，热爱Go、Vue等技术栈。</p>
+</blockquote>
+<h2>介绍页</h2>
 <p><img src="https://raw.githubusercontent.com/Hexiaopi/Hexiaopi/master/profile-summary-card-output/github/0-profile-details.svg" alt="profile-details" loading="lazy">
 <img src="https://raw.githubusercontent.com/Hexiaopi/Hexiaopi/master/profile-summary-card-output/github/1-repos-per-language.svg" alt="profile-language" loading="lazy">
 <img src="https://raw.githubusercontent.com/Hexiaopi/Hexiaopi/master/profile-summary-card-output/github/2-most-commit-language.svg" alt="commit-language" loading="lazy">
@@ -3042,7 +3231,7 @@ time</summary>
     <title type="text">设计原则</title>
     <id>http://blog.cjhe.top/design-pattern/principle.html</id>
     <link href="http://blog.cjhe.top/design-pattern/principle.html"/>
-    <updated>2024-05-05T15:52:14.000Z</updated>
+    <updated>2024-05-06T02:44:40.000Z</updated>
     <summary type="text">设计原则是心法，对于构建高质量的软件系统提供指导和约束，它具有以下作用：
 
 提高代码质量：设计原则强调代码的清晰性、可读性和可维护性。通过遵循设计原则，可以编写出更结构化、更模块化的代码，减少代码重复和冗余。
@@ -3069,7 +3258,7 @@ time</summary>
     <title type="text">高质量代码</title>
     <id>http://blog.cjhe.top/design-pattern/quantity-code.html</id>
     <link href="http://blog.cjhe.top/design-pattern/quantity-code.html"/>
-    <updated>2023-07-30T09:20:01.000Z</updated>
+    <updated>2024-05-06T02:44:40.000Z</updated>
     <summary type="html"><![CDATA[<div class="hint-container tip">
 <p class="hint-container-title">提示</p>
 <p>什么样的代码才是高质量的代码❓</p>
@@ -3163,10 +3352,429 @@ time</summary>
     <published>2022-11-01T00:00:00.000Z</published>
   </entry>
   <entry>
+    <title type="text">分支规范</title>
+    <id>http://blog.cjhe.top/project-standard/branch.html</id>
+    <link href="http://blog.cjhe.top/project-standard/branch.html"/>
+    <updated>2024-05-05T15:52:14.000Z</updated>
+    <summary type="html"><![CDATA[<figure><img src="https://www.ruanyifeng.com/blogimg/asset/2015/bg2015122301.png" alt="git-model" tabindex="0" loading="lazy"><figcaption>git-model</figcaption></figure>
+<div class="hint-container tip">
+<p class="hint-container-title">提示</p>
+<p>一个好的代码分支应该是怎样的❓</p>
+</div>
+]]></summary>
+    <content type="html"><![CDATA[<figure><img src="https://www.ruanyifeng.com/blogimg/asset/2015/bg2015122301.png" alt="git-model" tabindex="0" loading="lazy"><figcaption>git-model</figcaption></figure>
+<div class="hint-container tip">
+<p class="hint-container-title">提示</p>
+<p>一个好的代码分支应该是怎样的❓</p>
+</div>
+<!-- more -->
+<h2>分支模型</h2>
+<p>我们经常使用Git用于管理版本，但如果没有清晰的流程和规范，会导致难以协调和维护。
+Vincent Driessen 为了解决这个问题，提出<a href="https://nvie.com/posts/a-successful-git-branching-model/" target="_blank" rel="noopener noreferrer">A Successful Git Branching Model</a></p>
+<figure><figcaption>git-model</figcaption></figure>
+<h2>master分支</h2>
+<p>这个分支保持最近发布到生产环境的代码。</p>
+<div class="hint-container warning">
+<p class="hint-container-title">注意</p>
+<ul>
+<li>不能在这个分支直接修改</li>
+<li>生产环境运行的代码和该分支保持一致</li>
+<li>master分支每合并一个hotfix/release分支，都会打一个版本标签</li>
+</ul>
+</div>
+<h2>develop分支</h2>
+<p>这个分支是我们的主开发分支</p>
+<div class="hint-container warning">
+<p class="hint-container-title">注意</p>
+<p>feature/release/hotfix都需要合并到该分支</p>
+</div>
+<h2>feature分支</h2>
+<p>这个分支是用来开发新的功能，一旦开发完成，合并到develop分支并进入下一个release</p>
+<div class="hint-container warning">
+<p class="hint-container-title">注意</p>
+<ul>
+<li>分支命名建议：<code>feature/xxx-xxx</code></li>
+<li>合并到develop分支需要删除该分支，如果有bug，在对应的release分支进行修复</li>
+<li>feature分支合并到develop分支之前先pull一下develop分支，避免冲突</li>
+</ul>
+</div>
+<h2>release分支</h2>
+<p>当需要发布一个新的release的时候，基于develop分支创建一个release分支</p>
+<div class="hint-container tip">
+<p class="hint-container-title">提示</p>
+<ul>
+<li>分支名建议命名<code>release/xxx-xxx</code></li>
+<li>测试人员基于release分支进行测试，如有bug，也在该分支修复，再测试。</li>
+<li>完成release分支后需要合并到master和develop分支</li>
+</ul>
+</div>
+<h2>hotfix分支</h2>
+<p>当在现网发现bug时，需要创建一个hotfix分支进行修复，完成后合并到master和develop，hotfix的改动会进入下一个release</p>
+<div class="hint-container warning">
+<p class="hint-container-title">注意</p>
+<ul>
+<li>建议命名：<code>hotfix/xxx-xxx</code></li>
+<li>只能基于master分支创建hotfix分支</li>
+</ul>
+</div>
+]]></content>
+    <category term="项目规范"/>
+    <published>2020-02-11T00:00:00.000Z</published>
+  </entry>
+  <entry>
+    <title type="text">目录规范</title>
+    <id>http://blog.cjhe.top/project-standard/directory.html</id>
+    <link href="http://blog.cjhe.top/project-standard/directory.html"/>
+    <updated>2024-05-06T02:44:40.000Z</updated>
+    <summary type="html"><![CDATA[<div class="hint-container tip">
+<p class="hint-container-title">提示</p>
+<p>Go语言项目业界公认的目录结构是怎样的❓</p>
+</div>
+]]></summary>
+    <content type="html"><![CDATA[<div class="hint-container tip">
+<p class="hint-container-title">提示</p>
+<p>Go语言项目业界公认的目录结构是怎样的❓</p>
+</div>
+<!-- more -->
+<h2>目录结构</h2>
+<blockquote>
+<p>可以通过以下维度进行考量：</p>
+<ul>
+<li>
+<p>命名清晰：目录命名需要简洁，清晰的表达出该目录实现的功能，做到一看到该目录名就知道是干嘛的；</p>
+</li>
+<li>
+<p>功能明确：目录的功能必须明确，例如：api目录是接口服务、service目录是业务逻辑；</p>
+</li>
+<li>
+<p>功能齐全：例如测试、构建、脚本、工具、文档等；</p>
+</li>
+</ul>
+</blockquote>
+<p>这里参考Go语言公认项目目录<a href="https://github.com/golang-standards/project-layout" target="_blank" rel="noopener noreferrer">project-layout</a>结构如下：</p>
+<div class="language-text" data-ext="text" data-title="text"><pre class="language-text"><code>.
+├── api
+├── assets
+├── build
+│   ├── ci
+│   └── package
+├── cmd
+│   └── _your_app_
+├── configs
+├── deployments
+├── docs
+├── examples
+├── githooks
+├── init
+├── internal
+│   ├── app
+│   │   └── _your_app_
+│   └── pkg
+│       └── _your_private_lib_
+├── pkg
+│   └── _your_public_lib_
+├── scripts
+├── test
+├── third_party
+├── tools
+├── vendor
+├── web
+│   ├── app
+│   ├── static
+│   └── template
+└── website
+</code></pre></div><h2>应用目录</h2>
+<h3>api目录</h3>
+<blockquote>
+<p>OpenAPI/Swagger规范、JSON模式文件、协议定义文件</p>
+</blockquote>
+<h3>cmd目录</h3>
+<blockquote>
+<p>该项目的主要应用，Go语言以main函数文件作为程序入口。每个应用程序的目录名称应与执行文件的名称相匹配，例如：<code>/cmd/myapp</code></p>
+</blockquote>
+<h3>examples目录</h3>
+<blockquote>
+<p>应用程序和公共库的示例</p>
+</blockquote>
+<h3>internal目录</h3>
+<blockquote>
+<p>存放私有应用和库代码，如果一些代码，你不希望在其他在其他应用和库中被导入，可以放在internal目录下。而对于私有应用共享的代码可以放在/internal/pkg目录下。
+建议internal目录以各个组件的方式进行分层。</p>
+</blockquote>
+<h3>pkg目录</h3>
+<blockquote>
+<p>与internal相反，该目录存放可供其他外部应用程序使用的库代码。</p>
+</blockquote>
+<h3>vendor目录</h3>
+<blockquote>
+<p>该目录存放项目依赖，可通过<code>go mod vendor</code>创建。</p>
+</blockquote>
+<p>👀 注意</p>
+<p>如果开发的是Go语言库，不要提交vendor依赖包</p>
+<h3>test目录</h3>
+<blockquote>
+<p>其他外部测试应用程序和测试数据。对于更大的项目，有一个数据子目录是有意义的。例如：<code>/test/data</code>或者<code>/test/testdata</code></p>
+</blockquote>
+<p>👀 注意</p>
+<p>Go 也会忽略以“.”开头的目录或文件。或“_”，因此您可以更灵活地命名测试数据目录。</p>
+<h3>third_party目录</h3>
+<blockquote>
+<p>外部帮助工具，分支代码或其他第三方应用。</p>
+</blockquote>
+<h3>tools目录</h3>
+<blockquote>
+<p>该项目的支持工具</p>
+</blockquote>
+<p>👀 注意</p>
+<p>这些工具可以从<code>pkg</code>和<code>internal</code>目录导入代码</p>
+<h3>web目录</h3>
+<blockquote>
+<p>前端代码存放目录，用来存放Web静态资源，服务端模块和单页应用（SPAs）</p>
+</blockquote>
+<h3>assets</h3>
+<blockquote>
+<p>其他资产，例如：图像、徽标、CSS、JavaScript等</p>
+</blockquote>
+<h3>website</h3>
+<blockquote>
+<p>项目网站或者Github页面</p>
+</blockquote>
+<h2>项目管理目录与文件</h2>
+<h3>build目录</h3>
+<blockquote>
+<p>打包和持续集成</p>
+<p>将云 (AMI)、容器 (Docker)、操作系统（deb、rpm、pkg）包配置和脚本放在<code>/build/package</code>目录中。</p>
+<p>将CI（travis、circle、drone）配置和脚本放在<code>/build/ci</code>目录中。</p>
+</blockquote>
+<p>👀 注意</p>
+<p>一些 CI 工具（例如 Travis CI）对其配置文件的位置非常挑剔。尝试将配置文件放在/build/ci将它们链接到 CI 工具期望它们的位置的目录中（如果可能）。</p>
+<h3>configs目录</h3>
+<blockquote>
+<p>配置文件，例如这里可以存放confd或consul-template模版文件。</p>
+</blockquote>
+<h3>deployments目录</h3>
+<blockquote>
+<p>IaaS、PaaS、系统和容器编排部署配置和模板（docker-compose、kubernetes/helm、mesos、terraform、bosh）。</p>
+</blockquote>
+<p>👀 注意</p>
+<p>在某些存储库（尤其是使用 kubernetes 部署的应用程序）中，此目录称为<code>deploy</code>.</p>
+<h3>init目录</h3>
+<blockquote>
+<p>系统初始化（systemd、upstart、sysv）和进程管理器(runit、supervisord)配置文件，在非容器化部署的项目中会使用到。</p>
+</blockquote>
+<p>例如：systemd的unit文件，用于管理程序，一般以.service结尾</p>
+<div class="language-text" data-ext="text" data-title="text"><pre class="language-text"><code>[Unit]
+Description=OpenSSH server daemon
+Documentation=man:sshd(8) man:sshd_config(5)
+After=network.target sshd-keygen.target
+Wants=sshd-keygen.target
+
+[Service]
+Type=notify
+EnvironmentFile=-/etc/crypto-policies/back-ends/opensshserver.config
+EnvironmentFile=-/etc/sysconfig/sshd
+ExecStart=/usr/sbin/sshd -D $OPTIONS $CRYPTO_POLICY
+ExecReload=/bin/kill -HUP $MAINPID
+KillMode=process
+Restart=on-failure
+RestartSec=42s
+
+[Install]
+WantedBy=multi-user.target
+</code></pre></div><h3>scripts目录</h3>
+<blockquote>
+<p>执行各种构建、安装、分析等操作的脚本。这些脚本使根级 Makefile 小而简单</p>
+</blockquote>
+<p>例如: <a href="https://github.com/hashicorp/terraform/blob/master/Makefile" target="_blank" rel="noopener noreferrer">terraform-website</a>使用了很多scipts目录下的脚本，使得Makefile小但功能强大。</p>
+<div class="language-text" data-ext="text" data-title="text"><pre class="language-text"><code>WEBSITE_REPO=github.com/hashicorp/terraform-website
+VERSION?="0.3.44"
+PWD=$$(pwd)
+DOCKER_IMAGE="hashicorp/terraform-website:full"
+DOCKER_IMAGE_LOCAL="hashicorp-terraform-website-local"
+DOCKER_RUN_FLAGS=--interactive \
+	--rm \
+	--tty \
+	--workdir "/website" \
+	--volume "$(shell pwd):/website/ext/terraform" \
+	--volume "$(shell pwd)/website:/website/preview" \
+	--publish "3000:3000" \
+	-e "IS_CONTENT_PREVIEW=true" \
+	-e "PREVIEW_FROM_REPO=terraform" \
+	-e "NAV_DATA_DIRNAME=./preview/data" \
+	-e "CONTENT_DIRNAME=./preview/docs" \
+	-e "CURRENT_GIT_BRANCH=$$(git rev-parse --abbrev-ref HEAD)"
+
+# generate runs `go generate` to build the dynamically generated
+# source files, except the protobuf stubs which are built instead with
+# "make protobuf".
+generate:
+	go generate ./...
+
+# We separate the protobuf generation because most development tasks on
+# Terraform do not involve changing protobuf files and protoc is not a
+# go-gettable dependency and so getting it installed can be inconvenient.
+#
+# If you are working on changes to protobuf interfaces, run this Makefile
+# target to be sure to regenerate all of the protobuf stubs using the expected
+# versions of protoc and the protoc Go plugins.
+protobuf:
+	go run ./tools/protobuf-compile .
+
+fmtcheck:
+	"$(CURDIR)/scripts/gofmtcheck.sh"
+
+importscheck:
+	"$(CURDIR)/scripts/goimportscheck.sh"
+
+staticcheck:
+	"$(CURDIR)/scripts/staticcheck.sh"
+
+exhaustive:
+	"$(CURDIR)/scripts/exhaustive.sh"
+
+# Default: run this if working on the website locally to run in watch mode.
+website:
+	@echo "==&gt; Downloading latest Docker image..."
+	@docker pull ${DOCKER_IMAGE}
+	@echo "==&gt; Starting website in Docker..."
+	@docker run ${DOCKER_RUN_FLAGS} ${DOCKER_IMAGE} npm start
+
+website/local:
+	@echo "==&gt; Starting website in Docker..."
+	@docker run ${DOCKER_RUN_FLAGS} ${DOCKER_IMAGE_LOCAL} npm start
+
+.PHONY: website/build-local
+website/build-local:
+	@echo "==&gt; Building local Docker image"
+	@docker build https://github.com/hashicorp/terraform-website.git\#master \
+		-t $(DOCKER_IMAGE_LOCAL)
+
+# disallow any parallelism (-j) for Make. This is necessary since some
+# commands during the build process create temporary files that collide
+# under parallel conditions.
+.NOTPARALLEL:
+
+.PHONY: fmtcheck importscheck generate protobuf website website-test staticcheck website/local website/build-local
+</code></pre></div><h3>githooks目录</h3>
+<blockquote>
+<p>Git钩子，比如可以将commit-msg存放在该目录</p>
+</blockquote>
+<h3>Makefile文件</h3>
+<blockquote>
+<p>Makefile是一个很优秀的项目管理工具，通常用来执行静态代码检查、单元测试、编译等功能</p>
+</blockquote>
+<ul>
+<li>静态代码检查(lint)：推荐用 golangci-lint。</li>
+<li>单元测试(test)：运行 go test ./...。</li>
+<li>编译(build)：编译源码，支持不同的平台，不同的 CPU 架构。</li>
+<li>镜像打包和发布(image/image.push)：现在的系统比较推荐用 Docker/Kubernetes 进行部署，所以一般也要有镜像构建功能。</li>
+<li>清理（clean）:清理临时文件或者编译后的产物。</li>
+<li>代码生成（gen）：比如要编译生成 protobuf pb.go 文件。</li>
+<li>部署（deploy，可选）：一键部署功能，方便测试。</li>
+<li>发布（release）：发布功能，比如：发布到 Docker Hub、github 等。</li>
+<li>帮助（help）:告诉 Makefile 有哪些功能，如何执行这些功能。</li>
+<li>版权声明（add-copyright）：如果是开源项目，可能需要在每个文件中添加版权头，这可以通过 Makefile 来添加。</li>
+<li>API 文档（swagger）：如果使用 swagger 来生成 API 文档，这可以通过 Makefile 来生成。</li>
+</ul>
+<h2>文档目录与文件</h2>
+<h3>docs目录</h3>
+<blockquote>
+<p>设计和用户文档，除了<code>godoc</code>生成的文档之外</p>
+</blockquote>
+<ul>
+<li>/docs/devel/{en-US,zh-CN}: 存放开发文档、hack文档</li>
+<li>/docs/guide/{en-US,zh-CN}: 存放用户手册，安装、quickstart、产品文档等</li>
+<li>/docs/image: 存放图片文件</li>
+</ul>
+<h3>CHANGELOG目录</h3>
+<blockquote>
+<p>当项目有更新时，为了方便了解当前版本的更新内容或者历史更新内容，需要将更新记录存放到CHANGELOG目录。</p>
+</blockquote>
+<p>编写CHANGELOG是一个繁琐的工作，我们可以结合<a href="https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines" target="_blank" rel="noopener noreferrer">Angular规范</a>和<a href="https://github.com/git-chglog/git-chglog" target="_blank" rel="noopener noreferrer">git-chglog工具</a></p>
+<h3>CONTRIBUTING.md文件</h3>
+<blockquote>
+<p>开源项目用于说明如何贡献代码，如何开源协同等。</p>
+</blockquote>
+<h3>LICENSE文件</h3>
+<blockquote>
+<p>版权文件，常用的开源协议有：Apache 2.0、MIT、GPL等</p>
+</blockquote>
+<p>为了声明版权，你可能会需要将LICENSE头添加到源代码文件或者其他文件中，可以尝试使用这个工具自动化实现：<a href="https://github.com/marmotedu/addlicense" target="_blank" rel="noopener noreferrer">addlicense</a></p>
+<p>当代码中引用了其他开源代码时，需要在LICENSE中说明对其他源码的引用，可以借助工具来进行检查：<a href="https://github.com/ribice/glice" target="_blank" rel="noopener noreferrer">glice</a></p>
+<div class="language-text" data-ext="text" data-title="text"><pre class="language-text"><code>+</code></pre></div>]]></content>
+    <category term="项目规范"/>
+    <published>2020-02-09T00:00:00.000Z</published>
+  </entry>
+  <entry>
+    <title type="text">版本规范</title>
+    <id>http://blog.cjhe.top/project-standard/version.html</id>
+    <link href="http://blog.cjhe.top/project-standard/version.html"/>
+    <updated>2024-04-15T09:57:53.000Z</updated>
+    <summary type="html"><![CDATA[<div class="hint-container tip">
+<p class="hint-container-title">提示</p>
+<p>随着系统功能越来越复杂，依赖的软件包越来越多，如何解决【依赖地狱】问题？</p>
+</div>
+]]></summary>
+    <content type="html"><![CDATA[<div class="hint-container tip">
+<p class="hint-container-title">提示</p>
+<p>随着系统功能越来越复杂，依赖的软件包越来越多，如何解决【依赖地狱】问题？</p>
+</div>
+<!-- more -->
+<h2>语义化版本规范</h2>
+<blockquote>
+<p>语义化版本规范（SemVer,Semantic Versioning）是Github起草的一个具有指导意义的、统一的版本号表示规范。
+它规定了版本号的表示、增加和比较方式，以及不同版本号代表的含义。</p>
+</blockquote>
+<p>语义化版本格式为：<code>主版本号.次版本号.修订号（X.Y.Z）</code>，其中X、Y和Z为非负整数，且禁止在数字前方补零。
+例如：v1.2.3</p>
+<p>版本号增加的含义：</p>
+<ul>
+<li>主版本号（MAJOR）：当做了不兼容的API修改。一般用于大的功能变动(Breaking Change)，影响到之前的功能。</li>
+<li>次版本号（MINOR）：当做了向下兼容的功能性新增及修改。一般用于不影响之前逻辑的功能优化，或者新的功能(New Feature)。</li>
+<li>修订号（PATCH）：当做了向下兼容的问题修正，一般用于问题修复(Bug Fix)。</li>
+</ul>
+<figure><figcaption>server</figcaption></figure>
+<p>一些经验：</p>
+<ul>
+<li>建议0.1.0作为第一个开发版本号；</li>
+<li>当用于正式环境，它应该达到1.0.0版，0.y.z版本均可视为不稳定版本，仍在持续开发中；</li>
+<li>v1.2.3并不是一个语义化的版本号，但是在语义化版本之前增加前缀”v"是用来表示版本号的常用做法；</li>
+</ul>
+<p>关于语义化版本规范详细内容参考：<a href="https://semver.org/lang/zh-CN/" target="_blank" rel="noopener noreferrer">semver.org</a></p>
+<h2>先行版本</h2>
+<p>此外我们还会经常遇见先行版本，例如：1.0.0-alpha.0、1.0.0-alpha.1、1.0.0-beta.0、1.0.0-rc.0、1.0.0-rc.1等</p>
+<blockquote>
+<p>当要发布大版本或者核心的feature时，但又不能保证这个版本的功能100%正常，这个时候就需要通过发布先行版本</p>
+</blockquote>
+<p>常见的先行版本包括：内测版 、灰度版和RC版本。Semver规范中使用alpha、beta、rc来修饰即将要发布的版本。</p>
+<ul>
+<li>snapshot:快照，也被称为开发版，处于开发阶段，这个版本的代码禁止用于生产环境；</li>
+<li>alpha:内部版本，该版本表示软件在此阶段主要是以实现功能为主，用于软件开发内部交流，一般bug比较多；</li>
+<li>beta:公测版本，该版本表示相对alpha版已经改进，但仍然存在一些缺陷，用于专业爱好者大规模使用；</li>
+<li>gamma:比较成熟的测试版；</li>
+<li>rc:即release candiate，正式版本的候选版本，该版本已经相当成熟，只会修复Bug，不会对软件做任何大的更改；</li>
+<li>release:发行版本，适合一般用户使用，不开源的软件，release可能是带有免费使用时间限制的版本；</li>
+<li>stable:稳定版，同release；</li>
+</ul>
+<h2>工具</h2>
+<p>另外可以使用一些工具规范版本号：</p>
+<ul>
+<li><a href="https://github.com/arnaud-deprez/gsemver" target="_blank" rel="noopener noreferrer">gsemver</a>
+<ul>
+<li>使用<code>gsemver bump</code>命令就可以根据Git历史提交约定生成下一个版本</li>
+</ul>
+</li>
+<li><a href="https://github.com/commitizen/cz-cli" target="_blank" rel="noopener noreferrer">cz-cli</a></li>
+</ul>
+]]></content>
+    <category term="项目规范"/>
+    <published>2020-01-25T00:00:00.000Z</published>
+  </entry>
+  <entry>
     <title type="text">如何不靠运气变得富有</title>
-    <id>http://blog.cjhe.top/other/how-to-get-rich-without-getting-lucky.html</id>
-    <link href="http://blog.cjhe.top/other/how-to-get-rich-without-getting-lucky.html"/>
-    <updated>2023-07-30T09:20:01.000Z</updated>
+    <id>http://blog.cjhe.top/share/how-to-get-rich-without-getting-lucky.html</id>
+    <link href="http://blog.cjhe.top/share/how-to-get-rich-without-getting-lucky.html"/>
+    <updated>2024-05-06T02:44:40.000Z</updated>
     <summary type="html"><![CDATA[<p>【转】<a href="https://github.com/fat-garage/how-to-get-rich-without-getting-lucky" target="_blank" rel="noopener noreferrer">原文链接</a></p>
 ]]></summary>
     <content type="html"><![CDATA[<p>【转】<a href="https://github.com/fat-garage/how-to-get-rich-without-getting-lucky" target="_blank" rel="noopener noreferrer">原文链接</a></p>
@@ -3598,9 +4206,9 @@ Nivi：除了把时间租出去之外，还有其他无助于致富的事情吗?
   </entry>
   <entry>
     <title type="text">程序员延寿指南</title>
-    <id>http://blog.cjhe.top/other/how-to-live-longer.html</id>
-    <link href="http://blog.cjhe.top/other/how-to-live-longer.html"/>
-    <updated>2023-07-30T09:20:01.000Z</updated>
+    <id>http://blog.cjhe.top/share/how-to-live-longer.html</id>
+    <link href="http://blog.cjhe.top/share/how-to-live-longer.html"/>
+    <updated>2024-05-06T02:44:40.000Z</updated>
     <summary type="html"><![CDATA[<p>【转】<a href="https://github.com/geekan/HowToLiveLonger" target="_blank" rel="noopener noreferrer">原文链接</a></p>
 ]]></summary>
     <content type="html"><![CDATA[<p>【转】<a href="https://github.com/geekan/HowToLiveLonger" target="_blank" rel="noopener noreferrer">原文链接</a></p>
@@ -4045,482 +4653,6 @@ Nivi：除了把时间租出去之外，还有其他无助于致富的事情吗?
 ]]></content>
     <category term="转载"/>
     <published>2023-03-03T00:00:00.000Z</published>
-  </entry>
-  <entry>
-    <title type="text">收集的一些网站</title>
-    <id>http://blog.cjhe.top/other/website.html</id>
-    <link href="http://blog.cjhe.top/other/website.html"/>
-    <updated>2024-05-05T15:52:14.000Z</updated>
-    <summary type="text">算法
-数据结构和算法动态可视化
-算法可视化
-在线运行代码的算法可视化
-数据结构可视化
-算法实现
-Linux
-鸟哥的Linux私房菜
-TLCL
-精彩的Linux命令
-命令行的艺术
-CURL使用
-设计模式
-图说设计模式
-Go设计模式
-Go设计模式
-设计模式
-容器化
-Docker-从入门到实践
-Docker中文文档
-从Docker到kubernetes进阶
-...</summary>
-    <content type="html"><![CDATA[<!-- more -->
-<h2>算法</h2>
-<p>数据结构和算法动态可视化<a href="https://visualgo.net/zh" target="_blank" rel="noopener noreferrer"></a></p>
-<p>算法可视化<a href="https://www.chrislaux.com/" target="_blank" rel="noopener noreferrer"></a></p>
-<p>在线运行代码的算法可视化<a href="https://algorithm-visualizer.org/" target="_blank" rel="noopener noreferrer"></a></p>
-<p>数据结构可视化<a href="https://www.cs.usfca.edu/~galles/visualization/Algorithms.html" target="_blank" rel="noopener noreferrer"></a></p>
-<p>算法实现<a href="https://the-algorithms.com/" target="_blank" rel="noopener noreferrer"></a></p>
-<h2>Linux</h2>
-<p>鸟哥的Linux私房菜<a href="http://cn.linux.vbird.org/linux_basic/linux_basic.php" target="_blank" rel="noopener noreferrer"></a></p>
-<p>TLCL<a href="http://billie66.github.io/TLCL/book/" target="_blank" rel="noopener noreferrer"></a></p>
-<p>精彩的Linux命令<a href="https://www.cnblogs.com/nineep/p/6795650.html" target="_blank" rel="noopener noreferrer"></a></p>
-<p>命令行的艺术<a href="https://github.com/jlevy/the-art-of-command-line/blob/master/README-zh.md" target="_blank" rel="noopener noreferrer"></a></p>
-<p>CURL使用<a href="https://everything.curl.dev/" target="_blank" rel="noopener noreferrer"></a></p>
-<h2>设计模式</h2>
-<p>图说设计模式<a href="https://design-patterns.readthedocs.io/zh_CN/latest/" target="_blank" rel="noopener noreferrer"></a></p>
-<p>Go设计模式<a href="https://golangbyexample.com/all-design-patterns-golang/" target="_blank" rel="noopener noreferrer"></a></p>
-<p>Go设计模式<a href="https://dev.to/gopher/go-all-design-patterns-code-with-workflow-ea1" target="_blank" rel="noopener noreferrer"></a></p>
-<p>设计模式<a href="https://refactoringguru.cn/design-patterns" target="_blank" rel="noopener noreferrer"></a></p>
-<h2>容器化</h2>
-<p>Docker-从入门到实践<a href="https://www.cntofu.com/book/139/index.html" target="_blank" rel="noopener noreferrer"></a></p>
-<p>Docker中文文档<a href="http://www.dockerinfo.net/document" target="_blank" rel="noopener noreferrer"></a></p>
-<p>从Docker到kubernetes进阶<a href="https://www.qikqiak.com/k8s-book/" target="_blank" rel="noopener noreferrer"></a></p>
-<p>Kubernetes中文指南<a href="https://jimmysong.io/kubernetes-handbook/" target="_blank" rel="noopener noreferrer"></a></p>
-<p>Prometheus告警<a href="https://awesome-prometheus-alerts.grep.to/" target="_blank" rel="noopener noreferrer"></a></p>
-<h2>设计</h2>
-<p>Google API设计指南<a href="https://www.bookstack.cn/read/API-design-guide/API-design-guide-README.md" target="_blank" rel="noopener noreferrer"></a></p>
-]]></content>
-    <category term="转载"/>
-    <published>2023-03-04T00:00:00.000Z</published>
-  </entry>
-  <entry>
-    <title type="text">分支规范</title>
-    <id>http://blog.cjhe.top/project-standard/branch.html</id>
-    <link href="http://blog.cjhe.top/project-standard/branch.html"/>
-    <updated>2024-05-05T15:52:14.000Z</updated>
-    <summary type="html"><![CDATA[<figure><img src="https://www.ruanyifeng.com/blogimg/asset/2015/bg2015122301.png" alt="git-model" tabindex="0" loading="lazy"><figcaption>git-model</figcaption></figure>
-<div class="hint-container tip">
-<p class="hint-container-title">提示</p>
-<p>一个好的代码分支应该是怎样的❓</p>
-</div>
-]]></summary>
-    <content type="html"><![CDATA[<figure><img src="https://www.ruanyifeng.com/blogimg/asset/2015/bg2015122301.png" alt="git-model" tabindex="0" loading="lazy"><figcaption>git-model</figcaption></figure>
-<div class="hint-container tip">
-<p class="hint-container-title">提示</p>
-<p>一个好的代码分支应该是怎样的❓</p>
-</div>
-<!-- more -->
-<h2>分支模型</h2>
-<p>我们经常使用Git用于管理版本，但如果没有清晰的流程和规范，会导致难以协调和维护。
-Vincent Driessen 为了解决这个问题，提出<a href="https://nvie.com/posts/a-successful-git-branching-model/" target="_blank" rel="noopener noreferrer">A Successful Git Branching Model</a></p>
-<figure><figcaption>git-model</figcaption></figure>
-<h2>master分支</h2>
-<p>这个分支保持最近发布到生产环境的代码。</p>
-<div class="hint-container warning">
-<p class="hint-container-title">注意</p>
-<ul>
-<li>不能在这个分支直接修改</li>
-<li>生产环境运行的代码和该分支保持一致</li>
-<li>master分支每合并一个hotfix/release分支，都会打一个版本标签</li>
-</ul>
-</div>
-<h2>develop分支</h2>
-<p>这个分支是我们的主开发分支</p>
-<div class="hint-container warning">
-<p class="hint-container-title">注意</p>
-<p>feature/release/hotfix都需要合并到该分支</p>
-</div>
-<h2>feature分支</h2>
-<p>这个分支是用来开发新的功能，一旦开发完成，合并到develop分支并进入下一个release</p>
-<div class="hint-container warning">
-<p class="hint-container-title">注意</p>
-<ul>
-<li>分支命名建议：<code>feature/xxx-xxx</code></li>
-<li>合并到develop分支需要删除该分支，如果有bug，在对应的release分支进行修复</li>
-<li>feature分支合并到develop分支之前先pull一下develop分支，避免冲突</li>
-</ul>
-</div>
-<h2>release分支</h2>
-<p>当需要发布一个新的release的时候，基于develop分支创建一个release分支</p>
-<div class="hint-container tip">
-<p class="hint-container-title">提示</p>
-<ul>
-<li>分支名建议命名<code>release/xxx-xxx</code></li>
-<li>测试人员基于release分支进行测试，如有bug，也在该分支修复，再测试。</li>
-<li>完成release分支后需要合并到master和develop分支</li>
-</ul>
-</div>
-<h2>hotfix分支</h2>
-<p>当在现网发现bug时，需要创建一个hotfix分支进行修复，完成后合并到master和develop，hotfix的改动会进入下一个release</p>
-<div class="hint-container warning">
-<p class="hint-container-title">注意</p>
-<ul>
-<li>建议命名：<code>hotfix/xxx-xxx</code></li>
-<li>只能基于master分支创建hotfix分支</li>
-</ul>
-</div>
-]]></content>
-    <category term="项目规范"/>
-    <published>2020-02-11T00:00:00.000Z</published>
-  </entry>
-  <entry>
-    <title type="text">目录规范</title>
-    <id>http://blog.cjhe.top/project-standard/directory.html</id>
-    <link href="http://blog.cjhe.top/project-standard/directory.html"/>
-    <updated>2024-05-05T15:52:14.000Z</updated>
-    <summary type="html"><![CDATA[<div class="hint-container tip">
-<p class="hint-container-title">提示</p>
-<p>Go语言项目业界公认的目录结构是怎样的❓</p>
-</div>
-]]></summary>
-    <content type="html"><![CDATA[<div class="hint-container tip">
-<p class="hint-container-title">提示</p>
-<p>Go语言项目业界公认的目录结构是怎样的❓</p>
-</div>
-<!-- more -->
-<h2>目录结构</h2>
-<blockquote>
-<p>可以通过以下维度进行考量：</p>
-<ul>
-<li>
-<p>命名清晰：目录命名需要简洁，清晰的表达出该目录实现的功能，做到一看到该目录名就知道是干嘛的；</p>
-</li>
-<li>
-<p>功能明确：目录的功能必须明确，例如：api目录是接口服务、service目录是业务逻辑；</p>
-</li>
-<li>
-<p>功能齐全：例如测试、构建、脚本、工具、文档等；</p>
-</li>
-</ul>
-</blockquote>
-<p>这里参考Go语言公认项目目录<a href="https://github.com/golang-standards/project-layout" target="_blank" rel="noopener noreferrer">project-layout</a>结构如下：</p>
-<div class="language-text" data-ext="text" data-title="text"><pre class="language-text"><code>.
-├── api
-├── assets
-├── build
-│   ├── ci
-│   └── package
-├── cmd
-│   └── _your_app_
-├── configs
-├── deployments
-├── docs
-├── examples
-├── githooks
-├── init
-├── internal
-│   ├── app
-│   │   └── _your_app_
-│   └── pkg
-│       └── _your_private_lib_
-├── pkg
-│   └── _your_public_lib_
-├── scripts
-├── test
-├── third_party
-├── tools
-├── vendor
-├── web
-│   ├── app
-│   ├── static
-│   └── template
-└── website
-</code></pre></div><h2>应用目录</h2>
-<h3>api目录</h3>
-<blockquote>
-<p>OpenAPI/Swagger规范、JSON模式文件、协议定义文件</p>
-</blockquote>
-<h3>cmd目录</h3>
-<blockquote>
-<p>该项目的主要应用，Go语言以main函数文件作为程序入口。每个应用程序的目录名称应与执行文件的名称相匹配，例如：<code>/cmd/myapp</code></p>
-</blockquote>
-<h3>examples目录</h3>
-<blockquote>
-<p>应用程序和公共库的示例</p>
-</blockquote>
-<h3>internal目录</h3>
-<blockquote>
-<p>存放私有应用和库代码，如果一些代码，你不希望在其他在其他应用和库中被导入，可以放在internal目录下。而对于私有应用共享的代码可以放在/internal/pkg目录下。
-建议internal目录以各个组件的方式进行分层。</p>
-</blockquote>
-<h3>pkg目录</h3>
-<blockquote>
-<p>与internal相反，该目录存放可供其他外部应用程序使用的库代码。</p>
-</blockquote>
-<h3>vendor目录</h3>
-<blockquote>
-<p>该目录存放项目依赖，可通过<code>go mod vendor</code>创建。</p>
-</blockquote>
-<p>👀 注意</p>
-<p>如果开发的是Go语言库，不要提交vendor依赖包</p>
-<h3>test目录</h3>
-<blockquote>
-<p>其他外部测试应用程序和测试数据。对于更大的项目，有一个数据子目录是有意义的。例如：<code>/test/data</code>或者<code>/test/testdata</code></p>
-</blockquote>
-<p>👀 注意</p>
-<p>Go 也会忽略以“.”开头的目录或文件。或“_”，因此您可以更灵活地命名测试数据目录。</p>
-<h3>third_party目录</h3>
-<blockquote>
-<p>外部帮助工具，分支代码或其他第三方应用。</p>
-</blockquote>
-<h3>tools目录</h3>
-<blockquote>
-<p>该项目的支持工具</p>
-</blockquote>
-<p>👀 注意</p>
-<p>这些工具可以从<code>pkg</code>和<code>internal</code>目录导入代码</p>
-<h3>web目录</h3>
-<blockquote>
-<p>前端代码存放目录，用来存放Web静态资源，服务端模块和单页应用（SPAs）</p>
-</blockquote>
-<h3>assets</h3>
-<blockquote>
-<p>其他资产，例如：图像、徽标、CSS、JavaScript等</p>
-</blockquote>
-<h3>website</h3>
-<blockquote>
-<p>项目网站或者Github页面</p>
-</blockquote>
-<h2>项目管理目录与文件</h2>
-<h3>build目录</h3>
-<blockquote>
-<p>打包和持续集成</p>
-<p>将云 (AMI)、容器 (Docker)、操作系统（deb、rpm、pkg）包配置和脚本放在<code>/build/package</code>目录中。</p>
-<p>将CI（travis、circle、drone）配置和脚本放在<code>/build/ci</code>目录中。</p>
-</blockquote>
-<p>👀 注意</p>
-<p>一些 CI 工具（例如 Travis CI）对其配置文件的位置非常挑剔。尝试将配置文件放在/build/ci将它们链接到 CI 工具期望它们的位置的目录中（如果可能）。</p>
-<h3>configs目录</h3>
-<blockquote>
-<p>配置文件，例如这里可以存放confd或consul-template模版文件。</p>
-</blockquote>
-<h3>deployments目录</h3>
-<blockquote>
-<p>IaaS、PaaS、系统和容器编排部署配置和模板（docker-compose、kubernetes/helm、mesos、terraform、bosh）。</p>
-</blockquote>
-<p>👀 注意</p>
-<p>在某些存储库（尤其是使用 kubernetes 部署的应用程序）中，此目录称为<code>deploy</code>.</p>
-<h3>init目录</h3>
-<blockquote>
-<p>系统初始化（systemd、upstart、sysv）和进程管理器(runit、supervisord)配置文件，在非容器化部署的项目中会使用到。</p>
-</blockquote>
-<p>例如：systemd的unit文件，用于管理程序，一般以.service结尾</p>
-<div class="language-text" data-ext="text" data-title="text"><pre class="language-text"><code>[Unit]
-Description=OpenSSH server daemon
-Documentation=man:sshd(8) man:sshd_config(5)
-After=network.target sshd-keygen.target
-Wants=sshd-keygen.target
-
-[Service]
-Type=notify
-EnvironmentFile=-/etc/crypto-policies/back-ends/opensshserver.config
-EnvironmentFile=-/etc/sysconfig/sshd
-ExecStart=/usr/sbin/sshd -D $OPTIONS $CRYPTO_POLICY
-ExecReload=/bin/kill -HUP $MAINPID
-KillMode=process
-Restart=on-failure
-RestartSec=42s
-
-[Install]
-WantedBy=multi-user.target
-</code></pre></div><h3>scripts目录</h3>
-<blockquote>
-<p>执行各种构建、安装、分析等操作的脚本。这些脚本使根级 Makefile 小而简单</p>
-</blockquote>
-<p>例如: <a href="https://github.com/hashicorp/terraform/blob/master/Makefile" target="_blank" rel="noopener noreferrer">terraform-website</a>使用了很多scipts目录下的脚本，使得Makefile小但功能强大。</p>
-<div class="language-text" data-ext="text" data-title="text"><pre class="language-text"><code>WEBSITE_REPO=github.com/hashicorp/terraform-website
-VERSION?="0.3.44"
-PWD=$$(pwd)
-DOCKER_IMAGE="hashicorp/terraform-website:full"
-DOCKER_IMAGE_LOCAL="hashicorp-terraform-website-local"
-DOCKER_RUN_FLAGS=--interactive \
-	--rm \
-	--tty \
-	--workdir "/website" \
-	--volume "$(shell pwd):/website/ext/terraform" \
-	--volume "$(shell pwd)/website:/website/preview" \
-	--publish "3000:3000" \
-	-e "IS_CONTENT_PREVIEW=true" \
-	-e "PREVIEW_FROM_REPO=terraform" \
-	-e "NAV_DATA_DIRNAME=./preview/data" \
-	-e "CONTENT_DIRNAME=./preview/docs" \
-	-e "CURRENT_GIT_BRANCH=$$(git rev-parse --abbrev-ref HEAD)"
-
-# generate runs `go generate` to build the dynamically generated
-# source files, except the protobuf stubs which are built instead with
-# "make protobuf".
-generate:
-	go generate ./...
-
-# We separate the protobuf generation because most development tasks on
-# Terraform do not involve changing protobuf files and protoc is not a
-# go-gettable dependency and so getting it installed can be inconvenient.
-#
-# If you are working on changes to protobuf interfaces, run this Makefile
-# target to be sure to regenerate all of the protobuf stubs using the expected
-# versions of protoc and the protoc Go plugins.
-protobuf:
-	go run ./tools/protobuf-compile .
-
-fmtcheck:
-	"$(CURDIR)/scripts/gofmtcheck.sh"
-
-importscheck:
-	"$(CURDIR)/scripts/goimportscheck.sh"
-
-staticcheck:
-	"$(CURDIR)/scripts/staticcheck.sh"
-
-exhaustive:
-	"$(CURDIR)/scripts/exhaustive.sh"
-
-# Default: run this if working on the website locally to run in watch mode.
-website:
-	@echo "==&gt; Downloading latest Docker image..."
-	@docker pull ${DOCKER_IMAGE}
-	@echo "==&gt; Starting website in Docker..."
-	@docker run ${DOCKER_RUN_FLAGS} ${DOCKER_IMAGE} npm start
-
-website/local:
-	@echo "==&gt; Starting website in Docker..."
-	@docker run ${DOCKER_RUN_FLAGS} ${DOCKER_IMAGE_LOCAL} npm start
-
-.PHONY: website/build-local
-website/build-local:
-	@echo "==&gt; Building local Docker image"
-	@docker build https://github.com/hashicorp/terraform-website.git\#master \
-		-t $(DOCKER_IMAGE_LOCAL)
-
-# disallow any parallelism (-j) for Make. This is necessary since some
-# commands during the build process create temporary files that collide
-# under parallel conditions.
-.NOTPARALLEL:
-
-.PHONY: fmtcheck importscheck generate protobuf website website-test staticcheck website/local website/build-local
-</code></pre></div><h3>githooks目录</h3>
-<blockquote>
-<p>Git钩子，比如可以将commit-msg存放在该目录</p>
-</blockquote>
-<h3>Makefile文件</h3>
-<blockquote>
-<p>Makefile是一个很优秀的项目管理工具，通常用来执行静态代码检查、单元测试、编译等功能</p>
-</blockquote>
-<ul>
-<li>静态代码检查(lint)：推荐用 golangci-lint。</li>
-<li>单元测试(test)：运行 go test ./...。</li>
-<li>编译(build)：编译源码，支持不同的平台，不同的 CPU 架构。</li>
-<li>镜像打包和发布(image/image.push)：现在的系统比较推荐用 Docker/Kubernetes 进行部署，所以一般也要有镜像构建功能。</li>
-<li>清理（clean）:清理临时文件或者编译后的产物。</li>
-<li>代码生成（gen）：比如要编译生成 protobuf pb.go 文件。</li>
-<li>部署（deploy，可选）：一键部署功能，方便测试。</li>
-<li>发布（release）：发布功能，比如：发布到 Docker Hub、github 等。</li>
-<li>帮助（help）:告诉 Makefile 有哪些功能，如何执行这些功能。</li>
-<li>版权声明（add-copyright）：如果是开源项目，可能需要在每个文件中添加版权头，这可以通过 Makefile 来添加。</li>
-<li>API 文档（swagger）：如果使用 swagger 来生成 API 文档，这可以通过 Makefile 来生成。</li>
-</ul>
-<h2>文档目录与文件</h2>
-<h3>docs目录</h3>
-<blockquote>
-<p>设计和用户文档，除了<code>godoc</code>生成的文档之外</p>
-</blockquote>
-<ul>
-<li>/docs/devel/{en-US,zh-CN}: 存放开发文档、hack文档</li>
-<li>/docs/guide/{en-US,zh-CN}: 存放用户手册，安装、quickstart、产品文档等</li>
-<li>/docs/image: 存放图片文件</li>
-</ul>
-<h3>CHANGELOG目录</h3>
-<blockquote>
-<p>当项目有更新时，为了方便了解当前版本的更新内容或者历史更新内容，需要将更新记录存放到CHANGELOG目录。</p>
-</blockquote>
-<p>编写CHANGELOG是一个繁琐的工作，我们可以结合<a href="https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines" target="_blank" rel="noopener noreferrer">Angular规范</a>和<a href="https://github.com/git-chglog/git-chglog" target="_blank" rel="noopener noreferrer">git-chglog工具</a></p>
-<h3>CONTRIBUTING.md文件</h3>
-<blockquote>
-<p>开源项目用于说明如何贡献代码，如何开源协同等。</p>
-</blockquote>
-<h3>LICENSE文件</h3>
-<blockquote>
-<p>版权文件，常用的开源协议有：Apache 2.0、MIT、GPL等</p>
-</blockquote>
-<p>为了声明版权，你可能会需要将LICENSE头添加到源代码文件或者其他文件中，可以尝试使用这个工具自动化实现：<a href="https://github.com/marmotedu/addlicense" target="_blank" rel="noopener noreferrer">addlicense</a></p>
-<p>当代码中引用了其他开源代码时，需要在LICENSE中说明对其他源码的引用，可以借助工具来进行检查：<a href="https://github.com/ribice/glice" target="_blank" rel="noopener noreferrer">glice</a></p>
-<div class="language-text" data-ext="text" data-title="text"><pre class="language-text"><code>+</code></pre></div>]]></content>
-    <category term="项目规范"/>
-    <published>2020-02-09T00:00:00.000Z</published>
-  </entry>
-  <entry>
-    <title type="text">版本规范</title>
-    <id>http://blog.cjhe.top/project-standard/version.html</id>
-    <link href="http://blog.cjhe.top/project-standard/version.html"/>
-    <updated>2024-04-15T09:57:53.000Z</updated>
-    <summary type="html"><![CDATA[<div class="hint-container tip">
-<p class="hint-container-title">提示</p>
-<p>随着系统功能越来越复杂，依赖的软件包越来越多，如何解决【依赖地狱】问题？</p>
-</div>
-]]></summary>
-    <content type="html"><![CDATA[<div class="hint-container tip">
-<p class="hint-container-title">提示</p>
-<p>随着系统功能越来越复杂，依赖的软件包越来越多，如何解决【依赖地狱】问题？</p>
-</div>
-<!-- more -->
-<h2>语义化版本规范</h2>
-<blockquote>
-<p>语义化版本规范（SemVer,Semantic Versioning）是Github起草的一个具有指导意义的、统一的版本号表示规范。
-它规定了版本号的表示、增加和比较方式，以及不同版本号代表的含义。</p>
-</blockquote>
-<p>语义化版本格式为：<code>主版本号.次版本号.修订号（X.Y.Z）</code>，其中X、Y和Z为非负整数，且禁止在数字前方补零。
-例如：v1.2.3</p>
-<p>版本号增加的含义：</p>
-<ul>
-<li>主版本号（MAJOR）：当做了不兼容的API修改。一般用于大的功能变动(Breaking Change)，影响到之前的功能。</li>
-<li>次版本号（MINOR）：当做了向下兼容的功能性新增及修改。一般用于不影响之前逻辑的功能优化，或者新的功能(New Feature)。</li>
-<li>修订号（PATCH）：当做了向下兼容的问题修正，一般用于问题修复(Bug Fix)。</li>
-</ul>
-<figure><figcaption>server</figcaption></figure>
-<p>一些经验：</p>
-<ul>
-<li>建议0.1.0作为第一个开发版本号；</li>
-<li>当用于正式环境，它应该达到1.0.0版，0.y.z版本均可视为不稳定版本，仍在持续开发中；</li>
-<li>v1.2.3并不是一个语义化的版本号，但是在语义化版本之前增加前缀”v"是用来表示版本号的常用做法；</li>
-</ul>
-<p>关于语义化版本规范详细内容参考：<a href="https://semver.org/lang/zh-CN/" target="_blank" rel="noopener noreferrer">semver.org</a></p>
-<h2>先行版本</h2>
-<p>此外我们还会经常遇见先行版本，例如：1.0.0-alpha.0、1.0.0-alpha.1、1.0.0-beta.0、1.0.0-rc.0、1.0.0-rc.1等</p>
-<blockquote>
-<p>当要发布大版本或者核心的feature时，但又不能保证这个版本的功能100%正常，这个时候就需要通过发布先行版本</p>
-</blockquote>
-<p>常见的先行版本包括：内测版 、灰度版和RC版本。Semver规范中使用alpha、beta、rc来修饰即将要发布的版本。</p>
-<ul>
-<li>snapshot:快照，也被称为开发版，处于开发阶段，这个版本的代码禁止用于生产环境；</li>
-<li>alpha:内部版本，该版本表示软件在此阶段主要是以实现功能为主，用于软件开发内部交流，一般bug比较多；</li>
-<li>beta:公测版本，该版本表示相对alpha版已经改进，但仍然存在一些缺陷，用于专业爱好者大规模使用；</li>
-<li>gamma:比较成熟的测试版；</li>
-<li>rc:即release candiate，正式版本的候选版本，该版本已经相当成熟，只会修复Bug，不会对软件做任何大的更改；</li>
-<li>release:发行版本，适合一般用户使用，不开源的软件，release可能是带有免费使用时间限制的版本；</li>
-<li>stable:稳定版，同release；</li>
-</ul>
-<h2>工具</h2>
-<p>另外可以使用一些工具规范版本号：</p>
-<ul>
-<li><a href="https://github.com/arnaud-deprez/gsemver" target="_blank" rel="noopener noreferrer">gsemver</a>
-<ul>
-<li>使用<code>gsemver bump</code>命令就可以根据Git历史提交约定生成下一个版本</li>
-</ul>
-</li>
-<li><a href="https://github.com/commitizen/cz-cli" target="_blank" rel="noopener noreferrer">cz-cli</a></li>
-</ul>
-]]></content>
-    <category term="项目规范"/>
-    <published>2020-01-25T00:00:00.000Z</published>
   </entry>
   <entry>
     <title type="text">基于Redis的分布式锁</title>
@@ -6784,7 +6916,7 @@ func ExampleComputer() {
     <title type="text">并发模式</title>
     <id>http://blog.cjhe.top/design-pattern/concurrency/</id>
     <link href="http://blog.cjhe.top/design-pattern/concurrency/"/>
-    <updated>2024-04-15T09:57:53.000Z</updated>
+    <updated>2024-05-06T02:44:40.000Z</updated>
     <summary type="html"><![CDATA[<p>Go语言推荐CSP模型进行并发处理，而非通过共享内存。这里总结一些并发模式或者称作范式，去管理控制协程。</p>
 ]]></summary>
     <content type="html"><![CDATA[<p>Go语言推荐CSP模型进行并发处理，而非通过共享内存。这里总结一些并发模式或者称作范式，去管理控制协程。</p>
@@ -9427,1181 +9559,5 @@ exit!
 ]]></content>
     <category term="编程语言"/>
     <published>2023-02-11T00:00:00.000Z</published>
-  </entry>
-  <entry>
-    <title type="text">for-range避坑指南</title>
-    <id>http://blog.cjhe.top/language/go/advance/for-range.html</id>
-    <link href="http://blog.cjhe.top/language/go/advance/for-range.html"/>
-    <updated>2024-04-29T08:04:28.000Z</updated>
-    <summary type="html"><![CDATA[<div class="hint-container caution">
-<p class="hint-container-title">警告</p>
-<p><code>for range</code>同常使用在遍历：数组、指向数组的指针、切片、字符串、map和channel等表达式</p>
-<p>其中有不少坑需要小心！！！</p>
-</div>
-]]></summary>
-    <content type="html"><![CDATA[<div class="hint-container caution">
-<p class="hint-container-title">警告</p>
-<p><code>for range</code>同常使用在遍历：数组、指向数组的指针、切片、字符串、map和channel等表达式</p>
-<p>其中有不少坑需要小心！！！</p>
-</div>
-<!-- more -->
-<h2>for range</h2>
-<p>for range使用短变量声明方式(:=)进行遍历时声明了变量
-例如</p>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> main
-
-<span class="token keyword">import</span> <span class="token string">"fmt"</span>
-
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	slice <span class="token operator">:=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">}</span>
-	<span class="token keyword">for</span> i<span class="token punctuation">,</span> v <span class="token operator">:=</span> <span class="token keyword">range</span> slice <span class="token punctuation">{</span>
-		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> v<span class="token punctuation">)</span> <span class="token comment">//获取索引和值</span>
-	<span class="token punctuation">}</span>
-	<span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token keyword">range</span> slice <span class="token punctuation">{</span>
-		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token comment">//获取索引和值</span>
-	<span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre></div><h2>小心短变量声明</h2>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> main
-
-<span class="token keyword">import</span> <span class="token punctuation">(</span>
-	<span class="token string">"fmt"</span>
-	<span class="token string">"time"</span>
-<span class="token punctuation">)</span>
-
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token keyword">var</span> slice <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">}</span>
-	<span class="token punctuation">{</span> <span class="token comment">//遍历1</span>
-		<span class="token keyword">for</span> i<span class="token punctuation">,</span> v <span class="token operator">:=</span> <span class="token keyword">range</span> slice <span class="token punctuation">{</span>
-			<span class="token keyword">go</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-				fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> v<span class="token punctuation">)</span>
-			<span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-		<span class="token punctuation">}</span>
-		time<span class="token punctuation">.</span><span class="token function">Sleep</span><span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">*</span> time<span class="token punctuation">.</span>Second<span class="token punctuation">)</span>
-	<span class="token punctuation">}</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"====="</span><span class="token punctuation">)</span>
-	<span class="token punctuation">{</span> <span class="token comment">//遍历2</span>
-		<span class="token keyword">for</span> i<span class="token punctuation">,</span> v <span class="token operator">:=</span> <span class="token keyword">range</span> slice <span class="token punctuation">{</span>
-			<span class="token keyword">go</span> <span class="token keyword">func</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> v <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-				fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> v<span class="token punctuation">)</span>
-			<span class="token punctuation">}</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> v<span class="token punctuation">)</span>
-		<span class="token punctuation">}</span>
-		time<span class="token punctuation">.</span><span class="token function">Sleep</span><span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">*</span> time<span class="token punctuation">.</span>Second<span class="token punctuation">)</span>
-	<span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre></div><p>遍历1和遍历2仅在传递go func()参数有差别，结果却完全不一样</p>
-<details class="hint-container details"><summary>查看运行结果</summary>
-<div class="language-text" data-ext="text" data-title="text"><pre class="language-text"><code>4 5
-4 5
-4 5
-4 5
-4 5
-=====
-4 5
-0 1
-1 2
-2 3
-3 4
-</code></pre></div><p>其原因在于这些迭代变量在每次循环中都会被重用，而不是重新声明</p>
-<ul>
-<li>遍历1中，遍历结束后，开启的5个协程打印共用的变量<code>i</code>和<code>v</code>,此时<code>i=4</code>,<code>v=5</code>;</li>
-<li>遍历2中，由于在各个协程中，重新声明了<code>i</code>和<code>v</code>变量，及时的将值传入各个协程，因此打印的是期望的结果，但因为各个协程调度时间不同，因此结果是乱序的。</li>
-</ul>
-</details>
-<h2>小心遍历过程中的修改</h2>
-<p>for range在遍历表达式时如果对其修改不同的类型影响是不一样的</p>
-<h3>数组遍历</h3>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> main
-
-<span class="token keyword">import</span> <span class="token string">"fmt"</span>
-
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">}</span>
-	<span class="token keyword">var</span> r <span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token builtin">int</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
-	<span class="token keyword">for</span> i<span class="token punctuation">,</span> v <span class="token operator">:=</span> <span class="token keyword">range</span> a <span class="token punctuation">{</span>
-		<span class="token keyword">if</span> i <span class="token operator">==</span> <span class="token number">0</span> <span class="token punctuation">{</span>
-			a<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">12</span>
-			a<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">13</span>
-		<span class="token punctuation">}</span>
-		r<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> v
-	<span class="token punctuation">}</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-</code></pre></div><details class="hint-container details"><summary>查看执行结果</summary>
-<div class="language-text" data-ext="text" data-title="text"><pre class="language-text"><code>[1 2 3 4 5]
-[1 2 3 4 5]
-[1 12 13 4 5]
-</code></pre></div><p>在i=0时，我们修改了a[1]=12、a[2]=13，但v还是原来的值，这是因为遍历时使用的是数组a的副本，也就没有真实的反应到数组a本身，因此r拿到的数据时a副本的数据，数组a本身并未发生变化。</p>
-</details>
-<h3>数组指针遍历</h3>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> main
-
-<span class="token keyword">import</span> <span class="token string">"fmt"</span>
-
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">}</span>
-	<span class="token keyword">var</span> r <span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token builtin">int</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
-	<span class="token keyword">for</span> i<span class="token punctuation">,</span> v <span class="token operator">:=</span> <span class="token keyword">range</span> <span class="token operator">&amp;</span>a <span class="token punctuation">{</span>
-		<span class="token keyword">if</span> i <span class="token operator">==</span> <span class="token number">0</span> <span class="token punctuation">{</span>
-			a<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">12</span>
-			a<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">13</span>
-		<span class="token punctuation">}</span>
-		r<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> v
-	<span class="token punctuation">}</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-</code></pre></div><details class="hint-container details"><summary>查看执行结果</summary>
-<div class="language-text" data-ext="text" data-title="text"><pre class="language-text"><code>[1 2 3 4 5]
-[1 12 13 4 5]
-[1 12 13 4 5]
-</code></pre></div><p>此次遍历的是*[5]int作为range的表达式，虽然也是副本，但副本所指向的内存空间是同样的。因此r的值可以改变</p>
-</details>
-<h3>切片遍历</h3>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> main
-
-<span class="token keyword">import</span> <span class="token string">"fmt"</span>
-
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">}</span>
-	<span class="token keyword">var</span> r <span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token builtin">int</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
-	<span class="token keyword">for</span> i<span class="token punctuation">,</span> v <span class="token operator">:=</span> <span class="token keyword">range</span> a <span class="token punctuation">{</span>
-		<span class="token keyword">if</span> i <span class="token operator">==</span> <span class="token number">0</span> <span class="token punctuation">{</span>
-			a<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">12</span>
-			a<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">13</span>
-		<span class="token punctuation">}</span>
-		r<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> v
-	<span class="token punctuation">}</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-</code></pre></div><details class="hint-container details"><summary>查看执行结果</summary>
-<div class="language-text" data-ext="text" data-title="text"><pre class="language-text"><code>[1 2 3 4 5]
-[1 12 13 4 5]
-[1 12 13 4 5]
-</code></pre></div><p>有切片的底层结构，我们知道切片由（<code>array</code>，<code>len</code>，<code>cap</code>）三元组组成，其中<code>array</code>指向底层数组。在range遍历时，它实际上复制的是一个切片，且切片的<code>array</code>指向的是同一个底层数组，因此会修改相同的底层数据。</p>
-</details>
-<p>👀<strong>但如果切片发生了扩容，导致长度发生了改变，for range遍历的仍是原来的长度</strong></p>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> main
-
-<span class="token keyword">import</span> <span class="token string">"fmt"</span>
-
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">}</span>
-	<span class="token keyword">var</span> r <span class="token operator">=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
-	<span class="token keyword">for</span> i<span class="token punctuation">,</span> v <span class="token operator">:=</span> <span class="token keyword">range</span> a <span class="token punctuation">{</span>
-		<span class="token keyword">if</span> i <span class="token operator">==</span> <span class="token number">0</span> <span class="token punctuation">{</span>
-			a<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">12</span>
-			a<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">13</span>
-			a <span class="token operator">=</span> <span class="token function">append</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">)</span>
-		<span class="token punctuation">}</span>
-		r <span class="token operator">=</span> <span class="token function">append</span><span class="token punctuation">(</span>r<span class="token punctuation">,</span> v<span class="token punctuation">)</span>
-	<span class="token punctuation">}</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-</code></pre></div><details class="hint-container details"><summary>查看执行结果</summary>
-<div class="language-text" data-ext="text" data-title="text"><pre class="language-text"><code>[1 2 3 4 5]
-[1 12 13 4 5 6 7]
-[1 12 13 4 5]
-</code></pre></div><p>切片a在遍历时附加了两个元素，len由5加到7，但由于for range使用的是切片a的副本，仍是长度5。</p>
-</details>
-<h3>字符串遍历</h3>
-<p><code>string</code>类型是不可变的，每次循环的单位是一个<code>rune</code>,而不是<code>byte</code>，虽然底层结构是<code>byte</code>。如果遍历过程中存在非法UTF8字节序列，那么将返回<code>0xfffd</code>这个特殊值，且下次遍历从下一个<code>byte</code>开始，而不是<code>rune</code></p>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> main
-
-<span class="token keyword">import</span> <span class="token string">"fmt"</span>
-
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token keyword">var</span> s <span class="token operator">=</span> <span class="token string">"中国人"</span>
-
-	<span class="token keyword">for</span> i<span class="token punctuation">,</span> v <span class="token operator">:=</span> <span class="token keyword">range</span> s <span class="token punctuation">{</span>
-		fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"%d %s 0x%x\n"</span><span class="token punctuation">,</span> i<span class="token punctuation">,</span> <span class="token function">string</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token punctuation">,</span> v<span class="token punctuation">)</span>
-	<span class="token punctuation">}</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span>
-
-	<span class="token comment">//byte sequence of s: 0xe4 0xb8 0xad 0xe5 0x9b 0xbd 0xe4 0xba 0xba</span>
-	<span class="token keyword">var</span> sl <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span><span class="token punctuation">{</span><span class="token number">0xe4</span><span class="token punctuation">,</span> <span class="token number">0xb8</span><span class="token punctuation">,</span> <span class="token number">0xad</span><span class="token punctuation">,</span> <span class="token number">0xe5</span><span class="token punctuation">,</span> <span class="token number">0x9b</span><span class="token punctuation">,</span> <span class="token number">0xbd</span><span class="token punctuation">,</span> <span class="token number">0xe4</span><span class="token punctuation">,</span> <span class="token number">0xba</span><span class="token punctuation">,</span> <span class="token number">0xba</span><span class="token punctuation">}</span>
-	<span class="token keyword">for</span> <span class="token boolean">_</span><span class="token punctuation">,</span> v <span class="token operator">:=</span> <span class="token keyword">range</span> sl <span class="token punctuation">{</span>
-		fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"0x%x "</span><span class="token punctuation">,</span> v<span class="token punctuation">)</span>
-	<span class="token punctuation">}</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span>
-
-	<span class="token keyword">for</span> i<span class="token punctuation">,</span> v <span class="token operator">:=</span> <span class="token keyword">range</span> <span class="token function">string</span><span class="token punctuation">(</span>sl<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-		fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"%d %v 0x%x\n"</span><span class="token punctuation">,</span> i<span class="token punctuation">,</span> <span class="token function">string</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token punctuation">,</span> v<span class="token punctuation">)</span>
-	<span class="token punctuation">}</span>
-
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span>
-
-  <span class="token comment">//修改为非法字符</span>
-	sl<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0xd0</span>
-	sl<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0xd6</span>
-	sl<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0xb9</span>
-
-	<span class="token keyword">for</span> i<span class="token punctuation">,</span> v <span class="token operator">:=</span> <span class="token keyword">range</span> <span class="token function">string</span><span class="token punctuation">(</span>sl<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-		fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"%d %v 0x%x\n"</span><span class="token punctuation">,</span> i<span class="token punctuation">,</span> <span class="token function">string</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token punctuation">,</span> v<span class="token punctuation">)</span>
-	<span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre></div><details class="hint-container details"><summary>查看运行结果</summary>
-<div class="language-text" data-ext="text" data-title="text"><pre class="language-text"><code>0 中 0x4e2d
-3 国 0x56fd
-6 人 0x4eba
-
-0xe4 0xb8 0xad 0xe5 0x9b 0xbd 0xe4 0xba 0xba 
-
-0 中 0x4e2d
-3 国 0x56fd
-6 人 0x4eba
-
-
-0 中 0x4e2d
-3 � 0xfffd
-4 ֹ 0x5b9
-6 人 0x4eba
-</code></pre></div><p>在遍历第4个字节时，发现时非法UTF8字符，则返回的是特殊值，且下标i从4开始。</p>
-</details>
-<h3>字典遍历</h3>
-<p>字典遍历过程中，如果对其新增和删除，那么会有怎样的结果呢？</p>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> main
-
-<span class="token keyword">import</span> <span class="token string">"fmt"</span>
-
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token keyword">var</span> m <span class="token operator">=</span> <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span>
-		<span class="token string">"tony"</span><span class="token punctuation">:</span> <span class="token number">21</span><span class="token punctuation">,</span>
-		<span class="token string">"tom"</span><span class="token punctuation">:</span>  <span class="token number">22</span><span class="token punctuation">,</span>
-		<span class="token string">"jim"</span><span class="token punctuation">:</span>  <span class="token number">23</span><span class="token punctuation">,</span>
-	<span class="token punctuation">}</span>
-	<span class="token punctuation">{</span> <span class="token comment">//原始</span>
-		counter <span class="token operator">:=</span> <span class="token number">0</span>
-		<span class="token keyword">for</span> k<span class="token punctuation">,</span> v <span class="token operator">:=</span> <span class="token keyword">range</span> m <span class="token punctuation">{</span>
-			fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>k<span class="token punctuation">,</span> v<span class="token punctuation">)</span>
-			counter<span class="token operator">++</span>
-		<span class="token punctuation">}</span>
-		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"counter is "</span><span class="token punctuation">,</span> counter<span class="token punctuation">)</span>
-		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"==="</span><span class="token punctuation">)</span>
-	<span class="token punctuation">}</span>
-	<span class="token punctuation">{</span> <span class="token comment">//测试删除</span>
-		counter <span class="token operator">:=</span> <span class="token number">0</span>
-		<span class="token keyword">for</span> k<span class="token punctuation">,</span> v <span class="token operator">:=</span> <span class="token keyword">range</span> m <span class="token punctuation">{</span>
-			<span class="token keyword">if</span> counter <span class="token operator">==</span> <span class="token number">0</span> <span class="token punctuation">{</span>
-				<span class="token function">delete</span><span class="token punctuation">(</span>m<span class="token punctuation">,</span> <span class="token string">"tony"</span><span class="token punctuation">)</span>
-			<span class="token punctuation">}</span>
-			counter<span class="token operator">++</span>
-			fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>k<span class="token punctuation">,</span> v<span class="token punctuation">)</span>
-		<span class="token punctuation">}</span>
-		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"counter is "</span><span class="token punctuation">,</span> counter<span class="token punctuation">)</span>
-		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"==="</span><span class="token punctuation">)</span>
-	<span class="token punctuation">}</span>
-	<span class="token punctuation">{</span> <span class="token comment">//测试增加</span>
-		m<span class="token punctuation">[</span><span class="token string">"tony"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">21</span>
-		counter <span class="token operator">:=</span> <span class="token number">0</span>
-		<span class="token keyword">for</span> k<span class="token punctuation">,</span> v <span class="token operator">:=</span> <span class="token keyword">range</span> m <span class="token punctuation">{</span>
-			<span class="token keyword">if</span> counter <span class="token operator">==</span> <span class="token number">0</span> <span class="token punctuation">{</span>
-				m<span class="token punctuation">[</span><span class="token string">"lucy"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">24</span>
-			<span class="token punctuation">}</span>
-			counter<span class="token operator">++</span>
-			fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>k<span class="token punctuation">,</span> v<span class="token punctuation">)</span>
-		<span class="token punctuation">}</span>
-		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"counter is "</span><span class="token punctuation">,</span> counter<span class="token punctuation">)</span>
-	<span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre></div><details class="hint-container details"><summary>查看运行结果</summary>
-<blockquote>
-<p>其输出结果是未知的</p>
-<ul>
-<li>3、3、4</li>
-<li>3、2、4</li>
-<li>3、3、3</li>
-<li>3、2、3</li>
-</ul>
-<p>这是因为map的遍历是无序的</p>
-</blockquote>
-</details>
-]]></content>
-    <category term="编程语言"/>
-    <published>2023-02-09T00:00:00.000Z</published>
-  </entry>
-  <entry>
-    <title type="text">goroutine和调度原理</title>
-    <id>http://blog.cjhe.top/language/go/advance/goroutine.html</id>
-    <link href="http://blog.cjhe.top/language/go/advance/goroutine.html"/>
-    <updated>2024-04-29T08:04:28.000Z</updated>
-    <summary type="html"><![CDATA[<p>Go语言原生支持并发能力，而goroutine是Go语言原生支持并发的具体实现，本篇将为你揭开goroutine的面纱。</p>
-<figure><img src="http://cdn.cjhe.top/blog/goroutine.png" alt="goroutine" tabindex="0" loading="lazy"><figcaption>goroutine</figcaption></figure>
-]]></summary>
-    <content type="html"><![CDATA[<p>Go语言原生支持并发能力，而goroutine是Go语言原生支持并发的具体实现，本篇将为你揭开goroutine的面纱。</p>
-<figure><img src="http://cdn.cjhe.top/blog/goroutine.png" alt="goroutine" tabindex="0" loading="lazy"><figcaption>goroutine</figcaption></figure>
-<!-- more -->
-<h2>goroutine</h2>
-<p>goroutine是由Go运行时管理的用户层轻量级线程，相比较操作系统线程，goroutine的资源占用和使用代价都要小的多，一个goroutine初始只需要2KB的内存，而线程需要MB级别的空间，这样在有限的内存空间里，可以创建的goroutine的数量相比较线程数量多的多。其次由于线程切换需要拷贝大量的上下文，这就导致线程切换耗时较高。</p>
-<h2>GPM模型</h2>
-<figure><figcaption>goroutine</figcaption></figure>
-<p>GPM模型中：</p>
-<ul>
-<li>G代表<code>goroutine</code>，存储了<code>goroutine</code>的执行栈信息、<code>goroutine</code>状态及<code>goroutine</code>的任务函数等</li>
-<li>P代表<code>processor</code>，逻辑处理器，所有的P都在程序启动时创建，P的数量决定了系统内最大可并行的G的数量，最多有<code>GOMAXPROCS</code>(可配置)个</li>
-<li>M代表<code>thread</code>即用户态线程，M在绑定有效的P后，进入到一个调度循环：从各种队列、P的本地队列获取G，切换到G的执行栈上并执行G的函数，调用<code>goexit</code>做清理工作并回到M，如此反复。</li>
-</ul>
-<p>此外还有：</p>
-<ul>
-<li>全局队列(Global Queue)：存放等待运行的G</li>
-<li>P的本地队列(Local Queue)：存放的也是等待运行的G，数量不超过256个。
-<ul>
-<li>当G新建goroutine G'时，G'优先加入到P的本地队列(局部性，G和G'相关)</li>
-<li>如果本地队列满了，则会把本地队列中的一半G移动到全局队列</li>
-</ul>
-</li>
-</ul>
-<h2>调度策略</h2>
-<div class="hint-container tip">
-<p class="hint-container-title">提示</p>
-<p>其思想：复用线程M，避免频繁的创建、销毁</p>
-</div>
-<h3>work stealing机制</h3>
-<p>当本地队列无可运行的G时，会尝试从其他P队列中偷取G，而不是销毁M</p>
-<h3>hand off机制</h3>
-<p>当M因为G进行系统调用阻塞时，M会释放绑定的P，此时的M和G都进入阻塞状态</p>
-<ul>
-<li>如果此时有空闲的M，P会与其绑定并执行剩余的G，</li>
-<li>如果没有空闲的M，则会创建新的M</li>
-</ul>
-<p>当系统调用返回后，阻塞在该系统调用的G会尝试获取一个可用的P</p>
-<ul>
-<li>如果有可用的P，之前运行该G的M将绑定P继续运行G</li>
-<li>如果没有可用的P，那么G于M之间的关联将解除，同时G会标记为runable，放入全局队列等待调度</li>
-</ul>
-<div class="hint-container tip">
-<p class="hint-container-title">提示</p>
-<ul>
-<li>网络I/O不会阻塞M，仅阻塞G</li>
-<li>文件I/O会阻塞M，这就是为什么大量文件I/O操作会导致大量线程被创建的原因。</li>
-</ul>
-</div>
-<h3>抢占调度</h3>
-<p>与操作系统按<strong>时间片</strong>调度线程不同，Go中没有<strong>时间片</strong>的概念。如果某个G没有进行系统调用，没有进行I/O操作、没有阻塞在一个channel操作上，那么<strong>M是如何让G停下来并调度下一个可运行的G呢</strong>？</p>
-<ul>
-<li>Go1.2版本在每个函数或方法的入口增加一段额外的代码，让运行时有机会检查是否需要执行抢占调度；（对没有函数调用的G无效）</li>
-<li>Go程序运行时会启动一个名为<code>sysmon</code>的M（称为监控线程），该M无须绑定P即可运行（以g0这个G的形式），该M对于长时间运行（超过10ms）的G发出抢占式调度。</li>
-</ul>
-<h2>参考文献</h2>
-<ul>
-<li><a href="https://mp.weixin.qq.com/s/rfjysi-LB-uFiGiZjh-XNw" target="_blank" rel="noopener noreferrer">文章-Golang调度器GMP原理与调度全分析</a></li>
-<li><a href="https://book.douban.com/subject/35720729/" target="_blank" rel="noopener noreferrer">书籍-Go语言精进之路</a></li>
-</ul>
-]]></content>
-    <category term="编程语言"/>
-    <published>2023-02-13T00:00:00.000Z</published>
-  </entry>
-  <entry>
-    <title type="text">interface底层原理</title>
-    <id>http://blog.cjhe.top/language/go/advance/interface.html</id>
-    <link href="http://blog.cjhe.top/language/go/advance/interface.html"/>
-    <updated>2024-04-29T08:04:28.000Z</updated>
-    <summary type="html"><![CDATA[<figure><img src="http://cdn.cjhe.top/blog/interface.png" alt="interface" tabindex="0" loading="lazy"><figcaption>interface</figcaption></figure>
-]]></summary>
-    <content type="html"><![CDATA[<figure><img src="http://cdn.cjhe.top/blog/interface.png" alt="interface" tabindex="0" loading="lazy"><figcaption>interface</figcaption></figure>
-<!-- more -->
-<h2>接口不为nil的误区</h2>
-<p>我们看一个demo</p>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> main
-
-<span class="token keyword">import</span> <span class="token punctuation">(</span>
-	<span class="token string">"errors"</span>
-	<span class="token string">"fmt"</span>
-<span class="token punctuation">)</span>
-
-<span class="token keyword">type</span> MyError <span class="token keyword">struct</span> <span class="token punctuation">{</span>
-	<span class="token builtin">error</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">var</span> ErrBad <span class="token operator">=</span> MyError<span class="token punctuation">{</span>
-	<span class="token builtin">error</span><span class="token punctuation">:</span> errors<span class="token punctuation">.</span><span class="token function">New</span><span class="token punctuation">(</span><span class="token string">"bad error"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token function">bad</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">bool</span> <span class="token punctuation">{</span>
-	<span class="token keyword">return</span> <span class="token boolean">false</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token function">returnsError</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">error</span> <span class="token punctuation">{</span>
-	<span class="token keyword">var</span> p <span class="token operator">*</span>MyError <span class="token operator">=</span> <span class="token boolean">nil</span>
-	<span class="token keyword">if</span> <span class="token function">bad</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-		p <span class="token operator">=</span> <span class="token operator">&amp;</span>ErrBad
-	<span class="token punctuation">}</span>
-	<span class="token keyword">return</span> p
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	e <span class="token operator">:=</span> <span class="token function">returnsError</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-	<span class="token keyword">if</span> e <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
-		fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"error: %+v\n"</span><span class="token punctuation">,</span> e<span class="token punctuation">)</span>
-		<span class="token keyword">return</span>
-	<span class="token punctuation">}</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"ok"</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-</code></pre></div><details class="hint-container details"><summary>查看运行结果</summary>
-<p><code>error: &lt;nil&gt;</code></p>
-</details>
-<p>这里大家很疑惑：明明<code>returnsError</code>函数返回的p值为nil，为何却满足了第30行的条件分支？我们先来看看接口类型的底层结构再来回答这个问题。</p>
-<h2>接口类型底层结构</h2>
-<p>参见<code>$GOROOT/src/runtime/runtime2.go</code></p>
-<figure><figcaption>interface</figcaption></figure>
-<p>接口类型变量有两种内部表示：</p>
-<ul>
-<li><code>eface</code>：用于表示没有方法的空接口(<code>empty interface</code>)类型变量，即<code>interface{}</code>类型的变量</li>
-<li><code>iface</code>：用于表示其拥有方法的接口(<code>interface</code>)类型变量</li>
-</ul>
-<p><code>data</code>都指向当前赋值给接口类型变量的动态类型变量的值，但<code>iface</code>相比较<code>eface</code>多了<code>itab</code>这个类型，其中:</p>
-<ul>
-<li><code>inter</code>存储该接口类型自身的信息</li>
-<li><code>_type</code>存储该接口类型变量</li>
-<li><code>fun</code>存储动态类型已实现的接口方法的调用地址数组</li>
-</ul>
-<p>Go运行时会为程序内的全部类型建立只读的共享<code>_type</code>信息表，因此如果我们要判断接口类型变量是否相同，只需：</p>
-<ul>
-<li>判断<code>_type/tab</code>是否相同</li>
-<li><code>data</code>指针所指向的内存空间所存储的数据值是否相同</li>
-</ul>
-<p>这里需要区分不同的类型之间的等值比较，参见下文</p>
-<h3>nil接口变量</h3>
-<p>未初始化的接口类型变量默认零值为nil</p>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">printNilInterface</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token comment">// nil接口变量</span>
-	<span class="token keyword">var</span> i <span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token comment">// 空接口类型</span>
-	<span class="token keyword">var</span> err <span class="token builtin">error</span>     <span class="token comment">// 非空接口类型</span>
-	<span class="token function">println</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
-	<span class="token function">println</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
-	<span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"i = nil:"</span><span class="token punctuation">,</span> i <span class="token operator">==</span> <span class="token boolean">nil</span><span class="token punctuation">)</span>
-	<span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"err = nil:"</span><span class="token punctuation">,</span> err <span class="token operator">==</span> <span class="token boolean">nil</span><span class="token punctuation">)</span>
-	<span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"i = err:"</span><span class="token punctuation">,</span> i <span class="token operator">==</span> err<span class="token punctuation">)</span>
-	<span class="token function">println</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-</code></pre></div><details class="hint-container details"><summary>查看执行结果</summary>
-<div class="language-text" data-ext="text" data-title="text"><pre class="language-text"><code>(0x0,0x0)
-(0x0,0x0)
-i = nil: true
-err = nil: true
-i = err: true
-</code></pre></div></details>
-<p>值为nil的接口类型变量内部表示均为<code>(0x0,0x0)</code>，即类型信息和数据信息均为空，因此和nil相等</p>
-<h3>空接口类型变量</h3>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">printEmptyInterface</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token comment">// empty接口变量</span>
-	<span class="token keyword">var</span> eif1 <span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token comment">// 空接口类型</span>
-	<span class="token keyword">var</span> eif2 <span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token comment">// 空接口类型</span>
-	<span class="token keyword">var</span> n<span class="token punctuation">,</span> m <span class="token builtin">int</span> <span class="token operator">=</span> <span class="token number">17</span><span class="token punctuation">,</span> <span class="token number">18</span>
-
-	eif1 <span class="token operator">=</span> n
-	eif2 <span class="token operator">=</span> m
-
-	<span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"eif1:"</span><span class="token punctuation">,</span> eif1<span class="token punctuation">)</span>
-	<span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"eif2:"</span><span class="token punctuation">,</span> eif2<span class="token punctuation">)</span>
-	<span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"eif1 = eif2:"</span><span class="token punctuation">,</span> eif1 <span class="token operator">==</span> eif2<span class="token punctuation">)</span>
-
-	eif2 <span class="token operator">=</span> <span class="token number">17</span>
-	<span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"eif1:"</span><span class="token punctuation">,</span> eif1<span class="token punctuation">)</span>
-	<span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"eif2:"</span><span class="token punctuation">,</span> eif2<span class="token punctuation">)</span>
-	<span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"eif1 = eif2:"</span><span class="token punctuation">,</span> eif1 <span class="token operator">==</span> eif2<span class="token punctuation">)</span>
-
-	eif2 <span class="token operator">=</span> <span class="token function">int64</span><span class="token punctuation">(</span><span class="token number">17</span><span class="token punctuation">)</span>
-	<span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"eif1:"</span><span class="token punctuation">,</span> eif1<span class="token punctuation">)</span>
-	<span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"eif2:"</span><span class="token punctuation">,</span> eif2<span class="token punctuation">)</span>
-	<span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"eif1 = eif2:"</span><span class="token punctuation">,</span> eif1 <span class="token operator">==</span> eif2<span class="token punctuation">)</span>
-
-	<span class="token function">println</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-</code></pre></div><details class="hint-container details"><summary>查看执行结果</summary>
-<div class="language-text" data-ext="text" data-title="text"><pre class="language-text"><code>eif1: (0x10951e0,0xc000092f68)
-eif2: (0x10951e0,0xc000092f60)
-eif1 = eif2: false
-eif1: (0x10951e0,0xc000092f68)
-eif2: (0x10951e0,0x10c64e8)
-eif1 = eif2: true
-eif1: (0x10951e0,0xc000092f68)
-eif2: (0x10952a0,0x10c64e8)
-eif1 = eif2: false
-</code></pre></div></details>
-<p>对于空接口类型变量，只有在<code>_type</code>和<code>data</code>所指数据内容一致（注意：不是数据指针的值一致）的情况下，两个空接口类型变量之间才能画等号。</p>
-<h3>非空接口类型</h3>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">type</span> T <span class="token builtin">int</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>t T<span class="token punctuation">)</span> <span class="token function">Error</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span> <span class="token punctuation">{</span>
-	<span class="token keyword">return</span> <span class="token string">"bad error"</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token function">printNonEmptyInterface</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token keyword">var</span> err1 <span class="token builtin">error</span> <span class="token comment">// 非空接口类型</span>
-	<span class="token keyword">var</span> err2 <span class="token builtin">error</span> <span class="token comment">// 非空接口类型</span>
-	err1 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token operator">*</span>T<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token boolean">nil</span><span class="token punctuation">)</span>
-	<span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"err1:"</span><span class="token punctuation">,</span> err1<span class="token punctuation">)</span>
-	<span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"err1 = nil:"</span><span class="token punctuation">,</span> err1 <span class="token operator">==</span> <span class="token boolean">nil</span><span class="token punctuation">)</span>
-
-	err1 <span class="token operator">=</span> <span class="token function">T</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
-	err2 <span class="token operator">=</span> <span class="token function">T</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span>
-	<span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"err1:"</span><span class="token punctuation">,</span> err1<span class="token punctuation">)</span>
-	<span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"err2:"</span><span class="token punctuation">,</span> err2<span class="token punctuation">)</span>
-	<span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"err1 = err2:"</span><span class="token punctuation">,</span> err1 <span class="token operator">==</span> err2<span class="token punctuation">)</span>
-
-	err2 <span class="token operator">=</span> fmt<span class="token punctuation">.</span><span class="token function">Errorf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span>
-	<span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"err1:"</span><span class="token punctuation">,</span> err1<span class="token punctuation">)</span>
-	<span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"err2:"</span><span class="token punctuation">,</span> err2<span class="token punctuation">)</span>
-	<span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"err1 = err2:"</span><span class="token punctuation">,</span> err1 <span class="token operator">==</span> err2<span class="token punctuation">)</span>
-
-	<span class="token function">println</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-</code></pre></div><details class="hint-container details"><summary>查看执行结果</summary>
-<div class="language-text" data-ext="text" data-title="text"><pre class="language-text"><code>err1: (0x10c6a58,0x0)
-err1 = nil: false
-err1: (0x10c6ab8,0x10c64f0)
-err2: (0x10c6ab8,0x10c64f8)
-err1 = err2: false
-err1: (0x10c6ab8,0x10c64f0)
-err2: (0x10c69d8,0xc000096210)
-err1 = err2: false
-</code></pre></div></details>
-<p>针对<code>err1 = (*T)(nil)</code>这种赋值，非空接口类型变量的类型信息并不为空，数据指针为空，因此与<code>nil(0x0,0x0)</code>不能画等号</p>
-<h3>空接口类型和非空接口类型的等值比较</h3>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">printEmptyInterfaceAndNonEmptyInterface</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token keyword">var</span> eif <span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">T</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
-	<span class="token keyword">var</span> err <span class="token builtin">error</span> <span class="token operator">=</span> <span class="token function">T</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
-	<span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"eif:"</span><span class="token punctuation">,</span> eif<span class="token punctuation">)</span>
-	<span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"err:"</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span>
-	<span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"eif = err:"</span><span class="token punctuation">,</span> eif <span class="token operator">==</span> err<span class="token punctuation">)</span>
-
-	err <span class="token operator">=</span> <span class="token function">T</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span>
-	<span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"eif:"</span><span class="token punctuation">,</span> eif<span class="token punctuation">)</span>
-	<span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"err:"</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span>
-	<span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"eif = err:"</span><span class="token punctuation">,</span> eif <span class="token operator">==</span> err<span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-</code></pre></div><details class="hint-container details"><summary>查看执行结构</summary>
-<div class="language-text" data-ext="text" data-title="text"><pre class="language-text"><code>eif: (0x10974c0,0x10c64f0)
-err: (0x10c6ab8,0x10c64f0)
-eif = err: true
-eif: (0x10974c0,0x10c64f0)
-err: (0x10c6ab8,0x10c64f8)
-eif = err: false
-</code></pre></div></details>
-<p>空接口类型变量和非空接口类型变量内部表示的结构不同，但Go进行等值比较时，类型比较使用的是<code>eface</code>的<code>_type</code>和<code>iface</code>的<code>tab._type</code></p>
-]]></content>
-    <category term="编程语言"/>
-    <published>2023-02-12T00:00:00.000Z</published>
-  </entry>
-  <entry>
-    <title type="text">深入了解Go锁原理</title>
-    <id>http://blog.cjhe.top/language/go/advance/mutex.html</id>
-    <link href="http://blog.cjhe.top/language/go/advance/mutex.html"/>
-    <updated>2024-05-05T15:52:14.000Z</updated>
-    <summary type="text">Go语言sync包提供了两种锁：
-
-互斥锁 Mutex:
-
-加锁时，其他加锁协程均阻塞
-
-
-读写锁 RWMutex:
-
-加读锁时，加写锁协程阻塞，加读锁协程不阻塞
-加写锁时，其他加读写协程均阻塞
-
-
-
-互斥锁 Mutex
-Mutex数据结构
-参见$GOROOT/src/sync/mutex.go
-其中：
-
-state: 表示互斥锁的状态，比如是否被锁定...</summary>
-    <content type="html"><![CDATA[<!-- more -->
-<p>Go语言sync包提供了两种锁：</p>
-<ul>
-<li>互斥锁 Mutex:
-<ul>
-<li>加锁时，其他加锁协程均阻塞</li>
-</ul>
-</li>
-<li>读写锁 RWMutex:
-<ul>
-<li>加读锁时，加写锁协程阻塞，加读锁协程不阻塞</li>
-<li>加写锁时，其他加读写协程均阻塞</li>
-</ul>
-</li>
-</ul>
-<h2>互斥锁 Mutex</h2>
-<h3>Mutex数据结构</h3>
-<p>参见<code>$GOROOT/src/sync/mutex.go</code></p>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">type</span> Mutex <span class="token keyword">struct</span><span class="token punctuation">{</span>
-  state <span class="token builtin">int32</span>
-  sema  <span class="token builtin">uint32</span>
-<span class="token punctuation">}</span>
-</code></pre></div><p>其中：</p>
-<ul>
-<li>state: 表示互斥锁的状态，比如是否被锁定等；</li>
-<li>sema: 表示信号量，协程阻塞等待该信号量，解锁的协程释放信号量从而唤醒等待信号量的协程；</li>
-</ul>
-<p>Mutex.state虽然是<code>int32</code>数据类型，内部实现时把该变量分成四份，用于记录Mutex的四种状态</p>
-<figure><figcaption>mutex</figcaption></figure>
-<ul>
-<li>Locked: 表示该Mutex是否已被锁定，0表示没有锁定，1表示已锁定</li>
-<li>Woken: 表示是否协程已被唤醒，0表示没有协程唤醒，1表示已有协程唤醒</li>
-<li>Starving: 表示该Mutex是否处于饥饿状态，0表示没有饥饿，1表示饥饿状态（说明已有协程阻塞时间超过1ms）</li>
-<li>Waiter: 表示阻塞等待协程的个数，协程解锁时根据此值来判断是否需要释放信号量</li>
-</ul>
-<h3>Mutex的方法</h3>
-<p>Mutex对外提供两个方法：</p>
-<ul>
-<li>Lock(): 加锁方法</li>
-<li>Unlock(): 解锁方法</li>
-</ul>
-<h4>单个协程的加锁释放过程</h4>
-<p>Mutex内部<code>state</code>表示如下：</p>
-<figure><figcaption>mutex-simple</figcaption></figure>
-<h4>两个协程的加锁释放过程</h4>
-<p>Mutex内部<code>state</code>表示如下：</p>
-<figure><figcaption>mutex-comple</figcaption></figure>
-<p>上面介绍Mutex加锁和解锁只使用内部<code>state</code>标记：<code>Waiter</code>和<code>Locked</code>两个，另外两个标记就不得不提自旋过程了。</p>
-<h3>自旋过程</h3>
-<blockquote>
-<p>自旋过程是：加锁时，如果当前<code>Locked</code>为1，则说明当前该锁由其他协程持有，尝试加锁的协程并不是马上转入阻塞，而是会持续地探测<code>Locked</code>是否变为0，这个过程就是自旋过程。</p>
-</blockquote>
-<details class="hint-container details"><summary>自旋的条件</summary>
-<ul>
-<li>自旋次数要足够少，通常为4；</li>
-<li>CPU核数要大于1，否则自旋没有意义，因为此时不可能有其他协程释放锁；</li>
-<li>协程调度GMP中的P的数量要大于1；</li>
-<li>协程调度运行队列必须为空，否则会延迟协程调度；</li>
-</ul>
-</details>
-<div class="hint-container tip">
-<p class="hint-container-title">提示</p>
-<p>自旋的好处：当加锁失败时不必立即转入阻塞，有一定机会获得锁，避免协程的切换。</p>
-</div>
-<p>自旋的时间很短，如果自旋过程中发现锁已被释放，那么协程可以立即获取锁，此时即便有其他协程被唤醒也无法获取锁，只能再次阻塞。</p>
-<p>如果自旋过程中获得锁，那么之前被阻塞的协程将无法获得锁，之前阻塞的协程一直获取不到锁（超过1ms）将进入<strong>饥饿</strong>状态</p>
-<p>如果此时有两个协程，一个在加锁，另一个在解锁，在加锁的过程中可能处于自旋，此时会把<code>Woken</code>标记为1，用于告知解锁协程，不必释放信号量，它很快会拿到锁。</p>
-<h3>Mutex注意事项</h3>
-<div class="hint-container caution">
-<p class="hint-container-title">警告</p>
-<p>Mutex等sync中定义的结构类型首次使用后不应对其进行复制操作</p>
-</div>
-<p>我们看一个示例：</p>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> main
-
-<span class="token keyword">import</span> <span class="token punctuation">(</span>
-	<span class="token string">"log"</span>
-	<span class="token string">"sync"</span>
-	<span class="token string">"time"</span>
-<span class="token punctuation">)</span>
-
-<span class="token keyword">type</span> foo <span class="token keyword">struct</span> <span class="token punctuation">{</span>
-	n <span class="token builtin">int</span>
-	sync<span class="token punctuation">.</span>Mutex
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	f <span class="token operator">:=</span> foo<span class="token punctuation">{</span>n<span class="token punctuation">:</span> <span class="token number">17</span><span class="token punctuation">}</span>
-
-	<span class="token keyword">go</span> <span class="token keyword">func</span><span class="token punctuation">(</span>f foo<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-		<span class="token keyword">for</span> <span class="token punctuation">{</span>
-			log<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"g2: try to lock foo..."</span><span class="token punctuation">)</span>
-			f<span class="token punctuation">.</span><span class="token function">Lock</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-			log<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"g2: lock foo ok"</span><span class="token punctuation">)</span>
-			time<span class="token punctuation">.</span><span class="token function">Sleep</span><span class="token punctuation">(</span><span class="token number">3</span> <span class="token operator">*</span> time<span class="token punctuation">.</span>Second<span class="token punctuation">)</span>
-			f<span class="token punctuation">.</span><span class="token function">Unlock</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-			log<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"g2: unlock foo ok"</span><span class="token punctuation">)</span>
-		<span class="token punctuation">}</span>
-	<span class="token punctuation">}</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span>
-
-	f<span class="token punctuation">.</span><span class="token function">Lock</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-	log<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"g1: lock foo ok"</span><span class="token punctuation">)</span>
-
-	<span class="token comment">// 在mutex首次使用后复制其值</span>
-	<span class="token keyword">go</span> <span class="token keyword">func</span><span class="token punctuation">(</span>f foo<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-		<span class="token keyword">for</span> <span class="token punctuation">{</span>
-			log<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"g3: try to lock foo..."</span><span class="token punctuation">)</span>
-			f<span class="token punctuation">.</span><span class="token function">Lock</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-			log<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"g3: lock foo ok"</span><span class="token punctuation">)</span>
-			time<span class="token punctuation">.</span><span class="token function">Sleep</span><span class="token punctuation">(</span><span class="token number">5</span> <span class="token operator">*</span> time<span class="token punctuation">.</span>Second<span class="token punctuation">)</span>
-			f<span class="token punctuation">.</span><span class="token function">Unlock</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-			log<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"g3: unlock foo ok"</span><span class="token punctuation">)</span>
-		<span class="token punctuation">}</span>
-	<span class="token punctuation">}</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span>
-
-	time<span class="token punctuation">.</span><span class="token function">Sleep</span><span class="token punctuation">(</span><span class="token number">1000</span> <span class="token operator">*</span> time<span class="token punctuation">.</span>Second<span class="token punctuation">)</span>
-	f<span class="token punctuation">.</span><span class="token function">Unlock</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-	log<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"g1: unlock foo ok"</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-</code></pre></div><details class="hint-container details"><summary>查看执行结果</summary>
-<div class="language-text" data-ext="text" data-title="text"><pre class="language-text"><code>2023/03/12 19:23:45 g1: lock foo ok
-2023/03/12 19:23:45 g2: try to lock foo...
-2023/03/12 19:23:45 g3: try to lock foo...
-2023/03/12 19:23:45 g2: lock foo ok
-2023/03/12 19:23:48 g2: unlock foo ok
-2023/03/12 19:23:48 g2: try to lock foo...
-2023/03/12 19:23:48 g2: lock foo ok
-2023/03/12 19:23:51 g2: unlock foo ok
-...
-</code></pre></div><p>我们看到g3在加锁操作之后阻塞，而g2按照预期正常运行</p>
-<p>g2和g3的区别在于：</p>
-<ul>
-<li>g2是在互斥锁首次使用之前创建</li>
-<li>g3是在互斥锁执行完加锁操作之后创建，并且在创建g3的时候复制了foo实例</li>
-</ul>
-</details>
-<p>sync包中类型的实例在被复制得到的副本后将脱离原实例的控制范围，因此推荐传指针的方式</p>
-<h2>读写锁 RWMutex</h2>
-<h3>RWMutex数据结构</h3>
-<p>参见<code>$GOROOT/src/sync/mutex.go</code></p>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">type</span> RWMutex <span class="token keyword">struct</span><span class="token punctuation">{</span>
-  w           Mutex
-  writerSem   <span class="token builtin">uint32</span>
-  readerSem   <span class="token builtin">uint32</span>
-  readerCount <span class="token builtin">int32</span>
-  readerWait  <span class="token builtin">int32</span>
-<span class="token punctuation">}</span>
-</code></pre></div><p>其中：</p>
-<ul>
-<li>w: 用于控制多个写锁，获得写锁首先要获取该锁</li>
-<li>writerSem: 写阻塞的协程等待的信号量，最后一个读协程释放锁时会释放信号量</li>
-<li>readerSem: 读阻塞的协程等待的信号量，持有写锁的协程释放锁后会释放信号量</li>
-<li>readerCount: 记录读协程的个数</li>
-<li>readerWait: 记录写阻塞时的读协程个数</li>
-</ul>
-<h3>RWMutex的方法</h3>
-<ul>
-<li>RLock(): 加读锁
-<ul>
-<li>增加读操作计数，即readerCount++</li>
-<li>如果已经有持有写锁协程，则阻塞自己</li>
-</ul>
-</li>
-<li>RUnlock(): 释放读锁
-<ul>
-<li>减少读操作计数，即readerCount--</li>
-<li>如果有阻塞的写锁协程，则唤醒它</li>
-</ul>
-</li>
-<li>Lock(): 加写锁
-<ul>
-<li>获取互斥锁</li>
-<li>如果持有读锁协程，则阻塞自己，等待所有的读操作结束</li>
-</ul>
-</li>
-<li>Unlock(): 释放写锁
-<ul>
-<li>释放互斥锁</li>
-<li>如果其他阻塞的读锁协程，则唤醒它</li>
-</ul>
-</li>
-</ul>
-<figure><figcaption>rwmutex</figcaption></figure>
-<h3>RWMutex的细节分析</h3>
-<h4>写操作是如何阻止写操作的？</h4>
-<p>读写锁RWMutex包含一个互斥锁w，获取写锁必须先获取该互斥锁，如果互斥锁已被其他协程持有，则只能阻塞等待。</p>
-<h4>写操作是如何阻止读操作的？</h4>
-<p>读写锁RWMutex包含当前读协程数量readerCount，每次获取读锁则加1，每次释放读锁则减1，因此取值为[0,N],N最大为2e30。
-当获取写锁时，会将readerCount减去2e30，变成了负值。获取读锁协程检测到readerCount为负值，便知道正在加写锁，只好阻塞自己。
-真实的readerCount不会丢失，只需要加2e30即可。</p>
-<h4>读操作是如何阻止写操作的？</h4>
-<p>读锁会先将RWMutex.readerCount加1，写锁协程检测到readerCount不为0，则会阻塞自己。</p>
-<h4>写锁为什么不会被<strong>饿死</strong>？</h4>
-<p>获取写锁期间，可能还有其他协程获取读锁，如果写锁一直等待所有的读操作结束，则很可能被<strong>饿死</strong>，RWMutex通过readerWait解决这个问题，当获取写锁时，会把readerCount复制到readerWait，用于标记排在写操作前面的读操作个数，读操作结束会递减readerCount的值，同时也会递减readerWait的值，当readerWait值为0时唤醒写操作。写操作结束后才会唤醒其他的读操作。</p>
-<h2>参考资料</h2>
-<p><a href="https://book.douban.com/subject/35144587/" target="_blank" rel="noopener noreferrer">Go专家编程</a></p>
-]]></content>
-    <category term="编程语言"/>
-    <published>2023-03-11T00:00:00.000Z</published>
-  </entry>
-  <entry>
-    <title type="text">魔幻的iota枚举</title>
-    <id>http://blog.cjhe.top/language/go/base/iota.html</id>
-    <link href="http://blog.cjhe.top/language/go/base/iota.html"/>
-    <updated>2024-04-29T08:04:28.000Z</updated>
-    <summary type="html"><![CDATA[<div class="hint-container tip">
-<p class="hint-container-title">提示</p>
-<p>iota的出现使得枚举值更加方便，但注意哦，并不简单。主要是对iota定义不理解，我整理了一些iota的使用注意事项</p>
-</div>
-]]></summary>
-    <content type="html"><![CDATA[<div class="hint-container tip">
-<p class="hint-container-title">提示</p>
-<p>iota的出现使得枚举值更加方便，但注意哦，并不简单。主要是对iota定义不理解，我整理了一些iota的使用注意事项</p>
-</div>
-<!-- more -->
-<h2>iota</h2>
-<blockquote>
-<p>iota是Go语言的一个预定义标识符，它表示的是const声明块或声明行中每个常量所处位置的<strong>偏移值</strong>（从0开始）。</p>
-</blockquote>
-<h3>规则：如果按行递增，可省略后续的iota关键字</h3>
-<p>例如：</p>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">const</span> <span class="token punctuation">(</span>
-	Sunday    <span class="token operator">=</span> <span class="token boolean">iota</span> <span class="token comment">//0</span>
-	Monday           <span class="token comment">//1</span>
-	Tuesday          <span class="token comment">//2</span>
-	Wednesday        <span class="token comment">//3</span>
-	Thursday         <span class="token comment">//4</span>
-	Friday           <span class="token comment">//5</span>
-	Saturday         <span class="token comment">//6</span>
-<span class="token punctuation">)</span>
-</code></pre></div><p>这与常量的规则：<strong>如果不指定类型和初始化值，则默认表示使用上行的赋值表达式</strong>一致</p>
-<p>上面等价于</p>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">const</span> <span class="token punctuation">(</span>
-	Sunday    <span class="token operator">=</span> <span class="token boolean">iota</span> <span class="token comment">//0</span>
-	Monday    <span class="token operator">=</span> <span class="token boolean">iota</span> <span class="token comment">//1</span>
-	Tuesday   <span class="token operator">=</span> <span class="token boolean">iota</span> <span class="token comment">//2</span>
-	Wednesday <span class="token operator">=</span> <span class="token boolean">iota</span> <span class="token comment">//3</span>
-	Thursday  <span class="token operator">=</span> <span class="token boolean">iota</span> <span class="token comment">//4</span>
-	Friday    <span class="token operator">=</span> <span class="token boolean">iota</span> <span class="token comment">//5</span>
-	Saturday  <span class="token operator">=</span> <span class="token boolean">iota</span> <span class="token comment">//6</span>
-<span class="token punctuation">)</span>
-</code></pre></div><h3>规则：iota只跟常量组的偏移位置有关</h3>
-<p>‼️</p>
-<p>例如：</p>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">const</span> <span class="token punctuation">(</span>
-	a <span class="token operator">=</span> <span class="token char">'A'</span>
-	b
-	c <span class="token operator">=</span> <span class="token boolean">iota</span> <span class="token comment">//iota=2</span>
-	d        <span class="token comment">//iota=3</span>
-
-	e <span class="token operator">=</span> <span class="token boolean">iota</span> <span class="token comment">//iota=4</span>
-	f        <span class="token comment">//iota=5</span>
-<span class="token punctuation">)</span>
-</code></pre></div><p>虽然c是第一次使用iota标识符定义，但在const块中位置属于第3，此时iota为2；</p>
-<p>d与e之间虽然有空行，但e的偏移位置属于第5，因此iota为4；</p>
-<h3>规则：每遇到一个const关键字，iota就会重置为0</h3>
-<p>例如：</p>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">const</span> x <span class="token operator">=</span> <span class="token boolean">iota</span> <span class="token comment">//iota=0</span>
-<span class="token keyword">const</span> y <span class="token operator">=</span> <span class="token boolean">iota</span> <span class="token comment">//iota=0</span>
-</code></pre></div><h3>规则：iota跟个数无关，即便是同一行，值也都一样</h3>
-<p>‼️</p>
-<p>例如：</p>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">const</span> <span class="token punctuation">(</span>
-	g<span class="token punctuation">,</span> h <span class="token operator">=</span> <span class="token boolean">iota</span><span class="token punctuation">,</span> <span class="token boolean">iota</span> <span class="token operator">+</span> <span class="token number">10</span> <span class="token comment">//0,10 (iota=0)</span>
-	i<span class="token punctuation">,</span> j                   <span class="token comment">//1,11 (iota=1)</span>
-<span class="token punctuation">)</span>
-</code></pre></div><p>虽然g,h是两个常量，但由于在同一行，iota的值一样</p>
-<h3>规则：如果想从1开始，则可以通过<code>_</code>忽略第一个iota</h3>
-<p>例如：</p>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">const</span> <span class="token punctuation">(</span>
-	<span class="token boolean">_</span>          <span class="token operator">=</span> <span class="token boolean">iota</span>
-	KB <span class="token builtin">float64</span> <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">&lt;&lt;</span> <span class="token punctuation">(</span><span class="token number">10</span> <span class="token operator">*</span> <span class="token boolean">iota</span><span class="token punctuation">)</span> <span class="token comment">//2^10</span>
-	MB                            <span class="token comment">//2^20</span>
-	GB                            <span class="token comment">//...</span>
-	TB
-	PB
-	EB
-	ZB
-	YB
-<span class="token punctuation">)</span>
-</code></pre></div>]]></content>
-    <category term="编程语言"/>
-    <published>2023-02-03T00:00:00.000Z</published>
-  </entry>
-  <entry>
-    <title type="text">散列map</title>
-    <id>http://blog.cjhe.top/language/go/base/map.html</id>
-    <link href="http://blog.cjhe.top/language/go/base/map.html"/>
-    <updated>2024-04-29T08:04:28.000Z</updated>
-    <summary type="html"><![CDATA[<figure><img src="http://cdn.cjhe.top/blog/map.png" alt="map" tabindex="0" loading="lazy"><figcaption>map</figcaption></figure>
-]]></summary>
-    <content type="html"><![CDATA[<figure><img src="http://cdn.cjhe.top/blog/map.png" alt="map" tabindex="0" loading="lazy"><figcaption>map</figcaption></figure>
-<!-- more -->
-<blockquote>
-<p>map是Go语言提供的一种抽象数据类型，它表示一组无序的键值对(key-value)</p>
-</blockquote>
-<h2>声明</h2>
-<p><strong>关键字定义</strong>：<code>map</code></p>
-<p><strong>零值</strong>：<code>nil</code></p>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">var</span> m <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token builtin">int</span>
-</code></pre></div><div class="hint-container warning">
-<p class="hint-container-title">注意</p>
-<p>map对于<code>value</code>的类型没有限制，但是对<code>key</code>的类型有严格的要求：
-<code>key</code>的类型必须支持<code>==</code>和<code>!=</code>两个操作符的数据类型
-因此，函数、map、切片等不能作为<code>key</code>类型。</p>
-</div>
-<h2>初始化</h2>
-<p>字面量初始化</p>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code>m<span class="token operator">:=</span><span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span><span class="token string">"apple"</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token string">"banana"</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">}</span>
-</code></pre></div><p>内置函数make()初始化</p>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code>m<span class="token operator">:=</span><span class="token function">make</span><span class="token punctuation">(</span><span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span>
-</code></pre></div><h2>操作</h2>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> main
-
-<span class="token keyword">import</span> <span class="token string">"fmt"</span>
-
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	m <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span>
-	m<span class="token punctuation">[</span><span class="token string">"apple"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span>       <span class="token comment">//新增</span>
-	m<span class="token punctuation">[</span><span class="token string">"apple"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">2</span>       <span class="token comment">//修改</span>
-	<span class="token function">delete</span><span class="token punctuation">(</span>m<span class="token punctuation">,</span> <span class="token string">"apple"</span><span class="token punctuation">)</span>   <span class="token comment">//删除</span>
-	v<span class="token punctuation">,</span> ok <span class="token operator">:=</span> m<span class="token punctuation">[</span><span class="token string">"banana"</span><span class="token punctuation">]</span> <span class="token comment">//comma ok 查询</span>
-	<span class="token keyword">if</span> ok <span class="token punctuation">{</span>
-		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span>
-	<span class="token punctuation">}</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token function">len</span><span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">)</span>   <span class="token comment">//获取key的个数</span>
-	<span class="token keyword">for</span> k<span class="token punctuation">,</span> v <span class="token operator">:=</span> <span class="token keyword">range</span> m <span class="token punctuation">{</span> <span class="token comment">//遍历m</span>
-		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>k<span class="token punctuation">,</span> v<span class="token punctuation">)</span>
-	<span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre></div><div class="hint-container warning">
-<p class="hint-container-title">注意</p>
-<p>向<code>nil</code>（未初始化）的map类型里添加数据会导致<code>panic</code></p>
-</div>
-<div class="hint-container tip">
-<p class="hint-container-title">提示</p>
-<ul>
-<li>删除不存在的key不会导致panic；</li>
-<li>查询不存在的key，如果未使用<strong>comma ok</strong>语法，则会返回value类型对应的<strong>零值</strong></li>
-</ul>
-</div>
-<h2>底层原理</h2>
-<p>参见<code>$GOROOT/src/runtime/map.go</code></p>
-<h3>map的数据结构</h3>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">type</span> hmap <span class="token keyword">struct</span> <span class="token punctuation">{</span>
-	count      <span class="token builtin">int</span>            <span class="token comment">//当前保存的元素个数</span>
-	flags      <span class="token builtin">uint8</span>          <span class="token comment">//当前map所处的状态标志</span>
-	B          <span class="token builtin">uint8</span>          <span class="token comment">//bucket数组的大小的对数：2^B=bucket数量</span>
-	noverflow  <span class="token builtin">uint16</span>         <span class="token comment">//overflow buckets的大约数量</span>
-	hash0      <span class="token builtin">uint32</span>         <span class="token comment">//hash函数的种子值</span>
-	buckets    unsafe<span class="token punctuation">.</span>Pointer <span class="token comment">//指向bucket数组的指针</span>
-	oldbuckets unsafe<span class="token punctuation">.</span>Pointer <span class="token comment">//在map扩容阶段指向前一个bucket数组的指针</span>
-	nevacuate  <span class="token builtin">uintptr</span>        <span class="token comment">//map扩容阶段充当扩容进度计数器,小于此bucket都已完成了数据排空和迁移操作</span>
-	extra      <span class="token operator">*</span>mapextra      <span class="token comment">//可选字段，与gc相关</span>
-<span class="token punctuation">}</span>
-</code></pre></div><h3>bucket的数据结构</h3>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token comment">// a bucket for a Go map</span>
-<span class="token keyword">type</span> bmap <span class="token keyword">struct</span> <span class="token punctuation">{</span>
-	tophash <span class="token punctuation">[</span>bucketCnt<span class="token punctuation">]</span><span class="token builtin">uint8</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment">// 实际上编辑期间会动态生产一个新的结构体</span>
-<span class="token keyword">type</span> bmap <span class="token keyword">struct</span> <span class="token punctuation">{</span>
-	tophash  <span class="token punctuation">[</span><span class="token number">8</span><span class="token punctuation">]</span><span class="token builtin">uint8</span>
-	keys     <span class="token punctuation">[</span><span class="token number">8</span><span class="token punctuation">]</span>keytype
-	values   <span class="token punctuation">[</span><span class="token number">8</span><span class="token punctuation">]</span>valuetype
-	overflow <span class="token builtin">uintptr</span>
-<span class="token punctuation">}</span>
-</code></pre></div><figure><figcaption>map</figcaption></figure>
-<p>key和value分开存储，目的是为了减少内存对齐带来的内存浪费，以map[int8]int64为例：</p>
-<figure><figcaption>map-memory</figcaption></figure>
-<p>每个bucket可以存储8个键值对，超过就会创建一个新的bucket，通过overflow链接</p>
-<p>当有两个或以上数量的键被<code>Hash</code>到了同一个bucket时，我们称这些键发生了冲突，Go语言使用链表解决键冲突。</p>
-<p>hash冲突并不是好事情，它降低了存取效率，好的Hash算法可以保证Hash值得随机性，但无论使用哪种Hash算法，冲突终究不可避免，当冲突较多的时候就需要采取一些措施来减少冲突。</p>
-<h3>负载因子LoadFactor</h3>
-<blockquote>
-<p>负载因子用于衡量一个Hash表的冲突情况，计算公式如下：</p>
-<p>负载因子 = 键数量 / bucket数量</p>
-</blockquote>
-<ul>
-<li>负载因子过小，空间利用率低；</li>
-<li>负载因子过大，说明冲突严重，存取效率低；</li>
-</ul>
-<p>当Hash表的负载因子过大时需要rehash，即申请更多的bucket，并对所有的键值对重新组织，使其均匀的分布在这些bucket中。</p>
-<ul>
-<li>redis的负载因子大于1时就会触发rehash，因为redis的每个bucket只能存1个键值对；</li>
-<li>go的负载因子大于6.5时才会触发rehash，因为go的每个bucket可以存8个键值对；</li>
-</ul>
-<h3>扩容</h3>
-<p>条件：</p>
-<ul>
-<li>负载因子大于6.5时</li>
-<li>overflow的数量大于2^15=32768</li>
-</ul>
-<p>map的扩缩容的主要区别在于hmap.B的容量大小改变，而缩容由于hmap.B压根不变，内存占用依然存在。这就导致在删除元素时，并不会释放内存，使得分配的总内存不断增加，如果不注意，内存就很容易爆了。</p>
-<h4>增量扩容</h4>
-<blockquote>
-<p>通过将bucket数组扩大一倍实现，并搬迁键值对</p>
-</blockquote>
-<ol>
-<li>oldbuckets指向现有bucket数组；</li>
-<li>创建一个两倍现有规模的bucket数组；</li>
-<li>buckets指向新的bucket数组；</li>
-<li>将oldbuckets的键值对搬迁到新的bucket数组；</li>
-<li>释放oldbuckets；</li>
-</ol>
-<figure><figcaption>map-expand</figcaption></figure>
-<h4>等量扩容</h4>
-<blockquote>
-<p>用于解决一个bucket链接很多bucket，overflow数量过高</p>
-<p>bucket数组大小不变，重新排列键值对，分散到不同的bucket数组中</p>
-<p>这样就提高了访问效率</p>
-</blockquote>
-<h3>增删改查</h3>
-<h4>查找过程</h4>
-<ul>
-<li>根据key计算hash值；</li>
-<li>取hash值低位与hmap.B取模来确定bucket的位置；</li>
-<li>取hash值高位，在tophash数组中查询；</li>
-<li>如果tophash[i]中存储的hash值与当前key的hash值相等，则获取tophash[i]的key值进行比较；</li>
-<li>当前bucket没有找到，则依次从溢出的bucket中查找；</li>
-</ul>
-<div class="hint-container tip">
-<p class="hint-container-title">提示</p>
-<p>如果当前map处于搬迁过程中，那么查找时从oldbuckets数组中查找，不再从新的buckets数组中查找</p>
-</div>
-<h4>添加过程</h4>
-<ul>
-<li>根据key计算hash值；</li>
-<li>取hash值低位与hmap.B取模来确定bucket的位置；</li>
-<li>查找该key是否存在
-<ul>
-<li>如果存在，则直接更新；</li>
-<li>如果不存在，则从该bucket中寻找空余位置并插入；</li>
-</ul>
-</li>
-</ul>
-<div class="hint-container tip">
-<p class="hint-container-title">提示</p>
-<p>如果当前map处于搬迁过程中，那么直接添加到新的buckets数组中</p>
-</div>
-<h4>删除过程</h4>
-<ul>
-<li>查找key是否存在
-<ul>
-<li>存在，则删除；</li>
-<li>不存在，则什么也不做；</li>
-</ul>
-</li>
-</ul>
-<h2>map注意事项</h2>
-<h3>map的value是struct自定义类型，无法通过索引的方式直接修改</h3>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">MapDemo1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token keyword">type</span> User <span class="token keyword">struct</span> <span class="token punctuation">{</span>
-		name <span class="token builtin">string</span>
-		age  <span class="token builtin">int</span>
-	<span class="token punctuation">}</span>
-	ma <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span>User<span class="token punctuation">)</span>
-	andes <span class="token operator">:=</span> User<span class="token punctuation">{</span>
-		name<span class="token punctuation">:</span> <span class="token string">"andes"</span><span class="token punctuation">,</span>
-		age<span class="token punctuation">:</span>  <span class="token number">18</span><span class="token punctuation">,</span>
-	<span class="token punctuation">}</span>
-	ma<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> andes
-	<span class="token comment">//ma[1].age = 19</span>
-	andes<span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token number">19</span>
-	ma<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> andes
-<span class="token punctuation">}</span>
-</code></pre></div><div class="hint-container warning">
-<p class="hint-container-title">注意</p>
-<p>12行，如果通过索引的方式直接修改，编辑器会报错：<a href="https://pkg.go.dev/golang.org/x/tools/internal/typesinternal#UnaddressableFieldAssign" target="_blank" rel="noopener noreferrer">UnaddressableFieldAssign</a>，并且官网也给了详细的说明：</p>
-<div class="language-text" data-ext="text" data-title="text"><pre class="language-text"><code>	// UnaddressableFieldAssign occurs when trying to assign to a struct field
-	// in a map value.
-	//
-	// Example:
-	//  func f() {
-	//  	m := make(map[string]struct{i int})
-	//  	m["foo"].i = 42
-	//  }
-	UnaddressableFieldAssign
-</code></pre></div></div>
-<h3>非并发读写安全的</h3>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> main
-
-<span class="token keyword">import</span> <span class="token punctuation">(</span>
-	<span class="token string">"fmt"</span>
-	<span class="token string">"time"</span>
-<span class="token punctuation">)</span>
-
-<span class="token keyword">func</span> <span class="token function">doIteration</span><span class="token punctuation">(</span>m <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token keyword">for</span> k<span class="token punctuation">,</span> v <span class="token operator">:=</span> <span class="token keyword">range</span> m <span class="token punctuation">{</span>
-		<span class="token boolean">_</span> <span class="token operator">=</span> fmt<span class="token punctuation">.</span><span class="token function">Sprintf</span><span class="token punctuation">(</span><span class="token string">"[%d, %d] "</span><span class="token punctuation">,</span> k<span class="token punctuation">,</span> v<span class="token punctuation">)</span>
-	<span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-<span class="token keyword">func</span> <span class="token function">doWrite</span><span class="token punctuation">(</span>m <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token keyword">for</span> k<span class="token punctuation">,</span> v <span class="token operator">:=</span> <span class="token keyword">range</span> m <span class="token punctuation">{</span>
-		m<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">=</span> v <span class="token operator">+</span> <span class="token number">1</span>
-	<span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	m <span class="token operator">:=</span> <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span>
-		<span class="token number">1</span><span class="token punctuation">:</span> <span class="token number">11</span><span class="token punctuation">,</span>
-		<span class="token number">2</span><span class="token punctuation">:</span> <span class="token number">12</span><span class="token punctuation">,</span>
-		<span class="token number">3</span><span class="token punctuation">:</span> <span class="token number">13</span><span class="token punctuation">,</span>
-	<span class="token punctuation">}</span>
-
-	<span class="token keyword">go</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-		<span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">1000</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>
-			<span class="token function">doIteration</span><span class="token punctuation">(</span>m<span class="token punctuation">)</span>
-		<span class="token punctuation">}</span>
-	<span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-
-	<span class="token keyword">go</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-		<span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">1000</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>
-			<span class="token function">doWrite</span><span class="token punctuation">(</span>m<span class="token punctuation">)</span>
-		<span class="token punctuation">}</span>
-	<span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-
-	time<span class="token punctuation">.</span><span class="token function">Sleep</span><span class="token punctuation">(</span><span class="token number">5</span> <span class="token operator">*</span> time<span class="token punctuation">.</span>Second<span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-</code></pre></div><p>运行报错：<code>fatal error: concurrent map iteration and map write</code></p>
-<div class="hint-container tip">
-<p class="hint-container-title">提示</p>
-<p>Go 在 map 的实现中增加了读写检查机制，一旦发现读写冲突立即触发 panic</p>
-<p>如果想使用并发的map：</p>
-<ul>
-<li>可以使用Go 1.9版本中引入支持并发写安全的<code>sync.Map</code>类型；</li>
-<li>可以使用map时增加锁；</li>
-</ul>
-</div>
-<h3>无法通过索引直接获取value的地址</h3>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> main
-
-<span class="token keyword">import</span> <span class="token string">"fmt"</span>
-
-<span class="token keyword">type</span> Num <span class="token keyword">struct</span> <span class="token punctuation">{</span>
-	id <span class="token builtin">int</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	m <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span>Num<span class="token punctuation">)</span>
-	m<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> Num<span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">}</span>
-	value <span class="token operator">:=</span> m<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>value<span class="token punctuation">)</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>m<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment">//invalid operation: cannot take address of m[0] (map index expression of type Num)</span>
-<span class="token punctuation">}</span>
-</code></pre></div><div class="hint-container tip">
-<p class="hint-container-title">提示</p>
-<p>这是由于map会扩容，map中的数据元素的value地址可能在扩容过程中发生变化，因此获取这个地址没有意义，Go语言为了防止出现该问题，在编译期间就检测是否有获取地址行为，避免出现问题。</p>
-</div>
-<h3>尽量使用cap参数初始化map</h3>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> main
-
-<span class="token keyword">import</span> <span class="token string">"testing"</span>
-
-<span class="token keyword">const</span> size <span class="token operator">=</span> <span class="token number">10000</span>
-
-<span class="token keyword">func</span> <span class="token function">BenchmarkMapInitWithoutCap</span><span class="token punctuation">(</span>b <span class="token operator">*</span>testing<span class="token punctuation">.</span>B<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token keyword">for</span> n <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> n <span class="token operator">&lt;</span> b<span class="token punctuation">.</span>N<span class="token punctuation">;</span> n<span class="token operator">++</span> <span class="token punctuation">{</span>
-		m <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">)</span>
-		<span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> size<span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>
-			m<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> i
-		<span class="token punctuation">}</span>
-	<span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token function">BenchmarkMapInitWithCap</span><span class="token punctuation">(</span>b <span class="token operator">*</span>testing<span class="token punctuation">.</span>B<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token keyword">for</span> n <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> n <span class="token operator">&lt;</span> b<span class="token punctuation">.</span>N<span class="token punctuation">;</span> n<span class="token operator">++</span> <span class="token punctuation">{</span>
-		m <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">,</span> size<span class="token punctuation">)</span>
-		<span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> size<span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>
-			m<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> i
-		<span class="token punctuation">}</span>
-	<span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre></div><p>性能基准测试结果如下：</p>
-<div class="language-text" data-ext="text" data-title="text"><pre class="language-text"><code>go test -benchmem -bench=. cap_benchmark_test.go           
-goos: darwin
-goarch: amd64
-cpu: Intel(R) Core(TM) i5-8259U CPU @ 2.30GHz
-BenchmarkMapInitWithoutCap-8        1226           1338887 ns/op          687175 B/op        276 allocs/op
-BenchmarkMapInitWithCap-8           2534            425859 ns/op          322225 B/op         11 allocs/op
-PASS
-ok      command-line-arguments  5.939s
-</code></pre></div>]]></content>
-    <category term="编程语言"/>
-    <published>2023-02-06T00:00:00.000Z</published>
   </entry>
 </feed>
