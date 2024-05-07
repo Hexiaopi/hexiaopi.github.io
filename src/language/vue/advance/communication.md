@@ -429,3 +429,105 @@ const handler = () => {
 };
 </script>
 ```
+
+### pinia
+
+> 任意组件之间通信
+
+store
+
+```vue
+import { createPinia } from 'pinia';
+
+let store = createPinia();
+
+export default store;
+```
+
+store modules
+
+```vue
+import { defineStore } from "pinia";
+import { computed, ref } from "vue";
+
+const useCountStore = defineStore('info', () => {
+    const count = ref(0)
+    const double = computed(() => {
+        return count.value * 2
+    })
+    const increment = (num: number) => {
+        count.value += num
+    }
+    return {
+        count, double, increment
+    }
+});
+
+export default useCountStore;
+```
+
+父组件
+
+```vue
+<template>
+    <div class="parent">
+        <h1>父组件</h1>
+        <p>count:{{ count }},double:{{ double }}</p>
+        <div style="display: flex;">
+            <Child1 />
+            <Child2 />
+        </div>
+    </div>
+</template>
+
+<script setup>
+import Child1 from './Child1.vue'
+import Child2 from './Child2.vue';
+import useCountStore from '@/store/modules/count';
+import { storeToRefs } from 'pinia';
+const countStore = useCountStore()
+const { count, double } = storeToRefs(countStore)
+</script>
+```
+
+子组件1
+
+```vue
+<template>
+    <div class="child">
+        <h1>子组件</h1>
+        <button @click="handler">count:{{ count }},double:{{ double }}</button>
+    </div>
+</template>
+
+<script setup lang="ts">
+import useCountStore from '@/store/modules/count';
+import { storeToRefs } from 'pinia';
+const countStore = useCountStore()
+const { count, double } = storeToRefs(countStore)
+const handler = () => {
+    countStore.increment(1)
+};
+</script>
+```
+
+子组件2
+
+```vue
+<template>
+    <div class="child">
+        <h1>子组件</h1>
+        <button @click="handler">count:{{ count }},double:{{ double }}</button>
+    </div>
+</template>
+
+<script setup lang="ts">
+import useCountStore from '@/store/modules/count';
+import { storeToRefs } from 'pinia';
+const countStore = useCountStore()
+const { count, double } = storeToRefs(countStore)
+const handler = () => {
+    countStore.increment(2)
+};
+</script>
+```
