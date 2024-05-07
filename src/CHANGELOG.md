@@ -7,6 +7,18 @@ date: 2024-05-07
 <!-- more -->
 
 
+<a name="v0.11.4"></a>
+## [v0.11.4](https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.11.3...v0.11.4) (2024-05-07)
+
+### :recycle:Code Refactoring
+
+* **database:** 调整分布式锁
+
+### :sparkles:Features
+
+* **database:** 增加基于Redis实现消息到期提醒
+
+
 <a name="v0.11.3"></a>
 ## [v0.11.3](https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.11.2...v0.11.3) (2024-05-07)
 
