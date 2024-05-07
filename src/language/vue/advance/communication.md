@@ -430,7 +430,7 @@ const handler = () => {
 </script>
 ```
 
-### pinia
+### 状态管理-pinia
 
 > 任意组件之间通信
 
@@ -529,5 +529,58 @@ const { count, double } = storeToRefs(countStore)
 const handler = () => {
     countStore.increment(2)
 };
+</script>
+```
+
+### 插槽-slot
+
+> 实现父与子之间通信，不仅仅是数据，还可以包含页面结构
+
+父组件
+
+```vue
+<template>
+    <div class="parent">
+        <h1>父组件</h1>
+        <Child>
+            <!-- 默认插槽 -->
+            <h3>父组件定义的内容</h3>
+            <!-- 具名插槽 -->
+            <template v-slot:header>
+                <h2>header</h2>
+            </template>
+            <!-- 作用域插槽 -->
+            <template v-slot:footer="{ data }">
+                <li v-for="item in data">{{ item }}</li>
+            </template>
+        </Child>
+    </div>
+</template>
+
+<script setup>
+import Child from './Child.vue'
+</script>
+```
+
+子组件
+
+```vue
+<template>
+    <div class="child">
+        <h1>子组件</h1>
+        <h1>默认插槽</h1>
+        <slot></slot>
+        <h1>==========</h1>
+        <h1>具名插槽</h1>
+        <slot name="header"></slot>
+        <h1>==========</h1>
+        <h1>作用域插槽</h1>
+        <slot name="footer" :data="['a', 'b', 'c']"></slot>
+        <h1>==========</h1>
+    </div>
+</template>
+
+<script setup lang="ts">
+
 </script>
 ```
