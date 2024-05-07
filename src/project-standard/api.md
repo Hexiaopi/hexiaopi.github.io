@@ -1,6 +1,6 @@
 ---
 title: 接口规范
-icon: /assets/icon/api.svg
+icon: plug
 date: 2020-01-24
 tag:
  - 规范

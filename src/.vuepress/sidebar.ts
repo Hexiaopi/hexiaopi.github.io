@@ -95,6 +95,14 @@ export default sidebar({
           link: "mysql/README.md",
           children: "structure",
         },
+        {
+          text: "Redis",
+          collapsible: true,
+          icon: "/assets/icon/redis.svg",
+          prefix: "redis/",
+          link: "redis/README.md",
+          children: "structure",
+        },
       ],
     },
     {

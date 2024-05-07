@@ -1,12 +1,14 @@
 ---
 title: 基于Redis的分布式锁
+icon: lock
 date: 2022-11-12
 tag:
  - Go
  - Lua
  - Redis
 category:
- - 系统设计
+ - 数据库
+star: true
 ---
 
 <!-- more -->
