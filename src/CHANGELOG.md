@@ -1,10 +1,24 @@
 ---
 title: 变更日志
 icon: clock
-date: 2024-05-06
+date: 2024-05-07
 ---
 
 <!-- more -->
+
+
+<a name="v0.11.3"></a>
+## [v0.11.3](https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.11.2...v0.11.3) (2024-05-07)
+
+### :bug:Bug Fixes
+
+* **design-pattern:** 修改icon
+* **language:** vue组件通信增加slot
+* **language:** vue组件通信增加pinia
+* **language:** vue组件通信增加provide和inject
+* **language:** vue组件通信增加ref和$parent
+* **language:** vue组件通信增加useAttrs
+* **language:** vue组件通信增加v-model
 
 
 <a name="v0.11.2"></a>
