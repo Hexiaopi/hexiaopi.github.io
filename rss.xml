@@ -6,10 +6,11 @@
     <link>http://blog.cjhe.top/</link>
     <description>何小进童鞋的个人博客</description>
     <language>zh-CN</language>
-    <pubDate>Tue, 07 May 2024 03:21:38 GMT</pubDate>
-    <lastBuildDate>Tue, 07 May 2024 03:21:38 GMT</lastBuildDate>
+    <pubDate>Tue, 07 May 2024 09:50:24 GMT</pubDate>
+    <lastBuildDate>Tue, 07 May 2024 09:50:24 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+    <category>数据库</category>
     <category>算法</category>
     <category>设计模式</category>
     <category>中间件</category>
@@ -18,9 +19,112 @@
     <category>devops</category>
     <category>编程语言</category>
     <category>网络</category>
-    <category>数据库</category>
     <category>项目规范</category>
-    <category>系统设计</category>
+    <item>
+      <title>基于Redis实现消息到期提醒</title>
+      <link>http://blog.cjhe.top/database/redis/deadline-message.html</link>
+      <guid>http://blog.cjhe.top/database/redis/deadline-message.html</guid>
+      <source url="http://blog.cjhe.top/rss.xml">基于Redis实现消息到期提醒</source>
+      <description>业务上需求，希望实现一个消息到期提醒的功能，比如：提前两个小时发送预警信息、到期发送超期信息等。 实现该功能有很多技术方案，本文探讨：如何通过Redis实现消息到期提醒</description>
+      <category>数据库</category>
+      <pubDate>Tue, 07 May 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<blockquote>
+<p>业务上需求，希望实现一个消息到期提醒的功能，比如：提前两个小时发送预警信息、到期发送超期信息等。</p>
+<p>实现该功能有很多技术方案，本文探讨：如何通过Redis实现消息到期提醒</p>
+</blockquote>
+<!-- more -->
+<h2>背景知识</h2>
+<p>Redis键空间通知（Keyspace Notifications）是Redis 2.8.0版本引入的一种消息通知机制，用于订阅和发布Redis键空间事件。</p>
+<p>本质上：Redis键空间通知通过发布/订阅（pub/sub）模式实现，当某些事件发生时，Redis会自动发布消息，如果有客户端订阅了这些消息，就会收到该消息。</p>
+<p>键空间通知会发送两种不同类型的事件消息：</p>
+<ul>
+<li>keyspace：键空间通知，当键空间中的键被创建、删除、过期、修改等操作时触发。</li>
+<li>keyevent：键事件通知，当键空间中的键被创建、删除、过期、修改等操作时触发。</li>
+</ul>
+<p>例如：对数据库<code>0</code>中名为<code>mykey</code>的键上执行删除操作，将触发两条消息通知，等同于：</p>
+<div class="language-text" data-ext="text" data-title="text"><pre class="language-text"><code>PUBLISH __keyspace@0__:mykey del
+PUBLISH __keyevent@0__:del "mykey"
+</code></pre></div><p>格式为：<code>__{keyspace|keyevent}@{db}__:{KeyPattern|OpsType}</code>, 其中：</p>
+<ul>
+<li><code>__keyspace@{db}__:{KeyPattern}</code>：键空间通知前缀，表示该消息是键空间通知消息。</li>
+<li><code>__keyevent@{db}__:{OpsType}</code>：键事件通知前缀，表示该消息是键事件通知消息。</li>
+<li><code>{db}</code>：数据库编号，表示该消息是哪个数据库的消息。</li>
+<li><code>{KeyPattern}</code>：键模式，支持通配符*。</li>
+<li><code>{OpsType}</code>:表示操作类型，比如：expired</li>
+</ul>
+<div class="hint-container warning">
+<p class="hint-container-title">注意</p>
+<p>由于本质上基于消息订阅，因此，当有客户端未订阅该消息或者断开连接期间，消息会丢失。</p>
+</div>
+<h2>配置修改</h2>
+<blockquote>
+<p>对于键空间通知，需要修改Redis配置文件，启用键空间通知功能。</p>
+</blockquote>
+<div class="language-text" data-ext="text" data-title="text"><pre class="language-text"><code>notify-keyspace-events Kx
+</code></pre></div><p>配置含义：</p>
+<ul>
+<li>K：表示键空间通知，以<code>__keyspace@&lt;db&gt;__</code>前缀发布消息。</li>
+<li>E：表示键事件通知，以<code>__keyevent@&lt;db&gt;__</code>前缀发布消息。</li>
+<li>g：DEL、EXPIRE、RENAME等类型的事件发生时发布消息。</li>
+<li>$：字符串类型键值对发生变化时发布消息。</li>
+<li>l：列表类型键值对发生变化时发布消息。</li>
+<li>s：集合类型键值对发生变化时发布消息。</li>
+<li>h：哈希类型键值对发生变化时发布消息。</li>
+<li>z：有序集合类型键值对发生变化时发布消息。</li>
+<li>t: 流类型键值对发送变化时发布消息。</li>
+<li>x：过期事件：每当有过期键被删除时发送。</li>
+<li>e: 驱逐事件：每当有键因为maxmemory政策而被删除时发送。</li>
+<li>m: 未命中事件，每当有键没有命中时发送。</li>
+<li>A：等价于：g$lshztxed，相当于是all。</li>
+</ul>
+<p>例如：<code>Kx</code>表示当键过期时触发键空间事件通知。</p>
+<div class="language-text" data-ext="text" data-title="text"><pre class="language-text"><code>127.0.0.1:6379&gt; config get notify-keyspace-events
+1) "notify-keyspace-events"
+2) ""
+127.0.0.1:6379&gt; config set notify-keyspace-events Kx
+OK
+127.0.0.1:6379&gt; config get notify-keyspace-events
+1) "notify-keyspace-events"
+2) "xK"
+127.0.0.1:6379&gt;
+</code></pre></div><h2>测试</h2>
+<p>开启第一个cli，订阅db0的keyspace消息：</p>
+<div class="language-text" data-ext="text" data-title="text"><pre class="language-text"><code>127.0.0.1:6379&gt; psubscribe __keyspace@0__:myid#*
+Reading messages... (press Ctrl-C to quit)
+1) "psubscribe"
+2) "__keyspace@0__:myid#*"
+3) (integer) 1
+</code></pre></div><p>开启第二个cli，触发键过期事件</p>
+<div class="language-text" data-ext="text" data-title="text"><pre class="language-text"><code>127.0.0.1:6379&gt; setex myid#123 10 xxx
+OK
+127.0.0.1:6379&gt;
+</code></pre></div><p>再看第一个cli，10秒之后就收到消息：</p>
+<div class="language-text" data-ext="text" data-title="text"><pre class="language-text"><code>127.0.0.1:6379&gt; psubscribe __keyspace@0__:myid#*
+Reading messages... (press Ctrl-C to quit)
+1) "psubscribe"
+2) "__keyspace@0__:myid#*"
+3) (integer) 1
+1) "pmessage"
+2) "__keyspace@0__:myid#*"
+3) "__keyspace@0__:myid#123"
+4) "expired"
+</code></pre></div><h2>参考文献</h2>
+<ul>
+<li><a href="https://redis.io/docs/latest/develop/use/keyspace-notifications/" target="_blank" rel="noopener noreferrer">官方文档</a></li>
+<li><a href="https://blog.csdn.net/zhizhengguan/article/details/90575438" target="_blank" rel="noopener noreferrer">golang：redis订阅键空间过期消息</a></li>
+</ul>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Redis</title>
+      <link>http://blog.cjhe.top/database/redis/</link>
+      <guid>http://blog.cjhe.top/database/redis/</guid>
+      <source url="http://blog.cjhe.top/rss.xml">Redis</source>
+      <category>数据库</category>
+      <pubDate>Tue, 07 May 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<!-- more -->
+]]></content:encoded>
+    </item>
     <item>
       <title>算法推荐</title>
       <link>http://blog.cjhe.top/algorithm/recommend.html</link>
@@ -2326,19 +2430,12 @@ flag参数使用语法
       <link>http://blog.cjhe.top/database/</link>
       <guid>http://blog.cjhe.top/database/</guid>
       <source url="http://blog.cjhe.top/rss.xml">数据库</source>
-      <description>记录学习数据库的过程 计划： MySQL MongoDB Redis Prometheus</description>
+      <description>记录学习数据库的过程</description>
       <category>数据库</category>
       <pubDate>Thu, 24 Aug 2023 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p>记录学习数据库的过程</p>
 </blockquote>
-<p>计划：</p>
-<ul class="task-list-container">
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" id="task-item-0" checked="checked" disabled="disabled"><label class="task-list-item-label" for="task-item-0"> MySQL</label></li>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" id="task-item-1" disabled="disabled"><label class="task-list-item-label" for="task-item-1"> MongoDB</label></li>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" id="task-item-2" disabled="disabled"><label class="task-list-item-label" for="task-item-2"> Redis</label></li>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" id="task-item-3" disabled="disabled"><label class="task-list-item-label" for="task-item-3"> Prometheus</label></li>
-</ul>
 ]]></content:encoded>
     </item>
     <item>
@@ -3013,17 +3110,33 @@ Cgo 不是 Go。</p>
       <link>http://blog.cjhe.top/CHANGELOG.html</link>
       <guid>http://blog.cjhe.top/CHANGELOG.html</guid>
       <source url="http://blog.cjhe.top/rss.xml">变更日志</source>
-      <description>v0.11.3 (2024-05-07)
+      <description>v0.11.4 (2024-05-07)
+♻️Code Refactoring
+
+database: 调整分布式锁
+
+✨Features
+
+database: 增加基于Redis实现消息到期提醒
+
+
+v0.11.3 (2024-05-07)
 🐛Bug Fixes
 
 design-pattern: 修改icon
-language: vue组件通信增加slot
-language: vue组件通信增加pinia
-language: vue组件通信增加provide和inject
-language: vue组件通信增加ref和$parent
-langua...</description>
+language: vue组件通信增加s...</description>
       <pubDate>Tue, 07 May 2024 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[<!-- more -->
+<p><a name="v0.11.4"></a></p>
+<h2><a class="header-anchor" href="#v0-11-4-2024-05-07"><span></span></a><a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.11.3...v0.11.4" target="_blank" rel="noopener noreferrer">v0.11.4</a> (2024-05-07)</h2>
+<h3>♻️Code Refactoring</h3>
+<ul>
+<li><strong>database:</strong> 调整分布式锁</li>
+</ul>
+<h3>✨Features</h3>
+<ul>
+<li><strong>database:</strong> 增加基于Redis实现消息到期提醒</li>
+</ul>
 <p><a name="v0.11.3"></a></p>
 <h2><a class="header-anchor" href="#v0-11-3-2024-05-07"><span></span></a><a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.11.2...v0.11.3" target="_blank" rel="noopener noreferrer">v0.11.3</a> (2024-05-07)</h2>
 <h3>🐛Bug Fixes</h3>
@@ -4855,9 +4968,352 @@ Nivi：除了把时间租出去之外，还有其他无助于致富的事情吗?
       <enclosure url="https://user-images.githubusercontent.com/2707039/163703960-6f321de5-4daa-4ea5-95b9-af9c96f1c1bc.jpg" type="image/jpeg"/>
     </item>
     <item>
+      <title>vscode leetcode插件</title>
+      <link>http://blog.cjhe.top/tools/vscode-leetcode.html</link>
+      <guid>http://blog.cjhe.top/tools/vscode-leetcode.html</guid>
+      <source url="http://blog.cjhe.top/rss.xml">vscode leetcode插件</source>
+      <description>提示 vscode这款插件太香了，终于可以沉浸式刷leetcode😄</description>
+      <category>工具</category>
+      <pubDate>Wed, 10 Aug 2022 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<div class="hint-container tip">
+<p class="hint-container-title">提示</p>
+<p>vscode这款插件太香了，终于可以沉浸式刷leetcode😄</p>
+</div>
+<!-- more -->
+<h2>环境搭建</h2>
+<h3>安装</h3>
+<p>在vscode扩展商店搜索<code>LeetCode</code>,一般是下载量最高的那个就完事了
+</p>
+<h3>登陆</h3>
+<p>在登陆之前，记得要选择中国版，否则会遇见登陆不上问题
+
+接下来选择账号登录，需要提前在LeetCode官网注册账号
+
+这里我选择账户方式，按照提示填写邮箱、密码即可登录</p>
+<h3>预览</h3>
+<figure><figcaption>leetcode-preview</figcaption></figure>
+<blockquote>
+<p>在左侧，该插件按照五个分类将题目进行了分类，比如：按照难易程度(简单、中等、难)、按照标签(数据、二叉搜索等)、按照公司(Google、Facebook等)</p>
+<p>且题目根据难易程度有不同的颜色进行区分，如果已经完成相关的练习，还会用✔️提示</p>
+</blockquote>
+<h3>个性化配置</h3>
+<div class="language-json" data-ext="json" data-title="json"><pre class="language-json"><code><span class="token punctuation">{</span>
+  <span class="token property">"leetcode.endpoint"</span><span class="token operator">:</span> <span class="token string">"leetcode-cn"</span><span class="token punctuation">,</span>
+  <span class="token property">"leetcode.workspaceFolder"</span><span class="token operator">:</span> <span class="token string">"/Users/hechangjie/code/hexiaopi/leetcode-go"</span><span class="token punctuation">,</span>
+  <span class="token property">"leetcode.defaultLanguage"</span><span class="token operator">:</span> <span class="token string">"golang"</span><span class="token punctuation">,</span>
+  <span class="token property">"leetcode.hint.configWebviewMarkdown"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token property">"leetcode.hint.commentDescription"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token property">"leetcode.hint.commandShortcut"</span><span class="token operator">:</span> <span class="token boolean">false</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2>沉浸式刷题</h2>
+<h3>预览题目内容</h3>
+<p>
+点击Code Now，选择一种编程语言就可以开始了</p>
+<h3>编写代码</h3>
+<figure><figcaption>leetcode-code</figcaption></figure>
+<h3>测试代码</h3>
+<p>点击代码下方的<code>Test</code>标签即可进行测试代码（再也不用编写大量的单元测试用例了）
+</p>
+<h3>提交代码</h3>
+<p>点击代码下方的<code>Submit</code>标签即可提交代码，完成之后就会看到提交后的代码性能等信息了
+</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>存储引擎</title>
+      <link>http://blog.cjhe.top/database/mysql/engine.html</link>
+      <guid>http://blog.cjhe.top/database/mysql/engine.html</guid>
+      <source url="http://blog.cjhe.top/rss.xml">存储引擎</source>
+      <description>MySQL是常用的关系型数据库
+
+MySQL架构
+MySQL架构MySQL架构
+存储引擎
+
+存储引擎是MySQL区别于其他数据库的一个重要特性，MySQL有诸多存储引擎，且存储引擎是基于表的，而不是数据(同一个数据库下面的各个表可以使用不同的引擎)
+存储引擎是底层物理结构的实现，每个存储引擎开发者可以按照自己的意愿开发，具有各自的特点
+对于MySQL使...</description>
+      <category>数据库</category>
+      <pubDate>Sat, 22 Oct 2022 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<!-- more -->
+<blockquote>
+<p>MySQL是常用的关系型数据库</p>
+</blockquote>
+<h2>MySQL架构</h2>
+<figure><figcaption>MySQL架构</figcaption></figure>
+<h2>存储引擎</h2>
+<ul>
+<li>存储引擎是MySQL区别于其他数据库的一个重要特性，MySQL有诸多存储引擎，且<strong>存储引擎是基于表的，而不是数据</strong>(同一个数据库下面的各个表可以使用不同的引擎)</li>
+<li>存储引擎是底层物理结构的实现，每个存储引擎开发者可以按照自己的意愿开发，具有各自的特点</li>
+<li>对于MySQL使用者来说，存储引擎对其实透明的</li>
+</ul>
+<h3>Innodb引擎</h3>
+<blockquote>
+<p>是一个支持ACID事务，行锁设计，支持MVCC功能，实现了SQL标准的4种隔离级别</p>
+</blockquote>
+<h4>特点</h4>
+<ul>
+<li>使用Table Space的方式仅限数据存储</li>
+<li>支持事务、外键约束等数据库特性</li>
+<li>Rows Level Lock，读写性能都非常优秀</li>
+<li>拥有独立的缓冲池，能够缓存数据和索引</li>
+<li>通过多版本控制，支持高并发业务</li>
+</ul>
+<h4>注意事项</h4>
+<ul>
+<li>主键尽可能小，否则二级索引会膨胀</li>
+<li>避免全表扫描，导致锁升级</li>
+<li>尽可能缓存所有的索引和数据，减少IO操作</li>
+<li>避免主键更新，造成大量的数据移动</li>
+</ul>
+<h3>MyISAM存储引擎</h3>
+<blockquote>
+<p>MySQL 5.5之前默认是MyISAM存储引擎，之后默认都改为InnoDB</p>
+</blockquote>
+<h4>特点</h4>
+<ul>
+<li>数据存储方式简单，使用B-Tree进行索引，<strong>索引叶子节点存放数据的指针</strong></li>
+<li><strong>不支持一些数据库特性，比如事务、外键约束等</strong></li>
+<li><strong>Table Level Lock(表级别锁)</strong>，性能稍差，更适合读多的操作</li>
+<li>使用三个文件定义一个表：
+<ul>
+<li><code>.MYi</code>：存储索引</li>
+<li><code>.MYD</code>：存储数据</li>
+<li><code>.frm</code>：存储表定义</li>
+</ul>
+</li>
+<li>少碎片、支持大文件、能够进行索引压缩</li>
+<li>二进制层次的文件可以移植（Linux-&gt;Windows）</li>
+<li>访问速度快，适合只读查询场景</li>
+</ul>
+<h4>注意事项</h4>
+<ul>
+<li>设置合适索引</li>
+<li>启用延迟写入，尽量一次大批量写入，而非频繁写入</li>
+<li>降低并发数，高并发使用排队机制</li>
+<li>由于存储了Count字段，因此Count操作比较高效，但仅限不带条件</li>
+</ul>
+<h2>引擎对比</h2>
+<p>| 存储引擎  |                             特点                              |       应用场景       |
+| :</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>索引</title>
+      <link>http://blog.cjhe.top/database/mysql/idx.html</link>
+      <guid>http://blog.cjhe.top/database/mysql/idx.html</guid>
+      <source url="http://blog.cjhe.top/rss.xml">索引</source>
+      <description>索引是一种数据结构，帮助SQL高效获取数据的。类似一本书的目录，可以快速对特定值进行定位和查找，从而大大加快数据查询的效率。</description>
+      <category>数据库</category>
+      <pubDate>Wed, 15 Mar 2023 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<p>索引是一种数据结构，帮助SQL高效获取数据的。类似一本书的目录，可以快速对特定值进行定位和查找，从而大大加快数据查询的效率。</p>
+<!-- more -->
+<h2>索引优缺点</h2>
+<h3>索引优点</h3>
+<ul>
+<li>索引可以大大减少需要扫描的数据量</li>
+<li>索引可以避免排序和临时表，索引已经有序</li>
+<li>索引可以尽量将随机IO变成顺序IO，例如：聚簇索引包含数据，且索引是有序的，就可以快速获得批量数据，但如果回表，通过主键查询数据，则又变成随机IO</li>
+<li>索引对于InnoDB（支持行级锁）非常重要，InnoDB对需要访问的元组加锁，而索引能够减少InnoDB访问的元组数，如果查询不能使用索引，MySQL会进行全表扫描，导致锁住全表。</li>
+</ul>
+<h3>索引缺点</h3>
+<ul>
+<li>降低了更新表的数据，因为不仅要更新原始数据，还要更新索引</li>
+<li>索引占用磁盘空间</li>
+<li>数据列如果包含了许多重复的内容，例如性别为：男、女，索引选择可能只筛选一半的数据量，效果不是很好</li>
+<li>对于数据量非常小的表，索引意义不大，有时全表扫描更高效</li>
+</ul>
+<p>MySQL单张表最多只支持16个索引</p>
+<h2>索引类型</h2>
+<h3>按功能逻辑划分</h3>
+<h4>普通索引</h4>
+<p>普通索引仅仅加快对数据的访问速度，常用于查询条件（where field_name=value）或排序条件（order by field_name）这些场景中。</p>
+<h4>唯一索引</h4>
+<p>唯一索引相比较普通索引，要求索引列的值必须唯一，但允许有空值。</p>
+<h4>主键索引</h4>
+<p>主键索引是一种特殊的索引，不允许有空值，一张表只能有一个主键，一般在建表的时候通过primary key(field_name)指定</p>
+<h4>全文索引</h4>
+<p>mysql Like '%xxx'就会导致索引失效，为了模糊搜索需求，例如：like '%hello%'，就需要全文索引支持。InnoDB在5.6版本之后支持全文索引。</p>
+<h3>按物理逻辑划分</h3>
+<h4>聚簇索引</h4>
+<p>聚簇索引的叶子节点直接存储数据，因此查询的时候只需要进行一次查询</p>
+<h4>非聚簇索引</h4>
+<p>非聚簇索引的叶子节点存储数据的主键，因此查询的时候需要进行两次查询：先查询聚簇索引获取到主键，再通过主键查询数据。</p>
+<h3>按字段个数划分</h3>
+<h4>单一索引</h4>
+<p>索引只使用一个字段</p>
+<h4>联合索引</h4>
+<p>索引使用多个字段
+例如：</p>
+<div class="language-sql" data-ext="sql" data-title="sql"><pre class="language-sql"><code>alert <span class="token keyword">table</span> <span class="token keyword">user</span> <span class="token keyword">add</span> <span class="token keyword">index</span> index_name_city_age<span class="token punctuation">(</span>name<span class="token punctuation">,</span>city<span class="token punctuation">,</span>age<span class="token punctuation">)</span>
+</code></pre></div><p>MySQL联合索引遵从：最左匹配原则</p>
+<p>上面索引相当于建立下面三组索引：</p>
+<ul>
+<li>name,city,age</li>
+<li>name,city</li>
+<li>name</li>
+</ul>
+<p>因此：</p>
+<ul>
+<li>如果查询条件是：(city)、(city,age)、(age)都不会命中索引</li>
+<li>如果查询条件是：(name,age)，则会命中name索引</li>
+</ul>
+<p>理论上最左匹配原则中索引对 where 中子句的顺序也是敏感的，但是由于MySQL的查询优化器会自动调整 where 子句的条件顺序以使用适合的索引，所以实际上 where 子句顺序不影响索引的效果。</p>
+<p>如果联合索引有范围查询，就会停止匹配</p>
+<p>如果分别在 x, y, z 上建立单列索引，让该表有3个单列索引，索引效率也会大不一样，在联合索引生效的情况下，单个索引的效率远远低于联合索引。这是由 MySQL 查询优化器的执行顺序决定的，在执行一条查询 sql 时，针对索引的选择大致有如下步骤：</p>
+<p>MySQL 优化器根据搜索条件，找出所有可能使用的索引
+计算全表扫描的代价
+计算使用不同索引执行查询的代价
+对比各种执行方案的代价，找出成本最低的那一个
+因此，虽然有多个单列索引，但 MySQL 只能用到其中的那个系统认为似乎是最有效率的，其他的就会失效。</p>
+<h2>总结</h2>
+<h3>索引推荐使用情况</h3>
+<ul>
+<li>WHERE, GROUP BY, ORDER BY 子句中的字段</li>
+<li>多个单列索引在多条件查询是只会有一个最优的索引生效，因此多条件查询中最好创建联合索引。</li>
+<li>联合索引的时候必须满足最左匹配原则，并且最好考虑到 sql 语句的执行顺序，比如 WHERE a = 1 GROUP BY b ORDER BY c, 那么联合索引应该设计为 (a,b,c)，因为mysql 查询语句的执行顺序 WHERE &gt; GROUP BY &gt; ORDER BY。<a href="/database/mysql/sql-order.html" target="_blank">参见</a></li>
+<li>多张表 JOIN 的时候，对表连接字段创建索引。</li>
+<li>当 SELECT 中有不在索引中的字段时，会先通过索引查询出满足条件的主键值，然后通过主键回表查询出所有的 SELECT 中的字段，影响查询效率。因此如果 SELECT 中的内容很少，为了避免回表，可以把 SELECT 中的字段都加到联合索引中，这也就是宽索引的概念。但是需要注意，如果索引字段过多，存储和维护索引的成本也会增加。</li>
+</ul>
+<h3>不推荐使用或索引失效情况</h3>
+<ul>
+<li>数据量很小的表</li>
+<li>有大量重复数据的字段</li>
+<li>频繁更新的字段</li>
+<li>如果对索引字段使用了函数或者表达式计算，索引失效</li>
+<li>字段类型不一致也会失效，因为等价使用函数</li>
+<li>innodb OR 条件没有对所有条件创建索引，索引失效</li>
+<li>大于小于条件 &lt; &gt;，索引是否生效取决于命中的数量比例，如果命中数量很多，索引生效，命中数量很小，索引失效</li>
+<li>不等于条件 !=、&lt;&gt;，索引失效</li>
+<li>LIKE 值以 % 开头，索引失效</li>
+</ul>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>SQL查询顺序</title>
+      <link>http://blog.cjhe.top/database/mysql/sql-order.html</link>
+      <guid>http://blog.cjhe.top/database/mysql/sql-order.html</guid>
+      <source url="http://blog.cjhe.top/rss.xml">SQL查询顺序</source>
+      <description>sql-queriessql-queries</description>
+      <category>数据库</category>
+      <pubDate>Thu, 09 Mar 2023 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<figure><img src="https://jvns.ca/images/sql-queries.jpeg" alt="sql-queries" tabindex="0" loading="lazy"><figcaption>sql-queries</figcaption></figure>
+<!-- more -->
+<p>这张图与 SQL 查询的语义有关，让你知道一个查询会返回什么，并回答了以下这些问题：</p>
+<ul>
+<li>
+<p>可以在 GROUP BY 之后使用 WHERE 吗？（不行，WHERE 是在 GROUP BY 之前！）</p>
+</li>
+<li>
+<p>可以对窗口函数返回的结果进行过滤吗？（不行，窗口函数是 SELECT 语句里，而 SELECT 是在 WHERE 和 GROUP BY 之后）</p>
+</li>
+<li>
+<p>可以基于 GROUP BY 里的东西进行 ORDER BY 吗？（可以，ORDER BY 基本上是在最后执行的，所以可以基于任何东西进行 ORDER BY）</p>
+</li>
+<li>
+<p>LIMIT 是在什么时候执行？（在最后！）</p>
+</li>
+</ul>
+<p>但数据库引擎并不一定严格按照这个顺序执行 SQL 查询，因为为了更快地执行查询，它们会做出一些优化。</p>
+<p>所以：</p>
+<p>如果你想要知道一个查询语句是否合法，或者想要知道一个查询语句会返回什么，可以参考这张图；</p>
+<p>需要注意的是，在实际实现中，MySQL会根据具体的查询条件和数据量进行一定的优化和调整。在涉及查询性能或者与索引有关的东西时，这张图就不适用了。</p>
+<h2>详细查询顺序</h2>
+<p>1.FROM子句
+MySQL首先处理FROM子句，该步骤主要是确定需要查询的数据表，并建立数据表之间的连接关系。</p>
+<p>2.WHERE子句
+根据WHERE子句指定的查询条件，MySQL会进行筛选并过滤出符合条件的数据。</p>
+<p>3.GROUP BY子句
+如果查询需要对数据分组，则MySQL会按照GROUP BY子句中指定的分组条件对数据进行分组，然后对每个组进行汇总计算。</p>
+<p>4.HAVING子句
+HAVING子句用于过滤分组后的数据，和WHERE子句类似。只有满足HAVING子句指定的条件的组才会出现在结果集中。</p>
+<p>5.SELECT子句
+SELECT子句是MySQL查询语句最主要的部分，它用于指定需要查询的数据集合以及计算这个数据集合中的一些列值。</p>
+<p>6.DISTINCT
+如果使用了DISTINCT关键字，则MySQL会过滤掉查询结果中的重复记录。</p>
+<p>7.ORDER BY
+ORDER BY子句用于对查询结果进行排序。MySQL会按照指定的列或表达式的结果对查询结果进行排序，可以指定升序或降序。</p>
+<p>8.LIMIT
+LIMIT关键字用于限制查询结果的数量。MySQL只返回前N条符合条件的记录，其中N由LIMIT语句后面的数字指定。</p>
+<h2>参考文献</h2>
+<p><a href="https://jvns.ca/blog/2019/10/03/sql-queries-don-t-start-with-select/" target="_blank" rel="noopener noreferrer">SQL查询不是以select开始</a></p>
+]]></content:encoded>
+      <enclosure url="https://jvns.ca/images/sql-queries.jpeg" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>事务</title>
+      <link>http://blog.cjhe.top/database/mysql/transaction.html</link>
+      <guid>http://blog.cjhe.top/database/mysql/transaction.html</guid>
+      <source url="http://blog.cjhe.top/rss.xml">事务</source>
+      <description>事务的特性
+
+原子性(Atomicity): 事务中的所有操作要么全部完成，要么全部不完成（回滚），不会在事务中间遇到错误而中断。
+一致性(Consistency): 事务开始和结束时，数据都必须保持一致状态，即符合约束、完整性、默认值以及其它定义的规则。事务执行的结果不能破坏数据库的完整性和一致性。
+隔离性(Isolation): 各个事务互相隔离，...</description>
+      <category>数据库</category>
+      <pubDate>Sun, 23 Oct 2022 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<!-- more -->
+<h2>事务的特性</h2>
+<ul>
+<li>原子性(Atomicity): 事务中的所有操作要么全部完成，要么全部不完成（回滚），不会在事务中间遇到错误而中断。</li>
+<li>一致性(Consistency): 事务开始和结束时，数据都必须保持一致状态，即符合约束、完整性、默认值以及其它定义的规则。事务执行的结果不能破坏数据库的完整性和一致性。</li>
+<li>隔离性(Isolation): 各个事务互相隔离，每个事务的执行都不会影响其它事务的执行或者结果。</li>
+<li>持久性(Durability): 一个事务一旦提交成功，它对数据库中的数据的改变就是永久性的，即使发生数据库故障也不应该对其产生影响。</li>
+</ul>
+<h2>事务的实现</h2>
+<ul>
+<li>Undo log：实现事务的原子性；</li>
+<li>Redo log：实现事务的持久性；</li>
+<li>锁/MVCC：实现事务的隔离性；锁机制来保证事务在执行时互相隔离，防止事务间相互干扰，即写-写问题。MVCC 机制是通过保存历史版本的方式来实现，事务可以读取数据在事务开始时的版本，而不受到事务期间其他事务所做的改变的影响，即写-读问题。</li>
+<li>以上三者保证了事务的一致性；</li>
+</ul>
+<h2>并发事务带来的问题</h2>
+<p>当数据库上有多个事务同时执行的时候，就可能出现<strong>脏读(dirty read)</strong>、<strong>不可重复读(non-repeatable read)</strong>、<strong>幻读(phantom read)</strong>，为了解决这些问题，就有了隔离级别的概念</p>
+<h3>脏读问题</h3>
+<blockquote>
+<p>脏读是指：一个事务中访问到了另外一个事务未提交的数据</p>
+</blockquote>
+<figure><figcaption>dirty-read</figcaption></figure>
+<h3>不可重复读问题</h3>
+<blockquote>
+<p>不可重复读是指：一个事务多次读取同一行数据，但是在多次读取中数据发生了改变。</p>
+</blockquote>
+<figure><figcaption>non-repeatable-read</figcaption></figure>
+<h3>幻读问题</h3>
+<blockquote>
+<p>幻读是指：一个事务多次执行同一条 SQL 语句，但结果集却不同，导致无法支撑后续的业务操作</p>
+</blockquote>
+<figure><figcaption>phantom-read</figcaption></figure>
+<h2>事务的隔离级别</h2>
+<p>针对上面三种问题，分别有四种隔离级别：</p>
+<h3>未提交读(read uncommitted，RU)</h3>
+<blockquote>
+<p>未提交读，是指一个事务还未提交时，它做的变更就能被别的事务看到。即<strong>没有提交却可以读</strong></p>
+</blockquote>
+<h3>提交读(read committed，RC)</h3>
+<blockquote>
+<p>提交读，是指一个事务提交之后，它做的变更才会被其他事务看到。即<strong>提交才可以读</strong></p>
+</blockquote>
+<p>👀 <strong>大多数数据库系统的默认隔离级别</strong></p>
+<h3>可重复读(repeatable read，RR)</h3>
+<blockquote>
+<p>可重复度，是指同一个事务执行过程看到的数据，总是跟这个事务在启动时看到的数据是一致的。即同一个事务多次请求读取数据，会看到同样的数据行。</p>
+</blockquote>
+<p>👀 <strong>MySQL的默认隔离级别</strong></p>
+<h3>串行化(serializable，S)</h3>
+<blockquote>
+<p>是最高的隔离级别，它通过强制事务排序，使之不可能相互冲突。</p>
+<p>这个级别可能导致大量的超时现象和锁竞争。</p>
+</blockquote>
+<p>以上四种隔离级别解决问题如下：</p>
+<p>| 隔离级别\解决问题 |        脏读        |     不可重复读     |        幻读        |                     实现原理                     |
+| :</p>
+]]></content:encoded>
+    </item>
+    <item>
       <title>基于Redis的分布式锁</title>
-      <link>http://blog.cjhe.top/system-design/distribute-lock.html</link>
-      <guid>http://blog.cjhe.top/system-design/distribute-lock.html</guid>
+      <link>http://blog.cjhe.top/database/redis/distribute-lock.html</link>
+      <guid>http://blog.cjhe.top/database/redis/distribute-lock.html</guid>
       <source url="http://blog.cjhe.top/rss.xml">基于Redis的分布式锁</source>
       <description>分布式锁
 
@@ -4868,7 +5324,7 @@ Nivi：除了把时间租出去之外，还有其他无助于致富的事情吗?
 
 互斥性：任意时刻，只有一个客户端能持有锁；
 锁超时释放：持有锁超时，可以释放，防止不必要的...</description>
-      <category>系统设计</category>
+      <category>数据库</category>
       <pubDate>Sat, 12 Nov 2022 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[<!-- more -->
 <h2>分布式锁</h2>
@@ -5225,349 +5681,6 @@ Nivi：除了把时间租出去之外，还有其他无助于致富的事情吗?
 	<span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre></div>]]></content:encoded>
-    </item>
-    <item>
-      <title>vscode leetcode插件</title>
-      <link>http://blog.cjhe.top/tools/vscode-leetcode.html</link>
-      <guid>http://blog.cjhe.top/tools/vscode-leetcode.html</guid>
-      <source url="http://blog.cjhe.top/rss.xml">vscode leetcode插件</source>
-      <description>提示 vscode这款插件太香了，终于可以沉浸式刷leetcode😄</description>
-      <category>工具</category>
-      <pubDate>Wed, 10 Aug 2022 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<div class="hint-container tip">
-<p class="hint-container-title">提示</p>
-<p>vscode这款插件太香了，终于可以沉浸式刷leetcode😄</p>
-</div>
-<!-- more -->
-<h2>环境搭建</h2>
-<h3>安装</h3>
-<p>在vscode扩展商店搜索<code>LeetCode</code>,一般是下载量最高的那个就完事了
-</p>
-<h3>登陆</h3>
-<p>在登陆之前，记得要选择中国版，否则会遇见登陆不上问题
-
-接下来选择账号登录，需要提前在LeetCode官网注册账号
-
-这里我选择账户方式，按照提示填写邮箱、密码即可登录</p>
-<h3>预览</h3>
-<figure><figcaption>leetcode-preview</figcaption></figure>
-<blockquote>
-<p>在左侧，该插件按照五个分类将题目进行了分类，比如：按照难易程度(简单、中等、难)、按照标签(数据、二叉搜索等)、按照公司(Google、Facebook等)</p>
-<p>且题目根据难易程度有不同的颜色进行区分，如果已经完成相关的练习，还会用✔️提示</p>
-</blockquote>
-<h3>个性化配置</h3>
-<div class="language-json" data-ext="json" data-title="json"><pre class="language-json"><code><span class="token punctuation">{</span>
-  <span class="token property">"leetcode.endpoint"</span><span class="token operator">:</span> <span class="token string">"leetcode-cn"</span><span class="token punctuation">,</span>
-  <span class="token property">"leetcode.workspaceFolder"</span><span class="token operator">:</span> <span class="token string">"/Users/hechangjie/code/hexiaopi/leetcode-go"</span><span class="token punctuation">,</span>
-  <span class="token property">"leetcode.defaultLanguage"</span><span class="token operator">:</span> <span class="token string">"golang"</span><span class="token punctuation">,</span>
-  <span class="token property">"leetcode.hint.configWebviewMarkdown"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-  <span class="token property">"leetcode.hint.commentDescription"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-  <span class="token property">"leetcode.hint.commandShortcut"</span><span class="token operator">:</span> <span class="token boolean">false</span>
-<span class="token punctuation">}</span>
-</code></pre></div><h2>沉浸式刷题</h2>
-<h3>预览题目内容</h3>
-<p>
-点击Code Now，选择一种编程语言就可以开始了</p>
-<h3>编写代码</h3>
-<figure><figcaption>leetcode-code</figcaption></figure>
-<h3>测试代码</h3>
-<p>点击代码下方的<code>Test</code>标签即可进行测试代码（再也不用编写大量的单元测试用例了）
-</p>
-<h3>提交代码</h3>
-<p>点击代码下方的<code>Submit</code>标签即可提交代码，完成之后就会看到提交后的代码性能等信息了
-</p>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>存储引擎</title>
-      <link>http://blog.cjhe.top/database/mysql/engine.html</link>
-      <guid>http://blog.cjhe.top/database/mysql/engine.html</guid>
-      <source url="http://blog.cjhe.top/rss.xml">存储引擎</source>
-      <description>MySQL是常用的关系型数据库
-
-MySQL架构
-MySQL架构MySQL架构
-存储引擎
-
-存储引擎是MySQL区别于其他数据库的一个重要特性，MySQL有诸多存储引擎，且存储引擎是基于表的，而不是数据(同一个数据库下面的各个表可以使用不同的引擎)
-存储引擎是底层物理结构的实现，每个存储引擎开发者可以按照自己的意愿开发，具有各自的特点
-对于MySQL使...</description>
-      <category>数据库</category>
-      <pubDate>Sat, 22 Oct 2022 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<!-- more -->
-<blockquote>
-<p>MySQL是常用的关系型数据库</p>
-</blockquote>
-<h2>MySQL架构</h2>
-<figure><figcaption>MySQL架构</figcaption></figure>
-<h2>存储引擎</h2>
-<ul>
-<li>存储引擎是MySQL区别于其他数据库的一个重要特性，MySQL有诸多存储引擎，且<strong>存储引擎是基于表的，而不是数据</strong>(同一个数据库下面的各个表可以使用不同的引擎)</li>
-<li>存储引擎是底层物理结构的实现，每个存储引擎开发者可以按照自己的意愿开发，具有各自的特点</li>
-<li>对于MySQL使用者来说，存储引擎对其实透明的</li>
-</ul>
-<h3>Innodb引擎</h3>
-<blockquote>
-<p>是一个支持ACID事务，行锁设计，支持MVCC功能，实现了SQL标准的4种隔离级别</p>
-</blockquote>
-<h4>特点</h4>
-<ul>
-<li>使用Table Space的方式仅限数据存储</li>
-<li>支持事务、外键约束等数据库特性</li>
-<li>Rows Level Lock，读写性能都非常优秀</li>
-<li>拥有独立的缓冲池，能够缓存数据和索引</li>
-<li>通过多版本控制，支持高并发业务</li>
-</ul>
-<h4>注意事项</h4>
-<ul>
-<li>主键尽可能小，否则二级索引会膨胀</li>
-<li>避免全表扫描，导致锁升级</li>
-<li>尽可能缓存所有的索引和数据，减少IO操作</li>
-<li>避免主键更新，造成大量的数据移动</li>
-</ul>
-<h3>MyISAM存储引擎</h3>
-<blockquote>
-<p>MySQL 5.5之前默认是MyISAM存储引擎，之后默认都改为InnoDB</p>
-</blockquote>
-<h4>特点</h4>
-<ul>
-<li>数据存储方式简单，使用B-Tree进行索引，<strong>索引叶子节点存放数据的指针</strong></li>
-<li><strong>不支持一些数据库特性，比如事务、外键约束等</strong></li>
-<li><strong>Table Level Lock(表级别锁)</strong>，性能稍差，更适合读多的操作</li>
-<li>使用三个文件定义一个表：
-<ul>
-<li><code>.MYi</code>：存储索引</li>
-<li><code>.MYD</code>：存储数据</li>
-<li><code>.frm</code>：存储表定义</li>
-</ul>
-</li>
-<li>少碎片、支持大文件、能够进行索引压缩</li>
-<li>二进制层次的文件可以移植（Linux-&gt;Windows）</li>
-<li>访问速度快，适合只读查询场景</li>
-</ul>
-<h4>注意事项</h4>
-<ul>
-<li>设置合适索引</li>
-<li>启用延迟写入，尽量一次大批量写入，而非频繁写入</li>
-<li>降低并发数，高并发使用排队机制</li>
-<li>由于存储了Count字段，因此Count操作比较高效，但仅限不带条件</li>
-</ul>
-<h2>引擎对比</h2>
-<p>| 存储引擎  |                             特点                              |       应用场景       |
-| :</p>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>索引</title>
-      <link>http://blog.cjhe.top/database/mysql/idx.html</link>
-      <guid>http://blog.cjhe.top/database/mysql/idx.html</guid>
-      <source url="http://blog.cjhe.top/rss.xml">索引</source>
-      <description>索引是一种数据结构，帮助SQL高效获取数据的。类似一本书的目录，可以快速对特定值进行定位和查找，从而大大加快数据查询的效率。</description>
-      <category>数据库</category>
-      <pubDate>Wed, 15 Mar 2023 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<p>索引是一种数据结构，帮助SQL高效获取数据的。类似一本书的目录，可以快速对特定值进行定位和查找，从而大大加快数据查询的效率。</p>
-<!-- more -->
-<h2>索引优缺点</h2>
-<h3>索引优点</h3>
-<ul>
-<li>索引可以大大减少需要扫描的数据量</li>
-<li>索引可以避免排序和临时表，索引已经有序</li>
-<li>索引可以尽量将随机IO变成顺序IO，例如：聚簇索引包含数据，且索引是有序的，就可以快速获得批量数据，但如果回表，通过主键查询数据，则又变成随机IO</li>
-<li>索引对于InnoDB（支持行级锁）非常重要，InnoDB对需要访问的元组加锁，而索引能够减少InnoDB访问的元组数，如果查询不能使用索引，MySQL会进行全表扫描，导致锁住全表。</li>
-</ul>
-<h3>索引缺点</h3>
-<ul>
-<li>降低了更新表的数据，因为不仅要更新原始数据，还要更新索引</li>
-<li>索引占用磁盘空间</li>
-<li>数据列如果包含了许多重复的内容，例如性别为：男、女，索引选择可能只筛选一半的数据量，效果不是很好</li>
-<li>对于数据量非常小的表，索引意义不大，有时全表扫描更高效</li>
-</ul>
-<p>MySQL单张表最多只支持16个索引</p>
-<h2>索引类型</h2>
-<h3>按功能逻辑划分</h3>
-<h4>普通索引</h4>
-<p>普通索引仅仅加快对数据的访问速度，常用于查询条件（where field_name=value）或排序条件（order by field_name）这些场景中。</p>
-<h4>唯一索引</h4>
-<p>唯一索引相比较普通索引，要求索引列的值必须唯一，但允许有空值。</p>
-<h4>主键索引</h4>
-<p>主键索引是一种特殊的索引，不允许有空值，一张表只能有一个主键，一般在建表的时候通过primary key(field_name)指定</p>
-<h4>全文索引</h4>
-<p>mysql Like '%xxx'就会导致索引失效，为了模糊搜索需求，例如：like '%hello%'，就需要全文索引支持。InnoDB在5.6版本之后支持全文索引。</p>
-<h3>按物理逻辑划分</h3>
-<h4>聚簇索引</h4>
-<p>聚簇索引的叶子节点直接存储数据，因此查询的时候只需要进行一次查询</p>
-<h4>非聚簇索引</h4>
-<p>非聚簇索引的叶子节点存储数据的主键，因此查询的时候需要进行两次查询：先查询聚簇索引获取到主键，再通过主键查询数据。</p>
-<h3>按字段个数划分</h3>
-<h4>单一索引</h4>
-<p>索引只使用一个字段</p>
-<h4>联合索引</h4>
-<p>索引使用多个字段
-例如：</p>
-<div class="language-sql" data-ext="sql" data-title="sql"><pre class="language-sql"><code>alert <span class="token keyword">table</span> <span class="token keyword">user</span> <span class="token keyword">add</span> <span class="token keyword">index</span> index_name_city_age<span class="token punctuation">(</span>name<span class="token punctuation">,</span>city<span class="token punctuation">,</span>age<span class="token punctuation">)</span>
-</code></pre></div><p>MySQL联合索引遵从：最左匹配原则</p>
-<p>上面索引相当于建立下面三组索引：</p>
-<ul>
-<li>name,city,age</li>
-<li>name,city</li>
-<li>name</li>
-</ul>
-<p>因此：</p>
-<ul>
-<li>如果查询条件是：(city)、(city,age)、(age)都不会命中索引</li>
-<li>如果查询条件是：(name,age)，则会命中name索引</li>
-</ul>
-<p>理论上最左匹配原则中索引对 where 中子句的顺序也是敏感的，但是由于MySQL的查询优化器会自动调整 where 子句的条件顺序以使用适合的索引，所以实际上 where 子句顺序不影响索引的效果。</p>
-<p>如果联合索引有范围查询，就会停止匹配</p>
-<p>如果分别在 x, y, z 上建立单列索引，让该表有3个单列索引，索引效率也会大不一样，在联合索引生效的情况下，单个索引的效率远远低于联合索引。这是由 MySQL 查询优化器的执行顺序决定的，在执行一条查询 sql 时，针对索引的选择大致有如下步骤：</p>
-<p>MySQL 优化器根据搜索条件，找出所有可能使用的索引
-计算全表扫描的代价
-计算使用不同索引执行查询的代价
-对比各种执行方案的代价，找出成本最低的那一个
-因此，虽然有多个单列索引，但 MySQL 只能用到其中的那个系统认为似乎是最有效率的，其他的就会失效。</p>
-<h2>总结</h2>
-<h3>索引推荐使用情况</h3>
-<ul>
-<li>WHERE, GROUP BY, ORDER BY 子句中的字段</li>
-<li>多个单列索引在多条件查询是只会有一个最优的索引生效，因此多条件查询中最好创建联合索引。</li>
-<li>联合索引的时候必须满足最左匹配原则，并且最好考虑到 sql 语句的执行顺序，比如 WHERE a = 1 GROUP BY b ORDER BY c, 那么联合索引应该设计为 (a,b,c)，因为mysql 查询语句的执行顺序 WHERE &gt; GROUP BY &gt; ORDER BY。<a href="/database/mysql/sql-order.html" target="_blank">参见</a></li>
-<li>多张表 JOIN 的时候，对表连接字段创建索引。</li>
-<li>当 SELECT 中有不在索引中的字段时，会先通过索引查询出满足条件的主键值，然后通过主键回表查询出所有的 SELECT 中的字段，影响查询效率。因此如果 SELECT 中的内容很少，为了避免回表，可以把 SELECT 中的字段都加到联合索引中，这也就是宽索引的概念。但是需要注意，如果索引字段过多，存储和维护索引的成本也会增加。</li>
-</ul>
-<h3>不推荐使用或索引失效情况</h3>
-<ul>
-<li>数据量很小的表</li>
-<li>有大量重复数据的字段</li>
-<li>频繁更新的字段</li>
-<li>如果对索引字段使用了函数或者表达式计算，索引失效</li>
-<li>字段类型不一致也会失效，因为等价使用函数</li>
-<li>innodb OR 条件没有对所有条件创建索引，索引失效</li>
-<li>大于小于条件 &lt; &gt;，索引是否生效取决于命中的数量比例，如果命中数量很多，索引生效，命中数量很小，索引失效</li>
-<li>不等于条件 !=、&lt;&gt;，索引失效</li>
-<li>LIKE 值以 % 开头，索引失效</li>
-</ul>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>SQL查询顺序</title>
-      <link>http://blog.cjhe.top/database/mysql/sql-order.html</link>
-      <guid>http://blog.cjhe.top/database/mysql/sql-order.html</guid>
-      <source url="http://blog.cjhe.top/rss.xml">SQL查询顺序</source>
-      <description>sql-queriessql-queries</description>
-      <category>数据库</category>
-      <pubDate>Thu, 09 Mar 2023 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<figure><img src="https://jvns.ca/images/sql-queries.jpeg" alt="sql-queries" tabindex="0" loading="lazy"><figcaption>sql-queries</figcaption></figure>
-<!-- more -->
-<p>这张图与 SQL 查询的语义有关，让你知道一个查询会返回什么，并回答了以下这些问题：</p>
-<ul>
-<li>
-<p>可以在 GROUP BY 之后使用 WHERE 吗？（不行，WHERE 是在 GROUP BY 之前！）</p>
-</li>
-<li>
-<p>可以对窗口函数返回的结果进行过滤吗？（不行，窗口函数是 SELECT 语句里，而 SELECT 是在 WHERE 和 GROUP BY 之后）</p>
-</li>
-<li>
-<p>可以基于 GROUP BY 里的东西进行 ORDER BY 吗？（可以，ORDER BY 基本上是在最后执行的，所以可以基于任何东西进行 ORDER BY）</p>
-</li>
-<li>
-<p>LIMIT 是在什么时候执行？（在最后！）</p>
-</li>
-</ul>
-<p>但数据库引擎并不一定严格按照这个顺序执行 SQL 查询，因为为了更快地执行查询，它们会做出一些优化。</p>
-<p>所以：</p>
-<p>如果你想要知道一个查询语句是否合法，或者想要知道一个查询语句会返回什么，可以参考这张图；</p>
-<p>需要注意的是，在实际实现中，MySQL会根据具体的查询条件和数据量进行一定的优化和调整。在涉及查询性能或者与索引有关的东西时，这张图就不适用了。</p>
-<h2>详细查询顺序</h2>
-<p>1.FROM子句
-MySQL首先处理FROM子句，该步骤主要是确定需要查询的数据表，并建立数据表之间的连接关系。</p>
-<p>2.WHERE子句
-根据WHERE子句指定的查询条件，MySQL会进行筛选并过滤出符合条件的数据。</p>
-<p>3.GROUP BY子句
-如果查询需要对数据分组，则MySQL会按照GROUP BY子句中指定的分组条件对数据进行分组，然后对每个组进行汇总计算。</p>
-<p>4.HAVING子句
-HAVING子句用于过滤分组后的数据，和WHERE子句类似。只有满足HAVING子句指定的条件的组才会出现在结果集中。</p>
-<p>5.SELECT子句
-SELECT子句是MySQL查询语句最主要的部分，它用于指定需要查询的数据集合以及计算这个数据集合中的一些列值。</p>
-<p>6.DISTINCT
-如果使用了DISTINCT关键字，则MySQL会过滤掉查询结果中的重复记录。</p>
-<p>7.ORDER BY
-ORDER BY子句用于对查询结果进行排序。MySQL会按照指定的列或表达式的结果对查询结果进行排序，可以指定升序或降序。</p>
-<p>8.LIMIT
-LIMIT关键字用于限制查询结果的数量。MySQL只返回前N条符合条件的记录，其中N由LIMIT语句后面的数字指定。</p>
-<h2>参考文献</h2>
-<p><a href="https://jvns.ca/blog/2019/10/03/sql-queries-don-t-start-with-select/" target="_blank" rel="noopener noreferrer">SQL查询不是以select开始</a></p>
-]]></content:encoded>
-      <enclosure url="https://jvns.ca/images/sql-queries.jpeg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>事务</title>
-      <link>http://blog.cjhe.top/database/mysql/transaction.html</link>
-      <guid>http://blog.cjhe.top/database/mysql/transaction.html</guid>
-      <source url="http://blog.cjhe.top/rss.xml">事务</source>
-      <description>事务的特性
-
-原子性(Atomicity): 事务中的所有操作要么全部完成，要么全部不完成（回滚），不会在事务中间遇到错误而中断。
-一致性(Consistency): 事务开始和结束时，数据都必须保持一致状态，即符合约束、完整性、默认值以及其它定义的规则。事务执行的结果不能破坏数据库的完整性和一致性。
-隔离性(Isolation): 各个事务互相隔离，...</description>
-      <category>数据库</category>
-      <pubDate>Sun, 23 Oct 2022 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<!-- more -->
-<h2>事务的特性</h2>
-<ul>
-<li>原子性(Atomicity): 事务中的所有操作要么全部完成，要么全部不完成（回滚），不会在事务中间遇到错误而中断。</li>
-<li>一致性(Consistency): 事务开始和结束时，数据都必须保持一致状态，即符合约束、完整性、默认值以及其它定义的规则。事务执行的结果不能破坏数据库的完整性和一致性。</li>
-<li>隔离性(Isolation): 各个事务互相隔离，每个事务的执行都不会影响其它事务的执行或者结果。</li>
-<li>持久性(Durability): 一个事务一旦提交成功，它对数据库中的数据的改变就是永久性的，即使发生数据库故障也不应该对其产生影响。</li>
-</ul>
-<h2>事务的实现</h2>
-<ul>
-<li>Undo log：实现事务的原子性；</li>
-<li>Redo log：实现事务的持久性；</li>
-<li>锁/MVCC：实现事务的隔离性；锁机制来保证事务在执行时互相隔离，防止事务间相互干扰，即写-写问题。MVCC 机制是通过保存历史版本的方式来实现，事务可以读取数据在事务开始时的版本，而不受到事务期间其他事务所做的改变的影响，即写-读问题。</li>
-<li>以上三者保证了事务的一致性；</li>
-</ul>
-<h2>并发事务带来的问题</h2>
-<p>当数据库上有多个事务同时执行的时候，就可能出现<strong>脏读(dirty read)</strong>、<strong>不可重复读(non-repeatable read)</strong>、<strong>幻读(phantom read)</strong>，为了解决这些问题，就有了隔离级别的概念</p>
-<h3>脏读问题</h3>
-<blockquote>
-<p>脏读是指：一个事务中访问到了另外一个事务未提交的数据</p>
-</blockquote>
-<figure><figcaption>dirty-read</figcaption></figure>
-<h3>不可重复读问题</h3>
-<blockquote>
-<p>不可重复读是指：一个事务多次读取同一行数据，但是在多次读取中数据发生了改变。</p>
-</blockquote>
-<figure><figcaption>non-repeatable-read</figcaption></figure>
-<h3>幻读问题</h3>
-<blockquote>
-<p>幻读是指：一个事务多次执行同一条 SQL 语句，但结果集却不同，导致无法支撑后续的业务操作</p>
-</blockquote>
-<figure><figcaption>phantom-read</figcaption></figure>
-<h2>事务的隔离级别</h2>
-<p>针对上面三种问题，分别有四种隔离级别：</p>
-<h3>未提交读(read uncommitted，RU)</h3>
-<blockquote>
-<p>未提交读，是指一个事务还未提交时，它做的变更就能被别的事务看到。即<strong>没有提交却可以读</strong></p>
-</blockquote>
-<h3>提交读(read committed，RC)</h3>
-<blockquote>
-<p>提交读，是指一个事务提交之后，它做的变更才会被其他事务看到。即<strong>提交才可以读</strong></p>
-</blockquote>
-<p>👀 <strong>大多数数据库系统的默认隔离级别</strong></p>
-<h3>可重复读(repeatable read，RR)</h3>
-<blockquote>
-<p>可重复度，是指同一个事务执行过程看到的数据，总是跟这个事务在启动时看到的数据是一致的。即同一个事务多次请求读取数据，会看到同样的数据行。</p>
-</blockquote>
-<p>👀 <strong>MySQL的默认隔离级别</strong></p>
-<h3>串行化(serializable，S)</h3>
-<blockquote>
-<p>是最高的隔离级别，它通过强制事务排序，使之不可能相互冲突。</p>
-<p>这个级别可能导致大量的超时现象和锁竞争。</p>
-</blockquote>
-<p>以上四种隔离级别解决问题如下：</p>
-<p>| 隔离级别\解决问题 |        脏读        |     不可重复读     |        幻读        |                     实现原理                     |
-| :</p>
-]]></content:encoded>
     </item>
     <item>
       <title>责任链</title>
@@ -9544,206 +9657,6 @@ Sec-Websocket-Accept: YLcYR/p/mS8hENqlgMXtFTggdv8=
 <div class="language-text" data-ext="text" data-title="text"><pre class="language-text"><code>  0                   1                   2                   3
   0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
  +-+-+-+-+</code></pre></div>]]></content:encoded>
-    </item>
-    <item>
-      <title>认证方案</title>
-      <link>http://blog.cjhe.top/system-design/security/auth.html</link>
-      <guid>http://blog.cjhe.top/system-design/security/auth.html</guid>
-      <source url="http://blog.cjhe.top/rss.xml">认证方案</source>
-      <description>认证
-
-我们有多种途径来保障应用的安全，例如：网咯隔离、设置防火墙、设置IP黑名单等。而认证是软件层面保护应用安全的一种措施。
-当前有四种认证方式，分别是：Basic、Digest、OAuth和Bearer
-
-Basic认证
-
-Basic认证（基础认证）是一种简单的认证方式。将用户名:密码进行base64编码，放到HTTP Authorization ...</description>
-      <category>系统设计</category>
-      <pubDate>Sun, 18 Sep 2022 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<!-- more -->
-<h2>认证</h2>
-<blockquote>
-<p>我们有多种途径来保障应用的安全，例如：网咯隔离、设置防火墙、设置IP黑名单等。而<strong>认证</strong>是软件层面保护应用安全的一种措施。</p>
-<p>当前有四种认证方式，分别是：<code>Basic</code>、<code>Digest</code>、<code>OAuth</code>和<code>Bearer</code></p>
-</blockquote>
-<h3>Basic认证</h3>
-<blockquote>
-<p>Basic认证（基础认证）是一种简单的认证方式。将<code>用户名:密码</code>进行base64编码，放到HTTP Authorization Header中。</p>
-<p>但是base64不是加密技术，入侵者可以通过截获base64字符串，并反编码获取用户名和密码；其次即便进行了加密了用户名和密码，入侵者可以通过加重放攻击。</p>
-</blockquote>
-<p>因此Basic认证非常不安全。在设计系统时，要遵循一个通用的原则：不要在请求参数中使用明文密码，也不要在任何存储中保存明文密码。</p>
-<h3>Digest认证</h3>
-<blockquote>
-<p>Digest认证（摘要认证）是一种HTTP认证协议，它与Basic认证兼容，但修复了Basic认证的严重缺陷。</p>
-</blockquote>
-<p><strong>特点</strong></p>
-<ul>
-<li>绝不会用明文的方式在网络上发送密码</li>
-<li>可以有效防止恶意用户进行重放攻击</li>
-<li>可以有效的防止对报文内容进行篡改</li>
-</ul>
-<p>摘要认证的过程如下图所示：
-</p>
-<ol>
-<li>客户端请求服务端资源</li>
-<li>在客户端能够证明它知道密码从而确认其身份之前，服务端认证失败，返回401 Unauthorized，并返回WWW-Authenticate头，里面包含认证需要的信息。</li>
-<li>客户端根据WWW-Authenticate头中的信息，选择加密算法，并使用密码随机数<code>nonce</code>，计算出密码摘要<code>response</code>，并再次请求服务端。</li>
-<li>服务器将客户端提供的密码摘要与服务器内部计算出的摘要进行对比。如果匹配，就说明客户端知道密码，认证通过，并返回一些与授权会话相关的附加信息，放在<code>Authorization-Info</code>中。</li>
-</ol>
-<p>其中涉及到的一些参数说明：</p>
-<p>|        参数         |                                                                   说明                                                                   |
-| :</p>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>小心break🤦‍♂️</title>
-      <link>http://blog.cjhe.top/language/go/advance/break.html</link>
-      <guid>http://blog.cjhe.top/language/go/advance/break.html</guid>
-      <source url="http://blog.cjhe.top/rss.xml">小心break🤦‍♂️</source>
-      <description>这里展示break的一个例子
- 查看执行结果
-
-
-警告
-按道理当收到exit信号时，协程应该退出，但此时协程仍旧在打印tick
-其实break语句只是跳出最内部的for、swich或select的执行。例子中只是跳出了select语句，并未跳出for循环
-
-那么我们该怎么跳到最外层呢？
-1、通过break [label]
-  查看执行结果
-
-
-提示
-代...</description>
-      <category>编程语言</category>
-      <pubDate>Sat, 11 Feb 2023 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<!-- more -->
-<p>这里展示break的一个例子</p>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> main
-
-<span class="token keyword">import</span> <span class="token punctuation">(</span>
-	<span class="token string">"fmt"</span>
-	<span class="token string">"time"</span>
-<span class="token punctuation">)</span>
-
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	exit <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token keyword">chan</span> <span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
-
-	<span class="token keyword">go</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-		<span class="token keyword">for</span> <span class="token punctuation">{</span>
-			<span class="token keyword">select</span> <span class="token punctuation">{</span>
-			<span class="token keyword">case</span> <span class="token operator">&lt;-</span>time<span class="token punctuation">.</span><span class="token function">After</span><span class="token punctuation">(</span>time<span class="token punctuation">.</span>Second<span class="token punctuation">)</span><span class="token punctuation">:</span>
-				fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"tick"</span><span class="token punctuation">)</span>
-			<span class="token keyword">case</span> <span class="token operator">&lt;-</span>exit<span class="token punctuation">:</span>
-				fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"exiting..."</span><span class="token punctuation">)</span>
-				<span class="token keyword">break</span>
-			<span class="token punctuation">}</span>
-		<span class="token punctuation">}</span>
-		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"exit!"</span><span class="token punctuation">)</span>
-	<span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-
-	time<span class="token punctuation">.</span><span class="token function">Sleep</span><span class="token punctuation">(</span><span class="token number">3</span> <span class="token operator">*</span> time<span class="token punctuation">.</span>Second<span class="token punctuation">)</span>
-	exit <span class="token operator">&lt;-</span> <span class="token keyword">struct</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
-
-	<span class="token comment">// wait child goroutine exit</span>
-	time<span class="token punctuation">.</span><span class="token function">Sleep</span><span class="token punctuation">(</span><span class="token number">3</span> <span class="token operator">*</span> time<span class="token punctuation">.</span>Second<span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-</code></pre></div><details class="hint-container details"><summary>查看执行结果</summary>
-<div class="language-text" data-ext="text" data-title="text"><pre class="language-text"><code>tick
-tick
-exiting...
-tick
-tick
-</code></pre></div></details>
-<div class="hint-container caution">
-<p class="hint-container-title">警告</p>
-<p>按道理当收到exit信号时，协程应该退出，但此时协程仍旧在打印tick</p>
-<p>其实break语句只是跳出最内部的for、swich或select的执行。例子中只是跳出了select语句，并未跳出for循环</p>
-</div>
-<p>那么我们该怎么跳到最外层呢？</p>
-<p>1、通过break [label]</p>
-<div class="language-go" data-ext="go" data-title="go"><pre go="" class="language-go"><code><span class="token keyword">package</span> main
-
-<span class="token keyword">import</span> <span class="token punctuation">(</span>
-	<span class="token string">"fmt"</span>
-	<span class="token string">"time"</span>
-<span class="token punctuation">)</span>
-
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	exit <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token keyword">chan</span> <span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
-
-	<span class="token keyword">go</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	loop<span class="token punctuation">:</span>
-		<span class="token keyword">for</span> <span class="token punctuation">{</span>
-			<span class="token keyword">select</span> <span class="token punctuation">{</span>
-			<span class="token keyword">case</span> <span class="token operator">&lt;-</span>time<span class="token punctuation">.</span><span class="token function">After</span><span class="token punctuation">(</span>time<span class="token punctuation">.</span>Second<span class="token punctuation">)</span><span class="token punctuation">:</span>
-				fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"tick"</span><span class="token punctuation">)</span>
-			<span class="token keyword">case</span> <span class="token operator">&lt;-</span>exit<span class="token punctuation">:</span>
-				fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"exiting..."</span><span class="token punctuation">)</span>
-				<span class="token keyword">break</span> loop
-			<span class="token punctuation">}</span>
-		<span class="token punctuation">}</span>
-		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"exit!"</span><span class="token punctuation">)</span>
-	<span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-
-	time<span class="token punctuation">.</span><span class="token function">Sleep</span><span class="token punctuation">(</span><span class="token number">3</span> <span class="token operator">*</span> time<span class="token punctuation">.</span>Second<span class="token punctuation">)</span>
-	exit <span class="token operator">&lt;-</span> <span class="token keyword">struct</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
-
-	<span class="token comment">// wait child goroutine exit</span>
-	time<span class="token punctuation">.</span><span class="token function">Sleep</span><span class="token punctuation">(</span><span class="token number">3</span> <span class="token operator">*</span> time<span class="token punctuation">.</span>Second<span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-</code></pre></div><details class="hint-container details"><summary>查看执行结果</summary>
-<div class="language-text" data-ext="text" data-title="text"><pre class="language-text"><code>tick
-tick
-exiting...
-exit!
-</code></pre></div></details>
-<div class="hint-container tip">
-<p class="hint-container-title">提示</p>
-<p>代码执行到<code>break loop</code>时，程序将结束loop所指代的for循环的执行</p>
-</div>
-<p>2、通过goto [label]</p>
-<div class="language-go" data-ext="go" data-title="go"><pre go="" class="language-go"><code><span class="token keyword">package</span> main
-
-<span class="token keyword">import</span> <span class="token punctuation">(</span>
-	<span class="token string">"fmt"</span>
-	<span class="token string">"time"</span>
-<span class="token punctuation">)</span>
-
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	exit <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token keyword">chan</span> <span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
-
-	<span class="token keyword">go</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-		<span class="token keyword">for</span> <span class="token punctuation">{</span>
-			<span class="token keyword">select</span> <span class="token punctuation">{</span>
-			<span class="token keyword">case</span> <span class="token operator">&lt;-</span>time<span class="token punctuation">.</span><span class="token function">After</span><span class="token punctuation">(</span>time<span class="token punctuation">.</span>Second<span class="token punctuation">)</span><span class="token punctuation">:</span>
-				fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"tick"</span><span class="token punctuation">)</span>
-			<span class="token keyword">case</span> <span class="token operator">&lt;-</span>exit<span class="token punctuation">:</span>
-				fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"exiting..."</span><span class="token punctuation">)</span>
-				<span class="token keyword">goto</span> loop
-			<span class="token punctuation">}</span>
-		<span class="token punctuation">}</span>
-	loop<span class="token punctuation">:</span>
-		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"exit!"</span><span class="token punctuation">)</span>
-	<span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-
-	time<span class="token punctuation">.</span><span class="token function">Sleep</span><span class="token punctuation">(</span><span class="token number">3</span> <span class="token operator">*</span> time<span class="token punctuation">.</span>Second<span class="token punctuation">)</span>
-	exit <span class="token operator">&lt;-</span> <span class="token keyword">struct</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
-
-	<span class="token comment">// wait child goroutine exit</span>
-	time<span class="token punctuation">.</span><span class="token function">Sleep</span><span class="token punctuation">(</span><span class="token number">3</span> <span class="token operator">*</span> time<span class="token punctuation">.</span>Second<span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-</code></pre></div><details class="hint-container details"><summary>查看执行结果</summary>
-<div class="language-text" data-ext="text" data-title="text"><pre class="language-text"><code>tick
-tick
-exiting...
-exit!
-</code></pre></div></details>
-<div class="hint-container tip">
-<p class="hint-container-title">提示</p>
-<p>代码执行到<code>goto loop</code>时，程序将跳转到loop所指的位置继续执行</p>
-</div>
-]]></content:encoded>
     </item>
   </channel>
 </rss>
