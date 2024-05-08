@@ -24,7 +24,7 @@
       "id": "http://blog.cjhe.top/database/redis/",
       "content_html": "<!-- more -->\n",
       "date_published": "2024-05-07T00:00:00.000Z",
-      "date_modified": "2024-05-07T08:04:43.000Z",
+      "date_modified": "2024-05-08T06:55:14.000Z",
       "authors": [],
       "tags": [
         "数据库"
@@ -151,7 +151,7 @@
       "id": "http://blog.cjhe.top/language/vue/",
       "content_html": "",
       "date_published": "2024-04-29T00:00:00.000Z",
-      "date_modified": "2024-04-29T08:04:28.000Z",
+      "date_modified": "2024-05-08T06:55:14.000Z",
       "authors": [],
       "tags": [
         "编程语言"
@@ -330,7 +330,7 @@
       "id": "http://blog.cjhe.top/devops/docker/",
       "content_html": "",
       "date_published": "2024-03-18T00:00:00.000Z",
-      "date_modified": "2024-05-05T15:52:14.000Z",
+      "date_modified": "2024-05-08T06:55:14.000Z",
       "authors": [],
       "tags": [
         "devops"
@@ -355,7 +355,7 @@
       "id": "http://blog.cjhe.top/devops/k8s/",
       "content_html": "",
       "date_published": "2024-03-18T00:00:00.000Z",
-      "date_modified": "2024-05-05T15:52:14.000Z",
+      "date_modified": "2024-05-08T06:55:14.000Z",
       "authors": [],
       "tags": [
         "devops"
@@ -561,7 +561,7 @@
       "summary": "MySQL是一种流行的关系型数据库管理系统，具有以下几个优点：\n\n\n开源免费: MySQL采用开源许可证，可以免费获得和使用。这使得MySQL成为许多个人开发者、初创公司和中小型企业的首选数据库，可以降低成本并提高灵活性。\n\n\n可靠性和稳定性: MySQL经过了广泛测试和市场验证，具有良好的稳定性和可靠性。它支持事务处理和ACID（原子性、一致性、隔离...",
       "content_html": "<!-- more -->\n<p>MySQL是一种流行的关系型数据库管理系统，具有以下几个优点：</p>\n<ul>\n<li>\n<p>开源免费: MySQL采用开源许可证，可以免费获得和使用。这使得MySQL成为许多个人开发者、初创公司和中小型企业的首选数据库，可以降低成本并提高灵活性。</p>\n</li>\n<li>\n<p>可靠性和稳定性: MySQL经过了广泛测试和市场验证，具有良好的稳定性和可靠性。它支持事务处理和ACID（原子性、一致性、隔离性和持久性）属性，保证数据的一致性和安全。</p>\n</li>\n<li>\n<p>高性能: MySQL具有出色的性能特点，能够处理大规模的并发请求。它为多用户并发操作提供了有效的解决方案，并且优化了处理大量数据的能力。</p>\n</li>\n<li>\n<p>可扩展性: MySQL支持水平和垂直扩展，可以根据需要增加更多的服务器、节点和存储，以应对不断增长的数据需求。它还提供了复制和分片等机制，以实现数据的复制和分布式存储。</p>\n</li>\n<li>\n<p>灵活性: MySQL支持多种操作系统，包括Windows、Linux、macOS等，可以在各种环境中运行。它还支持多种编程语言的驱动程序和API，如Python、Java、PHP等，提供了广泛的开发和集成选项。</p>\n</li>\n<li>\n<p>社区支持和生态系统: MySQL拥有庞大的开发者社区和活跃的生态系统，有许多开源工具、第三方库和插件可供选择。这意味着可以获得丰富的资源和支持，能够更快地解决问题和开发应用。</p>\n</li>\n</ul>\n",
       "date_published": "2023-08-24T00:00:00.000Z",
-      "date_modified": "2024-05-05T15:52:14.000Z",
+      "date_modified": "2024-05-08T06:55:14.000Z",
       "authors": [],
       "tags": [
         "数据库"
@@ -750,7 +750,7 @@
       "content_html": "<!-- more -->\n<blockquote>\n<p>一枚后端攻城狮，热爱Go、Vue等技术栈。</p>\n</blockquote>\n<h2>介绍页</h2>\n<p><img src=\"https://raw.githubusercontent.com/Hexiaopi/Hexiaopi/master/profile-summary-card-output/github/0-profile-details.svg\" alt=\"profile-details\" loading=\"lazy\">\n<img src=\"https://raw.githubusercontent.com/Hexiaopi/Hexiaopi/master/profile-summary-card-output/github/1-repos-per-language.svg\" alt=\"profile-language\" loading=\"lazy\">\n<img src=\"https://raw.githubusercontent.com/Hexiaopi/Hexiaopi/master/profile-summary-card-output/github/2-most-commit-language.svg\" alt=\"commit-language\" loading=\"lazy\">\n<img src=\"https://raw.githubusercontent.com/Hexiaopi/Hexiaopi/master/profile-summary-card-output/github/3-stats.svg\" alt=\"stats\" loading=\"lazy\">\n<img src=\"https://raw.githubusercontent.com/Hexiaopi/Hexiaopi/master/profile-summary-card-output/github/4-productive-time.svg\" alt=\"time\" loading=\"lazy\"></p>\n",
       "image": "http://blog.cjhe.top/assets/images/cover.gif",
       "date_published": "2023-07-30T09:20:01.000Z",
-      "date_modified": "2024-05-06T02:44:40.000Z",
+      "date_modified": "2024-05-08T07:16:44.000Z",
       "authors": [],
       "tags": []
     },
