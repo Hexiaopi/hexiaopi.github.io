@@ -1,6 +1,6 @@
 ---
 title: 函数模式
-icon: /assets/icon/function.svg
+icon: microchip
 date: 2023-08-02
 tag:
  - Go

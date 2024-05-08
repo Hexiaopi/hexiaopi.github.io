@@ -40,7 +40,7 @@ export default sidebar({
         },
         {
           text: "函数模式",
-          icon: "/assets/icon/function.svg",
+          icon: "microchip",
           collapsible: true,
           prefix: "function/",
           link: "function/README.md",
@@ -61,24 +61,8 @@ export default sidebar({
       icon: "language",
       collapsible: true,
       prefix: "language/",
-      children: [
-        {
-          text: "Go语言",
-          icon: "/assets/icon/golang.svg",
-          collapsible: true,
-          prefix: "go/",
-          link: "go/README.md",
-          children: "structure",
-        },
-        {
-          text: "Vue框架",
-          icon: "/assets/icon/vuejs.svg",
-          collapsible: true,
-          prefix: "vue/",
-          link: "vue/README.md",
-          children: "structure",
-        },
-      ],
+      link: 'language/README.md',
+      children: "structure",
     },
     {
       text: "数据库",
@@ -86,24 +70,7 @@ export default sidebar({
       icon: 'database',
       prefix: "database/",
       link: 'database/README.md',
-      children: [
-        {
-          text: "MySQL",
-          collapsible: true,
-          icon: "/assets/icon/mysql.svg",
-          prefix: "mysql/",
-          link: "mysql/README.md",
-          children: "structure",
-        },
-        {
-          text: "Redis",
-          collapsible: true,
-          icon: "/assets/icon/redis.svg",
-          prefix: "redis/",
-          link: "redis/README.md",
-          children: "structure",
-        },
-      ],
+      children: "structure",
     },
     {
       text: "网络",
@@ -119,24 +86,7 @@ export default sidebar({
       collapsible: true,
       prefix: "devops/",
       link: "devops/README.md",
-      children: [
-        {
-          text: "k8s",
-          icon: "/assets/icon/k8s.svg",
-          collapsible: true,
-          prefix: "k8s/",
-          link: "k8s/README.md",
-          children: "structure",
-        },
-        {
-          text: "docker",
-          icon: "/assets/icon/docker.svg",
-          collapsible: true,
-          prefix: "docker/",
-          link: "docker/README.md",
-          children: "structure",
-        }
-      ]
+      children: "structure",
     },
     {
       text: "项目规范",

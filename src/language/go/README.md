@@ -1,6 +1,6 @@
 ---
 title: Go语言
-icon: /assets/icon/golang.svg
+icon: /assets/icons/go.svg
 date: 2022-01-22
 tag:
  - Go

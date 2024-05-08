@@ -1,6 +1,6 @@
 ---
 title: Vue
-icon: /assets/icon/vuejs.svg
+icon: /assets/icons/vuejs.svg
 date: 2024-04-29
 tag:
  - Vue

@@ -1,7 +1,6 @@
 ---
 title: 二叉树
 date: 2023-08-24
-tag:
 category:
  - 数据结构
 ---

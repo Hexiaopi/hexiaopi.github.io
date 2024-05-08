@@ -1,6 +1,6 @@
 ---
 title: MySQL
-icon: /assets/icon/mysql.svg
+icon: /assets/icons/mysql.svg
 date: 2023-08-24
 tag:
  - MySQL

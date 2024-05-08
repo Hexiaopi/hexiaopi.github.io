@@ -1,6 +1,6 @@
 ---
 title: Redis
-icon: /assets/icon/redis.svg
+icon: /assets/icons/redis.svg
 date: 2024-05-07
 tag:
  - Redis
