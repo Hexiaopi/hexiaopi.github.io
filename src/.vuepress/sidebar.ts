@@ -3,8 +3,6 @@ import { sidebar } from "vuepress-theme-hope";
 export default sidebar({
   "/": [
     "",
-    "intro",
-    "slides",
     {
       text: "设计模式",
       icon: "palette",

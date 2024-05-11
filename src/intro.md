@@ -110,6 +110,10 @@ cover: /assets/images/cover.gif
           "name": "MongoDB"
         },
         {
+          "value": 10,
+          "name": "Minio"
+        },
+        {
           "value": 30,
           "name": "Prometheus"
         }
