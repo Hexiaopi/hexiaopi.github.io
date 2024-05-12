@@ -1,10 +1,28 @@
 ---
 title: 变更日志
 icon: clock
-date: 2024-05-07
+date: 2024-05-12
 ---
 
 <!-- more -->
+
+
+<a name="v0.12.0"></a>
+## [v0.12.0](https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.11.4...v0.12.0) (2024-05-12)
+
+### :bug:Bug Fixes
+
+* 修改个人信息
+
+### :recycle:Code Refactoring
+
+* 调整图标
+
+### :sparkles:Features
+
+* **devops:** 增加makefile部署k8s应用
+* **devops:** 增加chartmuseum
+* **share:** 增加十二因素应用原则
 
 
 <a name="v0.11.4"></a>
