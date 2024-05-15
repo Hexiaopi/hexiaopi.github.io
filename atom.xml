@@ -3,7 +3,7 @@
   <id>http://blog.cjhe.top/</id>
   <title>个人博客</title>
   <subtitle>何小进童鞋的个人博客</subtitle>
-  <updated>2024-05-12T13:22:41.600Z</updated>
+  <updated>2024-05-15T10:03:09.065Z</updated>
   <generator>@vuepress/plugin-feed</generator>
   <link rel="self" href="http://blog.cjhe.top/atom.xml"/>
   <link rel="alternate" href="http://blog.cjhe.top/"/>
@@ -14,6 +14,7 @@
   <category term="设计模式"/>
   <category term="中间件"/>
   <category term="工具"/>
+  <category term="编程框架"/>
   <category term="编程语言"/>
   <category term="网络"/>
   <category term="项目规范"/>
@@ -507,7 +508,7 @@ Reading messages... (press Ctrl-C to quit)
     <title type="text">算法推荐</title>
     <id>http://blog.cjhe.top/algorithm/recommend.html</id>
     <link href="http://blog.cjhe.top/algorithm/recommend.html"/>
-    <updated>2024-05-06T02:44:40.000Z</updated>
+    <updated>2024-05-15T10:01:59.000Z</updated>
     <summary type="text">在线书籍
 
 数据结构和算法动态可视化
@@ -526,36 +527,25 @@ Reading messages... (press Ctrl-C to quit)
 </ul>
 ]]></content>
     <category term="算法"/>
-    <published>2024-05-06T00:00:00.000Z</published>
+    <published>2023-08-14T00:00:00.000Z</published>
   </entry>
   <entry>
     <title type="text">设计模式推荐</title>
     <id>http://blog.cjhe.top/design-pattern/recommend.html</id>
     <link href="http://blog.cjhe.top/design-pattern/recommend.html"/>
-    <updated>2024-05-06T02:44:40.000Z</updated>
-    <summary type="text">在线书籍
-
-图说设计模式
-Go设计模式
-Go设计模式
-设计模式</summary>
+    <updated>2024-05-15T10:01:59.000Z</updated>
+    <summary type="text">在线书籍</summary>
     <content type="html"><![CDATA[<!-- more -->
 <h2>在线书籍</h2>
-<ul>
-<li>图说设计模式<a href="https://design-patterns.readthedocs.io/zh_CN/latest/" target="_blank" rel="noopener noreferrer"></a></li>
-<li>Go设计模式<a href="https://golangbyexample.com/all-design-patterns-golang/" target="_blank" rel="noopener noreferrer"></a></li>
-<li>Go设计模式<a href="https://dev.to/gopher/go-all-design-patterns-code-with-workflow-ea1" target="_blank" rel="noopener noreferrer"></a></li>
-<li>设计模式<a href="https://refactoringguru.cn/design-patterns" target="_blank" rel="noopener noreferrer"></a></li>
-</ul>
 ]]></content>
     <category term="设计模式"/>
-    <published>2024-05-06T00:00:00.000Z</published>
+    <published>2022-09-10T00:00:00.000Z</published>
   </entry>
   <entry>
     <title type="text">中间件推荐</title>
     <id>http://blog.cjhe.top/middleware/recommend.html</id>
     <link href="http://blog.cjhe.top/middleware/recommend.html"/>
-    <updated>2024-05-06T02:44:40.000Z</updated>
+    <updated>2024-05-15T10:01:59.000Z</updated>
     <summary type="text">在线书籍
 
 Prometheus告警</summary>
@@ -566,7 +556,7 @@ Prometheus告警</summary>
 </ul>
 ]]></content>
     <category term="中间件"/>
-    <published>2024-05-06T00:00:00.000Z</published>
+    <published>2023-08-14T00:00:00.000Z</published>
   </entry>
   <entry>
     <title type="text">转载</title>
@@ -582,7 +572,7 @@ Prometheus告警</summary>
     <title type="text">工具推荐</title>
     <id>http://blog.cjhe.top/tools/recommend.html</id>
     <link href="http://blog.cjhe.top/tools/recommend.html"/>
-    <updated>2024-05-06T02:44:40.000Z</updated>
+    <updated>2024-05-15T10:01:59.000Z</updated>
     <summary type="text">在线书籍
 
 鸟哥的Linux私房菜
@@ -601,13 +591,13 @@ CURL使用</summary>
 </ul>
 ]]></content>
     <category term="工具"/>
-    <published>2024-05-06T00:00:00.000Z</published>
+    <published>2023-07-30T00:00:00.000Z</published>
   </entry>
   <entry>
     <title type="text">docker推荐</title>
     <id>http://blog.cjhe.top/devops/docker/recommand.html</id>
     <link href="http://blog.cjhe.top/devops/docker/recommand.html"/>
-    <updated>2024-05-06T02:44:40.000Z</updated>
+    <updated>2024-05-15T10:01:59.000Z</updated>
     <summary type="text">在线书籍
 
 Docker-从入门到实践
@@ -620,13 +610,13 @@ Docker中文文档</summary>
 </ul>
 ]]></content>
     <category term="devops"/>
-    <published>2024-05-06T00:00:00.000Z</published>
+    <published>2024-03-18T00:00:00.000Z</published>
   </entry>
   <entry>
     <title type="text">k8s推荐</title>
     <id>http://blog.cjhe.top/devops/k8s/recommand.html</id>
     <link href="http://blog.cjhe.top/devops/k8s/recommand.html"/>
-    <updated>2024-05-06T02:44:40.000Z</updated>
+    <updated>2024-05-15T10:01:59.000Z</updated>
     <summary type="text">在线书籍
 
 从Docker到kubernetes进阶
@@ -639,13 +629,13 @@ Kubernetes中文指南</summary>
 </ul>
 ]]></content>
     <category term="devops"/>
-    <published>2024-05-06T00:00:00.000Z</published>
+    <published>2024-01-15T00:00:00.000Z</published>
   </entry>
   <entry>
     <title type="text">组件通信</title>
     <id>http://blog.cjhe.top/language/vue/advance/communication.html</id>
     <link href="http://blog.cjhe.top/language/vue/advance/communication.html"/>
-    <updated>2024-05-07T03:18:06.000Z</updated>
+    <updated>2024-05-15T10:01:59.000Z</updated>
     <summary type="text">组件通信
 自定义属性-props
 
@@ -1154,31 +1144,32 @@ export default useCountStore;
 
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
 </code></pre></div>]]></content>
-    <category term="编程语言"/>
+    <category term="编程框架"/>
     <published>2024-04-30T00:00:00.000Z</published>
   </entry>
   <entry>
-    <title type="text">编程语言</title>
+    <title type="text">编程语言&amp;框架</title>
     <id>http://blog.cjhe.top/language/</id>
     <link href="http://blog.cjhe.top/language/"/>
-    <updated>2024-04-29T08:04:28.000Z</updated>
+    <updated>2024-05-15T10:01:59.000Z</updated>
     <category term="编程语言"/>
+    <category term="编程框架"/>
     <published>2024-04-29T00:00:00.000Z</published>
   </entry>
   <entry>
-    <title type="text">Vue</title>
+    <title type="text">Vue框架</title>
     <id>http://blog.cjhe.top/language/vue/</id>
     <link href="http://blog.cjhe.top/language/vue/"/>
-    <updated>2024-05-08T06:55:14.000Z</updated>
-    <category term="编程语言"/>
+    <updated>2024-05-15T10:01:59.000Z</updated>
+    <category term="编程框架"/>
     <published>2024-04-29T00:00:00.000Z</published>
   </entry>
   <entry>
-    <title type="text">进阶</title>
+    <title type="text">Vue进阶</title>
     <id>http://blog.cjhe.top/language/vue/advance/</id>
     <link href="http://blog.cjhe.top/language/vue/advance/"/>
-    <updated>2024-05-05T15:05:08.000Z</updated>
-    <category term="编程语言"/>
+    <updated>2024-05-15T10:01:59.000Z</updated>
+    <category term="编程框架"/>
     <published>2024-05-05T00:00:00.000Z</published>
   </entry>
   <entry>
@@ -1306,10 +1297,10 @@ mongodb-dashb...</summary>
     <published>2024-04-16T00:00:00.000Z</published>
   </entry>
   <entry>
-    <title type="text">推荐</title>
+    <title type="text">Go推荐</title>
     <id>http://blog.cjhe.top/language/go/recommend/</id>
     <link href="http://blog.cjhe.top/language/go/recommend/"/>
-    <updated>2024-04-29T08:04:28.000Z</updated>
+    <updated>2024-05-15T10:01:59.000Z</updated>
     <category term="编程语言"/>
     <published>2024-04-15T00:00:00.000Z</published>
   </entry>
@@ -2153,7 +2144,7 @@ kubectl create clusterrolebinding monitor-clusterrolebinding <span class="token 
     <title type="text">三方库</title>
     <id>http://blog.cjhe.top/language/go/third-party/</id>
     <link href="http://blog.cjhe.top/language/go/third-party/"/>
-    <updated>2024-04-29T08:04:28.000Z</updated>
+    <updated>2024-05-15T10:01:59.000Z</updated>
     <category term="编程语言"/>
     <published>2023-09-20T00:00:00.000Z</published>
   </entry>
@@ -2265,7 +2256,7 @@ Flag shorthand -b has been deprecated, please use --str-b instead
     <title type="text">标准库</title>
     <id>http://blog.cjhe.top/language/go/standard-library/</id>
     <link href="http://blog.cjhe.top/language/go/standard-library/"/>
-    <updated>2024-04-29T08:04:28.000Z</updated>
+    <updated>2024-05-15T10:01:59.000Z</updated>
     <category term="编程语言"/>
     <published>2023-09-19T00:00:00.000Z</published>
   </entry>
@@ -2583,7 +2574,7 @@ flag参数使用语法
     <title type="text">recover注意事项</title>
     <id>http://blog.cjhe.top/language/go/base/recover.html</id>
     <link href="http://blog.cjhe.top/language/go/base/recover.html"/>
-    <updated>2024-05-05T15:52:14.000Z</updated>
+    <updated>2024-05-15T10:01:59.000Z</updated>
     <summary type="html"><![CDATA[<blockquote>
 <p>defer结合recover通常用于捕获panic</p>
 </blockquote>
@@ -2648,7 +2639,7 @@ flag参数使用语法
     <title type="text">package</title>
     <id>http://blog.cjhe.top/language/go/base/package.html</id>
     <link href="http://blog.cjhe.top/language/go/base/package.html"/>
-    <updated>2024-05-05T15:52:14.000Z</updated>
+    <updated>2024-05-15T10:01:59.000Z</updated>
     <summary type="html"><![CDATA[<p>Go语言使用包（package）作为基本单元来组织源码。</p>
 ]]></summary>
     <content type="html"><![CDATA[<p>Go语言使用包（package）作为基本单元来组织源码。</p>
@@ -2869,7 +2860,7 @@ flag参数使用语法
     <title type="text">MySQL</title>
     <id>http://blog.cjhe.top/database/mysql/</id>
     <link href="http://blog.cjhe.top/database/mysql/"/>
-    <updated>2024-05-08T06:55:14.000Z</updated>
+    <updated>2024-05-15T10:01:59.000Z</updated>
     <summary type="text">MySQL是一种流行的关系型数据库管理系统，具有以下几个优点：
 
 
@@ -2939,10 +2930,10 @@ flag参数使用语法
     <published>2023-08-23T00:00:00.000Z</published>
   </entry>
   <entry>
-    <title type="text">进阶</title>
+    <title type="text">Go进阶</title>
     <id>http://blog.cjhe.top/language/go/advance/</id>
     <link href="http://blog.cjhe.top/language/go/advance/"/>
-    <updated>2024-05-05T15:52:14.000Z</updated>
+    <updated>2024-05-15T10:01:59.000Z</updated>
     <summary type="html"><![CDATA[<blockquote>
 <p>介绍Go语言进阶知识，包括遇到的一些坑和底层原理，进阶知识对于入门童鞋来说可以不用了解，并不会影响日常开发，属于深度探讨</p>
 </blockquote>
@@ -2955,10 +2946,10 @@ flag参数使用语法
     <published>2023-08-24T00:00:00.000Z</published>
   </entry>
   <entry>
-    <title type="text">基础</title>
+    <title type="text">Go基础</title>
     <id>http://blog.cjhe.top/language/go/base/</id>
     <link href="http://blog.cjhe.top/language/go/base/"/>
-    <updated>2024-04-29T08:04:28.000Z</updated>
+    <updated>2024-05-15T10:01:59.000Z</updated>
     <summary type="html"><![CDATA[<blockquote>
 <p>介绍Go语言基础知识，也会涉及到底层原理，这些是我认为要掌握的知识。</p>
 </blockquote>
@@ -2974,7 +2965,7 @@ flag参数使用语法
     <title type="text">转载</title>
     <id>http://blog.cjhe.top/language/go/reprint/</id>
     <link href="http://blog.cjhe.top/language/go/reprint/"/>
-    <updated>2024-04-29T08:04:28.000Z</updated>
+    <updated>2024-05-15T10:01:59.000Z</updated>
     <summary type="html"><![CDATA[<blockquote>
 <p>这里会转载我认为比较好的博文</p>
 </blockquote>
@@ -3271,7 +3262,7 @@ producer-consumerproducer-consumer
     <title type="text">defer注意事项</title>
     <id>http://blog.cjhe.top/language/go/base/defer.html</id>
     <link href="http://blog.cjhe.top/language/go/base/defer.html"/>
-    <updated>2024-05-05T15:52:14.000Z</updated>
+    <updated>2024-05-15T10:01:59.000Z</updated>
     <summary type="text">defer 语句能够帮助我们确保在函数结束时执行一些必要的操作，比如：关闭文件句柄、释放资源、解锁互斥锁等。defer 关键字只能作用函数或函数调用。
 注意事项
 执行顺序
@@ -3332,9 +3323,9 @@ defer 语句中的函数参数会...</summary>
 	os<span class="token punctuation">.</span><span class="token function">Exit</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
 <span class="token punctuation">}</span>
 </code></pre></div><details class="hint-container details"><summary>执行结果</summary>
-<p>some thing...
-exit status 1</p>
-</details>
+<div class="language-text" data-ext="text" data-title="text"><pre class="language-text"><code>some thing...
+exit status 1
+</code></pre></div></details>
 <h3>延迟函数体</h3>
 <h4>延迟函数体未传参</h4>
 <div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">DeferDemo3</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -3436,7 +3427,7 @@ exit status 1</p>
     <title type="text">Go之禅</title>
     <id>http://blog.cjhe.top/language/go/reprint/zen.html</id>
     <link href="http://blog.cjhe.top/language/go/reprint/zen.html"/>
-    <updated>2024-05-05T15:52:14.000Z</updated>
+    <updated>2024-05-15T10:01:59.000Z</updated>
     <summary type="html"><![CDATA[<blockquote>
 <p>Python的核心开发成员之一Tim Peter写下的《The Zen of Python》，成为Python编程和设计的指导原则。Go语言步道师Dave Cheney 2020年发表了名为《The Zen of Go》</p>
 </blockquote>
@@ -3497,7 +3488,7 @@ goroutine 拥有锁、变量、内存等资源。释放这些资源的可靠方�
     <title type="text">Go箴言</title>
     <id>http://blog.cjhe.top/language/go/reprint/proverb.html</id>
     <link href="http://blog.cjhe.top/language/go/reprint/proverb.html"/>
-    <updated>2024-05-05T15:52:14.000Z</updated>
+    <updated>2024-05-15T10:01:59.000Z</updated>
     <summary type="html"><![CDATA[<p>【转】<a href="http://go-proverbs.github.io/" target="_blank" rel="noopener noreferrer">原文链接</a></p>
 ]]></summary>
     <content type="html"><![CDATA[<p>【转】<a href="http://go-proverbs.github.io/" target="_blank" rel="noopener noreferrer">原文链接</a></p>
@@ -3931,7 +3922,7 @@ v0.11.4 (2024-05-07)
     <title type="text">工厂模式的比较</title>
     <id>http://blog.cjhe.top/design-pattern/creational/factory-compare.html</id>
     <link href="http://blog.cjhe.top/design-pattern/creational/factory-compare.html"/>
-    <updated>2024-05-05T15:52:14.000Z</updated>
+    <updated>2024-05-15T10:01:59.000Z</updated>
     <summary type="text">简单工厂模式、工厂方法模式、抽象工厂模式都可以统称为工厂模式，其中：
 简单工厂模式：适用于需要根据客户端的输入来创建对象的场景，但不符合开闭原则，随着产品的增加需要修改工厂类。
 工厂方法模式：通过将具体产品的创建延迟到子类中实现，符合开闭原则，每个具体工厂类负责创建一个具体产品。
@@ -5523,7 +5514,7 @@ Nivi：除了把时间租出去之外，还有其他无助于致富的事情吗?
     <title type="text">存储引擎</title>
     <id>http://blog.cjhe.top/database/mysql/engine.html</id>
     <link href="http://blog.cjhe.top/database/mysql/engine.html"/>
-    <updated>2024-04-15T09:57:53.000Z</updated>
+    <updated>2024-05-15T10:01:59.000Z</updated>
     <summary type="text">MySQL是常用的关系型数据库
 
 MySQL架构
@@ -5602,7 +5593,7 @@ MySQL架构MySQL架构
     <title type="text">索引</title>
     <id>http://blog.cjhe.top/database/mysql/idx.html</id>
     <link href="http://blog.cjhe.top/database/mysql/idx.html"/>
-    <updated>2024-04-15T09:57:53.000Z</updated>
+    <updated>2024-05-15T10:01:59.000Z</updated>
     <summary type="html"><![CDATA[<p>索引是一种数据结构，帮助SQL高效获取数据的。类似一本书的目录，可以快速对特定值进行定位和查找，从而大大加快数据查询的效率。</p>
 ]]></summary>
     <content type="html"><![CDATA[<p>索引是一种数据结构，帮助SQL高效获取数据的。类似一本书的目录，可以快速对特定值进行定位和查找，从而大大加快数据查询的效率。</p>
@@ -5694,7 +5685,7 @@ MySQL架构MySQL架构
     <title type="text">SQL查询顺序</title>
     <id>http://blog.cjhe.top/database/mysql/sql-order.html</id>
     <link href="http://blog.cjhe.top/database/mysql/sql-order.html"/>
-    <updated>2024-04-15T09:57:53.000Z</updated>
+    <updated>2024-05-15T10:01:59.000Z</updated>
     <summary type="html"><![CDATA[<figure><img src="https://jvns.ca/images/sql-queries.jpeg" alt="sql-queries" tabindex="0" loading="lazy"><figcaption>sql-queries</figcaption></figure>
 ]]></summary>
     <content type="html"><![CDATA[<figure><img src="https://jvns.ca/images/sql-queries.jpeg" alt="sql-queries" tabindex="0" loading="lazy"><figcaption>sql-queries</figcaption></figure>
@@ -5719,22 +5710,38 @@ MySQL架构MySQL架构
 <p>如果你想要知道一个查询语句是否合法，或者想要知道一个查询语句会返回什么，可以参考这张图；</p>
 <p>需要注意的是，在实际实现中，MySQL会根据具体的查询条件和数据量进行一定的优化和调整。在涉及查询性能或者与索引有关的东西时，这张图就不适用了。</p>
 <h2>详细查询顺序</h2>
-<p>1.FROM子句
-MySQL首先处理FROM子句，该步骤主要是确定需要查询的数据表，并建立数据表之间的连接关系。</p>
-<p>2.WHERE子句
-根据WHERE子句指定的查询条件，MySQL会进行筛选并过滤出符合条件的数据。</p>
-<p>3.GROUP BY子句
-如果查询需要对数据分组，则MySQL会按照GROUP BY子句中指定的分组条件对数据进行分组，然后对每个组进行汇总计算。</p>
-<p>4.HAVING子句
-HAVING子句用于过滤分组后的数据，和WHERE子句类似。只有满足HAVING子句指定的条件的组才会出现在结果集中。</p>
-<p>5.SELECT子句
-SELECT子句是MySQL查询语句最主要的部分，它用于指定需要查询的数据集合以及计算这个数据集合中的一些列值。</p>
-<p>6.DISTINCT
-如果使用了DISTINCT关键字，则MySQL会过滤掉查询结果中的重复记录。</p>
-<p>7.ORDER BY
-ORDER BY子句用于对查询结果进行排序。MySQL会按照指定的列或表达式的结果对查询结果进行排序，可以指定升序或降序。</p>
-<p>8.LIMIT
-LIMIT关键字用于限制查询结果的数量。MySQL只返回前N条符合条件的记录，其中N由LIMIT语句后面的数字指定。</p>
+<p>1.FROM子句</p>
+<blockquote>
+<p>MySQL首先处理FROM子句，该步骤主要是确定需要查询的数据表，并建立数据表之间的连接关系。</p>
+</blockquote>
+<p>2.WHERE子句</p>
+<blockquote>
+<p>根据WHERE子句指定的查询条件，MySQL会进行筛选并过滤出符合条件的数据。</p>
+</blockquote>
+<p>3.GROUP BY子句</p>
+<blockquote>
+<p>如果查询需要对数据分组，则MySQL会按照GROUP BY子句中指定的分组条件对数据进行分组，然后对每个组进行汇总计算。</p>
+</blockquote>
+<p>4.HAVING子句</p>
+<blockquote>
+<p>HAVING子句用于过滤分组后的数据，和WHERE子句类似。只有满足HAVING子句指定的条件的组才会出现在结果集中。</p>
+</blockquote>
+<p>5.SELECT子句</p>
+<blockquote>
+<p>SELECT子句是MySQL查询语句最主要的部分，它用于指定需要查询的数据集合以及计算这个数据集合中的一些列值。</p>
+</blockquote>
+<p>6.DISTINCT</p>
+<blockquote>
+<p>如果使用了DISTINCT关键字，则MySQL会过滤掉查询结果中的重复记录。</p>
+</blockquote>
+<p>7.ORDER BY</p>
+<blockquote>
+<p>ORDER BY子句用于对查询结果进行排序。MySQL会按照指定的列或表达式的结果对查询结果进行排序，可以指定升序或降序。</p>
+</blockquote>
+<p>8.LIMIT</p>
+<blockquote>
+<p>LIMIT关键字用于限制查询结果的数量。MySQL只返回前N条符合条件的记录，其中N由LIMIT语句后面的数字指定。</p>
+</blockquote>
 <h2>参考文献</h2>
 <p><a href="https://jvns.ca/blog/2019/10/03/sql-queries-don-t-start-with-select/" target="_blank" rel="noopener noreferrer">SQL查询不是以select开始</a></p>
 ]]></content>
@@ -5745,7 +5752,7 @@ LIMIT关键字用于限制查询结果的数量。MySQL只返回前N条符合条
     <title type="text">事务</title>
     <id>http://blog.cjhe.top/database/mysql/transaction.html</id>
     <link href="http://blog.cjhe.top/database/mysql/transaction.html"/>
-    <updated>2024-05-05T15:52:14.000Z</updated>
+    <updated>2024-05-15T10:01:59.000Z</updated>
     <summary type="text">事务的特性
 
 原子性(Atomicity): 事务中的所有操作要么全部完成，要么全部不完成（回滚），不会在事务中间遇到错误而中断。
@@ -7741,7 +7748,7 @@ func ExampleComputer() {
     <title type="text">抽象工厂</title>
     <id>http://blog.cjhe.top/design-pattern/creational/abstract-factory.html</id>
     <link href="http://blog.cjhe.top/design-pattern/creational/abstract-factory.html"/>
-    <updated>2023-09-05T04:05:01.000Z</updated>
+    <updated>2024-05-15T10:01:59.000Z</updated>
     <summary type="html"><![CDATA[<figure><img src="https://refactoringguru.cn/images/patterns/content/abstract-factory/abstract-factory-zh-2x.png" alt="abstract-factory" tabindex="0" loading="lazy"><figcaption>abstract-factory</figcaption></figure>
 ]]></summary>
     <content type="html"><![CDATA[<figure><img src="https://refactoringguru.cn/images/patterns/content/abstract-factory/abstract-factory-zh-2x.png" alt="abstract-factory" tabindex="0" loading="lazy"><figcaption>abstract-factory</figcaption></figure>
@@ -7899,7 +7906,7 @@ func ExampleComputer() {
     <title type="text">建造者</title>
     <id>http://blog.cjhe.top/design-pattern/creational/builder.html</id>
     <link href="http://blog.cjhe.top/design-pattern/creational/builder.html"/>
-    <updated>2023-09-05T04:05:01.000Z</updated>
+    <updated>2024-05-15T10:01:59.000Z</updated>
     <summary type="html"><![CDATA[<figure><img src="https://refactoringguru.cn/images/patterns/content/builder/builder-zh-2x.png" alt="builder" tabindex="0" loading="lazy"><figcaption>builder</figcaption></figure>
 ]]></summary>
     <content type="html"><![CDATA[<figure><img src="https://refactoringguru.cn/images/patterns/content/builder/builder-zh-2x.png" alt="builder" tabindex="0" loading="lazy"><figcaption>builder</figcaption></figure>
@@ -8079,7 +8086,7 @@ func ExampleComputer() {
     <title type="text">工厂方法</title>
     <id>http://blog.cjhe.top/design-pattern/creational/factory-method.html</id>
     <link href="http://blog.cjhe.top/design-pattern/creational/factory-method.html"/>
-    <updated>2023-09-05T04:05:01.000Z</updated>
+    <updated>2024-05-15T10:01:59.000Z</updated>
     <summary type="html"><![CDATA[<figure><img src="https://refactoringguru.cn/images/patterns/content/factory-method/factory-method-zh-2x.png" alt="factory-method" tabindex="0" loading="lazy"><figcaption>factory-method</figcaption></figure>
 ]]></summary>
     <content type="html"><![CDATA[<figure><img src="https://refactoringguru.cn/images/patterns/content/factory-method/factory-method-zh-2x.png" alt="factory-method" tabindex="0" loading="lazy"><figcaption>factory-method</figcaption></figure>
@@ -8207,7 +8214,7 @@ func ExampleComputer() {
     <title type="text">对象池</title>
     <id>http://blog.cjhe.top/design-pattern/creational/object-pool.html</id>
     <link href="http://blog.cjhe.top/design-pattern/creational/object-pool.html"/>
-    <updated>2023-09-05T04:05:01.000Z</updated>
+    <updated>2024-05-15T10:01:59.000Z</updated>
     <summary type="text">对象池模式(Object Pool Pattern)：它通过预先创建和初始化一组对象，然后将它们存放在一个池中，以便在需要时重复使用。这样可以减少频繁创建和销毁对象的开销，提高应用程序的性能和效率。
 问题
 在某些性能场景，频繁的创建和销毁对象或对GC压力较大，影响程序的性能
@@ -8368,7 +8375,7 @@ Pool：对...</summary>
     <title type="text">原型</title>
     <id>http://blog.cjhe.top/design-pattern/creational/prototype.html</id>
     <link href="http://blog.cjhe.top/design-pattern/creational/prototype.html"/>
-    <updated>2023-09-05T04:05:01.000Z</updated>
+    <updated>2024-05-15T10:01:59.000Z</updated>
     <summary type="html"><![CDATA[<figure><img src="https://refactoringguru.cn/images/patterns/content/prototype/prototype-2x.png" alt="prototype" tabindex="0" loading="lazy"><figcaption>prototype</figcaption></figure>
 ]]></summary>
     <content type="html"><![CDATA[<figure><img src="https://refactoringguru.cn/images/patterns/content/prototype/prototype-2x.png" alt="prototype" tabindex="0" loading="lazy"><figcaption>prototype</figcaption></figure>
@@ -8495,7 +8502,7 @@ Pool：对...</summary>
     <title type="text">简单工厂</title>
     <id>http://blog.cjhe.top/design-pattern/creational/simple-factory.html</id>
     <link href="http://blog.cjhe.top/design-pattern/creational/simple-factory.html"/>
-    <updated>2023-09-05T04:05:01.000Z</updated>
+    <updated>2024-05-15T10:01:59.000Z</updated>
     <summary type="html"><![CDATA[<p>简单工厂模式(Simple Factory Pattern)又称为静态工厂方法(Static Factory Method)模式</p>
 <div class="hint-container tip">
 <p class="hint-container-title">提示</p>
@@ -8620,7 +8627,7 @@ Pool：对...</summary>
     <title type="text">单例</title>
     <id>http://blog.cjhe.top/design-pattern/creational/singleton.html</id>
     <link href="http://blog.cjhe.top/design-pattern/creational/singleton.html"/>
-    <updated>2023-09-05T04:05:01.000Z</updated>
+    <updated>2024-05-15T10:01:59.000Z</updated>
     <summary type="html"><![CDATA[<figure><img src="https://refactoringguru.cn/images/patterns/content/singleton/singleton-2x.png" alt="singleton" tabindex="0" loading="lazy"><figcaption>singleton</figcaption></figure>
 ]]></summary>
     <content type="html"><![CDATA[<figure><img src="https://refactoringguru.cn/images/patterns/content/singleton/singleton-2x.png" alt="singleton" tabindex="0" loading="lazy"><figcaption>singleton</figcaption></figure>
