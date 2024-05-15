@@ -1,6 +1,7 @@
 ---
 title: 魔幻的iota枚举
 date: 2023-02-03
+order: 11
 tag:
  - Go
  - 基础
@@ -52,8 +53,6 @@ const (
 
 ### 规则：iota只跟常量组的偏移位置有关
 
-:bangbang:
-
 例如：
 
 ```go
@@ -82,8 +81,6 @@ const y = iota //iota=0
 ```
 
 ### 规则：iota跟个数无关，即便是同一行，值也都一样
-
-:bangbang:
 
 例如：
 

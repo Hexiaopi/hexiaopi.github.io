@@ -4,7 +4,6 @@ icon: /assets/icons/mysql.svg
 date: 2023-08-24
 tag:
  - MySQL
- - 数据库
 category:
  - 数据库
 ---

@@ -1,14 +1,14 @@
 ---
-title: 切片slice
+title: 切片
+order: 8
 date: 2023-02-03
+cover: /assets/images/slice-1.png
 tag:
  - Go
  - 基础
 category:
  - 编程语言
 ---
-
-![slice](http://cdn.cjhe.top/blog/slice-1.png)
 
 <!-- more -->
 
@@ -72,7 +72,7 @@ type slice struct {
 - **len**：表示切片的长度，即切片当前元素的个数；
 - **cap**：表示切片的最大容量；
 
-::: tip 切片与数组在函数参数传递中比较
+::: info 切片与数组在函数参数传递中比较
 
 - 切片作为函数参数传递给函数时，实际传递的是runtime.slice结构体实例，无论其底层数据有多大，参数传递带来的性能损耗都是很小且恒定的。
 - 数组作为函数参数传递给函数时就不一样了，会重新拷贝整个数组，性能损耗就很大。

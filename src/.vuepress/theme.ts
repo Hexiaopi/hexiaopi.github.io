@@ -27,6 +27,7 @@ export default hopeTheme({
   // 页脚
   footer: '<a href="http://beian.miit.gov.cn/" rel="noopener noreferrer" target="_blank">备案号: 皖ICP备2022000616号-1</a> | <a href="/about/site.html">关于网站</a>',
   displayFooter: true,
+  editLink: false,
 
   // 博客相关
   blog: {
@@ -108,11 +109,12 @@ export default hopeTheme({
     },
 
     components: {
-      components: ["Badge", "VPCard", "PDF"],
+      components: ["Badge", "VPCard", "VPBanner", "PDF", "SiteInfo", "Share", "BiliBili"],
     },
 
     // 此处开启了很多功能用于演示，你应仅保留用到的功能。
     mdEnhance: {
+      alert: true,
       align: true,
       attrs: true,
       codetabs: true,
@@ -157,7 +159,7 @@ export default hopeTheme({
       // gfm: true,
 
       // 在启用之前安装 katex
-      // katex: true,
+      katex: true,
 
       // 在启用之前安装 mathjax-full
       // mathjax: true,

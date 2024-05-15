@@ -1,14 +1,14 @@
 ---
-title: 散列map
+title: 散列
 date: 2023-02-06
+cover: /assets/images/map.png
+order: 9
 tag:
  - Go
  - 基础
 category:
  - 编程语言
 ---
-
-![map](http://cdn.cjhe.top/blog/map.png)
 
 <!-- more -->
 

@@ -1,5 +1,6 @@
 ---
 title: 转载
+icon: share-square
 date: 2023-08-24
 tag:
  - Go

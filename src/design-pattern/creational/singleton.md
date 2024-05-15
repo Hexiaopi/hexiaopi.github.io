@@ -1,6 +1,7 @@
 ---
 title: 单例
 date: 2022-10-17
+order: 1
 tag:
  - Go
  - 创建型模式

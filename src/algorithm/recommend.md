@@ -1,7 +1,7 @@
 ---
 title: 算法推荐
-icon: share-square
-date: 2024-05-06
+icon: hand-holding-heart
+date: 2023-08-14
 category:
  - 算法
 ---

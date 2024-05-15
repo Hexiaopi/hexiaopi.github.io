@@ -1,9 +1,9 @@
 ---
 title: 存储引擎
 date: 2022-10-22
+order: 7
 tag:
  - MySQL
- - 数据库
 category:
  - 数据库
 ---

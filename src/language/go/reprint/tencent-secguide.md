@@ -1,5 +1,6 @@
 ---
 title: Go安全指南
+icon: shield
 author: Tencent
 date: 2023-03-03
 tag:

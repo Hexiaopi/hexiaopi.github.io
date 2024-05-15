@@ -1,14 +1,13 @@
 ---
 title: interface底层原理
 date: 2023-02-12
+cover: /assets/images/interface.png
 tag:
  - Go
  - 进阶
 category:
  - 编程语言
 ---
-
-![interface](http://cdn.cjhe.top/blog/interface.png)
 
 <!-- more -->
 
@@ -55,7 +54,9 @@ func main() {
 ```
 
 ::: details 查看运行结果
-`error: <nil>`
+```text
+error: <nil>
+```
 :::
 
 这里大家很疑惑：明明`returnsError`函数返回的p值为nil，为何却满足了第30行的条件分支？我们先来看看接口类型的底层结构再来回答这个问题。

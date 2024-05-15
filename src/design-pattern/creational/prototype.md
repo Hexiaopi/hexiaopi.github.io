@@ -1,6 +1,7 @@
 ---
 title: 原型
 date: 2022-10-16
+order: 6
 tag:
  - Go
  - 创建型模式

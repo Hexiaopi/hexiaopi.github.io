@@ -1,14 +1,13 @@
 ---
 title: 查询过程
 date: 2022-10-22
+order: 1
+cover: /assets/images/MySQL-Read-Simple.png
 tag:
  - MySQL
- - 数据库
 category:
  - 数据库
 ---
-
-![read](https://cdn.cjhe.top/blog/MySQL-Read-Simple.png)
 
 <!-- more -->
 
@@ -82,6 +81,7 @@ SELECT id, name FROM t_user WHERE status = 'ACTIVE' AND age > 18
 ```
 
 解析为语法树如下：
+
 ![ast](./images/MySQL-AST.png)
 
 [参考链接](https://shardingsphere.apache.org/document/current/cn/reference/sharding/parse/)

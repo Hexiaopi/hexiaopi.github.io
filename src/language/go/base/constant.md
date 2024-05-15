@@ -1,6 +1,7 @@
 ---
 title: 常量
 date: 2022-05-03
+order: 3
 tag:
  - Go
  - 基础
@@ -69,32 +70,34 @@ const (
 )
 ```
 
-### 初始化
+### 规则
 
-规则：
+::: caution
+**常量值必须是确定的，不能使用程序运行期间不确定的值**
+::: 
 
-- **常量值必须是确定的，不能使用程序运行期间不确定的值** :eyes:
+```go
+const (
+  x = runtime.NumCPU()	//编译不通过，因为runtime.NumCPU()是在程序运行期间获取到的机器CPU个数
+  y = len("hello world") //编译通过，内置函数len等可以使用
+)
+```
 
-  ```go
-  const (
-    x = runtime.NumCPU()	//编译不通过，因为runtime.NumCPU()是在程序运行期间获取到的机器CPU个数
-    y = len("hello world") //编译通过，内置函数len等可以使用
-  )
-  ```
+::: caution
+ **常量的值在编译过程已确定，作为指令数据使用，没有内存分配**
+ :::
 
-- **常量的值在编译过程已确定，作为指令数据使用，没有内存分配** :bangbang:
+```go
+package main
 
-  ```go
-  package main
+import (
+  "fmt"
+)
   
-  import (
-  	"fmt"
-  )
-  
-  const x = 100
-  
-  func main() {
-  	fmt.Println(&x,x)		//编译不通过，获取不到地址
-  }
-  ```
+const x = 100
+
+func main() {
+  fmt.Println(&x,x)		//编译不通过，获取不到地址
+}
+```
   

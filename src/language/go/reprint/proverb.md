@@ -1,5 +1,6 @@
 ---
 title: Go箴言
+icon: spell-check
 author: Rob Pike
 date: 2023-08-15
 tag:

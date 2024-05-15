@@ -1,5 +1,6 @@
 ---
 title: Go之禅
+icon: yin-yang
 author: Dave Cheney
 date: 2023-08-15
 tag:

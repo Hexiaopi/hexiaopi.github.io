@@ -1,6 +1,7 @@
 ---
 title: 工厂方法
 date: 2022-10-15
+order: 3
 tag:
  - Go
  - 创建型模式

@@ -1,5 +1,6 @@
 ---
-title: 基础
+title: Go基础
+icon: place-of-worship
 date: 2023-08-24
 tag:
  - Go

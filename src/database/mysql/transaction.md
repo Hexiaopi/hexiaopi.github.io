@@ -1,9 +1,9 @@
 ---
 title: 事务
 date: 2022-10-23
+order: 6
 tag:
  - MySQL
- - 数据库
 category:
  - 数据库
 ---
@@ -207,7 +207,7 @@ update table set ? where ?;
 delete from table where ?;
 ```
 
-我们以**读提交隔离级别**为例：
+我们以**提交读隔离级别**为例：
 
 由于`start transaction with consistent snapshot;`在读提交隔离级别下没有意义，等价于普通的`start transaction`
 

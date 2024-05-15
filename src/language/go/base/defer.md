@@ -1,6 +1,7 @@
 ---
 title: defer注意事项
 date: 2023-08-27
+order: 12
 tag:
  - Go
  - 基础
@@ -72,8 +73,10 @@ func main() {
 ```
 
 ::: details 执行结果
+```text
 some thing...
 exit status 1
+```
 :::
 
 ### 延迟函数体

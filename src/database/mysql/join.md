@@ -1,9 +1,9 @@
 ---
 title: 表连接
 date: 2022-10-22
+order: 4
 tag:
  - MySQL
- - 数据库
 category:
  - 数据库
 ---

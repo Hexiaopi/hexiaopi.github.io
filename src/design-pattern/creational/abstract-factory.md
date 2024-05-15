@@ -1,6 +1,7 @@
 ---
 title: 抽象工厂
 date: 2022-10-15
+order: 4
 tag:
  - Go
  - 创建型模式

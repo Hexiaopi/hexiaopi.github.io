@@ -1,6 +1,7 @@
 ---
-title: goroutine和调度原理
+title: goroutine调度原理
 date: 2023-02-13
+cover: /assets/images/goroutine.png
 tag:
  - Go
  - 进阶
@@ -8,11 +9,10 @@ category:
  - 编程语言
 ---
 
-Go语言原生支持并发能力，而goroutine是Go语言原生支持并发的具体实现，本篇将为你揭开goroutine的面纱。
-
-![goroutine](http://cdn.cjhe.top/blog/goroutine.png)
-
 <!-- more -->
+
+
+Go语言原生支持并发能力，而goroutine是Go语言原生支持并发的具体实现，本篇将为你揭开goroutine的面纱。
 
 ## goroutine
 
@@ -57,7 +57,7 @@ GPM模型中：
 - 如果有可用的P，之前运行该G的M将绑定P继续运行G
 - 如果没有可用的P，那么G于M之间的关联将解除，同时G会标记为runable，放入全局队列等待调度
 
-::: tip
+::: warning
 
 - 网络I/O不会阻塞M，仅阻塞G
 - 文件I/O会阻塞M，这就是为什么大量文件I/O操作会导致大量线程被创建的原因。

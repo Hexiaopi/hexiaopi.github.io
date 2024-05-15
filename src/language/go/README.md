@@ -38,12 +38,12 @@ Go语言在运行态帮助开发者进行垃圾回收，大大降低开发者的
 
 ## 官方网站
 
-[官方网站](https://go.dev/)，提供完善的参考文档
-[Playground](https://go.dev/play/)，提供在线Go语言运行沙箱环境，方便我们验证一些语法特性和分享代码片段。(talk is cheap,show me your code)
-[官方博客](https://go.dev/blog/)，不定期发布一些Go语言最好的实践文章。
-[官方教程](https://go.dev/learn/)，提供Go语言的学习教程，包括：推荐书籍，第三方教育培训等
-[库文档](https://pkg.go.dev/)，提供Go语言官方库和第三方库的文档，方便集成
-[官方讲稿](https://go.dev/talks/)，Go语言核心团队的公开演讲
+- [官方网站](https://go.dev/)，提供完善的参考文档
+- [Playground](https://go.dev/play/)，提供在线Go语言运行沙箱环境，方便我们验证一些语法特性和分享代码片段。(talk is cheap,show me your code)
+- [官方博客](https://go.dev/blog/)，不定期发布一些Go语言最好的实践文章。
+- [官方教程](https://go.dev/learn/)，提供Go语言的学习教程，包括：推荐书籍，第三方教育培训等
+- [库文档](https://pkg.go.dev/)，提供Go语言官方库和第三方库的文档，方便集成
+- [官方讲稿](https://go.dev/talks/)，Go语言核心团队的公开演讲
 
 
 <Catalog />

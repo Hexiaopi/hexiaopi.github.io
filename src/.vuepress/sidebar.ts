@@ -52,10 +52,11 @@ export default sidebar({
           link: "concurrency/README.md",
           children: "structure",
         },
+        "recommend",
       ],
     },
     {
-      text: "语言",
+      text: "编程语言&框架",
       icon: "language",
       collapsible: true,
       prefix: "language/",
