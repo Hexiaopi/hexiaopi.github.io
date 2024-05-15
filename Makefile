@@ -6,6 +6,9 @@ version:
 run: 
 	pnpm run docs:dev
 
+update:
+	pnpm run docs:update-package
+
 install:
 	go install github.com/arnaud-deprez/gsemver@latest
 	go install github.com/git-chglog/git-chglog/cmd/git-chglog@latest

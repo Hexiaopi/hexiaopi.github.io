@@ -15,6 +15,7 @@ export default hopeTheme({
   logo: "/logo.png",
 
   repo: "Hexiaopi/Hexiaopi.github.io",
+  repoDisplay: false,
 
   docsDir: "src",
 
@@ -106,6 +107,8 @@ export default hopeTheme({
       atom: true,
       json: true,
       rss: true,
+      devServer: true,
+      devHostname: "localhost",
     },
 
     components: {
