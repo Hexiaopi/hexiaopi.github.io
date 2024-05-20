@@ -3,7 +3,7 @@
   <id>http://blog.cjhe.top/</id>
   <title>个人博客</title>
   <subtitle>何小进童鞋的个人博客</subtitle>
-  <updated>2024-05-15T13:49:50.378Z</updated>
+  <updated>2024-05-20T02:04:50.086Z</updated>
   <generator>@vuepress/plugin-feed</generator>
   <link rel="self" href="http://blog.cjhe.top/atom.xml"/>
   <link rel="alternate" href="http://blog.cjhe.top/"/>
@@ -2574,7 +2574,7 @@ flag参数使用语法
     <title type="text">recover注意事项</title>
     <id>http://blog.cjhe.top/language/go/base/recover.html</id>
     <link href="http://blog.cjhe.top/language/go/base/recover.html"/>
-    <updated>2024-05-15T10:01:59.000Z</updated>
+    <updated>2024-05-20T02:03:42.000Z</updated>
     <summary type="html"><![CDATA[<blockquote>
 <p>defer结合recover通常用于捕获panic</p>
 </blockquote>
@@ -2631,6 +2631,45 @@ flag参数使用语法
 <p class="hint-container-title">警告</p>
 <p>defer recover和panic不在同一层级，导致无法捕获异常，程序陷入panic</p>
 </div>
+<h2>defer recover 再次panic</h2>
+<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token string">"fmt"</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">defer</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Print</span><span class="token punctuation">(</span><span class="token function">recover</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token keyword">defer</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">defer</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			fmt<span class="token punctuation">.</span><span class="token function">Print</span><span class="token punctuation">(</span><span class="token function">recover</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+		<span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+		<span class="token function">panic</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token keyword">defer</span> <span class="token function">recover</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token function">panic</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><details class="hint-container details"><summary>执行结果</summary>
+<div class="language-text" data-ext="text" data-title="text"><pre class="language-text"><code>12
+</code></pre></div></details>
+<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token string">"fmt"</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">defer</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Print</span><span class="token punctuation">(</span><span class="token function">recover</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token keyword">defer</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">defer</span> fmt<span class="token punctuation">.</span><span class="token function">Print</span><span class="token punctuation">(</span><span class="token function">recover</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+		<span class="token function">panic</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token keyword">defer</span> <span class="token function">recover</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token function">panic</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><details class="hint-container details"><summary>执行结果</summary>
+<div class="language-text" data-ext="text" data-title="text"><pre class="language-text"><code>21
+</code></pre></div></details>
 ]]></content>
     <category term="编程语言"/>
     <published>2023-08-27T00:00:00.000Z</published>
