@@ -3,13 +3,13 @@
   <id>http://blog.cjhe.top/</id>
   <title>个人博客</title>
   <subtitle>何小进童鞋的个人博客</subtitle>
-  <updated>2024-05-20T02:04:50.086Z</updated>
+  <updated>2024-05-20T03:39:05.159Z</updated>
   <generator>@vuepress/plugin-feed</generator>
   <link rel="self" href="http://blog.cjhe.top/atom.xml"/>
   <link rel="alternate" href="http://blog.cjhe.top/"/>
+  <category term="数据存储"/>
   <category term="devops"/>
   <category term="转载"/>
-  <category term="数据库"/>
   <category term="算法"/>
   <category term="设计模式"/>
   <category term="中间件"/>
@@ -27,6 +27,26 @@
   <contributor>
     <name>Rob Pike</name>
   </contributor>
+  <entry>
+    <title type="text">Minio</title>
+    <id>http://blog.cjhe.top/database/minio/</id>
+    <link href="http://blog.cjhe.top/database/minio/"/>
+    <updated>2024-05-20T03:37:50.000Z</updated>
+    <content type="html"><![CDATA[<!-- more -->
+]]></content>
+    <category term="数据存储"/>
+    <published>2024-05-20T00:00:00.000Z</published>
+  </entry>
+  <entry>
+    <title type="text">MongoDB</title>
+    <id>http://blog.cjhe.top/database/mongodb/</id>
+    <link href="http://blog.cjhe.top/database/mongodb/"/>
+    <updated>2024-05-20T03:37:50.000Z</updated>
+    <content type="html"><![CDATA[<!-- more -->
+]]></content>
+    <category term="数据存储"/>
+    <published>2024-05-20T00:00:00.000Z</published>
+  </entry>
   <entry>
     <title type="text">使用Makefile和Helm-Dashobard两步实现k8s服务多环境更新</title>
     <id>http://blog.cjhe.top/devops/k8s/makefile-deploy.html</id>
@@ -399,7 +419,7 @@ helm repo update
     <title type="text">基于Redis实现消息到期提醒</title>
     <id>http://blog.cjhe.top/database/redis/deadline-message.html</id>
     <link href="http://blog.cjhe.top/database/redis/deadline-message.html"/>
-    <updated>2024-05-07T09:44:45.000Z</updated>
+    <updated>2024-05-20T03:37:50.000Z</updated>
     <summary type="html"><![CDATA[<blockquote>
 <p>业务上需求，希望实现一个消息到期提醒的功能，比如：提前两个小时发送预警信息、到期发送超期信息等。</p>
 <p>实现该功能有很多技术方案，本文探讨：如何通过Redis实现消息到期提醒</p>
@@ -491,17 +511,17 @@ Reading messages... (press Ctrl-C to quit)
 <li><a href="https://blog.csdn.net/zhizhengguan/article/details/90575438" target="_blank" rel="noopener noreferrer">golang：redis订阅键空间过期消息</a></li>
 </ul>
 ]]></content>
-    <category term="数据库"/>
+    <category term="数据存储"/>
     <published>2024-05-07T00:00:00.000Z</published>
   </entry>
   <entry>
     <title type="text">Redis</title>
     <id>http://blog.cjhe.top/database/redis/</id>
     <link href="http://blog.cjhe.top/database/redis/"/>
-    <updated>2024-05-08T06:55:14.000Z</updated>
+    <updated>2024-05-20T03:37:50.000Z</updated>
     <content type="html"><![CDATA[<!-- more -->
 ]]></content>
-    <category term="数据库"/>
+    <category term="数据存储"/>
     <published>2024-05-07T00:00:00.000Z</published>
   </entry>
   <entry>
@@ -1174,9 +1194,9 @@ export default useCountStore;
   </entry>
   <entry>
     <title type="text">Minio监控</title>
-    <id>http://blog.cjhe.top/devops/docker/minio-monitor.html</id>
-    <link href="http://blog.cjhe.top/devops/docker/minio-monitor.html"/>
-    <updated>2024-05-05T15:52:14.000Z</updated>
+    <id>http://blog.cjhe.top/database/minio/minio-monitor.html</id>
+    <link href="http://blog.cjhe.top/database/minio/minio-monitor.html"/>
+    <updated>2024-05-20T03:37:50.000Z</updated>
     <summary type="text">Minio监控
 运行Minio Client(mc)容器
 设置别名
@@ -1221,7 +1241,7 @@ Added `minio` successfully.
 <p><a href="https://min.io/docs/minio/linux/operations/monitoring/collect-minio-metrics-using-prometheus.html?ref=docs-redirect" target="_blank" rel="noopener noreferrer">Prometheus官方文档</a></p>
 <p><a href="https://www.cnblogs.com/zmh520/p/17771438.html" target="_blank" rel="noopener noreferrer">minio部署及监控</a></p>
 ]]></content>
-    <category term="devops"/>
+    <category term="数据存储"/>
     <published>2024-04-18T00:00:00.000Z</published>
   </entry>
   <entry>
@@ -1264,9 +1284,9 @@ go语言190题</summary>
   </entry>
   <entry>
     <title type="text">MongoDB监控</title>
-    <id>http://blog.cjhe.top/devops/docker/mongodb-exporter.html</id>
-    <link href="http://blog.cjhe.top/devops/docker/mongodb-exporter.html"/>
-    <updated>2024-05-05T15:52:14.000Z</updated>
+    <id>http://blog.cjhe.top/database/mongodb/mongodb-exporter.html</id>
+    <link href="http://blog.cjhe.top/database/mongodb/mongodb-exporter.html"/>
+    <updated>2024-05-20T03:37:50.000Z</updated>
     <summary type="text">MongoDB监控
 我们通过mongodb-exporter监控mongodb状态
 mongodb-exporter部署
@@ -1293,7 +1313,7 @@ mongodb-dashb...</summary>
 <h3>监控数据库是否宕机</h3>
 <div class="language-promQL" data-ext="promQL" data-title="promQL"><pre class="language-promQL"><code>mongodb_up == 0
 </code></pre></div>]]></content>
-    <category term="devops"/>
+    <category term="数据存储"/>
     <published>2024-04-16T00:00:00.000Z</published>
   </entry>
   <entry>
@@ -1306,9 +1326,9 @@ mongodb-dashb...</summary>
   </entry>
   <entry>
     <title type="text">Redis监控</title>
-    <id>http://blog.cjhe.top/devops/docker/redis-exporter.html</id>
-    <link href="http://blog.cjhe.top/devops/docker/redis-exporter.html"/>
-    <updated>2024-04-12T09:12:23.000Z</updated>
+    <id>http://blog.cjhe.top/database/redis/redis-exporter.html</id>
+    <link href="http://blog.cjhe.top/database/redis/redis-exporter.html"/>
+    <updated>2024-05-20T03:37:50.000Z</updated>
     <summary type="text">Redis监控
 我们通过redis-exporter监控redis状态
 redis-exporter部署
@@ -1330,14 +1350,14 @@ Redis连接数过多</summary>
 </code></pre></div><h3>Redis连接数过多</h3>
 <div class="language-promQL" data-ext="promQL" data-title="promQL"><pre class="language-promQL"><code>redis_connected_clients / redis_config_maxclients * 100 &gt; 90
 </code></pre></div>]]></content>
-    <category term="devops"/>
+    <category term="数据存储"/>
     <published>2024-04-12T00:00:00.000Z</published>
   </entry>
   <entry>
     <title type="text">MySQL监控</title>
-    <id>http://blog.cjhe.top/devops/docker/mysql-exporter.html</id>
-    <link href="http://blog.cjhe.top/devops/docker/mysql-exporter.html"/>
-    <updated>2024-05-05T15:52:14.000Z</updated>
+    <id>http://blog.cjhe.top/database/mysql/mysql-exporter.html</id>
+    <link href="http://blog.cjhe.top/database/mysql/mysql-exporter.html"/>
+    <updated>2024-05-20T03:37:50.000Z</updated>
     <summary type="text">MySQL监控
 我们通过mysqld-exporter去将MySQL相关状态转换成指标，从而进行监控
 mysql-exporter部署
@@ -2880,10 +2900,10 @@ flag参数使用语法
     <published>2023-08-26T00:00:00.000Z</published>
   </entry>
   <entry>
-    <title type="text">数据库</title>
+    <title type="text">数据存储</title>
     <id>http://blog.cjhe.top/database/</id>
     <link href="http://blog.cjhe.top/database/"/>
-    <updated>2024-05-07T08:04:43.000Z</updated>
+    <updated>2024-05-20T03:37:50.000Z</updated>
     <summary type="html"><![CDATA[<blockquote>
 <p>记录学习数据库的过程</p>
 </blockquote>
@@ -2892,14 +2912,14 @@ flag参数使用语法
 <p>记录学习数据库的过程</p>
 </blockquote>
 ]]></content>
-    <category term="数据库"/>
+    <category term="数据存储"/>
     <published>2023-08-24T00:00:00.000Z</published>
   </entry>
   <entry>
     <title type="text">MySQL</title>
     <id>http://blog.cjhe.top/database/mysql/</id>
     <link href="http://blog.cjhe.top/database/mysql/"/>
-    <updated>2024-05-15T10:01:59.000Z</updated>
+    <updated>2024-05-20T03:37:50.000Z</updated>
     <summary type="text">MySQL是一种流行的关系型数据库管理系统，具有以下几个优点：
 
 
@@ -2930,7 +2950,7 @@ flag参数使用语法
 </li>
 </ul>
 ]]></content>
-    <category term="数据库"/>
+    <category term="数据存储"/>
     <published>2023-08-24T00:00:00.000Z</published>
   </entry>
   <entry>
@@ -5553,7 +5573,7 @@ Nivi：除了把时间租出去之外，还有其他无助于致富的事情吗?
     <title type="text">存储引擎</title>
     <id>http://blog.cjhe.top/database/mysql/engine.html</id>
     <link href="http://blog.cjhe.top/database/mysql/engine.html"/>
-    <updated>2024-05-15T10:01:59.000Z</updated>
+    <updated>2024-05-20T03:37:50.000Z</updated>
     <summary type="text">MySQL是常用的关系型数据库
 
 MySQL架构
@@ -5625,14 +5645,14 @@ MySQL架构MySQL架构
 <p>| 存储引擎  |                             特点                              |       应用场景       |
 | :</p>
 ]]></content>
-    <category term="数据库"/>
+    <category term="数据存储"/>
     <published>2022-10-22T00:00:00.000Z</published>
   </entry>
   <entry>
     <title type="text">索引</title>
     <id>http://blog.cjhe.top/database/mysql/idx.html</id>
     <link href="http://blog.cjhe.top/database/mysql/idx.html"/>
-    <updated>2024-05-15T10:01:59.000Z</updated>
+    <updated>2024-05-20T03:37:50.000Z</updated>
     <summary type="html"><![CDATA[<p>索引是一种数据结构，帮助SQL高效获取数据的。类似一本书的目录，可以快速对特定值进行定位和查找，从而大大加快数据查询的效率。</p>
 ]]></summary>
     <content type="html"><![CDATA[<p>索引是一种数据结构，帮助SQL高效获取数据的。类似一本书的目录，可以快速对特定值进行定位和查找，从而大大加快数据查询的效率。</p>
@@ -5717,14 +5737,14 @@ MySQL架构MySQL架构
 <li>LIKE 值以 % 开头，索引失效</li>
 </ul>
 ]]></content>
-    <category term="数据库"/>
+    <category term="数据存储"/>
     <published>2023-03-15T00:00:00.000Z</published>
   </entry>
   <entry>
     <title type="text">SQL查询顺序</title>
     <id>http://blog.cjhe.top/database/mysql/sql-order.html</id>
     <link href="http://blog.cjhe.top/database/mysql/sql-order.html"/>
-    <updated>2024-05-15T10:01:59.000Z</updated>
+    <updated>2024-05-20T03:37:50.000Z</updated>
     <summary type="html"><![CDATA[<figure><img src="https://jvns.ca/images/sql-queries.jpeg" alt="sql-queries" tabindex="0" loading="lazy"><figcaption>sql-queries</figcaption></figure>
 ]]></summary>
     <content type="html"><![CDATA[<figure><img src="https://jvns.ca/images/sql-queries.jpeg" alt="sql-queries" tabindex="0" loading="lazy"><figcaption>sql-queries</figcaption></figure>
@@ -5784,14 +5804,14 @@ MySQL架构MySQL架构
 <h2>参考文献</h2>
 <p><a href="https://jvns.ca/blog/2019/10/03/sql-queries-don-t-start-with-select/" target="_blank" rel="noopener noreferrer">SQL查询不是以select开始</a></p>
 ]]></content>
-    <category term="数据库"/>
+    <category term="数据存储"/>
     <published>2023-03-09T00:00:00.000Z</published>
   </entry>
   <entry>
     <title type="text">事务</title>
     <id>http://blog.cjhe.top/database/mysql/transaction.html</id>
     <link href="http://blog.cjhe.top/database/mysql/transaction.html"/>
-    <updated>2024-05-15T10:01:59.000Z</updated>
+    <updated>2024-05-20T03:37:50.000Z</updated>
     <summary type="text">事务的特性
 
 原子性(Atomicity): 事务中的所有操作要么全部完成，要么全部不完成（回滚），不会在事务中间遇到错误而中断。
@@ -5854,14 +5874,14 @@ MySQL架构MySQL架构
 <p>| 隔离级别\解决问题 |        脏读        |     不可重复读     |        幻读        |                     实现原理                     |
 | :</p>
 ]]></content>
-    <category term="数据库"/>
+    <category term="数据存储"/>
     <published>2022-10-23T00:00:00.000Z</published>
   </entry>
   <entry>
     <title type="text">基于Redis的分布式锁</title>
     <id>http://blog.cjhe.top/database/redis/distribute-lock.html</id>
     <link href="http://blog.cjhe.top/database/redis/distribute-lock.html"/>
-    <updated>2024-05-07T08:04:43.000Z</updated>
+    <updated>2024-05-20T03:37:50.000Z</updated>
     <summary type="text">分布式锁
 
 分布式锁即在分布式环境下不同实例之间抢一把锁，相比较单一实例的锁，分布式环境下带来的问题更多，例如网络问题。
@@ -6226,7 +6246,7 @@ MySQL架构MySQL架构
 	<span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre></div>]]></content>
-    <category term="数据库"/>
+    <category term="数据存储"/>
     <published>2022-11-12T00:00:00.000Z</published>
   </entry>
   <entry>
@@ -9472,224 +9492,5 @@ s3<span class="token punctuation">,</span> <span class="token boolean">_</span> 
 ]]></content>
     <category term="设计模式"/>
     <published>2022-12-03T00:00:00.000Z</published>
-  </entry>
-  <entry>
-    <title type="text">装饰器</title>
-    <id>http://blog.cjhe.top/design-pattern/structural/decorator.html</id>
-    <link href="http://blog.cjhe.top/design-pattern/structural/decorator.html"/>
-    <updated>2023-07-31T14:52:38.000Z</updated>
-    <summary type="html"><![CDATA[<figure><img src="https://refactoringguru.cn/images/patterns/content/decorator/decorator-2x.png" alt="decorator" tabindex="0" loading="lazy"><figcaption>decorator</figcaption></figure>
-]]></summary>
-    <content type="html"><![CDATA[<figure><img src="https://refactoringguru.cn/images/patterns/content/decorator/decorator-2x.png" alt="decorator" tabindex="0" loading="lazy"><figcaption>decorator</figcaption></figure>
-<!-- more -->
-<h2>什么是装饰器模式</h2>
-<p>装饰器模式(Decorator Pattern)：它可以在不改变原有对象的结构和功能的情况下，动态地给对象添加新的功能或者增强原有功能。装饰器设计模式的核心思想是使用一个装饰器对象来包装原有对象，从而实现对原有对象的功能扩展或修改。</p>
-<p>装饰器非常类似于<strong>继承</strong>，它们都是为了增强原始对象的功能，区别在于方式的不同，后者是在编译时(compile-time)静态地通过对原始类的继承完成，而前者则是在程序运行时(run-time)通过对原始对象地<strong>包装</strong>完成。</p>
-<h3>包含哪些角色</h3>
-<figure><figcaption>decorator</figcaption></figure>
-<ul>
-<li>
-<p>Component: 组件接口</p>
-<p>所有被装饰组件及装饰器对应的接口标准</p>
-</li>
-<li>
-<p>ConcreteComponent: 具体组件</p>
-<p>需要被装饰的组件，实现组件接口标准</p>
-</li>
-<li>
-<p>Decorator: 装饰器</p>
-<p>持有一个组件（Component）对象的实例，并定义一个与组件接口一致的接口。</p>
-</li>
-<li>
-<p>ConcreteDecorator: 装饰器实现</p>
-<p>继承自装饰器抽象类的具体子类装饰器，可以有多种实现，在被装饰组件对象的基础上为其添加新的特性。</p>
-</li>
-</ul>
-<h3>代码示例</h3>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> decorator
-
-<span class="token keyword">import</span> <span class="token string">"fmt"</span>
-
-<span class="token keyword">type</span> Component <span class="token keyword">interface</span> <span class="token punctuation">{</span>
-	<span class="token function">execute</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">type</span> ConcreteComponent <span class="token keyword">struct</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>c ConcreteComponent<span class="token punctuation">)</span> <span class="token function">execute</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"concrete component execute"</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">type</span> Decorator <span class="token keyword">struct</span> <span class="token punctuation">{</span>
-	component Component
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>d <span class="token operator">*</span>Decorator<span class="token punctuation">)</span> <span class="token function">Decorator</span><span class="token punctuation">(</span>c Component<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	d<span class="token punctuation">.</span>component <span class="token operator">=</span> c
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>d Decorator<span class="token punctuation">)</span> <span class="token function">execute</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	d<span class="token punctuation">.</span>component<span class="token punctuation">.</span><span class="token function">execute</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">type</span> ConcreteDecortor1 <span class="token keyword">struct</span> <span class="token punctuation">{</span>
-	Decorator
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>c ConcreteDecortor1<span class="token punctuation">)</span> <span class="token function">addedFunction</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"concrete decortor1 add function"</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>c ConcreteDecortor1<span class="token punctuation">)</span> <span class="token function">execute</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	c<span class="token punctuation">.</span><span class="token function">addedFunction</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-	c<span class="token punctuation">.</span>Decorator<span class="token punctuation">.</span><span class="token function">execute</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">type</span> ConcreteDecortor2 <span class="token keyword">struct</span> <span class="token punctuation">{</span>
-	Decorator
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>c ConcreteDecortor2<span class="token punctuation">)</span> <span class="token function">addedFunction</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"concrete decortor2 add function"</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>c ConcreteDecortor2<span class="token punctuation">)</span> <span class="token function">execute</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	c<span class="token punctuation">.</span><span class="token function">addedFunction</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-	c<span class="token punctuation">.</span>Decorator<span class="token punctuation">.</span><span class="token function">execute</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-</code></pre></div><p>使用示例</p>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">ExampleComponent</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	c <span class="token operator">:=</span> ConcreteComponent<span class="token punctuation">{</span><span class="token punctuation">}</span>
-	c<span class="token punctuation">.</span><span class="token function">execute</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-	<span class="token comment">//c1扩展c的功能</span>
-	<span class="token keyword">var</span> c1 ConcreteDecortor1
-	c1<span class="token punctuation">.</span>Decorator<span class="token punctuation">.</span><span class="token function">Decorator</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span>
-	c1<span class="token punctuation">.</span><span class="token function">execute</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-	<span class="token comment">//c2又扩展c1的功能</span>
-	<span class="token keyword">var</span> c2 ConcreteDecortor2
-	c2<span class="token punctuation">.</span>Decorator<span class="token punctuation">.</span><span class="token function">Decorator</span><span class="token punctuation">(</span>c1<span class="token punctuation">)</span>
-	c2<span class="token punctuation">.</span><span class="token function">execute</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-	<span class="token comment">// Output:</span>
-	<span class="token comment">// concrete component execute</span>
-	<span class="token comment">// concrete decortor1 add function</span>
-	<span class="token comment">// concrete component execute</span>
-	<span class="token comment">// concrete decortor2 add function</span>
-	<span class="token comment">// concrete decortor1 add function</span>
-	<span class="token comment">// concrete component execute</span>
-<span class="token punctuation">}</span>
-</code></pre></div><h3>应用场景</h3>
-<ul>
-<li>当需要在不改变原有对象的结构和功能的情况下，给对象添加新的功能或者增强原有功能时。</li>
-<li>当需要根据不同的需求，灵活地组合不同的功能扩展或修改时。</li>
-<li>当需要保持原有对象的接口不变，保证了装饰后的对象和原有对象的兼容性时。</li>
-</ul>
-<h3>有哪些优缺点</h3>
-<h4>优点</h4>
-<ul>
-<li>可以在不修改原有对象的代码的情况下，给对象添加新的功能或者增强原有功能，符合开闭原则。</li>
-<li>可以保持原有对象的接口不变，保证了装饰后的对象和原有对象的兼容性。</li>
-<li>可以根据需要灵活地组合不同的装饰器对象，实现多种功能扩展或修改。</li>
-</ul>
-<h4>缺点</h4>
-<ul>
-<li>会增加系统的复杂度，因为需要创建多个装饰器对象和管理它们之间的关系。</li>
-<li>会增加系统的运行时开销，因为每次调用原有对象的方法时，都需要经过装饰器对象的转发和处理。</li>
-</ul>
-<h2>总结</h2>
-<h3>装饰器设计模式和适配器设计模式</h3>
-<p>装饰器模式和适配器模式的区别在于它们的应用场景和目的不同。装饰器模式可以应用于任何需要对对象进行功能扩展或修改的场景，例如日志记录、缓存、验证等。适配器模式主要应用于两个不兼容的接口之间的转换，例如不同类型的电源插头、不同格式的数据源等。</p>
-]]></content>
-    <category term="设计模式"/>
-    <published>2022-12-04T00:00:00.000Z</published>
-  </entry>
-  <entry>
-    <title type="text">外观</title>
-    <id>http://blog.cjhe.top/design-pattern/structural/facade.html</id>
-    <link href="http://blog.cjhe.top/design-pattern/structural/facade.html"/>
-    <updated>2023-07-31T14:52:38.000Z</updated>
-    <summary type="html"><![CDATA[<figure><img src="https://refactoringguru.cn/images/patterns/content/facade/facade-2x.png" alt="facade" tabindex="0" loading="lazy"><figcaption>facade</figcaption></figure>
-]]></summary>
-    <content type="html"><![CDATA[<figure><img src="https://refactoringguru.cn/images/patterns/content/facade/facade-2x.png" alt="facade" tabindex="0" loading="lazy"><figcaption>facade</figcaption></figure>
-<!-- more -->
-<h2>什么是外观模式</h2>
-<p>外观模式（Facade Pattern）：又叫作门面模式，是一种通过为多个复杂的子系统提供一个一致的接口，而使这些子系统更加容易被访问的模式。该模式对外有一个统一接口，外部应用程序不用关心内部子系统的具体细节，这样会大大降低应用程序的复杂度，提高了程序的可维护性。</p>
-<figure><figcaption>外观</figcaption></figure>
-<p>外观模式经常在我们不知不觉中使用，例如：MVC架构中，Controller层对外提供简单的接口，Controller层包含多个Service层进行功能划分，每个Service层也可能包含多个Dao层进行数据操作。</p>
-<figure><figcaption>mvc</figcaption></figure>
-<h3>包含哪些角色</h3>
-<ul>
-<li>
-<p>Facade: 外观角色</p>
-<p>定义一个简单的接口</p>
-</li>
-<li>
-<p>Subsystem：子系统角色</p>
-</li>
-</ul>
-<h3>代码示例</h3>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> facade
-
-<span class="token keyword">import</span> <span class="token string">"fmt"</span>
-
-<span class="token keyword">type</span> Facade <span class="token keyword">struct</span> <span class="token punctuation">{</span>
-	system1 Subsystem1
-	system2 Subsystem2
-	system3 Subsystem3
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>f Facade<span class="token punctuation">)</span> <span class="token function">Operation</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	f<span class="token punctuation">.</span>system1<span class="token punctuation">.</span><span class="token function">Operation1</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-	f<span class="token punctuation">.</span>system2<span class="token punctuation">.</span><span class="token function">Operation2</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-	f<span class="token punctuation">.</span>system3<span class="token punctuation">.</span><span class="token function">Operation3</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">type</span> Subsystem1 <span class="token keyword">struct</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>s Subsystem1<span class="token punctuation">)</span> <span class="token function">Operation1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"subsystem1 operation"</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">type</span> Subsystem2 <span class="token keyword">struct</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>s Subsystem2<span class="token punctuation">)</span> <span class="token function">Operation2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"subsystem2 operation"</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">type</span> Subsystem3 <span class="token keyword">struct</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>s Subsystem3<span class="token punctuation">)</span> <span class="token function">Operation3</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"subsystem3 operation"</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-</code></pre></div><p>使用示例</p>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> facade
-
-<span class="token keyword">func</span> <span class="token function">ExampleOperation</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	f <span class="token operator">:=</span> Facade<span class="token punctuation">{</span>
-		system1<span class="token punctuation">:</span> Subsystem1<span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
-		system2<span class="token punctuation">:</span> Subsystem2<span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
-		system3<span class="token punctuation">:</span> Subsystem3<span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
-	<span class="token punctuation">}</span>
-	f<span class="token punctuation">.</span><span class="token function">Operation</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-	<span class="token comment">// Output:</span>
-	<span class="token comment">// subsystem1 operation</span>
-	<span class="token comment">// subsystem2 operation</span>
-	<span class="token comment">// subsystem3 operation</span>
-<span class="token punctuation">}</span>
-</code></pre></div><h2>总结</h2>
-<h3>优点</h3>
-<ul>
-<li>降低了子系统与客户端之间的耦合度，使得子系统的变化不会影响调用它的客户类。</li>
-<li>对客户屏蔽了子系统组件，减少了客户处理的对象数目，并使得子系统使用起来更加容易。</li>
-<li>降低了大型软件系统中的编译依赖性，简化了系统在不同平台之间的移植过程，因为编译一个子系统不会影响其他的子系统，也不会影响外观对象。</li>
-<li>只是提供了一个访问子系统的统一入口，并不影响用户直接使用子系统类。</li>
-</ul>
-<h3>缺点</h3>
-<ul>
-<li>不能很好地限制客户使用子系统类，如果对客户访问子系统类做太多的限制则减少了可变性和灵活性。</li>
-<li>在不引入抽象外观类的情况下，增加新的子系统可能需要修改外观类或客户端的源代码，违背了<strong>开闭原则</strong>。</li>
-</ul>
-]]></content>
-    <category term="设计模式"/>
-    <published>2022-12-02T00:00:00.000Z</published>
   </entry>
 </feed>
