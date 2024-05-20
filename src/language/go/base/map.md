@@ -206,26 +206,30 @@ map的扩缩容的主要区别在于hmap.B的容量大小改变，而缩容由�
 
 ### map的value是struct自定义类型，无法通过索引的方式直接修改
 
-```go{12}
-func MapDemo1() {
-	type User struct {
-		name string
-		age  int
-	}
-	ma := make(map[int]User)
-	andes := User{
-		name: "andes",
-		age:  18,
-	}
-	ma[1] = andes
-	//ma[1].age = 19
-	andes.age = 19
-	ma[1] = andes
+```go{14}
+package main
+
+import "fmt"
+
+type Math struct {
+	x, y int
+}
+
+var m = map[string]Math{
+	"foo": Math{2, 3},
+}
+
+func main() {
+	//m["foo"].x = 4
+	tmp := m["foo"]
+	tmp.x = 4
+	m["foo"] = tmp
+	fmt.Println(m["foo"].x)
 }
 ```
 
 :::warning
-12行，如果通过索引的方式直接修改，编辑器会报错：[UnaddressableFieldAssign](https://pkg.go.dev/golang.org/x/tools/internal/typesinternal#UnaddressableFieldAssign)，并且官网也给了详细的说明：
+14行，如果通过索引的方式直接修改，编辑器会报错：[UnaddressableFieldAssign](https://pkg.go.dev/golang.org/x/tools/internal/typesinternal#UnaddressableFieldAssign)，并且官网也给了详细的说明：
 ```
 	// UnaddressableFieldAssign occurs when trying to assign to a struct field
 	// in a map value.
@@ -236,6 +240,33 @@ func MapDemo1() {
 	//  	m["foo"].i = 42
 	//  }
 	UnaddressableFieldAssign
+```
+:::
+
+### map的value是指针类型的struc，则可以通过索引的方式直接修改
+
+```go{9,14}
+package main
+
+import "fmt"
+
+type Math struct {
+	x, y int
+}
+
+var m = map[string]*Math{
+	"foo": &Math{2, 3},
+}
+
+func main() {
+	m["foo"].x = 4
+	fmt.Println(m["foo"].x)
+}
+```
+
+::: details 运行结果
+```text
+4
 ```
 :::
 

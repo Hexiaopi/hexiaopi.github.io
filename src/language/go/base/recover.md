@@ -76,3 +76,58 @@ func FailRecoverWithoutLevelDefer() {
 ::: danger
 defer recover和panic不在同一层级，导致无法捕获异常，程序陷入panic
 :::
+
+## defer recover 再次panic
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+	defer func() {
+		fmt.Print(recover())
+	}()
+	defer func() {
+		defer func() {
+			fmt.Print(recover())
+		}()
+		panic(1)
+	}()
+	defer recover()
+	panic(2)
+}
+```
+
+::: details 执行结果
+```text
+12
+```
+:::
+
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+	defer func() {
+		fmt.Print(recover())
+	}()
+	defer func() {
+		defer fmt.Print(recover())
+		panic(1)
+	}()
+	defer recover()
+	panic(2)
+}
+```
+
+::: details 执行结果
+```text
+21
+```
+:::
+
+

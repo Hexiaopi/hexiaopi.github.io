@@ -81,6 +81,23 @@ x,y := 0,1	//多个变量同时定义
   x,y:=0,1 //编译失败
   x,z:=0,1 //z是新声明的变量
   ```
+- 短变量声明不可用于结构体赋值
+
+	```go{11}
+	package main
+
+	import "fmt"
+
+	type foo struct {
+		bar int
+	}
+
+	func main() {
+		var f foo
+		f.bar, tmp := 1, 2 //编译失败，non-name f.bar on left side of :=
+		fmt.Println(f, tmp)
+	}
+	```
 
 #### 匿名变量
 

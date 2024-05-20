@@ -238,6 +238,31 @@ func main() {
 
 切片a在遍历时附加了两个元素，len由5加到7，但由于for range使用的是切片a的副本，仍是长度5。
 
+另外一个有趣的例子：
+
+```go{v}
+package main
+
+import "fmt"
+
+func main() {
+	v := []int{1, 2, 3}
+	for i := range v {
+		v = append(v, i)
+	}
+	fmt.Println(v)
+}
+```
+
+::: details 查看执行结果
+
+```text
+[1 2 3 0 1 2 ]
+```
+:::
+
+不了解的童鞋可能会觉得这个将一直运行下去，实际上不是的。
+
 ### 字符串遍历
 
 `string`类型是不可变的，每次循环的单位是一个`rune`,而不是`byte`，虽然底层结构是`byte`。如果遍历过程中存在非法UTF8字节序列，那么将返回`0xfffd`这个特殊值，且下次遍历从下一个`byte`开始，而不是`rune`
