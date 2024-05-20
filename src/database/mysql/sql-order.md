@@ -5,7 +5,7 @@ order: 3
 tag:
  - MySQL
 category:
- - 数据库
+ - 数据存储
 ---
 
 ![sql-queries](https://jvns.ca/images/sql-queries.jpeg)

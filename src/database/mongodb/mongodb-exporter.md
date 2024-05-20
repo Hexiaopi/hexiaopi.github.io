@@ -2,10 +2,10 @@
 title: MongoDB监控
 date: 2024-04-16
 tag:
- - mongodb
+ - Mongodb
  - 监控
 category:
- - devops
+ - 数据存储
 ---
 
 <!-- more -->

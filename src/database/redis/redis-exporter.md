@@ -2,10 +2,10 @@
 title: Redis监控
 date: 2024-04-12
 tag:
- - redis
+ - Redis
  - 监控
 category:
- - devops
+ - 数据存储
 ---
 
 <!-- more -->

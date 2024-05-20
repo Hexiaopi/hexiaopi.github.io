@@ -2,10 +2,10 @@
 title: Minio监控
 date: 2024-04-18
 tag:
- - minio
+ - Minio
  - 监控
 category:
- - devops
+ - 数据存储
 ---
 
 <!-- more -->

@@ -6,7 +6,7 @@ cover: /assets/images/MySQL-Read-Simple.png
 tag:
  - MySQL
 category:
- - 数据库
+ - 数据存储
 ---
 
 <!-- more -->

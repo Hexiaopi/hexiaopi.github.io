@@ -64,7 +64,7 @@ export default sidebar({
       children: "structure",
     },
     {
-      text: "数据库",
+      text: "数据存储",
       collapsible: true,
       icon: 'database',
       prefix: "database/",

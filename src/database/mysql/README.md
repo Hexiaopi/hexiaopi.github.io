@@ -5,7 +5,7 @@ date: 2023-08-24
 tag:
  - MySQL
 category:
- - 数据库
+ - 数据存储
 ---
 
 <!-- more -->

@@ -7,7 +7,7 @@ tag:
  - Lua
  - Redis
 category:
- - 数据库
+ - 数据存储
 star: true
 ---
 

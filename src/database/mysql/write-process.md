@@ -5,7 +5,7 @@ order: 1
 tag:
  - MySQL
 category:
- - 数据库
+ - 数据存储
 ---
 
 <!-- more -->
