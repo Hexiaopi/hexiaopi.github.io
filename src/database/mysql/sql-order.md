@@ -8,9 +8,11 @@ category:
  - 数据存储
 ---
 
-![sql-queries](https://jvns.ca/images/sql-queries.jpeg)
+
 
 <!-- more -->
+
+![sql-queries](https://jvns.ca/images/sql-queries.jpeg)
 
 这张图与 SQL 查询的语义有关，让你知道一个查询会返回什么，并回答了以下这些问题：
 
@@ -27,6 +29,10 @@ category:
 如果你想要知道一个查询语句是否合法，或者想要知道一个查询语句会返回什么，可以参考这张图；
 
 需要注意的是，在实际实现中，MySQL会根据具体的查询条件和数据量进行一定的优化和调整。在涉及查询性能或者与索引有关的东西时，这张图就不适用了。<Badge text="注意" type="warning"/>
+
+关于数据查询顺序和变化参考下图：
+
+![sql-order](./images/sql-order.webp)
 
 ## 详细查询顺序
 
@@ -65,3 +71,4 @@ category:
 ## 参考文献
 
 [SQL查询不是以select开始](https://jvns.ca/blog/2019/10/03/sql-queries-don-t-start-with-select/)
+[bytebytego](https://blog.bytebytego.com/p/ep50-visualizing-a-sql-query)

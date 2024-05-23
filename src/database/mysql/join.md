@@ -8,9 +8,13 @@ category:
  - 数据存储
 ---
 
+
 <!-- more -->
 
 > 连接是一种机制，用来在一条SELECT语句中关联表
+
+
+![](./images/sql-join.webp)
 
 ## 内连接（INNER JOIN）
 
@@ -84,3 +88,8 @@ LEFT OUTER JOIN Orders ON Customers.cust_id = Orders.cust_id
 ```
 
 > `OUTER`关键字可以省略，即`RIGHT OUTER JOIN`和`RIGHT JOIN`等价
+
+
+## 参考链接
+
+[bytebytego](https://blog.bytebytego.com/p/ep90-how-do-sql-joins-work)

@@ -2,7 +2,7 @@
 title: MySQL监控
 date: 2024-04-12
 tag:
- - mysql
+ - MySQL
  - 监控
 category:
  - devops
