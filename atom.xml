@@ -3,7 +3,7 @@
   <id>http://blog.cjhe.top/</id>
   <title>个人博客</title>
   <subtitle>何小进童鞋的个人博客</subtitle>
-  <updated>2024-05-20T03:39:05.159Z</updated>
+  <updated>2024-05-23T10:18:19.649Z</updated>
   <generator>@vuepress/plugin-feed</generator>
   <link rel="self" href="http://blog.cjhe.top/atom.xml"/>
   <link rel="alternate" href="http://blog.cjhe.top/"/>
@@ -1357,7 +1357,7 @@ Redis连接数过多</summary>
     <title type="text">MySQL监控</title>
     <id>http://blog.cjhe.top/database/mysql/mysql-exporter.html</id>
     <link href="http://blog.cjhe.top/database/mysql/mysql-exporter.html"/>
-    <updated>2024-05-20T03:37:50.000Z</updated>
+    <updated>2024-05-23T10:17:10.000Z</updated>
     <summary type="text">MySQL监控
 我们通过mysqld-exporter去将MySQL相关状态转换成指标，从而进行监控
 mysql-exporter部署
@@ -5744,11 +5744,17 @@ MySQL架构MySQL架构
     <title type="text">SQL查询顺序</title>
     <id>http://blog.cjhe.top/database/mysql/sql-order.html</id>
     <link href="http://blog.cjhe.top/database/mysql/sql-order.html"/>
-    <updated>2024-05-20T03:37:50.000Z</updated>
-    <summary type="html"><![CDATA[<figure><img src="https://jvns.ca/images/sql-queries.jpeg" alt="sql-queries" tabindex="0" loading="lazy"><figcaption>sql-queries</figcaption></figure>
-]]></summary>
-    <content type="html"><![CDATA[<figure><img src="https://jvns.ca/images/sql-queries.jpeg" alt="sql-queries" tabindex="0" loading="lazy"><figcaption>sql-queries</figcaption></figure>
-<!-- more -->
+    <updated>2024-05-23T10:17:10.000Z</updated>
+    <summary type="text">sql-queriessql-queries
+这张图与 SQL 查询的语义有关，让你知道一个查询会返回什么，并回答了以下这些问题：
+
+
+可以在 GROUP BY 之后使用 WHERE 吗？（不行，WHERE 是在 GROUP BY 之前！）
+
+
+可以对窗口函数返回的结果进行过滤吗？（不行，窗口函数是 SELECT 语句里，而 SELECT 是在 WHE...</summary>
+    <content type="html"><![CDATA[<!-- more -->
+<figure><img src="https://jvns.ca/images/sql-queries.jpeg" alt="sql-queries" tabindex="0" loading="lazy"><figcaption>sql-queries</figcaption></figure>
 <p>这张图与 SQL 查询的语义有关，让你知道一个查询会返回什么，并回答了以下这些问题：</p>
 <ul>
 <li>
@@ -5768,6 +5774,8 @@ MySQL架构MySQL架构
 <p>所以：</p>
 <p>如果你想要知道一个查询语句是否合法，或者想要知道一个查询语句会返回什么，可以参考这张图；</p>
 <p>需要注意的是，在实际实现中，MySQL会根据具体的查询条件和数据量进行一定的优化和调整。在涉及查询性能或者与索引有关的东西时，这张图就不适用了。</p>
+<p>关于数据查询顺序和变化参考下图：</p>
+<figure><figcaption>sql-order</figcaption></figure>
 <h2>详细查询顺序</h2>
 <p>1.FROM子句</p>
 <blockquote>
@@ -5802,7 +5810,8 @@ MySQL架构MySQL架构
 <p>LIMIT关键字用于限制查询结果的数量。MySQL只返回前N条符合条件的记录，其中N由LIMIT语句后面的数字指定。</p>
 </blockquote>
 <h2>参考文献</h2>
-<p><a href="https://jvns.ca/blog/2019/10/03/sql-queries-don-t-start-with-select/" target="_blank" rel="noopener noreferrer">SQL查询不是以select开始</a></p>
+<p><a href="https://jvns.ca/blog/2019/10/03/sql-queries-don-t-start-with-select/" target="_blank" rel="noopener noreferrer">SQL查询不是以select开始</a>
+<a href="https://blog.bytebytego.com/p/ep50-visualizing-a-sql-query" target="_blank" rel="noopener noreferrer">bytebytego</a></p>
 ]]></content>
     <category term="数据存储"/>
     <published>2023-03-09T00:00:00.000Z</published>
