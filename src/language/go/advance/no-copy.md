@@ -51,15 +51,11 @@ package main
 
 import "fmt"
 
-type noCopy struct{}
-
-func (*noCopy) Lock()   {}
-func (*noCopy) Unlock() {}
-
 type Demo struct {
-	noCopy
-    // ...
 }
+
+func (*Demo) Lock()   {}
+func (*Demo) Unlock() {}
 
 func Copy(d Demo) {
 }
@@ -76,7 +72,7 @@ func main() {
 ::: details 执行结果
 ```text
 $ go run main.go
-{noCopy:{}}{noCopy:{}}
+{}{}
 ```
 :::
 
@@ -86,30 +82,33 @@ $ go run main.go
 $ go vet .\main.go
 # command-line-arguments
 # [command-line-arguments]
-.\main.go:14:13: Copy passes lock by value: command-line-arguments.Demo contains command-line-arguments.noCopy
-.\main.go:19:20: call of fmt.Printf copies lock value: command-line-arguments.Demo contains command-line-arguments.noCopy
-.\main.go:20:7: call of Copy copies lock value: command-line-arguments.Demo contains command-line-arguments.noCopy
-.\main.go:21:8: assignment copies lock value to d2: command-line-arguments.Demo contains command-line-arguments.noCopy
-.\main.go:22:20: call of fmt.Printf copies lock value: command-line-arguments.Demo contains command-line-arguments.noCopy
+.\main.go:11:13: Copy passes lock by value: command-line-arguments.Demo
+.\main.go:16:20: call of fmt.Printf copies lock value: command-line-arguments.Demo
+.\main.go:17:7: call of Copy copies lock value: command-line-arguments.Demo
+.\main.go:18:8: assignment copies lock value to d2: command-line-arguments.Demo
+.\main.go:19:20: call of fmt.Printf copies lock value: command-line-arguments.Demo
 ```
 
 我们看到go vet提示了5个command-line-arguments.noCopy问题：
 
-- 第14行，定义Copy函数传参，本质是对象拷贝；
-- 第19行，fmt.Printf函数调用，本质是对象拷贝；
-- 第20行，Copy函数调用，本质是对象拷贝；
-- 第21行，d赋值给d2，也是拷贝；
-- 第22行，fmt.Printf函数调用，本质是参数拷贝。
+- 第11行，定义Copy函数传参，本质是对象拷贝；
+- 第16行，fmt.Printf函数调用，本质是对象拷贝；
+- 第17行，Copy函数调用，本质是对象拷贝；
+- 第18行，d赋值给d2，也是拷贝；
+- 第19行，fmt.Printf函数调用，本质是参数拷贝。
 
 ## 总结
 
-要想禁止拷贝，可以定义一个结构体，然后在该结构体中嵌入`noCopy`结构体，其中`noCopy`包含`Lock`方法和`Unlock`方法，如下：
+要想禁止拷贝，可以定义一个结构体，只需实现`Lock`方法和`Unlock`方法，如下：
 
 ```go
-type noCopy struct{}
+type Demo struct {
+}
 
-func (*noCopy) Lock()   {}
-func (*noCopy) Unlock() {}
+func (*Demo) Lock()   {}
+func (*Demo) Unlock() {}
 ```
+
+或者类似`sync.WaitGroup`内嵌`noCopy`结构体。推荐使用该方式！
 
 要想检测自己是否拷贝了禁止拷贝的结构体，可以使用`go vet`命令，该命令会检测出`noCopy`结构体的问题。
