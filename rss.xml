@@ -6,8 +6,8 @@
     <link>http://blog.cjhe.top/</link>
     <description>何小进童鞋的个人博客</description>
     <language>zh-CN</language>
-    <pubDate>Fri, 24 May 2024 07:55:53 GMT</pubDate>
-    <lastBuildDate>Fri, 24 May 2024 07:55:53 GMT</lastBuildDate>
+    <pubDate>Fri, 24 May 2024 08:14:15 GMT</pubDate>
+    <lastBuildDate>Fri, 24 May 2024 08:14:15 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>编程语言</category>
@@ -66,15 +66,11 @@ WaitGroup为何禁止拷贝
 
 <span class="token keyword">import</span> <span class="token string">"fmt"</span>
 
-<span class="token keyword">type</span> noCopy <span class="token keyword">struct</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span><span class="token operator">*</span>noCopy<span class="token punctuation">)</span> <span class="token function">Lock</span><span class="token punctuation">(</span><span class="token punctuation">)</span>   <span class="token punctuation">{</span><span class="token punctuation">}</span>
-<span class="token keyword">func</span> <span class="token punctuation">(</span><span class="token operator">*</span>noCopy<span class="token punctuation">)</span> <span class="token function">Unlock</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
-
 <span class="token keyword">type</span> Demo <span class="token keyword">struct</span> <span class="token punctuation">{</span>
-	noCopy
-    <span class="token comment">// ...</span>
 <span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span><span class="token operator">*</span>Demo<span class="token punctuation">)</span> <span class="token function">Lock</span><span class="token punctuation">(</span><span class="token punctuation">)</span>   <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span><span class="token operator">*</span>Demo<span class="token punctuation">)</span> <span class="token function">Unlock</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
 
 <span class="token keyword">func</span> <span class="token function">Copy</span><span class="token punctuation">(</span>d Demo<span class="token punctuation">)</span> <span class="token punctuation">{</span>
 <span class="token punctuation">}</span>
@@ -88,32 +84,34 @@ WaitGroup为何禁止拷贝
 <span class="token punctuation">}</span>
 </code></pre></div><details class="hint-container details"><summary>执行结果</summary>
 <div class="language-text" data-ext="text" data-title="text"><pre class="language-text"><code>$ go run main.go
-{noCopy:{}}{noCopy:{}}
+{}{}
 </code></pre></div></details>
 <p>运行结果依然是正常的，但是我们通过<code>go vet</code>检查一下：</p>
 <div class="language-text" data-ext="text" data-title="text"><pre class="language-text"><code>$ go vet .\main.go
 # command-line-arguments
 # [command-line-arguments]
-.\main.go:14:13: Copy passes lock by value: command-line-arguments.Demo contains command-line-arguments.noCopy
-.\main.go:19:20: call of fmt.Printf copies lock value: command-line-arguments.Demo contains command-line-arguments.noCopy
-.\main.go:20:7: call of Copy copies lock value: command-line-arguments.Demo contains command-line-arguments.noCopy
-.\main.go:21:8: assignment copies lock value to d2: command-line-arguments.Demo contains command-line-arguments.noCopy
-.\main.go:22:20: call of fmt.Printf copies lock value: command-line-arguments.Demo contains command-line-arguments.noCopy
+.\main.go:11:13: Copy passes lock by value: command-line-arguments.Demo
+.\main.go:16:20: call of fmt.Printf copies lock value: command-line-arguments.Demo
+.\main.go:17:7: call of Copy copies lock value: command-line-arguments.Demo
+.\main.go:18:8: assignment copies lock value to d2: command-line-arguments.Demo
+.\main.go:19:20: call of fmt.Printf copies lock value: command-line-arguments.Demo
 </code></pre></div><p>我们看到go vet提示了5个command-line-arguments.noCopy问题：</p>
 <ul>
-<li>第14行，定义Copy函数传参，本质是对象拷贝；</li>
-<li>第19行，fmt.Printf函数调用，本质是对象拷贝；</li>
-<li>第20行，Copy函数调用，本质是对象拷贝；</li>
-<li>第21行，d赋值给d2，也是拷贝；</li>
-<li>第22行，fmt.Printf函数调用，本质是参数拷贝。</li>
+<li>第11行，定义Copy函数传参，本质是对象拷贝；</li>
+<li>第16行，fmt.Printf函数调用，本质是对象拷贝；</li>
+<li>第17行，Copy函数调用，本质是对象拷贝；</li>
+<li>第18行，d赋值给d2，也是拷贝；</li>
+<li>第19行，fmt.Printf函数调用，本质是参数拷贝。</li>
 </ul>
 <h2>总结</h2>
-<p>要想禁止拷贝，可以定义一个结构体，然后在该结构体中嵌入<code>noCopy</code>结构体，其中<code>noCopy</code>包含<code>Lock</code>方法和<code>Unlock</code>方法，如下：</p>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">type</span> noCopy <span class="token keyword">struct</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+<p>要想禁止拷贝，可以定义一个结构体，只需实现<code>Lock</code>方法和<code>Unlock</code>方法，如下：</p>
+<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">type</span> Demo <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
 
-<span class="token keyword">func</span> <span class="token punctuation">(</span><span class="token operator">*</span>noCopy<span class="token punctuation">)</span> <span class="token function">Lock</span><span class="token punctuation">(</span><span class="token punctuation">)</span>   <span class="token punctuation">{</span><span class="token punctuation">}</span>
-<span class="token keyword">func</span> <span class="token punctuation">(</span><span class="token operator">*</span>noCopy<span class="token punctuation">)</span> <span class="token function">Unlock</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
-</code></pre></div><p>要想检测自己是否拷贝了禁止拷贝的结构体，可以使用<code>go vet</code>命令，该命令会检测出<code>noCopy</code>结构体的问题。</p>
+<span class="token keyword">func</span> <span class="token punctuation">(</span><span class="token operator">*</span>Demo<span class="token punctuation">)</span> <span class="token function">Lock</span><span class="token punctuation">(</span><span class="token punctuation">)</span>   <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span><span class="token operator">*</span>Demo<span class="token punctuation">)</span> <span class="token function">Unlock</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+</code></pre></div><p>或者类似<code>sync.WaitGroup</code>内嵌<code>noCopy</code>结构体。推荐使用该方式！</p>
+<p>要想检测自己是否拷贝了禁止拷贝的结构体，可以使用<code>go vet</code>命令，该命令会检测出<code>noCopy</code>结构体的问题。</p>
 ]]></content:encoded>
     </item>
     <item>
