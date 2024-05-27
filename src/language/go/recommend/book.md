@@ -39,8 +39,8 @@ Go程序员面试[](https://golang.design/go-questions/)
 
 ### go语言190题
 
-<PDF url="http://minio.cjhe.top/book/go%E8%AF%AD%E8%A8%80190%E9%A2%98.pdf" />
+<PDF url="https://minio.cjhe.top/book/go%E8%AF%AD%E8%A8%80190%E9%A2%98.pdf" />
 
 ### Go面试题-极客时间
 
-<PDF url="http://minio.cjhe.top/book/Go%E9%9D%A2%E8%AF%95%E9%A2%98-%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4.pdf" />
+<PDF url="https://minio.cjhe.top/book/Go%E9%9D%A2%E8%AF%95%E9%A2%98-%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4.pdf" />

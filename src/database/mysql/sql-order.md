@@ -9,7 +9,6 @@ category:
 ---
 
 
-
 <!-- more -->
 
 ![sql-queries](https://jvns.ca/images/sql-queries.jpeg)
