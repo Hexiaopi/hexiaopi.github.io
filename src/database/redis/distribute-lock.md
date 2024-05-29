@@ -8,7 +8,6 @@ tag:
  - Redis
 category:
  - 数据存储
-star: true
 ---
 
 <!-- more -->
