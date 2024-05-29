@@ -6,12 +6,12 @@
     <link>http://blog.cjhe.top/</link>
     <description>何小进童鞋的个人博客</description>
     <language>zh-CN</language>
-    <pubDate>Mon, 27 May 2024 09:38:42 GMT</pubDate>
-    <lastBuildDate>Mon, 27 May 2024 09:38:42 GMT</lastBuildDate>
+    <pubDate>Wed, 29 May 2024 08:30:20 GMT</pubDate>
+    <lastBuildDate>Wed, 29 May 2024 08:30:20 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
-    <category>编程语言</category>
     <category>数据存储</category>
+    <category>编程语言</category>
     <category>devops</category>
     <category>转载</category>
     <category>算法</category>
@@ -21,6 +21,45 @@
     <category>编程框架</category>
     <category>网络</category>
     <category>项目规范</category>
+    <item>
+      <title>Nacos</title>
+      <link>http://blog.cjhe.top/database/nacos/</link>
+      <guid>http://blog.cjhe.top/database/nacos/</guid>
+      <source url="http://blog.cjhe.top/rss.xml">Nacos</source>
+      <category>数据存储</category>
+      <pubDate>Wed, 29 May 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<!-- more -->
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Nacos监控</title>
+      <link>http://blog.cjhe.top/database/nacos/nacos-monitor.html</link>
+      <guid>http://blog.cjhe.top/database/nacos/nacos-monitor.html</guid>
+      <source url="http://blog.cjhe.top/rss.xml">Nacos监控</source>
+      <description>Nacos支持Prometheus metrics，接口地址：/nacos/actuator/prometheus。 但是需要配置去开启该接口
+修改配置
+将Nacos配置文文件：application.properties中下行注释取消
+重启Nacos
+验证指标
+nacos-metricsnacos-metrics
+配置面板
+nacos-grafana...</description>
+      <category>数据存储</category>
+      <pubDate>Wed, 29 May 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<!-- more -->
+<p>Nacos支持Prometheus metrics，接口地址：/nacos/actuator/prometheus。 但是需要配置去开启该接口</p>
+<h2>修改配置</h2>
+<p>将Nacos配置文文件：application.properties中下行注释取消</p>
+<div class="language-text" data-ext="text" data-title="text"><pre class="language-text"><code>management.endpoints.web.exposure.include=*
+</code></pre></div><h2>重启Nacos</h2>
+<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code><span class="token function">sh</span> bin/shutdown.sh
+<span class="token function">sh</span> bin/startup.sh <span class="token parameter variable">-m</span> standalone
+</code></pre></div><h2>验证指标</h2>
+<figure><figcaption>nacos-metrics</figcaption></figure>
+<h2>配置面板</h2>
+<figure><figcaption>nacos-grafana</figcaption></figure>
+]]></content:encoded>
+    </item>
     <item>
       <title>Go语言sync.Map底层原理</title>
       <link>http://blog.cjhe.top/language/go/advance/sync-map.html</link>
@@ -3904,26 +3943,44 @@ Cgo 不是 Go。</p>
       <link>http://blog.cjhe.top/CHANGELOG.html</link>
       <guid>http://blog.cjhe.top/CHANGELOG.html</guid>
       <source url="http://blog.cjhe.top/rss.xml">变更日志</source>
-      <description>v0.12.0 (2024-05-12)
+      <description>v0.12.1 (2024-05-29)
 🐛Bug Fixes
 
-修改个人信息
+language: 修改Go禁止拷贝
+language: 补充go语言一些示例
 
 ♻️Code Refactoring
 
-调整图标
+http链接改为https
+调整devops和database内容
+顺序调整
 
 ✨Features
 
-devops: 增加makefile部署k8s应用
-devops: 增加chartmuseum
-share: 增加十二因素应用原则
-
-
-v0.11.4 (2024-05-07)
-♻️Code Re...</description>
-      <pubDate>Sun, 12 May 2024 00:00:00 GMT</pubDate>
+database: 增加nacos监控
+database: 增...</description>
+      <pubDate>Wed, 29 May 2024 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[<!-- more -->
+<p><a name="v0.12.1"></a></p>
+<h2><a class="header-anchor" href="#v0-12-1-2024-05-29"><span></span></a><a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.12.0...v0.12.1" target="_blank" rel="noopener noreferrer">v0.12.1</a> (2024-05-29)</h2>
+<h3>🐛Bug Fixes</h3>
+<ul>
+<li><strong>language:</strong> 修改Go禁止拷贝</li>
+<li><strong>language:</strong> 补充go语言一些示例</li>
+</ul>
+<h3>♻️Code Refactoring</h3>
+<ul>
+<li>http链接改为https</li>
+<li>调整devops和database内容</li>
+<li>顺序调整</li>
+</ul>
+<h3>✨Features</h3>
+<ul>
+<li><strong>database:</strong> 增加nacos监控</li>
+<li><strong>database:</strong> 增加mysql相关图</li>
+<li><strong>go:</strong> 增加Go语言sync.Map底层原理</li>
+<li><strong>language:</strong> Go如何禁止拷贝</li>
+</ul>
 <p><a name="v0.12.0"></a></p>
 <h2><a class="header-anchor" href="#v0-12-0-2024-05-12"><span></span></a><a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.11.4...v0.12.0" target="_blank" rel="noopener noreferrer">v0.12.0</a> (2024-05-12)</h2>
 <h3>🐛Bug Fixes</h3>
@@ -9172,228 +9229,6 @@ Pool：对...</description>
 <span class="token punctuation">}</span>
 </code></pre></div>]]></content:encoded>
       <enclosure url="https://refactoringguru.cn/images/patterns/content/singleton/singleton-2x.png" type="image/png"/>
-    </item>
-    <item>
-      <title>选项模式</title>
-      <link>http://blog.cjhe.top/design-pattern/function/option.html</link>
-      <guid>http://blog.cjhe.top/design-pattern/function/option.html</guid>
-      <source url="http://blog.cjhe.top/rss.xml">选项模式</source>
-      <description>提示 由于Go语言不支持重载函数，当我们需要使用不同的方式构建对象时，不得不使用多个构造函数进行初始化。</description>
-      <category>设计模式</category>
-      <pubDate>Sun, 06 Aug 2023 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<div class="hint-container tip">
-<p class="hint-container-title">提示</p>
-<p>由于Go语言不支持重载函数，当我们需要使用不同的方式构建对象时，不得不使用多个构造函数进行初始化。</p>
-</div>
-<!-- more -->
-<h2>对于多参数的类的初始化遇到哪些困境？</h2>
-<p>例如：HTTP Server的初始化</p>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">type</span> Server <span class="token keyword">struct</span> <span class="token punctuation">{</span>
-	Addr     <span class="token builtin">string</span>
-	Port     <span class="token builtin">int</span>
-	Protocol <span class="token builtin">string</span>
-	Timeout  time<span class="token punctuation">.</span>Duration
-	MaxConns <span class="token builtin">int</span>
-	TLS      <span class="token operator">*</span>tls<span class="token punctuation">.</span>Config
-<span class="token punctuation">}</span>
-</code></pre></div><p>为了支持不同功能的Server，我们不得不通过不同的函数命名和参数，构造初始化函数。</p>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token comment">// NewTLSServer 带TLS的初始化函数</span>
-<span class="token keyword">func</span> <span class="token function">NewTLSServer</span><span class="token punctuation">(</span>addr <span class="token builtin">string</span><span class="token punctuation">,</span> port <span class="token builtin">int</span><span class="token punctuation">,</span> tls <span class="token operator">*</span>tls<span class="token punctuation">.</span>Config<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token operator">*</span>Server<span class="token punctuation">,</span> <span class="token builtin">error</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token keyword">return</span> <span class="token operator">&amp;</span>Server<span class="token punctuation">{</span>
-		Addr<span class="token punctuation">:</span>     addr<span class="token punctuation">,</span>
-		Port<span class="token punctuation">:</span>     port<span class="token punctuation">,</span>
-		Protocol<span class="token punctuation">:</span> <span class="token string">"tcp"</span><span class="token punctuation">,</span>
-		Timeout<span class="token punctuation">:</span>  time<span class="token punctuation">.</span>Second <span class="token operator">*</span> <span class="token number">30</span><span class="token punctuation">,</span>
-		MaxConns<span class="token punctuation">:</span> <span class="token number">100</span><span class="token punctuation">,</span>
-		TLS<span class="token punctuation">:</span>      tls<span class="token punctuation">,</span>
-	<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token boolean">nil</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment">// NewServerWithTimeout 带超时时间的初始化函数</span>
-<span class="token keyword">func</span> <span class="token function">NewServerWithTimeout</span><span class="token punctuation">(</span>addr <span class="token builtin">string</span><span class="token punctuation">,</span> port <span class="token builtin">int</span><span class="token punctuation">,</span> timeout time<span class="token punctuation">.</span>Duration<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token operator">*</span>Server<span class="token punctuation">,</span> <span class="token builtin">error</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token keyword">return</span> <span class="token operator">&amp;</span>Server<span class="token punctuation">{</span>
-		Addr<span class="token punctuation">:</span>     addr<span class="token punctuation">,</span>
-		Port<span class="token punctuation">:</span>     port<span class="token punctuation">,</span>
-		Protocol<span class="token punctuation">:</span> <span class="token string">"tcp"</span><span class="token punctuation">,</span>
-		Timeout<span class="token punctuation">:</span>  timeout<span class="token punctuation">,</span>
-		MaxConns<span class="token punctuation">:</span> <span class="token number">100</span><span class="token punctuation">,</span>
-		TLS<span class="token punctuation">:</span>      <span class="token boolean">nil</span><span class="token punctuation">,</span>
-	<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token boolean">nil</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment">// NewTLSServerWithMaxConnAndTimeout 支持TLS和最大连接数和超时时间的初始化函数</span>
-<span class="token keyword">func</span> <span class="token function">NewTLSServerWithMaxConnAndTimeout</span><span class="token punctuation">(</span>addr <span class="token builtin">string</span><span class="token punctuation">,</span> port <span class="token builtin">int</span><span class="token punctuation">,</span> maxconns <span class="token builtin">int</span><span class="token punctuation">,</span> timeout time<span class="token punctuation">.</span>Duration<span class="token punctuation">,</span> tls <span class="token operator">*</span>tls<span class="token punctuation">.</span>Config<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token operator">*</span>Server<span class="token punctuation">,</span> <span class="token builtin">error</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token keyword">return</span> <span class="token operator">&amp;</span>Server<span class="token punctuation">{</span>
-		Addr<span class="token punctuation">:</span>     addr<span class="token punctuation">,</span>
-		Port<span class="token punctuation">:</span>     port<span class="token punctuation">,</span>
-		Protocol<span class="token punctuation">:</span> <span class="token string">"tcp"</span><span class="token punctuation">,</span>
-		Timeout<span class="token punctuation">:</span>  timeout<span class="token punctuation">,</span>
-		MaxConns<span class="token punctuation">:</span> maxconns<span class="token punctuation">,</span>
-		TLS<span class="token punctuation">:</span>      tls<span class="token punctuation">,</span>
-	<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token boolean">nil</span>
-<span class="token punctuation">}</span>
-</code></pre></div><p>一圈写下来，发现这仅不禁无法列举所有的功能场景，而且代码冗余非常多。</p>
-<h2>那么Option(选项模式)是如何解决这个问题的呢？</h2>
-<h3>首先：定义一个Option函数，参数为Server指针</h3>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">type</span> Option <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token operator">*</span>Server<span class="token punctuation">)</span>
-</code></pre></div><p>如果关注错误的话，可以定义如下</p>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">type</span> Option <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token operator">*</span>Server<span class="token punctuation">)</span> <span class="token builtin">error</span>
-</code></pre></div><h3>其次：定义各种初始化选项函数，通常返回上文定义的Option</h3>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">WithProtocol</span><span class="token punctuation">(</span>protocol <span class="token builtin">string</span><span class="token punctuation">)</span> Option <span class="token punctuation">{</span>
-	<span class="token keyword">return</span> <span class="token keyword">func</span><span class="token punctuation">(</span>s <span class="token operator">*</span>Server<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-		s<span class="token punctuation">.</span>Protocol <span class="token operator">=</span> protocol
-	<span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token function">WithTimeout</span><span class="token punctuation">(</span>timeout time<span class="token punctuation">.</span>Duration<span class="token punctuation">)</span> Option <span class="token punctuation">{</span>
-	<span class="token keyword">return</span> <span class="token keyword">func</span><span class="token punctuation">(</span>s <span class="token operator">*</span>Server<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-		s<span class="token punctuation">.</span>Timeout <span class="token operator">=</span> timeout
-	<span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token function">WithMaxConns</span><span class="token punctuation">(</span>maxconns <span class="token builtin">int</span><span class="token punctuation">)</span> Option <span class="token punctuation">{</span>
-	<span class="token keyword">return</span> <span class="token keyword">func</span><span class="token punctuation">(</span>s <span class="token operator">*</span>Server<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-		s<span class="token punctuation">.</span>MaxConns <span class="token operator">=</span> maxconns
-	<span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token function">WihtTLS</span><span class="token punctuation">(</span>tls <span class="token operator">*</span>tls<span class="token punctuation">.</span>Config<span class="token punctuation">)</span> Option <span class="token punctuation">{</span>
-	<span class="token keyword">return</span> <span class="token keyword">func</span><span class="token punctuation">(</span>s <span class="token operator">*</span>Server<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-		s<span class="token punctuation">.</span>TLS <span class="token operator">=</span> tls
-	<span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre></div><h3>通常：我们定义一个全局的初始化函数，使用Go语言可变参数Option</h3>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">NewServer</span><span class="token punctuation">(</span>addr <span class="token builtin">string</span><span class="token punctuation">,</span> port <span class="token builtin">int</span><span class="token punctuation">,</span> options <span class="token operator">...</span>Option<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token operator">*</span>Server<span class="token punctuation">,</span> <span class="token builtin">error</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	srv <span class="token operator">:=</span> Server<span class="token punctuation">{</span>
-		Addr<span class="token punctuation">:</span>     addr<span class="token punctuation">,</span>
-		Port<span class="token punctuation">:</span>     port<span class="token punctuation">,</span>
-		Protocol<span class="token punctuation">:</span> <span class="token string">"tcp"</span><span class="token punctuation">,</span>
-		Timeout<span class="token punctuation">:</span>  time<span class="token punctuation">.</span>Second <span class="token operator">*</span> <span class="token number">30</span><span class="token punctuation">,</span>
-		MaxConns<span class="token punctuation">:</span> <span class="token number">100</span><span class="token punctuation">,</span>
-		TLS<span class="token punctuation">:</span>      <span class="token boolean">nil</span><span class="token punctuation">,</span>
-	<span class="token punctuation">}</span>
-	<span class="token keyword">for</span> <span class="token boolean">_</span><span class="token punctuation">,</span> option <span class="token operator">:=</span> <span class="token keyword">range</span> options <span class="token punctuation">{</span>
-		<span class="token function">option</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>srv<span class="token punctuation">)</span>
-	<span class="token punctuation">}</span>
-	<span class="token comment">//...</span>
-	<span class="token keyword">return</span> <span class="token operator">&amp;</span>srv<span class="token punctuation">,</span> <span class="token boolean">nil</span>
-<span class="token punctuation">}</span>
-</code></pre></div><h3>最后，我们看看最终效果</h3>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code>s1<span class="token punctuation">,</span> <span class="token boolean">_</span> <span class="token operator">:=</span> <span class="token function">NewServer</span><span class="token punctuation">(</span><span class="token string">"localhost"</span><span class="token punctuation">,</span> <span class="token number">1024</span><span class="token punctuation">)</span> <span class="token comment">//默认的Server</span>
-s2<span class="token punctuation">,</span> <span class="token boolean">_</span> <span class="token operator">:=</span> <span class="token function">NewServer</span><span class="token punctuation">(</span><span class="token string">"localhost"</span><span class="token punctuation">,</span> <span class="token number">2048</span><span class="token punctuation">,</span> <span class="token function">WithProtocol</span><span class="token punctuation">(</span><span class="token string">"udp"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//协议为udp的Server</span>
-s3<span class="token punctuation">,</span> <span class="token boolean">_</span> <span class="token operator">:=</span> <span class="token function">NewServer</span><span class="token punctuation">(</span><span class="token string">"0.0.0.0"</span><span class="token punctuation">,</span> <span class="token number">8080</span><span class="token punctuation">,</span> <span class="token function">WithTimeout</span><span class="token punctuation">(</span><span class="token number">300</span><span class="token operator">*</span>time<span class="token punctuation">.</span>Second<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">WithMaxConns</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//支持超时时间和最大连接的Server</span>
-</code></pre></div><h2>总结</h2>
-<p>由于Go语言函数不支持重载，因此在多参数的类的初始化中，我们遇到初始化函数冗余问题，
-我们可以通过Option(选项模式)，可以很自由的定义类的初始化，解决前面遇到的问题。</p>
-<p>这里本质上使用了Go语言以下特点：</p>
-<ul>
-<li>闭包，<code>With...</code>等Option的定义，通过闭包的方式，扩展了Option的场景;</li>
-<li>可变参数，<code>(options ...option)</code>，通过可变参数，我们可以自由选择Option;</li>
-</ul>
-<h2>参考链接</h2>
-<p><a href="https://coolshell.cn/articles/21146.html" target="_blank" rel="noopener noreferrer">GO 编程模式：FUNCTIONAL OPTIONS</a></p>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>适配器</title>
-      <link>http://blog.cjhe.top/design-pattern/structural/adapter.html</link>
-      <guid>http://blog.cjhe.top/design-pattern/structural/adapter.html</guid>
-      <source url="http://blog.cjhe.top/rss.xml">适配器</source>
-      <description>adapteradapter</description>
-      <category>设计模式</category>
-      <pubDate>Tue, 18 Oct 2022 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<figure><img src="https://refactoringguru.cn/images/patterns/content/adapter/adapter-zh-2x.png" alt="adapter" tabindex="0" loading="lazy"><figcaption>adapter</figcaption></figure>
-<!-- more -->
-<h2>什么是适配器模式</h2>
-<p>适配器模式(Adapter Pattern)：它将一个接口转换成用户期望的另一个接口，使的接口不兼容的那些类可以相互合作。</p>
-<h3>包含哪些角色</h3>
-<figure><figcaption>适配器</figcaption></figure>
-<ul>
-<li>
-<p>Target: 目标角色</p>
-<p>该角色定义是用户期望的接口</p>
-</li>
-<li>
-<p>Adapter: 适配器角色</p>
-<p>将适配者的接口转换为目标接口的类，它是适配器模式的核心</p>
-</li>
-<li>
-<p>Adaptee: 适配者</p>
-<p>需要被适配的接口，它与目标角色接口不一致</p>
-</li>
-</ul>
-<h3>代码示例</h3>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> adapter
-
-<span class="token keyword">import</span> <span class="token string">"fmt"</span>
-
-<span class="token comment">// Target是适配的目标接口</span>
-<span class="token keyword">type</span> Target <span class="token keyword">interface</span> <span class="token punctuation">{</span>
-	<span class="token function">Request</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment">// Adaptee是被适配的目标接口</span>
-<span class="token keyword">type</span> Adaptee <span class="token keyword">interface</span> <span class="token punctuation">{</span>
-	<span class="token function">SpecificRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment">// AdapteeImpl是被适配的目标类</span>
-<span class="token keyword">type</span> AdapteeImpl <span class="token keyword">struct</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>impl <span class="token operator">*</span>AdapteeImpl<span class="token punctuation">)</span> <span class="token function">SpecificRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"adapteeImpl SpecificRequest"</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment">// NewAdaptee是被适配接口的工厂函数</span>
-<span class="token keyword">func</span> <span class="token function">NewAdaptee</span><span class="token punctuation">(</span><span class="token punctuation">)</span> Adaptee <span class="token punctuation">{</span>
-	<span class="token keyword">return</span> <span class="token operator">&amp;</span>AdapteeImpl<span class="token punctuation">{</span><span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment">// Adapter是转换Adaptee为Target接口的适配器</span>
-<span class="token keyword">type</span> Adapter <span class="token keyword">struct</span> <span class="token punctuation">{</span>
-	Adaptee
-<span class="token punctuation">}</span>
-
-<span class="token comment">// Adapter适配器实现目标接口</span>
-<span class="token keyword">func</span> <span class="token punctuation">(</span>a Adapter<span class="token punctuation">)</span> <span class="token function">Request</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	a<span class="token punctuation">.</span><span class="token function">SpecificRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment">// NewAdapter是Adapter的工厂函数，将Adaptee转化为Target</span>
-<span class="token keyword">func</span> <span class="token function">NewAdapter</span><span class="token punctuation">(</span>adaptee Adaptee<span class="token punctuation">)</span> Target <span class="token punctuation">{</span>
-	<span class="token keyword">return</span> <span class="token operator">&amp;</span>Adapter<span class="token punctuation">{</span>Adaptee<span class="token punctuation">:</span> adaptee<span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre></div><p>使用示例如下：</p>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> adapter
-
-<span class="token keyword">func</span> <span class="token function">ExampleRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	adaptee <span class="token operator">:=</span> <span class="token function">NewAdaptee</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-	target <span class="token operator">:=</span> <span class="token function">NewAdapter</span><span class="token punctuation">(</span>adaptee<span class="token punctuation">)</span>
-	target<span class="token punctuation">.</span><span class="token function">Request</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-	<span class="token comment">// Output:</span>
-	<span class="token comment">// adapteeImpl SpecificRequest</span>
-<span class="token punctuation">}</span>
-</code></pre></div><h3>应用场景</h3>
-<ul>
-<li>当我们想要使用一个已经存在的类，但是它的接口不符合我们的需求时，我们可以使用适配器来转换接口，而不需要修改原来的类。</li>
-<li>当我们想要复用一些已有的功能，但是这些功能来自于不同的系统或者库时，我们可以使用适配器来统一接口，而不需要修改原来的系统或者库。</li>
-<li>当我们想要在不同的环境中使用同一个类时，我们可以使用适配器来适应不同的环境，而不需要修改原来的类。</li>
-</ul>
-<h3>有哪些优缺点</h3>
-<h4>优点</h4>
-<ul>
-<li>提高代码的重用性：适配器设计模式可以将已经存在的代码与新的代码进行整合，提高了现有代码的重用率。</li>
-<li>可以让不兼容的代码协同工作：适配器设计模式可以将一个类的接口转换成另一个类的接口，让其它不兼容的代码可以一起工作。</li>
-<li>保证系统的稳定性：适配器设计模式可以让已有的系统保持稳定，不必对其进行修改，只是增加新的功能，满足<code>开闭原则</code>。</li>
-</ul>
-<h4>缺点</h4>
-<ul>
-<li>增加代码复杂性：适配器设计模式需要在原有的类和适配器类中定义大量的代码，会增加系统的复杂度。</li>
-<li>降低代码的可读性：适配器设计模式在现有类的基础上增加了适配器类，使得代码的可读性下降。</li>
-<li>新增了一个中间层，可能会影响系统的性能：适配器设计模式新增了适配器类，可能会影响系统的性能，增加系统的运行开销。</li>
-</ul>
-]]></content:encoded>
-      <enclosure url="https://refactoringguru.cn/images/patterns/content/adapter/adapter-zh-2x.png" type="image/png"/>
     </item>
   </channel>
 </rss>
