@@ -1,10 +1,32 @@
 ---
 title: 变更日志
 icon: clock
-date: 2024-05-12
+date: 2024-05-29
 ---
 
 <!-- more -->
+
+
+<a name="v0.12.1"></a>
+## [v0.12.1](https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.12.0...v0.12.1) (2024-05-29)
+
+### :bug:Bug Fixes
+
+* **language:** 修改Go禁止拷贝
+* **language:** 补充go语言一些示例
+
+### :recycle:Code Refactoring
+
+* http链接改为https
+* 调整devops和database内容
+* 顺序调整
+
+### :sparkles:Features
+
+* **database:** 增加nacos监控
+* **database:** 增加mysql相关图
+* **go:** 增加Go语言sync.Map底层原理
+* **language:** Go如何禁止拷贝
 
 
 <a name="v0.12.0"></a>
