@@ -1,5 +1,5 @@
 ---
-title: MySQL测试
+title: Go语言MySQL测试
 date: 2024-06-11
 tag:
  - Go
@@ -8,6 +8,7 @@ category:
  - 编程语言
 ---
 
+<!-- more -->
 
 Go项目中经常使用MySQL作为存储，一般写测试会建立真实连接进行测试，但带来的问题有很多：
 

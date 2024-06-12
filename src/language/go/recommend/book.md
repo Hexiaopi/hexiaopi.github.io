@@ -1,5 +1,5 @@
 ---
-title: Go语言推荐书籍
+title: Go语言书籍
 icon: book
 date: 2024-04-16
 tag:
@@ -11,7 +11,7 @@ category:
 
 <!-- more -->
 
-## 在线书籍
+## Go书籍
 
 Go高级编程[](https://books.studygolang.com/advanced-go-programming-book/)
 
@@ -36,6 +36,10 @@ Go语言原本[](https://golang.design/under-the-hood/)
 Go语言编程之旅[](https://golang2.eddycjy.com/)
 
 Go程序员面试[](https://golang.design/go-questions/)
+
+Go的一些书籍[地鼠文档](https://topgoer.cn/)
+
+腾讯云开发者社区Go教程[腾讯云](https://cloud.tencent.com/developer/doc/1101)
 
 ### go语言190题
 

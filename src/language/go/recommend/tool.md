@@ -1,5 +1,5 @@
 ---
-title: Go语言推荐工具
+title: Go语言工具
 icon: tools
 date: 2022-09-08
 tag:

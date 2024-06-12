@@ -1,5 +1,5 @@
 ---
-title: Go语言推荐博客
+title: Go语言博客
 icon: blog
 date: 2023-03-04
 tag:
@@ -14,38 +14,6 @@ category:
 :::
 
 <!-- more -->
-
-## Go社区
-
-Go语言官方网站[Go官方](https://golang.google.cn/)
-
-GoCN社区会分享一些文章和招聘[GoCN社区](https://gocn.vip/)
-
-Go语言中文网分享一些文章[Go语言中文网](https://studygolang.com/)
-
-Go夜读会定期的组织阅读Go项目源码[Go夜读](https://talkgo.org/)
-
-Go的一些书籍[地鼠文档](https://topgoer.cn/)
-
-腾讯云开发者社区Go教程[腾讯云](https://cloud.tencent.com/developer/doc/1101)
-
-Go Blog中文翻译[](https://learnku.com/docs/go-blog)
-
-learnku[](https://learnku.com/)
-
-## Go语言规范
-
-[Uber公司Go语言编码规范](https://github.com/xxjwxc/uber_go_guide_cn)
-
-[Go代码评审常见错误清单](https://github.com/golang/go/wiki/CodeReviewComments)
-
-[Go包规范](https://rakyll.org/style-packages/)
-
-稀土掘进-如何写出优雅的Golang代码[](https://juejin.cn/post/6844903976509390856)
-
-稀土掘进-Go语言实践：编写可维护的程序的建议[](https://juejin.cn/post/6844904035611328520)
-
-Go官方代码审查[](https://github.com/golang/go/wiki/CodeReviewComments)
 
 ## Go博客
 
@@ -81,19 +49,6 @@ qcrao[](https://qcrao.com/)
 
 chai2010[](https://chai2010.cn/)
 
-## Go练习
-
-Go的一些练习项目[gophercises](https://gophercises.com/)
-
-Go的示例，有上千个示例[golangexample](https://golangexample.com/)
-
-Go语言一些示例[gobyexample](https://gobyexample.com/)
-
-Go Web开发示例[gowebexamples](https://gowebexamples.com/)
-
-ReposHub网站的Go练习[](https://reposhub.com/go)
-
-英文的Go练习[](https://www.golangprograms.com/)
 
 ## Go项目脚手架
 
