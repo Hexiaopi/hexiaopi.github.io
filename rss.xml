@@ -6,12 +6,12 @@
     <link>http://blog.cjhe.top/</link>
     <description>何小进童鞋的个人博客</description>
     <language>zh-CN</language>
-    <pubDate>Wed, 29 May 2024 08:30:20 GMT</pubDate>
-    <lastBuildDate>Wed, 29 May 2024 08:30:20 GMT</lastBuildDate>
+    <pubDate>Wed, 12 Jun 2024 01:27:58 GMT</pubDate>
+    <lastBuildDate>Wed, 12 Jun 2024 01:27:58 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
-    <category>数据存储</category>
     <category>编程语言</category>
+    <category>数据存储</category>
     <category>devops</category>
     <category>转载</category>
     <category>算法</category>
@@ -21,6 +21,292 @@
     <category>编程框架</category>
     <category>网络</category>
     <category>项目规范</category>
+    <item>
+      <title>Go语言文章</title>
+      <link>http://blog.cjhe.top/language/go/recommend/article.html</link>
+      <guid>http://blog.cjhe.top/language/go/recommend/article.html</guid>
+      <source url="http://blog.cjhe.top/rss.xml">Go语言文章</source>
+      <description>Go语言规范
+Uber公司Go语言编码规范
+Go代码评审常见错误清单
+Go包规范
+稀土掘进-如何写出优雅的Golang代码
+稀土掘进-Go语言实践：编写可维护的程序的建议
+Go官方代码审查</description>
+      <category>编程语言</category>
+      <pubDate>Wed, 12 Jun 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<!-- more -->
+<h2>Go语言规范</h2>
+<p><a href="https://github.com/xxjwxc/uber_go_guide_cn" target="_blank" rel="noopener noreferrer">Uber公司Go语言编码规范</a></p>
+<p><a href="https://github.com/golang/go/wiki/CodeReviewComments" target="_blank" rel="noopener noreferrer">Go代码评审常见错误清单</a></p>
+<p><a href="https://rakyll.org/style-packages/" target="_blank" rel="noopener noreferrer">Go包规范</a></p>
+<p>稀土掘进-如何写出优雅的Golang代码<a href="https://juejin.cn/post/6844903976509390856" target="_blank" rel="noopener noreferrer"></a></p>
+<p>稀土掘进-Go语言实践：编写可维护的程序的建议<a href="https://juejin.cn/post/6844904035611328520" target="_blank" rel="noopener noreferrer"></a></p>
+<p>Go官方代码审查<a href="https://github.com/golang/go/wiki/CodeReviewComments" target="_blank" rel="noopener noreferrer"></a></p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Go语言社区</title>
+      <link>http://blog.cjhe.top/language/go/recommend/community.html</link>
+      <guid>http://blog.cjhe.top/language/go/recommend/community.html</guid>
+      <source url="http://blog.cjhe.top/rss.xml">Go语言社区</source>
+      <description>Go社区</description>
+      <category>编程语言</category>
+      <pubDate>Wed, 12 Jun 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<!-- more -->
+<h2>Go社区</h2>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Go语言练习</title>
+      <link>http://blog.cjhe.top/language/go/recommend/example.html</link>
+      <guid>http://blog.cjhe.top/language/go/recommend/example.html</guid>
+      <source url="http://blog.cjhe.top/rss.xml">Go语言练习</source>
+      <description>Go练习</description>
+      <category>编程语言</category>
+      <pubDate>Tue, 16 Apr 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<!-- more -->
+<h2>Go练习</h2>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Go测试</title>
+      <link>http://blog.cjhe.top/language/go/test/</link>
+      <guid>http://blog.cjhe.top/language/go/test/</guid>
+      <source url="http://blog.cjhe.top/rss.xml">Go测试</source>
+      <category>编程语言</category>
+      <pubDate>Tue, 11 Jun 2024 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Go语言MySQL测试</title>
+      <link>http://blog.cjhe.top/language/go/test/mysql-test.html</link>
+      <guid>http://blog.cjhe.top/language/go/test/mysql-test.html</guid>
+      <source url="http://blog.cjhe.top/rss.xml">Go语言MySQL测试</source>
+      <description>Go项目中经常使用MySQL作为存储，一般写测试会建立真实连接进行测试，但带来的问题有很多：
+
+依赖测试数据，如果数据库中某个数据变更导致测试用例失败
+依赖数据库环境，如果无法连通将导致测试失败
+
+因此，优秀的项目会杜绝这些问题。本文介绍Go语言的sql/driver的mock库。
+安装mock库
+官网用例
+业务SQL函数
+  
+相关信息
+record...</description>
+      <category>编程语言</category>
+      <pubDate>Tue, 11 Jun 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<!-- more -->
+<p>Go项目中经常使用MySQL作为存储，一般写测试会建立真实连接进行测试，但带来的问题有很多：</p>
+<ul>
+<li>依赖测试数据，如果数据库中某个数据变更导致测试用例失败</li>
+<li>依赖数据库环境，如果无法连通将导致测试失败</li>
+</ul>
+<p>因此，优秀的项目会杜绝这些问题。本文介绍Go语言的<code>sql/driver</code>的mock库。</p>
+<h2>安装mock库</h2>
+<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code>go get github.com/DATA-DOG/go-sqlmock
+</code></pre></div><h2>官网用例</h2>
+<h3>业务SQL函数</h3>
+<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">"database/sql"</span>
+
+	<span class="token boolean">_</span> <span class="token string">"github.com/go-sql-driver/mysql"</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">recordStats</span><span class="token punctuation">(</span>db <span class="token operator">*</span>sql<span class="token punctuation">.</span>DB<span class="token punctuation">,</span> userID<span class="token punctuation">,</span> productID <span class="token builtin">int64</span><span class="token punctuation">)</span> <span class="token punctuation">(</span>err <span class="token builtin">error</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	tx<span class="token punctuation">,</span> err <span class="token operator">:=</span> db<span class="token punctuation">.</span><span class="token function">Begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		<span class="token keyword">return</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token keyword">defer</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">switch</span> err <span class="token punctuation">{</span>
+		<span class="token keyword">case</span> <span class="token boolean">nil</span><span class="token punctuation">:</span>
+			err <span class="token operator">=</span> tx<span class="token punctuation">.</span><span class="token function">Commit</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+		<span class="token keyword">default</span><span class="token punctuation">:</span>
+			tx<span class="token punctuation">.</span><span class="token function">Rollback</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+	<span class="token keyword">if</span> <span class="token boolean">_</span><span class="token punctuation">,</span> err <span class="token operator">=</span> tx<span class="token punctuation">.</span><span class="token function">Exec</span><span class="token punctuation">(</span><span class="token string">"UPDATE products SET views = views + 1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		<span class="token keyword">return</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">if</span> <span class="token boolean">_</span><span class="token punctuation">,</span> err <span class="token operator">=</span> tx<span class="token punctuation">.</span><span class="token function">Exec</span><span class="token punctuation">(</span><span class="token string">"INSERT INTO product_viewers (user_id, product_id) VALUES (?, ?)"</span><span class="token punctuation">,</span> userID<span class="token punctuation">,</span> productID<span class="token punctuation">)</span><span class="token punctuation">;</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		<span class="token keyword">return</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">return</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="hint-container info">
+<p class="hint-container-title">相关信息</p>
+<p><code>recordStats</code> 函数负责记录用户浏览产品信息，包括：</p>
+<ul>
+<li>更新商品的 views 个数+1</li>
+<li>插入一条用户浏览商品数据到 product_viewers 表</li>
+</ul>
+<p>以上两个操作在同一个事物中执行</p>
+</div>
+<h3>成功的测试用例</h3>
+<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">TestShouldUpdateStats</span><span class="token punctuation">(</span>t <span class="token operator">*</span>testing<span class="token punctuation">.</span>T<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	db<span class="token punctuation">,</span> mock<span class="token punctuation">,</span> err <span class="token operator">:=</span> sqlmock<span class="token punctuation">.</span><span class="token function">New</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		t<span class="token punctuation">.</span><span class="token function">Fatalf</span><span class="token punctuation">(</span><span class="token string">"an error '%s' was not expected when opening a stub database connection"</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">defer</span> db<span class="token punctuation">.</span><span class="token function">Close</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+	mock<span class="token punctuation">.</span><span class="token function">ExpectBegin</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	mock<span class="token punctuation">.</span><span class="token function">ExpectExec</span><span class="token punctuation">(</span><span class="token string">"UPDATE products"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">WillReturnResult</span><span class="token punctuation">(</span>sqlmock<span class="token punctuation">.</span><span class="token function">NewResult</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+	mock<span class="token punctuation">.</span><span class="token function">ExpectExec</span><span class="token punctuation">(</span><span class="token string">"INSERT INTO product_viewers"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">WithArgs</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">WillReturnResult</span><span class="token punctuation">(</span>sqlmock<span class="token punctuation">.</span><span class="token function">NewResult</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+	mock<span class="token punctuation">.</span><span class="token function">ExpectCommit</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+	<span class="token comment">// now we execute our method</span>
+	<span class="token keyword">if</span> err <span class="token operator">=</span> <span class="token function">recordStats</span><span class="token punctuation">(</span>db<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		t<span class="token punctuation">.</span><span class="token function">Errorf</span><span class="token punctuation">(</span><span class="token string">"error was not expected while updating stats: %s"</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token comment">// we make sure that all expectations were met</span>
+	<span class="token keyword">if</span> err <span class="token operator">:=</span> mock<span class="token punctuation">.</span><span class="token function">ExpectationsWereMet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		t<span class="token punctuation">.</span><span class="token function">Errorf</span><span class="token punctuation">(</span><span class="token string">"there were unfulfilled expectations: %s"</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="hint-container info">
+<p class="hint-container-title">相关信息</p>
+<p>其中：</p>
+<ul>
+<li>8-11行为我们期望执行的SQL语句，包括返回值。</li>
+<li>19行检验是否符合我们的期望。</li>
+</ul>
+</div>
+<h3>失败的测试用例</h3>
+<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">TestShouldRollbackStatUpdatesOnFailure</span><span class="token punctuation">(</span>t <span class="token operator">*</span>testing<span class="token punctuation">.</span>T<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	db<span class="token punctuation">,</span> mock<span class="token punctuation">,</span> err <span class="token operator">:=</span> sqlmock<span class="token punctuation">.</span><span class="token function">New</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		t<span class="token punctuation">.</span><span class="token function">Fatalf</span><span class="token punctuation">(</span><span class="token string">"an error '%s' was not expected when opening a stub database connection"</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">defer</span> db<span class="token punctuation">.</span><span class="token function">Close</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+	mock<span class="token punctuation">.</span><span class="token function">ExpectBegin</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	mock<span class="token punctuation">.</span><span class="token function">ExpectExec</span><span class="token punctuation">(</span><span class="token string">"UPDATE products"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">WillReturnResult</span><span class="token punctuation">(</span>sqlmock<span class="token punctuation">.</span><span class="token function">NewResult</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+	mock<span class="token punctuation">.</span><span class="token function">ExpectExec</span><span class="token punctuation">(</span><span class="token string">"INSERT INTO product_viewers"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>
+		<span class="token function">WithArgs</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">.</span>
+		<span class="token function">WillReturnError</span><span class="token punctuation">(</span>fmt<span class="token punctuation">.</span><span class="token function">Errorf</span><span class="token punctuation">(</span><span class="token string">"some error"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+	mock<span class="token punctuation">.</span><span class="token function">ExpectRollback</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+	<span class="token comment">// now we execute our method</span>
+	<span class="token keyword">if</span> err <span class="token operator">=</span> <span class="token function">recordStats</span><span class="token punctuation">(</span>db<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span> err <span class="token operator">==</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		t<span class="token punctuation">.</span><span class="token function">Errorf</span><span class="token punctuation">(</span><span class="token string">"was expecting an error, but there was none"</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token comment">// we make sure that all expectations were met</span>
+	<span class="token keyword">if</span> err <span class="token operator">:=</span> mock<span class="token punctuation">.</span><span class="token function">ExpectationsWereMet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		t<span class="token punctuation">.</span><span class="token function">Errorf</span><span class="token punctuation">(</span><span class="token string">"there were unfulfilled expectations: %s"</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="hint-container info">
+<p class="hint-container-title">相关信息</p>
+<p>其中</p>
+<ul>
+<li>第10行模拟执行插入失败错误，第13行期望事务回滚。</li>
+<li>第16行按照预期肯定返回错误</li>
+<li>第19行则检验是否符合我们的预期</li>
+</ul>
+</div>
+<h2>小试牛刀</h2>
+<h3>业务dao层</h3>
+<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">type</span> UserDao <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+	db <span class="token operator">*</span>gorm<span class="token punctuation">.</span>DB
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">NewUserDao</span><span class="token punctuation">(</span>db <span class="token operator">*</span>gorm<span class="token punctuation">.</span>DB<span class="token punctuation">)</span> <span class="token operator">*</span>UserDao <span class="token punctuation">{</span>
+	<span class="token keyword">return</span> <span class="token operator">&amp;</span>UserDao<span class="token punctuation">{</span>db<span class="token punctuation">:</span> db<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>dao <span class="token operator">*</span>UserDao<span class="token punctuation">)</span> <span class="token function">Get</span><span class="token punctuation">(</span>ctx context<span class="token punctuation">.</span>Context<span class="token punctuation">,</span> options <span class="token operator">...</span>store<span class="token punctuation">.</span>Option<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token operator">*</span>model<span class="token punctuation">.</span>User<span class="token punctuation">,</span> <span class="token builtin">error</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	user <span class="token operator">:=</span> model<span class="token punctuation">.</span>User<span class="token punctuation">{</span><span class="token punctuation">}</span>
+	query <span class="token operator">:=</span> dao<span class="token punctuation">.</span>db<span class="token punctuation">.</span><span class="token function">WithContext</span><span class="token punctuation">(</span>ctx<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Model</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>model<span class="token punctuation">.</span>User<span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+	<span class="token keyword">for</span> <span class="token boolean">_</span><span class="token punctuation">,</span> option <span class="token operator">:=</span> <span class="token keyword">range</span> options <span class="token punctuation">{</span>
+		option<span class="token punctuation">.</span><span class="token punctuation">(</span>Option<span class="token punctuation">)</span><span class="token punctuation">(</span>query<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">if</span> err <span class="token operator">:=</span> query<span class="token punctuation">.</span><span class="token function">First</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>user<span class="token punctuation">)</span><span class="token punctuation">.</span>Error<span class="token punctuation">;</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		<span class="token keyword">return</span> <span class="token boolean">nil</span><span class="token punctuation">,</span> err
+	<span class="token punctuation">}</span>
+	<span class="token keyword">return</span> <span class="token operator">&amp;</span>user<span class="token punctuation">,</span> <span class="token boolean">nil</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>dao层使用gorm ORM框架，但不妨碍我们采用go-sqlmock进行测试</p>
+<h3>测试用例</h3>
+<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">TestUserDao_Get</span><span class="token punctuation">(</span>t <span class="token operator">*</span>testing<span class="token punctuation">.</span>T<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	db<span class="token punctuation">,</span> mock<span class="token punctuation">,</span> err <span class="token operator">:=</span> sqlmock<span class="token punctuation">.</span><span class="token function">New</span><span class="token punctuation">(</span>sqlmock<span class="token punctuation">.</span><span class="token function">QueryMatcherOption</span><span class="token punctuation">(</span>sqlmock<span class="token punctuation">.</span>QueryMatcherEqual<span class="token punctuation">)</span><span class="token punctuation">)</span>
+	<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		t<span class="token punctuation">.</span><span class="token function">Fatalf</span><span class="token punctuation">(</span><span class="token string">"an error '%s' was not expected when opening a stub database connection"</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">defer</span> db<span class="token punctuation">.</span><span class="token function">Close</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	gdb<span class="token punctuation">,</span> err <span class="token operator">:=</span> gorm<span class="token punctuation">.</span><span class="token function">Open</span><span class="token punctuation">(</span>mysql<span class="token punctuation">.</span><span class="token function">New</span><span class="token punctuation">(</span>mysql<span class="token punctuation">.</span>Config<span class="token punctuation">{</span>DriverName<span class="token punctuation">:</span> <span class="token string">"mysql"</span><span class="token punctuation">,</span> Conn<span class="token punctuation">:</span> db<span class="token punctuation">,</span> SkipInitializeWithVersion<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>gorm<span class="token punctuation">.</span>Config<span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+	<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		t<span class="token punctuation">.</span><span class="token function">Fatal</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+	dao <span class="token operator">:=</span> <span class="token function">NewUserDao</span><span class="token punctuation">(</span>gdb<span class="token punctuation">)</span>
+
+	<span class="token punctuation">{</span> <span class="token comment">//根据name查询用户</span>
+		rows <span class="token operator">:=</span> sqlmock<span class="token punctuation">.</span><span class="token function">NewRows</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">{</span><span class="token string">"id"</span><span class="token punctuation">,</span> <span class="token string">"name"</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">AddRow</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"admin"</span><span class="token punctuation">)</span>
+		mock<span class="token punctuation">.</span><span class="token function">ExpectQuery</span><span class="token punctuation">(</span><span class="token string">"SELECT * FROM `sys_user` WHERE name = ? ORDER BY `sys_user`.`id` LIMIT ?"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">WithArgs</span><span class="token punctuation">(</span><span class="token string">"admin"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">WillReturnRows</span><span class="token punctuation">(</span>rows<span class="token punctuation">)</span>
+		user<span class="token punctuation">,</span> err <span class="token operator">:=</span> dao<span class="token punctuation">.</span><span class="token function">Get</span><span class="token punctuation">(</span>context<span class="token punctuation">.</span><span class="token function">Background</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">NewOption</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">WithUserName</span><span class="token punctuation">(</span><span class="token string">"admin"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+		<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+			t<span class="token punctuation">.</span><span class="token function">Fatal</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+		<span class="token punctuation">}</span>
+		t<span class="token punctuation">.</span><span class="token function">Log</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span>
+		<span class="token keyword">if</span> err <span class="token operator">:=</span> mock<span class="token punctuation">.</span><span class="token function">ExpectationsWereMet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+			t<span class="token punctuation">.</span><span class="token function">Errorf</span><span class="token punctuation">(</span><span class="token string">"there were unfulfilled expectations: %s"</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+	<span class="token punctuation">{</span> <span class="token comment">//根据id查询用户</span>
+		rows <span class="token operator">:=</span> sqlmock<span class="token punctuation">.</span><span class="token function">NewRows</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">{</span><span class="token string">"id"</span><span class="token punctuation">,</span> <span class="token string">"name"</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">AddRow</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"admin"</span><span class="token punctuation">)</span>
+		mock<span class="token punctuation">.</span><span class="token function">ExpectQuery</span><span class="token punctuation">(</span><span class="token string">"SELECT * FROM `sys_user` WHERE id = ? ORDER BY `sys_user`.`id` LIMIT ?"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">WithArgs</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">WillReturnRows</span><span class="token punctuation">(</span>rows<span class="token punctuation">)</span>
+		user<span class="token punctuation">,</span> err <span class="token operator">:=</span> dao<span class="token punctuation">.</span><span class="token function">Get</span><span class="token punctuation">(</span>context<span class="token punctuation">.</span><span class="token function">Background</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">NewOption</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">WithId</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+		<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+			t<span class="token punctuation">.</span><span class="token function">Fatal</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+		<span class="token punctuation">}</span>
+		t<span class="token punctuation">.</span><span class="token function">Log</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span>
+		<span class="token keyword">if</span> err <span class="token operator">:=</span> mock<span class="token punctuation">.</span><span class="token function">ExpectationsWereMet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+			t<span class="token punctuation">.</span><span class="token function">Errorf</span><span class="token punctuation">(</span><span class="token string">"there were unfulfilled expectations: %s"</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="hint-container info">
+<p class="hint-container-title">相关信息</p>
+<p>其中：</p>
+<ul>
+<li>第2行我们使用了严格的匹配方式，即<code>sqlmock.QueryMatcherEqual</code>，即要求SQL语句完全一致，否则会报错SQL不是期望所得。</li>
+<li>由于使用了GORM框架，所以第7行需要初始化gdb，但是由于GORM初始化会执行<code>SELECT VERSION()</code>，所以我们需要通过<code>SkipInitializeWithVersion</code>跳过初始化。</li>
+</ul>
+</div>
+<p>遇见的一些问题：</p>
+<div class="hint-container warning">
+<p class="hint-container-title">注意</p>
+<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code>	<span class="token punctuation">{</span> <span class="token comment">//根据name查询用户</span>
+		rows <span class="token operator">:=</span> sqlmock<span class="token punctuation">.</span><span class="token function">NewRows</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">{</span><span class="token string">"id"</span><span class="token punctuation">,</span> <span class="token string">"name"</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">AddRow</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"admin"</span><span class="token punctuation">)</span>
+		mock<span class="token punctuation">.</span><span class="token function">ExpectQuery</span><span class="token punctuation">(</span><span class="token string">"SELECT * FROM `sys_user` WHERE name = ? ORDER BY `sys_user`.`id` LIMIT 1"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">WithArgs</span><span class="token punctuation">(</span><span class="token string">"admin"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">WillReturnRows</span><span class="token punctuation">(</span>rows<span class="token punctuation">)</span>
+		user<span class="token punctuation">,</span> err <span class="token operator">:=</span> dao<span class="token punctuation">.</span><span class="token function">Get</span><span class="token punctuation">(</span>context<span class="token punctuation">.</span><span class="token function">Background</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">NewOption</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">WithUserName</span><span class="token punctuation">(</span><span class="token string">"admin"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+		<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+			t<span class="token punctuation">.</span><span class="token function">Fatal</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+		<span class="token punctuation">}</span>
+		t<span class="token punctuation">.</span><span class="token function">Log</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span>
+		<span class="token keyword">if</span> err <span class="token operator">:=</span> mock<span class="token punctuation">.</span><span class="token function">ExpectationsWereMet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+			t<span class="token punctuation">.</span><span class="token function">Errorf</span><span class="token punctuation">(</span><span class="token string">"there were unfulfilled expectations: %s"</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+</code></pre></div><p>第3行，我们通过直接写死<code>LIMIT 1</code>而不是<code>LIMIT ?</code>来限制查询结果，但实际执行时，会报错SQL不是期望所得，导致测试用例不通过。因此需要特别注意，需要通过传参的方式。</p>
+</div>
+<h2>个人观点</h2>
+<p>go-sqlmock通过定义我们期望的SQL语句，然后通过模拟执行，来达到测试的目的。但我们通常使用相关的ORM框架，如GORM，已经不再写SQL语句，框架会自动帮助我们补充完整。因此对于一般肉眼可以审查的代码，我觉得使用go-sqlmock进行测试意义不大。</p>
+<p>如果有非常复杂的SQL语句，或者ORM框架无法满足需求，尤其是一些业务逻辑下沉到dao层，那么使用go-sqlmock进行测试是值得的。</p>
+<h2>参考文献</h2>
+<ul>
+<li><a href="https://www.liwenzhou.com/posts/Go/unit-test-2/" target="_blank" rel="noopener noreferrer">李文周</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/693058578" target="_blank" rel="noopener noreferrer">知乎</a></li>
+</ul>
+]]></content:encoded>
+    </item>
     <item>
       <title>Nacos</title>
       <link>http://blog.cjhe.top/database/nacos/</link>
@@ -1650,11 +1936,11 @@ Added `minio` successfully.
 ]]></content:encoded>
     </item>
     <item>
-      <title>Go语言推荐书籍</title>
+      <title>Go语言书籍</title>
       <link>http://blog.cjhe.top/language/go/recommend/book.html</link>
       <guid>http://blog.cjhe.top/language/go/recommend/book.html</guid>
-      <source url="http://blog.cjhe.top/rss.xml">Go语言推荐书籍</source>
-      <description>在线书籍
+      <source url="http://blog.cjhe.top/rss.xml">Go语言书籍</source>
+      <description>Go书籍
 Go高级编程
 Go语言设计与实现
 Go语言四十二章经
@@ -1667,11 +1953,13 @@ Go练习
 Go语言原本
 Go语言编程之旅
 Go程序员面试
+Go的一些书籍地鼠文档
+腾讯云开发者社区Go教程腾讯云
 go语言190题</description>
       <category>编程语言</category>
       <pubDate>Tue, 16 Apr 2024 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[<!-- more -->
-<h2>在线书籍</h2>
+<h2>Go书籍</h2>
 <p>Go高级编程<a href="https://books.studygolang.com/advanced-go-programming-book/" target="_blank" rel="noopener noreferrer"></a></p>
 <p>Go语言设计与实现<a href="https://draveness.me/golang/" target="_blank" rel="noopener noreferrer"></a></p>
 <p>Go语言四十二章经<a href="https://github.com/ffhelicopter/Go42" target="_blank" rel="noopener noreferrer"></a></p>
@@ -1684,6 +1972,8 @@ go语言190题</description>
 <p>Go语言原本<a href="https://golang.design/under-the-hood/" target="_blank" rel="noopener noreferrer"></a></p>
 <p>Go语言编程之旅<a href="https://golang2.eddycjy.com/" target="_blank" rel="noopener noreferrer"></a></p>
 <p>Go程序员面试<a href="https://golang.design/go-questions/" target="_blank" rel="noopener noreferrer"></a></p>
+<p>Go的一些书籍<a href="https://topgoer.cn/" target="_blank" rel="noopener noreferrer">地鼠文档</a></p>
+<p>腾讯云开发者社区Go教程<a href="https://cloud.tencent.com/developer/doc/1101" target="_blank" rel="noopener noreferrer">腾讯云</a></p>
 <h3>go语言190题</h3>
 ]]></content:encoded>
     </item>
@@ -8468,767 +8758,6 @@ func ExampleComputer() {
 </ul>
 ]]></content:encoded>
       <enclosure url="https://refactoringguru.cn/images/patterns/content/builder/builder-zh-2x.png" type="image/png"/>
-    </item>
-    <item>
-      <title>工厂方法</title>
-      <link>http://blog.cjhe.top/design-pattern/creational/factory-method.html</link>
-      <guid>http://blog.cjhe.top/design-pattern/creational/factory-method.html</guid>
-      <source url="http://blog.cjhe.top/rss.xml">工厂方法</source>
-      <description>factory-methodfactory-method</description>
-      <category>设计模式</category>
-      <pubDate>Sat, 15 Oct 2022 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<figure><img src="https://refactoringguru.cn/images/patterns/content/factory-method/factory-method-zh-2x.png" alt="factory-method" tabindex="0" loading="lazy"><figcaption>factory-method</figcaption></figure>
-<!-- more -->
-<p>工厂方法模式(Factory Method Pattern)也叫虚拟构造器(Virtual Constructor)模式</p>
-<h2>问题</h2>
-<p>由于简单工厂模式违背了<code>开闭原则</code>，而工厂方法模式对简单工厂模式进一步抽象，其好处是可以使系统在不修改原来代码的情况下引进新的产品，即满足开闭原则。</p>
-<h2>解决方案</h2>
-<h3>角色</h3>
-<figure><figcaption>工厂方法模式</figcaption></figure>
-<ul>
-<li>
-<p>Abstract Factory：抽象工厂</p>
-<p>提供了创建产品的接口，调用者通过它访问具体工厂的工厂方法来创建产品。</p>
-</li>
-<li>
-<p>Concrete Factory：具体工厂</p>
-<p>实现了抽象工厂的方法，完成具体产品的创建。</p>
-</li>
-<li>
-<p>Product：抽象产品</p>
-<p>定义了产品的规范，描述了产品的主要特性和功能。</p>
-</li>
-<li>
-<p>Concrete Product：具体产品</p>
-<p>实现了抽象产品定义的接口，由具体工厂来创建，它同具体工厂之间一一对应。</p>
-</li>
-</ul>
-<h3>代码示例</h3>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> factory_method
-
-<span class="token keyword">import</span> <span class="token string">"fmt"</span>
-
-<span class="token comment">// 抽象产品</span>
-<span class="token keyword">type</span> Product <span class="token keyword">interface</span> <span class="token punctuation">{</span>
-	<span class="token function">Show</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment">// 抽象工厂</span>
-<span class="token keyword">type</span> AbstractFactory <span class="token keyword">interface</span> <span class="token punctuation">{</span>
-	<span class="token function">NewProduct</span><span class="token punctuation">(</span><span class="token punctuation">)</span> Product
-<span class="token punctuation">}</span>
-
-<span class="token comment">// 具体产品1</span>
-<span class="token keyword">type</span> ConcreteProduct1 <span class="token keyword">struct</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span><span class="token operator">*</span>ConcreteProduct1<span class="token punctuation">)</span> <span class="token function">Show</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Product1 show"</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment">// 具体工厂1</span>
-<span class="token keyword">type</span> ConcreteFactory1 <span class="token keyword">struct</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>ConcreteFactory1<span class="token punctuation">)</span> <span class="token function">NewProduct</span><span class="token punctuation">(</span><span class="token punctuation">)</span> Product <span class="token punctuation">{</span>
-	<span class="token keyword">return</span> <span class="token operator">&amp;</span>ConcreteProduct1<span class="token punctuation">{</span><span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment">// 具体产品2</span>
-<span class="token keyword">type</span> ConcreteProduct2 <span class="token keyword">struct</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span><span class="token operator">*</span>ConcreteProduct2<span class="token punctuation">)</span> <span class="token function">Show</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Product2 show"</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment">// 具体工厂2</span>
-<span class="token keyword">type</span> ConcreteFactory2 <span class="token keyword">struct</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>ConcreteFactory2<span class="token punctuation">)</span> <span class="token function">NewProduct</span><span class="token punctuation">(</span><span class="token punctuation">)</span> Product <span class="token punctuation">{</span>
-	<span class="token keyword">return</span> <span class="token operator">&amp;</span>ConcreteProduct2<span class="token punctuation">{</span><span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre></div><p>使用工厂创建产品示例如下：</p>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> factory_method
-
-<span class="token keyword">func</span> <span class="token function">ExampleConcreteFactory1_NewProduct</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token keyword">var</span> factory AbstractFactory
-	factory <span class="token operator">=</span> ConcreteFactory1<span class="token punctuation">{</span><span class="token punctuation">}</span>
-	product <span class="token operator">:=</span> factory<span class="token punctuation">.</span><span class="token function">NewProduct</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-	product<span class="token punctuation">.</span><span class="token function">Show</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-	<span class="token comment">// Output:</span>
-	<span class="token comment">// Product1 show</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token function">ExampleConcreteFactory2_NewProduct</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token keyword">var</span> factory AbstractFactory
-	factory <span class="token operator">=</span> ConcreteFactory2<span class="token punctuation">{</span><span class="token punctuation">}</span>
-	product <span class="token operator">:=</span> factory<span class="token punctuation">.</span><span class="token function">NewProduct</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-	product<span class="token punctuation">.</span><span class="token function">Show</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-	<span class="token comment">// Output:</span>
-	<span class="token comment">// Product2 show</span>
-<span class="token punctuation">}</span>
-</code></pre></div><h2>效果</h2>
-<h3>优缺点</h3>
-<h4>优点</h4>
-<ul>
-<li>遵循了<code>开闭原则</code>，扩展性极强。增加新的产品类时，只需增加对应的工厂类，不需要修改原有代码。</li>
-<li>降低了系统的耦合性，将对象的创建和使用分离，使得各个模块各司其职。</li>
-<li>利用了面向接口编程的思路，创建的对象是一个符合通用接口的通用对象，这个对象的具体实现可以随意替换。</li>
-</ul>
-<h4>缺点</h4>
-<ul>
-<li>增加了系统的复杂度，类的个数容易过多，增加了系统抽象性和理解难度。</li>
-<li>增加了系统的开销，每次创建对象时都要创建一个工厂对象，消耗资源和时间。</li>
-<li><strong>抽象产品只能是一种产品</strong>。此弊端可使用抽象工厂模式解决。</li>
-</ul>
-<h3>应用场景</h3>
-<ul>
-<li>当创建对象需要使用大量重复的代码时，可以使用工厂方法模式来简化代码和提高可读性。</li>
-<li>当客户端不关心对象的创建过程和实现细节时，可以使用工厂方法模式来隐藏对象的创建逻辑，只需要知道工厂类和产品接口即可。</li>
-<li>当一个类通过其子类来指定创建哪个对象时，可以使用工厂方法模式来实现多态和动态绑定，让子类决定具体的产品类。</li>
-<li>当需要根据不同的环境或条件来创建不同的对象时，可以使用工厂方法模式来根据不同的工厂类来创建对应的产品类。</li>
-</ul>
-<p>举例：</p>
-<ul>
-<li>换灯泡：假设你有一个灯泡接口，它有一个方法是发光，你有不同的灯泡实现类，比如白炽灯、节能灯、LED灯等，每种灯泡都有自己的工厂类，负责创建对应的灯泡对象。这样你就可以根据需要选择不同的工厂来创建不同的灯泡，而不用直接使用new关键字。</li>
-<li>日志记录器：假设你有一个日志记录器接口，它有一个方法是记录日志，你有不同的日志记录器实现类，比如文件日志记录器、数据库日志记录器、网络日志记录器等，每种日志记录器都有自己的工厂类，负责创建对应的日志记录器对象。这样你就可以根据需要选择不同的工厂来创建不同的日志记录器，而不用直接使用new关键字。</li>
-<li>电脑商店：假设你有一个电脑接口，它有一些方法是显示配置、运行程序等，你有不同的电脑实现类，比如联想电脑、华为电脑、苹果电脑等，每种电脑都有自己的工厂类，负责创建对应的电脑对象。这样你就可以根据需要选择不同的工厂来创建不同的电脑，而不用直接使用new关键字。</li>
-</ul>
-<h2>总结</h2>
-<p>工厂方法模式通过定义工厂接口和产品接口，并由具体的工厂类和产品类来实现，实现了对象的创建和使用的分离，提高了代码的可扩展性和可维护性。</p>
-]]></content:encoded>
-      <enclosure url="https://refactoringguru.cn/images/patterns/content/factory-method/factory-method-zh-2x.png" type="image/png"/>
-    </item>
-    <item>
-      <title>对象池</title>
-      <link>http://blog.cjhe.top/design-pattern/creational/object-pool.html</link>
-      <guid>http://blog.cjhe.top/design-pattern/creational/object-pool.html</guid>
-      <source url="http://blog.cjhe.top/rss.xml">对象池</source>
-      <description>对象池模式(Object Pool Pattern)：它通过预先创建和初始化一组对象，然后将它们存放在一个池中，以便在需要时重复使用。这样可以减少频繁创建和销毁对象的开销，提高应用程序的性能和效率。
-问题
-在某些性能场景，频繁的创建和销毁对象或对GC压力较大，影响程序的性能
-解决方案
-角色
-object-poolobject-pool
-
-
-Pool：对...</description>
-      <category>设计模式</category>
-      <pubDate>Sun, 16 Apr 2023 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<!-- more -->
-<p>对象池模式(Object Pool Pattern)：它通过预先创建和初始化一组对象，然后将它们存放在一个池中，以便在需要时重复使用。这样可以减少频繁创建和销毁对象的开销，提高应用程序的性能和效率。</p>
-<h2>问题</h2>
-<p>在某些性能场景，频繁的创建和销毁对象或对GC压力较大，影响程序的性能</p>
-<h2>解决方案</h2>
-<h3>角色</h3>
-<figure><figcaption>object-pool</figcaption></figure>
-<ul>
-<li>
-<p>Pool：对象池</p>
-<p>对象池维护活动对象列表和空闲对象列表</p>
-</li>
-<li>
-<p>Object：对象</p>
-<p>对象被客户端使用</p>
-</li>
-</ul>
-<h3>代码示例</h3>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> object_pool
-
-<span class="token keyword">import</span> <span class="token punctuation">(</span>
-	<span class="token string">"sync"</span>
-<span class="token punctuation">)</span>
-
-<span class="token keyword">type</span> pool <span class="token keyword">struct</span> <span class="token punctuation">{</span>
-	mutex     <span class="token operator">*</span>sync<span class="token punctuation">.</span>Mutex
-	idle      <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
-	active    <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
-	newObject <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token function">NewPool</span><span class="token punctuation">(</span>newFunc <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">*</span>pool <span class="token punctuation">{</span>
-	<span class="token keyword">return</span> <span class="token operator">&amp;</span>pool<span class="token punctuation">{</span>
-		mutex<span class="token punctuation">:</span>     <span class="token operator">&amp;</span>sync<span class="token punctuation">.</span>Mutex<span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
-		idle<span class="token punctuation">:</span>      <span class="token function">make</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-		active<span class="token punctuation">:</span>    <span class="token function">make</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-		newObject<span class="token punctuation">:</span> newFunc<span class="token punctuation">,</span>
-	<span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>p <span class="token operator">*</span>pool<span class="token punctuation">)</span> <span class="token function">Acquire</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token punctuation">{</span>
-	p<span class="token punctuation">.</span>mutex<span class="token punctuation">.</span><span class="token function">Lock</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-	<span class="token keyword">defer</span> p<span class="token punctuation">.</span>mutex<span class="token punctuation">.</span><span class="token function">Unlock</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-	<span class="token keyword">var</span> object <span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
-	<span class="token keyword">if</span> <span class="token function">len</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>idle<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token punctuation">{</span>
-		object <span class="token operator">=</span> p<span class="token punctuation">.</span><span class="token function">newObject</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-	<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-		object <span class="token operator">=</span> p<span class="token punctuation">.</span>idle<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
-		p<span class="token punctuation">.</span>idle <span class="token operator">=</span> p<span class="token punctuation">.</span>idle<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span>
-	<span class="token punctuation">}</span>
-	p<span class="token punctuation">.</span>active <span class="token operator">=</span> <span class="token function">append</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>active<span class="token punctuation">,</span> object<span class="token punctuation">)</span>
-	<span class="token keyword">return</span> object
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>p <span class="token operator">*</span>pool<span class="token punctuation">)</span> <span class="token function">Release</span><span class="token punctuation">(</span>target <span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	p<span class="token punctuation">.</span>mutex<span class="token punctuation">.</span><span class="token function">Lock</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-	<span class="token keyword">defer</span> p<span class="token punctuation">.</span>mutex<span class="token punctuation">.</span><span class="token function">Unlock</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-	p<span class="token punctuation">.</span>idle <span class="token operator">=</span> <span class="token function">append</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>idle<span class="token punctuation">,</span> target<span class="token punctuation">)</span>
-	<span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token keyword">range</span> p<span class="token punctuation">.</span>active <span class="token punctuation">{</span>
-		<span class="token keyword">if</span> p<span class="token punctuation">.</span>active<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> target <span class="token punctuation">{</span>
-			p<span class="token punctuation">.</span>active <span class="token operator">=</span> <span class="token function">append</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>active<span class="token punctuation">[</span><span class="token punctuation">:</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> p<span class="token punctuation">.</span>active<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token operator">...</span><span class="token punctuation">)</span>
-			<span class="token keyword">break</span>
-		<span class="token punctuation">}</span>
-	<span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre></div><p>使用示例</p>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> object_pool
-
-<span class="token keyword">import</span> <span class="token punctuation">(</span>
-	<span class="token string">"fmt"</span>
-<span class="token punctuation">)</span>
-
-<span class="token keyword">func</span> <span class="token function">ExamplePool</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	newConnDB <span class="token operator">:=</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token punctuation">{</span>
-		<span class="token keyword">return</span> <span class="token string">"conn-db"</span>
-	<span class="token punctuation">}</span>
-	pool <span class="token operator">:=</span> <span class="token function">NewPool</span><span class="token punctuation">(</span>newConnDB<span class="token punctuation">)</span>
-	object1 <span class="token operator">:=</span> pool<span class="token punctuation">.</span><span class="token function">Acquire</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token function">len</span><span class="token punctuation">(</span>pool<span class="token punctuation">.</span>idle<span class="token punctuation">)</span><span class="token punctuation">)</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token function">len</span><span class="token punctuation">(</span>pool<span class="token punctuation">.</span>active<span class="token punctuation">)</span><span class="token punctuation">)</span>
-
-	object2 <span class="token operator">:=</span> pool<span class="token punctuation">.</span><span class="token function">Acquire</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token function">len</span><span class="token punctuation">(</span>pool<span class="token punctuation">.</span>idle<span class="token punctuation">)</span><span class="token punctuation">)</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token function">len</span><span class="token punctuation">(</span>pool<span class="token punctuation">.</span>active<span class="token punctuation">)</span><span class="token punctuation">)</span>
-
-	pool<span class="token punctuation">.</span><span class="token function">Release</span><span class="token punctuation">(</span>object1<span class="token punctuation">)</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token function">len</span><span class="token punctuation">(</span>pool<span class="token punctuation">.</span>idle<span class="token punctuation">)</span><span class="token punctuation">)</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token function">len</span><span class="token punctuation">(</span>pool<span class="token punctuation">.</span>active<span class="token punctuation">)</span><span class="token punctuation">)</span>
-
-	pool3 <span class="token operator">:=</span> pool<span class="token punctuation">.</span><span class="token function">Acquire</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token function">len</span><span class="token punctuation">(</span>pool<span class="token punctuation">.</span>idle<span class="token punctuation">)</span><span class="token punctuation">)</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token function">len</span><span class="token punctuation">(</span>pool<span class="token punctuation">.</span>active<span class="token punctuation">)</span><span class="token punctuation">)</span>
-
-	pool<span class="token punctuation">.</span><span class="token function">Release</span><span class="token punctuation">(</span>object2<span class="token punctuation">)</span>
-	pool<span class="token punctuation">.</span><span class="token function">Release</span><span class="token punctuation">(</span>pool3<span class="token punctuation">)</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token function">len</span><span class="token punctuation">(</span>pool<span class="token punctuation">.</span>idle<span class="token punctuation">)</span><span class="token punctuation">)</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token function">len</span><span class="token punctuation">(</span>pool<span class="token punctuation">.</span>active<span class="token punctuation">)</span><span class="token punctuation">)</span>
-	<span class="token comment">// Output:</span>
-	<span class="token comment">// 0</span>
-	<span class="token comment">// 1</span>
-	<span class="token comment">// 0</span>
-	<span class="token comment">// 2</span>
-	<span class="token comment">// 1</span>
-	<span class="token comment">// 1</span>
-	<span class="token comment">// 0</span>
-	<span class="token comment">// 2</span>
-	<span class="token comment">// 2</span>
-	<span class="token comment">// 0</span>
-<span class="token punctuation">}</span>
-</code></pre></div><h2>效果</h2>
-<h3>使用场景</h3>
-<ul>
-<li>资源受限的场景，比如不需要可伸缩性的环境（CPU、内存等物理资源有限），CPU性能不够强劲，内存比较紧张，垃圾收集，内存抖动会造成比较大的影响，需要提高内存管理效率，响应性比吞吐量更为重要。</li>
-<li>在内存中数量受限的对象，比如数据库连接、网络连接、线程等。</li>
-<li>创建成本高的对象，比如初始化时间长、占用资源多、需要复杂的配置等。</li>
-</ul>
-<h3>优缺点</h3>
-<h4>优点</h4>
-<ul>
-<li>提升性能：减少创建和销毁对象的开销，节省内存和CPU资源，提高响应速度。</li>
-<li>减少GC压力：复用对象池中的对象，避免频繁的垃圾回收，降低内存抖动和暂停时间。</li>
-<li>易于实现：对象池模式相对容易实现，可用于多种情况。它是一种经过验证的设计模式，已在许多应用程序和编程语言中成功使用。</li>
-</ul>
-<h4>缺点</h4>
-<ul>
-<li>增加依赖性：将对象返回对象池中的操作依赖于客户端，如果客户端忘记将对象返回对象池中，将导致该对象无法被其他组件使用。</li>
-<li>增加复杂性：对象池模式可以通过添加额外的抽象层来增加应用程序的复杂性。这会使代码更难理解和维护，尤其是涉及到多线程和并发的场景。</li>
-<li>存在脏对象问题：所谓的脏对象就是指的是当对象被放回对象池后，还保留着刚刚被客户端调用时生成的数据。脏对象可能带来两个问题：
-<ul>
-<li>脏对象持有上次使用的引用，导致内存泄露等问题。</li>
-<li>脏对象如果下一次使用时没有做清理，可能影响程序的处理数据。</li>
-</ul>
-</li>
-<li>生命周期问题：处于对象池中的对象生命周期要比普通的对象要长久。这可能导致一些难以预料的问题，比如对象状态不一致、资源占用过多等。</li>
-</ul>
-<h2>总结</h2>
-<p>对象池模式是一种创建型设计模式，它通过预先创建和初始化一组对象，然后将它们存放在一个池中，以便在需要时重复使用。这样可以减少频繁创建和销毁对象的开销，提高应用程序的性能和效率。在使用对象池设计模式时，需要注意：</p>
-<ul>
-<li>对象池的大小应该根据实际需求和资源情况来确定，不要过大或过小。</li>
-<li>对象池中的对象应该是无状态或者可重置状态的，以避免状态污染和数据不一致。</li>
-<li>对象池中的对象应该是线程安全或者线程隔离的，以避免并发问题和竞争条件。</li>
-<li>对象池中的对象应该在使用完毕后及时归还，以避免资源泄露和浪费。</li>
-</ul>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>原型</title>
-      <link>http://blog.cjhe.top/design-pattern/creational/prototype.html</link>
-      <guid>http://blog.cjhe.top/design-pattern/creational/prototype.html</guid>
-      <source url="http://blog.cjhe.top/rss.xml">原型</source>
-      <description>prototypeprototype</description>
-      <category>设计模式</category>
-      <pubDate>Sun, 16 Oct 2022 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<figure><img src="https://refactoringguru.cn/images/patterns/content/prototype/prototype-2x.png" alt="prototype" tabindex="0" loading="lazy"><figcaption>prototype</figcaption></figure>
-<!-- more -->
-<p>原型模式(Prototype Pattern)用一个已经创建的实例作为原型，通过复制该原型对象来创建一个和原型相同或相似的新对象。它的核心思想是通过复制一个已经存在的<strong>对象</strong>来创建新的<strong>对象</strong>，而不是通过调用构造函数或者其他初始化方法。这样可以避免一些复杂的或者耗时的对象创建过程，提高程序的效率和灵活性。</p>
-<h2>问题</h2>
-<p>当程序中需要大量对象，创建这些对象将导致占用大量的内存，非常耗时。</p>
-<h2>解决方案</h2>
-<h3>角色</h3>
-<figure><figcaption>prototype</figcaption></figure>
-<ul>
-<li>
-<p>Prototype：抽象原型</p>
-<p>抽象原型规定了clone()接口来复制新的对象</p>
-</li>
-<li>
-<p>ConcretePrototype：具体原型</p>
-<p>具体原型实现抽象原型的clone()方法，是可被复制的对象</p>
-</li>
-</ul>
-<h3>代码示例</h3>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> prototype
-
-<span class="token keyword">import</span> <span class="token string">"fmt"</span>
-
-<span class="token keyword">type</span> inode <span class="token keyword">interface</span> <span class="token punctuation">{</span>
-	<span class="token function">print</span><span class="token punctuation">(</span><span class="token builtin">string</span><span class="token punctuation">)</span>
-	<span class="token function">clone</span><span class="token punctuation">(</span><span class="token punctuation">)</span> inode
-<span class="token punctuation">}</span>
-
-<span class="token keyword">type</span> file <span class="token keyword">struct</span> <span class="token punctuation">{</span>
-	name <span class="token builtin">string</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>f <span class="token operator">*</span>file<span class="token punctuation">)</span> <span class="token function">print</span><span class="token punctuation">(</span>indentation <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>indentation <span class="token operator">+</span> f<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>f <span class="token operator">*</span>file<span class="token punctuation">)</span> <span class="token function">clone</span><span class="token punctuation">(</span><span class="token punctuation">)</span> inode <span class="token punctuation">{</span>
-	<span class="token keyword">return</span> <span class="token operator">&amp;</span>file<span class="token punctuation">{</span>name<span class="token punctuation">:</span> f<span class="token punctuation">.</span>name <span class="token operator">+</span> <span class="token string">"_clone"</span><span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">type</span> folder <span class="token keyword">struct</span> <span class="token punctuation">{</span>
-	children <span class="token punctuation">[</span><span class="token punctuation">]</span>inode
-	name     <span class="token builtin">string</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>f <span class="token operator">*</span>folder<span class="token punctuation">)</span> <span class="token function">print</span><span class="token punctuation">(</span>indentation <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>indentation <span class="token operator">+</span> f<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
-	<span class="token keyword">for</span> <span class="token boolean">_</span><span class="token punctuation">,</span> i <span class="token operator">:=</span> <span class="token keyword">range</span> f<span class="token punctuation">.</span>children <span class="token punctuation">{</span>
-		i<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>indentation <span class="token operator">+</span> indentation<span class="token punctuation">)</span>
-	<span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>f <span class="token operator">*</span>folder<span class="token punctuation">)</span> <span class="token function">clone</span><span class="token punctuation">(</span><span class="token punctuation">)</span> inode <span class="token punctuation">{</span>
-	cloneFolder <span class="token operator">:=</span> <span class="token operator">&amp;</span>folder<span class="token punctuation">{</span>name<span class="token punctuation">:</span> f<span class="token punctuation">.</span>name <span class="token operator">+</span> <span class="token string">"_clone"</span><span class="token punctuation">}</span>
-	<span class="token keyword">var</span> tempChildren <span class="token punctuation">[</span><span class="token punctuation">]</span>inode
-	<span class="token keyword">for</span> <span class="token boolean">_</span><span class="token punctuation">,</span> i <span class="token operator">:=</span> <span class="token keyword">range</span> f<span class="token punctuation">.</span>children <span class="token punctuation">{</span>
-		<span class="token builtin">copy</span> <span class="token operator">:=</span> i<span class="token punctuation">.</span><span class="token function">clone</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-		tempChildren <span class="token operator">=</span> <span class="token function">append</span><span class="token punctuation">(</span>tempChildren<span class="token punctuation">,</span> <span class="token builtin">copy</span><span class="token punctuation">)</span>
-	<span class="token punctuation">}</span>
-	cloneFolder<span class="token punctuation">.</span>children <span class="token operator">=</span> tempChildren
-	<span class="token keyword">return</span> cloneFolder
-<span class="token punctuation">}</span>
-</code></pre></div><p>使用示例如下：</p>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> prototype
-
-<span class="token keyword">func</span> <span class="token function">ExampleFile</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	file1 <span class="token operator">:=</span> <span class="token operator">&amp;</span>file<span class="token punctuation">{</span>name<span class="token punctuation">:</span> <span class="token string">"file1"</span><span class="token punctuation">}</span>
-	cloneFile <span class="token operator">:=</span> file1<span class="token punctuation">.</span><span class="token function">clone</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-	cloneFile<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"example_"</span><span class="token punctuation">)</span>
-	<span class="token comment">// Output:</span>
-	<span class="token comment">// example_file1_clone</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token function">ExampleFolder</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	file1 <span class="token operator">:=</span> <span class="token operator">&amp;</span>file<span class="token punctuation">{</span>name<span class="token punctuation">:</span> <span class="token string">"file1"</span><span class="token punctuation">}</span>
-	file2 <span class="token operator">:=</span> <span class="token operator">&amp;</span>file<span class="token punctuation">{</span>name<span class="token punctuation">:</span> <span class="token string">"file2"</span><span class="token punctuation">}</span>
-	file3 <span class="token operator">:=</span> <span class="token operator">&amp;</span>file<span class="token punctuation">{</span>name<span class="token punctuation">:</span> <span class="token string">"file3"</span><span class="token punctuation">}</span>
-	folder1 <span class="token operator">:=</span> <span class="token operator">&amp;</span>folder<span class="token punctuation">{</span>
-		name<span class="token punctuation">:</span>     <span class="token string">"folder1"</span><span class="token punctuation">,</span>
-		children<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>inode<span class="token punctuation">{</span>file1<span class="token punctuation">,</span> file2<span class="token punctuation">,</span> file3<span class="token punctuation">}</span><span class="token punctuation">,</span>
-	<span class="token punctuation">}</span>
-	cloneFolder <span class="token operator">:=</span> folder1<span class="token punctuation">.</span><span class="token function">clone</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-	cloneFolder<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"example_"</span><span class="token punctuation">)</span>
-	<span class="token comment">// Output:</span>
-	<span class="token comment">// example_folder1_clone</span>
-	<span class="token comment">// example_example_file1_clone</span>
-	<span class="token comment">// example_example_file2_clone</span>
-	<span class="token comment">// example_example_file3_clone</span>
-<span class="token punctuation">}</span>
-</code></pre></div><h2>效果</h2>
-<h3>应用场景</h3>
-<ul>
-<li>当对象创建过程很复杂或者很耗时时，可以通过复制一个已经存在的对象来简化和加快对象创建过程。</li>
-<li>当需要生成大量相同或者相似的对象时，可以通过复制一个原型对象来减少内存消耗和提高性能。</li>
-<li>当需要根据不同的需求和环境来动态地生成对象时，可以通过选择不同的原型对象来实现多态性和灵活性。</li>
-</ul>
-<p>例如：</p>
-<p>游戏中的子弹，通常数量规模很大，通过原型设计模式可以复制已经创建好的字段对象，这样可以节省内存和性能。</p>
-<h3>优缺点</h3>
-<h4>优点</h4>
-<ul>
-<li>可以避免重复的对象创建过程，节省时间和资源。</li>
-<li>可以动态地生成对象，根据不同的需求和环境来选择合适的原型。</li>
-<li>可以隐藏对象创建的细节，降低代码的耦合度和依赖性。</li>
-</ul>
-<h4>缺点</h4>
-<ul>
-<li>需要实现克隆方法，可能会增加代码的复杂度和维护成本。</li>
-<li>需要注意深拷贝和浅拷贝的区别，避免出现意外的副作用和错误。</li>
-<li>需要保证原型对象的稳定性和安全性，避免被修改或者破坏。</li>
-</ul>
-<h2>总结</h2>
-<p>原型设计模式是一种创建型设计模式，它通过复制一个已经存在的对象来创建新的对象，而不是通过调用构造函数或者其他初始化方法。
-在Go语言中，我们还需要注意深拷贝和浅拷贝的区别：
-深拷贝是指完全复制一个对象及其所有关联的对象，使得新对象和旧对象完全独立。
-浅拷贝是指只复制一个对象本身，而不复制其关联的对象，使得新对象和旧对象共享部分数据。</p>
-]]></content:encoded>
-      <enclosure url="https://refactoringguru.cn/images/patterns/content/prototype/prototype-2x.png" type="image/png"/>
-    </item>
-    <item>
-      <title>简单工厂</title>
-      <link>http://blog.cjhe.top/design-pattern/creational/simple-factory.html</link>
-      <guid>http://blog.cjhe.top/design-pattern/creational/simple-factory.html</guid>
-      <source url="http://blog.cjhe.top/rss.xml">简单工厂</source>
-      <description>简单工厂模式(Simple Factory Pattern)又称为静态工厂方法(Static Factory Method)模式 提示 它可以根据参数的不同，返回不同类的实例，而无需让客户端知道具体的创建细节。</description>
-      <category>设计模式</category>
-      <pubDate>Sat, 15 Oct 2022 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<p>简单工厂模式(Simple Factory Pattern)又称为静态工厂方法(Static Factory Method)模式</p>
-<div class="hint-container tip">
-<p class="hint-container-title">提示</p>
-<p>它可以根据参数的不同，返回不同类的实例，而无需让客户端知道具体的创建细节。</p>
-</div>
-<!-- more -->
-<h2>问题</h2>
-<p>假设，现在工厂生产：木门、铁门、玻璃门这三种门，在订购时我们期望只需要告诉工厂材料名称，工厂就给我们生产相应的门。</p>
-<p>简单设计模式解决的问题就是：客户端期望根据请求的类型创建相应的对象，客户端不关注对象常见的细节，由工厂负责类型匹配和对象创建逻辑。</p>
-<h2>解决方案</h2>
-<h3>角色</h3>
-<figure><figcaption>simple-factory</figcaption></figure>
-<ul>
-<li>
-<p>SimpleFactory：简单工厂</p>
-<p>简单工厂根据参数的不同创建并返回不同的产品实例。</p>
-</li>
-<li>
-<p>Product：抽象产品</p>
-<p>抽象产品负责描述所有实例所共有的公共接口。</p>
-</li>
-<li>
-<p>ConcreteProduct：具体产品</p>
-<p>具体产品实现产品的具体行为。</p>
-</li>
-</ul>
-<h3>代码示例</h3>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> simple_factory
-
-<span class="token keyword">import</span> <span class="token string">"fmt"</span>
-
-<span class="token comment">// 抽象产品</span>
-<span class="token keyword">type</span> Product <span class="token keyword">interface</span> <span class="token punctuation">{</span>
-	<span class="token function">Show</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">const</span> <span class="token punctuation">(</span>
-	Product1 <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">+</span> <span class="token boolean">iota</span>
-	Product2
-<span class="token punctuation">)</span>
-
-<span class="token comment">// 工厂</span>
-<span class="token keyword">type</span> SimpleFactory <span class="token keyword">struct</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>SimpleFactory<span class="token punctuation">)</span> <span class="token function">NewProduct</span><span class="token punctuation">(</span>i <span class="token builtin">int</span><span class="token punctuation">)</span> Product <span class="token punctuation">{</span>
-	<span class="token keyword">switch</span> i <span class="token punctuation">{</span>
-	<span class="token keyword">case</span> Product1<span class="token punctuation">:</span>
-		<span class="token keyword">return</span> <span class="token operator">&amp;</span>ConcreteProduct1<span class="token punctuation">{</span><span class="token punctuation">}</span>
-	<span class="token keyword">case</span> Product2<span class="token punctuation">:</span>
-		<span class="token keyword">return</span> <span class="token operator">&amp;</span>ConcreteProduct2<span class="token punctuation">{</span><span class="token punctuation">}</span>
-	<span class="token punctuation">}</span>
-	<span class="token keyword">return</span> <span class="token boolean">nil</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment">// 具体产品1</span>
-<span class="token keyword">type</span> ConcreteProduct1 <span class="token keyword">struct</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span><span class="token operator">*</span>ConcreteProduct1<span class="token punctuation">)</span> <span class="token function">Show</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Product1 show"</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment">// 具体产品2</span>
-<span class="token keyword">type</span> ConcreteProduct2 <span class="token keyword">struct</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span><span class="token operator">*</span>ConcreteProduct2<span class="token punctuation">)</span> <span class="token function">Show</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Product2 show"</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-</code></pre></div><p>使用示例：只需要传入产品的参数，就可以获得该产品</p>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> simple_factory
-
-<span class="token keyword">func</span> <span class="token function">ExampleSimpleFactory_NewProduct1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	factory <span class="token operator">:=</span> SimpleFactory<span class="token punctuation">{</span><span class="token punctuation">}</span>
-	product <span class="token operator">:=</span> factory<span class="token punctuation">.</span><span class="token function">NewProduct</span><span class="token punctuation">(</span>Product1<span class="token punctuation">)</span>
-	product<span class="token punctuation">.</span><span class="token function">Show</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-	<span class="token comment">// Output:</span>
-	<span class="token comment">// Product1 show</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token function">ExampleSimpleFactory_NewProduct2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	factory <span class="token operator">:=</span> SimpleFactory<span class="token punctuation">{</span><span class="token punctuation">}</span>
-	product <span class="token operator">:=</span> factory<span class="token punctuation">.</span><span class="token function">NewProduct</span><span class="token punctuation">(</span>Product2<span class="token punctuation">)</span>
-	product<span class="token punctuation">.</span><span class="token function">Show</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-	<span class="token comment">// Output:</span>
-	<span class="token comment">// Product2 show</span>
-<span class="token punctuation">}</span>
-</code></pre></div><h2>效果</h2>
-<h3>优缺点</h3>
-<h4>优点</h4>
-<ul>
-<li>实现了对象的创建和使用分离，降低了系统的耦合性。</li>
-<li>通过该模式，实现了对责任的分配，提高了系统的灵活性和可维护性。</li>
-</ul>
-<h4>缺点</h4>
-<ul>
-<li>扩展性差，如果要增加新的产品类，就需要修改工厂类的代码，违背了<strong>开闭</strong>原则</li>
-<li>由于使用了静态工厂方法，造成工厂角色无法形成基于继承的结构</li>
-<li>如果产品种类较多，工厂方法的代码将会非常复杂</li>
-</ul>
-<h3>应用场景</h3>
-<ul>
-<li>创建对象少：工厂类负责创建的对象比较少。</li>
-<li>不关心创建过程：客户端只知道传入工厂类的参数，对于如何创建对象不关心。</li>
-</ul>
-<p>例如：</p>
-<ul>
-<li>对于<strong>门</strong>这个产品，我们只需要给定的<strong>材料</strong>参数，工厂就会给我们创建<code>木门</code>、<code>铁门</code>、<code>玻璃门</code>等等。</li>
-</ul>
-<h2>总结</h2>
-<p>简单工厂设计模式是一种创建型设计模式，它可以根据参数的不同，返回不同类的实例，而无需让客户端知道具体的创建细节。简单工厂设计模式有利于实现对象的创建和使用分离，降低了系统的耦合性，提高了系统的灵活性和可维护性。
-但是简单工厂设计模式也有缺点，首先，它扩展性差，如果要增加新的产品类，就需要修改工厂类的代码，违背了<code>开闭原则</code>。其次，工厂类的职责过重，如果产品种类较多，工厂方法的代码将会非常复杂。因此，简单工厂设计模式适用于创建对象少且不关心创建过程的场景。</p>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>单例</title>
-      <link>http://blog.cjhe.top/design-pattern/creational/singleton.html</link>
-      <guid>http://blog.cjhe.top/design-pattern/creational/singleton.html</guid>
-      <source url="http://blog.cjhe.top/rss.xml">单例</source>
-      <description>singletonsingleton</description>
-      <category>设计模式</category>
-      <pubDate>Mon, 17 Oct 2022 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<figure><img src="https://refactoringguru.cn/images/patterns/content/singleton/singleton-2x.png" alt="singleton" tabindex="0" loading="lazy"><figcaption>singleton</figcaption></figure>
-<!-- more -->
-<p>单例模式(Singleton Pattern)指一个类只允许创建一个对象或者实例，那这个类就是一个单例类，这种设计模式就叫做单例设计模式。</p>
-<h2>问题</h2>
-<p>开发过程中常常遇见需要一个对象实例，统一处理相关事宜，多个实例可能会导致不一致问题。例如：日志客户端，多个日志客户端可能会导致文件日志内容被覆盖、被插入问题。</p>
-<h2>解决方案</h2>
-<h3>角色</h3>
-<figure><figcaption>singleton</figcaption></figure>
-<ul>
-<li>
-<p>Singleton：单例类</p>
-<p>单例类提供getInstance方法获取实例</p>
-</li>
-</ul>
-<h3>类别</h3>
-<p>单例模式从实现上分为两种：饿汉模式和懒汉模式</p>
-<h4>饿汉模式</h4>
-<p>类加载时，instance静态实例就已经创建并初始化好了
-好处在于：对于耗时较高的初始化操作，提前到程序启动的时候完成，这样就能避免在程序运行的时候，再去初始化导致的性能问题。如果初始化有问题，基于fail-fast的设计原则（有问题及早暴露），而不是等待使用的时候才反馈问题会更好。</p>
-<h4>懒汉模式</h4>
-<p>程序需要某个变量的时候才会去初始化
-缺点在于：需要增加一把锁，导致并发度低。频繁的使用，也会频繁的加锁、释放锁，可能导致性能瓶颈。通常我们会采用双重检测，一旦instance创建之后就不再加锁。</p>
-<h3>特点</h3>
-<ul>
-<li>单例类只有一个实例对象；</li>
-<li>该单例对象必须由单例类自行创建；</li>
-<li>单例类对外提供一个访问该单例的全局访问点；</li>
-</ul>
-<h2>效果</h2>
-<h3>应用场景</h3>
-<ul>
-<li>配置文件实例--通常我们在应用运行期间，只使用一个配置文件实例；</li>
-<li>DB实例--我们只想创建DB对象的一个实例，并且该实例将在整个应用程序中使用；</li>
-<li>日志实例--同样，只应创建一个日志实例，并应在整个应用程序中使用它；</li>
-</ul>
-<h3>优缺点</h3>
-<h4>优点</h4>
-<ul>
-<li>可以减少内存开销，提高程序的运行效率，避免对资源的过多占用，方便定位问题</li>
-</ul>
-<h4>缺点</h4>
-<ul>
-<li>不能被继承，很难进行类的扩展，违背了<code>单一职责</code>原则，忽略了外部关系，不适用于变化对象，可能存在线程安全问题</li>
-</ul>
-<h2>代码示例</h2>
-<p>Go语言创建单例的办法</p>
-<ul>
-<li>Sync.Mutex方式，在GetInstance方法中加锁（懒汉方式）</li>
-<li>init()函数方式，引入singleton包时进行初始化（饿汉方式）</li>
-<li>sync.Once方式，在GetInstance方法中调用once.Do方法</li>
-</ul>
-<h3>Sync.Mutex 方式</h3>
-<div class="language-go" data-ext="go" data-title="go"><pre go="" class="language-go"><code><span class="token keyword">package</span> singleton
-
-<span class="token keyword">import</span> <span class="token punctuation">(</span>
-	<span class="token string">"fmt"</span>
-	<span class="token string">"sync"</span>
-<span class="token punctuation">)</span>
-
-<span class="token keyword">var</span> lock <span class="token operator">=</span> <span class="token operator">&amp;</span>sync<span class="token punctuation">.</span>RWMutex<span class="token punctuation">{</span><span class="token punctuation">}</span>
-
-<span class="token keyword">type</span> single1 <span class="token keyword">struct</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
-
-<span class="token keyword">var</span> singleInstance1 <span class="token operator">*</span>single1
-
-<span class="token keyword">func</span> <span class="token function">GetInstance1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span>single1 <span class="token punctuation">{</span>
-	<span class="token keyword">if</span> singleInstance1 <span class="token operator">==</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
-		lock<span class="token punctuation">.</span><span class="token function">Lock</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-		<span class="token keyword">defer</span> lock<span class="token punctuation">.</span><span class="token function">Unlock</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-		<span class="token keyword">if</span> singleInstance1 <span class="token operator">==</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
-			fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Creating Single Instance Now"</span><span class="token punctuation">)</span>
-			singleInstance1 <span class="token operator">=</span> <span class="token operator">&amp;</span>single1<span class="token punctuation">{</span><span class="token punctuation">}</span>
-		<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-			fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Single Instance already created-1"</span><span class="token punctuation">)</span>
-		<span class="token punctuation">}</span>
-	<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Single Instance already created-2"</span><span class="token punctuation">)</span>
-	<span class="token punctuation">}</span>
-	<span class="token keyword">return</span> singleInstance1
-<span class="token punctuation">}</span>
-</code></pre></div><p>其中：</p>
-<ul>
-<li>18行再次判断的原因是：如果多个goroutine通过第一次检查（15行），其中一个goroutine获得锁并初始化了instance示例，那么剩余的goroutine就不必在获得锁之后再去初始化实例了。</li>
-</ul>
-<p>使用示例如下：</p>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> singleton
-
-<span class="token keyword">import</span> <span class="token punctuation">(</span>
-	<span class="token string">"sync"</span>
-	<span class="token string">"testing"</span>
-<span class="token punctuation">)</span>
-
-<span class="token keyword">func</span> <span class="token function">TestGetInstance1</span><span class="token punctuation">(</span>t <span class="token operator">*</span>testing<span class="token punctuation">.</span>T<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token keyword">var</span> wg sync<span class="token punctuation">.</span>WaitGroup
-	wg<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span>
-	<span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">100</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>
-		<span class="token keyword">go</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-			<span class="token keyword">defer</span> wg<span class="token punctuation">.</span><span class="token function">Done</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-			<span class="token function">GetInstance1</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-		<span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-	<span class="token punctuation">}</span>
-	wg<span class="token punctuation">.</span><span class="token function">Wait</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-</code></pre></div><p>通过atomic保证原子性也是可行的方案</p>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> singleton
-
-<span class="token keyword">import</span> <span class="token punctuation">(</span>
-	<span class="token string">"fmt"</span>
-	<span class="token string">"sync"</span>
-	<span class="token string">"sync/atomic"</span>
-<span class="token punctuation">)</span>
-
-<span class="token keyword">type</span> single4 <span class="token keyword">struct</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
-
-<span class="token keyword">var</span> rwlock <span class="token operator">=</span> <span class="token operator">&amp;</span>sync<span class="token punctuation">.</span>Mutex<span class="token punctuation">{</span><span class="token punctuation">}</span>
-<span class="token keyword">var</span> singleInstance4 <span class="token operator">*</span>single4
-<span class="token keyword">var</span> flag <span class="token builtin">uint32</span>
-
-<span class="token keyword">func</span> <span class="token function">GetInstance4</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span>single4 <span class="token punctuation">{</span>
-	<span class="token keyword">if</span> atomic<span class="token punctuation">.</span><span class="token function">LoadUint32</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>flag<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token punctuation">{</span>
-		rwlock<span class="token punctuation">.</span><span class="token function">Lock</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-		<span class="token keyword">defer</span> rwlock<span class="token punctuation">.</span><span class="token function">Unlock</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-		<span class="token keyword">if</span> atomic<span class="token punctuation">.</span><span class="token function">LoadUint32</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>flag<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token punctuation">{</span>
-			fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Creating Single Instance Now"</span><span class="token punctuation">)</span>
-			singleInstance4 <span class="token operator">=</span> <span class="token operator">&amp;</span>single4<span class="token punctuation">{</span><span class="token punctuation">}</span>
-			<span class="token keyword">defer</span> atomic<span class="token punctuation">.</span><span class="token function">StoreUint32</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>flag<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
-		<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-			fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Single Instance already created-1"</span><span class="token punctuation">)</span>
-		<span class="token punctuation">}</span>
-	<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Single Instance already created-2"</span><span class="token punctuation">)</span>
-	<span class="token punctuation">}</span>
-	<span class="token keyword">return</span> singleInstance4
-<span class="token punctuation">}</span>
-</code></pre></div><h3>init() 函数方式</h3>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> singleton
-
-<span class="token keyword">type</span> single2 <span class="token keyword">struct</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
-
-<span class="token keyword">var</span> singleInstance2 <span class="token operator">*</span>single2
-
-<span class="token keyword">func</span> <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	singleInstance2 <span class="token operator">=</span> <span class="token operator">&amp;</span>single2<span class="token punctuation">{</span><span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token function">GetInstance2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span>single2 <span class="token punctuation">{</span>
-	<span class="token keyword">return</span> singleInstance2
-<span class="token punctuation">}</span>
-</code></pre></div><p>使用示例如下：</p>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> singleton
-
-<span class="token keyword">import</span> <span class="token punctuation">(</span>
-	<span class="token string">"fmt"</span>
-	<span class="token string">"sync"</span>
-	<span class="token string">"testing"</span>
-<span class="token punctuation">)</span>
-
-<span class="token keyword">func</span> <span class="token function">TestGetInstance2</span><span class="token punctuation">(</span>t <span class="token operator">*</span>testing<span class="token punctuation">.</span>T<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token keyword">var</span> wg sync<span class="token punctuation">.</span>WaitGroup
-	wg<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span>
-	<span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">100</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>
-		<span class="token keyword">go</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-			<span class="token keyword">defer</span> wg<span class="token punctuation">.</span><span class="token function">Done</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-			instance2 <span class="token operator">:=</span> <span class="token function">GetInstance2</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-			fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"get single instance address %p and is nil? %t\n"</span><span class="token punctuation">,</span> instance2<span class="token punctuation">,</span> instance2 <span class="token operator">==</span> <span class="token boolean">nil</span><span class="token punctuation">)</span>
-		<span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-	<span class="token punctuation">}</span>
-	wg<span class="token punctuation">.</span><span class="token function">Wait</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-</code></pre></div><h3>sync.Once 方式</h3>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> singleton
-
-<span class="token keyword">import</span> <span class="token punctuation">(</span>
-	<span class="token string">"fmt"</span>
-	<span class="token string">"sync"</span>
-<span class="token punctuation">)</span>
-
-<span class="token keyword">var</span> once sync<span class="token punctuation">.</span>Once
-
-<span class="token keyword">type</span> single3 <span class="token keyword">struct</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
-
-<span class="token keyword">var</span> singleInstance3 <span class="token operator">*</span>single3
-
-<span class="token keyword">func</span> <span class="token function">GetInstance3</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span>single3 <span class="token punctuation">{</span>
-	<span class="token keyword">if</span> singleInstance3 <span class="token operator">==</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
-		once<span class="token punctuation">.</span><span class="token function">Do</span><span class="token punctuation">(</span>
-			<span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-				fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Creating Single Instance Now"</span><span class="token punctuation">)</span>
-				singleInstance3 <span class="token operator">=</span> <span class="token operator">&amp;</span>single3<span class="token punctuation">{</span><span class="token punctuation">}</span>
-			<span class="token punctuation">}</span><span class="token punctuation">)</span>
-	<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Single Instance already created-2"</span><span class="token punctuation">)</span>
-	<span class="token punctuation">}</span>
-	<span class="token keyword">return</span> singleInstance3
-<span class="token punctuation">}</span>
-</code></pre></div><p>使用示例如下：</p>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> singleton
-
-<span class="token keyword">import</span> <span class="token punctuation">(</span>
-	<span class="token string">"sync"</span>
-	<span class="token string">"testing"</span>
-<span class="token punctuation">)</span>
-
-<span class="token keyword">func</span> <span class="token function">TestGetInstance3</span><span class="token punctuation">(</span>t <span class="token operator">*</span>testing<span class="token punctuation">.</span>T<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token keyword">var</span> wg sync<span class="token punctuation">.</span>WaitGroup
-	wg<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span>
-	<span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">100</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>
-		<span class="token keyword">go</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-			<span class="token keyword">defer</span> wg<span class="token punctuation">.</span><span class="token function">Done</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-			<span class="token function">GetInstance3</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-		<span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-	<span class="token punctuation">}</span>
-	wg<span class="token punctuation">.</span><span class="token function">Wait</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-</code></pre></div>]]></content:encoded>
-      <enclosure url="https://refactoringguru.cn/images/patterns/content/singleton/singleton-2x.png" type="image/png"/>
     </item>
   </channel>
 </rss>
