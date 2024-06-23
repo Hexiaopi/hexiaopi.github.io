@@ -1,10 +1,28 @@
 ---
 title: 变更日志
 icon: clock
-date: 2024-05-29
+date: 2024-06-23
 ---
 
 <!-- more -->
+
+
+<a name="v0.12.2"></a>
+## [v0.12.2](https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.12.1...v0.12.2) (2024-06-23)
+
+### :bug:Bug Fixes
+
+* **language:** 修改Go命令
+
+### :recycle:Code Refactoring
+
+* **language:** Go练习和社区和文章
+
+### :sparkles:Features
+
+* **language:** 增加go语言内存对齐
+* **language:** 增加go command
+* **language:** 增加Go测试MySQL
 
 
 <a name="v0.12.1"></a>
