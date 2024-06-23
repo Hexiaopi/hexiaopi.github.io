@@ -3,7 +3,7 @@
   <id>http://blog.cjhe.top/</id>
   <title>个人博客</title>
   <subtitle>何小进童鞋的个人博客</subtitle>
-  <updated>2024-06-20T09:06:08.370Z</updated>
+  <updated>2024-06-23T13:17:54.004Z</updated>
   <generator>@vuepress/plugin-feed</generator>
   <link rel="self" href="http://blog.cjhe.top/atom.xml"/>
   <link rel="alternate" href="http://blog.cjhe.top/"/>
@@ -27,6 +27,101 @@
   <contributor>
     <name>Rob Pike</name>
   </contributor>
+  <entry>
+    <title type="text">Go语言内存对齐</title>
+    <id>http://blog.cjhe.top/language/go/advance/memory-alignment.html</id>
+    <link href="http://blog.cjhe.top/language/go/advance/memory-alignment.html"/>
+    <updated>2024-06-23T13:14:19.000Z</updated>
+    <summary type="html"><![CDATA[<blockquote>
+<p>合理的排列数据成员的顺序，使得整个结构体的空间占用最小化。</p>
+</blockquote>
+]]></summary>
+    <content type="html"><![CDATA[<blockquote>
+<p>合理的排列数据成员的顺序，使得整个结构体的空间占用最小化。</p>
+</blockquote>
+<!-- more -->
+<h2>什么是内存对齐</h2>
+<p>内存对齐是指数据在内存中存储的方式，以优化处理器访问。处理器一次访问一定数量的连续字节（称为“字”），通常为 4 字节或 8 字节。硬件会将内存的读写对齐到数据总线的宽度，从而可以降低硬件实现的复杂度，又可以提升传输的效率。</p>
+<h2>为什么有内存对齐</h2>
+<ul>
+<li>有些CPU可以访问任意地址上的任意数据，而有些CPU只能在特定地址访问数据，因此不同硬件平台具有差异性，这样的代码就不具有移植性，如果在编译时，将分配的内存进行对齐，这就具有平台可以移植性了</li>
+<li>CPU每次寻址都是要消费时间的，并且CPU 访问内存时，并不是逐个字节访问，而是以字长（word size）为单位访问，所以数据结构应该尽可能地在自然边界上对齐，如果访问未对齐的内存，处理器需要做两次内存访问，而对齐的内存访问仅需要一次访问，内存对齐后可以提升性能。</li>
+</ul>
+<h2>对齐系数</h2>
+<p>每个特定平台上的编译器都有自己的默认"对齐系数"，常用平台默认对齐系数如下：</p>
+<ul>
+<li>32位系统对齐系数是4</li>
+<li>64位系统对齐系数是8</li>
+</ul>
+<h2>对齐规则</h2>
+<p>对于struct类型，每个成员都会以结构体的起始地址为基地址，按自身类型的对齐边界对齐。</p>
+<h2>对齐示例</h2>
+<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">"fmt"</span>
+	<span class="token string">"unsafe"</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">type</span> S1 <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+	a <span class="token builtin">int8</span>
+	b <span class="token builtin">int64</span>
+	c <span class="token builtin">int8</span>
+	d <span class="token builtin">int32</span>
+	e <span class="token builtin">int16</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">type</span> S2 <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+	a <span class="token builtin">int8</span>
+	c <span class="token builtin">int8</span>
+	e <span class="token builtin">int16</span>
+	d <span class="token builtin">int32</span>
+	b <span class="token builtin">int64</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Size of S1:"</span><span class="token punctuation">,</span> unsafe<span class="token punctuation">.</span><span class="token function">Sizeof</span><span class="token punctuation">(</span>S1<span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"bytes"</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>unsafe<span class="token punctuation">.</span><span class="token function">Offsetof</span><span class="token punctuation">(</span>S1<span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">.</span>a<span class="token punctuation">)</span><span class="token punctuation">,</span> unsafe<span class="token punctuation">.</span><span class="token function">Offsetof</span><span class="token punctuation">(</span>S1<span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">.</span>b<span class="token punctuation">)</span><span class="token punctuation">,</span> unsafe<span class="token punctuation">.</span><span class="token function">Offsetof</span><span class="token punctuation">(</span>S1<span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">.</span>c<span class="token punctuation">)</span><span class="token punctuation">,</span> unsafe<span class="token punctuation">.</span><span class="token function">Offsetof</span><span class="token punctuation">(</span>S1<span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">.</span>d<span class="token punctuation">)</span><span class="token punctuation">,</span> unsafe<span class="token punctuation">.</span><span class="token function">Offsetof</span><span class="token punctuation">(</span>S1<span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">.</span>e<span class="token punctuation">)</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Size of S2:"</span><span class="token punctuation">,</span> unsafe<span class="token punctuation">.</span><span class="token function">Sizeof</span><span class="token punctuation">(</span>S2<span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"bytes"</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>unsafe<span class="token punctuation">.</span><span class="token function">Offsetof</span><span class="token punctuation">(</span>S2<span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">.</span>a<span class="token punctuation">)</span><span class="token punctuation">,</span> unsafe<span class="token punctuation">.</span><span class="token function">Offsetof</span><span class="token punctuation">(</span>S2<span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">.</span>c<span class="token punctuation">)</span><span class="token punctuation">,</span> unsafe<span class="token punctuation">.</span><span class="token function">Offsetof</span><span class="token punctuation">(</span>S2<span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">.</span>e<span class="token punctuation">)</span><span class="token punctuation">,</span> unsafe<span class="token punctuation">.</span><span class="token function">Offsetof</span><span class="token punctuation">(</span>S2<span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">.</span>d<span class="token punctuation">)</span><span class="token punctuation">,</span> unsafe<span class="token punctuation">.</span><span class="token function">Offsetof</span><span class="token punctuation">(</span>S2<span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">.</span>b<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><details class="hint-container details"><summary>执行结果</summary>
+<div class="language-text" data-ext="text" data-title="text"><pre class="language-text"><code>Size of S1: 32 bytes
+0 8 16 20 24
+Size of S2: 16 bytes
+0 1 2 4 8
+</code></pre></div></details>
+<div class="hint-container tip">
+<p class="hint-container-title">提示</p>
+<p>我们可以发现<code>S1</code>和<code>S2</code>字段包含相同的成员，但是<code>S1</code>占用的内存空间是<code>S2</code>的2倍。</p>
+</div>
+<figure><figcaption>S1内存布局</figcaption></figure>
+<div class="hint-container info">
+<p class="hint-container-title">相关信息</p>
+<p>S1结构体中：</p>
+<ul>
+<li>由于a占1个字节，b占8个字节， 因此a和b之间就会有7字节的填充；</li>
+<li>c占1个字节，d占4个字节， 因此c和d之间就会有3字节的填充；</li>
+<li>e占2个字节，为了对齐8字节，所以又填充6字节；</li>
+</ul>
+</div>
+<figure><figcaption>S2内存布局</figcaption></figure>
+<div class="hint-container info">
+<p class="hint-container-title">相关信息</p>
+<p>S2结构体中：</p>
+<ul>
+<li>a占1个字节，c占1个字节，e占2个字节，d占4个字节，刚好对齐8字节，所以没有任何填充；</li>
+<li>b占8个字节，刚好不需要填充；</li>
+</ul>
+</div>
+<h2>参考资料</h2>
+<ul>
+<li><a href="https://blog.csdn.net/qq_39397165/article/details/119745975" target="_blank" rel="noopener noreferrer">详解内存对齐</a></li>
+</ul>
+]]></content>
+    <category term="编程语言"/>
+    <published>2024-06-22T00:00:00.000Z</published>
+  </entry>
   <entry>
     <title type="text">Go命令</title>
     <id>http://blog.cjhe.top/language/go/base/command.html</id>
@@ -4550,24 +4645,41 @@ Cgo 不是 Go。</p>
     <title type="text">变更日志</title>
     <id>http://blog.cjhe.top/CHANGELOG.html</id>
     <link href="http://blog.cjhe.top/CHANGELOG.html"/>
-    <updated>2024-05-29T08:29:08.000Z</updated>
-    <summary type="text">v0.12.1 (2024-05-29)
+    <updated>2024-06-23T13:16:43.000Z</updated>
+    <summary type="text">v0.12.2 (2024-06-23)
 🐛Bug Fixes
 
-language: 修改Go禁止拷贝
-language: 补充go语言一些示例
+language: 修改Go命令
 
 ♻️Code Refactoring
 
-http链接改为https
-调整devops和database内容
-顺序调整
+language: Go练习和社区和文章
 
 ✨Features
 
-database: 增加nacos监控
-database: 增...</summary>
+language: 增加go语言内存对齐
+language: 增加go command
+language: 增加Go测试MySQL
+
+
+v0.1...</summary>
     <content type="html"><![CDATA[<!-- more -->
+<p><a name="v0.12.2"></a></p>
+<h2><a class="header-anchor" href="#v0-12-2-2024-06-23"><span></span></a><a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.12.1...v0.12.2" target="_blank" rel="noopener noreferrer">v0.12.2</a> (2024-06-23)</h2>
+<h3>🐛Bug Fixes</h3>
+<ul>
+<li><strong>language:</strong> 修改Go命令</li>
+</ul>
+<h3>♻️Code Refactoring</h3>
+<ul>
+<li><strong>language:</strong> Go练习和社区和文章</li>
+</ul>
+<h3>✨Features</h3>
+<ul>
+<li><strong>language:</strong> 增加go语言内存对齐</li>
+<li><strong>language:</strong> 增加go command</li>
+<li><strong>language:</strong> 增加Go测试MySQL</li>
+</ul>
 <p><a name="v0.12.1"></a></p>
 <h2><a class="header-anchor" href="#v0-12-1-2024-05-29"><span></span></a><a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.12.0...v0.12.1" target="_blank" rel="noopener noreferrer">v0.12.1</a> (2024-05-29)</h2>
 <h3>🐛Bug Fixes</h3>
@@ -4930,7 +5042,7 @@ database: 增...</summary>
 <li><strong>project-manager:</strong> add commit standard</li>
 </ul>
 ]]></content>
-    <published>2024-05-29T00:00:00.000Z</published>
+    <published>2024-06-23T00:00:00.000Z</published>
   </entry>
   <entry>
     <title type="text">工厂模式的比较</title>
@@ -8766,163 +8878,5 @@ func ExampleComputer() {
 ]]></content>
     <category term="设计模式"/>
     <published>2023-02-26T00:00:00.000Z</published>
-  </entry>
-  <entry>
-    <title type="text">抽象工厂</title>
-    <id>http://blog.cjhe.top/design-pattern/creational/abstract-factory.html</id>
-    <link href="http://blog.cjhe.top/design-pattern/creational/abstract-factory.html"/>
-    <updated>2024-05-15T10:01:59.000Z</updated>
-    <summary type="html"><![CDATA[<figure><img src="https://refactoringguru.cn/images/patterns/content/abstract-factory/abstract-factory-zh-2x.png" alt="abstract-factory" tabindex="0" loading="lazy"><figcaption>abstract-factory</figcaption></figure>
-]]></summary>
-    <content type="html"><![CDATA[<figure><img src="https://refactoringguru.cn/images/patterns/content/abstract-factory/abstract-factory-zh-2x.png" alt="abstract-factory" tabindex="0" loading="lazy"><figcaption>abstract-factory</figcaption></figure>
-<!-- more -->
-<h2>问题</h2>
-<p>工厂方法模式只考虑生产同等级的产品，而抽象工厂模式(Abstract Factory Pattern)可生产多个等级的产品。抽象工厂模式用于生成<strong>产品族</strong>的工厂，所生成的对象是有关联的，同一个具体工厂所生产的位于不同等级的一组产品称为一个产品族，例如：</p>
-<ul>
-<li>桌子、椅子、沙发是一个产品族</li>
-<li>欧洲牌、亚洲牌是一个产品等级</li>
-</ul>
-<h2>解决方案</h2>
-<h3>角色</h3>
-<figure><figcaption>抽象工厂模式</figcaption></figure>
-<ul>
-<li>
-<p>Abstract Factory: 抽象工厂</p>
-<p>它声明了一组用于创建一族产品的方法，每一个方法对应一种产品。</p>
-</li>
-<li>
-<p>Concrete Factory: 具体工厂</p>
-<p>它实现了在抽象工厂中声明的创建产品的方法，生成一组具体产品，这些产品构成了一个产品族，每一个产品都位于某个产品等级结构中。</p>
-</li>
-<li>
-<p>Abstract Product: 抽象产品</p>
-<p>它为每种产品声明接口，在抽象产品中声明了产品所具有的业务方法。</p>
-</li>
-<li>
-<p>Product: 具体产品</p>
-<p>它定义具体工厂生产的具体产品对象，实现抽象产品接口中声明的业务方法。</p>
-</li>
-</ul>
-<h3>代码示例</h3>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> abstract_factory
-
-<span class="token keyword">import</span> <span class="token string">"fmt"</span>
-
-<span class="token comment">// 抽象产品1</span>
-<span class="token keyword">type</span> Product1 <span class="token keyword">interface</span> <span class="token punctuation">{</span>
-	<span class="token function">Show</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment">// 抽象产品2</span>
-<span class="token keyword">type</span> Product2 <span class="token keyword">interface</span> <span class="token punctuation">{</span>
-	<span class="token function">Use</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment">// 抽象工厂</span>
-<span class="token keyword">type</span> AbstractFactory <span class="token keyword">interface</span> <span class="token punctuation">{</span>
-	<span class="token function">NewProduct1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> Product1
-	<span class="token function">NewProduct2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> Product2
-<span class="token punctuation">}</span>
-
-<span class="token comment">// 具体产品11</span>
-<span class="token keyword">type</span> ConcreteProduct11 <span class="token keyword">struct</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span><span class="token operator">*</span>ConcreteProduct11<span class="token punctuation">)</span> <span class="token function">Show</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Product11 show"</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment">// 具体产品12</span>
-<span class="token keyword">type</span> ConcreteProduct12 <span class="token keyword">struct</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span><span class="token operator">*</span>ConcreteProduct12<span class="token punctuation">)</span> <span class="token function">Use</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Product12 use"</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment">// 具体工厂1</span>
-<span class="token keyword">type</span> ConcreteFactory1 <span class="token keyword">struct</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>ConcreteFactory1<span class="token punctuation">)</span> <span class="token function">NewProduct1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> Product1 <span class="token punctuation">{</span>
-	<span class="token keyword">return</span> <span class="token operator">&amp;</span>ConcreteProduct11<span class="token punctuation">{</span><span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>ConcreteFactory1<span class="token punctuation">)</span> <span class="token function">NewProduct2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> Product2 <span class="token punctuation">{</span>
-	<span class="token keyword">return</span> <span class="token operator">&amp;</span>ConcreteProduct12<span class="token punctuation">{</span><span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment">// 具体产品21</span>
-<span class="token keyword">type</span> ConcreteProduct21 <span class="token keyword">struct</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span><span class="token operator">*</span>ConcreteProduct21<span class="token punctuation">)</span> <span class="token function">Show</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Product21 show"</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">type</span> ConcreteProduct22 <span class="token keyword">struct</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span><span class="token operator">*</span>ConcreteProduct22<span class="token punctuation">)</span> <span class="token function">Use</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Product22 use"</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment">// 具体工厂2</span>
-<span class="token keyword">type</span> ConcreteFactory2 <span class="token keyword">struct</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>ConcreteFactory2<span class="token punctuation">)</span> <span class="token function">NewProduct1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> Product1 <span class="token punctuation">{</span>
-	<span class="token keyword">return</span> <span class="token operator">&amp;</span>ConcreteProduct21<span class="token punctuation">{</span><span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>ConcreteFactory2<span class="token punctuation">)</span> <span class="token function">NewProduct2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> Product2 <span class="token punctuation">{</span>
-	<span class="token keyword">return</span> <span class="token operator">&amp;</span>ConcreteProduct22<span class="token punctuation">{</span><span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre></div><p>使用示例如下：</p>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> abstract_factory
-
-<span class="token keyword">func</span> <span class="token function">ExampleConcreteFactory1_NewProduct</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token keyword">var</span> factory AbstractFactory
-	factory <span class="token operator">=</span> ConcreteFactory1<span class="token punctuation">{</span><span class="token punctuation">}</span>
-	product1 <span class="token operator">:=</span> factory<span class="token punctuation">.</span><span class="token function">NewProduct1</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-	Product2 <span class="token operator">:=</span> factory<span class="token punctuation">.</span><span class="token function">NewProduct2</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-	product1<span class="token punctuation">.</span><span class="token function">Show</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-	Product2<span class="token punctuation">.</span><span class="token function">Use</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-	<span class="token comment">// Output:</span>
-	<span class="token comment">// Product11 show</span>
-	<span class="token comment">// Product12 use</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token function">ExampleConcreteFactory2_NewProduct</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token keyword">var</span> factory AbstractFactory
-	factory <span class="token operator">=</span> ConcreteFactory2<span class="token punctuation">{</span><span class="token punctuation">}</span>
-	product1 <span class="token operator">:=</span> factory<span class="token punctuation">.</span><span class="token function">NewProduct1</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-	product2 <span class="token operator">:=</span> factory<span class="token punctuation">.</span><span class="token function">NewProduct2</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-	product1<span class="token punctuation">.</span><span class="token function">Show</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-	product2<span class="token punctuation">.</span><span class="token function">Use</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-	<span class="token comment">// Output:</span>
-	<span class="token comment">// Product21 show</span>
-	<span class="token comment">// Product22 use</span>
-<span class="token punctuation">}</span>
-</code></pre></div><h2>效果</h2>
-<h3>应用场景</h3>
-<p>在以下情况下可以使用抽象工厂模式：</p>
-<ul>
-<li>一个系统不应当依赖于产品类实例如何被创建、组合和表达的细节，这对于所有类型的工厂模式都是重要的。</li>
-<li>系统中有多于一个的产品族，而每次只使用其中某一产品族。</li>
-<li>属于同一个产品族的产品将在一起使用，这一约束必须在系统的设计中体现出来。</li>
-<li>系统提供一个产品类的库，所有的产品以同样的接口出现，从而使客户端不依赖于具体实现。</li>
-</ul>
-<h3>优缺点</h3>
-<h4>优点</h4>
-<ul>
-<li>抽象工厂模式隔离了具体类的生产，使得客户并不需要知道什么被创建。</li>
-<li>抽象工厂模式可以在类的内部对产品族进行约束，保证客户端始终只使用同一个产品族中的对象。</li>
-<li>抽象工厂模式可以方便地切换产品系列，只需要更换具体工厂即可。</li>
-</ul>
-<h4>缺点</h4>
-<ul>
-<li>产品族扩展非常困难，要增加一个系列的某一产品，既要在抽象的工厂里加代码，又要在具体的工厂里加代码。<strong>产品族难扩展，产品等级易扩展</strong></li>
-<li>抽象工厂模式增加了系统的抽象性和理解难度。</li>
-</ul>
-<h2>总结</h2>
-<p>抽象工厂模式通过引入抽象工厂接口和抽象产品接口，提供了一种统一的接口用于创建一组相关的产品对象。它可以将产品的创建过程封装起来，使得客户端代码可以与具体产品的实现细节解耦。抽象工厂模式的灵活性和可扩展性允许在运行时动态切换不同的具体工厂和产品族。</p>
-]]></content>
-    <category term="设计模式"/>
-    <published>2022-10-15T00:00:00.000Z</published>
   </entry>
 </feed>
