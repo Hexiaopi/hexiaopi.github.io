@@ -1,10 +1,18 @@
 ---
 title: 变更日志
 icon: clock
-date: 2024-06-23
+date: 2024-07-12
 ---
 
 <!-- more -->
+
+
+<a name="v0.12.3"></a>
+## [v0.12.3](https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.12.2...v0.12.3) (2024-07-12)
+
+### :sparkles:Features
+
+* **language:** 增加Go语言在Docker环境下设置maxprocs
 
 
 <a name="v0.12.2"></a>
