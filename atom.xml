@@ -3,7 +3,7 @@
   <id>http://blog.cjhe.top/</id>
   <title>个人博客</title>
   <subtitle>何小进童鞋的个人博客</subtitle>
-  <updated>2024-06-23T13:17:54.004Z</updated>
+  <updated>2024-07-12T03:30:38.625Z</updated>
   <generator>@vuepress/plugin-feed</generator>
   <link rel="self" href="http://blog.cjhe.top/atom.xml"/>
   <link rel="alternate" href="http://blog.cjhe.top/"/>
@@ -27,6 +27,113 @@
   <contributor>
     <name>Rob Pike</name>
   </contributor>
+  <entry>
+    <title type="text">Docker环境go如何设置maxprocs</title>
+    <id>http://blog.cjhe.top/language/go/advance/gomaxprocs.html</id>
+    <link href="http://blog.cjhe.top/language/go/advance/gomaxprocs.html"/>
+    <updated>2024-07-12T03:25:46.000Z</updated>
+    <summary type="text">提示
+Go语言使用GMP调度模型，其中P的数量通过GOMAXPROXS设置，默认是机器的CPU核数。
+
+
+注意
+但是由于Docker通过Cgroups做资源限制，存在的诟病：应用程序在容器里读取到的CPU核数是宿主机上的数据而非实际容器分配的数据。
+
+
+警告
+而通常我们在Kubernetes集群使用的宿主机通常是100+核，容器分配的资源是2c4g，这...</summary>
+    <content type="html"><![CDATA[<!-- more -->
+<div class="hint-container tip">
+<p class="hint-container-title">提示</p>
+<p>Go语言使用GMP调度模型，其中P的数量通过<code>GOMAXPROXS</code>设置，默认是机器的CPU核数。</p>
+</div>
+<div class="hint-container warning">
+<p class="hint-container-title">注意</p>
+<p>但是由于Docker通过Cgroups做资源限制，存在的诟病：应用程序在容器里读取到的CPU核数是宿主机上的数据而非实际容器分配的数据。</p>
+</div>
+<div class="hint-container caution">
+<p class="hint-container-title">警告</p>
+<p>而通常我们在Kubernetes集群使用的宿主机通常是100+核，容器分配的资源是2c4g，这就导致Go调度器会根据宿主机的核数设置P的数量，这会因为P数量过多导致不必要的资源争抢，反而降低性能。</p>
+</div>
+<h2>实验</h2>
+<p>为此我们准备一个简单的Go程序和Dockerfile，进行实验验证。</p>
+<p>Go程序只打印容器的GOMAXPROCS，其中<code>runtime.GOMAXPROCS(0)</code>，当传值为0时，返回当前的GOMAXPROCS值。</p>
+<p>Dockerfile内容如下：</p>
+<div class="language-docker" data-ext="docker" data-title="docker"><pre class="language-docker"><code><span class="token instruction"><span class="token keyword">FROM</span> golang:1.21-alpine <span class="token keyword">AS</span> builder</span>
+
+<span class="token instruction"><span class="token keyword">ENV</span> GO111MODULE=on</span>
+<span class="token instruction"><span class="token keyword">ENV</span> GOPROXY=https://goproxy.cn,direct</span>
+
+<span class="token instruction"><span class="token keyword">WORKDIR</span> /backend</span>
+
+<span class="token instruction"><span class="token keyword">COPY</span> . /backend</span>
+
+<span class="token instruction"><span class="token keyword">RUN</span> go mod tidy &amp;&amp; go build -o app</span>
+
+<span class="token instruction"><span class="token keyword">FROM</span> alpine:latest</span>
+
+<span class="token instruction"><span class="token keyword">WORKDIR</span> /app</span>
+
+<span class="token instruction"><span class="token keyword">COPY</span> <span class="token options"><span class="token property">--from</span><span class="token punctuation">=</span><span class="token string">builder</span></span> /backend/app /app/app</span>
+
+<span class="token instruction"><span class="token keyword">CMD</span> [<span class="token string">"./app"</span>]</span>
+</code></pre></div><h3>未设置maxprocs的场景</h3>
+<p>Go程序如下：</p>
+<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">"fmt"</span>
+	<span class="token string">"runtime"</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"maxprocs"</span><span class="token punctuation">,</span> runtime<span class="token punctuation">.</span><span class="token function">GOMAXPROCS</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>构建镜像:</p>
+<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code><span class="token function">docker</span> build <span class="token parameter variable">-t</span> cpu-test:v0.1.0 <span class="token builtin class-name">.</span>
+</code></pre></div><p>运行镜像:</p>
+<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code><span class="token function">docker</span> run <span class="token parameter variable">--cpus</span><span class="token operator">=</span><span class="token number">1.0</span>  cpu-test:v0.1.0
+</code></pre></div><p>这里通过<code>--cpus=1.0</code>限制容器的CPU核数为1。</p>
+<p>执行结果：</p>
+<div class="language-text" data-ext="text" data-title="text"><pre class="language-text"><code>maxprocs 20
+</code></pre></div><div class="hint-container tip">
+<p class="hint-container-title">提示</p>
+<p>我的本机逻辑处理器有20个，所以结果为20</p>
+</div>
+<h3>设置maxprocs场景</h3>
+<p>这里使用uber公司开源的库来修改maxprocs，Go程序如下：</p>
+<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">"fmt"</span>
+	<span class="token string">"runtime"</span>
+
+	<span class="token boolean">_</span> <span class="token string">"go.uber.org/automaxprocs"</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"maxprocs"</span><span class="token punctuation">,</span> runtime<span class="token punctuation">.</span><span class="token function">GOMAXPROCS</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>构建镜像:</p>
+<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code><span class="token function">docker</span> build <span class="token parameter variable">-t</span> cpu-test:v0.1.1 <span class="token builtin class-name">.</span>
+</code></pre></div><p>运行镜像：</p>
+<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code><span class="token function">docker</span> run <span class="token parameter variable">--cpus</span><span class="token operator">=</span><span class="token number">1.0</span>  cpu-test:v0.1.1
+</code></pre></div><p>执行结果：</p>
+<div class="language-text" data-ext="text" data-title="text"><pre class="language-text"><code>2024/07/11 09:06:55 maxprocs: Updating GOMAXPROCS=1: determined from CPU quota
+maxprocs 1
+</code></pre></div><div class="hint-container tip">
+<p class="hint-container-title">提示</p>
+<p>我们看到maxprocs已经设置为我们限制的核数，由于引入的<code>automaxprocs</code>库进行初始化，因此多打印了一段信息。</p>
+</div>
+<h2>参考文献</h2>
+<ul>
+<li><a href="https://github.com/uber-go/automaxprocs" target="_blank" rel="noopener noreferrer">https://github.com/uber-go/automaxprocs</a></li>
+<li><a href="https://blog.csdn.net/NUCEMLS/article/details/132528994" target="_blank" rel="noopener noreferrer">docker容器环境go程序的GOMAXPROCS问题</a></li>
+</ul>
+]]></content>
+    <category term="编程语言"/>
+    <published>2024-07-12T00:00:00.000Z</published>
+  </entry>
   <entry>
     <title type="text">Go语言内存对齐</title>
     <id>http://blog.cjhe.top/language/go/advance/memory-alignment.html</id>
@@ -4645,8 +4752,14 @@ Cgo 不是 Go。</p>
     <title type="text">变更日志</title>
     <id>http://blog.cjhe.top/CHANGELOG.html</id>
     <link href="http://blog.cjhe.top/CHANGELOG.html"/>
-    <updated>2024-06-23T13:16:43.000Z</updated>
-    <summary type="text">v0.12.2 (2024-06-23)
+    <updated>2024-07-12T03:29:24.000Z</updated>
+    <summary type="text">v0.12.3 (2024-07-12)
+✨Features
+
+language: 增加Go语言在Docker环境下设置maxprocs
+
+
+v0.12.2 (2024-06-23)
 🐛Bug Fixes
 
 language: 修改Go命令
@@ -4657,13 +4770,14 @@ language: Go练习和社区和文章
 
 ✨Features
 
-language: 增加go语言内存对齐
-language: 增加go command
-language: 增加Go测试MySQL
-
-
-v0.1...</summary>
+l...</summary>
     <content type="html"><![CDATA[<!-- more -->
+<p><a name="v0.12.3"></a></p>
+<h2><a class="header-anchor" href="#v0-12-3-2024-07-12"><span></span></a><a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.12.2...v0.12.3" target="_blank" rel="noopener noreferrer">v0.12.3</a> (2024-07-12)</h2>
+<h3>✨Features</h3>
+<ul>
+<li><strong>language:</strong> 增加Go语言在Docker环境下设置maxprocs</li>
+</ul>
 <p><a name="v0.12.2"></a></p>
 <h2><a class="header-anchor" href="#v0-12-2-2024-06-23"><span></span></a><a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.12.1...v0.12.2" target="_blank" rel="noopener noreferrer">v0.12.2</a> (2024-06-23)</h2>
 <h3>🐛Bug Fixes</h3>
@@ -5042,7 +5156,7 @@ v0.1...</summary>
 <li><strong>project-manager:</strong> add commit standard</li>
 </ul>
 ]]></content>
-    <published>2024-06-23T00:00:00.000Z</published>
+    <published>2024-07-12T00:00:00.000Z</published>
   </entry>
   <entry>
     <title type="text">工厂模式的比较</title>
@@ -8862,21 +8976,5 @@ func ExampleComputer() {
 ]]></content>
     <category term="设计模式"/>
     <published>2023-05-05T00:00:00.000Z</published>
-  </entry>
-  <entry>
-    <title type="text">并发模式</title>
-    <id>http://blog.cjhe.top/design-pattern/concurrency/</id>
-    <link href="http://blog.cjhe.top/design-pattern/concurrency/"/>
-    <updated>2024-05-06T02:44:40.000Z</updated>
-    <summary type="html"><![CDATA[<p>Go语言推荐CSP模型进行并发处理，而非通过共享内存。这里总结一些并发模式或者称作范式，去管理控制协程。</p>
-]]></summary>
-    <content type="html"><![CDATA[<p>Go语言推荐CSP模型进行并发处理，而非通过共享内存。这里总结一些并发模式或者称作范式，去管理控制协程。</p>
-<!-- more -->
-<h2>Go并发模式</h2>
-<p>我们都知道Go语言开启协程只需要<code>go func(){ }</code>，有时候需要与goroutine之间建立联系，方便进一步控制与处理。
-因此总结一些范式，优雅的管理goroutine。</p>
-]]></content>
-    <category term="设计模式"/>
-    <published>2023-02-26T00:00:00.000Z</published>
   </entry>
 </feed>
