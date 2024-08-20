@@ -57,7 +57,7 @@ type Decorator struct {
 	component Component
 }
 
-func (d *Decorator) Decorator(c Component) {
+func (d *Decorator) SetComponent(c Component) {
 	d.component = c
 }
 
@@ -100,15 +100,15 @@ func ExampleComponent() {
 	c.execute()
 	//c1装饰c
 	var c1 ConcreteDecortor1
-	c1.Decorator.Decorator(c)
+	c1.SetComponent(c)
 	c1.execute()
 	//c2装饰c
 	var c2 ConcreteDecortor2
-	c2.Decorator.Decorator(c)
+	c2.SetComponent(c)
 	c2.execute()
 	//c2装饰c1
 	var c21 ConcreteDecortor2
-	c21.Decorator.Decorator(c1)
+	c21.SetComponent(c1)
 	c21.execute()
 	// Output:
 	// concrete component execute
