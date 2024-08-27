@@ -2,7 +2,7 @@
 title: 使用Makefile和Helm-Dashobard两步实现k8s服务多环境更新
 date: 2024-05-12
 tag:
- - helm
+ - Helm
  - k8s
 category:
  - devops

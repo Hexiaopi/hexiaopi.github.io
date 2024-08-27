@@ -2,7 +2,7 @@
 title: Helm Dashboard简介
 date: 2024-03-12
 tag:
- - helm
+ - Helm
  - k8s
 category:
  - devops

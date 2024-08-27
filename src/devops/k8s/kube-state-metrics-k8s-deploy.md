@@ -2,7 +2,7 @@
 title: kube-state-metrics k8s 部署
 date: 2024-01-15
 tag:
- - prometheus
+ - Prometheus
  - k8s
 category:
  - devops
