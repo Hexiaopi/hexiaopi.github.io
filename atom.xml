@@ -3,7 +3,7 @@
   <id>http://blog.cjhe.top/</id>
   <title>个人博客</title>
   <subtitle>何小进童鞋的个人博客</subtitle>
-  <updated>2024-08-23T02:10:32.401Z</updated>
+  <updated>2024-08-27T03:00:39.616Z</updated>
   <generator>@vuepress/plugin-feed</generator>
   <link rel="self" href="http://blog.cjhe.top/atom.xml"/>
   <link rel="alternate" href="http://blog.cjhe.top/"/>
@@ -1375,7 +1375,7 @@ WaitGroup为何禁止拷贝
     <title type="text">使用Makefile和Helm-Dashobard两步实现k8s服务多环境更新</title>
     <id>http://blog.cjhe.top/devops/k8s/makefile-deploy.html</id>
     <link href="http://blog.cjhe.top/devops/k8s/makefile-deploy.html"/>
-    <updated>2024-05-12T13:19:14.000Z</updated>
+    <updated>2024-08-27T02:59:10.000Z</updated>
     <summary type="html"><![CDATA[<h2>背景</h2>
 <p>在开发过程中，我们经常需要频繁的更新k8s服务，如果每次更新都需要手动执行一系列的命令，那将会非常繁琐。因此，我们需要一种自动化的方式来更新k8s服务。</p>
 <h2>解决方案</h2>
@@ -1494,7 +1494,7 @@ helm-clean:
     <title type="text">Helm仓库chartmuseum简介</title>
     <id>http://blog.cjhe.top/devops/k8s/chartmuseum.html</id>
     <link href="http://blog.cjhe.top/devops/k8s/chartmuseum.html"/>
-    <updated>2024-05-12T13:18:25.000Z</updated>
+    <updated>2024-08-27T02:59:10.000Z</updated>
     <summary type="html"><![CDATA[<p>chartmuseum是Helm的chart仓库，它支持多种存储后端，如本地文件系统、Amazon S3、Google Cloud Storage、Openstack Swift、Azure Blob Storage、Minio等。</p>
 ]]></summary>
     <content type="html"><![CDATA[<p>chartmuseum是Helm的chart仓库，它支持多种存储后端，如本地文件系统、Amazon S3、Google Cloud Storage、Openstack Swift、Azure Blob Storage、Minio等。</p>
@@ -1941,7 +1941,7 @@ CURL使用</summary>
     <title type="text">docker推荐</title>
     <id>http://blog.cjhe.top/devops/docker/recommand.html</id>
     <link href="http://blog.cjhe.top/devops/docker/recommand.html"/>
-    <updated>2024-05-15T10:01:59.000Z</updated>
+    <updated>2024-08-27T02:59:10.000Z</updated>
     <summary type="text">在线书籍
 
 Docker-从入门到实践
@@ -2614,7 +2614,7 @@ go语言190题</summary>
     <title type="text">MongoDB监控</title>
     <id>http://blog.cjhe.top/database/mongodb/mongodb-exporter.html</id>
     <link href="http://blog.cjhe.top/database/mongodb/mongodb-exporter.html"/>
-    <updated>2024-05-20T03:37:50.000Z</updated>
+    <updated>2024-08-27T02:59:10.000Z</updated>
     <summary type="text">MongoDB监控
 我们通过mongodb-exporter监控mongodb状态
 mongodb-exporter部署
@@ -2963,7 +2963,7 @@ ICMP使用IP协议发送信息，它虽然属于网络层协议，但严格来�
     <title type="text">docker</title>
     <id>http://blog.cjhe.top/devops/docker/</id>
     <link href="http://blog.cjhe.top/devops/docker/"/>
-    <updated>2024-05-08T06:55:14.000Z</updated>
+    <updated>2024-08-27T02:59:10.000Z</updated>
     <category term="devops"/>
     <published>2024-03-18T00:00:00.000Z</published>
   </entry>
@@ -2971,7 +2971,7 @@ ICMP使用IP协议发送信息，它虽然属于网络层协议，但严格来�
     <title type="text">容器执行报&amp;quot;no such file or directory&amp;quot;问题</title>
     <id>http://blog.cjhe.top/devops/docker/shell-line-break.html</id>
     <link href="http://blog.cjhe.top/devops/docker/shell-line-break.html"/>
-    <updated>2024-03-18T11:54:34.000Z</updated>
+    <updated>2024-08-27T02:59:10.000Z</updated>
     <summary type="html"><![CDATA[<p>同事运行docker镜像时，控制台报错"no such file or directory"，但是查看该文件确实存在，本文记录该问题的定位和解决。</p>
 ]]></summary>
     <content type="html"><![CDATA[<p>同事运行docker镜像时，控制台报错"no such file or directory"，但是查看该文件确实存在，本文记录该问题的定位和解决。</p>
@@ -3017,7 +3017,7 @@ ENTRYPOINT <span class="token punctuation">[</span><span class="token string">"/
     <title type="text">Helm Dashboard简介</title>
     <id>http://blog.cjhe.top/devops/k8s/helm-dashboard.html</id>
     <link href="http://blog.cjhe.top/devops/k8s/helm-dashboard.html"/>
-    <updated>2024-04-25T10:51:45.000Z</updated>
+    <updated>2024-08-27T02:59:10.000Z</updated>
     <summary type="html"><![CDATA[<p>helm-dashboard是helm的可视化界面，可以查看集群内通过helm部署的chart包。好处：不需要登录机器就可以升级、回滚chart包。</p>
 ]]></summary>
     <content type="html"><![CDATA[<p>helm-dashboard是helm的可视化界面，可以查看集群内通过helm部署的chart包。好处：不需要登录机器就可以升级、回滚chart包。</p>
@@ -3068,7 +3068,7 @@ ENTRYPOINT <span class="token punctuation">[</span><span class="token string">"/
     <title type="text">kube-state-metrics k8s 部署</title>
     <id>http://blog.cjhe.top/devops/k8s/kube-state-metrics-k8s-deploy.html</id>
     <link href="http://blog.cjhe.top/devops/k8s/kube-state-metrics-k8s-deploy.html"/>
-    <updated>2024-03-18T08:34:44.000Z</updated>
+    <updated>2024-08-27T02:59:10.000Z</updated>
     <summary type="html"><![CDATA[<p>kube-state-metrics用于监控k8s相关指标</p>
 ]]></summary>
     <content type="html"><![CDATA[<p>kube-state-metrics用于监控k8s相关指标</p>
@@ -3321,7 +3321,7 @@ ENTRYPOINT <span class="token punctuation">[</span><span class="token string">"/
     <title type="text">cadvisor k8s 部署</title>
     <id>http://blog.cjhe.top/devops/k8s/cadvisor-k8s-deploy.html</id>
     <link href="http://blog.cjhe.top/devops/k8s/cadvisor-k8s-deploy.html"/>
-    <updated>2024-03-18T08:34:44.000Z</updated>
+    <updated>2024-08-27T02:59:10.000Z</updated>
     <summary type="html"><![CDATA[<p>cadvisor 是谷歌公司用来分析运行中的 Docker 容器的资源占用以及性能特性的工具，简单来说是用于监控 Docker 容器。</p>
 ]]></summary>
     <content type="html"><![CDATA[<p>cadvisor 是谷歌公司用来分析运行中的 Docker 容器的资源占用以及性能特性的工具，简单来说是用于监控 Docker 容器。</p>
@@ -3382,7 +3382,7 @@ ENTRYPOINT <span class="token punctuation">[</span><span class="token string">"/
     <title type="text">node-exporter k8s 部署</title>
     <id>http://blog.cjhe.top/devops/k8s/node-exporter-k8s-deploy.html</id>
     <link href="http://blog.cjhe.top/devops/k8s/node-exporter-k8s-deploy.html"/>
-    <updated>2024-03-18T08:34:44.000Z</updated>
+    <updated>2024-08-27T02:59:10.000Z</updated>
     <summary type="html"><![CDATA[<p>node-exporter用于暴露各个节点的指标，由于需要每个节点都部署node-exporter，因此kind选择DaemonSet，它会保障每个节点有一个相同的实例。</p>
 ]]></summary>
     <content type="html"><![CDATA[<p>node-exporter用于暴露各个节点的指标，由于需要每个节点都部署node-exporter，因此kind选择DaemonSet，它会保障每个节点有一个相同的实例。</p>
@@ -3459,7 +3459,7 @@ ENTRYPOINT <span class="token punctuation">[</span><span class="token string">"/
     <title type="text">Prometheus k8s 部署</title>
     <id>http://blog.cjhe.top/devops/k8s/prometheus-k8s-deploy.html</id>
     <link href="http://blog.cjhe.top/devops/k8s/prometheus-k8s-deploy.html"/>
-    <updated>2024-03-18T08:34:44.000Z</updated>
+    <updated>2024-08-27T02:59:10.000Z</updated>
     <summary type="html"><![CDATA[<p>Prometheus是个优秀的监控系统，基于时序数据库，这里记录k8s部署</p>
 ]]></summary>
     <content type="html"><![CDATA[<p>Prometheus是个优秀的监控系统，基于时序数据库，这里记录k8s部署</p>
