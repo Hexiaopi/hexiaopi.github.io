@@ -1,10 +1,31 @@
 ---
 title: 变更日志
 icon: clock
-date: 2024-07-12
+date: 2024-08-29
 ---
 
 <!-- more -->
+
+
+<a name="v0.12.4"></a>
+## [v0.12.4](https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.12.3...v0.12.4) (2024-08-29)
+
+### :bug:Bug Fixes
+
+* **design-pattern:** 修改原型模式
+* **design-pattern:** 修复go语言装饰器模式同名结构体与函数重复问题
+* **design-pattern:** 装饰器设计模式增加和继承的对比
+* **language:** 修改内存对齐
+
+### :recycle:Code Refactoring
+
+* 调整tag
+
+### :sparkles:Features
+
+* **database:** 增加阿里巴巴MySQL开发规范
+* **language:** 增加Go语言Context深入源码分析
+* **language:** 增加Go语言Context使用方法与场景
 
 
 <a name="v0.12.3"></a>
