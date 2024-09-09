@@ -3,10 +3,11 @@
   <id>http://blog.cjhe.top/</id>
   <title>个人博客</title>
   <subtitle>何小进童鞋的个人博客</subtitle>
-  <updated>2024-09-04T13:51:55.820Z</updated>
+  <updated>2024-09-09T07:41:36.058Z</updated>
   <generator>@vuepress/plugin-feed</generator>
   <link rel="self" href="http://blog.cjhe.top/atom.xml"/>
   <link rel="alternate" href="http://blog.cjhe.top/"/>
+  <category term="开源项目"/>
   <category term="网络"/>
   <category term="编程语言"/>
   <category term="数据存储"/>
@@ -28,10 +29,102 @@
     <name>Rob Pike</name>
   </contributor>
   <entry>
-    <title type="text">SSE消息推送</title>
+    <title type="text">开源项目</title>
+    <id>http://blog.cjhe.top/open-source-project/</id>
+    <link href="http://blog.cjhe.top/open-source-project/"/>
+    <updated>2024-09-09T07:40:20.000Z</updated>
+    <summary type="html"><![CDATA[<p>这里记录我的开源项目</p>
+]]></summary>
+    <content type="html"><![CDATA[<p>这里记录我的开源项目</p>
+<!-- more -->
+]]></content>
+    <category term="开源项目"/>
+    <published>2024-09-09T00:00:00.000Z</published>
+  </entry>
+  <entry>
+    <title type="text">drawio 本地集成</title>
+    <id>http://blog.cjhe.top/open-source-project/drawio-store.html</id>
+    <link href="http://blog.cjhe.top/open-source-project/drawio-store.html"/>
+    <updated>2024-09-09T07:40:20.000Z</updated>
+    <summary type="html"><![CDATA[<p>使用本地存储集成drawio，用于团队共享</p>
+]]></summary>
+    <content type="html"><![CDATA[<p>使用本地存储集成drawio，用于团队共享</p>
+<!-- more -->
+<h2>截图</h2>
+<figure><figcaption>drawio-store</figcaption></figure>
+<h2>收藏历史</h2>
+<figure><a href="https://star-history.com/#hexiaopi/drawio-store&amp;Date" target="_blank" rel="noopener noreferrer"><img src="https://api.star-history.com/svg?repos=hexiaopi/drawio-store&amp;type=Date" alt="Star History Chart" tabindex="0" loading="lazy"></a><figcaption>Star History Chart</figcaption></figure>
+]]></content>
+    <category term="开源项目"/>
+    <published>2024-09-09T00:00:00.000Z</published>
+  </entry>
+  <entry>
+    <title type="text">redis 可视化管理工具</title>
+    <id>http://blog.cjhe.top/open-source-project/rdm-toy.html</id>
+    <link href="http://blog.cjhe.top/open-source-project/rdm-toy.html"/>
+    <updated>2024-09-09T07:40:20.000Z</updated>
+    <summary type="html"><![CDATA[<p>redis 可视化管理工具</p>
+]]></summary>
+    <content type="html"><![CDATA[<p>redis 可视化管理工具</p>
+<!-- more -->
+<h2>功能</h2>
+<ul>
+<li>redis 管理</li>
+<li>db 管理</li>
+<li>key 管理</li>
+<li>支持命令行</li>
+</ul>
+<h2>🛠 技术栈</h2>
+<h3>前端</h3>
+<ul>
+<li>vue3</li>
+<li>vite</li>
+<li>pina</li>
+<li>element-plus</li>
+</ul>
+<h3>后端</h3>
+<ul>
+<li>go</li>
+<li>redis</li>
+<li>gin</li>
+</ul>
+<h2>安装</h2>
+<h3>前端</h3>
+<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code>  <span class="token builtin class-name">cd</span> frontend
+  <span class="token function">npm</span> <span class="token function">install</span>
+</code></pre></div><h3>后端</h3>
+<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code>  <span class="token builtin class-name">cd</span> backend
+  go mod tidy
+</code></pre></div><h2>本地运行</h2>
+<h3>前端</h3>
+<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code>  <span class="token builtin class-name">cd</span> frontend
+  <span class="token function">npm</span> run dev
+</code></pre></div><h3>后端</h3>
+<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code>  <span class="token builtin class-name">cd</span> backend
+  go run cmd/root.go
+</code></pre></div><h2>截图</h2>
+<p>
+
+
+
+
+
+
+
+</p>
+<h2>收藏历史</h2>
+<figure><a href="https://star-history.com/#hexiaopi/rdm-toy&amp;Date" target="_blank" rel="noopener noreferrer"><img src="https://api.star-history.com/svg?repos=hexiaopi/rdm-toy&amp;type=Date" alt="Star History Chart" tabindex="0" loading="lazy"></a><figcaption>Star History Chart</figcaption></figure>
+<h2>许可证</h2>
+<p><a href="https://choosealicense.com/licenses/mit/" target="_blank" rel="noopener noreferrer">MIT</a></p>
+]]></content>
+    <category term="开源项目"/>
+    <published>2024-09-09T00:00:00.000Z</published>
+  </entry>
+  <entry>
+    <title type="text">SSE协议</title>
     <id>http://blog.cjhe.top/network/application-layer/SSE.html</id>
     <link href="http://blog.cjhe.top/network/application-layer/SSE.html"/>
-    <updated>2024-09-04T13:50:41.000Z</updated>
+    <updated>2024-09-09T07:40:20.000Z</updated>
     <summary type="html"><![CDATA[<blockquote>
 <p>SSE常用于消息推送，ChatGPT采用的就是该技术。</p>
 </blockquote>
@@ -8720,360 +8813,5 @@ func ExampleComputer() {
 ]]></content>
     <category term="设计模式"/>
     <published>2022-12-12T00:00:00.000Z</published>
-  </entry>
-  <entry>
-    <title type="text">中介者</title>
-    <id>http://blog.cjhe.top/design-pattern/behavioral/mediator.html</id>
-    <link href="http://blog.cjhe.top/design-pattern/behavioral/mediator.html"/>
-    <updated>2023-07-31T14:52:38.000Z</updated>
-    <summary type="html"><![CDATA[<figure><img src="https://refactoringguru.cn/images/patterns/content/mediator/mediator-2x.png" alt="mediator" tabindex="0" loading="lazy"><figcaption>mediator</figcaption></figure>
-]]></summary>
-    <content type="html"><![CDATA[<figure><img src="https://refactoringguru.cn/images/patterns/content/mediator/mediator-2x.png" alt="mediator" tabindex="0" loading="lazy"><figcaption>mediator</figcaption></figure>
-<!-- more -->
-<h2>什么是中介者模式</h2>
-<p>中介者模式(Mediator Pattern)又叫调停者模式，通过在中间引入中介对象来协调各个对象之间交互，使得对象之间不直接交互，而是通过中介者进行通信和协调，从而使得各个对象能够更加灵活地进行组合和拆分，增强系统的可维护性和扩展性。</p>
-<h3>包含哪些角色</h3>
-<figure><figcaption>mediator</figcaption></figure>
-<ul>
-<li>
-<p>Mediator：中介者</p>
-<p>定义了中介者的接口，即通过该接口与其他组件交互</p>
-</li>
-<li>
-<p>ConcreteMediator：具体中介者</p>
-<p>实现了中介者的接口，维护其他组件之间的交互关系。</p>
-</li>
-<li>
-<p>Colleague：同事</p>
-<p>定义组件的接口，即通过该接口与中介者交互。</p>
-</li>
-<li>
-<p>ConcreteColleague：具体同事</p>
-<p>实现了组件的接口，维护自己与其他组件之间的交互关系。注意，同事之间不会直接交互，而是通过中介者来完成交互。</p>
-</li>
-</ul>
-<h3>代码示例</h3>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> mediator
-
-<span class="token keyword">import</span> <span class="token string">"fmt"</span>
-
-<span class="token keyword">type</span> Mediator <span class="token keyword">interface</span> <span class="token punctuation">{</span>
-	<span class="token function">Coordinate</span><span class="token punctuation">(</span>colleague Colleague<span class="token punctuation">,</span> message <span class="token builtin">string</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">type</span> Colleague <span class="token keyword">interface</span> <span class="token punctuation">{</span>
-	<span class="token function">SendMessage</span><span class="token punctuation">(</span>message <span class="token builtin">string</span><span class="token punctuation">)</span>
-	<span class="token function">ReceiveMessage</span><span class="token punctuation">(</span>message <span class="token builtin">string</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">type</span> ConcreteColleague1 <span class="token keyword">struct</span> <span class="token punctuation">{</span>
-	mediator Mediator
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>c <span class="token operator">*</span>ConcreteColleague1<span class="token punctuation">)</span> <span class="token function">SendMessage</span><span class="token punctuation">(</span>message <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"ConcreateColleague1 send message:"</span><span class="token punctuation">,</span> message<span class="token punctuation">)</span>
-	c<span class="token punctuation">.</span>mediator<span class="token punctuation">.</span><span class="token function">Coordinate</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span> message<span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>c <span class="token operator">*</span>ConcreteColleague1<span class="token punctuation">)</span> <span class="token function">ReceiveMessage</span><span class="token punctuation">(</span>message <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"ConcreateColleague1 receive message:"</span><span class="token punctuation">,</span> message<span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">type</span> ConcreteColleague2 <span class="token keyword">struct</span> <span class="token punctuation">{</span>
-	mediator Mediator
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>c <span class="token operator">*</span>ConcreteColleague2<span class="token punctuation">)</span> <span class="token function">SendMessage</span><span class="token punctuation">(</span>message <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"ConcreateColleague2 send message:"</span><span class="token punctuation">,</span> message<span class="token punctuation">)</span>
-	c<span class="token punctuation">.</span>mediator<span class="token punctuation">.</span><span class="token function">Coordinate</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span> message<span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>c <span class="token operator">*</span>ConcreteColleague2<span class="token punctuation">)</span> <span class="token function">ReceiveMessage</span><span class="token punctuation">(</span>message <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"ConcreateColleague2 receive message:"</span><span class="token punctuation">,</span> message<span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">type</span> ConcreteMediator <span class="token keyword">struct</span> <span class="token punctuation">{</span>
-	ConcreteColleague1
-	ConcreteColleague2
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>c ConcreteMediator<span class="token punctuation">)</span> <span class="token function">Coordinate</span><span class="token punctuation">(</span>colleague Colleague<span class="token punctuation">,</span> message <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token keyword">switch</span> colleague<span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token keyword">type</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token keyword">case</span> <span class="token operator">*</span>ConcreteColleague1<span class="token punctuation">:</span>
-		c<span class="token punctuation">.</span>ConcreteColleague2<span class="token punctuation">.</span><span class="token function">ReceiveMessage</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span>
-	<span class="token keyword">case</span> <span class="token operator">*</span>ConcreteColleague2<span class="token punctuation">:</span>
-		c<span class="token punctuation">.</span>ConcreteColleague1<span class="token punctuation">.</span><span class="token function">ReceiveMessage</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span>
-	<span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre></div><p>使用示例</p>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> mediator
-
-<span class="token keyword">func</span> <span class="token function">ExampleMediator</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	mediator <span class="token operator">:=</span> ConcreteMediator<span class="token punctuation">{</span><span class="token punctuation">}</span>
-	colleague1 <span class="token operator">:=</span> ConcreteColleague1<span class="token punctuation">{</span>mediator<span class="token punctuation">:</span> mediator<span class="token punctuation">}</span>
-	colleague2 <span class="token operator">:=</span> ConcreteColleague2<span class="token punctuation">{</span>mediator<span class="token punctuation">:</span> mediator<span class="token punctuation">}</span>
-	mediator<span class="token punctuation">.</span>ConcreteColleague1 <span class="token operator">=</span> colleague1
-	mediator<span class="token punctuation">.</span>ConcreteColleague2 <span class="token operator">=</span> colleague2
-
-	colleague1<span class="token punctuation">.</span><span class="token function">SendMessage</span><span class="token punctuation">(</span><span class="token string">"hello"</span><span class="token punctuation">)</span>
-	colleague2<span class="token punctuation">.</span><span class="token function">SendMessage</span><span class="token punctuation">(</span><span class="token string">"hi"</span><span class="token punctuation">)</span>
-	<span class="token comment">// Output:</span>
-	<span class="token comment">// ConcreateColleague1 send message: hello</span>
-	<span class="token comment">// ConcreateColleague2 receive message: hello</span>
-	<span class="token comment">// ConcreateColleague2 send message: hi</span>
-	<span class="token comment">// ConcreateColleague1 receive message: hi</span>
-<span class="token punctuation">}</span>
-</code></pre></div><h2>总结</h2>
-<h3>优点</h3>
-<ul>
-<li>
-<p>降低系统复杂度：通过中介者对象，可以将系统中多个对象之间的直接交互关系转化为对中介者对象的请求调用，从而简化了系统的复杂度；</p>
-</li>
-<li>
-<p>减低系统维护成本：通过减少对象之间的直接耦合度，提高了系统的灵活性和可维护性，降低了系统维护的成本；</p>
-</li>
-<li>
-<p>提高系统扩展性：由于中介者对象独立负责对象之间的通信协调，因此增加、删除或修改一个对象都不会影响其他对象的交互关系，从而提高了系统的可扩展性。</p>
-</li>
-</ul>
-<h3>缺点</h3>
-<ul>
-<li>
-<p>中介者对象会引入系统的复杂度：虽然中介者对象可以简化系统的复杂度，但如果中介者对象本身过于复杂，可能会引入新的复杂度；</p>
-</li>
-<li>
-<p>中介者对象可能成为系统的<strong>瓶颈</strong>：由于所有的交互都要经过中介者对象，当系统中对象数量较多或交互复杂时，中介者对象可能成为系统的瓶颈。</p>
-</li>
-</ul>
-]]></content>
-    <category term="设计模式"/>
-    <published>2023-04-29T00:00:00.000Z</published>
-  </entry>
-  <entry>
-    <title type="text">备忘录</title>
-    <id>http://blog.cjhe.top/design-pattern/behavioral/memento.html</id>
-    <link href="http://blog.cjhe.top/design-pattern/behavioral/memento.html"/>
-    <updated>2023-07-31T14:52:38.000Z</updated>
-    <summary type="html"><![CDATA[<figure><img src="https://refactoringguru.cn/images/patterns/content/memento/memento-zh-2x.png" alt="memento" tabindex="0" loading="lazy"><figcaption>memento</figcaption></figure>
-]]></summary>
-    <content type="html"><![CDATA[<figure><img src="https://refactoringguru.cn/images/patterns/content/memento/memento-zh-2x.png" alt="memento" tabindex="0" loading="lazy"><figcaption>memento</figcaption></figure>
-<!-- more -->
-<h2>什么是备忘录模式</h2>
-<p>备忘录模式(Memento Pattern)允许在不暴露对象实现细节的情况下保存和恢复对象之前的状态。</p>
-<h3>包含哪些角色</h3>
-<figure><figcaption>memento</figcaption></figure>
-<ul>
-<li>
-<p>Originator: 原发器</p>
-<p>用于生成自身状态的快照，在需要时可以通过快照恢复自身状态</p>
-</li>
-<li>
-<p>Memento: 备忘录</p>
-<p>原发器状态快照，通常将备忘录设置为不可变的类，并且通过构造函数一次性传递数据</p>
-</li>
-<li>
-<p>Caretaker: 负责人</p>
-<p>存储备忘录的历史记录</p>
-</li>
-</ul>
-<h3>代码示例</h3>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> memento
-
-<span class="token keyword">type</span> Originator <span class="token keyword">struct</span> <span class="token punctuation">{</span>
-	state <span class="token builtin">string</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token function">NewOriginator</span><span class="token punctuation">(</span>value <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token operator">*</span>Originator <span class="token punctuation">{</span>
-	<span class="token keyword">return</span> <span class="token operator">&amp;</span>Originator<span class="token punctuation">{</span>state<span class="token punctuation">:</span> value<span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>o <span class="token operator">*</span>Originator<span class="token punctuation">)</span> <span class="token function">ChangeState</span><span class="token punctuation">(</span>value <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	o<span class="token punctuation">.</span>state <span class="token operator">=</span> value
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>o <span class="token operator">*</span>Originator<span class="token punctuation">)</span> <span class="token function">Save</span><span class="token punctuation">(</span><span class="token punctuation">)</span> Memento <span class="token punctuation">{</span>
-	<span class="token keyword">return</span> <span class="token function">NewMemento</span><span class="token punctuation">(</span>o<span class="token punctuation">.</span>state<span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>o <span class="token operator">*</span>Originator<span class="token punctuation">)</span> <span class="token function">Restore</span><span class="token punctuation">(</span>memento Memento<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	o<span class="token punctuation">.</span>state <span class="token operator">=</span> memento<span class="token punctuation">.</span><span class="token function">GetState</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">type</span> Memento <span class="token keyword">struct</span> <span class="token punctuation">{</span>
-	state <span class="token builtin">string</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token function">NewMemento</span><span class="token punctuation">(</span>state <span class="token builtin">string</span><span class="token punctuation">)</span> Memento <span class="token punctuation">{</span>
-	<span class="token keyword">return</span> Memento<span class="token punctuation">{</span>state<span class="token punctuation">:</span> state<span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>m Memento<span class="token punctuation">)</span> <span class="token function">GetState</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span> <span class="token punctuation">{</span>
-	<span class="token keyword">return</span> m<span class="token punctuation">.</span>state
-<span class="token punctuation">}</span>
-
-<span class="token keyword">type</span> Caretaker <span class="token keyword">struct</span> <span class="token punctuation">{</span>
-	history <span class="token punctuation">[</span><span class="token punctuation">]</span>Memento
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>c <span class="token operator">*</span>Caretaker<span class="token punctuation">)</span> <span class="token function">AddMemento</span><span class="token punctuation">(</span>memento Memento<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	c<span class="token punctuation">.</span>history <span class="token operator">=</span> <span class="token function">append</span><span class="token punctuation">(</span>c<span class="token punctuation">.</span>history<span class="token punctuation">,</span> memento<span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>c <span class="token operator">*</span>Caretaker<span class="token punctuation">)</span> <span class="token function">GetMemento</span><span class="token punctuation">(</span>index <span class="token builtin">int</span><span class="token punctuation">)</span> Memento <span class="token punctuation">{</span>
-	<span class="token keyword">return</span> c<span class="token punctuation">.</span>history<span class="token punctuation">[</span>index<span class="token punctuation">]</span>
-<span class="token punctuation">}</span>
-</code></pre></div><p>使用示例</p>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> memento
-
-<span class="token keyword">import</span> <span class="token string">"fmt"</span>
-
-<span class="token keyword">func</span> <span class="token function">ExampleMemento</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	caretaker <span class="token operator">:=</span> Caretaker<span class="token punctuation">{</span>history<span class="token punctuation">:</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span>Memento<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
-	originator <span class="token operator">:=</span> <span class="token function">NewOriginator</span><span class="token punctuation">(</span><span class="token string">"one"</span><span class="token punctuation">)</span>
-	caretaker<span class="token punctuation">.</span><span class="token function">AddMemento</span><span class="token punctuation">(</span>originator<span class="token punctuation">.</span><span class="token function">Save</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>originator<span class="token punctuation">.</span>state<span class="token punctuation">)</span>
-	originator<span class="token punctuation">.</span><span class="token function">ChangeState</span><span class="token punctuation">(</span><span class="token string">"two"</span><span class="token punctuation">)</span>
-	caretaker<span class="token punctuation">.</span><span class="token function">AddMemento</span><span class="token punctuation">(</span>originator<span class="token punctuation">.</span><span class="token function">Save</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>originator<span class="token punctuation">.</span>state<span class="token punctuation">)</span>
-	originator<span class="token punctuation">.</span><span class="token function">ChangeState</span><span class="token punctuation">(</span><span class="token string">"three"</span><span class="token punctuation">)</span>
-	caretaker<span class="token punctuation">.</span><span class="token function">AddMemento</span><span class="token punctuation">(</span>originator<span class="token punctuation">.</span><span class="token function">Save</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>originator<span class="token punctuation">.</span>state<span class="token punctuation">)</span>
-	originator<span class="token punctuation">.</span><span class="token function">Restore</span><span class="token punctuation">(</span>caretaker<span class="token punctuation">.</span><span class="token function">GetMemento</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>originator<span class="token punctuation">.</span>state<span class="token punctuation">)</span>
-	<span class="token comment">// Output:</span>
-	<span class="token comment">// one</span>
-	<span class="token comment">// two</span>
-	<span class="token comment">// three</span>
-	<span class="token comment">// two</span>
-<span class="token punctuation">}</span>
-</code></pre></div><h2>总结</h2>
-<h3>优点</h3>
-<ul>
-<li>可以在不破坏对象封装性的前提下捕获并存储对象的状态；</li>
-<li>简化了对象在不同状态之间的切换过程，避免了大量的 if-else 语句；</li>
-<li>原发器和负责人之间的解耦，原发器只需要知道如何创建备忘录和恢复备忘录即可，而负责人则负责保存备忘录。</li>
-</ul>
-<h3>缺点</h3>
-<ul>
-<li>使用备忘录会占用一定的内存空间；</li>
-<li>当原发器的状态改变很频繁时，备忘录对象的数量会很大，会占用较大的内存空间；</li>
-<li>如果原发器需要保存的状态很多，那么备忘录对象的创建和恢复操作就会变得很慢。</li>
-</ul>
-]]></content>
-    <category term="设计模式"/>
-    <published>2023-05-01T00:00:00.000Z</published>
-  </entry>
-  <entry>
-    <title type="text">观察者</title>
-    <id>http://blog.cjhe.top/design-pattern/behavioral/observer.html</id>
-    <link href="http://blog.cjhe.top/design-pattern/behavioral/observer.html"/>
-    <updated>2023-07-31T14:52:38.000Z</updated>
-    <summary type="html"><![CDATA[<figure><img src="https://refactoringguru.cn/images/patterns/content/observer/observer-2x.png" alt="observer" tabindex="0" loading="lazy"><figcaption>observer</figcaption></figure>
-]]></summary>
-    <content type="html"><![CDATA[<figure><img src="https://refactoringguru.cn/images/patterns/content/observer/observer-2x.png" alt="observer" tabindex="0" loading="lazy"><figcaption>observer</figcaption></figure>
-<!-- more -->
-<h2>什么是观察者模式</h2>
-<p>观察者模式(Observer Pattern)定义了对象之间的一对多依赖关系，当一个对象的状态发生变化时，所有依赖关系都会自动得到通知和更新。类似订阅机制，对象变化时通知多个<strong>观察</strong>该对象的其他对象。</p>
-<h3>包含哪些角色</h3>
-<figure><figcaption>observer</figcaption></figure>
-<ul>
-<li>
-<p>Observer: 观察者</p>
-<p>声明了通知接口，在绝大数情况下，该接口仅包含一个<code>update</code>方法，该方法可以有多个参数</p>
-</li>
-<li>
-<p>Subject: 主题</p>
-<p>提供一个用于存储观察者对象的聚集类，该类通常包含<code>注册</code>和<code>取消注册</code>观察者的方法，以及通知所有观察者变化的方法。</p>
-</li>
-<li>
-<p>ConcreteObserver: 具体的观察者</p>
-<p>实现观察者接口定义的方法，根据自己的需要，实现对象变化时具体的行为。</p>
-</li>
-</ul>
-<h3>代码示例</h3>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> observer
-
-<span class="token keyword">import</span> <span class="token string">"fmt"</span>
-
-<span class="token keyword">type</span> Context <span class="token keyword">struct</span> <span class="token punctuation">{</span>
-	Id <span class="token builtin">string</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">type</span> Observer <span class="token keyword">interface</span> <span class="token punctuation">{</span>
-	<span class="token function">Update</span><span class="token punctuation">(</span>ctx Context<span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">type</span> ConcreteObserver1 <span class="token keyword">struct</span> <span class="token punctuation">{</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>c ConcreteObserver1<span class="token punctuation">)</span> <span class="token function">Update</span><span class="token punctuation">(</span>ctx Context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"concrete observer 1 update ctx:"</span><span class="token punctuation">,</span> ctx<span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">type</span> ConcreteObserver2 <span class="token keyword">struct</span> <span class="token punctuation">{</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>c ConcreteObserver2<span class="token punctuation">)</span> <span class="token function">Update</span><span class="token punctuation">(</span>ctx Context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"concrete observer 2 update ctx:"</span><span class="token punctuation">,</span> ctx<span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">type</span> Subject <span class="token keyword">struct</span> <span class="token punctuation">{</span>
-	ObserverCollection <span class="token punctuation">[</span><span class="token punctuation">]</span>Observer
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>s <span class="token operator">*</span>Subject<span class="token punctuation">)</span> <span class="token function">Register</span><span class="token punctuation">(</span>observer Observer<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	s<span class="token punctuation">.</span>ObserverCollection <span class="token operator">=</span> <span class="token function">append</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span>ObserverCollection<span class="token punctuation">,</span> observer<span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>s <span class="token operator">*</span>Subject<span class="token punctuation">)</span> <span class="token function">UnRegister</span><span class="token punctuation">(</span>observer Observer<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token function">len</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span>ObserverCollection<span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>
-		<span class="token keyword">if</span> s<span class="token punctuation">.</span>ObserverCollection<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> observer <span class="token punctuation">{</span>
-			s<span class="token punctuation">.</span>ObserverCollection <span class="token operator">=</span> <span class="token function">append</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span>ObserverCollection<span class="token punctuation">[</span><span class="token punctuation">:</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> s<span class="token punctuation">.</span>ObserverCollection<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token operator">...</span><span class="token punctuation">)</span>
-			<span class="token keyword">break</span>
-		<span class="token punctuation">}</span>
-	<span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>s <span class="token operator">*</span>Subject<span class="token punctuation">)</span> <span class="token function">NotifyObservers</span><span class="token punctuation">(</span>ctx Context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token function">len</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span>ObserverCollection<span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>
-		s<span class="token punctuation">.</span>ObserverCollection<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">Update</span><span class="token punctuation">(</span>ctx<span class="token punctuation">)</span>
-	<span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre></div><p>使用示例</p>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> observer
-
-<span class="token keyword">func</span> <span class="token function">ExampleObserver</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	ctx <span class="token operator">:=</span> Context<span class="token punctuation">{</span><span class="token string">"test"</span><span class="token punctuation">}</span>
-	co1 <span class="token operator">:=</span> ConcreteObserver1<span class="token punctuation">{</span><span class="token punctuation">}</span>
-	co2 <span class="token operator">:=</span> ConcreteObserver2<span class="token punctuation">{</span><span class="token punctuation">}</span>
-	subject <span class="token operator">:=</span> Subject<span class="token punctuation">{</span>
-		ObserverCollection<span class="token punctuation">:</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span>Observer<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-	<span class="token punctuation">}</span>
-	subject<span class="token punctuation">.</span><span class="token function">Register</span><span class="token punctuation">(</span>co1<span class="token punctuation">)</span>
-	subject<span class="token punctuation">.</span><span class="token function">Register</span><span class="token punctuation">(</span>co2<span class="token punctuation">)</span>
-	subject<span class="token punctuation">.</span><span class="token function">NotifyObservers</span><span class="token punctuation">(</span>ctx<span class="token punctuation">)</span>
-	ctx<span class="token punctuation">.</span>Id <span class="token operator">=</span> <span class="token string">"other"</span>
-	subject<span class="token punctuation">.</span><span class="token function">UnRegister</span><span class="token punctuation">(</span>co1<span class="token punctuation">)</span>
-	subject<span class="token punctuation">.</span><span class="token function">NotifyObservers</span><span class="token punctuation">(</span>ctx<span class="token punctuation">)</span>
-	<span class="token comment">// Output:</span>
-	<span class="token comment">// concrete observer 1 update ctx: {test}</span>
-	<span class="token comment">// concrete observer 2 update ctx: {test}</span>
-	<span class="token comment">// concrete observer 2 update ctx: {other}</span>
-<span class="token punctuation">}</span>
-</code></pre></div><h2>总结</h2>
-<h3>优点</h3>
-<ul>
-<li>松耦合：观察者模式使主题和观察者之间的依赖关系变得松散，让它们可以独立演化，这样就可以在不影响主题的情况下修改或扩展观察者。</li>
-<li>可重用性：由于主题和观察者之间的关系被封装在抽象接口中，因此可以方便地添加新的观察者或主题，从而提高代码的可重用性和可维护性。</li>
-<li>通知机制：一旦主题状态发生变化，观察者会自动被通知，并且可以及时更新自己的状态，从而保证了数据的一致性。</li>
-</ul>
-<h3>缺点</h3>
-<ul>
-<li>性能问题：如果观察者过多，通知所有观察者会浪费很多资源，可能会导致系统运行缓慢。</li>
-<li>难以理解：当涉及多个对象之间的交互时，观察者模式可能比较难以理解和调试</li>
-</ul>
-]]></content>
-    <category term="设计模式"/>
-    <published>2023-05-02T00:00:00.000Z</published>
   </entry>
 </feed>
