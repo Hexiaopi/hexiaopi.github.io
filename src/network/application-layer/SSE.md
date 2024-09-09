@@ -1,5 +1,5 @@
 ---
-title: SSE消息推送
+title: SSE协议
 date: 2024-09-04
 tag:
  - 应用层协议

@@ -103,5 +103,13 @@ export default sidebar({
       link: "share/README.md",
       children: "structure",
     },
+    {
+      text: "开源项目",
+      icon: "code",
+      collapsible: true,
+      prefix: "open-source-project/",
+      link: "open-source-project/README.md",
+      children: "structure",
+    },
   ],
 });
