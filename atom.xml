@@ -3,15 +3,15 @@
   <id>http://blog.cjhe.top/</id>
   <title>个人博客</title>
   <subtitle>何小进童鞋的个人博客</subtitle>
-  <updated>2024-09-09T07:41:36.058Z</updated>
+  <updated>2024-09-23T03:24:44.262Z</updated>
   <generator>@vuepress/plugin-feed</generator>
   <link rel="self" href="http://blog.cjhe.top/atom.xml"/>
   <link rel="alternate" href="http://blog.cjhe.top/"/>
+  <category term="devops"/>
   <category term="开源项目"/>
   <category term="网络"/>
   <category term="编程语言"/>
   <category term="数据存储"/>
-  <category term="devops"/>
   <category term="转载"/>
   <category term="算法"/>
   <category term="设计模式"/>
@@ -28,6 +28,52 @@
   <contributor>
     <name>Rob Pike</name>
   </contributor>
+  <entry>
+    <title type="text">GPU机器搭建k8s</title>
+    <id>http://blog.cjhe.top/devops/k8s/k8s-on-gpu.html</id>
+    <link href="http://blog.cjhe.top/devops/k8s/k8s-on-gpu.html"/>
+    <updated>2024-09-23T03:23:27.000Z</updated>
+    <summary type="text">gpu机器搭建k8s
+查看GPU
+可以看到有四张nvidia显卡和nvidia声卡
+查看是否已安装gpu nvidia驱动
+此时已安装nvidia驱动
+如果未安装：参考链接进行安装
+查看gpu型号、gpu驱动版本
+可以看到四张显卡，对应编号是：0、1、2、3，其中：0、1、2三张卡已经有python进程正在使用。
+查看docker运行时
+docker默...</summary>
+    <content type="html"><![CDATA[<!-- more -->
+<h1>gpu机器搭建k8s</h1>
+<h2>查看GPU</h2>
+<div class="language-text" data-ext="text" data-title="text"><pre class="language-text"><code>(base) root@ubuntu:~# lspci | grep -i nvidia
+01:00.0 VGA compatible controller: NVIDIA Corporation Device 2230 (rev a1)
+01:00.1 Audio device: NVIDIA Corporation Device 1aef (rev a1)
+22:00.0 VGA compatible controller: NVIDIA Corporation Device 2230 (rev a1)
+22:00.1 Audio device: NVIDIA Corporation Device 1aef (rev a1)
+41:00.0 VGA compatible controller: NVIDIA Corporation Device 2230 (rev a1)
+41:00.1 Audio device: NVIDIA Corporation Device 1aef (rev a1)
+61:00.0 VGA compatible controller: NVIDIA Corporation Device 2230 (rev a1)
+61:00.1 Audio device: NVIDIA Corporation Device 1aef (rev a1)
+</code></pre></div><p>可以看到有四张nvidia显卡和nvidia声卡</p>
+<h2>查看是否已安装gpu nvidia驱动</h2>
+<div class="language-text" data-ext="text" data-title="text"><pre class="language-text"><code>(base) root@ubuntu:~# lsmod | grep  -i nvidia
+nvidia_uvm           1216512  16
+
+             61440  0
+nvidia_modeset       1241088  1 nvidia_drm
+nvidia              56471552  1128 nvidia_uvm,nvidia_modeset
+drm_kms_helper        184320  4 ast,nvidia_drm
+drm                   495616  7 drm_kms_helper,drm_vram_helper,ast,nvidia,nvidia_drm,ttm
+</code></pre></div><p>此时已安装nvidia驱动</p>
+<p>如果未安装：参考<a href="https://docs.nvidia.com/cuda/cuda-installation-guide-linux/" target="_blank" rel="noopener noreferrer">链接</a>进行安装</p>
+<h2>查看gpu型号、gpu驱动版本</h2>
+<div class="language-text" data-ext="text" data-title="text"><pre class="language-text"><code>(base) root@ubuntu:~# nvidia-smi
+Wed May 29 03:28:30 2024
++</code></pre></div>]]></content>
+    <category term="devops"/>
+    <published>2024-09-23T00:00:00.000Z</published>
+  </entry>
   <entry>
     <title type="text">开源项目</title>
     <id>http://blog.cjhe.top/open-source-project/</id>
@@ -8698,120 +8744,5 @@ func ExampleComputer() {
 ]]></content>
     <category term="设计模式"/>
     <published>2023-04-26T00:00:00.000Z</published>
-  </entry>
-  <entry>
-    <title type="text">迭代器</title>
-    <id>http://blog.cjhe.top/design-pattern/behavioral/iterator.html</id>
-    <link href="http://blog.cjhe.top/design-pattern/behavioral/iterator.html"/>
-    <updated>2023-07-31T14:52:38.000Z</updated>
-    <summary type="html"><![CDATA[<figure><img src="https://refactoringguru.cn/images/patterns/content/iterator/iterator-zh-2x.png" alt="iterator" tabindex="0" loading="lazy"><figcaption>iterator</figcaption></figure>
-]]></summary>
-    <content type="html"><![CDATA[<figure><img src="https://refactoringguru.cn/images/patterns/content/iterator/iterator-zh-2x.png" alt="iterator" tabindex="0" loading="lazy"><figcaption>iterator</figcaption></figure>
-<!-- more -->
-<h2>什么是迭代器模式</h2>
-<p>迭代器模式是一种行为设计模式，让你能在不暴露集合底层结构（列表、栈、树等）的情况下遍历集合中的所有元素。</p>
-<h3>包含哪些角色</h3>
-<figure><figcaption>iterator</figcaption></figure>
-<ul>
-<li>
-<p>Iterator: 迭代器接口</p>
-<p>声明了遍历集合所需的操作</p>
-</li>
-<li>
-<p>IterableCollection: 集合接口</p>
-<p>声明一个方法或多个方法来获取与集合兼容的迭代器。</p>
-</li>
-<li>
-<p>ConcreteIterator: 具体迭代器</p>
-<p>实现遍历集合的一种特定算法，迭代器对象必须跟踪自身遍历进度。</p>
-</li>
-<li>
-<p>ConcreteCollection: 具体集合</p>
-<p>会在客户端请求迭代器时返回一个特定的具体迭代器类实体。</p>
-</li>
-</ul>
-<h3>代码示例</h3>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> iterator
-
-<span class="token keyword">type</span> Aggregate <span class="token keyword">interface</span> <span class="token punctuation">{</span>
-	<span class="token function">Iterator</span><span class="token punctuation">(</span><span class="token punctuation">)</span> Iterator
-<span class="token punctuation">}</span>
-
-<span class="token keyword">type</span> Iterator <span class="token keyword">interface</span> <span class="token punctuation">{</span>
-	<span class="token function">HasNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">bool</span>
-	<span class="token function">Next</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">type</span> ConcreteIterator <span class="token keyword">struct</span> <span class="token punctuation">{</span>
-	numbers <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span>
-	next    <span class="token builtin">int</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>i <span class="token operator">*</span>ConcreteIterator<span class="token punctuation">)</span> <span class="token function">HasNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">bool</span> <span class="token punctuation">{</span>
-	<span class="token keyword">return</span> i<span class="token punctuation">.</span>next <span class="token operator">&lt;</span> <span class="token function">len</span><span class="token punctuation">(</span>i<span class="token punctuation">.</span>numbers<span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>i <span class="token operator">*</span>ConcreteIterator<span class="token punctuation">)</span> <span class="token function">Next</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token punctuation">{</span>
-	<span class="token keyword">if</span> i<span class="token punctuation">.</span><span class="token function">HasNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-		numer <span class="token operator">:=</span> i<span class="token punctuation">.</span>numbers<span class="token punctuation">[</span>i<span class="token punctuation">.</span>next<span class="token punctuation">]</span>
-		i<span class="token punctuation">.</span>next <span class="token operator">+=</span> <span class="token number">1</span>
-		<span class="token keyword">return</span> numer
-	<span class="token punctuation">}</span>
-	<span class="token keyword">return</span> <span class="token boolean">nil</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">type</span> ConcreteAggregate <span class="token keyword">struct</span> <span class="token punctuation">{</span>
-	Length <span class="token builtin">int</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>a <span class="token operator">*</span>ConcreteAggregate<span class="token punctuation">)</span> <span class="token function">Iterator</span><span class="token punctuation">(</span><span class="token punctuation">)</span> Iterator <span class="token punctuation">{</span>
-	<span class="token keyword">return</span> <span class="token operator">&amp;</span>ConcreteIterator<span class="token punctuation">{</span>
-		numbers<span class="token punctuation">:</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">,</span> a<span class="token punctuation">.</span>Length<span class="token punctuation">)</span><span class="token punctuation">,</span>
-		next<span class="token punctuation">:</span>    <span class="token number">0</span><span class="token punctuation">,</span>
-	<span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre></div><p>使用示例</p>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> iterator
-
-<span class="token keyword">import</span> <span class="token string">"fmt"</span>
-
-<span class="token keyword">func</span> <span class="token function">ExampleIterator</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token keyword">var</span> aggregate Aggregate
-	aggregate <span class="token operator">=</span> <span class="token operator">&amp;</span>ConcreteAggregate<span class="token punctuation">{</span>Length<span class="token punctuation">:</span> <span class="token number">10</span><span class="token punctuation">}</span>
-	iterator <span class="token operator">:=</span> aggregate<span class="token punctuation">.</span><span class="token function">Iterator</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-	i <span class="token operator">:=</span> <span class="token number">0</span>
-	<span class="token keyword">for</span> iterator<span class="token punctuation">.</span><span class="token function">HasNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-		<span class="token boolean">_</span> <span class="token operator">=</span> iterator<span class="token punctuation">.</span><span class="token function">Next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
-		i<span class="token operator">++</span>
-	<span class="token punctuation">}</span>
-	<span class="token comment">// Output:</span>
-	<span class="token comment">// 0</span>
-	<span class="token comment">// 1</span>
-	<span class="token comment">// 2</span>
-	<span class="token comment">// 3</span>
-	<span class="token comment">// 4</span>
-	<span class="token comment">// 5</span>
-	<span class="token comment">// 6</span>
-	<span class="token comment">// 7</span>
-	<span class="token comment">// 8</span>
-	<span class="token comment">// 9</span>
-<span class="token punctuation">}</span>
-</code></pre></div><h2>总结</h2>
-<h3>优点</h3>
-<ul>
-<li>访问一个聚合对象的内容而无须暴露它的内部表示。</li>
-<li>遍历任务交由迭代器完成，这简化了聚合类。</li>
-<li>它支持以不同方式遍历一个聚合，甚至可以自定义迭代器的子类以支持新的遍历。</li>
-<li>增加新的聚合类和迭代器类都很方便，无须修改原有代码。</li>
-<li>封装性良好，为遍历不同的聚合结构提供一个统一的接口。</li>
-</ul>
-<h3>缺点</h3>
-<ul>
-<li>增加了类的个数，这在一定程度上增加了系统的复杂性。</li>
-</ul>
-]]></content>
-    <category term="设计模式"/>
-    <published>2022-12-12T00:00:00.000Z</published>
   </entry>
 </feed>
