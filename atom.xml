@@ -3,14 +3,14 @@
   <id>http://blog.cjhe.top/</id>
   <title>个人博客</title>
   <subtitle>何小进童鞋的个人博客</subtitle>
-  <updated>2024-09-23T03:24:44.262Z</updated>
+  <updated>2024-09-24T02:21:20.644Z</updated>
   <generator>@vuepress/plugin-feed</generator>
   <link rel="self" href="http://blog.cjhe.top/atom.xml"/>
   <link rel="alternate" href="http://blog.cjhe.top/"/>
+  <category term="编程语言"/>
   <category term="devops"/>
   <category term="开源项目"/>
   <category term="网络"/>
-  <category term="编程语言"/>
   <category term="数据存储"/>
   <category term="转载"/>
   <category term="算法"/>
@@ -28,6 +28,68 @@
   <contributor>
     <name>Rob Pike</name>
   </contributor>
+  <entry>
+    <title type="text">Go语言sync.Once底层原理</title>
+    <id>http://blog.cjhe.top/language/go/advance/sync-once.html</id>
+    <link href="http://blog.cjhe.top/language/go/advance/sync-once.html"/>
+    <updated>2024-09-24T02:20:01.000Z</updated>
+    <summary type="text">Go语言sync.Once可以保证某个函数只执行一次，常用于单例模式。在本文中，我们将深入探讨sync.Once的底层实现原理，以便更好地理解它的并发安全特性。
+
+使用方式
+sync.Once通过Do方法实现了只执行一次的功能。在第一次调用Do方法时，传入的函数会被执行，而在后续的调用中，传入的函数将不会被执行。
+底层原理
+ sync.Once的底层实...</summary>
+    <content type="html"><![CDATA[<!-- more -->
+<blockquote>
+<p>Go语言<code>sync.Once</code>可以保证某个函数只执行一次，常用于单例模式。在本文中，我们将深入探讨<code>sync.Once</code>的底层实现原理，以便更好地理解它的并发安全特性。</p>
+</blockquote>
+<h2>使用方式</h2>
+<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">ExampleOnce</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	once <span class="token operator">:=</span> sync<span class="token punctuation">.</span>Once<span class="token punctuation">{</span><span class="token punctuation">}</span>
+	once<span class="token punctuation">.</span><span class="token function">Do</span><span class="token punctuation">(</span><span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"do once"</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span><span class="token punctuation">)</span>
+	once<span class="token punctuation">.</span><span class="token function">Do</span><span class="token punctuation">(</span><span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"do twice"</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span><span class="token punctuation">)</span>
+	<span class="token comment">// Output:</span>
+	<span class="token comment">// do once</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><p>sync.Once通过<code>Do</code>方法实现了只执行一次的功能。在第一次调用<code>Do</code>方法时，传入的函数会被执行，而在后续的调用中，传入的函数将不会被执行。</p>
+<h2>底层原理</h2>
+<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">type</span> Once <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+	done atomic<span class="token punctuation">.</span>Uint32
+	m    Mutex
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>o <span class="token operator">*</span>Once<span class="token punctuation">)</span> <span class="token function">Do</span><span class="token punctuation">(</span>f <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">if</span> o<span class="token punctuation">.</span>done<span class="token punctuation">.</span><span class="token function">Load</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token punctuation">{</span>
+		o<span class="token punctuation">.</span><span class="token function">doSlow</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>o <span class="token operator">*</span>Once<span class="token punctuation">)</span> <span class="token function">doSlow</span><span class="token punctuation">(</span>f <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	o<span class="token punctuation">.</span>m<span class="token punctuation">.</span><span class="token function">Lock</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token keyword">defer</span> o<span class="token punctuation">.</span>m<span class="token punctuation">.</span><span class="token function">Unlock</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token keyword">if</span> o<span class="token punctuation">.</span>done<span class="token punctuation">.</span><span class="token function">Load</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token punctuation">{</span>
+		<span class="token keyword">defer</span> o<span class="token punctuation">.</span>done<span class="token punctuation">.</span><span class="token function">Store</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+		<span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>sync.Once的底层实现非常简单，核心代码只有短短的十几行。</p>
+<ul>
+<li>done: 原子操作，用于记录函数是否已经执行过。</li>
+<li>m: 互斥锁，用于保护函数的执行。</li>
+</ul>
+<div class="hint-container important">
+<p class="hint-container-title">重要</p>
+<p>其中第15行，通过双重检查，保证函数只执行一次。因为在调用doSlow方式前，done是0。但是调用doSlow方法时，done可能已被其他协程修改，因此需要双重检查。</p>
+</div>
+]]></content>
+    <category term="编程语言"/>
+    <published>2024-09-24T00:00:00.000Z</published>
+  </entry>
   <entry>
     <title type="text">GPU机器搭建k8s</title>
     <id>http://blog.cjhe.top/devops/k8s/k8s-on-gpu.html</id>
@@ -8377,372 +8439,5 @@ MySQL架构MySQL架构
 ]]></content>
     <category term="设计模式"/>
     <published>2022-12-13T00:00:00.000Z</published>
-  </entry>
-  <entry>
-    <title type="text">命令</title>
-    <id>http://blog.cjhe.top/design-pattern/behavioral/command.html</id>
-    <link href="http://blog.cjhe.top/design-pattern/behavioral/command.html"/>
-    <updated>2023-07-31T14:52:38.000Z</updated>
-    <summary type="html"><![CDATA[<figure><img src="https://refactoringguru.cn/images/patterns/content/command/command-zh-2x.png" alt="command" tabindex="0" loading="lazy"><figcaption>command</figcaption></figure>
-]]></summary>
-    <content type="html"><![CDATA[<figure><img src="https://refactoringguru.cn/images/patterns/content/command/command-zh-2x.png" alt="command" tabindex="0" loading="lazy"><figcaption>command</figcaption></figure>
-<!-- more -->
-<h2>什么是行为型模式</h2>
-<p>命令设计模式允许将请求封装成对象，从而将不同的请求发送者与接收者解耦。命令对象包含了请求的所有信息，包括调用的方法、参数和接收者等。这种方式使得请求的发送者与接收者无需知道彼此的存在，从而可以更灵活地进行交互。</p>
-<h3>包含哪些角色</h3>
-<figure><figcaption>command</figcaption></figure>
-<ul>
-<li>
-<p>Invoker: 调用者</p>
-<p>创建和配置命命令对象，并将其传递给接收者</p>
-</li>
-<li>
-<p>Command: 命令接口</p>
-<p>定义命令的核心接口，通常包括一个执行方法</p>
-</li>
-<li>
-<p>ConcreteCommand: 具体命令类</p>
-<p>实现命令接口，并封装具体的操作。通常需要引用接收者，从而调用对应的方法</p>
-</li>
-<li>
-<p>Receiver: 接收者</p>
-<p>实现请求的实际操作，命令对象将请求传递给接收者，从而完成请求</p>
-</li>
-</ul>
-<h3>代码示例</h3>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> command
-
-<span class="token keyword">import</span> <span class="token string">"fmt"</span>
-
-<span class="token keyword">type</span> Command <span class="token keyword">interface</span> <span class="token punctuation">{</span>
-	<span class="token function">Execute</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">type</span> Receiver <span class="token keyword">struct</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>r <span class="token operator">*</span>Receiver<span class="token punctuation">)</span> <span class="token function">operation1</span><span class="token punctuation">(</span>a <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"operation1:"</span><span class="token punctuation">,</span> a<span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>r <span class="token operator">*</span>Receiver<span class="token punctuation">)</span> <span class="token function">operation2</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"operation2:"</span><span class="token punctuation">,</span> a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">type</span> Invoker <span class="token keyword">struct</span> <span class="token punctuation">{</span>
-	cmd Command
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>i <span class="token operator">*</span>Invoker<span class="token punctuation">)</span> <span class="token function">SetCommand</span><span class="token punctuation">(</span>cmd Command<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	i<span class="token punctuation">.</span>cmd <span class="token operator">=</span> cmd
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>i <span class="token operator">*</span>Invoker<span class="token punctuation">)</span> <span class="token function">ExecuteCommand</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	i<span class="token punctuation">.</span>cmd<span class="token punctuation">.</span><span class="token function">Execute</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">type</span> ConcreateCommand1 <span class="token keyword">struct</span> <span class="token punctuation">{</span>
-	name     <span class="token builtin">string</span>
-	receiver <span class="token operator">*</span>Receiver
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>c <span class="token operator">*</span>ConcreateCommand1<span class="token punctuation">)</span> <span class="token function">Execute</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	c<span class="token punctuation">.</span>receiver<span class="token punctuation">.</span><span class="token function">operation1</span><span class="token punctuation">(</span>c<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">type</span> ConcreateCommand2 <span class="token keyword">struct</span> <span class="token punctuation">{</span>
-	name     <span class="token builtin">string</span>
-	desc     <span class="token builtin">string</span>
-	address  <span class="token builtin">string</span>
-	receiver <span class="token operator">*</span>Receiver
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>c <span class="token operator">*</span>ConcreateCommand2<span class="token punctuation">)</span> <span class="token function">Execute</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	c<span class="token punctuation">.</span>receiver<span class="token punctuation">.</span><span class="token function">operation2</span><span class="token punctuation">(</span>c<span class="token punctuation">.</span>name<span class="token punctuation">,</span> c<span class="token punctuation">.</span>desc<span class="token punctuation">,</span> c<span class="token punctuation">.</span>address<span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-</code></pre></div><p>使用示例</p>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> command
-
-<span class="token keyword">func</span> <span class="token function">ExampleCommand</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	receiver <span class="token operator">:=</span> Receiver<span class="token punctuation">{</span><span class="token punctuation">}</span>
-	invoker <span class="token operator">:=</span> Invoker<span class="token punctuation">{</span><span class="token punctuation">}</span>
-
-	cmd1 <span class="token operator">:=</span> ConcreateCommand1<span class="token punctuation">{</span>name<span class="token punctuation">:</span> <span class="token string">"admin"</span><span class="token punctuation">,</span> receiver<span class="token punctuation">:</span> <span class="token operator">&amp;</span>receiver<span class="token punctuation">}</span>
-	invoker<span class="token punctuation">.</span><span class="token function">SetCommand</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>cmd1<span class="token punctuation">)</span>
-	invoker<span class="token punctuation">.</span><span class="token function">ExecuteCommand</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-
-	cmd2 <span class="token operator">:=</span> ConcreateCommand2<span class="token punctuation">{</span>name<span class="token punctuation">:</span> <span class="token string">"admin"</span><span class="token punctuation">,</span> desc<span class="token punctuation">:</span> <span class="token string">"描述"</span><span class="token punctuation">,</span> address<span class="token punctuation">:</span> <span class="token string">"地址"</span><span class="token punctuation">,</span> receiver<span class="token punctuation">:</span> <span class="token operator">&amp;</span>receiver<span class="token punctuation">}</span>
-	invoker<span class="token punctuation">.</span><span class="token function">SetCommand</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>cmd2<span class="token punctuation">)</span>
-	invoker<span class="token punctuation">.</span><span class="token function">ExecuteCommand</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-
-	<span class="token comment">// Output:</span>
-	<span class="token comment">// operation1: admin</span>
-	<span class="token comment">// operation2: admin 描述 地址</span>
-<span class="token punctuation">}</span>
-</code></pre></div><h2>适用场景</h2>
-<ul>
-<li>
-<p>需要将请求和执行操作解耦的情况。命令模式可以将请求封装为对象并将其发送给接收者，从而使得发送者和接收者之间松耦合。</p>
-</li>
-<li>
-<p>需要支持撤销或重做操作的情况。由于每个命令都封装了一组特定的操作，因此可以轻松进行撤销或重做。</p>
-</li>
-<li>
-<p>需要支持事务操作的情况。将一组相关的命令组合在一起，可以实现事务操作，即一组操作要么全部成功执行，要么全部失败。</p>
-</li>
-<li>
-<p>需要远程执行操作的情况。将命令对象序列化到网络上，可以实现远程执行操作的功能。</p>
-</li>
-<li>
-<p>需要将命令队列中的请求延迟、调度或者执行的情况。可以将命令对象存储在队列中，然后按照特定的规则执行它们。</p>
-</li>
-<li>
-<p>需要实现日志、审计或者事务记录的情况。可以在执行命令的同时，将其记录下来，并可以将其回放以重现历史操作。</p>
-</li>
-</ul>
-<h3>请求与执行解耦</h3>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> command
-
-<span class="token keyword">type</span> Commander <span class="token keyword">interface</span> <span class="token punctuation">{</span>
-	<span class="token function">Execute</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">type</span> AddCommand <span class="token keyword">struct</span> <span class="token punctuation">{</span>
-	receiver <span class="token operator">*</span>Origin
-	value    <span class="token builtin">int</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>c <span class="token operator">*</span>AddCommand<span class="token punctuation">)</span> <span class="token function">Execute</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	c<span class="token punctuation">.</span>receiver<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span>c<span class="token punctuation">.</span>value<span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">type</span> SubtractCommand <span class="token keyword">struct</span> <span class="token punctuation">{</span>
-	receiver <span class="token operator">*</span>Origin
-	value    <span class="token builtin">int</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>c <span class="token operator">*</span>SubtractCommand<span class="token punctuation">)</span> <span class="token function">Execute</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	c<span class="token punctuation">.</span>receiver<span class="token punctuation">.</span><span class="token function">Subtract</span><span class="token punctuation">(</span>c<span class="token punctuation">.</span>value<span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">type</span> MultiplyCommand <span class="token keyword">struct</span> <span class="token punctuation">{</span>
-	receiver <span class="token operator">*</span>Origin
-	value    <span class="token builtin">int</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>c <span class="token operator">*</span>MultiplyCommand<span class="token punctuation">)</span> <span class="token function">Execute</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	c<span class="token punctuation">.</span>receiver<span class="token punctuation">.</span><span class="token function">Multiply</span><span class="token punctuation">(</span>c<span class="token punctuation">.</span>value<span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">type</span> DivideCommand <span class="token keyword">struct</span> <span class="token punctuation">{</span>
-	receiver <span class="token operator">*</span>Origin
-	value    <span class="token builtin">int</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>c <span class="token operator">*</span>DivideCommand<span class="token punctuation">)</span> <span class="token function">Execute</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	c<span class="token punctuation">.</span>receiver<span class="token punctuation">.</span><span class="token function">Divide</span><span class="token punctuation">(</span>c<span class="token punctuation">.</span>value<span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">type</span> Origin <span class="token keyword">struct</span> <span class="token punctuation">{</span>
-	value <span class="token builtin">int</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>r <span class="token operator">*</span>Origin<span class="token punctuation">)</span> <span class="token function">Add</span><span class="token punctuation">(</span>value <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	r<span class="token punctuation">.</span>value <span class="token operator">+=</span> value
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>r <span class="token operator">*</span>Origin<span class="token punctuation">)</span> <span class="token function">Subtract</span><span class="token punctuation">(</span>value <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	r<span class="token punctuation">.</span>value <span class="token operator">-=</span> value
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>r <span class="token operator">*</span>Origin<span class="token punctuation">)</span> <span class="token function">Multiply</span><span class="token punctuation">(</span>value <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	r<span class="token punctuation">.</span>value <span class="token operator">*=</span> value
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>r <span class="token operator">*</span>Origin<span class="token punctuation">)</span> <span class="token function">Divide</span><span class="token punctuation">(</span>value <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	r<span class="token punctuation">.</span>value <span class="token operator">/=</span> value
-<span class="token punctuation">}</span>
-
-<span class="token keyword">type</span> Computer <span class="token keyword">struct</span> <span class="token punctuation">{</span>
-	commands <span class="token punctuation">[</span><span class="token punctuation">]</span>Commander
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>i <span class="token operator">*</span>Computer<span class="token punctuation">)</span> <span class="token function">AddCommand</span><span class="token punctuation">(</span>command Commander<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	i<span class="token punctuation">.</span>commands <span class="token operator">=</span> <span class="token function">append</span><span class="token punctuation">(</span>i<span class="token punctuation">.</span>commands<span class="token punctuation">,</span> command<span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>i <span class="token operator">*</span>Computer<span class="token punctuation">)</span> <span class="token function">ExecuteCommands</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token keyword">for</span> <span class="token boolean">_</span><span class="token punctuation">,</span> command <span class="token operator">:=</span> <span class="token keyword">range</span> i<span class="token punctuation">.</span>commands <span class="token punctuation">{</span>
-		command<span class="token punctuation">.</span><span class="token function">Execute</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-	<span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre></div><p>使用示例</p>
-<div class="language-text" data-ext="text" data-title="text"><pre class="language-text"><code>package command
-
-import "fmt"
-
-func ExampleComputer() {
-	computer := Computer{}
-	origin := Origin{10}
-	addCmd := AddCommand{&amp;origin, 20}
-	subCmd := SubtractCommand{&amp;origin, 15}
-	mulCmd := MultiplyCommand{&amp;origin, 2}
-	divCmd := DivideCommand{&amp;origin, 3}
-	computer.AddCommand(&amp;addCmd)
-	computer.AddCommand(&amp;subCmd)
-	computer.AddCommand(&amp;mulCmd)
-	computer.AddCommand(&amp;divCmd)
-	computer.ExecuteCommands()
-	fmt.Println(origin.value)
-	// Output:
-	// 10
-}
-</code></pre></div><p>我们将请求者Computer和接收者Origin，进行了解耦。请求者可以任意追加命令，执行：加、减、乘、除等运算。</p>
-<h3>撤销操作</h3>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> command
-
-<span class="token keyword">type</span> Commander <span class="token keyword">interface</span> <span class="token punctuation">{</span>
-	<span class="token function">Execute</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-	<span class="token function">Undo</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">type</span> AddCommand <span class="token keyword">struct</span> <span class="token punctuation">{</span>
-	receiver <span class="token operator">*</span>Origin
-	value    <span class="token builtin">int</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>c <span class="token operator">*</span>AddCommand<span class="token punctuation">)</span> <span class="token function">Execute</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	c<span class="token punctuation">.</span>receiver<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span>c<span class="token punctuation">.</span>value<span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>c <span class="token operator">*</span>AddCommand<span class="token punctuation">)</span> <span class="token function">Undo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	c<span class="token punctuation">.</span>receiver<span class="token punctuation">.</span><span class="token function">Subtract</span><span class="token punctuation">(</span>c<span class="token punctuation">.</span>value<span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">type</span> SubtractCommand <span class="token keyword">struct</span> <span class="token punctuation">{</span>
-	receiver <span class="token operator">*</span>Origin
-	value    <span class="token builtin">int</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>c <span class="token operator">*</span>SubtractCommand<span class="token punctuation">)</span> <span class="token function">Execute</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	c<span class="token punctuation">.</span>receiver<span class="token punctuation">.</span><span class="token function">Subtract</span><span class="token punctuation">(</span>c<span class="token punctuation">.</span>value<span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>c <span class="token operator">*</span>SubtractCommand<span class="token punctuation">)</span> <span class="token function">Undo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	c<span class="token punctuation">.</span>receiver<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span>c<span class="token punctuation">.</span>value<span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">type</span> MultiplyCommand <span class="token keyword">struct</span> <span class="token punctuation">{</span>
-	receiver <span class="token operator">*</span>Origin
-	value    <span class="token builtin">int</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>c <span class="token operator">*</span>MultiplyCommand<span class="token punctuation">)</span> <span class="token function">Execute</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	c<span class="token punctuation">.</span>receiver<span class="token punctuation">.</span><span class="token function">Multiply</span><span class="token punctuation">(</span>c<span class="token punctuation">.</span>value<span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>c <span class="token operator">*</span>MultiplyCommand<span class="token punctuation">)</span> <span class="token function">Undo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	c<span class="token punctuation">.</span>receiver<span class="token punctuation">.</span><span class="token function">Divide</span><span class="token punctuation">(</span>c<span class="token punctuation">.</span>value<span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">type</span> DivideCommand <span class="token keyword">struct</span> <span class="token punctuation">{</span>
-	receiver <span class="token operator">*</span>Origin
-	value    <span class="token builtin">int</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>c <span class="token operator">*</span>DivideCommand<span class="token punctuation">)</span> <span class="token function">Execute</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	c<span class="token punctuation">.</span>receiver<span class="token punctuation">.</span><span class="token function">Divide</span><span class="token punctuation">(</span>c<span class="token punctuation">.</span>value<span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>c <span class="token operator">*</span>DivideCommand<span class="token punctuation">)</span> <span class="token function">Undo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	c<span class="token punctuation">.</span>receiver<span class="token punctuation">.</span><span class="token function">Multiply</span><span class="token punctuation">(</span>c<span class="token punctuation">.</span>value<span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">type</span> Origin <span class="token keyword">struct</span> <span class="token punctuation">{</span>
-	value <span class="token builtin">int</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>r <span class="token operator">*</span>Origin<span class="token punctuation">)</span> <span class="token function">Add</span><span class="token punctuation">(</span>value <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	r<span class="token punctuation">.</span>value <span class="token operator">+=</span> value
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>r <span class="token operator">*</span>Origin<span class="token punctuation">)</span> <span class="token function">Subtract</span><span class="token punctuation">(</span>value <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	r<span class="token punctuation">.</span>value <span class="token operator">-=</span> value
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>r <span class="token operator">*</span>Origin<span class="token punctuation">)</span> <span class="token function">Multiply</span><span class="token punctuation">(</span>value <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	r<span class="token punctuation">.</span>value <span class="token operator">*=</span> value
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>r <span class="token operator">*</span>Origin<span class="token punctuation">)</span> <span class="token function">Divide</span><span class="token punctuation">(</span>value <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	r<span class="token punctuation">.</span>value <span class="token operator">/=</span> value
-<span class="token punctuation">}</span>
-
-<span class="token keyword">type</span> Computer <span class="token keyword">struct</span> <span class="token punctuation">{</span>
-	commands <span class="token punctuation">[</span><span class="token punctuation">]</span>Commander
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>i <span class="token operator">*</span>Computer<span class="token punctuation">)</span> <span class="token function">AddCommand</span><span class="token punctuation">(</span>command Commander<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	i<span class="token punctuation">.</span>commands <span class="token operator">=</span> <span class="token function">append</span><span class="token punctuation">(</span>i<span class="token punctuation">.</span>commands<span class="token punctuation">,</span> command<span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>i <span class="token operator">*</span>Computer<span class="token punctuation">)</span> <span class="token function">ExecuteCommands</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token keyword">for</span> <span class="token boolean">_</span><span class="token punctuation">,</span> command <span class="token operator">:=</span> <span class="token keyword">range</span> i<span class="token punctuation">.</span>commands <span class="token punctuation">{</span>
-		command<span class="token punctuation">.</span><span class="token function">Execute</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-	<span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>i <span class="token operator">*</span>Computer<span class="token punctuation">)</span> <span class="token function">UndoLastCommand</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token keyword">if</span> <span class="token function">len</span><span class="token punctuation">(</span>i<span class="token punctuation">.</span>commands<span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">0</span> <span class="token punctuation">{</span>
-		cmd <span class="token operator">:=</span> i<span class="token punctuation">.</span>commands<span class="token punctuation">[</span><span class="token function">len</span><span class="token punctuation">(</span>i<span class="token punctuation">.</span>commands<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
-		cmd<span class="token punctuation">.</span><span class="token function">Undo</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-		i<span class="token punctuation">.</span>commands <span class="token operator">=</span> i<span class="token punctuation">.</span>commands<span class="token punctuation">[</span><span class="token number">0</span> <span class="token punctuation">:</span> <span class="token function">len</span><span class="token punctuation">(</span>i<span class="token punctuation">.</span>commands<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
-	<span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre></div><p>使用示例</p>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">ExampleComputerUndo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-	computer <span class="token operator">:=</span> Computer<span class="token punctuation">{</span><span class="token punctuation">}</span>
-	origin <span class="token operator">:=</span> Origin<span class="token punctuation">{</span><span class="token number">10</span><span class="token punctuation">}</span>
-	addCmd <span class="token operator">:=</span> AddCommand<span class="token punctuation">{</span><span class="token operator">&amp;</span>origin<span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">}</span>
-	subCmd <span class="token operator">:=</span> SubtractCommand<span class="token punctuation">{</span><span class="token operator">&amp;</span>origin<span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">}</span>
-	mulCmd <span class="token operator">:=</span> MultiplyCommand<span class="token punctuation">{</span><span class="token operator">&amp;</span>origin<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">}</span>
-	divCmd <span class="token operator">:=</span> DivideCommand<span class="token punctuation">{</span><span class="token operator">&amp;</span>origin<span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">}</span>
-	computer<span class="token punctuation">.</span><span class="token function">AddCommand</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>addCmd<span class="token punctuation">)</span>
-	computer<span class="token punctuation">.</span><span class="token function">AddCommand</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>subCmd<span class="token punctuation">)</span>
-	computer<span class="token punctuation">.</span><span class="token function">AddCommand</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>mulCmd<span class="token punctuation">)</span>
-	computer<span class="token punctuation">.</span><span class="token function">AddCommand</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>divCmd<span class="token punctuation">)</span>
-	computer<span class="token punctuation">.</span><span class="token function">ExecuteCommands</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>origin<span class="token punctuation">.</span>value<span class="token punctuation">)</span>
-	computer<span class="token punctuation">.</span><span class="token function">UndoLastCommand</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>origin<span class="token punctuation">.</span>value<span class="token punctuation">)</span>
-	computer<span class="token punctuation">.</span><span class="token function">UndoLastCommand</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>origin<span class="token punctuation">.</span>value<span class="token punctuation">)</span>
-	computer<span class="token punctuation">.</span><span class="token function">UndoLastCommand</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>origin<span class="token punctuation">.</span>value<span class="token punctuation">)</span>
-	<span class="token comment">// Output:</span>
-	<span class="token comment">// 10</span>
-	<span class="token comment">// 30</span>
-  <span class="token comment">// 15</span>
-	<span class="token comment">// 30</span>
-<span class="token punctuation">}</span>
-</code></pre></div><p>我们对Commonder接口增加Undo方法，即可以实现计算器的撤销操作。</p>
-<h2>总结</h2>
-<h3>优点</h3>
-<ul>
-<li>命令模式可以降低代码的耦合度，并且将请求调用者与请求接收者进行解耦；</li>
-<li>命令模式扩展性较高
-<ul>
-<li>如果是扩展新的命令，那么直接定义新的命令类即可；</li>
-<li>如果是执行一组命令，那么</li>
-</ul>
-</li>
-</ul>
-<h3>缺点</h3>
-<ul>
-<li>可能会导致性能问题。使用命令模式可能会增加对象数量，并且每个命令都需要进行封装，可能会导致性能下降。</li>
-<li>可能会使代码更加复杂。使用命令模式需要定义许多接口和类，可能会使代码过于复杂，难以维护。</li>
-</ul>
-]]></content>
-    <category term="设计模式"/>
-    <published>2023-04-26T00:00:00.000Z</published>
   </entry>
 </feed>
