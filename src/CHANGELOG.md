@@ -1,10 +1,22 @@
 ---
 title: 变更日志
 icon: clock
-date: 2024-08-29
+date: 2024-09-24
 ---
 
 <!-- more -->
+
+
+<a name="v0.12.5"></a>
+## [v0.12.5](https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.12.4...v0.12.5) (2024-09-24)
+
+### :sparkles:Features
+
+* **devops:** 增加gpu部署k8s
+* **language:** 增加Go语言sync.Cond底层原理
+* **language:** 增加sync.Once底层原理
+* **network:** 增加SSE消息推送
+* **open-source-project:** 添加我的开源项目
 
 
 <a name="v0.12.4"></a>
