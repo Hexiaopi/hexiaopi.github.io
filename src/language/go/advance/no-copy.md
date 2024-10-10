@@ -1,5 +1,5 @@
 ---
-title: Go如何禁止拷贝
+title: 如何禁止拷贝
 date: 2024-05-24
 tag:
  - Go

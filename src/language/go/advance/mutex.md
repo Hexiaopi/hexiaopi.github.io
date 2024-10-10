@@ -1,5 +1,5 @@
 ---
-title: 深入了解Go锁原理
+title: 深入了解mutex原理
 date: 2023-03-11
 tag:
  - Go

@@ -1,5 +1,5 @@
 ---
-title: Go语言sync.Map底层原理
+title: sync.Map底层原理
 date: 2024-05-27
 tag:
  - Go

@@ -1,5 +1,5 @@
 ---
-title: Go语言sync.Once底层原理
+title: sync.Once底层原理
 date: 2024-09-24
 tag:
  - Go

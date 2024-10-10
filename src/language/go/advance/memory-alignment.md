@@ -1,5 +1,5 @@
 ---
-title: Go语言内存对齐
+title: 内存对齐
 date: 2024-06-22
 tag:
  - Go
