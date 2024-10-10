@@ -6,8 +6,8 @@
     <link>http://blog.cjhe.top/</link>
     <description>何小进童鞋的个人博客</description>
     <language>zh-CN</language>
-    <pubDate>Tue, 24 Sep 2024 13:18:48 GMT</pubDate>
-    <lastBuildDate>Tue, 24 Sep 2024 13:18:48 GMT</lastBuildDate>
+    <pubDate>Thu, 10 Oct 2024 12:30:34 GMT</pubDate>
+    <lastBuildDate>Thu, 10 Oct 2024 12:30:34 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>编程语言</category>
@@ -23,10 +23,10 @@
     <category>编程框架</category>
     <category>项目规范</category>
     <item>
-      <title>Go语言sync.Cond底层原理</title>
+      <title>sync.Cond底层原理</title>
       <link>http://blog.cjhe.top/language/go/advance/sync-cond.html</link>
       <guid>http://blog.cjhe.top/language/go/advance/sync-cond.html</guid>
-      <source url="http://blog.cjhe.top/rss.xml">Go语言sync.Cond底层原理</source>
+      <source url="http://blog.cjhe.top/rss.xml">sync.Cond底层原理</source>
       <description>Go语言sync.Cond是一个条件变量。顾名思义，当条件不满足时，通过条件变量进入睡眠状态。当条件满足时，通过条件变量唤醒等待的线程。sync.Cond用于多线程中的同步机制。
 
 使用示例
@@ -195,10 +195,10 @@ c<span class="token punctuation">.</span>L<span class="token punctuation">.</spa
 ]]></content:encoded>
     </item>
     <item>
-      <title>Go语言sync.Once底层原理</title>
+      <title>sync.Once底层原理</title>
       <link>http://blog.cjhe.top/language/go/advance/sync-once.html</link>
       <guid>http://blog.cjhe.top/language/go/advance/sync-once.html</guid>
-      <source url="http://blog.cjhe.top/rss.xml">Go语言sync.Once底层原理</source>
+      <source url="http://blog.cjhe.top/rss.xml">sync.Once底层原理</source>
       <description>Go语言sync.Once可以保证某个函数只执行一次，常用于单例模式。在本文中，我们将深入探讨sync.Once的底层实现原理，以便更好地理解它的并发安全特性。
 
 使用方式
@@ -1218,10 +1218,10 @@ maxprocs 1
 ]]></content:encoded>
     </item>
     <item>
-      <title>Go语言内存对齐</title>
+      <title>内存对齐</title>
       <link>http://blog.cjhe.top/language/go/advance/memory-alignment.html</link>
       <guid>http://blog.cjhe.top/language/go/advance/memory-alignment.html</guid>
-      <source url="http://blog.cjhe.top/rss.xml">Go语言内存对齐</source>
+      <source url="http://blog.cjhe.top/rss.xml">内存对齐</source>
       <description>合理的排列数据成员的顺序，使得整个结构体的空间占用最小化。</description>
       <category>编程语言</category>
       <pubDate>Sat, 22 Jun 2024 00:00:00 GMT</pubDate>
@@ -1791,10 +1791,10 @@ nacos-grafana...</description>
 ]]></content:encoded>
     </item>
     <item>
-      <title>Go语言sync.Map底层原理</title>
+      <title>sync.Map底层原理</title>
       <link>http://blog.cjhe.top/language/go/advance/sync-map.html</link>
       <guid>http://blog.cjhe.top/language/go/advance/sync-map.html</guid>
-      <source url="http://blog.cjhe.top/rss.xml">Go语言sync.Map底层原理</source>
+      <source url="http://blog.cjhe.top/rss.xml">sync.Map底层原理</source>
       <description>Go 语言原生的map是非并发安全的，在并发场景下，使用map可能会导致数据竞争和panic。为了解决这个问题，Go 语言提供了sync.Map，它是一个并发安全的map。在本文中，我们将深入探讨sync.Map的底层实现原理，以便更好地理解它的并发安全特性。
 
 基本用法
@@ -2087,10 +2087,10 @@ sync.Map提供了丰富的API，用于对map的查询、存储、遍历、删除
 ]]></content:encoded>
     </item>
     <item>
-      <title>Go如何禁止拷贝</title>
+      <title>如何禁止拷贝</title>
       <link>http://blog.cjhe.top/language/go/advance/no-copy.html</link>
       <guid>http://blog.cjhe.top/language/go/advance/no-copy.html</guid>
-      <source url="http://blog.cjhe.top/rss.xml">Go如何禁止拷贝</source>
+      <source url="http://blog.cjhe.top/rss.xml">如何禁止拷贝</source>
       <description>禁止拷贝的目的是不让用户对对象进行拷贝，比如：sync.WaitGroup
 
 那么Go语言是如何禁止拷贝的呢？
@@ -4793,28 +4793,50 @@ flag参数使用语法
       <link>http://blog.cjhe.top/language/go/base/package.html</link>
       <guid>http://blog.cjhe.top/language/go/base/package.html</guid>
       <source url="http://blog.cjhe.top/rss.xml">package</source>
-      <description>Go语言使用包（package）作为基本单元来组织源码。</description>
+      <description>package
+
+Go语言使用包（package）作为基本单元来组织源码。
+
+package的优点
+
+编译速度快
+
+
+Go要求每个源文件在开头显示地列出所有依赖的包，如果引入了未使用的包，Go语言编译器会报错。
+Go要求包之间不能存在循环依赖，这样包的依赖关系便形成了一张有向无环图，这样每个包可以单独编译也可并行编译
+已编译的Go包不仅记录了该包的信息...</description>
       <category>编程语言</category>
       <pubDate>Sun, 27 Aug 2023 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<p>Go语言使用包（package）作为基本单元来组织源码。</p>
-<!-- more -->
+      <content:encoded><![CDATA[<!-- more -->
+<h1>package</h1>
+<blockquote>
+<p>Go语言使用包（package）作为基本单元来组织源码。</p>
+</blockquote>
 <h2>package的优点</h2>
-<h3>编译速度快</h3>
+<blockquote>
+<p>编译速度快</p>
+</blockquote>
 <ul>
 <li>Go要求每个源文件在开头显示地列出所有依赖的包，如果引入了未使用的包，Go语言编译器会报错。</li>
 <li>Go要求包之间不能存在循环依赖，这样包的依赖关系便形成了一张有向无环图，这样每个包可以单独编译也可并行编译</li>
 <li>已编译的Go包不仅记录了该包的信息，还记录了依赖包的信息。只需读取缓存的编译产物即可。</li>
 </ul>
+<h2>注意事项</h2>
+<ul>
+<li>Go语言官网工具链对于引入路径包含<code>internal</code>目录名的代码包被视为一个特殊的代码包，它只能被此目录的直接父目录的代码包引用，而不能被其他代码包引用。</li>
+<li>Go不支持循环引用，例如：A包引入B包，B包引入A包，这种将不被允许。</li>
+<li><code>main</code>包是一个特殊的包，它是程序入口函数，不能被引用。</li>
+</ul>
 <h2>初始化顺序</h2>
 <p>Go语言内置函数<code>init()</code>，常用于包级数据初始化以及初始状态的检查工作。</p>
 <ul>
-<li>一个Go包可以有多个init()函数</li>
-<li>init()函数不可显示的调用，否则会编译期间报错</li>
-<li>init()只会执行一次</li>
+<li>一个Go包可以有多个<code>init()</code>函数；</li>
+<li><code>init()</code>函数不可显示的调用，否则会编译期间报错；</li>
+<li><code>init()</code>只会执行一次；</li>
 </ul>
 <p>Go包引入其他包，初始化时按照一定的次序逐一调用该包的init函数。</p>
 <figure><figcaption>package-init</figcaption></figure>
-<p>Go语言运行时按照常量-&gt;变量-&gt;init()顺序进行初始化。</p>
+<p>Go语言运行时按照<code>常量</code>-&gt;<code>变量</code>-&gt;<code>init()</code>顺序进行初始化。</p>
 ]]></content:encoded>
     </item>
     <item>
