@@ -86,11 +86,11 @@ import "fmt"
 
 func main() {
 	defer func() {
-		fmt.Print(recover())
+		fmt.Println("xx", recover())
 	}()
 	defer func() {
 		defer func() {
-			fmt.Print(recover())
+			fmt.Println("yy", recover())
 		}()
 		panic(1)
 	}()
@@ -101,7 +101,8 @@ func main() {
 
 ::: details 执行结果
 ```text
-12
+yy 1
+xx 2
 ```
 :::
 
@@ -113,10 +114,10 @@ import "fmt"
 
 func main() {
 	defer func() {
-		fmt.Print(recover())
+		fmt.Println("xx", recover())
 	}()
 	defer func() {
-		defer fmt.Print(recover())
+		defer fmt.Println("yy", recover())
 		panic(1)
 	}()
 	defer recover()
@@ -126,7 +127,8 @@ func main() {
 
 ::: details 执行结果
 ```text
-21
+yy 2
+xx 1
 ```
 :::
 
