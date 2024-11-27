@@ -145,7 +145,9 @@ hash冲突并不是好事情，它降低了存取效率，好的Hash算法可以
 条件：
 
 - 负载因子大于6.5时
-- overflow的数量大于2^15=32768
+- overflow的数量过多
+  - 当B小于15，overflow超过2^B
+  - 当B大于等于15，overflow超过2^15=32768
 
 map的扩缩容的主要区别在于hmap.B的容量大小改变，而缩容由于hmap.B压根不变，内存占用依然存在。这就导致在删除元素时，并不会释放内存，使得分配的总内存不断增加，如果不注意，内存就很容易爆了。<Badge text="注意" type="warning"/>
 [Go map 如何缩容？](https://eddycjy.com/posts/go/map-reset/)

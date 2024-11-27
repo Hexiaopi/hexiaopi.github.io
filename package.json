@@ -1,7 +1,7 @@
 {
   "name": "blog",
   "version": "1.0.0",
-  "description": "hexiaopi's nlog",
+  "description": "hexiaopi's blog",
   "license": "MIT",
   "type": "module",
   "scripts": {
