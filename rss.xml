@@ -6,8 +6,8 @@
     <link>http://blog.cjhe.top/</link>
     <description>何小进童鞋的个人博客</description>
     <language>zh-CN</language>
-    <pubDate>Wed, 27 Nov 2024 03:24:28 GMT</pubDate>
-    <lastBuildDate>Wed, 27 Nov 2024 03:24:28 GMT</lastBuildDate>
+    <pubDate>Wed, 27 Nov 2024 07:41:30 GMT</pubDate>
+    <lastBuildDate>Wed, 27 Nov 2024 07:41:30 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>编程语言</category>
@@ -470,6 +470,83 @@ sync.Once通过Do方法实现了只执行一次的功能。在第一次调用Do�
 <p class="hint-container-title">重要</p>
 <p>其中第15行，通过双重检查，保证函数只执行一次。因为在调用doSlow方式前，done是0。但是调用doSlow方法时，done可能已被其他协程修改，因此需要双重检查。</p>
 </div>
+<h2>注意事项</h2>
+<h3>sync.Once不能复制</h3>
+<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">ExampleOnce2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	once <span class="token operator">:=</span> sync<span class="token punctuation">.</span>Once<span class="token punctuation">{</span><span class="token punctuation">}</span>
+	wg <span class="token operator">:=</span> sync<span class="token punctuation">.</span>WaitGroup<span class="token punctuation">{</span><span class="token punctuation">}</span>
+	<span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">5</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>
+		wg<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+		<span class="token keyword">go</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token keyword">defer</span> wg<span class="token punctuation">.</span><span class="token function">Done</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+			once <span class="token operator">:=</span> once
+			once<span class="token punctuation">.</span><span class="token function">Do</span><span class="token punctuation">(</span><span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+				fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"do init"</span><span class="token punctuation">)</span>
+			<span class="token punctuation">}</span><span class="token punctuation">)</span>
+		<span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+	wg<span class="token punctuation">.</span><span class="token function">Wait</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token comment">// Output:</span>
+	<span class="token comment">// do init</span>
+	<span class="token comment">// do init</span>
+	<span class="token comment">// do init</span>
+	<span class="token comment">// do init</span>
+	<span class="token comment">// do init</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="hint-container tip">
+<p class="hint-container-title">提示</p>
+<p>这是由于sync.Once里面的内部类型不是引用类型，进行复制会得到全新的变量。不同的变量执行Do方法时，互不影响。</p>
+</div>
+<h3>sync.Once不能嵌套使用</h3>
+<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">"fmt"</span>
+	<span class="token string">"sync"</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">var</span> once sync<span class="token punctuation">.</span>Once
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	once<span class="token punctuation">.</span><span class="token function">Do</span><span class="token punctuation">(</span><span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		once<span class="token punctuation">.</span><span class="token function">Do</span><span class="token punctuation">(</span><span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"do inside"</span><span class="token punctuation">)</span>
+		<span class="token punctuation">}</span><span class="token punctuation">)</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"do outside"</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><details class="hint-container details"><summary>执行结果</summary>
+<div class="language-text" data-ext="text" data-title="text"><pre class="language-text"><code>fatal error: all goroutines are asleep - deadlock!
+
+goroutine 1 [sync.Mutex.Lock]:
+sync.runtime_SemacquireMutex(0x5a2200?, 0x80?, 0x5a1340?)
+        D:/Go/src/runtime/sema.go:95 +0x25
+sync.(*Mutex).lockSlow(0x6a969c)
+        D:/Go/src/sync/mutex.go:173 +0x15d
+sync.(*Mutex).Lock(...)
+        D:/Go/src/sync/mutex.go:92
+sync.(*Once).doSlow(0xc00008a000?, 0x5c3fe8)
+        D:/Go/src/sync/once.go:72 +0x50
+sync.(*Once).Do(...)
+        D:/Go/src/sync/once.go:67
+main.main.func1()
+        D:/code/test/test/main.go:12 +0x2c
+sync.(*Once).doSlow(0x657388?, 0xc00006c000?)
+        D:/Go/src/sync/once.go:76 +0xb4
+sync.(*Once).Do(...)
+        D:/Go/src/sync/once.go:67
+main.main()
+        D:/code/test/test/main.go:11 +0x2c
+exit status 2
+</code></pre></div></details>
+<div class="hint-container tip">
+<p class="hint-container-title">提示</p>
+<p>这是由于sync.Once内部的锁在第一次执行的时候，加锁成功，等待释放锁。但是嵌入执行的时候又竞争这个锁，导致死锁。</p>
+</div>
+<h2>参考资料</h2>
+<ul>
+<li><a href="https://mp.weixin.qq.com/s/glJ6X1ixSYFok4qb_UHY6A" target="_blank" rel="noopener noreferrer">探索 Go sync.Once 的实现原理</a></li>
+</ul>
 ]]></content:encoded>
     </item>
     <item>
