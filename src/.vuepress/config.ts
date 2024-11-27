@@ -3,7 +3,7 @@ import { searchProPlugin } from "vuepress-plugin-search-pro";
 import theme from "./theme.js";
 
 export default defineUserConfig({
-  base: process.env.BASE_URL || "/",
+  base: "/",
 
   lang: "zh-CN",
   title: "个人博客",
