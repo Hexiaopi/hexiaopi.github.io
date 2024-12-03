@@ -7,6 +7,10 @@ date: 2024-12-03
 <!-- more -->
 
 
+<a name="v0.12.8"></a>
+## [v0.12.8](https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.12.7...v0.12.8) (2024-12-03)
+
+
 <a name="v0.12.7"></a>
 ## [v0.12.7](https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.12.6...v0.12.7) (2024-12-03)
 
