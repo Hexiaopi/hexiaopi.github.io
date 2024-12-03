@@ -3,7 +3,7 @@
   <id>http://blog.cjhe.top/</id>
   <title>个人博客</title>
   <subtitle>何小进童鞋的个人博客</subtitle>
-  <updated>2024-12-03T09:00:18.183Z</updated>
+  <updated>2024-12-03T10:00:43.629Z</updated>
   <generator>@vuepress/plugin-feed</generator>
   <link rel="self" href="http://blog.cjhe.top/atom.xml"/>
   <link rel="alternate" href="http://blog.cjhe.top/"/>
@@ -6456,8 +6456,10 @@ Cgo 不是 Go。</p>
     <title type="text">变更日志</title>
     <id>http://blog.cjhe.top/CHANGELOG.html</id>
     <link href="http://blog.cjhe.top/CHANGELOG.html"/>
-    <updated>2024-12-03T08:59:16.000Z</updated>
-    <summary type="text">v0.12.7 (2024-12-03)
+    <updated>2024-12-03T09:59:46.000Z</updated>
+    <summary type="text">v0.12.8 (2024-12-03)
+
+v0.12.7 (2024-12-03)
 ✨Features
 
 database: 增加minio集群docker部署
@@ -6468,10 +6470,10 @@ v0.12.6 (2024-12-03)
 
 修复一些问题
 langauge: 修改sync.Once增加注意事项
-language: 修改go slice注意事项
-language: 修复一些问题
-lang...</summary>
+language: 修改go slice注意事项...</summary>
     <content type="html"><![CDATA[<!-- more -->
+<p><a name="v0.12.8"></a></p>
+<h2><a class="header-anchor" href="#v0-12-8-2024-12-03"><span></span></a><a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.12.7...v0.12.8" target="_blank" rel="noopener noreferrer">v0.12.8</a> (2024-12-03)</h2>
 <p><a name="v0.12.7"></a></p>
 <h2><a class="header-anchor" href="#v0-12-7-2024-12-03"><span></span></a><a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.12.6...v0.12.7" target="_blank" rel="noopener noreferrer">v0.12.7</a> (2024-12-03)</h2>
 <h3>✨Features</h3>
