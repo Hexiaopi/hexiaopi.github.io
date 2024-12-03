@@ -18,3 +18,6 @@ gsemver:
 
 changelog:
 	git-chglog -o src/CHANGELOG.md
+	git add src/CHANGELOG.md
+	git commit -m "docs: update changelog $(GIT_VERSION)"
+	git push
