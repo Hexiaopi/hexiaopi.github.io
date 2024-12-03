@@ -1,10 +1,27 @@
 ---
 title: 变更日志
 icon: clock
-date: 2024-09-24
+date: 2024-12-03
 ---
 
 <!-- more -->
+
+
+<a name="v0.12.6"></a>
+## [v0.12.6](https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.12.5...v0.12.6) (2024-12-03)
+
+### :bug:Bug Fixes
+
+* 修复一些问题
+* **langauge:** 修改sync.Once增加注意事项
+* **language:** 修改go slice注意事项
+* **language:** 修复一些问题
+* **language:** 修复一些问题
+
+### :sparkles:Features
+
+* **database:** 增加postgresql集群docker部署
+* **language:** 增加Go语言errgroup的使用示例和源码分析
 
 
 <a name="v0.12.5"></a>
