@@ -7,6 +7,14 @@ date: 2024-12-03
 <!-- more -->
 
 
+<a name="v0.12.7"></a>
+## [v0.12.7](https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.12.6...v0.12.7) (2024-12-03)
+
+### :sparkles:Features
+
+* **database:** 增加minio集群docker部署
+
+
 <a name="v0.12.6"></a>
 ## [v0.12.6](https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.12.5...v0.12.6) (2024-12-03)
 
