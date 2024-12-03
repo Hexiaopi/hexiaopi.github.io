@@ -3,15 +3,15 @@
   <id>http://blog.cjhe.top/</id>
   <title>个人博客</title>
   <subtitle>何小进童鞋的个人博客</subtitle>
-  <updated>2024-11-27T07:41:30.941Z</updated>
+  <updated>2024-12-03T02:32:00.731Z</updated>
   <generator>@vuepress/plugin-feed</generator>
   <link rel="self" href="http://blog.cjhe.top/atom.xml"/>
   <link rel="alternate" href="http://blog.cjhe.top/"/>
+  <category term="数据存储"/>
   <category term="编程语言"/>
   <category term="devops"/>
   <category term="开源项目"/>
   <category term="网络"/>
-  <category term="数据存储"/>
   <category term="转载"/>
   <category term="算法"/>
   <category term="设计模式"/>
@@ -28,6 +28,146 @@
   <contributor>
     <name>Rob Pike</name>
   </contributor>
+  <entry>
+    <title type="text">PostgreSQL</title>
+    <id>http://blog.cjhe.top/database/postgresql/</id>
+    <link href="http://blog.cjhe.top/database/postgresql/"/>
+    <updated>2024-12-03T02:28:55.000Z</updated>
+    <content type="html"><![CDATA[<!-- more -->
+]]></content>
+    <category term="数据存储"/>
+    <published>2024-12-03T00:00:00.000Z</published>
+  </entry>
+  <entry>
+    <title type="text">Docker搭建PostgreSQL集群</title>
+    <id>http://blog.cjhe.top/database/postgresql/cluster-docker.html</id>
+    <link href="http://blog.cjhe.top/database/postgresql/cluster-docker.html"/>
+    <updated>2024-12-03T02:28:55.000Z</updated>
+    <summary type="html"><![CDATA[<h2>Docker-Compose文件</h2>
+<div class="language-yaml" data-ext="yml" data-title="yml"><pre class="language-yaml"><code><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'3.8'</span>
+
+<span class="token key atrule">services</span><span class="token punctuation">:</span>
+  <span class="token key atrule">pg-0</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> bitnami/postgresql<span class="token punctuation">-</span>repmgr<span class="token punctuation">:</span><span class="token number">14</span>
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> 5433<span class="token punctuation">:</span><span class="token number">5432</span>
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> ./pg_0_data<span class="token punctuation">:</span>/bitnami/postgresql
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> TZ=Asia/Shanghai
+      <span class="token punctuation">-</span> POSTGRESQL_POSTGRES_PASSWORD=adminpassword
+      <span class="token punctuation">-</span> POSTGRESQL_USERNAME=customuser
+      <span class="token punctuation">-</span> POSTGRESQL_PASSWORD=custompassword
+      <span class="token punctuation">-</span> POSTGRESQL_DATABASE=customdatabase
+      <span class="token punctuation">-</span> REPMGR_PASSWORD=repmgrpassword
+      <span class="token punctuation">-</span> REPMGR_PRIMARY_HOST=pg<span class="token punctuation">-</span><span class="token number">0</span>
+      <span class="token punctuation">-</span> REPMGR_PARTNER_NODES=pg<span class="token punctuation">-</span><span class="token number">0</span><span class="token punctuation">,</span>pg<span class="token punctuation">-</span><span class="token number">1</span>
+      <span class="token punctuation">-</span> REPMGR_NODE_NAME=pg<span class="token punctuation">-</span><span class="token number">0</span>
+      <span class="token punctuation">-</span> REPMGR_NODE_NETWORK_NAME=pg<span class="token punctuation">-</span><span class="token number">0</span>
+
+  <span class="token key atrule">pg-1</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> bitnami/postgresql<span class="token punctuation">-</span>repmgr<span class="token punctuation">:</span><span class="token number">14</span>
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> 5434<span class="token punctuation">:</span><span class="token number">5432</span>
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> ./pg_1_data<span class="token punctuation">:</span>/bitnami/postgresql
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> TZ=Asia/Shanghai
+      <span class="token punctuation">-</span> POSTGRESQL_POSTGRES_PASSWORD=adminpassword
+      <span class="token punctuation">-</span> POSTGRESQL_USERNAME=customuser
+      <span class="token punctuation">-</span> POSTGRESQL_PASSWORD=custompassword
+      <span class="token punctuation">-</span> POSTGRESQL_DATABASE=customdatabase
+      <span class="token punctuation">-</span> REPMGR_PASSWORD=repmgrpassword
+      <span class="token punctuation">-</span> REPMGR_PRIMARY_HOST=pg<span class="token punctuation">-</span><span class="token number">0</span>
+      <span class="token punctuation">-</span> REPMGR_PARTNER_NODES=pg<span class="token punctuation">-</span><span class="token number">0</span><span class="token punctuation">,</span>pg<span class="token punctuation">-</span><span class="token number">1</span>
+      <span class="token punctuation">-</span> REPMGR_NODE_NAME=pg<span class="token punctuation">-</span><span class="token number">1</span>
+      <span class="token punctuation">-</span> REPMGR_NODE_NETWORK_NAME=pg<span class="token punctuation">-</span><span class="token number">1</span>
+
+  <span class="token key atrule">pgpool</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> bitnami/pgpool<span class="token punctuation">:</span>4.5.1
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> 5432<span class="token punctuation">:</span><span class="token number">5432</span>
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> TZ=Asia/Shanghai
+      <span class="token punctuation">-</span> PGPOOL_BACKEND_NODES=0<span class="token punctuation">:</span>pg<span class="token punctuation">-</span>0<span class="token punctuation">:</span><span class="token number">5432</span><span class="token punctuation">,</span>1<span class="token punctuation">:</span>pg<span class="token punctuation">-</span>1<span class="token punctuation">:</span><span class="token number">5432</span>
+      <span class="token punctuation">-</span> PGPOOL_SR_CHECK_USER=customuser
+      <span class="token punctuation">-</span> PGPOOL_SR_CHECK_PASSWORD=custompassword
+      <span class="token punctuation">-</span> PGPOOL_ENABLE_LDAP=no
+      <span class="token punctuation">-</span> PGPOOL_POSTGRES_USERNAME=postgres
+      <span class="token punctuation">-</span> PGPOOL_POSTGRES_PASSWORD=adminpassword
+      <span class="token punctuation">-</span> PGPOOL_ADMIN_USERNAME=admin
+      <span class="token punctuation">-</span> PGPOOL_ADMIN_PASSWORD=adminpassword
+    <span class="token key atrule">healthcheck</span><span class="token punctuation">:</span>
+      <span class="token key atrule">test</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"CMD"</span><span class="token punctuation">,</span> <span class="token string">"/opt/bitnami/scripts/pgpool/healthcheck.sh"</span><span class="token punctuation">]</span>
+      <span class="token key atrule">interval</span><span class="token punctuation">:</span> 10s
+      <span class="token key atrule">timeout</span><span class="token punctuation">:</span> 5s
+      <span class="token key atrule">retries</span><span class="token punctuation">:</span> <span class="token number">5</span>
+
+</code></pre></div>]]></summary>
+    <content type="html"><![CDATA[<h2>Docker-Compose文件</h2>
+<div class="language-yaml" data-ext="yml" data-title="yml"><pre class="language-yaml"><code><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'3.8'</span>
+
+<span class="token key atrule">services</span><span class="token punctuation">:</span>
+  <span class="token key atrule">pg-0</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> bitnami/postgresql<span class="token punctuation">-</span>repmgr<span class="token punctuation">:</span><span class="token number">14</span>
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> 5433<span class="token punctuation">:</span><span class="token number">5432</span>
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> ./pg_0_data<span class="token punctuation">:</span>/bitnami/postgresql
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> TZ=Asia/Shanghai
+      <span class="token punctuation">-</span> POSTGRESQL_POSTGRES_PASSWORD=adminpassword
+      <span class="token punctuation">-</span> POSTGRESQL_USERNAME=customuser
+      <span class="token punctuation">-</span> POSTGRESQL_PASSWORD=custompassword
+      <span class="token punctuation">-</span> POSTGRESQL_DATABASE=customdatabase
+      <span class="token punctuation">-</span> REPMGR_PASSWORD=repmgrpassword
+      <span class="token punctuation">-</span> REPMGR_PRIMARY_HOST=pg<span class="token punctuation">-</span><span class="token number">0</span>
+      <span class="token punctuation">-</span> REPMGR_PARTNER_NODES=pg<span class="token punctuation">-</span><span class="token number">0</span><span class="token punctuation">,</span>pg<span class="token punctuation">-</span><span class="token number">1</span>
+      <span class="token punctuation">-</span> REPMGR_NODE_NAME=pg<span class="token punctuation">-</span><span class="token number">0</span>
+      <span class="token punctuation">-</span> REPMGR_NODE_NETWORK_NAME=pg<span class="token punctuation">-</span><span class="token number">0</span>
+
+  <span class="token key atrule">pg-1</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> bitnami/postgresql<span class="token punctuation">-</span>repmgr<span class="token punctuation">:</span><span class="token number">14</span>
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> 5434<span class="token punctuation">:</span><span class="token number">5432</span>
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> ./pg_1_data<span class="token punctuation">:</span>/bitnami/postgresql
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> TZ=Asia/Shanghai
+      <span class="token punctuation">-</span> POSTGRESQL_POSTGRES_PASSWORD=adminpassword
+      <span class="token punctuation">-</span> POSTGRESQL_USERNAME=customuser
+      <span class="token punctuation">-</span> POSTGRESQL_PASSWORD=custompassword
+      <span class="token punctuation">-</span> POSTGRESQL_DATABASE=customdatabase
+      <span class="token punctuation">-</span> REPMGR_PASSWORD=repmgrpassword
+      <span class="token punctuation">-</span> REPMGR_PRIMARY_HOST=pg<span class="token punctuation">-</span><span class="token number">0</span>
+      <span class="token punctuation">-</span> REPMGR_PARTNER_NODES=pg<span class="token punctuation">-</span><span class="token number">0</span><span class="token punctuation">,</span>pg<span class="token punctuation">-</span><span class="token number">1</span>
+      <span class="token punctuation">-</span> REPMGR_NODE_NAME=pg<span class="token punctuation">-</span><span class="token number">1</span>
+      <span class="token punctuation">-</span> REPMGR_NODE_NETWORK_NAME=pg<span class="token punctuation">-</span><span class="token number">1</span>
+
+  <span class="token key atrule">pgpool</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> bitnami/pgpool<span class="token punctuation">:</span>4.5.1
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> 5432<span class="token punctuation">:</span><span class="token number">5432</span>
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> TZ=Asia/Shanghai
+      <span class="token punctuation">-</span> PGPOOL_BACKEND_NODES=0<span class="token punctuation">:</span>pg<span class="token punctuation">-</span>0<span class="token punctuation">:</span><span class="token number">5432</span><span class="token punctuation">,</span>1<span class="token punctuation">:</span>pg<span class="token punctuation">-</span>1<span class="token punctuation">:</span><span class="token number">5432</span>
+      <span class="token punctuation">-</span> PGPOOL_SR_CHECK_USER=customuser
+      <span class="token punctuation">-</span> PGPOOL_SR_CHECK_PASSWORD=custompassword
+      <span class="token punctuation">-</span> PGPOOL_ENABLE_LDAP=no
+      <span class="token punctuation">-</span> PGPOOL_POSTGRES_USERNAME=postgres
+      <span class="token punctuation">-</span> PGPOOL_POSTGRES_PASSWORD=adminpassword
+      <span class="token punctuation">-</span> PGPOOL_ADMIN_USERNAME=admin
+      <span class="token punctuation">-</span> PGPOOL_ADMIN_PASSWORD=adminpassword
+    <span class="token key atrule">healthcheck</span><span class="token punctuation">:</span>
+      <span class="token key atrule">test</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"CMD"</span><span class="token punctuation">,</span> <span class="token string">"/opt/bitnami/scripts/pgpool/healthcheck.sh"</span><span class="token punctuation">]</span>
+      <span class="token key atrule">interval</span><span class="token punctuation">:</span> 10s
+      <span class="token key atrule">timeout</span><span class="token punctuation">:</span> 5s
+      <span class="token key atrule">retries</span><span class="token punctuation">:</span> <span class="token number">5</span>
+
+</code></pre></div>]]></content>
+    <category term="数据存储"/>
+    <published>2024-12-03T00:00:00.000Z</published>
+  </entry>
   <entry>
     <title type="text">errgroup使用示例和源码分析</title>
     <id>http://blog.cjhe.top/language/go/advance/errgroup.html</id>
@@ -6205,19 +6345,36 @@ Cgo 不是 Go。</p>
     <title type="text">变更日志</title>
     <id>http://blog.cjhe.top/CHANGELOG.html</id>
     <link href="http://blog.cjhe.top/CHANGELOG.html"/>
-    <updated>2024-09-24T13:17:28.000Z</updated>
-    <summary type="text">v0.12.5 (2024-09-24)
+    <updated>2024-12-03T02:31:01.000Z</updated>
+    <summary type="text">v0.12.6 (2024-12-03)
+🐛Bug Fixes
+
+修复一些问题
+langauge: 修改sync.Once增加注意事项
+language: 修改go slice注意事项
+language: 修复一些问题
+language: 修复一些问题
+
 ✨Features
 
-devops: 增加gpu部署k8s
-language: 增加Go语言sync.Cond底层原理
-language: 增加sync.Once底层原理
-network: 增加SSE消息推送
-open-source-project: 添加我的开源项目
-
-
-v0.12.4 (2024-08-29...</summary>
+database: 增加postgresql集群docker部署
+lang...</summary>
     <content type="html"><![CDATA[<!-- more -->
+<p><a name="v0.12.6"></a></p>
+<h2><a class="header-anchor" href="#v0-12-6-2024-12-03"><span></span></a><a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.12.5...v0.12.6" target="_blank" rel="noopener noreferrer">v0.12.6</a> (2024-12-03)</h2>
+<h3>🐛Bug Fixes</h3>
+<ul>
+<li>修复一些问题</li>
+<li><strong>langauge:</strong> 修改sync.Once增加注意事项</li>
+<li><strong>language:</strong> 修改go slice注意事项</li>
+<li><strong>language:</strong> 修复一些问题</li>
+<li><strong>language:</strong> 修复一些问题</li>
+</ul>
+<h3>✨Features</h3>
+<ul>
+<li><strong>database:</strong> 增加postgresql集群docker部署</li>
+<li><strong>language:</strong> 增加Go语言errgroup的使用示例和源码分析</li>
+</ul>
 <p><a name="v0.12.5"></a></p>
 <h2><a class="header-anchor" href="#v0-12-5-2024-09-24"><span></span></a><a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.12.4...v0.12.5" target="_blank" rel="noopener noreferrer">v0.12.5</a> (2024-09-24)</h2>
 <h3>✨Features</h3>
@@ -6631,7 +6788,7 @@ v0.12.4 (2024-08-29...</summary>
 <li><strong>project-manager:</strong> add commit standard</li>
 </ul>
 ]]></content>
-    <published>2024-09-24T00:00:00.000Z</published>
+    <published>2024-12-03T00:00:00.000Z</published>
   </entry>
   <entry>
     <title type="text">工厂模式的比较</title>
@@ -8395,151 +8552,5 @@ MySQL架构MySQL架构
 ]]></content>
     <category term="数据存储"/>
     <published>2023-03-15T00:00:00.000Z</published>
-  </entry>
-  <entry>
-    <title type="text">SQL查询顺序</title>
-    <id>http://blog.cjhe.top/database/mysql/sql-order.html</id>
-    <link href="http://blog.cjhe.top/database/mysql/sql-order.html"/>
-    <updated>2024-05-27T02:38:52.000Z</updated>
-    <summary type="text">sql-queriessql-queries
-这张图与 SQL 查询的语义有关，让你知道一个查询会返回什么，并回答了以下这些问题：
-
-
-可以在 GROUP BY 之后使用 WHERE 吗？（不行，WHERE 是在 GROUP BY 之前！）
-
-
-可以对窗口函数返回的结果进行过滤吗？（不行，窗口函数是 SELECT 语句里，而 SELECT 是在 WHE...</summary>
-    <content type="html"><![CDATA[<!-- more -->
-<figure><img src="https://jvns.ca/images/sql-queries.jpeg" alt="sql-queries" tabindex="0" loading="lazy"><figcaption>sql-queries</figcaption></figure>
-<p>这张图与 SQL 查询的语义有关，让你知道一个查询会返回什么，并回答了以下这些问题：</p>
-<ul>
-<li>
-<p>可以在 GROUP BY 之后使用 WHERE 吗？（不行，WHERE 是在 GROUP BY 之前！）</p>
-</li>
-<li>
-<p>可以对窗口函数返回的结果进行过滤吗？（不行，窗口函数是 SELECT 语句里，而 SELECT 是在 WHERE 和 GROUP BY 之后）</p>
-</li>
-<li>
-<p>可以基于 GROUP BY 里的东西进行 ORDER BY 吗？（可以，ORDER BY 基本上是在最后执行的，所以可以基于任何东西进行 ORDER BY）</p>
-</li>
-<li>
-<p>LIMIT 是在什么时候执行？（在最后！）</p>
-</li>
-</ul>
-<p>但数据库引擎并不一定严格按照这个顺序执行 SQL 查询，因为为了更快地执行查询，它们会做出一些优化。</p>
-<p>所以：</p>
-<p>如果你想要知道一个查询语句是否合法，或者想要知道一个查询语句会返回什么，可以参考这张图；</p>
-<p>需要注意的是，在实际实现中，MySQL会根据具体的查询条件和数据量进行一定的优化和调整。在涉及查询性能或者与索引有关的东西时，这张图就不适用了。</p>
-<p>关于数据查询顺序和变化参考下图：</p>
-<figure><figcaption>sql-order</figcaption></figure>
-<h2>详细查询顺序</h2>
-<p>1.FROM子句</p>
-<blockquote>
-<p>MySQL首先处理FROM子句，该步骤主要是确定需要查询的数据表，并建立数据表之间的连接关系。</p>
-</blockquote>
-<p>2.WHERE子句</p>
-<blockquote>
-<p>根据WHERE子句指定的查询条件，MySQL会进行筛选并过滤出符合条件的数据。</p>
-</blockquote>
-<p>3.GROUP BY子句</p>
-<blockquote>
-<p>如果查询需要对数据分组，则MySQL会按照GROUP BY子句中指定的分组条件对数据进行分组，然后对每个组进行汇总计算。</p>
-</blockquote>
-<p>4.HAVING子句</p>
-<blockquote>
-<p>HAVING子句用于过滤分组后的数据，和WHERE子句类似。只有满足HAVING子句指定的条件的组才会出现在结果集中。</p>
-</blockquote>
-<p>5.SELECT子句</p>
-<blockquote>
-<p>SELECT子句是MySQL查询语句最主要的部分，它用于指定需要查询的数据集合以及计算这个数据集合中的一些列值。</p>
-</blockquote>
-<p>6.DISTINCT</p>
-<blockquote>
-<p>如果使用了DISTINCT关键字，则MySQL会过滤掉查询结果中的重复记录。</p>
-</blockquote>
-<p>7.ORDER BY</p>
-<blockquote>
-<p>ORDER BY子句用于对查询结果进行排序。MySQL会按照指定的列或表达式的结果对查询结果进行排序，可以指定升序或降序。</p>
-</blockquote>
-<p>8.LIMIT</p>
-<blockquote>
-<p>LIMIT关键字用于限制查询结果的数量。MySQL只返回前N条符合条件的记录，其中N由LIMIT语句后面的数字指定。</p>
-</blockquote>
-<h2>参考文献</h2>
-<p><a href="https://jvns.ca/blog/2019/10/03/sql-queries-don-t-start-with-select/" target="_blank" rel="noopener noreferrer">SQL查询不是以select开始</a>
-<a href="https://blog.bytebytego.com/p/ep50-visualizing-a-sql-query" target="_blank" rel="noopener noreferrer">bytebytego</a></p>
-]]></content>
-    <category term="数据存储"/>
-    <published>2023-03-09T00:00:00.000Z</published>
-  </entry>
-  <entry>
-    <title type="text">事务</title>
-    <id>http://blog.cjhe.top/database/mysql/transaction.html</id>
-    <link href="http://blog.cjhe.top/database/mysql/transaction.html"/>
-    <updated>2024-05-20T03:37:50.000Z</updated>
-    <summary type="text">事务的特性
-
-原子性(Atomicity): 事务中的所有操作要么全部完成，要么全部不完成（回滚），不会在事务中间遇到错误而中断。
-一致性(Consistency): 事务开始和结束时，数据都必须保持一致状态，即符合约束、完整性、默认值以及其它定义的规则。事务执行的结果不能破坏数据库的完整性和一致性。
-隔离性(Isolation): 各个事务互相隔离，...</summary>
-    <content type="html"><![CDATA[<!-- more -->
-<h2>事务的特性</h2>
-<ul>
-<li>原子性(Atomicity): 事务中的所有操作要么全部完成，要么全部不完成（回滚），不会在事务中间遇到错误而中断。</li>
-<li>一致性(Consistency): 事务开始和结束时，数据都必须保持一致状态，即符合约束、完整性、默认值以及其它定义的规则。事务执行的结果不能破坏数据库的完整性和一致性。</li>
-<li>隔离性(Isolation): 各个事务互相隔离，每个事务的执行都不会影响其它事务的执行或者结果。</li>
-<li>持久性(Durability): 一个事务一旦提交成功，它对数据库中的数据的改变就是永久性的，即使发生数据库故障也不应该对其产生影响。</li>
-</ul>
-<h2>事务的实现</h2>
-<ul>
-<li>Undo log：实现事务的原子性；</li>
-<li>Redo log：实现事务的持久性；</li>
-<li>锁/MVCC：实现事务的隔离性；锁机制来保证事务在执行时互相隔离，防止事务间相互干扰，即写-写问题。MVCC 机制是通过保存历史版本的方式来实现，事务可以读取数据在事务开始时的版本，而不受到事务期间其他事务所做的改变的影响，即写-读问题。</li>
-<li>以上三者保证了事务的一致性；</li>
-</ul>
-<h2>并发事务带来的问题</h2>
-<p>当数据库上有多个事务同时执行的时候，就可能出现<strong>脏读(dirty read)</strong>、<strong>不可重复读(non-repeatable read)</strong>、<strong>幻读(phantom read)</strong>，为了解决这些问题，就有了隔离级别的概念</p>
-<h3>脏读问题</h3>
-<blockquote>
-<p>脏读是指：一个事务中访问到了另外一个事务未提交的数据</p>
-</blockquote>
-<figure><figcaption>dirty-read</figcaption></figure>
-<h3>不可重复读问题</h3>
-<blockquote>
-<p>不可重复读是指：一个事务多次读取同一行数据，但是在多次读取中数据发生了改变。</p>
-</blockquote>
-<figure><figcaption>non-repeatable-read</figcaption></figure>
-<h3>幻读问题</h3>
-<blockquote>
-<p>幻读是指：一个事务多次执行同一条 SQL 语句，但结果集却不同，导致无法支撑后续的业务操作</p>
-</blockquote>
-<figure><figcaption>phantom-read</figcaption></figure>
-<h2>事务的隔离级别</h2>
-<p>针对上面三种问题，分别有四种隔离级别：</p>
-<h3>未提交读(read uncommitted，RU)</h3>
-<blockquote>
-<p>未提交读，是指一个事务还未提交时，它做的变更就能被别的事务看到。即<strong>没有提交却可以读</strong></p>
-</blockquote>
-<h3>提交读(read committed，RC)</h3>
-<blockquote>
-<p>提交读，是指一个事务提交之后，它做的变更才会被其他事务看到。即<strong>提交才可以读</strong></p>
-</blockquote>
-<p>👀 <strong>大多数数据库系统的默认隔离级别</strong></p>
-<h3>可重复读(repeatable read，RR)</h3>
-<blockquote>
-<p>可重复度，是指同一个事务执行过程看到的数据，总是跟这个事务在启动时看到的数据是一致的。即同一个事务多次请求读取数据，会看到同样的数据行。</p>
-</blockquote>
-<p>👀 <strong>MySQL的默认隔离级别</strong></p>
-<h3>串行化(serializable，S)</h3>
-<blockquote>
-<p>是最高的隔离级别，它通过强制事务排序，使之不可能相互冲突。</p>
-<p>这个级别可能导致大量的超时现象和锁竞争。</p>
-</blockquote>
-<p>以上四种隔离级别解决问题如下：</p>
-<p>| 隔离级别\解决问题 |        脏读        |     不可重复读     |        幻读        |                     实现原理                     |
-| :</p>
-]]></content>
-    <category term="数据存储"/>
-    <published>2022-10-23T00:00:00.000Z</published>
   </entry>
 </feed>
