@@ -8,7 +8,12 @@ date: 2024-12-10
 
 
 <a name="v0.12.8"></a>
-## [v0.12.8](https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.12.7...v0.12.8) (2024-12-03)
+## [v0.12.8](https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.12.7...v0.12.8) (2024-12-10)
+
+### :sparkles:Features
+
+* **devops:** Docker修改默认存储位置
+* **open-source-project:** 通用的后台管理系统
 
 
 <a name="v0.12.7"></a>
