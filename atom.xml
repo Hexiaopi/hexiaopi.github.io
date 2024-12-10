@@ -3,14 +3,14 @@
   <id>http://blog.cjhe.top/</id>
   <title>个人博客</title>
   <subtitle>何小进童鞋的个人博客</subtitle>
-  <updated>2024-12-10T01:22:50.655Z</updated>
+  <updated>2024-12-10T07:17:41.028Z</updated>
   <generator>@vuepress/plugin-feed</generator>
   <link rel="self" href="http://blog.cjhe.top/atom.xml"/>
   <link rel="alternate" href="http://blog.cjhe.top/"/>
+  <category term="开源项目"/>
   <category term="devops"/>
   <category term="数据存储"/>
   <category term="编程语言"/>
-  <category term="开源项目"/>
   <category term="网络"/>
   <category term="转载"/>
   <category term="算法"/>
@@ -28,6 +28,74 @@
   <contributor>
     <name>Rob Pike</name>
   </contributor>
+  <entry>
+    <title type="text">通用的后台管理系统</title>
+    <id>http://blog.cjhe.top/open-source-project/data-space.html</id>
+    <link href="http://blog.cjhe.top/open-source-project/data-space.html"/>
+    <updated>2024-12-10T07:16:10.000Z</updated>
+    <summary type="html"><![CDATA[<p>使用Go+Vue开发的通用后台管理系统，支持用户登录和日志，部门管理，用户管理，角色管理，菜单管理。</p>
+]]></summary>
+    <content type="html"><![CDATA[<p>使用Go+Vue开发的通用后台管理系统，支持用户登录和日志，部门管理，用户管理，角色管理，菜单管理。</p>
+<!-- more -->
+<h2>功能</h2>
+<ul>
+<li>用户登录和日志</li>
+<li>部门管理</li>
+<li>用户管理</li>
+<li>角色管理</li>
+<li>菜单管理</li>
+</ul>
+<h2>🛠 技术栈</h2>
+<h3>前端</h3>
+<ul>
+<li>vue3</li>
+<li>vite</li>
+<li>pina</li>
+<li>element-plus</li>
+</ul>
+<h3>后端</h3>
+<ul>
+<li>go</li>
+<li>mysql</li>
+<li>gin</li>
+<li>opentelemetry</li>
+<li>prometheus metric</li>
+</ul>
+<h2>安装</h2>
+<h3>前端</h3>
+<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code>  <span class="token builtin class-name">cd</span> frontend
+  <span class="token function">npm</span> <span class="token function">install</span>
+</code></pre></div><h3>后端</h3>
+<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code>  <span class="token builtin class-name">cd</span> backend
+  go mod tidy
+</code></pre></div><h2>本地运行</h2>
+<h3>前端</h3>
+<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code>  <span class="token builtin class-name">cd</span> frontend
+  <span class="token function">npm</span> run dev
+</code></pre></div><h3>后端</h3>
+<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code>  <span class="token builtin class-name">cd</span> backend
+  go run cmd/root.go
+</code></pre></div><h2>截图</h2>
+<p>
+
+
+
+
+
+
+
+
+
+
+</p>
+<h2>收藏历史</h2>
+<figure><a href="https://star-history.com/#hexiaopi/data-space&amp;Date" target="_blank" rel="noopener noreferrer"><img src="https://api.star-history.com/svg?repos=hexiaopi/data-space&amp;type=Date" alt="Star History Chart" tabindex="0" loading="lazy"></a><figcaption>Star History Chart</figcaption></figure>
+<h2>许可证</h2>
+<p><a href="https://choosealicense.com/licenses/mit/" target="_blank" rel="noopener noreferrer">MIT</a></p>
+]]></content>
+    <category term="开源项目"/>
+    <published>2024-12-10T00:00:00.000Z</published>
+  </entry>
   <entry>
     <title type="text">Docker修改默认存储位置</title>
     <id>http://blog.cjhe.top/devops/docker/modify-storage-location.html</id>
@@ -6491,7 +6559,7 @@ Cgo 不是 Go。</p>
     <title type="text">变更日志</title>
     <id>http://blog.cjhe.top/CHANGELOG.html</id>
     <link href="http://blog.cjhe.top/CHANGELOG.html"/>
-    <updated>2024-12-03T09:59:46.000Z</updated>
+    <updated>2024-12-10T07:16:31.000Z</updated>
     <summary type="text">v0.12.8 (2024-12-03)
 
 v0.12.7 (2024-12-03)
@@ -6943,7 +7011,7 @@ language: 修改go slice注意事项...</summary>
 <li><strong>project-manager:</strong> add commit standard</li>
 </ul>
 ]]></content>
-    <published>2024-12-03T00:00:00.000Z</published>
+    <published>2024-12-10T00:00:00.000Z</published>
   </entry>
   <entry>
     <title type="text">工厂模式的比较</title>
@@ -8480,61 +8548,5 @@ Nivi：除了把时间租出去之外，还有其他无助于致富的事情吗?
 ]]></content>
     <category term="转载"/>
     <published>2023-03-03T00:00:00.000Z</published>
-  </entry>
-  <entry>
-    <title type="text">vscode leetcode插件</title>
-    <id>http://blog.cjhe.top/tools/vscode-leetcode.html</id>
-    <link href="http://blog.cjhe.top/tools/vscode-leetcode.html"/>
-    <updated>2023-08-14T13:05:37.000Z</updated>
-    <summary type="html"><![CDATA[<div class="hint-container tip">
-<p class="hint-container-title">提示</p>
-<p>vscode这款插件太香了，终于可以沉浸式刷leetcode😄</p>
-</div>
-]]></summary>
-    <content type="html"><![CDATA[<div class="hint-container tip">
-<p class="hint-container-title">提示</p>
-<p>vscode这款插件太香了，终于可以沉浸式刷leetcode😄</p>
-</div>
-<!-- more -->
-<h2>环境搭建</h2>
-<h3>安装</h3>
-<p>在vscode扩展商店搜索<code>LeetCode</code>,一般是下载量最高的那个就完事了
-</p>
-<h3>登陆</h3>
-<p>在登陆之前，记得要选择中国版，否则会遇见登陆不上问题
-
-接下来选择账号登录，需要提前在LeetCode官网注册账号
-
-这里我选择账户方式，按照提示填写邮箱、密码即可登录</p>
-<h3>预览</h3>
-<figure><figcaption>leetcode-preview</figcaption></figure>
-<blockquote>
-<p>在左侧，该插件按照五个分类将题目进行了分类，比如：按照难易程度(简单、中等、难)、按照标签(数据、二叉搜索等)、按照公司(Google、Facebook等)</p>
-<p>且题目根据难易程度有不同的颜色进行区分，如果已经完成相关的练习，还会用✔️提示</p>
-</blockquote>
-<h3>个性化配置</h3>
-<div class="language-json" data-ext="json" data-title="json"><pre class="language-json"><code><span class="token punctuation">{</span>
-  <span class="token property">"leetcode.endpoint"</span><span class="token operator">:</span> <span class="token string">"leetcode-cn"</span><span class="token punctuation">,</span>
-  <span class="token property">"leetcode.workspaceFolder"</span><span class="token operator">:</span> <span class="token string">"/Users/hechangjie/code/hexiaopi/leetcode-go"</span><span class="token punctuation">,</span>
-  <span class="token property">"leetcode.defaultLanguage"</span><span class="token operator">:</span> <span class="token string">"golang"</span><span class="token punctuation">,</span>
-  <span class="token property">"leetcode.hint.configWebviewMarkdown"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-  <span class="token property">"leetcode.hint.commentDescription"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-  <span class="token property">"leetcode.hint.commandShortcut"</span><span class="token operator">:</span> <span class="token boolean">false</span>
-<span class="token punctuation">}</span>
-</code></pre></div><h2>沉浸式刷题</h2>
-<h3>预览题目内容</h3>
-<p>
-点击Code Now，选择一种编程语言就可以开始了</p>
-<h3>编写代码</h3>
-<figure><figcaption>leetcode-code</figcaption></figure>
-<h3>测试代码</h3>
-<p>点击代码下方的<code>Test</code>标签即可进行测试代码（再也不用编写大量的单元测试用例了）
-</p>
-<h3>提交代码</h3>
-<p>点击代码下方的<code>Submit</code>标签即可提交代码，完成之后就会看到提交后的代码性能等信息了
-</p>
-]]></content>
-    <category term="工具"/>
-    <published>2022-08-10T00:00:00.000Z</published>
   </entry>
 </feed>
