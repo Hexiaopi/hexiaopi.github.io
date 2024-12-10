@@ -6,6 +6,19 @@
   "description": "何小进童鞋的个人博客",
   "items": [
     {
+      "title": "Docker修改默认存储位置",
+      "url": "http://blog.cjhe.top/devops/docker/modify-storage-location.html",
+      "id": "http://blog.cjhe.top/devops/docker/modify-storage-location.html",
+      "summary": "问题描述\nDocker 容器中，默认的存储位置为/var/lib/docker，但是由于使用的是系统盘，需要改为数据盘，例如将存储位置修改为/data/docker。\n解决步骤\n停止Docker服务\n移动容器数据\n建立软链接\n启动Docker服务\n参考资料\n\n修改docker的默认存储位置及镜像存储位置",
+      "content_html": "<!-- more -->\n<h2>问题描述</h2>\n<p>Docker 容器中，默认的存储位置为<code>/var/lib/docker</code>，但是由于使用的是系统盘，需要改为数据盘，例如将存储位置修改为<code>/data/docker</code>。</p>\n<h2>解决步骤</h2>\n<h3>停止Docker服务</h3>\n<div class=\"language-bash\" data-ext=\"sh\" data-title=\"sh\"><pre class=\"language-bash\"><code><span class=\"token function\">sudo</span> systemctl stop <span class=\"token function\">docker</span>\n</code></pre></div><h3>移动容器数据</h3>\n<div class=\"language-bash\" data-ext=\"sh\" data-title=\"sh\"><pre class=\"language-bash\"><code><span class=\"token function\">sudo</span> <span class=\"token function\">mv</span> /var/lib/docker /data/docker\n</code></pre></div><h3>建立软链接</h3>\n<div class=\"language-bash\" data-ext=\"sh\" data-title=\"sh\"><pre class=\"language-bash\"><code><span class=\"token function\">sudo</span> <span class=\"token function\">ln</span> <span class=\"token parameter variable\">-s</span> /data/docker /var/lib/docker\n</code></pre></div><h3>启动Docker服务</h3>\n<div class=\"language-bash\" data-ext=\"sh\" data-title=\"sh\"><pre class=\"language-bash\"><code><span class=\"token function\">sudo</span> systemctl start <span class=\"token function\">docker</span>\n</code></pre></div><h2>参考资料</h2>\n<ul>\n<li><a href=\"https://www.cnblogs.com/JasonCeng/p/15728592.html\" target=\"_blank\" rel=\"noopener noreferrer\">修改docker的默认存储位置及镜像存储位置</a></li>\n</ul>\n",
+      "date_published": "2024-12-10T00:00:00.000Z",
+      "date_modified": "2024-12-10T01:21:52.000Z",
+      "authors": [],
+      "tags": [
+        "devops"
+      ]
+    },
+    {
       "title": "Docker搭建Minio集群",
       "url": "http://blog.cjhe.top/database/minio/cluster-docker.html",
       "id": "http://blog.cjhe.top/database/minio/cluster-docker.html",
@@ -1286,19 +1299,6 @@
       "authors": [],
       "tags": [
         "工具"
-      ]
-    },
-    {
-      "title": "存储引擎",
-      "url": "http://blog.cjhe.top/database/mysql/engine.html",
-      "id": "http://blog.cjhe.top/database/mysql/engine.html",
-      "summary": "MySQL是常用的关系型数据库\n\nMySQL架构\nMySQL架构MySQL架构\n存储引擎\n\n存储引擎是MySQL区别于其他数据库的一个重要特性，MySQL有诸多存储引擎，且存储引擎是基于表的，而不是数据(同一个数据库下面的各个表可以使用不同的引擎)\n存储引擎是底层物理结构的实现，每个存储引擎开发者可以按照自己的意愿开发，具有各自的特点\n对于MySQL使...",
-      "content_html": "<!-- more -->\n<blockquote>\n<p>MySQL是常用的关系型数据库</p>\n</blockquote>\n<h2>MySQL架构</h2>\n<figure><figcaption>MySQL架构</figcaption></figure>\n<h2>存储引擎</h2>\n<ul>\n<li>存储引擎是MySQL区别于其他数据库的一个重要特性，MySQL有诸多存储引擎，且<strong>存储引擎是基于表的，而不是数据</strong>(同一个数据库下面的各个表可以使用不同的引擎)</li>\n<li>存储引擎是底层物理结构的实现，每个存储引擎开发者可以按照自己的意愿开发，具有各自的特点</li>\n<li>对于MySQL使用者来说，存储引擎对其实透明的</li>\n</ul>\n<h3>Innodb引擎</h3>\n<blockquote>\n<p>是一个支持ACID事务，行锁设计，支持MVCC功能，实现了SQL标准的4种隔离级别</p>\n</blockquote>\n<h4>特点</h4>\n<ul>\n<li>使用Table Space的方式仅限数据存储</li>\n<li>支持事务、外键约束等数据库特性</li>\n<li>Rows Level Lock，读写性能都非常优秀</li>\n<li>拥有独立的缓冲池，能够缓存数据和索引</li>\n<li>通过多版本控制，支持高并发业务</li>\n</ul>\n<h4>注意事项</h4>\n<ul>\n<li>主键尽可能小，否则二级索引会膨胀</li>\n<li>避免全表扫描，导致锁升级</li>\n<li>尽可能缓存所有的索引和数据，减少IO操作</li>\n<li>避免主键更新，造成大量的数据移动</li>\n</ul>\n<h3>MyISAM存储引擎</h3>\n<blockquote>\n<p>MySQL 5.5之前默认是MyISAM存储引擎，之后默认都改为InnoDB</p>\n</blockquote>\n<h4>特点</h4>\n<ul>\n<li>数据存储方式简单，使用B-Tree进行索引，<strong>索引叶子节点存放数据的指针</strong></li>\n<li><strong>不支持一些数据库特性，比如事务、外键约束等</strong></li>\n<li><strong>Table Level Lock(表级别锁)</strong>，性能稍差，更适合读多的操作</li>\n<li>使用三个文件定义一个表：\n<ul>\n<li><code>.MYi</code>：存储索引</li>\n<li><code>.MYD</code>：存储数据</li>\n<li><code>.frm</code>：存储表定义</li>\n</ul>\n</li>\n<li>少碎片、支持大文件、能够进行索引压缩</li>\n<li>二进制层次的文件可以移植（Linux-&gt;Windows）</li>\n<li>访问速度快，适合只读查询场景</li>\n</ul>\n<h4>注意事项</h4>\n<ul>\n<li>设置合适索引</li>\n<li>启用延迟写入，尽量一次大批量写入，而非频繁写入</li>\n<li>降低并发数，高并发使用排队机制</li>\n<li>由于存储了Count字段，因此Count操作比较高效，但仅限不带条件</li>\n</ul>\n<h2>引擎对比</h2>\n<p>| 存储引擎  |                             特点                              |       应用场景       |\n| :</p>\n",
-      "date_published": "2022-10-22T00:00:00.000Z",
-      "date_modified": "2024-05-20T03:37:50.000Z",
-      "authors": [],
-      "tags": [
-        "数据存储"
       ]
     }
   ]
