@@ -1,10 +1,18 @@
 ---
 title: 变更日志
 icon: clock
-date: 2024-12-10
+date: 2025-01-02
 ---
 
 <!-- more -->
+
+
+<a name="v0.12.9"></a>
+## [v0.12.9](https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.12.8...v0.12.9) (2025-01-02)
+
+### :sparkles:Features
+
+* **devops:** 增加如何在Docker部署的数据库初始化数据
 
 
 <a name="v0.12.8"></a>
