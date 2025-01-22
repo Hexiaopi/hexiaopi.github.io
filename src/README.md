@@ -39,5 +39,10 @@ projects:
     desc: Tony Bai老师的书和文章质量很高，非常推荐
     link: https://tonybai.com
 
+  - icon: book
+    name: 自洽的程序员
+    desc: 如果你也心累了，可以看看这本书
+    link: https://self-consistent-coder.readthedocs.io/zh-cn/latest/
+
 footer: '<a href="http://beian.miit.gov.cn/" rel="noopener noreferrer" target="_blank">备案号: 皖ICP备2022000616号-1</a> | <a href="/about/site.html">关于网站</a>'
 ---
