@@ -1,6 +1,6 @@
 ---
 title: PostgreSQL
-icon: /assets/icons/postgresql.svg
+icon: /assets/icons/postgres.svg
 date: 2024-12-03
 tag:
  - PostgreSQL
