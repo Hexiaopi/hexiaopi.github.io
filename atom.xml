@@ -3,7 +3,7 @@
   <id>http://blog.cjhe.top/</id>
   <title>个人博客</title>
   <subtitle>何小进童鞋的个人博客</subtitle>
-  <updated>2025-02-27T06:16:44.083Z</updated>
+  <updated>2025-02-27T15:42:33.942Z</updated>
   <generator>@vuepress/plugin-feed</generator>
   <link rel="self" href="http://blog.cjhe.top/atom.xml"/>
   <link rel="alternate" href="http://blog.cjhe.top/"/>
@@ -40,7 +40,7 @@
     <title type="text">Linux配置yum源</title>
     <id>http://blog.cjhe.top/devops/linux/yum-config.html</id>
     <link href="http://blog.cjhe.top/devops/linux/yum-config.html"/>
-    <updated>2025-02-27T06:15:22.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <summary type="html"><![CDATA[<p>Linux下载的yum源是国外的，下载速度较慢，我们可以配置国内的yum源，提高下载速度。</p>
 <p>本文以Centos 7为例，介绍如何配置Centos和epel阿里云yum源。</p>
 ]]></summary>
@@ -83,7 +83,7 @@
     <title type="text">Docker如何批量加载镜像</title>
     <id>http://blog.cjhe.top/devops/docker/batch-load-images.html</id>
     <link href="http://blog.cjhe.top/devops/docker/batch-load-images.html"/>
-    <updated>2025-02-13T01:03:16.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <summary type="html"><![CDATA[<p>在使用Docker部署服务时，我们通常需要加载大量的镜像。如果手动一个一个地加载，不仅费时费力，而且容易出错。因此，我们可以使用shell脚本实现批量加载镜像的功能。</p>
 ]]></summary>
     <content type="html"><![CDATA[<p>在使用Docker部署服务时，我们通常需要加载大量的镜像。如果手动一个一个地加载，不仅费时费力，而且容易出错。因此，我们可以使用shell脚本实现批量加载镜像的功能。</p>
@@ -128,7 +128,7 @@
     <title type="text">Docker部署数据库如何初始化数据</title>
     <id>http://blog.cjhe.top/devops/docker/docker-entrypoint-initdb.html</id>
     <link href="http://blog.cjhe.top/devops/docker/docker-entrypoint-initdb.html"/>
-    <updated>2025-01-02T12:39:08.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <summary type="html"><![CDATA[<p>公司目前对外部署的应用基本上都是使用Docker和Docker-Compose，当然也包括数据库，例如：MySQL、Postgresql。如何减少频繁的拷贝SQL脚本到数据库容器中这种繁琐的操作，提高部署效率呢？</p>
 ]]></summary>
     <content type="html"><![CDATA[<p>公司目前对外部署的应用基本上都是使用Docker和Docker-Compose，当然也包括数据库，例如：MySQL、Postgresql。如何减少频繁的拷贝SQL脚本到数据库容器中这种繁琐的操作，提高部署效率呢？</p>
@@ -585,7 +585,7 @@ _main() {
     <title type="text">通用的后台管理系统</title>
     <id>http://blog.cjhe.top/open-source-project/data-space.html</id>
     <link href="http://blog.cjhe.top/open-source-project/data-space.html"/>
-    <updated>2024-12-10T07:16:10.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <summary type="html"><![CDATA[<p>使用Go+Vue开发的通用后台管理系统，支持用户登录和日志，部门管理，用户管理，角色管理，菜单管理。</p>
 ]]></summary>
     <content type="html"><![CDATA[<p>使用Go+Vue开发的通用后台管理系统，支持用户登录和日志，部门管理，用户管理，角色管理，菜单管理。</p>
@@ -653,7 +653,7 @@ _main() {
     <title type="text">Docker修改默认存储位置</title>
     <id>http://blog.cjhe.top/devops/docker/modify-storage-location.html</id>
     <link href="http://blog.cjhe.top/devops/docker/modify-storage-location.html"/>
-    <updated>2024-12-10T01:21:52.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <summary type="text">问题描述
 Docker 容器中，默认的存储位置为/var/lib/docker，但是由于使用的是系统盘，需要改为数据盘，例如将存储位置修改为/data/docker。
 解决步骤
@@ -688,7 +688,7 @@ Docker 容器中，默认的存储位置为/var/lib/docker，但是由于使用�
     <title type="text">Docker搭建Minio集群</title>
     <id>http://blog.cjhe.top/database/minio/cluster-docker.html</id>
     <link href="http://blog.cjhe.top/database/minio/cluster-docker.html"/>
-    <updated>2024-12-03T08:58:00.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <summary type="text">Docker-Compose文件
 Nginx配置</summary>
     <content type="html"><![CDATA[<!-- more -->
@@ -939,16 +939,16 @@ http {
     <title type="text">errgroup使用示例和源码分析</title>
     <id>http://blog.cjhe.top/language/go/advance/errgroup.html</id>
     <link href="http://blog.cjhe.top/language/go/advance/errgroup.html"/>
-    <updated>2024-10-18T07:06:09.000Z</updated>
-    <summary type="text">golang.org/x/sync/errgroup
-
-Go语言在并执行任务时，可能会遇到某个协程运行出现错误，如果处理这些错误是一个非常重要的问题。Go语言在golang.org/x/sync提供一个并发原语errgroup来解决这个问题。
+    <updated>2025-02-27T15:41:25.000Z</updated>
+    <summary type="text">Go语言在并执行任务时，可能会遇到某个协程运行出现错误，如果处理这些错误是一个非常重要的问题。Go语言在golang.org/x/sync提供一个并发原语errgroup来解决这个问题。
 
 使用示例
 简单任务
-在这个例子中并发启动10个协程执行任务，其中一个协程处理失败返回错误。errgroup会...</summary>
+在这个例子中并发启动10个协程执行任务，其中一个协程处理失败返回错误。errgroup会等待所有协程执行完毕，并返回第一个错误。
+执行结果
+
+带...</summary>
     <content type="html"><![CDATA[<!-- more -->
-<h1>golang.org/x/sync/errgroup</h1>
 <blockquote>
 <p>Go语言在并执行任务时，可能会遇到某个协程运行出现错误，如果处理这些错误是一个非常重要的问题。Go语言在<code>golang.org/x/sync</code>提供一个并发原语<code>errgroup</code>来解决这个问题。</p>
 </blockquote>
@@ -1155,7 +1155,7 @@ error occurred in goroutine 2
     <title type="text">sync.Cond底层原理</title>
     <id>http://blog.cjhe.top/language/go/advance/sync-cond.html</id>
     <link href="http://blog.cjhe.top/language/go/advance/sync-cond.html"/>
-    <updated>2024-10-10T12:23:49.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <summary type="text">Go语言sync.Cond是一个条件变量。顾名思义，当条件不满足时，通过条件变量进入睡眠状态。当条件满足时，通过条件变量唤醒等待的线程。sync.Cond用于多线程中的同步机制。
 
 使用示例
@@ -1327,7 +1327,7 @@ c<span class="token punctuation">.</span>L<span class="token punctuation">.</spa
     <title type="text">sync.Once底层原理</title>
     <id>http://blog.cjhe.top/language/go/advance/sync-once.html</id>
     <link href="http://blog.cjhe.top/language/go/advance/sync-once.html"/>
-    <updated>2024-11-27T06:42:51.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <summary type="text">Go语言sync.Once可以保证某个函数只执行一次，常用于单例模式。在本文中，我们将深入探讨sync.Once的底层实现原理，以便更好地理解它的并发安全特性。
 
 使用方式
@@ -1466,9 +1466,8 @@ exit status 2
     <title type="text">GPU机器搭建k8s</title>
     <id>http://blog.cjhe.top/devops/k8s/k8s-on-gpu.html</id>
     <link href="http://blog.cjhe.top/devops/k8s/k8s-on-gpu.html"/>
-    <updated>2024-09-23T03:23:27.000Z</updated>
-    <summary type="text">gpu机器搭建k8s
-查看GPU
+    <updated>2025-02-27T15:41:25.000Z</updated>
+    <summary type="text">查看GPU
 可以看到有四张nvidia显卡和nvidia声卡
 查看是否已安装gpu nvidia驱动
 此时已安装nvidia驱动
@@ -1476,34 +1475,33 @@ exit status 2
 查看gpu型号、gpu驱动版本
 可以看到四张显卡，对应编号是：0、1、2、3，其中：0、1、2三张卡已经有python进程正在使用。
 查看docker运行时
-docker默...</summary>
+docker默认的运行时是：runc...</summary>
     <content type="html"><![CDATA[<!-- more -->
-<h1>gpu机器搭建k8s</h1>
 <h2>查看GPU</h2>
-<div class="language-text" data-ext="text" data-title="text"><pre class="language-text"><code>(base) root@ubuntu:~# lspci | grep -i nvidia
-01:00.0 VGA compatible controller: NVIDIA Corporation Device 2230 (rev a1)
-01:00.1 Audio device: NVIDIA Corporation Device 1aef (rev a1)
-22:00.0 VGA compatible controller: NVIDIA Corporation Device 2230 (rev a1)
-22:00.1 Audio device: NVIDIA Corporation Device 1aef (rev a1)
-41:00.0 VGA compatible controller: NVIDIA Corporation Device 2230 (rev a1)
-41:00.1 Audio device: NVIDIA Corporation Device 1aef (rev a1)
-61:00.0 VGA compatible controller: NVIDIA Corporation Device 2230 (rev a1)
-61:00.1 Audio device: NVIDIA Corporation Device 1aef (rev a1)
+<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code><span class="token punctuation">(</span>base<span class="token punctuation">)</span> root@ubuntu:~<span class="token comment"># lspci | grep -i nvidia</span>
+01:00.0 VGA compatible controller: NVIDIA Corporation Device <span class="token number">2230</span> <span class="token punctuation">(</span>rev a1<span class="token punctuation">)</span>
+01:00.1 Audio device: NVIDIA Corporation Device 1aef <span class="token punctuation">(</span>rev a1<span class="token punctuation">)</span>
+<span class="token number">22</span>:00.0 VGA compatible controller: NVIDIA Corporation Device <span class="token number">2230</span> <span class="token punctuation">(</span>rev a1<span class="token punctuation">)</span>
+<span class="token number">22</span>:00.1 Audio device: NVIDIA Corporation Device 1aef <span class="token punctuation">(</span>rev a1<span class="token punctuation">)</span>
+<span class="token number">41</span>:00.0 VGA compatible controller: NVIDIA Corporation Device <span class="token number">2230</span> <span class="token punctuation">(</span>rev a1<span class="token punctuation">)</span>
+<span class="token number">41</span>:00.1 Audio device: NVIDIA Corporation Device 1aef <span class="token punctuation">(</span>rev a1<span class="token punctuation">)</span>
+<span class="token number">61</span>:00.0 VGA compatible controller: NVIDIA Corporation Device <span class="token number">2230</span> <span class="token punctuation">(</span>rev a1<span class="token punctuation">)</span>
+<span class="token number">61</span>:00.1 Audio device: NVIDIA Corporation Device 1aef <span class="token punctuation">(</span>rev a1<span class="token punctuation">)</span>
 </code></pre></div><p>可以看到有四张nvidia显卡和nvidia声卡</p>
 <h2>查看是否已安装gpu nvidia驱动</h2>
-<div class="language-text" data-ext="text" data-title="text"><pre class="language-text"><code>(base) root@ubuntu:~# lsmod | grep  -i nvidia
-nvidia_uvm           1216512  16
+<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code><span class="token punctuation">(</span>base<span class="token punctuation">)</span> root@ubuntu:~<span class="token comment"># lsmod | grep  -i nvidia</span>
+nvidia_uvm           <span class="token number">1216512</span>  <span class="token number">16</span>
 
-             61440  0
-nvidia_modeset       1241088  1 nvidia_drm
-nvidia              56471552  1128 nvidia_uvm,nvidia_modeset
-drm_kms_helper        184320  4 ast,nvidia_drm
-drm                   495616  7 drm_kms_helper,drm_vram_helper,ast,nvidia,nvidia_drm,ttm
+             <span class="token number">61440</span>  <span class="token number">0</span>
+nvidia_modeset       <span class="token number">1241088</span>  <span class="token number">1</span> nvidia_drm
+nvidia              <span class="token number">56471552</span>  <span class="token number">1128</span> nvidia_uvm,nvidia_modeset
+drm_kms_helper        <span class="token number">184320</span>  <span class="token number">4</span> ast,nvidia_drm
+drm                   <span class="token number">495616</span>  <span class="token number">7</span> drm_kms_helper,drm_vram_helper,ast,nvidia,nvidia_drm,ttm
 </code></pre></div><p>此时已安装nvidia驱动</p>
 <p>如果未安装：参考<a href="https://docs.nvidia.com/cuda/cuda-installation-guide-linux/" target="_blank" rel="noopener noreferrer">链接</a>进行安装</p>
 <h2>查看gpu型号、gpu驱动版本</h2>
-<div class="language-text" data-ext="text" data-title="text"><pre class="language-text"><code>(base) root@ubuntu:~# nvidia-smi
-Wed May 29 03:28:30 2024
+<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code><span class="token punctuation">(</span>base<span class="token punctuation">)</span> root@ubuntu:~<span class="token comment"># nvidia-smi</span>
+Wed May <span class="token number">29</span> 03:28:30 <span class="token number">2024</span>
 +</code></pre></div>]]></content>
     <category term="devops"/>
     <published>2024-09-23T00:00:00.000Z</published>
@@ -1512,7 +1510,7 @@ Wed May 29 03:28:30 2024
     <title type="text">开源项目</title>
     <id>http://blog.cjhe.top/open-source-project/</id>
     <link href="http://blog.cjhe.top/open-source-project/"/>
-    <updated>2024-09-09T07:40:20.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <summary type="html"><![CDATA[<p>这里记录我的开源项目</p>
 ]]></summary>
     <content type="html"><![CDATA[<p>这里记录我的开源项目</p>
@@ -1525,7 +1523,7 @@ Wed May 29 03:28:30 2024
     <title type="text">drawio 本地集成</title>
     <id>http://blog.cjhe.top/open-source-project/drawio-store.html</id>
     <link href="http://blog.cjhe.top/open-source-project/drawio-store.html"/>
-    <updated>2024-09-09T07:40:20.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <summary type="html"><![CDATA[<p>使用本地存储集成drawio，用于团队共享</p>
 ]]></summary>
     <content type="html"><![CDATA[<p>使用本地存储集成drawio，用于团队共享</p>
@@ -1542,7 +1540,7 @@ Wed May 29 03:28:30 2024
     <title type="text">redis 可视化管理工具</title>
     <id>http://blog.cjhe.top/open-source-project/rdm-toy.html</id>
     <link href="http://blog.cjhe.top/open-source-project/rdm-toy.html"/>
-    <updated>2024-09-09T07:40:20.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <summary type="html"><![CDATA[<p>redis 可视化管理工具</p>
 ]]></summary>
     <content type="html"><![CDATA[<p>redis 可视化管理工具</p>
@@ -1604,7 +1602,7 @@ Wed May 29 03:28:30 2024
     <title type="text">SSE协议</title>
     <id>http://blog.cjhe.top/network/application-layer/SSE.html</id>
     <link href="http://blog.cjhe.top/network/application-layer/SSE.html"/>
-    <updated>2024-09-09T07:40:20.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <summary type="html"><![CDATA[<blockquote>
 <p>SSE常用于消息推送，ChatGPT采用的就是该技术。</p>
 </blockquote>
@@ -1696,7 +1694,7 @@ eventSource<span class="token punctuation">.</span><span class="token function">
     <title type="text">Context 深入源码分析</title>
     <id>http://blog.cjhe.top/language/go/advance/context.html</id>
     <link href="http://blog.cjhe.top/language/go/advance/context.html"/>
-    <updated>2024-08-29T07:13:18.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <summary type="html"><![CDATA[<p>基础篇中已经介绍了Go语言Context的使用方法和场景，本节我们来深入了解一下Context的源码实现。</p>
 ]]></summary>
     <content type="html"><![CDATA[<p>基础篇中已经介绍了Go语言Context的使用方法和场景，本节我们来深入了解一下Context的源码实现。</p>
@@ -1719,8 +1717,6 @@ eventSource<span class="token punctuation">.</span><span class="token function">
 <h2>空的Context</h2>
 <blockquote>
 <p>我们知道<code>Background()</code>和<code>TODO()</code>返回的Context常用于根节点，无法取消，也没有超时时间，也获取不到任何共享数据。这种空Context是怎么实现的呢？</p>
-</blockquote>
-<blockquote>
 <p>Background()返回 backgroundCtx{} 类型的Context</p>
 </blockquote>
 <div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">Background</span><span class="token punctuation">(</span><span class="token punctuation">)</span> Context <span class="token punctuation">{</span>
@@ -2081,7 +2077,7 @@ eventSource<span class="token punctuation">.</span><span class="token function">
     <title type="text">Context使用方法与场景</title>
     <id>http://blog.cjhe.top/language/go/base/context.html</id>
     <link href="http://blog.cjhe.top/language/go/base/context.html"/>
-    <updated>2024-08-22T13:12:02.000Z</updated>
+    <updated>2025-02-27T14:25:55.000Z</updated>
     <summary type="html"><![CDATA[<blockquote>
 <p>Go语言提供Context上下文，常常用于超时控制、取消控制、传递数据等，本文介绍它的使用方法以及场景</p>
 </blockquote>
@@ -2204,7 +2200,7 @@ eventSource<span class="token punctuation">.</span><span class="token function">
     <title type="text">阿里巴巴MySQL开发规范</title>
     <id>http://blog.cjhe.top/database/mysql/develop-standard.html</id>
     <link href="http://blog.cjhe.top/database/mysql/develop-standard.html"/>
-    <updated>2024-08-20T09:51:27.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <summary type="html"><![CDATA[<blockquote>
 <p><a href="https://developer.aliyun.com/article/1573143" target="_blank" rel="noopener noreferrer">【转载】阿里巴巴MySQL开发规范</a></p>
 </blockquote>
@@ -2440,7 +2436,7 @@ maxprocs 1
     <title type="text">内存对齐</title>
     <id>http://blog.cjhe.top/language/go/advance/memory-alignment.html</id>
     <link href="http://blog.cjhe.top/language/go/advance/memory-alignment.html"/>
-    <updated>2024-10-10T12:23:49.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <summary type="html"><![CDATA[<blockquote>
 <p>合理的排列数据成员的顺序，使得整个结构体的空间占用最小化。</p>
 </blockquote>
@@ -2472,7 +2468,7 @@ maxprocs 1
     <title type="text">Go命令</title>
     <id>http://blog.cjhe.top/language/go/base/command.html</id>
     <link href="http://blog.cjhe.top/language/go/base/command.html"/>
-    <updated>2024-06-20T09:04:51.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <summary type="text">我们可以执行go -h或者go --help查看Go语言命令。
 Go语言命令包含了一整套工具链，包括：文档、代码检查、格式化、编译、测试、依赖管理、包管理等。
 go bug
@@ -2516,7 +2512,7 @@ The commands are:
 <h3>用法</h3>
 <div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code>go build <span class="token punctuation">[</span>-o output<span class="token punctuation">]</span> <span class="token punctuation">[</span>build flags<span class="token punctuation">]</span> <span class="token punctuation">[</span>packages<span class="token punctuation">]</span>
 </code></pre></div><p>-o 用于指定输出二进制文件名称，例如：</p>
-<div class="language-text" data-ext="text" data-title="text"><pre class="language-text"><code>go build -o app-user main.go
+<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code>go build <span class="token parameter variable">-o</span> app-user main.go
 </code></pre></div><h2>go clean</h2>
 <p><code>go clean</code>会删除掉执行其它命令时产生的一些文件和目录，包括：</p>
 <ol>
@@ -2691,7 +2687,7 @@ func (m *Map) Swap(key, value any) (previous any, loaded bool)
     <title type="text">Go语言文章</title>
     <id>http://blog.cjhe.top/language/go/recommend/article.html</id>
     <link href="http://blog.cjhe.top/language/go/recommend/article.html"/>
-    <updated>2024-06-12T01:26:48.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <summary type="text">Go语言规范
 Uber公司Go语言编码规范
 Go代码评审常见错误清单
@@ -2715,7 +2711,7 @@ Go官方代码审查</summary>
     <title type="text">Go语言社区</title>
     <id>http://blog.cjhe.top/language/go/recommend/community.html</id>
     <link href="http://blog.cjhe.top/language/go/recommend/community.html"/>
-    <updated>2024-06-12T01:26:48.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <summary type="text">Go社区</summary>
     <content type="html"><![CDATA[<!-- more -->
 <h2>Go社区</h2>
@@ -2727,7 +2723,7 @@ Go官方代码审查</summary>
     <title type="text">Go语言练习</title>
     <id>http://blog.cjhe.top/language/go/recommend/example.html</id>
     <link href="http://blog.cjhe.top/language/go/recommend/example.html"/>
-    <updated>2024-06-12T01:26:48.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <summary type="text">Go练习</summary>
     <content type="html"><![CDATA[<!-- more -->
 <h2>Go练习</h2>
@@ -2739,7 +2735,7 @@ Go官方代码审查</summary>
     <title type="text">Go测试</title>
     <id>http://blog.cjhe.top/language/go/test/</id>
     <link href="http://blog.cjhe.top/language/go/test/"/>
-    <updated>2024-06-11T13:34:41.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <category term="编程语言"/>
     <published>2024-06-11T00:00:00.000Z</published>
   </entry>
@@ -2747,7 +2743,7 @@ Go官方代码审查</summary>
     <title type="text">Go语言MySQL测试</title>
     <id>http://blog.cjhe.top/language/go/test/mysql-test.html</id>
     <link href="http://blog.cjhe.top/language/go/test/mysql-test.html"/>
-    <updated>2024-06-12T01:26:48.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <summary type="text">Go项目中经常使用MySQL作为存储，一般写测试会建立真实连接进行测试，但带来的问题有很多：
 
 依赖测试数据，如果数据库中某个数据变更导致测试用例失败
@@ -2869,7 +2865,7 @@ record...</summary>
 <span class="token punctuation">}</span>
 </code></pre></div><div class="hint-container info">
 <p class="hint-container-title">相关信息</p>
-<p>其中</p>
+<p>其中:</p>
 <ul>
 <li>第10行模拟执行插入失败错误，第13行期望事务回滚。</li>
 <li>第16行按照预期肯定返回错误</li>
@@ -3016,7 +3012,7 @@ nacos-grafana...</summary>
     <title type="text">sync.Map底层原理</title>
     <id>http://blog.cjhe.top/language/go/advance/sync-map.html</id>
     <link href="http://blog.cjhe.top/language/go/advance/sync-map.html"/>
-    <updated>2024-10-10T12:23:49.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <summary type="text">Go 语言原生的map是非并发安全的，在并发场景下，使用map可能会导致数据竞争和panic。为了解决这个问题，Go 语言提供了sync.Map，它是一个并发安全的map。在本文中，我们将深入探讨sync.Map的底层实现原理，以便更好地理解它的并发安全特性。
 
 基本用法
@@ -3312,7 +3308,7 @@ sync.Map提供了丰富的API，用于对map的查询、存储、遍历、删除
     <title type="text">如何禁止拷贝</title>
     <id>http://blog.cjhe.top/language/go/advance/no-copy.html</id>
     <link href="http://blog.cjhe.top/language/go/advance/no-copy.html"/>
-    <updated>2024-10-10T12:23:49.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <summary type="text">禁止拷贝的目的是不让用户对对象进行拷贝，比如：sync.WaitGroup
 
 那么Go语言是如何禁止拷贝的呢？
@@ -3405,7 +3401,7 @@ WaitGroup为何禁止拷贝
     <title type="text">Minio</title>
     <id>http://blog.cjhe.top/database/minio/</id>
     <link href="http://blog.cjhe.top/database/minio/"/>
-    <updated>2024-05-20T03:37:50.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <content type="html"><![CDATA[<!-- more -->
 ]]></content>
     <category term="数据存储"/>
@@ -3415,7 +3411,7 @@ WaitGroup为何禁止拷贝
     <title type="text">MongoDB</title>
     <id>http://blog.cjhe.top/database/mongodb/</id>
     <link href="http://blog.cjhe.top/database/mongodb/"/>
-    <updated>2024-05-20T03:37:50.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <content type="html"><![CDATA[<!-- more -->
 ]]></content>
     <category term="数据存储"/>
@@ -3425,7 +3421,7 @@ WaitGroup为何禁止拷贝
     <title type="text">使用Makefile和Helm-Dashobard两步实现k8s服务多环境更新</title>
     <id>http://blog.cjhe.top/devops/k8s/makefile-deploy.html</id>
     <link href="http://blog.cjhe.top/devops/k8s/makefile-deploy.html"/>
-    <updated>2024-08-27T02:59:10.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <summary type="html"><![CDATA[<h2>背景</h2>
 <p>在开发过程中，我们经常需要频繁的更新k8s服务，如果每次更新都需要手动执行一系列的命令，那将会非常繁琐。因此，我们需要一种自动化的方式来更新k8s服务。</p>
 <h2>解决方案</h2>
@@ -3544,7 +3540,7 @@ helm-clean:
     <title type="text">Helm仓库chartmuseum简介</title>
     <id>http://blog.cjhe.top/devops/k8s/chartmuseum.html</id>
     <link href="http://blog.cjhe.top/devops/k8s/chartmuseum.html"/>
-    <updated>2024-08-27T02:59:10.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <summary type="html"><![CDATA[<p>chartmuseum是Helm的chart仓库，它支持多种存储后端，如本地文件系统、Amazon S3、Google Cloud Storage、Openstack Swift、Azure Blob Storage、Minio等。</p>
 ]]></summary>
     <content type="html"><![CDATA[<p>chartmuseum是Helm的chart仓库，它支持多种存储后端，如本地文件系统、Amazon S3、Google Cloud Storage、Openstack Swift、Azure Blob Storage、Minio等。</p>
@@ -3560,7 +3556,7 @@ helm-clean:
   ghcr.io/helm/chartmuseum:v0.16.1
 </code></pre></div><h2>helm 配置</h2>
 <h3>安装依赖</h3>
-<p>配合该仓库需要在我们安装的helm基础上，安装相关插件 helm-push (https://github.com/chartmuseum/helm-push)</p>
+<p>配合该仓库需要在我们安装的helm基础上，安装相关插件 <a href="https://github.com/chartmuseum/helm-push" target="_blank" rel="noopener noreferrer">helm-push</a></p>
 <div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code>helm plugin <span class="token function">install</span> https://github.com/chartmuseum/helm-push
 </code></pre></div><h3>配置环境</h3>
 <p>将私有仓库加入本地</p>
@@ -3579,7 +3575,7 @@ helm repo update
     <title type="text">十二要素应用原则</title>
     <id>http://blog.cjhe.top/share/12factors.html</id>
     <link href="http://blog.cjhe.top/share/12factors.html"/>
-    <updated>2024-05-11T07:09:37.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <summary type="html"><![CDATA[<p>【转】<a href="https://12factor.net/zh_cn/" target="_blank" rel="noopener noreferrer">原文链接</a></p>
 ]]></summary>
     <content type="html"><![CDATA[<p>【转】<a href="https://12factor.net/zh_cn/" target="_blank" rel="noopener noreferrer">原文链接</a></p>
@@ -3637,7 +3633,7 @@ helm repo update
 <p>12-Factor 应用中，环境变量的粒度要足够小，且相对独立。它们永远也不会组合成一个所谓的“环境”，而是独立存在于每个部署之中。当应用程序不断扩展，需要更多种类的部署时，这种配置管理方式能够做到平滑过渡。</p>
 <h2>IV. 后端服务</h2>
 <h3>把后端服务(<em>backing services</em>)当作附加资源</h3>
-<p><em>后端服务</em>是指程序运行所需要的通过网络调用的各种服务，如数据库（<a href="http://dev.mysql.com/" target="_blank" rel="noopener noreferrer">MySQL</a>，<a href="http://couchdb.apache.org/" target="_blank" rel="noopener noreferrer">CouchDB</a>），消息/队列系统（<a href="http://www.rabbitmq.com/" target="_blank" rel="noopener noreferrer">RabbitMQ</a>，<a href="https://beanstalkd.github.io" target="_blank" rel="noopener noreferrer">Beanstalkd</a>），SMTP 邮件发送服务（<a href="http://www.postfix.org/" target="_blank" rel="noopener noreferrer"> Postfix</a>），以及缓存系统（<a href="http://memcached.org/" target="_blank" rel="noopener noreferrer">Memcached</a>）。</p>
+<p><em>后端服务</em>是指程序运行所需要的通过网络调用的各种服务，如数据库（<a href="http://dev.mysql.com/" target="_blank" rel="noopener noreferrer">MySQL</a>，<a href="http://couchdb.apache.org/" target="_blank" rel="noopener noreferrer">CouchDB</a>），消息/队列系统（<a href="http://www.rabbitmq.com/" target="_blank" rel="noopener noreferrer">RabbitMQ</a>，<a href="https://beanstalkd.github.io" target="_blank" rel="noopener noreferrer">Beanstalkd</a>），SMTP 邮件发送服务（<a href="http://www.postfix.org/" target="_blank" rel="noopener noreferrer">Postfix</a>），以及缓存系统（<a href="http://memcached.org/" target="_blank" rel="noopener noreferrer">Memcached</a>）。</p>
 <p>类似数据库的后端服务，通常由部署应用程序的系统管理员一起管理。除了本地服务之外，应用程序有可能使用了第三方发布和管理的服务。示例包括 SMTP（例如 <a href="http://postmarkapp.com/" target="_blank" rel="noopener noreferrer">Postmark</a>），数据收集服务（例如 <a href="http://newrelic.com/" target="_blank" rel="noopener noreferrer">New Relic</a> 或 <a href="http://www.loggly.com/" target="_blank" rel="noopener noreferrer">Loggly</a>），数据存储服务（如 <a href="http://http://aws.amazon.com/s3/" target="_blank" rel="noopener noreferrer">Amazon S3</a>），以及使用 API 访问的服务（例如 <a href="http://dev.twitter.com/" target="_blank" rel="noopener noreferrer">Twitter</a>, <a href="https://developers.google.com/maps/" target="_blank" rel="noopener noreferrer">Google Maps</a>, <a href="http://www.last.fm/api" target="_blank" rel="noopener noreferrer">Last.fm</a>）。</p>
 <p><strong>12-Factor 应用不会区别对待本地或第三方服务。</strong> 对应用程序而言，两种都是附加资源，通过一个 url 或是其他存储在 <a href="./config">配置</a> 中的服务定位/服务证书来获取数据。12-Factor 应用的任意 <a href="./codebase">部署</a> ，都应该可以在不进行任何代码改动的情况下，将本地 MySQL 数据库换成第三方服务（例如 <a href="http://aws.amazon.com/rds/" target="_blank" rel="noopener noreferrer">Amazon RDS</a>）。类似的，本地 SMTP 服务应该也可以和第三方 SMTP 服务（例如 Postmark ）互换。上述 2 个例子中，仅需修改配置中的资源地址。</p>
 <p>每个不同的后端服务是一份 <em>资源</em> 。例如，一个 MySQL 数据库是一个资源，两个 MySQL 数据库（用来数据分区）就被当作是 2 个不同的资源。12-Factor 应用将这些数据库都视作 <em>附加资源</em> ，这些资源和它们附属的部署保持松耦合。</p>
@@ -3663,7 +3659,7 @@ helm repo update
 <p><strong>12-Factor 应用的进程必须无状态且 <a href="http://en.wikipedia.org/wiki/Shared_nothing_architecture" target="_blank" rel="noopener noreferrer">无共享</a> 。</strong> 任何需要持久化的数据都要存储在 <a href="./backing-services">后端服务</a> 内，比如数据库。</p>
 <p>内存区域或磁盘空间可以作为进程在做某种事务型操作时的缓存，例如下载一个很大的文件，对其操作并将结果写入数据库的过程。12-Factor应用根本不用考虑这些缓存的内容是不是可以保留给之后的请求来使用，这是因为应用启动了多种类型的进程，将来的请求多半会由其他进程来服务。即使在只有一个进程的情形下，先前保存的数据（内存或文件系统中）也会因为重启（如代码部署、配置更改、或运行环境将进程调度至另一个物理区域执行）而丢失。</p>
 <p>源文件打包工具（<a href="http://documentcloud.github.io/jammit/" target="_blank" rel="noopener noreferrer">Jammit</a>, <a href="http://django-compressor.readthedocs.org/" target="_blank" rel="noopener noreferrer">django-compressor</a>） 使用文件系统来缓存编译过的源文件。12-Factor 应用更倾向于在 <a href="./build-release-run">构建步骤</a> 做此动作——正如 <a href="http://guides.rubyonrails.org/asset_pipeline.html" target="_blank" rel="noopener noreferrer">Rails资源管道</a> ，而不是在运行阶段。</p>
-<p>一些互联网系统依赖于 “<a href="http://en.wikipedia.org/wiki/Load_balancing_%28computing%29#Persistence" target="_blank" rel="noopener noreferrer">粘性 session </a>”， 这是指将用户 session 中的数据缓存至某进程的内存中，并将同一用户的后续请求路由到同一个进程。粘性 session 是 12-Factor 极力反对的。Session 中的数据应该保存在诸如 <a href="http://memcached.org/" target="_blank" rel="noopener noreferrer">Memcached</a> 或 <a href="http://redis.io/" target="_blank" rel="noopener noreferrer">Redis</a> 这样的带有过期时间的缓存中。</p>
+<p>一些互联网系统依赖于 “<a href="http://en.wikipedia.org/wiki/Load_balancing_%28computing%29#Persistence" target="_blank" rel="noopener noreferrer">粘性 session</a>”， 这是指将用户 session 中的数据缓存至某进程的内存中，并将同一用户的后续请求路由到同一个进程。粘性 session 是 12-Factor 极力反对的。Session 中的数据应该保存在诸如 <a href="http://memcached.org/" target="_blank" rel="noopener noreferrer">Memcached</a> 或 <a href="http://redis.io/" target="_blank" rel="noopener noreferrer">Redis</a> 这样的带有过期时间的缓存中。</p>
 <h2>VII. 端口绑定</h2>
 <h3>通过端口绑定(<em>Port binding</em>)来提供服务</h3>
 <p>互联网应用有时会运行于服务器的容器之中。例如 PHP 经常作为 <a href="http://httpd.apache.org/" target="_blank" rel="noopener noreferrer">Apache HTTPD</a> 的一个模块来运行，正如 Java 运行于 <a href="http://tomcat.apache.org/" target="_blank" rel="noopener noreferrer">Tomcat</a> 。</p>
@@ -3927,7 +3923,7 @@ Reading messages... (press Ctrl-C to quit)
     <title type="text">设计模式推荐</title>
     <id>http://blog.cjhe.top/design-pattern/recommend.html</id>
     <link href="http://blog.cjhe.top/design-pattern/recommend.html"/>
-    <updated>2024-05-15T10:01:59.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <summary type="text">在线书籍</summary>
     <content type="html"><![CDATA[<!-- more -->
 <h2>在线书籍</h2>
@@ -3939,14 +3935,14 @@ Reading messages... (press Ctrl-C to quit)
     <title type="text">中间件推荐</title>
     <id>http://blog.cjhe.top/middleware/recommend.html</id>
     <link href="http://blog.cjhe.top/middleware/recommend.html"/>
-    <updated>2024-05-15T10:01:59.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <summary type="text">在线书籍
 
 Prometheus告警</summary>
     <content type="html"><![CDATA[<!-- more -->
 <h2>在线书籍</h2>
 <ul>
-<li>Prometheus告警<a href="https://awesome-prometheus-alerts.grep.to/" target="_blank" rel="noopener noreferrer"></a></li>
+<li><a href="https://awesome-prometheus-alerts.grep.to/" target="_blank" rel="noopener noreferrer">Prometheus告警</a></li>
 </ul>
 ]]></content>
     <category term="中间件"/>
@@ -3956,7 +3952,7 @@ Prometheus告警</summary>
     <title type="text">转载</title>
     <id>http://blog.cjhe.top/share/</id>
     <link href="http://blog.cjhe.top/share/"/>
-    <updated>2024-05-06T02:44:40.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <content type="html"><![CDATA[<!-- more -->
 ]]></content>
     <category term="转载"/>
@@ -3991,7 +3987,7 @@ CURL使用</summary>
     <title type="text">docker推荐</title>
     <id>http://blog.cjhe.top/devops/docker/recommand.html</id>
     <link href="http://blog.cjhe.top/devops/docker/recommand.html"/>
-    <updated>2024-08-27T02:59:10.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <summary type="text">在线书籍
 
 Docker-从入门到实践
@@ -4010,7 +4006,7 @@ Docker中文文档</summary>
     <title type="text">k8s推荐</title>
     <id>http://blog.cjhe.top/devops/k8s/recommand.html</id>
     <link href="http://blog.cjhe.top/devops/k8s/recommand.html"/>
-    <updated>2024-05-15T10:01:59.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <summary type="text">在线书籍
 
 从Docker到kubernetes进阶
@@ -4029,7 +4025,7 @@ Kubernetes中文指南</summary>
     <title type="text">组件通信</title>
     <id>http://blog.cjhe.top/language/vue/advance/communication.html</id>
     <link href="http://blog.cjhe.top/language/vue/advance/communication.html"/>
-    <updated>2024-05-15T10:01:59.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <summary type="text">组件通信
 自定义属性-props
 
@@ -4545,7 +4541,7 @@ export default useCountStore;
     <title type="text">编程语言&amp;框架</title>
     <id>http://blog.cjhe.top/language/</id>
     <link href="http://blog.cjhe.top/language/"/>
-    <updated>2024-05-15T10:01:59.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <category term="编程语言"/>
     <category term="编程框架"/>
     <published>2024-04-29T00:00:00.000Z</published>
@@ -4554,7 +4550,7 @@ export default useCountStore;
     <title type="text">Vue框架</title>
     <id>http://blog.cjhe.top/language/vue/</id>
     <link href="http://blog.cjhe.top/language/vue/"/>
-    <updated>2024-05-15T10:01:59.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <category term="编程框架"/>
     <published>2024-04-29T00:00:00.000Z</published>
   </entry>
@@ -4562,7 +4558,7 @@ export default useCountStore;
     <title type="text">Vue进阶</title>
     <id>http://blog.cjhe.top/language/vue/advance/</id>
     <link href="http://blog.cjhe.top/language/vue/advance/"/>
-    <updated>2024-05-15T10:01:59.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <category term="编程框架"/>
     <published>2024-05-05T00:00:00.000Z</published>
   </entry>
@@ -4570,7 +4566,7 @@ export default useCountStore;
     <title type="text">Minio监控</title>
     <id>http://blog.cjhe.top/database/minio/minio-monitor.html</id>
     <link href="http://blog.cjhe.top/database/minio/minio-monitor.html"/>
-    <updated>2024-05-20T03:37:50.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <summary type="text">Minio监控
 运行Minio Client(mc)容器
 设置别名
@@ -4622,7 +4618,7 @@ Added `minio` successfully.
     <title type="text">Go语言书籍</title>
     <id>http://blog.cjhe.top/language/go/recommend/book.html</id>
     <link href="http://blog.cjhe.top/language/go/recommend/book.html"/>
-    <updated>2024-06-12T01:26:48.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <summary type="text">Go书籍
 Go高级编程
 Go语言设计与实现
@@ -4664,7 +4660,7 @@ go语言190题</summary>
     <title type="text">MongoDB监控</title>
     <id>http://blog.cjhe.top/database/mongodb/mongodb-exporter.html</id>
     <link href="http://blog.cjhe.top/database/mongodb/mongodb-exporter.html"/>
-    <updated>2024-08-27T02:59:10.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <summary type="text">MongoDB监控
 我们通过mongodb-exporter监控mongodb状态
 mongodb-exporter部署
@@ -4698,7 +4694,7 @@ mongodb-dashb...</summary>
     <title type="text">Go推荐</title>
     <id>http://blog.cjhe.top/language/go/recommend/</id>
     <link href="http://blog.cjhe.top/language/go/recommend/"/>
-    <updated>2024-05-15T10:01:59.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <category term="编程语言"/>
     <published>2024-04-15T00:00:00.000Z</published>
   </entry>
@@ -4735,7 +4731,7 @@ Redis连接数过多</summary>
     <title type="text">MySQL监控</title>
     <id>http://blog.cjhe.top/database/mysql/mysql-exporter.html</id>
     <link href="http://blog.cjhe.top/database/mysql/mysql-exporter.html"/>
-    <updated>2024-05-23T10:17:10.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <summary type="text">MySQL监控
 我们通过mysqld-exporter去将MySQL相关状态转换成指标，从而进行监控
 mysql-exporter部署
@@ -4777,7 +4773,7 @@ password=your password</p>
     <title type="text">HTTP协议</title>
     <id>http://blog.cjhe.top/network/application-layer/HTTP.html</id>
     <link href="http://blog.cjhe.top/network/application-layer/HTTP.html"/>
-    <updated>2024-04-15T09:57:53.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <summary type="text">HTTP协议是目前使用最为广泛的应用层协议
 
 HTTP发展简史
@@ -4891,7 +4887,7 @@ HTTP发展简史
     <title type="text">应用层协议</title>
     <id>http://blog.cjhe.top/network/application-layer/</id>
     <link href="http://blog.cjhe.top/network/application-layer/"/>
-    <updated>2024-05-06T02:44:40.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <summary type="html"><![CDATA[<blockquote>
 <p>本篇介绍计算机网络应用层协议</p>
 </blockquote>
@@ -4941,7 +4937,7 @@ ICMP使用IP协议发送信息，它虽然属于网络层协议，但严格来�
     <title type="text">网络层协议</title>
     <id>http://blog.cjhe.top/network/internet-layer/</id>
     <link href="http://blog.cjhe.top/network/internet-layer/"/>
-    <updated>2024-05-06T02:44:40.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <summary type="html"><![CDATA[<blockquote>
 <p>本篇介绍计算机网络网络层协议</p>
 </blockquote>
@@ -4971,7 +4967,7 @@ ICMP使用IP协议发送信息，它虽然属于网络层协议，但严格来�
     <title type="text">链路层协议</title>
     <id>http://blog.cjhe.top/network/link-layer/</id>
     <link href="http://blog.cjhe.top/network/link-layer/"/>
-    <updated>2024-05-06T02:44:40.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <summary type="html"><![CDATA[<blockquote>
 <p>链路层协议比较偏底层，有机会再介绍</p>
 </blockquote>
@@ -4987,7 +4983,7 @@ ICMP使用IP协议发送信息，它虽然属于网络层协议，但严格来�
     <title type="text">传输层协议</title>
     <id>http://blog.cjhe.top/network/transport-layer/</id>
     <link href="http://blog.cjhe.top/network/transport-layer/"/>
-    <updated>2024-05-06T02:44:40.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <summary type="html"><![CDATA[<blockquote>
 <p>本篇介绍计算机网络传输层协议</p>
 </blockquote>
@@ -5013,7 +5009,7 @@ ICMP使用IP协议发送信息，它虽然属于网络层协议，但严格来�
     <title type="text">docker</title>
     <id>http://blog.cjhe.top/devops/docker/</id>
     <link href="http://blog.cjhe.top/devops/docker/"/>
-    <updated>2024-08-27T02:59:10.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <category term="devops"/>
     <published>2024-03-18T00:00:00.000Z</published>
   </entry>
@@ -5021,7 +5017,7 @@ ICMP使用IP协议发送信息，它虽然属于网络层协议，但严格来�
     <title type="text">容器执行报&amp;quot;no such file or directory&amp;quot;问题</title>
     <id>http://blog.cjhe.top/devops/docker/shell-line-break.html</id>
     <link href="http://blog.cjhe.top/devops/docker/shell-line-break.html"/>
-    <updated>2024-08-27T02:59:10.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <summary type="html"><![CDATA[<p>同事运行docker镜像时，控制台报错"no such file or directory"，但是查看该文件确实存在，本文记录该问题的定位和解决。</p>
 ]]></summary>
     <content type="html"><![CDATA[<p>同事运行docker镜像时，控制台报错"no such file or directory"，但是查看该文件确实存在，本文记录该问题的定位和解决。</p>
@@ -5059,7 +5055,7 @@ ENTRYPOINT <span class="token punctuation">[</span><span class="token string">"/
     <title type="text">k8s</title>
     <id>http://blog.cjhe.top/devops/k8s/</id>
     <link href="http://blog.cjhe.top/devops/k8s/"/>
-    <updated>2024-05-08T06:55:14.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <category term="devops"/>
     <published>2024-03-18T00:00:00.000Z</published>
   </entry>
@@ -5067,7 +5063,7 @@ ENTRYPOINT <span class="token punctuation">[</span><span class="token string">"/
     <title type="text">Helm Dashboard简介</title>
     <id>http://blog.cjhe.top/devops/k8s/helm-dashboard.html</id>
     <link href="http://blog.cjhe.top/devops/k8s/helm-dashboard.html"/>
-    <updated>2024-08-27T02:59:10.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <summary type="html"><![CDATA[<p>helm-dashboard是helm的可视化界面，可以查看集群内通过helm部署的chart包。好处：不需要登录机器就可以升级、回滚chart包。</p>
 ]]></summary>
     <content type="html"><![CDATA[<p>helm-dashboard是helm的可视化界面，可以查看集群内通过helm部署的chart包。好处：不需要登录机器就可以升级、回滚chart包。</p>
@@ -5079,11 +5075,11 @@ ENTRYPOINT <span class="token punctuation">[</span><span class="token string">"/
 <li>查看各个版本之间的区别</li>
 </ul>
 <h3>查看已安装的chart包</h3>
-<figure><figcaption></figcaption></figure>
+<figure><figcaption>1</figcaption></figure>
 <h3>单个chart包的升级、回滚和修改配置</h3>
-<figure><figcaption></figcaption></figure>
+<figure><figcaption>2</figcaption></figure>
 <h3>比较各个版本之前的区别</h3>
-<figure><figcaption></figcaption></figure>
+<figure><figcaption>3</figcaption></figure>
 <h3>Helm Dadshboard 魔改</h3>
 <p>helm-dashboard依赖的前端静态资源如：</p>
 <ul>
@@ -5118,7 +5114,7 @@ ENTRYPOINT <span class="token punctuation">[</span><span class="token string">"/
     <title type="text">kube-state-metrics k8s 部署</title>
     <id>http://blog.cjhe.top/devops/k8s/kube-state-metrics-k8s-deploy.html</id>
     <link href="http://blog.cjhe.top/devops/k8s/kube-state-metrics-k8s-deploy.html"/>
-    <updated>2024-08-27T02:59:10.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <summary type="html"><![CDATA[<p>kube-state-metrics用于监控k8s相关指标</p>
 ]]></summary>
     <content type="html"><![CDATA[<p>kube-state-metrics用于监控k8s相关指标</p>
@@ -5371,7 +5367,7 @@ ENTRYPOINT <span class="token punctuation">[</span><span class="token string">"/
     <title type="text">cadvisor k8s 部署</title>
     <id>http://blog.cjhe.top/devops/k8s/cadvisor-k8s-deploy.html</id>
     <link href="http://blog.cjhe.top/devops/k8s/cadvisor-k8s-deploy.html"/>
-    <updated>2024-08-27T02:59:10.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <summary type="html"><![CDATA[<p>cadvisor 是谷歌公司用来分析运行中的 Docker 容器的资源占用以及性能特性的工具，简单来说是用于监控 Docker 容器。</p>
 ]]></summary>
     <content type="html"><![CDATA[<p>cadvisor 是谷歌公司用来分析运行中的 Docker 容器的资源占用以及性能特性的工具，简单来说是用于监控 Docker 容器。</p>
@@ -5432,7 +5428,7 @@ ENTRYPOINT <span class="token punctuation">[</span><span class="token string">"/
     <title type="text">node-exporter k8s 部署</title>
     <id>http://blog.cjhe.top/devops/k8s/node-exporter-k8s-deploy.html</id>
     <link href="http://blog.cjhe.top/devops/k8s/node-exporter-k8s-deploy.html"/>
-    <updated>2024-08-27T02:59:10.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <summary type="html"><![CDATA[<p>node-exporter用于暴露各个节点的指标，由于需要每个节点都部署node-exporter，因此kind选择DaemonSet，它会保障每个节点有一个相同的实例。</p>
 ]]></summary>
     <content type="html"><![CDATA[<p>node-exporter用于暴露各个节点的指标，由于需要每个节点都部署node-exporter，因此kind选择DaemonSet，它会保障每个节点有一个相同的实例。</p>
@@ -5497,7 +5493,7 @@ ENTRYPOINT <span class="token punctuation">[</span><span class="token string">"/
     <title type="text">devops</title>
     <id>http://blog.cjhe.top/devops/</id>
     <link href="http://blog.cjhe.top/devops/"/>
-    <updated>2024-04-16T03:31:43.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <summary type="html"><![CDATA[<p>这里记录工作中学习到的devops基础知识</p>
 ]]></summary>
     <content type="html"><![CDATA[<p>这里记录工作中学习到的devops基础知识</p>
@@ -5509,7 +5505,7 @@ ENTRYPOINT <span class="token punctuation">[</span><span class="token string">"/
     <title type="text">Prometheus k8s 部署</title>
     <id>http://blog.cjhe.top/devops/k8s/prometheus-k8s-deploy.html</id>
     <link href="http://blog.cjhe.top/devops/k8s/prometheus-k8s-deploy.html"/>
-    <updated>2024-08-27T02:59:10.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <summary type="html"><![CDATA[<p>Prometheus是个优秀的监控系统，基于时序数据库，这里记录k8s部署</p>
 ]]></summary>
     <content type="html"><![CDATA[<p>Prometheus是个优秀的监控系统，基于时序数据库，这里记录k8s部署</p>
@@ -5530,7 +5526,7 @@ kubectl create clusterrolebinding monitor-clusterrolebinding <span class="token 
     <title type="text">网络</title>
     <id>http://blog.cjhe.top/network/</id>
     <link href="http://blog.cjhe.top/network/"/>
-    <updated>2024-04-16T03:31:43.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <summary type="html"><![CDATA[<p>这里记录工作中学习到的网络基础知识</p>
 ]]></summary>
     <content type="html"><![CDATA[<p>这里记录工作中学习到的网络基础知识</p>
@@ -5972,7 +5968,7 @@ flag参数使用语法
     <title type="text">recover注意事项</title>
     <id>http://blog.cjhe.top/language/go/base/recover.html</id>
     <link href="http://blog.cjhe.top/language/go/base/recover.html"/>
-    <updated>2024-10-16T07:00:58.000Z</updated>
+    <updated>2025-02-27T14:25:55.000Z</updated>
     <summary type="html"><![CDATA[<blockquote>
 <p>defer结合recover通常用于捕获panic</p>
 </blockquote>
@@ -6050,7 +6046,12 @@ flag参数使用语法
 </code></pre></div><details class="hint-container details"><summary>执行结果</summary>
 <div class="language-text" data-ext="text" data-title="text"><pre class="language-text"><code>yy 1
 xx 2
-</code></pre></div></details>
+</code></pre></div><p>其中：</p>
+<ul>
+<li><code>defer recover()</code>，由于不是在一个匿名函数中，所以无法捕获到panic，导致panic继续向上抛出，被外层<code>recover</code>捕获到。</li>
+<li><code>panic(1)</code>会替换<code>panic(2)</code>直至被捕获处理。</li>
+</ul>
+</details>
 <div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> main
 
 <span class="token keyword">import</span> <span class="token string">"fmt"</span>
@@ -6078,10 +6079,8 @@ xx 1
     <title type="text">package</title>
     <id>http://blog.cjhe.top/language/go/base/package.html</id>
     <link href="http://blog.cjhe.top/language/go/base/package.html"/>
-    <updated>2024-10-10T12:23:49.000Z</updated>
-    <summary type="text">package
-
-Go语言使用包（package）作为基本单元来组织源码。
+    <updated>2025-02-27T15:41:25.000Z</updated>
+    <summary type="text">Go语言使用包（package）作为基本单元来组织源码。
 
 package的优点
 
@@ -6090,9 +6089,8 @@ package的优点
 
 Go要求每个源文件在开头显示地列出所有依赖的包，如果引入了未使用的包，Go语言编译器会报错。
 Go要求包之间不能存在循环依赖，这样包的依赖关系便形成了一张有向无环图，这样每个包可以单独编译也可并行编译
-已编译的Go包不仅记录了该包的信息...</summary>
+已编译的Go包不仅记录了该包的信息，还记录了依赖包的...</summary>
     <content type="html"><![CDATA[<!-- more -->
-<h1>package</h1>
 <blockquote>
 <p>Go语言使用包（package）作为基本单元来组织源码。</p>
 </blockquote>
@@ -6320,7 +6318,7 @@ Go要求包之间不能存在循环依赖，这样包的依赖关系便形成了
     <title type="text">MySQL</title>
     <id>http://blog.cjhe.top/database/mysql/</id>
     <link href="http://blog.cjhe.top/database/mysql/"/>
-    <updated>2024-05-20T03:37:50.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <summary type="text">MySQL是一种流行的关系型数据库管理系统，具有以下几个优点：
 
 
@@ -6358,7 +6356,7 @@ Go要求包之间不能存在循环依赖，这样包的依赖关系便形成了
     <title type="text">项目规范</title>
     <id>http://blog.cjhe.top/project-standard/</id>
     <link href="http://blog.cjhe.top/project-standard/"/>
-    <updated>2024-05-05T15:52:14.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <summary type="text">这里记录平时开发过程中的项目规范，好的规范有助于：
 
 
@@ -6393,7 +6391,7 @@ Go要求包之间不能存在循环依赖，这样包的依赖关系便形成了
     <title type="text">Go进阶</title>
     <id>http://blog.cjhe.top/language/go/advance/</id>
     <link href="http://blog.cjhe.top/language/go/advance/"/>
-    <updated>2024-05-15T10:01:59.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <summary type="html"><![CDATA[<blockquote>
 <p>介绍Go语言进阶知识，包括遇到的一些坑和底层原理，进阶知识对于入门童鞋来说可以不用了解，并不会影响日常开发，属于深度探讨</p>
 </blockquote>
@@ -6409,7 +6407,7 @@ Go要求包之间不能存在循环依赖，这样包的依赖关系便形成了
     <title type="text">Go基础</title>
     <id>http://blog.cjhe.top/language/go/base/</id>
     <link href="http://blog.cjhe.top/language/go/base/"/>
-    <updated>2024-05-15T10:01:59.000Z</updated>
+    <updated>2025-02-27T14:25:55.000Z</updated>
     <summary type="html"><![CDATA[<blockquote>
 <p>介绍Go语言基础知识，也会涉及到底层原理，这些是我认为要掌握的知识。</p>
 </blockquote>
@@ -6425,7 +6423,7 @@ Go要求包之间不能存在循环依赖，这样包的依赖关系便形成了
     <title type="text">转载</title>
     <id>http://blog.cjhe.top/language/go/reprint/</id>
     <link href="http://blog.cjhe.top/language/go/reprint/"/>
-    <updated>2024-05-15T10:01:59.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <summary type="html"><![CDATA[<blockquote>
 <p>这里会转载我认为比较好的博文</p>
 </blockquote>
@@ -6722,15 +6720,13 @@ producer-consumerproducer-consumer
     <title type="text">defer注意事项</title>
     <id>http://blog.cjhe.top/language/go/base/defer.html</id>
     <link href="http://blog.cjhe.top/language/go/base/defer.html"/>
-    <updated>2024-10-16T07:00:58.000Z</updated>
+    <updated>2025-02-27T14:25:55.000Z</updated>
     <summary type="text">defer 语句能够帮助我们确保在函数结束时执行一些必要的操作，比如：关闭文件句柄、释放资源、解锁互斥锁等。defer 关键字只能作用函数或函数调用。
-defer注意事项
 大多数内置函数不可以直接调用
 
-大多数内置函数（除了copy和recover）的调用的返回结果都不可以舍弃，而defer延迟调用的返回结果都必须舍弃掉，所以，很多内置函数是不能被被延...</summary>
+大多数内置函数（除了copy和recover）的调用的返回结果都不可以舍弃，而defer延迟调用的返回结果都必须舍弃掉，所以，很多内置函数是不能被被延迟直接调用的。当然可...</summary>
     <content type="html"><![CDATA[<!-- more -->
 <p>defer 语句能够帮助我们确保在函数结束时执行一些必要的操作，比如：<strong>关闭文件句柄</strong>、<strong>释放资源</strong>、<strong>解锁互斥锁</strong>等。defer 关键字只能作用函数或函数调用。</p>
-<h1>defer注意事项</h1>
 <h2>大多数内置函数不可以直接调用</h2>
 <blockquote>
 <p>大多数内置函数（除了<code>copy</code>和<code>recover</code>）的调用的返回结果都不可以舍弃，而defer延迟调用的返回结果都必须舍弃掉，所以，很多内置函数是不能被被延迟直接调用的。当然可以通过匿名函数来解决。</p>
@@ -6797,7 +6793,9 @@ defer注意事项
 <blockquote>
 <p>遇见panic，defer将会执行。这也是recover为什么要包含在defer中的原因。</p>
 </blockquote>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">import</span> <span class="token string">"fmt"</span>
+<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token string">"fmt"</span>
 
 <span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
 	<span class="token keyword">defer</span> fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"此行可以被执行到"</span><span class="token punctuation">)</span>
@@ -7601,7 +7599,7 @@ v0.12.7 (2024-12-03)
     <title type="text">关于我</title>
     <id>http://blog.cjhe.top/intro.html</id>
     <link href="http://blog.cjhe.top/intro.html"/>
-    <updated>2024-05-11T07:09:37.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <summary type="text">一枚后端攻城狮，热爱Go、Vue等技术栈。
 
 介绍页
@@ -7638,7 +7636,7 @@ time</summary>
     <title type="text">设计模式</title>
     <id>http://blog.cjhe.top/design-pattern/</id>
     <link href="http://blog.cjhe.top/design-pattern/"/>
-    <updated>2024-05-06T08:19:23.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <summary type="html"><![CDATA[<div class="hint-container tip">
 <p class="hint-container-title">提示</p>
 <p>面向对象是<strong>武器</strong></p>
@@ -7691,7 +7689,7 @@ time</summary>
     <title type="text">设计原则</title>
     <id>http://blog.cjhe.top/design-pattern/principle.html</id>
     <link href="http://blog.cjhe.top/design-pattern/principle.html"/>
-    <updated>2024-05-06T02:44:40.000Z</updated>
+    <updated>2025-02-27T15:41:25.000Z</updated>
     <summary type="text">设计原则是心法，对于构建高质量的软件系统提供指导和约束，它具有以下作用：
 
 提高代码质量：设计原则强调代码的清晰性、可读性和可维护性。通过遵循设计原则，可以编写出更结构化、更模块化的代码，减少代码重复和冗余。

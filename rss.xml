@@ -6,8 +6,8 @@
     <link>http://blog.cjhe.top/</link>
     <description>何小进童鞋的个人博客</description>
     <language>zh-CN</language>
-    <pubDate>Thu, 27 Feb 2025 06:16:44 GMT</pubDate>
-    <lastBuildDate>Thu, 27 Feb 2025 06:16:44 GMT</lastBuildDate>
+    <pubDate>Thu, 27 Feb 2025 15:42:33 GMT</pubDate>
+    <lastBuildDate>Thu, 27 Feb 2025 15:42:33 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>devops</category>
@@ -929,17 +929,17 @@ http {
       <link>http://blog.cjhe.top/language/go/advance/errgroup.html</link>
       <guid>http://blog.cjhe.top/language/go/advance/errgroup.html</guid>
       <source url="http://blog.cjhe.top/rss.xml">errgroup使用示例和源码分析</source>
-      <description>golang.org/x/sync/errgroup
-
-Go语言在并执行任务时，可能会遇到某个协程运行出现错误，如果处理这些错误是一个非常重要的问题。Go语言在golang.org/x/sync提供一个并发原语errgroup来解决这个问题。
+      <description>Go语言在并执行任务时，可能会遇到某个协程运行出现错误，如果处理这些错误是一个非常重要的问题。Go语言在golang.org/x/sync提供一个并发原语errgroup来解决这个问题。
 
 使用示例
 简单任务
-在这个例子中并发启动10个协程执行任务，其中一个协程处理失败返回错误。errgroup会...</description>
+在这个例子中并发启动10个协程执行任务，其中一个协程处理失败返回错误。errgroup会等待所有协程执行完毕，并返回第一个错误。
+执行结果
+
+带...</description>
       <category>编程语言</category>
       <pubDate>Fri, 18 Oct 2024 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[<!-- more -->
-<h1>golang.org/x/sync/errgroup</h1>
 <blockquote>
 <p>Go语言在并执行任务时，可能会遇到某个协程运行出现错误，如果处理这些错误是一个非常重要的问题。Go语言在<code>golang.org/x/sync</code>提供一个并发原语<code>errgroup</code>来解决这个问题。</p>
 </blockquote>
@@ -1456,8 +1456,7 @@ exit status 2
       <link>http://blog.cjhe.top/devops/k8s/k8s-on-gpu.html</link>
       <guid>http://blog.cjhe.top/devops/k8s/k8s-on-gpu.html</guid>
       <source url="http://blog.cjhe.top/rss.xml">GPU机器搭建k8s</source>
-      <description>gpu机器搭建k8s
-查看GPU
+      <description>查看GPU
 可以看到有四张nvidia显卡和nvidia声卡
 查看是否已安装gpu nvidia驱动
 此时已安装nvidia驱动
@@ -1465,36 +1464,35 @@ exit status 2
 查看gpu型号、gpu驱动版本
 可以看到四张显卡，对应编号是：0、1、2、3，其中：0、1、2三张卡已经有python进程正在使用。
 查看docker运行时
-docker默...</description>
+docker默认的运行时是：runc...</description>
       <category>devops</category>
       <pubDate>Mon, 23 Sep 2024 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[<!-- more -->
-<h1>gpu机器搭建k8s</h1>
 <h2>查看GPU</h2>
-<div class="language-text" data-ext="text" data-title="text"><pre class="language-text"><code>(base) root@ubuntu:~# lspci | grep -i nvidia
-01:00.0 VGA compatible controller: NVIDIA Corporation Device 2230 (rev a1)
-01:00.1 Audio device: NVIDIA Corporation Device 1aef (rev a1)
-22:00.0 VGA compatible controller: NVIDIA Corporation Device 2230 (rev a1)
-22:00.1 Audio device: NVIDIA Corporation Device 1aef (rev a1)
-41:00.0 VGA compatible controller: NVIDIA Corporation Device 2230 (rev a1)
-41:00.1 Audio device: NVIDIA Corporation Device 1aef (rev a1)
-61:00.0 VGA compatible controller: NVIDIA Corporation Device 2230 (rev a1)
-61:00.1 Audio device: NVIDIA Corporation Device 1aef (rev a1)
+<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code><span class="token punctuation">(</span>base<span class="token punctuation">)</span> root@ubuntu:~<span class="token comment"># lspci | grep -i nvidia</span>
+01:00.0 VGA compatible controller: NVIDIA Corporation Device <span class="token number">2230</span> <span class="token punctuation">(</span>rev a1<span class="token punctuation">)</span>
+01:00.1 Audio device: NVIDIA Corporation Device 1aef <span class="token punctuation">(</span>rev a1<span class="token punctuation">)</span>
+<span class="token number">22</span>:00.0 VGA compatible controller: NVIDIA Corporation Device <span class="token number">2230</span> <span class="token punctuation">(</span>rev a1<span class="token punctuation">)</span>
+<span class="token number">22</span>:00.1 Audio device: NVIDIA Corporation Device 1aef <span class="token punctuation">(</span>rev a1<span class="token punctuation">)</span>
+<span class="token number">41</span>:00.0 VGA compatible controller: NVIDIA Corporation Device <span class="token number">2230</span> <span class="token punctuation">(</span>rev a1<span class="token punctuation">)</span>
+<span class="token number">41</span>:00.1 Audio device: NVIDIA Corporation Device 1aef <span class="token punctuation">(</span>rev a1<span class="token punctuation">)</span>
+<span class="token number">61</span>:00.0 VGA compatible controller: NVIDIA Corporation Device <span class="token number">2230</span> <span class="token punctuation">(</span>rev a1<span class="token punctuation">)</span>
+<span class="token number">61</span>:00.1 Audio device: NVIDIA Corporation Device 1aef <span class="token punctuation">(</span>rev a1<span class="token punctuation">)</span>
 </code></pre></div><p>可以看到有四张nvidia显卡和nvidia声卡</p>
 <h2>查看是否已安装gpu nvidia驱动</h2>
-<div class="language-text" data-ext="text" data-title="text"><pre class="language-text"><code>(base) root@ubuntu:~# lsmod | grep  -i nvidia
-nvidia_uvm           1216512  16
+<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code><span class="token punctuation">(</span>base<span class="token punctuation">)</span> root@ubuntu:~<span class="token comment"># lsmod | grep  -i nvidia</span>
+nvidia_uvm           <span class="token number">1216512</span>  <span class="token number">16</span>
 
-             61440  0
-nvidia_modeset       1241088  1 nvidia_drm
-nvidia              56471552  1128 nvidia_uvm,nvidia_modeset
-drm_kms_helper        184320  4 ast,nvidia_drm
-drm                   495616  7 drm_kms_helper,drm_vram_helper,ast,nvidia,nvidia_drm,ttm
+             <span class="token number">61440</span>  <span class="token number">0</span>
+nvidia_modeset       <span class="token number">1241088</span>  <span class="token number">1</span> nvidia_drm
+nvidia              <span class="token number">56471552</span>  <span class="token number">1128</span> nvidia_uvm,nvidia_modeset
+drm_kms_helper        <span class="token number">184320</span>  <span class="token number">4</span> ast,nvidia_drm
+drm                   <span class="token number">495616</span>  <span class="token number">7</span> drm_kms_helper,drm_vram_helper,ast,nvidia,nvidia_drm,ttm
 </code></pre></div><p>此时已安装nvidia驱动</p>
 <p>如果未安装：参考<a href="https://docs.nvidia.com/cuda/cuda-installation-guide-linux/" target="_blank" rel="noopener noreferrer">链接</a>进行安装</p>
 <h2>查看gpu型号、gpu驱动版本</h2>
-<div class="language-text" data-ext="text" data-title="text"><pre class="language-text"><code>(base) root@ubuntu:~# nvidia-smi
-Wed May 29 03:28:30 2024
+<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code><span class="token punctuation">(</span>base<span class="token punctuation">)</span> root@ubuntu:~<span class="token comment"># nvidia-smi</span>
+Wed May <span class="token number">29</span> 03:28:30 <span class="token number">2024</span>
 +</code></pre></div>]]></content:encoded>
     </item>
     <item>
@@ -1703,8 +1701,6 @@ eventSource<span class="token punctuation">.</span><span class="token function">
 <h2>空的Context</h2>
 <blockquote>
 <p>我们知道<code>Background()</code>和<code>TODO()</code>返回的Context常用于根节点，无法取消，也没有超时时间，也获取不到任何共享数据。这种空Context是怎么实现的呢？</p>
-</blockquote>
-<blockquote>
 <p>Background()返回 backgroundCtx{} 类型的Context</p>
 </blockquote>
 <div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">Background</span><span class="token punctuation">(</span><span class="token punctuation">)</span> Context <span class="token punctuation">{</span>
@@ -2491,7 +2487,7 @@ The commands are:
 <h3>用法</h3>
 <div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code>go build <span class="token punctuation">[</span>-o output<span class="token punctuation">]</span> <span class="token punctuation">[</span>build flags<span class="token punctuation">]</span> <span class="token punctuation">[</span>packages<span class="token punctuation">]</span>
 </code></pre></div><p>-o 用于指定输出二进制文件名称，例如：</p>
-<div class="language-text" data-ext="text" data-title="text"><pre class="language-text"><code>go build -o app-user main.go
+<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code>go build <span class="token parameter variable">-o</span> app-user main.go
 </code></pre></div><h2>go clean</h2>
 <p><code>go clean</code>会删除掉执行其它命令时产生的一些文件和目录，包括：</p>
 <ol>
@@ -2844,7 +2840,7 @@ record...</description>
 <span class="token punctuation">}</span>
 </code></pre></div><div class="hint-container info">
 <p class="hint-container-title">相关信息</p>
-<p>其中</p>
+<p>其中:</p>
 <ul>
 <li>第10行模拟执行插入失败错误，第13行期望事务回滚。</li>
 <li>第16行按照预期肯定返回错误</li>
@@ -3530,7 +3526,7 @@ helm-clean:
   ghcr.io/helm/chartmuseum:v0.16.1
 </code></pre></div><h2>helm 配置</h2>
 <h3>安装依赖</h3>
-<p>配合该仓库需要在我们安装的helm基础上，安装相关插件 helm-push (https://github.com/chartmuseum/helm-push)</p>
+<p>配合该仓库需要在我们安装的helm基础上，安装相关插件 <a href="https://github.com/chartmuseum/helm-push" target="_blank" rel="noopener noreferrer">helm-push</a></p>
 <div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code>helm plugin <span class="token function">install</span> https://github.com/chartmuseum/helm-push
 </code></pre></div><h3>配置环境</h3>
 <p>将私有仓库加入本地</p>
@@ -3606,7 +3602,7 @@ helm repo update
 <p>12-Factor 应用中，环境变量的粒度要足够小，且相对独立。它们永远也不会组合成一个所谓的“环境”，而是独立存在于每个部署之中。当应用程序不断扩展，需要更多种类的部署时，这种配置管理方式能够做到平滑过渡。</p>
 <h2>IV. 后端服务</h2>
 <h3>把后端服务(<em>backing services</em>)当作附加资源</h3>
-<p><em>后端服务</em>是指程序运行所需要的通过网络调用的各种服务，如数据库（<a href="http://dev.mysql.com/" target="_blank" rel="noopener noreferrer">MySQL</a>，<a href="http://couchdb.apache.org/" target="_blank" rel="noopener noreferrer">CouchDB</a>），消息/队列系统（<a href="http://www.rabbitmq.com/" target="_blank" rel="noopener noreferrer">RabbitMQ</a>，<a href="https://beanstalkd.github.io" target="_blank" rel="noopener noreferrer">Beanstalkd</a>），SMTP 邮件发送服务（<a href="http://www.postfix.org/" target="_blank" rel="noopener noreferrer"> Postfix</a>），以及缓存系统（<a href="http://memcached.org/" target="_blank" rel="noopener noreferrer">Memcached</a>）。</p>
+<p><em>后端服务</em>是指程序运行所需要的通过网络调用的各种服务，如数据库（<a href="http://dev.mysql.com/" target="_blank" rel="noopener noreferrer">MySQL</a>，<a href="http://couchdb.apache.org/" target="_blank" rel="noopener noreferrer">CouchDB</a>），消息/队列系统（<a href="http://www.rabbitmq.com/" target="_blank" rel="noopener noreferrer">RabbitMQ</a>，<a href="https://beanstalkd.github.io" target="_blank" rel="noopener noreferrer">Beanstalkd</a>），SMTP 邮件发送服务（<a href="http://www.postfix.org/" target="_blank" rel="noopener noreferrer">Postfix</a>），以及缓存系统（<a href="http://memcached.org/" target="_blank" rel="noopener noreferrer">Memcached</a>）。</p>
 <p>类似数据库的后端服务，通常由部署应用程序的系统管理员一起管理。除了本地服务之外，应用程序有可能使用了第三方发布和管理的服务。示例包括 SMTP（例如 <a href="http://postmarkapp.com/" target="_blank" rel="noopener noreferrer">Postmark</a>），数据收集服务（例如 <a href="http://newrelic.com/" target="_blank" rel="noopener noreferrer">New Relic</a> 或 <a href="http://www.loggly.com/" target="_blank" rel="noopener noreferrer">Loggly</a>），数据存储服务（如 <a href="http://http://aws.amazon.com/s3/" target="_blank" rel="noopener noreferrer">Amazon S3</a>），以及使用 API 访问的服务（例如 <a href="http://dev.twitter.com/" target="_blank" rel="noopener noreferrer">Twitter</a>, <a href="https://developers.google.com/maps/" target="_blank" rel="noopener noreferrer">Google Maps</a>, <a href="http://www.last.fm/api" target="_blank" rel="noopener noreferrer">Last.fm</a>）。</p>
 <p><strong>12-Factor 应用不会区别对待本地或第三方服务。</strong> 对应用程序而言，两种都是附加资源，通过一个 url 或是其他存储在 <a href="./config">配置</a> 中的服务定位/服务证书来获取数据。12-Factor 应用的任意 <a href="./codebase">部署</a> ，都应该可以在不进行任何代码改动的情况下，将本地 MySQL 数据库换成第三方服务（例如 <a href="http://aws.amazon.com/rds/" target="_blank" rel="noopener noreferrer">Amazon RDS</a>）。类似的，本地 SMTP 服务应该也可以和第三方 SMTP 服务（例如 Postmark ）互换。上述 2 个例子中，仅需修改配置中的资源地址。</p>
 <p>每个不同的后端服务是一份 <em>资源</em> 。例如，一个 MySQL 数据库是一个资源，两个 MySQL 数据库（用来数据分区）就被当作是 2 个不同的资源。12-Factor 应用将这些数据库都视作 <em>附加资源</em> ，这些资源和它们附属的部署保持松耦合。</p>
@@ -3632,7 +3628,7 @@ helm repo update
 <p><strong>12-Factor 应用的进程必须无状态且 <a href="http://en.wikipedia.org/wiki/Shared_nothing_architecture" target="_blank" rel="noopener noreferrer">无共享</a> 。</strong> 任何需要持久化的数据都要存储在 <a href="./backing-services">后端服务</a> 内，比如数据库。</p>
 <p>内存区域或磁盘空间可以作为进程在做某种事务型操作时的缓存，例如下载一个很大的文件，对其操作并将结果写入数据库的过程。12-Factor应用根本不用考虑这些缓存的内容是不是可以保留给之后的请求来使用，这是因为应用启动了多种类型的进程，将来的请求多半会由其他进程来服务。即使在只有一个进程的情形下，先前保存的数据（内存或文件系统中）也会因为重启（如代码部署、配置更改、或运行环境将进程调度至另一个物理区域执行）而丢失。</p>
 <p>源文件打包工具（<a href="http://documentcloud.github.io/jammit/" target="_blank" rel="noopener noreferrer">Jammit</a>, <a href="http://django-compressor.readthedocs.org/" target="_blank" rel="noopener noreferrer">django-compressor</a>） 使用文件系统来缓存编译过的源文件。12-Factor 应用更倾向于在 <a href="./build-release-run">构建步骤</a> 做此动作——正如 <a href="http://guides.rubyonrails.org/asset_pipeline.html" target="_blank" rel="noopener noreferrer">Rails资源管道</a> ，而不是在运行阶段。</p>
-<p>一些互联网系统依赖于 “<a href="http://en.wikipedia.org/wiki/Load_balancing_%28computing%29#Persistence" target="_blank" rel="noopener noreferrer">粘性 session </a>”， 这是指将用户 session 中的数据缓存至某进程的内存中，并将同一用户的后续请求路由到同一个进程。粘性 session 是 12-Factor 极力反对的。Session 中的数据应该保存在诸如 <a href="http://memcached.org/" target="_blank" rel="noopener noreferrer">Memcached</a> 或 <a href="http://redis.io/" target="_blank" rel="noopener noreferrer">Redis</a> 这样的带有过期时间的缓存中。</p>
+<p>一些互联网系统依赖于 “<a href="http://en.wikipedia.org/wiki/Load_balancing_%28computing%29#Persistence" target="_blank" rel="noopener noreferrer">粘性 session</a>”， 这是指将用户 session 中的数据缓存至某进程的内存中，并将同一用户的后续请求路由到同一个进程。粘性 session 是 12-Factor 极力反对的。Session 中的数据应该保存在诸如 <a href="http://memcached.org/" target="_blank" rel="noopener noreferrer">Memcached</a> 或 <a href="http://redis.io/" target="_blank" rel="noopener noreferrer">Redis</a> 这样的带有过期时间的缓存中。</p>
 <h2>VII. 端口绑定</h2>
 <h3>通过端口绑定(<em>Port binding</em>)来提供服务</h3>
 <p>互联网应用有时会运行于服务器的容器之中。例如 PHP 经常作为 <a href="http://httpd.apache.org/" target="_blank" rel="noopener noreferrer">Apache HTTPD</a> 的一个模块来运行，正如 Java 运行于 <a href="http://tomcat.apache.org/" target="_blank" rel="noopener noreferrer">Tomcat</a> 。</p>
@@ -3904,7 +3900,7 @@ Prometheus告警</description>
       <content:encoded><![CDATA[<!-- more -->
 <h2>在线书籍</h2>
 <ul>
-<li>Prometheus告警<a href="https://awesome-prometheus-alerts.grep.to/" target="_blank" rel="noopener noreferrer"></a></li>
+<li><a href="https://awesome-prometheus-alerts.grep.to/" target="_blank" rel="noopener noreferrer">Prometheus告警</a></li>
 </ul>
 ]]></content:encoded>
     </item>
@@ -5001,11 +4997,11 @@ ENTRYPOINT <span class="token punctuation">[</span><span class="token string">"/
 <li>查看各个版本之间的区别</li>
 </ul>
 <h3>查看已安装的chart包</h3>
-<figure><figcaption></figcaption></figure>
+<figure><figcaption>1</figcaption></figure>
 <h3>单个chart包的升级、回滚和修改配置</h3>
-<figure><figcaption></figcaption></figure>
+<figure><figcaption>2</figcaption></figure>
 <h3>比较各个版本之前的区别</h3>
-<figure><figcaption></figcaption></figure>
+<figure><figcaption>3</figcaption></figure>
 <h3>Helm Dadshboard 魔改</h3>
 <p>helm-dashboard依赖的前端静态资源如：</p>
 <ul>
@@ -5963,7 +5959,12 @@ flag参数使用语法
 </code></pre></div><details class="hint-container details"><summary>执行结果</summary>
 <div class="language-text" data-ext="text" data-title="text"><pre class="language-text"><code>yy 1
 xx 2
-</code></pre></div></details>
+</code></pre></div><p>其中：</p>
+<ul>
+<li><code>defer recover()</code>，由于不是在一个匿名函数中，所以无法捕获到panic，导致panic继续向上抛出，被外层<code>recover</code>捕获到。</li>
+<li><code>panic(1)</code>会替换<code>panic(2)</code>直至被捕获处理。</li>
+</ul>
+</details>
 <div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> main
 
 <span class="token keyword">import</span> <span class="token string">"fmt"</span>
@@ -5990,9 +5991,7 @@ xx 1
       <link>http://blog.cjhe.top/language/go/base/package.html</link>
       <guid>http://blog.cjhe.top/language/go/base/package.html</guid>
       <source url="http://blog.cjhe.top/rss.xml">package</source>
-      <description>package
-
-Go语言使用包（package）作为基本单元来组织源码。
+      <description>Go语言使用包（package）作为基本单元来组织源码。
 
 package的优点
 
@@ -6001,11 +6000,10 @@ package的优点
 
 Go要求每个源文件在开头显示地列出所有依赖的包，如果引入了未使用的包，Go语言编译器会报错。
 Go要求包之间不能存在循环依赖，这样包的依赖关系便形成了一张有向无环图，这样每个包可以单独编译也可并行编译
-已编译的Go包不仅记录了该包的信息...</description>
+已编译的Go包不仅记录了该包的信息，还记录了依赖包的...</description>
       <category>编程语言</category>
       <pubDate>Sun, 27 Aug 2023 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[<!-- more -->
-<h1>package</h1>
 <blockquote>
 <p>Go语言使用包（package）作为基本单元来组织源码。</p>
 </blockquote>
@@ -6623,15 +6621,13 @@ producer-consumerproducer-consumer
       <guid>http://blog.cjhe.top/language/go/base/defer.html</guid>
       <source url="http://blog.cjhe.top/rss.xml">defer注意事项</source>
       <description>defer 语句能够帮助我们确保在函数结束时执行一些必要的操作，比如：关闭文件句柄、释放资源、解锁互斥锁等。defer 关键字只能作用函数或函数调用。
-defer注意事项
 大多数内置函数不可以直接调用
 
-大多数内置函数（除了copy和recover）的调用的返回结果都不可以舍弃，而defer延迟调用的返回结果都必须舍弃掉，所以，很多内置函数是不能被被延...</description>
+大多数内置函数（除了copy和recover）的调用的返回结果都不可以舍弃，而defer延迟调用的返回结果都必须舍弃掉，所以，很多内置函数是不能被被延迟直接调用的。当然可...</description>
       <category>编程语言</category>
       <pubDate>Sun, 27 Aug 2023 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[<!-- more -->
 <p>defer 语句能够帮助我们确保在函数结束时执行一些必要的操作，比如：<strong>关闭文件句柄</strong>、<strong>释放资源</strong>、<strong>解锁互斥锁</strong>等。defer 关键字只能作用函数或函数调用。</p>
-<h1>defer注意事项</h1>
 <h2>大多数内置函数不可以直接调用</h2>
 <blockquote>
 <p>大多数内置函数（除了<code>copy</code>和<code>recover</code>）的调用的返回结果都不可以舍弃，而defer延迟调用的返回结果都必须舍弃掉，所以，很多内置函数是不能被被延迟直接调用的。当然可以通过匿名函数来解决。</p>
@@ -6698,7 +6694,9 @@ defer注意事项
 <blockquote>
 <p>遇见panic，defer将会执行。这也是recover为什么要包含在defer中的原因。</p>
 </blockquote>
-<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">import</span> <span class="token string">"fmt"</span>
+<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token string">"fmt"</span>
 
 <span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
 	<span class="token keyword">defer</span> fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"此行可以被执行到"</span><span class="token punctuation">)</span>
