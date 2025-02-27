@@ -248,7 +248,6 @@ GOAMD64的值是Go语言的编译器参数。
 
 ## go fix
 
-
 `go fix`命令用于自动修复Go代码中的错误。
 
 ### 语法
@@ -295,7 +294,6 @@ go fmt [-n] [-x] [packages]
 
 ## go run
 
-
 `go run`命令用于编译并运行Go程序。
 
 ## go test
@@ -316,7 +314,7 @@ go version
 
 输出结果：
 
-```
+```text
 go version go1.22.2 windows/amd64
 ```
 

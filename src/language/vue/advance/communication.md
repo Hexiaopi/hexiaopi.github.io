@@ -217,10 +217,10 @@ onMounted(() => {
 </script>
 ```
 
-
 ### v-model
 
 > 父子组件双向数据同步，相当于：
+>
 > - 通过props传递modelValue，实现父到子传递数据
 > - 通过emit触发update:modelValue，实现子到父传递数据
 
@@ -311,6 +311,7 @@ let $attrs = useAttrs();
 ```
 
 ::: tip useAttrs和defineProps的区别
+
 - 和使用 defineProps 接收属性时相比，useAttrs 的优先级要低
 - useAttrs：方法能够接收到所有属性，包括未在组件中声明的属性，但不能够对接收到的属性进行类型校验和默认值设置。
 - defineProps：方法只能接收到在组件中声明的属性，但能够对接收到的属性进行类型校验和默认值设置，使得组件能够更加健壮。
@@ -371,7 +372,6 @@ const handle = ($parent: any) => {
 </script>
 ```
 
-
 ### provide和inject
 
 > 常用于祖孙组件之间通信
@@ -397,6 +397,7 @@ provide('count', count)
 ```
 
 子组件
+
 ```vue{4}
 <template>
     <div class="child">

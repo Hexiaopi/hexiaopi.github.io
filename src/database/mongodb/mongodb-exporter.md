@@ -36,4 +36,3 @@ docker run -d -p 9216:9216 -p 17001:17001 --restart=always --name=mongodb_export
 ```promQL
 mongodb_up == 0
 ```
-

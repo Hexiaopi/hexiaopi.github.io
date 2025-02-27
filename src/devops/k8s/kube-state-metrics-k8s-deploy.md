@@ -10,7 +10,6 @@ category:
 
 kube-state-metrics用于监控k8s相关指标
 
-
 <!-- more -->
 
 ## k8s部署

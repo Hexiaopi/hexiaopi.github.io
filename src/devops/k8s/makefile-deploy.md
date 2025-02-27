@@ -37,17 +37,16 @@ envs = prod pre
 
 构建本地镜像
 
-```
+```text
 docker-build:
 	docker build -t $(DOCKER_HARBOR)/idata/$(APP_NAME):$(GIT_VERSION) .
 ```
-
 
 ### docker push
 
 推送本地镜像至docker hub
 
-```
+```text
 docker-push:
 	docker push $(DOCKER_HARBOR)/idata/$(APP_NAME):$(GIT_VERSION)
 ```
@@ -56,7 +55,7 @@ docker-push:
 
 helm打包本地chart包，由于我们要基于一个docker镜像部署在不同的环境，因此这里会有多个环境的chart包
 
-```
+```text
 helm-package:
 	@for env in $(envs);\
 		do echo 'helm package' $$env;\
@@ -72,7 +71,7 @@ helm-package:
 
 helm推送chart包至chart仓库
 
-```
+```text
 helm-push: 
 	@for env in $(envs);\
 		do echo 'helm push' $$env;\
@@ -84,7 +83,7 @@ helm-push:
 
 清理本地的chart包文件
 
-```
+```text
 helm-clean: 
 	@for env in $(envs);\
 		do echo 'helm clean' $$env;\
@@ -94,12 +93,11 @@ helm-clean:
 
 ### 串通以上命令
 
-```
+```text
 k8s: docker-build docker-push helm-package helm-push helm-clean
 ```
 
 这样我们只需要执行`make k8s`就可以将这些繁杂的命令串通起来。
-
 
 ## 两步完成k8s服务更新
 
@@ -108,7 +106,7 @@ k8s: docker-build docker-push helm-package helm-push helm-clean
 
 ## 沉淀的Makefile脚本
 
-```
+```text
 APP_NAME=hhm-disposal
 DOCKER_HARBOR=127.0.0.1:8760
 GIT_VERSION = $(shell git describe --tags)

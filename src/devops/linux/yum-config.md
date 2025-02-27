@@ -81,4 +81,3 @@ yum makecache
 ```bash
 yum repolist
 ```
-

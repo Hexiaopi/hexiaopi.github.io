@@ -55,6 +55,3 @@ chmod +x load_images.sh
 ```
 
 脚本会遍历`images`目录下的所有以`.tar`或`.tar.gz`结尾的文件，并依次加载到Docker中。
-
-
-

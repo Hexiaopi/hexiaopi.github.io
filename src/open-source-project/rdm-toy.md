@@ -51,7 +51,7 @@ redis 可视化管理工具
   cd backend
   go mod tidy
 ```
-    
+
 ## 本地运行
 
 ### 前端
@@ -68,7 +68,6 @@ redis 可视化管理工具
   go run cmd/root.go
 ```
 
-
 ## 截图
 
 ![client](./images/client.png)
@@ -84,7 +83,6 @@ redis 可视化管理工具
 ## 收藏历史
 
 [![Star History Chart](https://api.star-history.com/svg?repos=hexiaopi/rdm-toy&type=Date)](https://star-history.com/#hexiaopi/rdm-toy&Date)
-
 
 ## 许可证
 

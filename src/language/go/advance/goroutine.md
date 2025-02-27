@@ -11,7 +11,6 @@ category:
 
 <!-- more -->
 
-
 Go语言原生支持并发能力，而goroutine是Go语言原生支持并发的具体实现，本篇将为你揭开goroutine的面纱。
 
 ## goroutine

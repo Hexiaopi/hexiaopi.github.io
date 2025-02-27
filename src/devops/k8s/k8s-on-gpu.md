@@ -10,11 +10,9 @@ category:
 
 <!-- more -->
 
-# gpu机器搭建k8s
-
 ## 查看GPU
 
-```
+```bash
 (base) root@ubuntu:~# lspci | grep -i nvidia
 01:00.0 VGA compatible controller: NVIDIA Corporation Device 2230 (rev a1)
 01:00.1 Audio device: NVIDIA Corporation Device 1aef (rev a1)
@@ -30,7 +28,7 @@ category:
 
 ## 查看是否已安装gpu nvidia驱动
 
-```
+```bash
 (base) root@ubuntu:~# lsmod | grep  -i nvidia
 nvidia_uvm           1216512  16
 
@@ -47,7 +45,7 @@ drm                   495616  7 drm_kms_helper,drm_vram_helper,ast,nvidia,nvidia
 
 ## 查看gpu型号、gpu驱动版本
 
-```
+```bash
 (base) root@ubuntu:~# nvidia-smi
 Wed May 29 03:28:30 2024
 +-----------------------------------------------------------------------------+
@@ -92,7 +90,7 @@ Wed May 29 03:28:30 2024
 
 ## 查看docker运行时
 
-```
+```bash
 (base) root@ubuntu:~# docker info | grep -i 'Default Runtime'
 WARNING: No swap limit support
  Default Runtime: nvidia
@@ -106,14 +104,14 @@ docker默认的运行时是：`runc`，为了使用gpu资源，需要使用：`n
 
 ### 下载minikube
 
-```
+```bash
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 sudo install minikube-linux-amd64 /usr/local/bin/minikube
 ```
 
 ### 启动minikube
 
-```
+```bash
 minikube start --image-mirror-country='cn' --image-repository='registry.cn-hangzhou.aliyuncs.com/google_containers' --force --driver docker --container-runtime docker --gpus all
 ```
 
@@ -126,7 +124,7 @@ minikube start --image-mirror-country='cn' --image-repository='registry.cn-hangz
 
 ### 查看当前k8s集群
 
-```
+```bash
 (base) root@ubuntu:/home/k8s# kubectl get pods -A
 NAMESPACE     NAME                               READY   STATUS    RESTARTS     AGE
 kube-system   coredns-7c445c467-d6zsw            1/1     Running   0            24s
@@ -140,26 +138,27 @@ kube-system   storage-provisioner                1/1     Running   1 (8s ago)   
 
 ### 开启nvidia插件
 
-```
+```bash
 minikube addons enable nvidia-device-plugin
 ```
 
 或者
 
 手动安装插件
-```
+
+```bash
 kubectl apply -f https://raw.githubusercontent.com/NVIDIA/k8s-device-plugin/v0.15.0/deployments/static/nvidia-device-plugin.yml
 ```
 
 ### 设置别名
 
-```shell
+```bash
 alias kubectl="minikube kubectl --"
 ```
 
 ### 验证是否能否设别GPU资源
 
-```
+```bash
 kubectl describe nodes
 ```
 
@@ -167,7 +166,7 @@ kubectl describe nodes
 
 ### 部署应用使用gpu
 
-```
+```bash
 apiVersion: v1
 kind: Pod
 metadata:
@@ -188,17 +187,17 @@ spec:
         nvidia.com/gpu: 1
 ```
 
-```
+```bash
 kubectl apply -f gpu-deploy.yaml
 ```
 
 查看日志
 
-```
+```bash
 kubectl logs gpu
 ```
 
-```
+```bash
 (base) root@ubuntu:~# kubectl logs gpu
 Fri May 31 07:19:23 2024
 +-----------------------------------------------------------------------------+
@@ -224,7 +223,8 @@ Fri May 31 07:19:23 2024
 ## 其他问题
 
 如果无法使用本地镜像，使用以下
-```
+
+```bash
 eval $(minikube docker-env)
 ```
 

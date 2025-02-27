@@ -34,7 +34,6 @@ category:
   background="rgba(253, 230, 138, 0.15)"
 />
 
-
 <VPCard
   title="learnku"
   logo="https://cdn.learnku.com//uploads/communities/sNljssWWQoW6J88O9G37.png!/both/44x44"

@@ -7,14 +7,16 @@ category:
 
 <!-- more -->
 
-# 二叉搜索树
 ## 简介
+
 > 二叉搜索树（Binary Search Tree,BST）又叫二叉排序树，基于二分法查找思想设计的树。它的定义如下：
+>
 > 1. 它是一棵二叉树
 > 2. 左子树的所有节点的值都小于它的根节点，右子树的所有节点的值都大于它的根节点
 > 3. 左右子树也是一棵二叉搜索树
 
 ## 增加节点
+
 ```go
 func (n *Node) Add(value int) {
 	if value > n.Data {
@@ -44,6 +46,7 @@ func (n *Node) Add(value int) {
 ```
 
 ## 查找节点
+
 ```go
 func (n *Node) Find(value int) *Node {
 	if n == nil {
@@ -58,7 +61,9 @@ func (n *Node) Find(value int) *Node {
 	}
 }
 ```
+
 测试
+
 ```go
 func TestNode_Find(t *testing.T) {
 	var node = &Node{
@@ -87,6 +92,7 @@ func TestNode_Find(t *testing.T) {
 ## 删除节点
 
 ### 递归版本
+
 ```go
 // 递归版本
 func (n *Node) DeleteNodeRecursion(key int) *Node {
@@ -133,7 +139,9 @@ func (n *Node) deleteMinNode() *Node {
 	return n
 }
 ```
+
 测试
+
 ```go
 func ExampleDeleteNodeRecursion() {
 	var node = &Node{
@@ -169,9 +177,10 @@ func ExampleDeleteNodeRecursion() {
 }
 ```
 
-# 总结
+## 总结
+
 > 二叉搜素树采用二分法思想，查找效率高
-> 
+>
 > 但是二叉搜索树具有不平衡性，容易出现斜树
 
 ![斜树](../images/slanted-tree.png)

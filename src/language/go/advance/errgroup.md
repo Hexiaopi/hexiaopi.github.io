@@ -10,9 +10,6 @@ category:
 
 <!-- more -->
 
-# golang.org/x/sync/errgroup
-
-
 > Go语言在并执行任务时，可能会遇到某个协程运行出现错误，如果处理这些错误是一个非常重要的问题。Go语言在`golang.org/x/sync`提供一个并发原语`errgroup`来解决这个问题。
 
 ## 使用示例
@@ -50,6 +47,7 @@ func main() {
 在这个例子中并发启动10个协程执行任务，其中一个协程处理失败返回错误。`errgroup`会等待所有协程执行完毕，并返回第一个错误。
 
 ::: details 执行结果
+
 ```text
 goroutine 9 finished
 goroutine 0 finished
@@ -62,6 +60,7 @@ goroutine 8 finished
 goroutine 3 finished
 error occurred in goroutine 2
 ```
+
 :::
 
 ### 带上下文的任务
@@ -106,6 +105,7 @@ func Do(ctx context.Context, i int) error {
 ```
 
 ::: details 执行结果
+
 ```text
 0 do something
 1 do something
@@ -119,6 +119,7 @@ func Do(ctx context.Context, i int) error {
 3 canceled
 error occurred in goroutine 2
 ```
+
 :::
 
 在这个例子中，当其中一个协程执行失败，剩余还未执行的协程将会被取消。
@@ -156,10 +157,10 @@ errgroup的核心方法：
 - SetLimit: 设置最大并发协程数量
 - TryGo: 根据设置最大的并发协程数，判断能否启动一个协程执行任务
 
-
 ## 源码分析
 
 ### Go方法
+
 ```go
 func (g *Group) Go(f func() error) {
 	if g.sem != nil {
@@ -226,7 +227,6 @@ func (g *Group) SetLimit(n int) {
 
 `SetLimit`方法用于设置最大并发协程数量。如果n小于0，将不限制最大并发数量。否则，创建一个长度为n的channel。
 
-
 ### TryGo方法
 
 ```go
@@ -258,4 +258,3 @@ func (g *Group) TryGo(f func() error) bool {
 ```
 
 `TryGo`方法和`Go`方法类似，但是在获取sem channel的token失败时，直接返回false。而`Go`方法会一直等待sem channel的token。
-

@@ -17,7 +17,6 @@ Go项目中经常使用MySQL作为存储，一般写测试会建立真实连接�
 
 因此，优秀的项目会杜绝这些问题。本文介绍Go语言的`sql/driver`的mock库。
 
-
 ## 安装mock库
 
 ```shell
@@ -65,6 +64,7 @@ func recordStats(db *sql.DB, userID, productID int64) (err error) {
 
 ::: info
 `recordStats` 函数负责记录用户浏览产品信息，包括：
+
 - 更新商品的 views 个数+1
 - 插入一条用户浏览商品数据到 product_viewers 表
 
@@ -100,6 +100,7 @@ func TestShouldUpdateStats(t *testing.T) {
 
 ::: info
 其中：
+
 - 8-11行为我们期望执行的SQL语句，包括返回值。
 - 19行检验是否符合我们的期望。
 :::
@@ -134,7 +135,8 @@ func TestShouldRollbackStatUpdatesOnFailure(t *testing.T) {
 ```
 
 ::: info
-其中
+其中:
+
 - 第10行模拟执行插入失败错误，第13行期望事务回滚。
 - 第16行按照预期肯定返回错误
 - 第19行则检验是否符合我们的预期
@@ -212,6 +214,7 @@ func TestUserDao_Get(t *testing.T) {
 
 ::: info
 其中：
+
 - 第2行我们使用了严格的匹配方式，即`sqlmock.QueryMatcherEqual`，即要求SQL语句完全一致，否则会报错SQL不是期望所得。
 - 由于使用了GORM框架，所以第7行需要初始化gdb，但是由于GORM初始化会执行`SELECT VERSION()`，所以我们需要通过`SkipInitializeWithVersion`跳过初始化。
 :::
@@ -219,6 +222,7 @@ func TestUserDao_Get(t *testing.T) {
 遇见的一些问题：
 
 ::: warning
+
 ```go{3}
 	{ //根据name查询用户
 		rows := sqlmock.NewRows([]string{"id", "name"}).AddRow(1, "admin")
@@ -233,6 +237,7 @@ func TestUserDao_Get(t *testing.T) {
 		}
 	}
 ```
+
 第3行，我们通过直接写死`LIMIT 1`而不是`LIMIT ?`来限制查询结果，但实际执行时，会报错SQL不是期望所得，导致测试用例不通过。因此需要特别注意，需要通过传参的方式。
 :::
 

@@ -40,6 +40,7 @@ category:
 ![12-factors](./images/12-factors.png)
 
 ## I. 基准代码
+
 ### 一份基准代码（*Codebase*），多份部署（*deploy*）
 
 12-Factor应用(译者注：应该是说一个使用本文概念来设计的应用，下同)通常会使用版本控制系统加以管理，如[Git](http://git-scm.com/), [Mercurial](https://www.mercurial-scm.org/), [Subversion](http://subversion.apache.org/)。一份用来跟踪代码所有修订版本的数据库被称作 *代码库*（code repository, code repo, repo）。
@@ -58,6 +59,7 @@ category:
 所有部署的基准代码相同，但每份部署可以使用其不同的版本。比如，开发人员可能有一些提交还没有同步至预发布环境；预发布环境也有一些提交没有同步至生产环境。但它们都共享一份基准代码，我们就认为它们只是相同应用的不同部署而已。
 
 ## II. 依赖
+
 ### 显式声明依赖关系（ *dependency* ）
 
 大多数编程语言都会提供一个打包系统，用来为各个类库提供打包服务，就像 Perl 的 [CPAN](http://www.cpan.org/) 或是 Ruby 的 [Rubygems](http://rubygems.org/) 。通过打包系统安装的类库可以是系统级的（称之为 "site packages"），或仅供某个应用程序使用，部署在相应的目录中（称之为 "vendoring" 或 "bundling"）。
@@ -71,6 +73,7 @@ category:
 12-Factor 应用同样不会隐式依赖某些系统工具，如 ImageMagick 或是`curl`。即使这些工具存在于几乎所有系统，但终究无法保证所有未来的系统都能支持应用顺利运行，或是能够和应用兼容。如果应用必须使用到某些系统工具，那么这些工具应该被包含在应用之中。
 
 ## III. 配置
+
 ### 在环境中存储配置
 
 通常，应用的 *配置* 在不同 [部署](./codebase) (预发布、生产环境、开发环境等等)间会有很大差异。这其中包括：
@@ -94,9 +97,10 @@ category:
 12-Factor 应用中，环境变量的粒度要足够小，且相对独立。它们永远也不会组合成一个所谓的“环境”，而是独立存在于每个部署之中。当应用程序不断扩展，需要更多种类的部署时，这种配置管理方式能够做到平滑过渡。
 
 ## IV. 后端服务
+
 ### 把后端服务(*backing services*)当作附加资源
 
-*后端服务*是指程序运行所需要的通过网络调用的各种服务，如数据库（[MySQL](http://dev.mysql.com/)，[CouchDB](http://couchdb.apache.org/)），消息/队列系统（[RabbitMQ](http://www.rabbitmq.com/)，[Beanstalkd](https://beanstalkd.github.io)），SMTP 邮件发送服务（[ Postfix](http://www.postfix.org/)），以及缓存系统（[Memcached](http://memcached.org/)）。
+*后端服务*是指程序运行所需要的通过网络调用的各种服务，如数据库（[MySQL](http://dev.mysql.com/)，[CouchDB](http://couchdb.apache.org/)），消息/队列系统（[RabbitMQ](http://www.rabbitmq.com/)，[Beanstalkd](https://beanstalkd.github.io)），SMTP 邮件发送服务（[Postfix](http://www.postfix.org/)），以及缓存系统（[Memcached](http://memcached.org/)）。
 
 类似数据库的后端服务，通常由部署应用程序的系统管理员一起管理。除了本地服务之外，应用程序有可能使用了第三方发布和管理的服务。示例包括 SMTP（例如 [Postmark](http://postmarkapp.com/)），数据收集服务（例如 [New Relic](http://newrelic.com/) 或 [Loggly](http://www.loggly.com/)），数据存储服务（如 [Amazon S3](http://http://aws.amazon.com/s3/)），以及使用 API 访问的服务（例如 [Twitter](http://dev.twitter.com/), [Google Maps](https://developers.google.com/maps/), [Last.fm](http://www.last.fm/api)）。
 
@@ -109,6 +113,7 @@ category:
 部署可以按需加载或卸载资源。例如，如果应用的数据库服务由于硬件问题出现异常，管理员可以从最近的备份中恢复一个数据库，卸载当前的数据库，然后加载新的数据库 -- 整个过程都不需要修改代码。
 
 ## V. 构建，发布，运行
+
 ### 严格分离构建和运行
 
 [基准代码](./codebase) 转化为一份部署(非开发环境)需要以下三个阶段：
@@ -128,6 +133,7 @@ category:
 新的代码在部署之前，需要开发人员触发构建操作。但是，运行阶段不一定需要人为触发，而是可以自动进行。如服务器重启，或是进程管理器重启了一个崩溃的进程。因此，运行阶段应该保持尽可能少的模块，这样假设半夜发生系统故障而开发人员又捉襟见肘也不会引起太大问题。构建阶段是可以相对复杂一些的，因为错误信息能够立刻展示在开发人员面前，从而得到妥善处理。
 
 ## VI. 进程
+
 ### 以一个或多个无状态进程运行应用
 
 运行环境中，应用程序通常是以一个和多个 *进程* 运行的。
@@ -140,9 +146,10 @@ category:
 
 源文件打包工具（[Jammit](http://documentcloud.github.io/jammit/), [django-compressor](http://django-compressor.readthedocs.org/)） 使用文件系统来缓存编译过的源文件。12-Factor 应用更倾向于在 [构建步骤](./build-release-run) 做此动作——正如 [Rails资源管道](http://guides.rubyonrails.org/asset_pipeline.html) ，而不是在运行阶段。
 
-一些互联网系统依赖于 “[粘性 session ](http://en.wikipedia.org/wiki/Load_balancing_%28computing%29#Persistence)”， 这是指将用户 session 中的数据缓存至某进程的内存中，并将同一用户的后续请求路由到同一个进程。粘性 session 是 12-Factor 极力反对的。Session 中的数据应该保存在诸如 [Memcached](http://memcached.org/) 或 [Redis](http://redis.io/) 这样的带有过期时间的缓存中。
+一些互联网系统依赖于 “[粘性 session](http://en.wikipedia.org/wiki/Load_balancing_%28computing%29#Persistence)”， 这是指将用户 session 中的数据缓存至某进程的内存中，并将同一用户的后续请求路由到同一个进程。粘性 session 是 12-Factor 极力反对的。Session 中的数据应该保存在诸如 [Memcached](http://memcached.org/) 或 [Redis](http://redis.io/) 这样的带有过期时间的缓存中。
 
 ## VII. 端口绑定
+
 ### 通过端口绑定(*Port binding*)来提供服务
 
 互联网应用有时会运行于服务器的容器之中。例如 PHP 经常作为 [Apache HTTPD](http://httpd.apache.org/) 的一个模块来运行，正如 Java 运行于 [Tomcat](http://tomcat.apache.org/) 。
@@ -158,6 +165,7 @@ HTTP 并不是唯一一个可以由端口绑定提供的服务。其实几乎所
 还要指出的是，端口绑定这种方式也意味着一个应用可以成为另外一个应用的 [后端服务](./backing-services) ，调用方将服务方提供的相应 URL 当作资源存入 [配置](./config) 以备将来调用。
 
 ## VIII. 并发
+
 ### 通过进程模型进行扩展
 
 任何计算机程序，一旦启动，就会生成一个或多个进程。互联网应用采用多种进程运行方式。例如，PHP 进程作为 Apache 的子进程存在，随请求按需启动。Java 进程则采取了相反的方式，在程序启动之初 JVM 就提供了一个超级进程储备了大量的系统资源(CPU 和内存)，并通过多线程实现内部的并发管理。上述 2 个例子中，进程是开发人员可以操作的最小单位。
@@ -172,8 +180,8 @@ HTTP 并不是唯一一个可以由端口绑定提供的服务。其实几乎所
 
 12-Factor 应用的进程 [不需要守护进程](http://dustin.github.com/2010/02/28/running-processes.html) 或是写入 PID 文件。相反的，应该借助操作系统的进程管理器(例如 [systemd](https://www.freedesktop.org/wiki/Software/systemd/) ，分布式的进程管理云平台，或是类似 [Foreman](http://blog.daviddollar.org/2011/05/06/introducing-foreman.html) 的工具)，来管理 [输出流](./logs) ，响应崩溃的进程，以及处理用户触发的重启和关闭超级进程的请求。
 
-
 ## IX. 易处理
+
 ### 快速启动和优雅终止可最大化健壮性
 
 **12-Factor 应用的 [进程](./processes) 是 *易处理（disposable）*的，意思是说它们可以瞬间开启或停止。** 这有利于快速、弹性的伸缩应用，迅速部署变化的 [代码](./codebase) 或 [配置](./config) ，稳健的部署应用。
@@ -187,6 +195,7 @@ HTTP 并不是唯一一个可以由端口绑定提供的服务。其实几乎所
 进程还应当**在面对突然死亡时保持健壮**，例如底层硬件故障。虽然这种情况比起优雅终止来说少之又少，但终究有可能发生。一种推荐的方式是使用一个健壮的后端队列，例如 [Beanstalkd](https://beanstalkd.github.io) ，它可以在客户端断开或超时后自动退回任务。无论如何，12-Factor 应用都应该可以设计能够应对意外的、不优雅的终结。[Crash-only design](http://lwn.net/Articles/191059/) 将这种概念转化为 [合乎逻辑的理论](http://couchdb.apache.org/docs/overview.html)。
 
 ## X. 开发环境与线上环境等价
+
 ### 尽可能的保持开发，预发布，线上环境相同
 
 从以往经验来看，开发环境（即开发人员的本地 [部署](./codebase)）和线上环境（外部用户访问的真实部署）之间存在着很多差异。这些差异表现在以下三个方面：
@@ -263,8 +272,8 @@ HTTP 并不是唯一一个可以由端口绑定提供的服务。其实几乎所
 
 不同后端服务的适配器仍然是有用的，因为它们可以使移植后端服务变得简单。但应用的所有部署，这其中包括开发、预发布以及线上环境，都应该使用同一个后端服务的相同版本。
 
-
 ## XI. 日志
+
 ### 把日志当作事件流
 
 *日志* 使得应用程序运行的动作变得透明。在基于服务器的环境中，日志通常被写在硬盘的一个文件里，但这只是一种输出格式。
@@ -282,6 +291,7 @@ HTTP 并不是唯一一个可以由端口绑定提供的服务。其实几乎所
 * 根据用户定义的条件实时触发警报，比如每分钟的报错超过某个警戒线。
 
 ## XII. 管理进程
+
 ### 后台管理任务当作一次性进程运行
 
 [进程构成](./concurrency)（process formation）是指用来处理应用的常规业务（比如处理 web 请求）的一组进程。与此不同，开发人员经常希望执行一些管理或维护应用的一次性任务，例如：

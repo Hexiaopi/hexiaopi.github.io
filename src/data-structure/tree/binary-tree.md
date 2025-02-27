@@ -7,12 +7,13 @@ category:
 
 <!-- more -->
 
-# 二叉树
 > 满足以下两个条件的树就是二叉树：
+>
 > - 本身是有序树
 > - 树中包含的各个节点的度不能超过2，即只能是：0、1、2
 
 定义二叉树的结构
+
 ```go
 type Node struct {
 	Left  *Node
@@ -21,15 +22,18 @@ type Node struct {
 }
 ```
 
-![](../images/binary-tree.png)
+![binary-tree](../images/binary-tree.png)
 
 ## 先序遍历
+
 > 其思想是：
+>
 > 1. 访问根节点；
 > 2. 访问当前节点的左子树；
 > 3. 若当前节点无左子树，则访问当前节点的右子树；
 
 以图为例：
+
 1. 访问该二叉树的根节点，找到节点1；
 2. 访问节点1的左子树，找到节点2；
 3. 访问节点2的左子树，找到节点4；
@@ -42,6 +46,7 @@ type Node struct {
 !> 顺序如下：1、2、4、5、3、6、7
 
 ### 递归实现
+
 ```go
 func PreOrder(n *Node) {
 	if n != nil {
@@ -53,6 +58,7 @@ func PreOrder(n *Node) {
 ```
 
 ### 示例测试
+
 ```go
 func ExamplePreOrder() {
 	PreOrder(&one)
@@ -62,12 +68,15 @@ func ExamplePreOrder() {
 ```
 
 ## 中序遍历
+
 > 其实想是：
+>
 > 1. 访问当前节点的左子树；
 > 2. 访问当前节点；
 > 3. 访问当前节点的右子树；
 
 以图为例：
+
 1. 访问根节点，遍历找到左子树直到失败；找到节点4，找到节点4的右子树失败，结束节点4的遍历；
 2. 访问节点4的根节点，找到节点2；
 3. 访问节点2的右子树，遍历找左子树失败，找到节点5，遍历找到右子树失败，结束节点5的遍历，也结束节点2的遍历；
@@ -79,6 +88,7 @@ func ExamplePreOrder() {
 !> 顺序如下：4，2，5，1，6，3，7
 
 ### 递归实现
+
 ```go
 func InOrder(n *Node) {
 	if n != nil {
@@ -90,6 +100,7 @@ func InOrder(n *Node) {
 ```
 
 ### 示例测试
+
 ```go
 func ExampleInOrder() {
 	InOrder(&one)
@@ -99,12 +110,15 @@ func ExampleInOrder() {
 ```
 
 ## 后续遍历
+
 > 其思想是：
+>
 > 1. 遍历访问当前节点的左子树；
 > 2. 遍历访问当前节点的右子树；
 > 3. 访问当前节点；
 
 以图为例：
+
 1. 从根节点开始，遍历左子树直到失败，1->2->4，找到节点4，结束节点4的查询；
 2. 回退到节点2，遍历右子树，找到节点5的左子树失败、右子树失败，找到节点5，结束节点5的查询；
 3. 节点2的左右子树遍历完成，找到节点2，结束节点2的查询；
@@ -116,6 +130,7 @@ func ExampleInOrder() {
 !> 顺序为：4、5、2、6、7、3、1
 
 ### 递归实现
+
 ```go
 func AftOrder(n *Node) {
 	if n!=nil {
@@ -127,6 +142,7 @@ func AftOrder(n *Node) {
 ```
 
 ### 示例测试
+
 ```go
 func ExampleAftOrder() {
 	AftOrder(&one)
@@ -136,12 +152,15 @@ func ExampleAftOrder() {
 ```
 
 ## 层次遍历
+
 > 其思想是：
+>
 > 1. 节点入队；
 > 2. 节点出队，节点左孩子和右孩子入队；
 > 3. 知道所有节点出队；
 
 以图为例：
+
 1. 根节点1入队；
 2. 根节点1出队，找到节点1，根节点1的左孩子节点2和右孩子3节点入队；
 3. 节点2出队，找到节点2，节点2的左孩子节点4和右孩子节点5入队；
@@ -152,6 +171,7 @@ func ExampleAftOrder() {
 8. 节点7出队，没有左右孩子，找到节点7；
 
 ### 队列实现
+
 ```go
 func LayerOrder(n *Node) {
 	queue := list.New()
@@ -172,6 +192,7 @@ func LayerOrder(n *Node) {
 ```
 
 ### 示例测试
+
 ```go
 func ExampleLayerOrder() {
 	LayerOrder(&one)

@@ -70,10 +70,12 @@ func main() {
 ```
 
 ::: details 执行结果
+
 ```text
 $ go run main.go
 {}{}
 ```
+
 :::
 
 运行结果依然是正常的，但是我们通过`go vet`检查一下：

@@ -990,7 +990,7 @@ x: y: new store: the error
 
 另见 [不要只检查错误，优雅地处理它们]。
 
-["pkg/errors".Cause]: https://godoc.org/github.com/pkg/errors#Cause
+["pkg/errors".Cause](https://godoc.org/github.com/pkg/errors#Cause)
 
 [不要只检查错误，优雅地处理它们]: https://dave.cheney.net/2016/04/27/dont-just-check-errors-handle-them-gracefully
 

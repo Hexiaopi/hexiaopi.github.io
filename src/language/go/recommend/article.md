@@ -24,4 +24,3 @@ category:
 稀土掘进-Go语言实践：编写可维护的程序的建议[](https://juejin.cn/post/6844904035611328520)
 
 Go官方代码审查[](https://github.com/golang/go/wiki/CodeReviewComments)
-

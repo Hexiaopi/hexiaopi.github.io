@@ -30,7 +30,7 @@ docker run --rm -it \
 
 ### 安装依赖
 
-配合该仓库需要在我们安装的helm基础上，安装相关插件 helm-push (https://github.com/chartmuseum/helm-push)
+配合该仓库需要在我们安装的helm基础上，安装相关插件 [helm-push](https://github.com/chartmuseum/helm-push)
 
 ```bash
 helm plugin install https://github.com/chartmuseum/helm-push

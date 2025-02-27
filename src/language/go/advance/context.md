@@ -26,6 +26,7 @@ type Context interface {
 ```
 
 其中：
+
 - `Deadline()`返回Context的截止时间，返回值为截止时间和一个布尔值，表示是否设置了截止时间。如果返回的布尔值为false，表示没有设置截止时间。
 - `Done()`返回一个只读的channel，当Context被取消或者截止时间到达时，该channel会被关闭。在没有关闭之前，从channel读取会一直阻塞。
 - `Err()`返回Context被取消的原因，如果Context没有被取消，返回nil。
@@ -34,7 +35,7 @@ type Context interface {
 ## 空的Context
 
 > 我们知道`Background()`和`TODO()`返回的Context常用于根节点，无法取消，也没有超时时间，也获取不到任何共享数据。这种空Context是怎么实现的呢？
-
+>
 > Background()返回 backgroundCtx{} 类型的Context
 
 ```go
@@ -52,7 +53,6 @@ func TODO() Context {
 ```
 
 其中：`backgroundCtx`和`todoCtx`都是继承了`emptyCtx`结构体。
-
 
 ```go
 type backgroundCtx struct{ emptyCtx }
@@ -84,8 +84,6 @@ func (emptyCtx) Value(key any) any {
 
 `emptyCtx`仅仅实现了`Context`接口方法，却什么也没做。
 
-
-
 ## 传递数据的Context
 
 WithValue()函数用于创建一个携带了键值对的Context，用于传递数据。
@@ -115,6 +113,7 @@ type valueCtx struct {
 ```
 
 其中：
+
 - Context是接口，存储了父Context实例。
 - `key`和`val`是任意类型的键值对。
 
@@ -164,7 +163,6 @@ func value(c Context, key any) any {
 
 我们可以看到`value()`函数会递归遍历父Context，直到找到`key`对应的`value`。
 
-
 ## 可取消的Context
 
 取消的接口定义如下：
@@ -191,6 +189,7 @@ type cancelCtx struct {
 ```
 
 其中：
+
 - `Context`是接口，用于存储父Context。
 - `mu`是互斥锁，用于保护`done`、`children`、`err`和`cause`字段。
 - `done`是一个原子值，用于保存一个`chan struct{}`类型的值，该值在第一次调用`cancel()`方法时被创建，并在第一次调用`cancel()`方法后被关闭。
@@ -460,7 +459,7 @@ func AfterFunc(ctx Context, f func()) (stop func() bool) {
 
 ::: warning
 这里注意返回stop函数。如果在没有结束前执行了stop函数，将导致once函数执行，这样回调函数将不会执行。
-::: 
+:::
 
 ## 完整的UML
 

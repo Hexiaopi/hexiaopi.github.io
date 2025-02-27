@@ -26,7 +26,7 @@ mc alias set minio http://172.100.2.65:9000 minioadmin minioadmin
 
 输出结果：
 
-```
+```text
 mc: Configuration written to `/root/.mc/config.json`. Please update your access credentials.
 mc: Successfully created `/root/.mc/share`.
 mc: Initialized share uploads `/root/.mc/share/uploads.json` file.

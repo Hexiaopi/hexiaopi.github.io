@@ -38,6 +38,7 @@ password=your password
 ```promQL
 mysql_up == 0
 ```
+
 ### 监控数据库是否超过最大连接数80%
 
 ```promQL

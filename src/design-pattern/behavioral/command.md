@@ -209,7 +209,7 @@ func (i *Computer) ExecuteCommands() {
 
 使用示例
 
-```
+```go
 package command
 
 import "fmt"

@@ -8,9 +8,7 @@ category:
  - devops
 ---
 
-
 node-exporter用于暴露各个节点的指标，由于需要每个节点都部署node-exporter，因此kind选择DaemonSet，它会保障每个节点有一个相同的实例。
-
 
 <!-- more -->
 

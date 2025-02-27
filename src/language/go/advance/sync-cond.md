@@ -12,7 +12,6 @@ category:
 
 > Go语言`sync.Cond`是一个条件变量。顾名思义，当条件不满足时，通过条件变量进入睡眠状态。当条件满足时，通过条件变量唤醒等待的线程。`sync.Cond`用于多线程中的同步机制。
 
-
 ## 使用示例
 
 sync.Cond提供三个函数：
@@ -78,7 +77,7 @@ func ExampleCondBroadcast() {
 
 ::: tip
 这里启动三个协程，done为false时，阻塞自己。当done为true时，打印信息。另外主线程将done改为true时，通过broadcase广播，此时前面三个协程将被唤醒。
-::: 
+:::
 
 我们再看看一个一个通知的示例
 
@@ -127,7 +126,6 @@ func ExampleCondSignal() {
 
 ## 底层原理
 
-
 ### 数据结构
 
 ```go
@@ -161,6 +159,7 @@ func (c *Cond) Wait() {
 
 ::: important
 由于wait函数是先解锁，再加锁。因此需要保证在wait函数调用之前，已经加锁。官方给的示例如下：
+
 ```go
 c.L.Lock()
 for !condition() {
@@ -169,6 +168,7 @@ for !condition() {
 ... make use of condition ...
 c.L.Unlock()
 ```
+
 :::
 
 ### Signal
@@ -188,7 +188,6 @@ func (c *Cond) Broadcast() {
 	runtime_notifyListNotifyAll(&c.notify) // 通知所有等待的goroutine
 }
 ```
-
 
 ## sync.Cond和channel的区别
 

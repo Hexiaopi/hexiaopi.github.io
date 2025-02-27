@@ -24,27 +24,27 @@ category:
 
 ### 1.1 时序（time series）
 
-> 时序（time series)是由指标（metric）以及一组key/value标签定义的。标签可以使时序数据更加丰富。
+> 时序（time series）是由指标（metric）以及一组key/value标签定义的。标签可以使时序数据更加丰富。
 
 格式：
 
-```
+```text
 <metric name>{<label name>=<label value>, ...}
 ```
 
 例如：
 
-```
+```text
 api_http_requests_total{method="POST", handler="/messages"}
 ```
 
-时序按照时间戳和值的顺序存放，称之为向量（vector)。
+时序按照时间戳和值的顺序存放，称之为向量（vector）。
 
-### 1.2 向量（vector)
+### 1.2 向量（vector）
 
 可以将采集的时序理解为一个以时间为x轴的数字矩阵：
 
-```
+```text
   ^
 
   │   . . . . . . . . . . . . . . . . .   . .   node_cpu{cpu="cpu0",mode="idle"}
@@ -62,7 +62,7 @@ api_http_requests_total{method="POST", handler="/messages"}
 
 其中每一个点成为一个样本（sample）。
 
-### 1.3 样本（sample)
+### 1.3 样本（sample）
 
 > 按照某个时序以时间维度采集的数据称之为样本。样本有以下三部分：
 >
@@ -73,7 +73,7 @@ api_http_requests_total{method="POST", handler="/messages"}
 
 例如：
 
-```
+```text
 <--------------- metric ---------------------><-timestamp -><-value->
 http_request_total{status="200", method="GET"}@1434417560938 => 94355
 http_request_total{status="200", method="GET"}@1434417561287 => 94334
@@ -87,7 +87,7 @@ http_request_total{status="200", method="POST"}@1434417561287 => 4785
 
 例如：node_exporter暴漏的metrics接口的指标如下所示：
 
-```
+```text
 # HELP node_cpu Seconds the cpus spent in each mode.
 # TYPE node_cpu counter
 node_cpu{cpu="cpu0",mode="idle"} 362812.7890625
@@ -178,7 +178,7 @@ node_load1 3.0703125
 
 `offset`需要紧跟向量。例如：
 
-```
+```text
 sum(http_requests_total{method="GET"} offset 5m) // GOOD.
 sum(http_requests_total{method="GET"}) offset 5m // INVALID.
 rate(http_requests_total[5m] offset 1w) 		 // GOOD
@@ -271,7 +271,7 @@ PromQL支持两种匹配模式：`一对一`，`多对一或一对多`。
 
 格式：
 
-```
+```text
 <vector expr> <bin-op> ignoring(<label list>) <vector expr>
 <vector expr> <bin-op> on(<label list>) <vector expr>
 ```
@@ -280,7 +280,7 @@ PromQL支持两种匹配模式：`一对一`，`多对一或一对多`。
 
 指标数据如下：
 
-```
+```text
 method_code:http_errors:rate5m{method="get", code="500"}  24
 method_code:http_errors:rate5m{method="get", code="404"}  30
 method_code:http_errors:rate5m{method="put", code="501"}  3
@@ -294,13 +294,13 @@ method:http_requests:rate5m{method="post"} 120
 
 使用以下表达式进行匹配：
 
-```
+```text
 method_code:http_errors:rate5m{code="500"} / ignoring(code) method:http_requests:rate5m
 ```
 
 结果：
 
-```
+```text
 {method="get"}  0.04            //  24/600=0.04
 {method="post"} 0.05            //   6/120=0.05
 ```
@@ -311,7 +311,7 @@ method_code:http_errors:rate5m{code="500"} / ignoring(code) method:http_requests
 
 格式：
 
-```
+```text
 <vector expr> <bin-op> ignoring(<label list>) group_left(<label list>) <vector expr>
 <vector expr> <bin-op> ignoring(<label list>) group_right(<label list>) <vector expr>
 <vector expr> <bin-op> on(<label list>) group_left(<label list>) <vector expr>
@@ -320,20 +320,20 @@ method_code:http_errors:rate5m{code="500"} / ignoring(code) method:http_requests
 
 例如：左侧向量有两个标签（method、code），右侧向量有一个标签（method），因此左侧向量具有更高的基数，使用`group_left`，并忽略标签（code）。如下：
 
-```
+```text
 method_code:http_errors:rate5m / ignoring(code) group_left method:http_requests:rate5m
 ```
 
 结果：
 
-```
+```text
 {method="get", code="500"}  0.04            //  24/600=0.04
 {method="get", code="404"}  0.05            //  30/600=0.05
 {method="post", code="500"} 0.05            //   6/120=0.05
 {method="post", code="404"} 0.175           //  21/120=0.175
 ```
 
-**Group修饰符（group_left、group_right)只能在比较和数学运算符中使用，逻辑运算符默认与右侧向量所有元素匹配。**
+**Group修饰符（group_left、group_right）只能在比较和数学运算符中使用，逻辑运算符默认与右侧向量所有元素匹配。**
 
 #### 2.5.2 布尔运算符
 
@@ -341,13 +341,13 @@ method_code:http_errors:rate5m / ignoring(code) group_left method:http_requests:
 
 例如，只需要知道当前模块的HTTP请求量是否>=1000，如果大于等于1000则返回1（true）否则返回0（false）。
 
-```
+```text
 http_requests_total > bool 1000
 ```
 
 返回的指标样本的值要么是0要么是1，如下：
 
-```
+```text
 http_requests_total{code="200",handler="query",instance="localhost:9090",job="prometheus",method="get"}  1
 http_requests_total{code="200",handler="query_range",instance="localhost:9090",job="prometheus",method="get"}  0
 ```
@@ -374,7 +374,7 @@ Prometheus支持以下聚合运算符：
 
 格式：
 
-```
+```text
 <aggr-op>([parameter,] <vector expression>) [without|by (<label list>)]
 ```
 
@@ -428,7 +428,7 @@ Prometheus支持以下聚合运算符：
 
 例如：
 
-```
+```text
 delta(cpu_temp_celsius{host="zeus"}[2h]) //现在和两个小时之前CPU温度的差异
 ```
 
@@ -480,7 +480,7 @@ delta(cpu_temp_celsius{host="zeus"}[2h]) //现在和两个小时之前CPU温度�
 
 例如：
 
-```
+```text
 irate(http_requests_total{job="api-server"}[5m]) //计算5分钟内的HTTP每秒请求率
 ```
 
@@ -494,7 +494,7 @@ irate(http_requests_total{job="api-server"}[5m]) //计算5分钟内的HTTP每秒
 
 例如：
 
-```
+```text
 label_join(up{job="api-server",src1="a",src2="b",src3="c"}, "foo", ",", "src1", "src2", "src3") //在原有的向量基础上多了新标签foo，值为src1,src2,src3
 ```
 
@@ -508,7 +508,7 @@ label_join(up{job="api-server",src1="a",src2="b",src3="c"}, "foo", ",", "src1", 
 
 例如：
 
-```
+```text
 label_replace(up{job="api-server",service="a:c"}, "foo", "$1", "service", "(.*):.*")
 ```
 
@@ -544,7 +544,7 @@ label_replace(up{job="api-server",service="a:c"}, "foo", "$1", "service", "(.*):
 
 例如：
 
-```
+```text
 rate(http_requests_total{job="api-server"}[5m]) //计算过去5分钟内每秒HTTP请求率。
 ```
 

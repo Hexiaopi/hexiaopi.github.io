@@ -30,6 +30,7 @@ MySQL 在 Windows 下不区分大小写，但在 Linux 下默认是区分大小�
 :::
 
 ::: note
+
 - 正例：aliyun_admin，rdc_config，level3_name
 - 反例：AliyunAdmin，rdcConfig，level_3_name
 :::
@@ -75,6 +76,7 @@ alipay_task / force_project / trade_config
 13. 【推荐】字段允许适当冗余，以提高查询性能，但必须考虑数据一致。冗余字段应遵循：
 
 ::: info 说明
+
 - 1）不是频繁修改的字段。
 - 2）不是唯一索引的字段。
 - 3）不是 varchar 超长字段，更不能是 text 字段。
@@ -156,14 +158,17 @@ MySQL 并不是跳过 offset 行，而是取 offset+N 行，然后返回放弃�
 
 ::: note
 正例：先快速定位需要获取的 id 段，然后再关联：
+
 ```sql
 SELECT a.* FROM 表 1 a, (select id from 表 1 where 条件 LIMIT 100000,20 ) b where a.id=b.id
 ```
+
 :::
 
 8. 【推荐】SQL 性能优化的目标：至少要达到 range 级别，要求是 ref 级别，如果可以是 consts 最好。
 
 ::: info 说明
+
 - 1） consts 单表中最多只有一个匹配行（主键或者唯一索引），在优化阶段即可读取到数据。
 - 2） ref 指的是使用普通的索引（normal index）。
 - 3） range 对索引进行范围检索。
@@ -188,6 +193,7 @@ SELECT a.* FROM 表 1 a, (select id from 表 1 where 条件 LIMIT 100000,20 ) b 
 11. 【参考】创建索引时避免有如下极端误解：
 
 ::: info
+
 - 1） 索引宁滥勿缺。认为一个查询就需要建一个索引。
 - 2） 吝啬索引的创建。认为索引会消耗空间、严重拖慢记录的更新以及行的新增速度。
 - 3） 抵制惟一索引。认为惟一索引一律需要在应用层通过“先查后插”方式解决。
@@ -248,6 +254,7 @@ NULL 与任何值的直接比较都为 NULL。
 :::
 
 ::: note
+
 - 正例：`select t1.name from table_first as t1 , table_second as t2 where t1.id=t2.id;`
 - 反例：在某业务中，由于多表关联查询语句没有加表的别名（或表名）的限制，正常运行两年后，最近在某个表中增加一个同名字段，在预发布环境做数据库变更后，线上查询语句出现出 1052 异常：Column 'name' in field list is ambiguous。
 :::
@@ -260,9 +267,11 @@ NULL 与任何值的直接比较都为 NULL。
 :::
 
 ::: note 正例
+
 ```sql
 select t1.name from table_first as t1, table_second as t2 where t1.id=t2.id;
 ```
+
 :::
 
 11. 【推荐】in 操作能避免则避免，若实在避免不了，需要仔细评估 in 后边的集合元素数量，控制在 1000 个之内。
@@ -270,6 +279,7 @@ select t1.name from table_first as t1, table_second as t2 where t1.id=t2.id;
 12. 【参考】因国际化需要，所有的字符存储与表示，均采用 utf8 字符集，那么字符计数方法需要注意。
 
 ::: info 说明
+
 - `SELECT LENGTH("轻松工作")；` 返回为 12
 - `SELECT CHARACTER_LENGTH("轻松工作")；` 返回为 4
 
@@ -312,11 +322,13 @@ TRUNCATE TABLE 在功能上与不带 WHERE 子句的 DELETE 语句相同。
 :::
 
 ::: note 正例
-```
+
+```text
 Map<String, Object> map = new HashMap<>();
 map.put("start", start);
 map.put("size", size);
 ```
+
 :::
 
 6. 【强制】不允许直接拿 HashMap 与 Hashtable 作为查询结果集的输出。

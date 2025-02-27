@@ -10,4 +10,4 @@ category:
 
 ## 在线书籍
 
-- Prometheus告警[](https://awesome-prometheus-alerts.grep.to/)
+- [Prometheus告警](https://awesome-prometheus-alerts.grep.to/)

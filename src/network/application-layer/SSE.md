@@ -65,7 +65,6 @@ func progressor(c *gin.Context) {
 
 前端代码分析：EventSource对象用于监听服务器推送的事件流，当事件流到达时，会触发`progress`事件，事件处理函数中解析事件数据，并根据事件类型进行相应的处理。
 
-
 ```js
 const eventSource = new EventSource('progress');
 
@@ -82,7 +81,6 @@ eventSource.addEventListener('progress', function (event) {
 
 });
 ```
-
 
 ## SSE 特点
 

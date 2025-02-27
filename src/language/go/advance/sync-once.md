@@ -56,6 +56,7 @@ func (o *Once) doSlow(f func()) {
 ```
 
 sync.Once的底层实现非常简单，核心代码只有短短的十几行。
+
 - done: 原子操作，用于记录函数是否已经执行过。
 - m: 互斥锁，用于保护函数的执行。
 
@@ -118,6 +119,7 @@ func main() {
 ```
 
 ::: details 执行结果
+
 ```text
 fatal error: all goroutines are asleep - deadlock!
 
@@ -142,6 +144,7 @@ main.main()
         D:/code/test/test/main.go:11 +0x2c
 exit status 2
 ```
+
 :::
 
 ::: tip

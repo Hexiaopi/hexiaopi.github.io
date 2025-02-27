@@ -48,6 +48,7 @@ sync.Map提供了丰富的API，用于对map的查询、存储、遍历、删除
 
 ::: tip
 Range参数传递的是一个函数，该函数的返回值是一个bool类型，表示是否继续遍历。
+
 - 如果是true，则继续遍历。
 - 如果是false，则不继续遍历。
 :::
@@ -109,7 +110,6 @@ Range参数传递的是一个函数，该函数的返回值是一个bool类型�
 
 相比较Swap方法，CompareAndSwap方法多了一个参数，该参数用于指定旧值。仅当旧值与指定的旧值相同时，才会进行交换操作。
 
-
 ## 底层原理
 
 ```go
@@ -165,12 +165,14 @@ func (m *Map) Load(key any) (value any, ok bool) {
 ```
 
 我们看到，sync.Map的查询过程如下：
+
 1. 首先尝试从`read`读取。
 2. 加锁，再次从`read`中二次检查。
 3. 如果`read`中没有找到，并且`dirty`中存在该key，则从`dirty`中读取。
 4. 如果`read`和`dirty`都没有找到，返回nil。
 
 ::: tip
+
 - 第6行，进行二次检查。因为可能有其他线程已经在read添加了对应的key，需要double check，二次检查在sync包中经常会看到，我们也会在单例设计模式借鉴该方法。
 
 - 我们也看到`read.amended`字段存在的价值，必要的数据冗余会带来复杂读的降低，值得学习。
@@ -178,8 +180,8 @@ func (m *Map) Load(key any) (value any, ok bool) {
 - 我们可以看到如果可以从`read`查询到数据，整个过程是可以不用加锁的。
 :::
 
-
 这里需要关注`missLocked`方法，该方法用于记录miss次数。
+
 ```go
 func (m *Map) missLocked() {
 	m.misses++
@@ -254,6 +256,7 @@ func (m *Map) Swap(key, value any) (previous any, loaded bool) {
 5. 如果`read`和`dirty`均找不到，直接存储在dirty中。
 
 这里需要关注一下`dirtyLocked`方法
+
 ```go
 func (m *Map) dirtyLocked() {
 	if m.dirty != nil {
@@ -350,7 +353,6 @@ func (m *Map) Range(f func(key, value any) bool) {
 ::: note
 我们注意到，7-11行，会将dirty复制到read中，并且将dirty置为nil。
 :::
-
 
 ## 参考文献
 

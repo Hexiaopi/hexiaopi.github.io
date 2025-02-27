@@ -53,7 +53,7 @@ category:
   cd backend
   go mod tidy
 ```
-    
+
 ## 本地运行
 
 ### 前端
@@ -69,7 +69,6 @@ category:
   cd backend
   go run cmd/root.go
 ```
-
 
 ## 截图
 
@@ -90,8 +89,6 @@ category:
 
 [![Star History Chart](https://api.star-history.com/svg?repos=hexiaopi/data-space&type=Date)](https://star-history.com/#hexiaopi/data-space&Date)
 
-
 ## 许可证
 
 [MIT](https://choosealicense.com/licenses/mit/)
-
