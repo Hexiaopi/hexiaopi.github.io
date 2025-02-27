@@ -116,7 +116,7 @@ type bmap struct {
 
 ![map](./images/map.png)
 
-key和value分开存储，目的是为了减少内存对齐带来的内存浪费，以map[int8]int64为例：
+key和value分开存储，目的是为了减少[内存对齐](../advance/memory-alignment.md)带来的内存浪费，以map[int8]int64为例：
 
 ![map-memory](./images/map-memory.png)
 
@@ -206,7 +206,7 @@ map的扩缩容的主要区别在于hmap.B的容量大小改变，而缩容由�
 
 ## map注意事项
 
-### map的value是struct自定义类型，无法通过索引的方式直接修改
+### map的value是值类型的struct时，无法通过索引的方式直接修改
 
 ```go{14}
 package main
@@ -232,7 +232,8 @@ func main() {
 
 :::warning
 14行，如果通过索引的方式直接修改，编辑器会报错：[UnaddressableFieldAssign](https://pkg.go.dev/golang.org/x/tools/internal/typesinternal#UnaddressableFieldAssign)，并且官网也给了详细的说明：
-```
+
+```go
 	// UnaddressableFieldAssign occurs when trying to assign to a struct field
 	// in a map value.
 	//
@@ -243,9 +244,10 @@ func main() {
 	//  }
 	UnaddressableFieldAssign
 ```
+
 :::
 
-### map的value是指针类型的struc，则可以通过索引的方式直接修改
+### map的value是指针类型的struct时，则可以通过索引的方式直接修改
 
 ```go{9,14}
 package main
@@ -267,9 +269,11 @@ func main() {
 ```
 
 ::: details 运行结果
+
 ```text
 4
 ```
+
 :::
 
 ### 非并发读写安全的
@@ -392,3 +396,5 @@ BenchmarkMapInitWithCap-8           2534            425859 ns/op          322225
 PASS
 ok      command-line-arguments  5.939s
 ```
+
+从上面可以看出，初始化map时，如果指定了cap参数，那么性能会更好，内存分配次数也会更少。

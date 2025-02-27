@@ -13,8 +13,6 @@ category:
 
 defer 语句能够帮助我们确保在函数结束时执行一些必要的操作，比如：**关闭文件句柄**、**释放资源**、**解锁互斥锁**等。defer 关键字只能作用函数或函数调用。
 
-# defer注意事项
-
 ## 大多数内置函数不可以直接调用
 
 > 大多数内置函数（除了`copy`和`recover`）的调用的返回结果都不可以舍弃，而defer延迟调用的返回结果都必须舍弃掉，所以，很多内置函数是不能被被延迟直接调用的。当然可以通过匿名函数来解决。
@@ -101,6 +99,8 @@ func main() {
 > 遇见panic，defer将会执行。这也是recover为什么要包含在defer中的原因。
 
 ```go
+package main
+
 import "fmt"
 
 func main() {
@@ -110,6 +110,7 @@ func main() {
 ```
 
 ::: details 执行结果
+
 ```text
 此行可以被执行到
 panic: xxx
@@ -119,6 +120,7 @@ main.main()
         D:/code/test/test/main.go:7 +0x59
 exit status 2
 ```
+
 :::
 
 ### 遇见os.Exit
@@ -143,10 +145,12 @@ func main() {
 ```
 
 ::: details 执行结果
+
 ```text
 some thing...
 exit status 1
 ```
+
 :::
 
 ## 延迟函数体
@@ -288,7 +292,6 @@ func DeferDemo7() (result int) {
 ```
 
 :::
-
 
 ## 可能会造成短暂性内存泄漏
 

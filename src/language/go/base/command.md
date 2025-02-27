@@ -63,7 +63,7 @@ go build [-o output] [build flags] [packages]
 
 -o 用于指定输出二进制文件名称，例如：
 
-```
+```shell
 go build -o app-user main.go
 ```
 
@@ -90,7 +90,7 @@ go build -o app-user main.go
 ```bash
 go doc sync.Map
 ```
-    
+
 输出结果如下：
 
 ```text

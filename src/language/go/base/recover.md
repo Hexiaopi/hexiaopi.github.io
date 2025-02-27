@@ -100,12 +100,17 @@ func main() {
 ```
 
 ::: details 执行结果
+
 ```text
 yy 1
 xx 2
 ```
-:::
 
+其中：
+
+- `defer recover()`，由于不是在一个匿名函数中，所以无法捕获到panic，导致panic继续向上抛出，被外层`recover`捕获到。
+- `panic(1)`会替换`panic(2)`直至被捕获处理。
+:::
 
 ```go
 package main
@@ -126,10 +131,10 @@ func main() {
 ```
 
 ::: details 执行结果
+
 ```text
 yy 2
 xx 1
 ```
+
 :::
-
-
