@@ -3,7 +3,7 @@
   <id>http://blog.cjhe.top/</id>
   <title>个人博客</title>
   <subtitle>何小进童鞋的个人博客</subtitle>
-  <updated>2025-02-28T02:51:29.250Z</updated>
+  <updated>2025-03-01T09:37:44.498Z</updated>
   <generator>@vuepress/plugin-feed</generator>
   <link rel="self" href="http://blog.cjhe.top/atom.xml"/>
   <link rel="alternate" href="http://blog.cjhe.top/"/>
@@ -2200,7 +2200,7 @@ eventSource<span class="token punctuation">.</span><span class="token function">
     <title type="text">阿里巴巴MySQL开发规范</title>
     <id>http://blog.cjhe.top/database/mysql/develop-standard.html</id>
     <link href="http://blog.cjhe.top/database/mysql/develop-standard.html"/>
-    <updated>2025-02-27T15:41:25.000Z</updated>
+    <updated>2025-03-01T09:36:45.000Z</updated>
     <summary type="html"><![CDATA[<blockquote>
 <p><a href="https://developer.aliyun.com/article/1573143" target="_blank" rel="noopener noreferrer">【转载】阿里巴巴MySQL开发规范</a></p>
 </blockquote>
@@ -2210,9 +2210,7 @@ eventSource<span class="token punctuation">.</span><span class="token function">
 </blockquote>
 <!-- more -->
 <h2>建表规则</h2>
-<ol>
-<li>【强制】表达<mark>是</mark>与<mark>否</mark>概念的字段，必须使用 is_xxx 的方式命名，数据类型是 unsigned tinyint（1 表示是，0 表示否）。</li>
-</ol>
+<p>1.【强制】表达<mark>是</mark>与<mark>否</mark>概念的字段，必须使用 is_xxx 的方式命名，数据类型是 unsigned tinyint（1 表示是，0 表示否）。</p>
 <div class="hint-container info">
 <p class="hint-container-title">说明</p>
 <p>任何字段如果为非负数，必须是 unsigned。</p>
@@ -2221,9 +2219,7 @@ eventSource<span class="token punctuation">.</span><span class="token function">
 <p class="hint-container-title">注</p>
 <p>正例：表达逻辑删除的字段名 is_deleted，1 表示删除，0 表示未删除。</p>
 </div>
-<ol start="2">
-<li>【强制】表名、字段名必须使用小写字母或数字，禁止出现数字开头，禁止两个下划线中间只出现数字。数据库字段名的修改代价很大，因为无法进行预发布，所以字段名称需要慎重考虑。</li>
-</ol>
+<p>2.【强制】表名、字段名必须使用小写字母或数字，禁止出现数字开头，禁止两个下划线中间只出现数字。数据库字段名的修改代价很大，因为无法进行预发布，所以字段名称需要慎重考虑。</p>
 <div class="hint-container info">
 <p class="hint-container-title">说明</p>
 <p>MySQL 在 Windows 下不区分大小写，但在 Linux 下默认是区分大小写。因此，数据库名、表名、字段名，都不允许出现任何大写字母，避免节外生枝。</p>
@@ -2235,64 +2231,36 @@ eventSource<span class="token punctuation">.</span><span class="token function">
 <li>反例：AliyunAdmin，rdcConfig，level_3_name</li>
 </ul>
 </div>
-<ol start="3">
-<li>【强制】表名不使用复数名词。</li>
-</ol>
+<p>3.【强制】表名不使用复数名词。</p>
 <div class="hint-container info">
 <p class="hint-container-title">说明</p>
 <p>表名应该仅仅表示表里面的实体内容，不应该表示实体数量，对应于 DO 类名也是单数形式，符合表达习惯。</p>
 </div>
-<ol start="4">
-<li>
-<p>【强制】禁用保留字，如 desc、range、match、delayed 等，请参考 MySQL 官方保留字。</p>
-</li>
-<li>
-<p>【强制】主键索引名为 pk_字段名；唯一索引名为 uk_字段名；普通索引名则为 idx_字段名。</p>
-</li>
-</ol>
+<p>4.【强制】禁用保留字，如 desc、range、match、delayed 等，请参考 MySQL 官方保留字。</p>
+<p>5.【强制】主键索引名为<code>pk_</code>字段名；唯一索引名为<code>uk_</code>字段名；普通索引名则为<code>idx_</code>字段名。</p>
 <blockquote>
-<p>pk_ 即 primary key；uk_ 即 unique key；idx_ 即 index 的简称。</p>
+<p><code>pk_</code>即 primary key；<code>uk_</code>即 unique key；<code>idx_</code>即 index 的简称。</p>
 </blockquote>
-<ol start="6">
-<li>【强制】小数类型为 decimal，禁止使用 float 和 double。</li>
-</ol>
+<p>6.【强制】小数类型为 decimal，禁止使用 float 和 double。</p>
 <div class="hint-container info">
 <p class="hint-container-title">说明</p>
 <p>在存储的时候，float 和 double 都存在精度损失的问题，很可能在比较值的时候，得到不正确的结果。如果存储的数据范围超过decimal 的范围，建议将数据拆成整数和小数并分开存储。</p>
 </div>
-<ol start="7">
-<li>
-<p>【强制】如果存储的字符串长度几乎相等，使用 char 定长字符串类型。</p>
-</li>
-<li>
-<p>【强制】varchar 是可变长字符串，不预先分配存储空间，长度不要超过 5000，如果存储长度大于此值，定义字段类型为 text，独立出来一张表，用主键来对应，避免影响其它字段索引效率。</p>
-</li>
-<li>
-<p>【强制】表必备三字段：id, gmt_create, gmt_modified。</p>
-</li>
-</ol>
+<p>7.【强制】如果存储的字符串长度几乎相等，使用 char 定长字符串类型。</p>
+<p>8.【强制】varchar 是可变长字符串，不预先分配存储空间，长度不要超过 5000，如果存储长度大于此值，定义字段类型为 text，独立出来一张表，用主键来对应，避免影响其它字段索引效率。</p>
+<p>9.【强制】表必备三字段：id, gmt_create, gmt_modified。</p>
 <div class="hint-container info">
 <p class="hint-container-title">说明</p>
 <p>其中: id 必为主键，类型为 bigint unsigned、单表时自增、步长为 1。gmt_create, gmt_modified的类型均为 datetime 类型，前者现在时表示主动式创建，后者过去分词表示被动式更新。</p>
 </div>
-<ol start="10">
-<li>【推荐】表的命名最好是遵循“业务名称_表的作用”。</li>
-</ol>
+<p>10.【推荐】表的命名最好是遵循“业务名称_表的作用”。</p>
 <div class="hint-container note">
 <p class="hint-container-title">正例</p>
 <p>alipay_task / force_project / trade_config</p>
 </div>
-<ol start="11">
-<li>
-<p>【推荐】库名与应用名称尽量一致。</p>
-</li>
-<li>
-<p>【推荐】如果修改字段含义或对字段表示的状态追加时，需要及时更新字段注释。</p>
-</li>
-<li>
-<p>【推荐】字段允许适当冗余，以提高查询性能，但必须考虑数据一致。冗余字段应遵循：</p>
-</li>
-</ol>
+<p>11.【推荐】库名与应用名称尽量一致。</p>
+<p>12.【推荐】如果修改字段含义或对字段表示的状态追加时，需要及时更新字段注释。</p>
+<p>13.【推荐】字段允许适当冗余，以提高查询性能，但必须考虑数据一致。冗余字段应遵循：</p>
 <div class="hint-container info">
 <p class="hint-container-title">说明</p>
 <ul>
@@ -2305,16 +2273,12 @@ eventSource<span class="token punctuation">.</span><span class="token function">
 <p class="hint-container-title">注</p>
 <p>正例：各业务线经常冗余存储商品名称，避免查询时需要调用 IC 服务获取。</p>
 </div>
-<ol start="14">
-<li>【推荐】单表行数超过 500 万行或者单表容量超过 2GB，才推荐进行分库分表。</li>
-</ol>
+<p>14.【推荐】单表行数超过 500 万行或者单表容量超过 2GB，才推荐进行分库分表。</p>
 <div class="hint-container info">
 <p class="hint-container-title">说明</p>
 <p>如果预计三年后的数据量根本达不到这个级别，请不要在创建表时就分库分表。</p>
 </div>
-<ol start="15">
-<li>【参考】合适的字符存储长度，不但节约数据库表空间、节约索引存储，更重要的是提升检索速度。</li>
-</ol>
+<p>15.【参考】合适的字符存储长度，不但节约数据库表空间、节约索引存储，更重要的是提升检索速度。</p>
 <div class="hint-container note">
 <p class="hint-container-title">注</p>
 <p>正例：无符号值可以避免误存负数，且扩大了表示范围。</p>
@@ -2743,7 +2707,7 @@ Go官方代码审查</summary>
     <title type="text">Go语言MySQL测试</title>
     <id>http://blog.cjhe.top/language/go/test/mysql-test.html</id>
     <link href="http://blog.cjhe.top/language/go/test/mysql-test.html"/>
-    <updated>2025-02-27T15:41:25.000Z</updated>
+    <updated>2025-03-01T09:36:45.000Z</updated>
     <summary type="text">Go项目中经常使用MySQL作为存储，一般写测试会建立真实连接进行测试，但带来的问题有很多：
 
 依赖测试数据，如果数据库中某个数据变更导致测试用例失败
@@ -6127,7 +6091,7 @@ Go要求包之间不能存在循环依赖，这样包的依赖关系便形成了
     <title type="text">MQTT协议</title>
     <id>http://blog.cjhe.top/network/application-layer/MQTT.html</id>
     <link href="http://blog.cjhe.top/network/application-layer/MQTT.html"/>
-    <updated>2024-05-05T15:52:14.000Z</updated>
+    <updated>2025-03-01T09:36:45.000Z</updated>
     <summary type="text">MQTT(Mesage Queuing Telemetry Transport，消息队列遥测传输协议)，是一种基于发布/订阅模式的轻量级通讯协议，该协议构建于TCP/IP协议上。
 
 发展历史
@@ -6250,7 +6214,7 @@ Go要求包之间不能存在循环依赖，这样包的依赖关系便形成了
 <li>QoS-2(只有一次)：确保消息到达且没有重复。</li>
 </ul>
 <figure><figcaption>MQTT-QoS</figcaption></figure>
-<p>http://www.steves-internet-guide.com/mqtt-publish-subscribe/</p>
+<p><a href="http://www.steves-internet-guide.com/mqtt-publish-subscribe" target="_blank" rel="noopener noreferrer">参考链接</a></p>
 <ul>
 <li>当客户端 A 的发布 QoS 大于客户端 B 的订阅 QoS 时，服务端向客户端 B 转发消息时使用的 QoS 为客户端 B 的订阅 QoS。</li>
 <li>当客户端 A 的发布 QoS 小于客户端 B 的订阅 QoS 时，服务端向客户端 B 转发消息时使用的 QoS 为客户端 A 的发布 QoS</li>
