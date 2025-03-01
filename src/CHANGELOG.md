@@ -1,27 +1,10 @@
 ---
 title: 变更日志
 icon: clock
-date: 2025-01-02
+date: 2025-03-01
 ---
 
 <!-- more -->
-
-
-<a name="v0.12.9"></a>
-## [v0.12.9](https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.12.8...v0.12.9) (2025-01-02)
-
-### :sparkles:Features
-
-* **devops:** 增加如何在Docker部署的数据库初始化数据
-
-
-<a name="v0.12.8"></a>
-## [v0.12.8](https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.12.7...v0.12.8) (2024-12-10)
-
-### :sparkles:Features
-
-* **devops:** Docker修改默认存储位置
-* **open-source-project:** 通用的后台管理系统
 
 
 <a name="v0.12.7"></a>
@@ -232,11 +215,11 @@ date: 2025-01-02
 
 * **devops:** 增加redis监控
 * **devops:** 增加mysql监控
+* **devops:** 增加node-exporter k8s部署
 * **devops:** 增加记录docker执行报错问题
 * **devops:** 增加helm-dashboard简介
 * **devops:** 增加kube-state-metrics k8s 部署
 * **devops:** 增加cadvisor k8s部署
-* **devops:** 增加node-exporter k8s部署
 * **devops:** 增加Prometheus k8s部署
 * **go-language:** 增加Go项目脚手架
 * **network:** 增加HTTP协议介绍
@@ -511,12 +494,12 @@ date: 2025-01-02
 ### :sparkles:Features
 
 * 增加CHANGE LOG
-* 增加版本规范
-* 项目文档规范
 * add project manager
 * add README.md
+* 增加版本规范
+* 项目文档规范
 * **design-pattern:** add some design pattern
-* **project-manager:** add api standard
-* **project-manager:** add api standard
 * **project-manager:** add commit standard
+* **project-manager:** add api standard
+* **project-manager:** add api standard
 
