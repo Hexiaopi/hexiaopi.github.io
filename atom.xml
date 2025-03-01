@@ -3,7 +3,7 @@
   <id>http://blog.cjhe.top/</id>
   <title>个人博客</title>
   <subtitle>何小进童鞋的个人博客</subtitle>
-  <updated>2025-03-01T09:37:44.498Z</updated>
+  <updated>2025-03-01T09:39:33.692Z</updated>
   <generator>@vuepress/plugin-feed</generator>
   <link rel="self" href="http://blog.cjhe.top/atom.xml"/>
   <link rel="alternate" href="http://blog.cjhe.top/"/>
@@ -7074,36 +7074,22 @@ Cgo 不是 Go。</p>
     <title type="text">变更日志</title>
     <id>http://blog.cjhe.top/CHANGELOG.html</id>
     <link href="http://blog.cjhe.top/CHANGELOG.html"/>
-    <updated>2025-01-02T12:40:03.000Z</updated>
-    <summary type="text">v0.12.9 (2025-01-02)
+    <updated>2025-03-01T09:38:35.000Z</updated>
+    <summary type="text">v0.12.7 (2024-12-03)
 ✨Features
 
-devops: 增加如何在Docker部署的数据库初始化数据
+database: 增加minio集群docker部署
 
 
-v0.12.8 (2024-12-10)
-✨Features
+v0.12.6 (2024-12-03)
+🐛Bug Fixes
 
-devops: Docker修改默认存储位置
-open-source-project: 通用的后台管理系统
-
-
-v0.12.7 (2024-12-03)
-✨Fe...</summary>
+修复一些问题
+langauge: 修改sync.Once增加注意事项
+language: 修改go slice注意事项
+language: 修复一些问题
+lang...</summary>
     <content type="html"><![CDATA[<!-- more -->
-<p><a name="v0.12.9"></a></p>
-<h2><a class="header-anchor" href="#v0-12-9-2025-01-02"><span></span></a><a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.12.8...v0.12.9" target="_blank" rel="noopener noreferrer">v0.12.9</a> (2025-01-02)</h2>
-<h3>✨Features</h3>
-<ul>
-<li><strong>devops:</strong> 增加如何在Docker部署的数据库初始化数据</li>
-</ul>
-<p><a name="v0.12.8"></a></p>
-<h2><a class="header-anchor" href="#v0-12-8-2024-12-10"><span></span></a><a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.12.7...v0.12.8" target="_blank" rel="noopener noreferrer">v0.12.8</a> (2024-12-10)</h2>
-<h3>✨Features</h3>
-<ul>
-<li><strong>devops:</strong> Docker修改默认存储位置</li>
-<li><strong>open-source-project:</strong> 通用的后台管理系统</li>
-</ul>
 <p><a name="v0.12.7"></a></p>
 <h2><a class="header-anchor" href="#v0-12-7-2024-12-03"><span></span></a><a href="https://github.com/Hexiaopi/hexiaopi.github.io/compare/v0.12.6...v0.12.7" target="_blank" rel="noopener noreferrer">v0.12.7</a> (2024-12-03)</h2>
 <h3>✨Features</h3>
@@ -7287,11 +7273,11 @@ v0.12.7 (2024-12-03)
 <ul>
 <li><strong>devops:</strong> 增加redis监控</li>
 <li><strong>devops:</strong> 增加mysql监控</li>
+<li><strong>devops:</strong> 增加node-exporter k8s部署</li>
 <li><strong>devops:</strong> 增加记录docker执行报错问题</li>
 <li><strong>devops:</strong> 增加helm-dashboard简介</li>
 <li><strong>devops:</strong> 增加kube-state-metrics k8s 部署</li>
 <li><strong>devops:</strong> 增加cadvisor k8s部署</li>
-<li><strong>devops:</strong> 增加node-exporter k8s部署</li>
 <li><strong>devops:</strong> 增加Prometheus k8s部署</li>
 <li><strong>go-language:</strong> 增加Go项目脚手架</li>
 <li><strong>network:</strong> 增加HTTP协议介绍</li>
@@ -7528,17 +7514,17 @@ v0.12.7 (2024-12-03)
 <h3>✨Features</h3>
 <ul>
 <li>增加CHANGE LOG</li>
-<li>增加版本规范</li>
-<li>项目文档规范</li>
 <li>add project manager</li>
 <li>add README.md</li>
+<li>增加版本规范</li>
+<li>项目文档规范</li>
 <li><strong>design-pattern:</strong> add some design pattern</li>
-<li><strong>project-manager:</strong> add api standard</li>
-<li><strong>project-manager:</strong> add api standard</li>
 <li><strong>project-manager:</strong> add commit standard</li>
+<li><strong>project-manager:</strong> add api standard</li>
+<li><strong>project-manager:</strong> add api standard</li>
 </ul>
 ]]></content>
-    <published>2025-01-02T00:00:00.000Z</published>
+    <published>2025-03-01T00:00:00.000Z</published>
   </entry>
   <entry>
     <title type="text">工厂模式的比较</title>
