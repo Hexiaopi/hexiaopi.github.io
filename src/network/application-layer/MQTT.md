@@ -130,7 +130,7 @@ Broker通过某种**过滤规则**将Publisher的消息发送给Subscriber，该
 
 ![MQTT-QoS](./images/MQTT-QoS.png)
 
-http://www.steves-internet-guide.com/mqtt-publish-subscribe/
+[参考链接](http://www.steves-internet-guide.com/mqtt-publish-subscribe)
 
 - 当客户端 A 的发布 QoS 大于客户端 B 的订阅 QoS 时，服务端向客户端 B 转发消息时使用的 QoS 为客户端 B 的订阅 QoS。
 - 当客户端 A 的发布 QoS 小于客户端 B 的订阅 QoS 时，服务端向客户端 B 转发消息时使用的 QoS 为客户端 A 的发布 QoS
@@ -451,11 +451,11 @@ CONNECT报文的可变报头按下列次数包含四个字段：协议名、协�
 
 ## 开源MQTT broker
 
-https://github.com/mqtt/mqtt.org/wiki/servers
+[参考链接](https://github.com/mqtt/mqtt.org/wiki/servers)
 
 |          |          Eclipse Mosquitto           |                             EMQX                             |              Mosca               |                           VerneMQ                            |                      ejabberd                       |                emitter                |
 | :------: | :----------------------------------: | :----------------------------------------------------------: | :------------------------------: | :----------------------------------------------------------: | :-------------------------------------------------: | :-----------------------------------: |
-|   地址   | https://github.com/eclipse/mosquitto |                 https://github.com/emqx/emqx                 | https://github.com/moscajs/mosca |              https://github.com/vernemq/vernemq              |       https://github.com/processone/ejabberd        | https://github.com/emitter-io/emitter |
+|   地址   | `https://github.com/eclipse/mosquitto` |                 `https://github.com/emqx/emqx`                 | `https://github.com/moscajs/mosca` |              `https://github.com/vernemq/vernemq`              |       `https://github.com/processone/ejabberd`        | `https://github.com/emitter-io/emitter` |
 | 开源协议 |      Eclipse Public License 2.0      |                           APL-2.0                            |                无                |                           APL-2.0                            |                       GPL-2.0                       |               AGPL-3.0                |
 |   Star   |                 6.2k                 |                             9.6k                             |               3.1k               |                             2.7k                             |                        5.2k                         |                 3.3k                  |
 | 更新频率 |               几个月前               |                             经常                             |        2020年1月不再更新         |                             经常                             |                        经常                         |               几个月前                |

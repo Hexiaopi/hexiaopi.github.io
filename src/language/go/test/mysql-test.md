@@ -27,7 +27,6 @@ go get github.com/DATA-DOG/go-sqlmock
 
 ### 业务SQL函数
 
-
 ```go{24,27}
 package main
 
