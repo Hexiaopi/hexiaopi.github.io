@@ -71,7 +71,7 @@ Range参数传递的是一个函数，该函数的返回值是一个bool类型�
 ```go
 	// 查询，不存在的情况下存储默认值
 	two, loaded := m.LoadOrStore("2", "two")
-	fmt.Println("three:", two, "loaded:", loaded)
+	fmt.Println("two:", two, "loaded:", loaded)
 	three, loaded := m.LoadOrStore("3", "three")
 	fmt.Println("three:", three, "loaded:", loaded)
 ```
@@ -123,10 +123,10 @@ type Map struct {
 
 其中：
 
-- **mu**：用于保护`dirty`的互斥锁。
-- **read**：只读的map，使用原子操作，因此可以无锁的并发访问，其底层则对应`readOnly`。
-- **dirty**：可写的map。
-- **misses**：从read读取miss次数。
+- `mu`：用于保护`dirty`的互斥锁。
+- `read`：只读的map，使用原子操作，因此可以无锁的并发访问，其底层则对应`readOnly`。
+- `dirty`：可写的map。
+- `misses`：从read读取miss次数。
 
 ```go
 type readOnly struct {
@@ -167,7 +167,7 @@ func (m *Map) Load(key any) (value any, ok bool) {
 我们看到，sync.Map的查询过程如下：
 
 1. 首先尝试从`read`读取。
-2. 加锁，再次从`read`中二次检查。
+2. 找不到的情况下加锁，再次从`read`中二次检查。
 3. 如果`read`中没有找到，并且`dirty`中存在该key，则从`dirty`中读取。
 4. 如果`read`和`dirty`都没有找到，返回nil。
 

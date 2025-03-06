@@ -32,7 +32,7 @@ func main() {
 		fmt.Println(i, v) //获取索引和值
 	}
 	for i := range slice {
-		fmt.Println(i) //获取索引和值
+		fmt.Println(i, slice[i]) //获取索引和值
 	}
 }
 ```

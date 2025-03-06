@@ -16,9 +16,9 @@ category:
 
 sync.Cond提供三个函数：
 
-- Wait() // 使当前goroutine进入阻塞状态，等待其他goroutine唤醒
-- Signal() // 唤醒其中一个等待该条件变量的goroutine
-- Broadcase() // 唤醒所有等待该条件变量的goroutine
+- `Wait()`：使当前goroutine进入阻塞状态，等待其他goroutine唤醒
+- `Signal()`：唤醒其中一个等待该条件变量的goroutine
+- `Broadcase()`：唤醒所有等待该条件变量的goroutine
 
 这里先展示广播示例
 

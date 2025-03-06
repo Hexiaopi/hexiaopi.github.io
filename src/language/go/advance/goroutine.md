@@ -23,9 +23,9 @@ goroutine是由Go运行时管理的用户层轻量级线程，相比较操作系
 
 GPM模型中：
 
-- G代表`goroutine`，存储了`goroutine`的执行栈信息、`goroutine`状态及`goroutine`的任务函数等
-- P代表`processor`，逻辑处理器，所有的P都在程序启动时创建，P的数量决定了系统内最大可并行的G的数量，最多有`GOMAXPROCS`(可配置)个
-- M代表`thread`即用户态线程，M在绑定有效的P后，进入到一个调度循环：从各种队列、P的本地队列获取G，切换到G的执行栈上并执行G的函数，调用`goexit`做清理工作并回到M，如此反复。
+- `G`代表`goroutine`，存储了`goroutine`的执行栈信息、`goroutine`状态及`goroutine`的任务函数等
+- `P`代表`processor`，逻辑处理器，所有的P都在程序启动时创建，P的数量决定了系统内最大可并行的G的数量，最多有`GOMAXPROCS`(可配置)个
+- `M`代表`thread`即用户态线程，M在绑定有效的P后，进入到一个调度循环：从各种队列、P的本地队列获取G，切换到G的执行栈上并执行G的函数，调用`goexit`做清理工作并回到M，如此反复。
 
 此外还有：
 
