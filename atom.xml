@@ -3,7 +3,7 @@
   <id>http://blog.cjhe.top/</id>
   <title>个人博客</title>
   <subtitle>何小进童鞋的个人博客</subtitle>
-  <updated>2025-03-06T03:01:39.985Z</updated>
+  <updated>2025-03-06T08:00:09.479Z</updated>
   <generator>@vuepress/plugin-feed</generator>
   <link rel="self" href="http://blog.cjhe.top/atom.xml"/>
   <link rel="alternate" href="http://blog.cjhe.top/"/>
@@ -1167,14 +1167,14 @@ error occurred in goroutine 2
     <title type="text">sync.Cond底层原理</title>
     <id>http://blog.cjhe.top/language/go/advance/sync-cond.html</id>
     <link href="http://blog.cjhe.top/language/go/advance/sync-cond.html"/>
-    <updated>2025-02-27T15:41:25.000Z</updated>
+    <updated>2025-03-06T07:59:08.000Z</updated>
     <summary type="text">Go语言sync.Cond是一个条件变量。顾名思义，当条件不满足时，通过条件变量进入睡眠状态。当条件满足时，通过条件变量唤醒等待的线程。sync.Cond用于多线程中的同步机制。
 
 使用示例
 sync.Cond提供三个函数：
 
-Wait() // 使当前goroutine进入阻塞状态，等待其他goroutine唤醒
-Signal() // 唤醒其中一个...</summary>
+Wait()：使当前goroutine进入阻塞状态，等待其他goroutine唤醒
+Signal()：唤醒其中一个等待该条件变...</summary>
     <content type="html"><![CDATA[<!-- more -->
 <blockquote>
 <p>Go语言<code>sync.Cond</code>是一个条件变量。顾名思义，当条件不满足时，通过条件变量进入睡眠状态。当条件满足时，通过条件变量唤醒等待的线程。<code>sync.Cond</code>用于多线程中的同步机制。</p>
@@ -1182,9 +1182,9 @@ Signal() // 唤醒其中一个...</summary>
 <h2>使用示例</h2>
 <p>sync.Cond提供三个函数：</p>
 <ul>
-<li>Wait() // 使当前goroutine进入阻塞状态，等待其他goroutine唤醒</li>
-<li>Signal() // 唤醒其中一个等待该条件变量的goroutine</li>
-<li>Broadcase() // 唤醒所有等待该条件变量的goroutine</li>
+<li><code>Wait()</code>：使当前goroutine进入阻塞状态，等待其他goroutine唤醒</li>
+<li><code>Signal()</code>：唤醒其中一个等待该条件变量的goroutine</li>
+<li><code>Broadcase()</code>：唤醒所有等待该条件变量的goroutine</li>
 </ul>
 <p>这里先展示广播示例</p>
 <div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> cond
@@ -1339,7 +1339,7 @@ c<span class="token punctuation">.</span>L<span class="token punctuation">.</spa
     <title type="text">sync.Once底层原理</title>
     <id>http://blog.cjhe.top/language/go/advance/sync-once.html</id>
     <link href="http://blog.cjhe.top/language/go/advance/sync-once.html"/>
-    <updated>2025-02-27T15:41:25.000Z</updated>
+    <updated>2025-03-06T07:59:08.000Z</updated>
     <summary type="text">Go语言sync.Once可以保证某个函数只执行一次，常用于单例模式。在本文中，我们将深入探讨sync.Once的底层实现原理，以便更好地理解它的并发安全特性。
 
 使用方式
@@ -1386,8 +1386,8 @@ sync.Once通过Do方法实现了只执行一次的功能。在第一次调用Do�
 <span class="token punctuation">}</span>
 </code></pre></div><p>sync.Once的底层实现非常简单，核心代码只有短短的十几行。</p>
 <ul>
-<li>done: 原子操作，用于记录函数是否已经执行过。</li>
-<li>m: 互斥锁，用于保护函数的执行。</li>
+<li><code>done</code>: 原子操作，用于记录函数是否已经执行过。</li>
+<li><code>m</code>: 互斥锁，用于保护函数的执行。</li>
 </ul>
 <div class="hint-container important">
 <p class="hint-container-title">重要</p>
@@ -2988,7 +2988,7 @@ nacos-grafana...</summary>
     <title type="text">sync.Map底层原理</title>
     <id>http://blog.cjhe.top/language/go/advance/sync-map.html</id>
     <link href="http://blog.cjhe.top/language/go/advance/sync-map.html"/>
-    <updated>2025-02-27T15:41:25.000Z</updated>
+    <updated>2025-03-06T07:59:08.000Z</updated>
     <summary type="text">Go 语言原生的map是非并发安全的，在并发场景下，使用map可能会导致数据竞争和panic。为了解决这个问题，Go 语言提供了sync.Map，它是一个并发安全的map。在本文中，我们将深入探讨sync.Map的底层实现原理，以便更好地理解它的并发安全特性。
 
 基本用法
@@ -3037,7 +3037,7 @@ sync.Map提供了丰富的API，用于对map的查询、存储、遍历、删除
 </code></pre></div><h3>查询并设置默认值</h3>
 <div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code>	<span class="token comment">// 查询，不存在的情况下存储默认值</span>
 	two<span class="token punctuation">,</span> loaded <span class="token operator">:=</span> m<span class="token punctuation">.</span><span class="token function">LoadOrStore</span><span class="token punctuation">(</span><span class="token string">"2"</span><span class="token punctuation">,</span> <span class="token string">"two"</span><span class="token punctuation">)</span>
-	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"three:"</span><span class="token punctuation">,</span> two<span class="token punctuation">,</span> <span class="token string">"loaded:"</span><span class="token punctuation">,</span> loaded<span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"two:"</span><span class="token punctuation">,</span> two<span class="token punctuation">,</span> <span class="token string">"loaded:"</span><span class="token punctuation">,</span> loaded<span class="token punctuation">)</span>
 	three<span class="token punctuation">,</span> loaded <span class="token operator">:=</span> m<span class="token punctuation">.</span><span class="token function">LoadOrStore</span><span class="token punctuation">(</span><span class="token string">"3"</span><span class="token punctuation">,</span> <span class="token string">"three"</span><span class="token punctuation">)</span>
 	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"three:"</span><span class="token punctuation">,</span> three<span class="token punctuation">,</span> <span class="token string">"loaded:"</span><span class="token punctuation">,</span> loaded<span class="token punctuation">)</span>
 </code></pre></div><h3>查询并删除</h3>
@@ -3069,10 +3069,10 @@ sync.Map提供了丰富的API，用于对map的查询、存储、遍历、删除
 <span class="token punctuation">}</span>
 </code></pre></div><p>其中：</p>
 <ul>
-<li><strong>mu</strong>：用于保护<code>dirty</code>的互斥锁。</li>
-<li><strong>read</strong>：只读的map，使用原子操作，因此可以无锁的并发访问，其底层则对应<code>readOnly</code>。</li>
-<li><strong>dirty</strong>：可写的map。</li>
-<li><strong>misses</strong>：从read读取miss次数。</li>
+<li><code>mu</code>：用于保护<code>dirty</code>的互斥锁。</li>
+<li><code>read</code>：只读的map，使用原子操作，因此可以无锁的并发访问，其底层则对应<code>readOnly</code>。</li>
+<li><code>dirty</code>：可写的map。</li>
+<li><code>misses</code>：从read读取miss次数。</li>
 </ul>
 <div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">type</span> readOnly <span class="token keyword">struct</span> <span class="token punctuation">{</span>
 	m       <span class="token keyword">map</span><span class="token punctuation">[</span>any<span class="token punctuation">]</span><span class="token operator">*</span>entry
@@ -3105,7 +3105,7 @@ sync.Map提供了丰富的API，用于对map的查询、存储、遍历、删除
 </code></pre></div><p>我们看到，sync.Map的查询过程如下：</p>
 <ol>
 <li>首先尝试从<code>read</code>读取。</li>
-<li>加锁，再次从<code>read</code>中二次检查。</li>
+<li>找不到的情况下加锁，再次从<code>read</code>中二次检查。</li>
 <li>如果<code>read</code>中没有找到，并且<code>dirty</code>中存在该key，则从<code>dirty</code>中读取。</li>
 <li>如果<code>read</code>和<code>dirty</code>都没有找到，返回nil。</li>
 </ol>
