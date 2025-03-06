@@ -143,19 +143,19 @@ type Group struct {
 
 其中：
 
-- cancel：用于通知其他协程任务已经失败
-- wg: 用于等待所有协程执行完毕
-- sem: 用于控制并发协程的数量
-- errOnce: 用于保证只设置一次错误
-- err: 用于存储错误信息
+- `cancel`：用于通知其他协程任务已经失败
+- `wg`: 用于等待所有协程执行完毕
+- `sem`: 用于控制并发协程的数量
+- `errOnce`: 用于保证只设置一次错误
+- `err`: 用于存储错误信息
 
 errgroup的核心方法：
 
-- Go：用于启动一个协程执行任务
-- Wait：用于等待所有协程执行完毕，并返回第一个错误
-- WithContext：用于启动一个协程执行任务，并在协程执行完毕时设置上下文的错误信息
-- SetLimit: 设置最大并发协程数量
-- TryGo: 根据设置最大的并发协程数，判断能否启动一个协程执行任务
+- `Go`：用于启动一个协程执行任务
+- `Wait`：用于等待所有协程执行完毕，并返回第一个错误
+- `WithContext`：用于启动一个协程执行任务，并在协程执行完毕时设置上下文的错误信息
+- `SetLimit`: 设置最大并发协程数量
+- `TryGo`: 根据设置最大的并发协程数，判断能否启动一个协程执行任务
 
 ## 源码分析
 
@@ -183,7 +183,20 @@ func (g *Group) Go(f func() error) {
 }
 ```
 
-g.sem用于控制最大并发数，如果可以从sem channel获取到token，则可以执行。否则，等待其他协程执行完毕。并使用waitgroup记录本次启动的协程个数，协程退出时使用`done`方法减去本次协程数量。errOnce用于保证只设置一次错误。并且如果cancel不为空，通知其他协程任务已经失败。
+g.sem用于控制最大并发数，如果可以往`sem channel`写入`token`，表示还未超过最大并发数，则可以执行。否则，等待其他协程执行完毕。并使用waitgroup记录本次启动的协程个数，协程退出时使用`done()`方法会从`sem channel`消费一个`token`，表示减去本次协程占用。errOnce用于保证只设置一次错误。并且如果cancel不为空，通知其他协程任务已经失败。
+
+### done方法
+
+```go
+func (g *Group) done() {
+	if g.sem != nil {
+		<-g.sem
+	}
+	g.wg.Done()
+}
+```
+
+我们看到这里判断了sem是否为空，如果不为空，从`sem channel`消费一个`token`。
 
 ### Wait方法
 
@@ -234,7 +247,7 @@ func (g *Group) TryGo(f func() error) bool {
 	if g.sem != nil {
 		select {
 		case g.sem <- token{}:
-			// Note: this allows barging iff channels in general allow barging.
+			// Note: this allows barging if channels in general allow barging.
 		default:
 			return false
 		}
@@ -258,3 +271,7 @@ func (g *Group) TryGo(f func() error) bool {
 ```
 
 `TryGo`方法和`Go`方法类似，但是在获取sem channel的token失败时，直接返回false。而`Go`方法会一直等待sem channel的token。
+
+## 技能get
+
+> errgroup的并发控制方式和我们常见的思维还不一样，常见的是从channel里取token，能获取到token就执行任务。而errgroup是通过往channel里写入token，能写入token就执行任务。
