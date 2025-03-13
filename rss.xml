@@ -6,8 +6,8 @@
     <link>http://blog.cjhe.top/</link>
     <description>何小进童鞋的个人博客</description>
     <language>zh-CN</language>
-    <pubDate>Thu, 06 Mar 2025 08:00:09 GMT</pubDate>
-    <lastBuildDate>Thu, 06 Mar 2025 08:00:09 GMT</lastBuildDate>
+    <pubDate>Thu, 13 Mar 2025 04:13:08 GMT</pubDate>
+    <lastBuildDate>Thu, 13 Mar 2025 04:13:08 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>devops</category>
@@ -4565,8 +4565,7 @@ Go语言原本
 Go语言编程之旅
 Go程序员面试
 Go的一些书籍地鼠文档
-腾讯云开发者社区Go教程腾讯云
-go语言190题</description>
+腾讯云开发者社区Go教程腾讯云</description>
       <category>编程语言</category>
       <pubDate>Tue, 16 Apr 2024 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[<!-- more -->
@@ -4585,7 +4584,6 @@ go语言190题</description>
 <p>Go程序员面试<a href="https://golang.design/go-questions/" target="_blank" rel="noopener noreferrer"></a></p>
 <p>Go的一些书籍<a href="https://topgoer.cn/" target="_blank" rel="noopener noreferrer">地鼠文档</a></p>
 <p>腾讯云开发者社区Go教程<a href="https://cloud.tencent.com/developer/doc/1101" target="_blank" rel="noopener noreferrer">腾讯云</a></p>
-<h3>go语言190题</h3>
 ]]></content:encoded>
     </item>
     <item>

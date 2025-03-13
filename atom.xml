@@ -3,7 +3,7 @@
   <id>http://blog.cjhe.top/</id>
   <title>个人博客</title>
   <subtitle>何小进童鞋的个人博客</subtitle>
-  <updated>2025-03-06T08:00:09.479Z</updated>
+  <updated>2025-03-13T04:13:08.749Z</updated>
   <generator>@vuepress/plugin-feed</generator>
   <link rel="self" href="http://blog.cjhe.top/atom.xml"/>
   <link rel="alternate" href="http://blog.cjhe.top/"/>
@@ -4594,7 +4594,7 @@ Added `minio` successfully.
     <title type="text">Go语言书籍</title>
     <id>http://blog.cjhe.top/language/go/recommend/book.html</id>
     <link href="http://blog.cjhe.top/language/go/recommend/book.html"/>
-    <updated>2025-02-27T15:41:25.000Z</updated>
+    <updated>2025-03-13T04:12:11.000Z</updated>
     <summary type="text">Go书籍
 Go高级编程
 Go语言设计与实现
@@ -4609,8 +4609,7 @@ Go语言原本
 Go语言编程之旅
 Go程序员面试
 Go的一些书籍地鼠文档
-腾讯云开发者社区Go教程腾讯云
-go语言190题</summary>
+腾讯云开发者社区Go教程腾讯云</summary>
     <content type="html"><![CDATA[<!-- more -->
 <h2>Go书籍</h2>
 <p>Go高级编程<a href="https://books.studygolang.com/advanced-go-programming-book/" target="_blank" rel="noopener noreferrer"></a></p>
@@ -4627,7 +4626,6 @@ go语言190题</summary>
 <p>Go程序员面试<a href="https://golang.design/go-questions/" target="_blank" rel="noopener noreferrer"></a></p>
 <p>Go的一些书籍<a href="https://topgoer.cn/" target="_blank" rel="noopener noreferrer">地鼠文档</a></p>
 <p>腾讯云开发者社区Go教程<a href="https://cloud.tencent.com/developer/doc/1101" target="_blank" rel="noopener noreferrer">腾讯云</a></p>
-<h3>go语言190题</h3>
 ]]></content>
     <category term="编程语言"/>
     <published>2024-04-16T00:00:00.000Z</published>
