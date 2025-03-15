@@ -3,7 +3,7 @@
   <id>http://blog.cjhe.top/</id>
   <title>个人博客</title>
   <subtitle>何小进童鞋的个人博客</subtitle>
-  <updated>2025-03-13T04:13:08.749Z</updated>
+  <updated>2025-03-15T07:55:49.174Z</updated>
   <generator>@vuepress/plugin-feed</generator>
   <link rel="self" href="http://blog.cjhe.top/atom.xml"/>
   <link rel="alternate" href="http://blog.cjhe.top/"/>
@@ -7649,7 +7649,7 @@ time</summary>
     <title type="text">设计原则</title>
     <id>http://blog.cjhe.top/design-pattern/principle.html</id>
     <link href="http://blog.cjhe.top/design-pattern/principle.html"/>
-    <updated>2025-02-27T15:41:25.000Z</updated>
+    <updated>2025-03-15T07:54:51.000Z</updated>
     <summary type="text">设计原则是心法，对于构建高质量的软件系统提供指导和约束，它具有以下作用：
 
 提高代码质量：设计原则强调代码的清晰性、可读性和可维护性。通过遵循设计原则，可以编写出更结构化、更模块化的代码，减少代码重复和冗余。
