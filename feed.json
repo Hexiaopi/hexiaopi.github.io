@@ -6,6 +6,19 @@
   "description": "何小进童鞋的个人博客",
   "items": [
     {
+      "title": "如何查看进程工作目录",
+      "url": "http://blog.cjhe.top/devops/linux/process-work-directory.html",
+      "id": "http://blog.cjhe.top/devops/linux/process-work-directory.html",
+      "summary": "工作中我们经常会遇到需要查看进程工作目录的情况，例如：停止进程修改配置并重新启动。 但由于很多开发随意部署自己的应用，或者各种不规范原因，导致很难找到进程工作目录。 常见的办法是通过搜索命令，但如果不知道应用名称呢？ 本文采用通过进程号的方式来查找进程工作目录。",
+      "content_html": "<p>工作中我们经常会遇到需要查看进程工作目录的情况，例如：停止进程修改配置并重新启动。</p>\n<p>但由于很多开发随意部署自己的应用，或者各种不规范原因，导致很难找到进程工作目录。</p>\n<p>常见的办法是通过搜索命令，但如果不知道应用名称呢？</p>\n<p>本文采用通过进程号的方式来查找进程工作目录。</p>\n<!-- more -->\n<h2>查看进程工作目录</h2>\n<h3>首先获取进程号</h3>\n<p>先通过<code>ps</code>命令查看进程信息，例如：</p>\n<div class=\"language-bash\" data-ext=\"sh\" data-title=\"sh\"><pre class=\"language-bash\"><code><span class=\"token function\">ps</span> <span class=\"token parameter variable\">-ef</span> <span class=\"token operator\">|</span> <span class=\"token function\">grep</span> gateway.jar\n</code></pre></div><p>通过ps命令我们可以拿到进程号，例如：</p>\n<div class=\"language-bash\" data-ext=\"sh\" data-title=\"sh\"><pre class=\"language-bash\"><code>root     <span class=\"token number\">29716</span>     <span class=\"token number\">1</span>  <span class=\"token number\">0</span>  <span class=\"token number\">2024</span> ?        <span class=\"token number\">12</span>:12:39 <span class=\"token function\">java</span> <span class=\"token parameter variable\">-jar</span> gateway.jar\n</code></pre></div><p>对于不知道进程名称的进程，我们可以通过其他方式获取进程号，例如通过监听的端口号获取进程号：</p>\n<div class=\"language-bash\" data-ext=\"sh\" data-title=\"sh\"><pre class=\"language-bash\"><code><span class=\"token function\">netstat</span> <span class=\"token parameter variable\">-tunlp</span> <span class=\"token operator\">|</span> <span class=\"token function\">grep</span> <span class=\"token number\">8080</span>\n</code></pre></div><h3>通过进程号查看进程工作目录</h3>\n<p>通过进程号我们可以通过<code>pwdx</code>命令查看进程工作目录，例如：</p>\n<div class=\"language-bash\" data-ext=\"sh\" data-title=\"sh\"><pre class=\"language-bash\"><code>pwdx <span class=\"token number\">29716</span>\n</code></pre></div><p>输出结果如下：</p>\n<div class=\"language-bash\" data-ext=\"sh\" data-title=\"sh\"><pre class=\"language-bash\"><code><span class=\"token number\">29716</span> /home/admin/gateway\n</code></pre></div><p>其中：<code>/home/admin/gateway</code>就是进程工作目录。</p>\n<p><code>pwdx</code>命令本质上是调用<code>/proc</code>目录下的文件，所以我们也可以直接查看<code>/proc</code>目录下的文件，例如：</p>\n<div class=\"language-bash\" data-ext=\"sh\" data-title=\"sh\"><pre class=\"language-bash\"><code><span class=\"token function\">ls</span> <span class=\"token parameter variable\">-l</span> /proc/29716/cwd\n</code></pre></div><p>输出结果如下：</p>\n<div class=\"language-bash\" data-ext=\"sh\" data-title=\"sh\"><pre class=\"language-bash\"><code>lrwxrwxrwx <span class=\"token number\">1</span> root root <span class=\"token number\">0</span> <span class=\"token number\">2025</span>-03-20 <span class=\"token number\">12</span>:12 /proc/29716/cwd -<span class=\"token operator\">&gt;</span> /home/admin/gateway\n</code></pre></div><h2>docker环境查看进程目录</h2>\n<p>对于直接启动的docker命令，我们只能寄希望通过挂载参数来查看对应的配置文件。</p>\n<p>对于<code>docker-compose</code>启动的容器，我们可以先找到对应的<code>docker-compose.yml</code>文件，阅读它如何组织docker容器。</p>\n<p>我们可以通过<code>docker inspect</code>命令来查看<code>docker-compose</code>文件</p>\n<div class=\"language-bash\" data-ext=\"sh\" data-title=\"sh\"><pre class=\"language-bash\"><code><span class=\"token function\">docker</span> inspect docker-api-1\n</code></pre></div><p>找到Config下Labels参数</p>\n<div class=\"language-text\" data-ext=\"text\" data-title=\"text\"><pre class=\"language-text\"><code>...\n\"Labels\": {\n                \"com.docker.compose.config-hash\": \"360be945927beb9c80c9b34ecc2262843a52da06cbfa2293334dbc3762e8cce2\",\n                \"com.docker.compose.container-number\": \"1\",\n                \"com.docker.compose.depends_on\": \"db:service_started:false,redis:service_started:false\",\n                \"com.docker.compose.image\": \"sha256:257c2273f5fda80c2861eb358caf91ecd995de3bb97aa07aa53406695d36e756\",\n                \"com.docker.compose.oneoff\": \"False\",\n                \"com.docker.compose.project\": \"docker\",\n                \"com.docker.compose.project.config_files\": \"D:\\\\code\\\\github\\\\dify\\\\docker\\\\docker-compose.yaml\",\n                \"com.docker.compose.project.working_dir\": \"D:\\\\code\\\\github\\\\dify\\\\docker\",\n...\n</code></pre></div><p>通过<code>config_files</code>和<code>working_dir</code>我们可以找到对应的<code>docker-compose</code>文件和工作目录。</p>\n",
+      "date_published": "2025-03-20T00:00:00.000Z",
+      "date_modified": "2025-03-20T09:04:04.000Z",
+      "authors": [],
+      "tags": [
+        "devops"
+      ]
+    },
+    {
       "title": "linux",
       "url": "http://blog.cjhe.top/devops/linux/",
       "id": "http://blog.cjhe.top/devops/linux/",
@@ -1282,20 +1295,6 @@
       "authors": [],
       "tags": [
         "设计模式"
-      ]
-    },
-    {
-      "title": "分支规范",
-      "url": "http://blog.cjhe.top/project-standard/branch.html",
-      "id": "http://blog.cjhe.top/project-standard/branch.html",
-      "summary": "git-modelgit-model 提示 一个好的代码分支应该是怎样的❓",
-      "content_html": "<figure><img src=\"https://www.ruanyifeng.com/blogimg/asset/2015/bg2015122301.png\" alt=\"git-model\" tabindex=\"0\" loading=\"lazy\"><figcaption>git-model</figcaption></figure>\n<div class=\"hint-container tip\">\n<p class=\"hint-container-title\">提示</p>\n<p>一个好的代码分支应该是怎样的❓</p>\n</div>\n<!-- more -->\n<h2>分支模型</h2>\n<p>我们经常使用Git用于管理版本，但如果没有清晰的流程和规范，会导致难以协调和维护。\nVincent Driessen 为了解决这个问题，提出<a href=\"https://nvie.com/posts/a-successful-git-branching-model/\" target=\"_blank\" rel=\"noopener noreferrer\">A Successful Git Branching Model</a></p>\n<figure><figcaption>git-model</figcaption></figure>\n<h2>master分支</h2>\n<p>这个分支保持最近发布到生产环境的代码。</p>\n<div class=\"hint-container warning\">\n<p class=\"hint-container-title\">注意</p>\n<ul>\n<li>不能在这个分支直接修改</li>\n<li>生产环境运行的代码和该分支保持一致</li>\n<li>master分支每合并一个hotfix/release分支，都会打一个版本标签</li>\n</ul>\n</div>\n<h2>develop分支</h2>\n<p>这个分支是我们的主开发分支</p>\n<div class=\"hint-container warning\">\n<p class=\"hint-container-title\">注意</p>\n<p>feature/release/hotfix都需要合并到该分支</p>\n</div>\n<h2>feature分支</h2>\n<p>这个分支是用来开发新的功能，一旦开发完成，合并到develop分支并进入下一个release</p>\n<div class=\"hint-container warning\">\n<p class=\"hint-container-title\">注意</p>\n<ul>\n<li>分支命名建议：<code>feature/xxx-xxx</code></li>\n<li>合并到develop分支需要删除该分支，如果有bug，在对应的release分支进行修复</li>\n<li>feature分支合并到develop分支之前先pull一下develop分支，避免冲突</li>\n</ul>\n</div>\n<h2>release分支</h2>\n<p>当需要发布一个新的release的时候，基于develop分支创建一个release分支</p>\n<div class=\"hint-container tip\">\n<p class=\"hint-container-title\">提示</p>\n<ul>\n<li>分支名建议命名<code>release/xxx-xxx</code></li>\n<li>测试人员基于release分支进行测试，如有bug，也在该分支修复，再测试。</li>\n<li>完成release分支后需要合并到master和develop分支</li>\n</ul>\n</div>\n<h2>hotfix分支</h2>\n<p>当在现网发现bug时，需要创建一个hotfix分支进行修复，完成后合并到master和develop，hotfix的改动会进入下一个release</p>\n<div class=\"hint-container warning\">\n<p class=\"hint-container-title\">注意</p>\n<ul>\n<li>建议命名：<code>hotfix/xxx-xxx</code></li>\n<li>只能基于master分支创建hotfix分支</li>\n</ul>\n</div>\n",
-      "image": "https://www.ruanyifeng.com/blogimg/asset/2015/bg2015122301.png",
-      "date_published": "2020-02-11T00:00:00.000Z",
-      "date_modified": "2024-05-05T15:52:14.000Z",
-      "authors": [],
-      "tags": [
-        "项目规范"
       ]
     }
   ]
