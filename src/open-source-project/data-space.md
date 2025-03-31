@@ -13,6 +13,10 @@ category:
 
 <!-- more -->
 
+[![Go Report Card](https://goreportcard.com/badge/github.com/hexiaopi/data-space)](https://goreportcard.com/report/github.com/hexiaopi/data-space)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Go Version](https://img.shields.io/github/go-mod/go-version/hexiaopi/data-space)](https://github.com/Hexiaopi/data-space)
+
 ## 功能
 
 - 用户登录和日志
