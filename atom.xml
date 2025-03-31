@@ -3,7 +3,7 @@
   <id>http://blog.cjhe.top/</id>
   <title>个人博客</title>
   <subtitle>何小进童鞋的个人博客</subtitle>
-  <updated>2025-03-31T03:18:29.495Z</updated>
+  <updated>2025-03-31T05:56:32.985Z</updated>
   <generator>@vuepress/plugin-feed</generator>
   <link rel="self" href="http://blog.cjhe.top/atom.xml"/>
   <link rel="alternate" href="http://blog.cjhe.top/"/>
@@ -640,11 +640,14 @@ _main() {
     <title type="text">通用的后台管理系统</title>
     <id>http://blog.cjhe.top/open-source-project/data-space.html</id>
     <link href="http://blog.cjhe.top/open-source-project/data-space.html"/>
-    <updated>2025-03-31T03:17:32.000Z</updated>
+    <updated>2025-03-31T05:55:36.000Z</updated>
     <summary type="html"><![CDATA[<p>使用Go+Vue开发的通用后台管理系统，支持用户登录和日志，部门管理，用户管理，角色管理，菜单管理。</p>
 ]]></summary>
     <content type="html"><![CDATA[<p>使用Go+Vue开发的通用后台管理系统，支持用户登录和日志，部门管理，用户管理，角色管理，菜单管理。</p>
 <!-- more -->
+<p><a href="https://goreportcard.com/report/github.com/hexiaopi/data-space" target="_blank" rel="noopener noreferrer"><img src="https://goreportcard.com/badge/github.com/hexiaopi/data-space" alt="Go Report Card" loading="lazy"></a>
+<a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT" loading="lazy"></a>
+<a href="https://github.com/Hexiaopi/data-space" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/github/go-mod/go-version/hexiaopi/data-space" alt="Go Version" loading="lazy"></a></p>
 <h2>功能</h2>
 <ul>
 <li>用户登录和日志</li>
@@ -1605,11 +1608,14 @@ Wed May <span class="token number">29</span> 03:28:30 <span class="token number"
     <title type="text">redis 可视化管理工具</title>
     <id>http://blog.cjhe.top/open-source-project/rdm-toy.html</id>
     <link href="http://blog.cjhe.top/open-source-project/rdm-toy.html"/>
-    <updated>2025-03-31T03:17:32.000Z</updated>
+    <updated>2025-03-31T05:55:36.000Z</updated>
     <summary type="html"><![CDATA[<p>redis 可视化管理工具</p>
 ]]></summary>
     <content type="html"><![CDATA[<p>redis 可视化管理工具</p>
 <!-- more -->
+<p><a href="https://goreportcard.com/report/github.com/hexiaopi/rdm-toy" target="_blank" rel="noopener noreferrer"><img src="https://goreportcard.com/badge/github.com/hexiaopi/rdm-toy" alt="Go Report Card" loading="lazy"></a>
+<a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT" loading="lazy"></a>
+<a href="https://github.com/Hexiaopi/rdm-toy" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/github/go-mod/go-version/hexiaopi/rdm-toy" alt="Go Version" loading="lazy"></a></p>
 <h2>功能</h2>
 <ul>
 <li>redis 管理</li>
