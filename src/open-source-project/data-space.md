@@ -43,14 +43,13 @@ category:
 ### 前端
 
 ```bash
-  cd frontend
+  cd web
   npm install
 ```
 
 ### 后端
 
 ```bash
-  cd backend
   go mod tidy
 ```
 
@@ -59,14 +58,13 @@ category:
 ### 前端
 
 ```bash
-  cd frontend
+  cd web
   npm run dev
 ```
 
 ### 后端
 
 ```bash
-  cd backend
   go run cmd/root.go
 ```
 
