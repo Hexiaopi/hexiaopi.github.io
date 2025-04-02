@@ -2,7 +2,6 @@
 title: 查询过程
 date: 2022-10-22
 order: 1
-cover: /assets/images/MySQL-Read-Simple.png
 tag:
  - MySQL
 category:
@@ -36,7 +35,7 @@ mysql -h$ip -p$port -u$user -P
 
 我们使用`show processlist`命令可以查看当前建立的连接以及执行的动作
 
-```shell
+```text
 mysql> show processlist;
 +----+-----------------+-----------+------+---------+---------+------------------------+------------------+
 | Id | User            | Host      | db   | Command | Time    | State                  | Info             |

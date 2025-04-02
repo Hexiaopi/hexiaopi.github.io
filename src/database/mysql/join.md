@@ -90,4 +90,4 @@ LEFT OUTER JOIN Orders ON Customers.cust_id = Orders.cust_id
 
 ## 参考链接
 
-[bytebytego](https://blog.bytebytego.com/p/ep90-how-do-sql-joins-work)
+- [bytebytego](https://blog.bytebytego.com/p/ep90-how-do-sql-joins-work)

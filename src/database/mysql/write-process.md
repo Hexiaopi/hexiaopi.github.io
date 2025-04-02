@@ -1,7 +1,7 @@
 ---
 title: 写入过程
 date: 2022-10-22
-order: 1
+order: 2
 tag:
  - MySQL
 category:

@@ -26,7 +26,7 @@ category:
 
 ## 并发事务带来的问题
 
-当数据库上有多个事务同时执行的时候，就可能出现**脏读(dirty read)**、**不可重复读(non-repeatable read)**、**幻读(phantom read)**，为了解决这些问题，就有了隔离级别的概念
+当数据库上有多个事务同时执行的时候，就可能出现**脏读(dirty read)**、**不可重复读(non-repeatable read)**、**幻读(phantom read)**
 
 ### 脏读问题
 
@@ -45,6 +45,8 @@ category:
 > 幻读是指：一个事务多次执行同一条 SQL 语句，但结果集却不同，导致无法支撑后续的业务操作
 
 ![phantom-read](./images/phantom-read.png)
+
+为了解决这些问题，就有了隔离级别的概念。
 
 ## 事务的隔离级别
 

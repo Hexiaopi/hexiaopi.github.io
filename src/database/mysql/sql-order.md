@@ -1,5 +1,5 @@
 ---
-title: SQL查询顺序
+title: 查询顺序
 date: 2023-03-09
 order: 3
 tag:
@@ -69,5 +69,5 @@ category:
 
 ## 参考文献
 
-[SQL查询不是以select开始](https://jvns.ca/blog/2019/10/03/sql-queries-don-t-start-with-select/)
-[bytebytego](https://blog.bytebytego.com/p/ep50-visualizing-a-sql-query)
+- [SQL查询不是以select开始](https://jvns.ca/blog/2019/10/03/sql-queries-don-t-start-with-select/)
+- [bytebytego](https://blog.bytebytego.com/p/ep50-visualizing-a-sql-query)
