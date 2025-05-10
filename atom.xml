@@ -3,14 +3,14 @@
   <id>http://blog.cjhe.top/</id>
   <title>个人博客</title>
   <subtitle>何小进童鞋的个人博客</subtitle>
-  <updated>2025-04-02T13:08:05.927Z</updated>
+  <updated>2025-05-10T08:51:44.478Z</updated>
   <generator>@vuepress/plugin-feed</generator>
   <link rel="self" href="http://blog.cjhe.top/atom.xml"/>
   <link rel="alternate" href="http://blog.cjhe.top/"/>
+  <category term="编程语言"/>
   <category term="devops"/>
   <category term="开源项目"/>
   <category term="数据存储"/>
-  <category term="编程语言"/>
   <category term="网络"/>
   <category term="转载"/>
   <category term="算法"/>
@@ -20,6 +20,9 @@
   <category term="编程框架"/>
   <category term="项目规范"/>
   <contributor>
+    <name>wolfogre</name>
+  </contributor>
+  <contributor>
     <name>heroku</name>
   </contributor>
   <contributor>
@@ -28,6 +31,29 @@
   <contributor>
     <name>Rob Pike</name>
   </contributor>
+  <entry>
+    <title type="text">pprof实战</title>
+    <id>http://blog.cjhe.top/language/go/reprint/pprof-practic.html</id>
+    <link href="http://blog.cjhe.top/language/go/reprint/pprof-practic.html"/>
+    <updated>2025-05-10T08:50:44.000Z</updated>
+    <summary type="html"><![CDATA[<blockquote>
+<p>发现一篇写Go语言pprof实战的好文，转载原文<a href="https://blog.wolfogre.com/posts/go-ppof-practice/" target="_blank" rel="noopener noreferrer">https://blog.wolfogre.com/posts/go-ppof-practice/</a></p>
+</blockquote>
+]]></summary>
+    <content type="html"><![CDATA[<blockquote>
+<p>发现一篇写Go语言pprof实战的好文，转载原文<a href="https://blog.wolfogre.com/posts/go-ppof-practice/" target="_blank" rel="noopener noreferrer">https://blog.wolfogre.com/posts/go-ppof-practice/</a></p>
+</blockquote>
+]]></content>
+    <author>
+      <name>wolfogre</name>
+    </author>
+    <category term="编程语言"/>
+    <contributor>
+      <name>wolfogre</name>
+    </contributor>
+    <published>2025-05-10T00:00:00.000Z</published>
+    <rights>Copyright by wolfogre</rights>
+  </entry>
   <entry>
     <title type="text">如何查看进程工作目录</title>
     <id>http://blog.cjhe.top/devops/linux/process-work-directory.html</id>
@@ -7014,7 +7040,7 @@ exit status 1
     <title type="text">Go之禅</title>
     <id>http://blog.cjhe.top/language/go/reprint/zen.html</id>
     <link href="http://blog.cjhe.top/language/go/reprint/zen.html"/>
-    <updated>2024-05-15T10:01:59.000Z</updated>
+    <updated>2025-05-10T08:50:44.000Z</updated>
     <summary type="html"><![CDATA[<blockquote>
 <p>Python的核心开发成员之一Tim Peter写下的《The Zen of Python》，成为Python编程和设计的指导原则。Go语言步道师Dave Cheney 2020年发表了名为《The Zen of Go》</p>
 </blockquote>
@@ -7075,7 +7101,7 @@ goroutine 拥有锁、变量、内存等资源。释放这些资源的可靠方�
     <title type="text">Go箴言</title>
     <id>http://blog.cjhe.top/language/go/reprint/proverb.html</id>
     <link href="http://blog.cjhe.top/language/go/reprint/proverb.html"/>
-    <updated>2024-05-15T10:01:59.000Z</updated>
+    <updated>2025-05-10T08:50:44.000Z</updated>
     <summary type="html"><![CDATA[<p>【转】<a href="http://go-proverbs.github.io/" target="_blank" rel="noopener noreferrer">原文链接</a></p>
 ]]></summary>
     <content type="html"><![CDATA[<p>【转】<a href="http://go-proverbs.github.io/" target="_blank" rel="noopener noreferrer">原文链接</a></p>
@@ -7728,102 +7754,5 @@ time</summary>
 ]]></content>
     <category term="设计模式"/>
     <published>2022-10-15T00:00:00.000Z</published>
-  </entry>
-  <entry>
-    <title type="text">高质量代码</title>
-    <id>http://blog.cjhe.top/design-pattern/quantity-code.html</id>
-    <link href="http://blog.cjhe.top/design-pattern/quantity-code.html"/>
-    <updated>2024-05-06T02:44:40.000Z</updated>
-    <summary type="html"><![CDATA[<div class="hint-container tip">
-<p class="hint-container-title">提示</p>
-<p>什么样的代码才是高质量的代码❓</p>
-</div>
-]]></summary>
-    <content type="html"><![CDATA[<div class="hint-container tip">
-<p class="hint-container-title">提示</p>
-<p>什么样的代码才是高质量的代码❓</p>
-</div>
-<!-- more -->
-<h2>什么是高质量代码</h2>
-<p>代码质量的评价有很强的主观性，描述代码质量的词汇也有很多，比如可读性、可维护性、灵活、优雅、简洁等，这些词汇是从不同的维度去评价代码质量的。它们之间有互相作用，并不是独立的，比如，代码的可读性好、可扩展性好就意味着代码的可维护性好。代码质量高低是一个综合各种因素得到的结论。我们并不能通过单一的维度去评价一段代码的好坏。</p>
-<h3>可维护性（maintainability）</h3>
-<blockquote>
-<p>维护：无外乎就是修改bug、修改老的代码、添加新的代码之类的工作。</p>
-</blockquote>
-<p><strong>维护代码的时间远远大于编写代码的时间</strong>
-其中：</p>
-<ul>
-<li>代码易维护：在不破坏原有代码设计、不引入新的bug的情况下，能够快速地修改或者添加代码。</li>
-<li>代码不易维护：修改或者添加代码需要冒着极大的引入新bug的风险，并且需要花费很长的时间才能完成。</li>
-</ul>
-<h3>可读性（readability）</h3>
-<blockquote>
-<p>可读：代码易读易理解</p>
-</blockquote>
-<p><strong>代码被阅读的次数远远超过被编写的次数</strong>
-我们可以从以下方面来评价：</p>
-<ol>
-<li>代码是否符合编码规范；</li>
-<li>命名是否达意；</li>
-<li>注释是否详尽；</li>
-<li>函数是否长短合适；</li>
-<li>模块划分是否清晰；</li>
-<li>是否符合高内聚低耦合；</li>
-</ol>
-<h3>可扩展性（extensibility）</h3>
-<blockquote>
-<p>可扩展：代码应对未来需求变化的能力</p>
-</blockquote>
-<p><strong>开闭原则：对修改关闭，对扩展开放</strong>
-评判标准：</p>
-<ul>
-<li>我们在不修改或少量修改原有代码的情况，通过扩展的方式添加新的功能代码；</li>
-<li>代码预留了一些功能扩展点，不需要因为添加一个功能而大动干戈，改动大量的原始代码；</li>
-</ul>
-<h3>灵活性（flexibility）</h3>
-<blockquote>
-<p>灵活：代码易扩展、易复用或者易用</p>
-</blockquote>
-<p>举例如下：</p>
-<ul>
-<li>
-<p>易扩展：当我们添加一个新的功能代码的时候，原有的代码已经预留好了扩展点，我们不需要修改原有的代码，只要在扩展点上添加新的代码即可。这个时候，我们除了可以说代码易扩展，还可以说代码写得好灵活。</p>
-</li>
-<li>
-<p>易复用：当我们要实现一个功能的时候，发现原有代码中，已经抽象出了很多底层可以复用的模块、类等代码，我们可以拿来直接使用。这个时候，我们除了可以说代码易复用之外，还可以说代码写得好灵活。</p>
-</li>
-<li>
-<p>易用：当我们使用某组接口的时候，如果这组接口可以应对各种使用场景，满足各种不同的需求，我们除了可以说接口易用之外，还可以说这个接口设计得好灵活或者代码写得好灵活。</p>
-</li>
-</ul>
-<h3>简洁性（simplicity）</h3>
-<blockquote>
-<p>简洁：代码简单、逻辑清晰</p>
-</blockquote>
-<p><strong>KISS原则：“Keep it Simple,Stupid”</strong>
-怎么评判呢？每个人的标准都不一样，我觉得能够快速理解业务逻辑就是简单的。"思从深而行从简，真正的高手能云淡风轻地用最简单的方法解决最复杂的问题。"</p>
-<h3>可复用性（reusability）</h3>
-<blockquote>
-<p>可复用：尽量减少重复代码的编写，复用已有的代码。</p>
-</blockquote>
-<p><strong>DRY原则：“Don't Repeat Yourself”</strong>
-使用技巧：</p>
-<ul>
-<li>面向对象特性：继承和多态就是为了提高可复用性；</li>
-<li>解耦、高内聚、模块化等思想都能提高代码的可复用性；</li>
-<li>单一职责原则与可复用性相关；</li>
-</ul>
-<h3>可测试性（testability）</h3>
-<blockquote>
-<p>可测试：能否方便地测试代码逻辑</p>
-</blockquote>
-<p>评判标准：</p>
-<ul>
-<li>即便有存储和第三方服务也能测试；</li>
-<li>不依赖各个环境；</li>
-</ul>
-]]></content>
-    <category term="设计模式"/>
-    <published>2022-11-01T00:00:00.000Z</published>
   </entry>
 </feed>

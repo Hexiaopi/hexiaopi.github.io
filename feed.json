@@ -6,6 +6,23 @@
   "description": "何小进童鞋的个人博客",
   "items": [
     {
+      "title": "pprof实战",
+      "url": "http://blog.cjhe.top/language/go/reprint/pprof-practic.html",
+      "id": "http://blog.cjhe.top/language/go/reprint/pprof-practic.html",
+      "summary": "发现一篇写Go语言pprof实战的好文，转载原文https://blog.wolfogre.com/posts/go-ppof-practice/",
+      "content_html": "<blockquote>\n<p>发现一篇写Go语言pprof实战的好文，转载原文<a href=\"https://blog.wolfogre.com/posts/go-ppof-practice/\" target=\"_blank\" rel=\"noopener noreferrer\">https://blog.wolfogre.com/posts/go-ppof-practice/</a></p>\n</blockquote>\n",
+      "date_published": "2025-05-10T00:00:00.000Z",
+      "date_modified": "2025-05-10T08:50:44.000Z",
+      "authors": [
+        {
+          "name": "wolfogre"
+        }
+      ],
+      "tags": [
+        "编程语言"
+      ]
+    },
+    {
       "title": "如何查看进程工作目录",
       "url": "http://blog.cjhe.top/devops/linux/process-work-directory.html",
       "id": "http://blog.cjhe.top/devops/linux/process-work-directory.html",
@@ -1186,7 +1203,7 @@
       "summary": "Python的核心开发成员之一Tim Peter写下的《The Zen of Python》，成为Python编程和设计的指导原则。Go语言步道师Dave Cheney 2020年发表了名为《The Zen of Go》",
       "content_html": "<blockquote>\n<p>Python的核心开发成员之一Tim Peter写下的《The Zen of Python》，成为Python编程和设计的指导原则。Go语言步道师Dave Cheney 2020年发表了名为《The Zen of Go》</p>\n</blockquote>\n<!-- more -->\n<h2>译文</h2>\n<h3>Each package fulfils a single purpose 每一个package实现单一目标</h3>\n<p>A well designed Go package provides a single idea, a set of related behaviours. A good Go package starts by choosing a good name. Think of your package’s name as an elevator pitch to describe what it provides, using just one word.\n精心设计的Go软件包只提供单一功能和一系列相关的行为。一个好的Go软件包从选择一个好的名字开始。把你的包的名字想象成一个电梯广告，仅用一个词来描述它所提供的功能。</p>\n<h3>Handle errors explicitly 显式处理错误</h3>\n<p>Robust programs are composed from pieces that handle the failure cases before they pat themselves on the back. The verbosity of if err != nil { return err } is outweighed by the value of deliberately handling each failure condition at the point at which they occur. Panic and recover are not exceptions, they aren’t intended to be used that way.\n健壮的程序是由处理失败case的各个片段组成的。 冗长的<code>if err != nil { return err }</code> 比出了故障再一个个去处理更有价值。Panic和recover也一样。</p>\n<h3>Return early rather than nesting deeply 尽早return，不要深陷</h3>\n<p>Every time you indent you add another precondition to the programmer’s stack consuming one of the 7 ±2 slots in their short term memory. Avoid control flow that requires deep indentation. Rather than nesting deeply, keep the success path to the left using guard clauses.\n每缩进一次，就会在程序员的堆栈中增加一个前提条件，占用其短时记忆中 7 ±2 个插槽中的一个。避免需要深度缩进的控制流。与其深度嵌套，不如使用保护子句将成功路径保持在左侧。</p>\n<h3>Leave concurrency to the caller 并发权留给调用者</h3>\n<p>Let the caller choose if they want to run your library or function asynchronously, don’t force it on them. If your library uses concurrency it should do so transparently.\n让调用者自己选择是否要异步运行你的库或函数，不要强迫他们。如果您的程序库使用并发功能，则应透明地使用。</p>\n<h3>Before you launch a goroutine, know when it will stop 在启动goroutine之前，要知道它什么时候会停止</h3>\n<p>Goroutines own resources; locks, variables, memory, etc. The sure fire way to free those resources is to stop the owning goroutine.\ngoroutine 拥有锁、变量、内存等资源。释放这些资源的可靠方法是停止拥有资源的 goroutine。</p>\n<h3>Avoid package level state 避免包级状态</h3>\n<p>Seek to be explicit, reduce coupling, and spooky action at a distance by providing the dependencies a type needs as fields on that type rather than using package variables.\n通过将类型所需的依赖关系作为该类型的字段而不是使用包变量来提供，力求显式化，减少耦合，并实现超距作用。</p>\n<h3>Simplicity matters 简单很重要</h3>\n<p>Simplicity is not a synonym for unsophisticated. Simple doesn’t mean crude, it means readable and maintainable. When it is possible to choose, defer to the simpler solution.\n简单不是容易（不复杂）的同义词。简单并不意味着粗糙，它意味着可读性和可维护性。如果可以选择，请遵循较简单的解决方案。</p>\n<h3>Write tests to lock in the behaviour of your package’s API 编写测试以确定包API的行为</h3>\n<p>Test first or test later, if you shoot for 100% test coverage or are happy with less, regardless your package’s API is your contract with its users. Tests are the guarantees that those contracts are written in. Make sure you test for the behaviour that users can observe and rely on.\n先测试还是后测试，是追求 100% 的测试覆盖率还是满足于较低的测试覆盖率，无论如何，软件包的应用程序接口都是您与用户之间的契约。测试是这些合约的保证。请确保您测试的是用户可以观察和依赖的行为。</p>\n<h3>If you think it’s slow, first prove it with a benchmark 如果你觉得慢，先用基准来证明</h3>\n<p>So many crimes against maintainability are committed in the name of performance. Optimisation tears down abstractions, exposes internals, and couples tightly. If you’re choosing to shoulder that cost, ensure it is done for good reason.\n以性能为名，对可维护性犯下了许多罪行。优化会破坏抽象概念，暴露内部结构，并造成紧密耦合。如果你选择承担这种代价，请确保这样做是有充分理由的。</p>\n<h3>Moderation is a virtue 节制是一种美德</h3>\n<p>Use goroutines, channels, locks, interfaces, embedding, in moderation.\n适度使用goroutines、channels、locks、interfaces、embedded。</p>\n<h3>Maintainability counts 可维护性很重要</h3>\n<p>Clarity, readability, simplicity, are all aspects of maintainability. Can the thing you worked hard to build be maintained after you’re gone? What can you do today to make it easier for those that come after you?\n清晰度、可读性、简洁性都是可维护性的体现。你辛辛苦苦创建的东西在你离开后还能被维护吗？你今天能做些什么来让你的后人更容易地维护它？</p>\n<h2>参考文献</h2>\n<p><a href=\"https://the-zen-of-go.netlify.app\" target=\"_blank\" rel=\"noopener noreferrer\">简洁版</a>\n<a href=\"https://dave.cheney.net/2020/02/23/the-zen-of-go\" target=\"_blank\" rel=\"noopener noreferrer\">完整版</a></p>\n",
       "date_published": "2023-08-15T00:00:00.000Z",
-      "date_modified": "2024-05-15T10:01:59.000Z",
+      "date_modified": "2025-05-10T08:50:44.000Z",
       "authors": [
         {
           "name": "Dave Cheney"
@@ -1203,7 +1220,7 @@
       "summary": "【转】原文链接",
       "content_html": "<p>【转】<a href=\"http://go-proverbs.github.io/\" target=\"_blank\" rel=\"noopener noreferrer\">原文链接</a></p>\n<!-- more -->\n<blockquote>\n<p>Go 语言之父 Rob Pike 在 2015 年分享的主题《Go Proverbs》</p>\n<p>核心理念是：简单、诗意、简洁（Simple, Poetic, Pithy）。</p>\n</blockquote>\n<h2>译文</h2>\n<p>Don't communicate by sharing memory, share memory by communicating.\n不要通过共享内存进行通信，通过通信共享内存</p>\n<p>Concurrency is not parallelism.\n并发不是并行</p>\n<p>Channels orchestrate; mutexes serialize.\n管道用于协调；互斥锁用于同步</p>\n<p>The bigger the interface, the weaker the abstraction.\n接口越大，抽象就越弱</p>\n<p>Make the zero value useful.\n利用好零值</p>\n<p>interface{} says nothing.\n空接口 interface{} 没有任何类型约束</p>\n<p>Gofmt's style is no one's favorite, yet gofmt is everyone's favorite.\nGofmt 的风格不是人们最喜欢的，但 gofmt 是每个人的最爱</p>\n<p>A little copying is better than a little dependency.\n允许一点点重复比引入一点点依赖更好</p>\n<p>Syscall must always be guarded with build tags.\n系统调用必须始终使用构建标记进行保护</p>\n<p>Cgo must always be guarded with build tags.\n必须始终使用构建标记保护 Cgo</p>\n<p>Cgo is not Go.\nCgo 不是 Go。</p>\n<p>With the unsafe package there are no guarantees.\n使用标准库的 unsafe 包，不能保证能如期运行</p>\n<p>Clear is better than clever.\n清晰比聪明更好</p>\n<p>Reflection is never clear.\n反射永远不清晰</p>\n<p>Errors are values.\n错误是值</p>\n<p>Don't just check errors, handle them gracefully.\n不要只检查错误，还要优雅地处理它们</p>\n<p>Design the architecture, name the components, document the details.\n设计架构，命名组件，文档记录细节</p>\n<p>Documentation is for users.\n文档是供用户使用的</p>\n<p>Don't panic.\n不要使用 panic</p>\n<h2>参考文献</h2>\n<p><a href=\"http://go-proverbs.github.io/\" target=\"_blank\" rel=\"noopener noreferrer\">原文链接</a>\n<a href=\"https://zhuanlan.zhihu.com/p/514680942\" target=\"_blank\" rel=\"noopener noreferrer\">中文译文</a></p>\n",
       "date_published": "2023-08-15T00:00:00.000Z",
-      "date_modified": "2024-05-15T10:01:59.000Z",
+      "date_modified": "2025-05-10T08:50:44.000Z",
       "authors": [
         {
           "name": "Rob Pike"
@@ -1281,19 +1298,6 @@
       "content_html": "<!-- more -->\n<p>设计原则是心法，对于构建高质量的软件系统提供<strong>指导</strong>和<strong>约束</strong>，它具有以下作用：</p>\n<ul>\n<li>提高代码质量：设计原则强调代码的清晰性、可读性和可维护性。通过遵循设计原则，可以编写出更结构化、更模块化的代码，减少代码重复和冗余。</li>\n<li>降低耦合度：设计原则鼓励松散耦合的设计，将系统划分为更小的、相互独立的模块。这样可以减少模块之间的依赖关系，提高系统的灵活性和可扩展性。</li>\n<li>促进代码重用：设计原则推崇封装、继承、多态等面向对象的特性，使得代码更易于重用。通过设计模式和设计原则，可以将通用的解决方案抽象出来，并在不同的场景中重复应用。</li>\n<li>简化系统维护：良好的设计原则可以减少系统的耦合和复杂度，使系统更易于理解和维护。当需要对系统进行修改或扩展时，通过遵循设计原则，可以更快速、更安全地进行变更。</li>\n<li>提高团队协作效率：设计原则提供了一种通用的设计思维和规范，使整个团队在设计和开发过程中能够更好地进行交流和协作。团队成员可以共同理解和遵循设计原则，降低沟通成本，提高开发效率。</li>\n</ul>\n<h2>SOLID原则</h2>\n<p>SOLID原则是由罗伯特·C·马丁在21世纪早期引入，指代了面向对象编程和面向对象设计的五个基本原则。遵循SOLID原则可以确保我们设计的代码是易维护、易扩展、易阅读的。SOLID原则同样也适用于Go程序设计。具体SOLID编码原则见下表：</p>\n<p>| 简写 | 全称                                | 中文描述     |\n|</p>\n",
       "date_published": "2022-10-15T00:00:00.000Z",
       "date_modified": "2025-03-15T07:54:51.000Z",
-      "authors": [],
-      "tags": [
-        "设计模式"
-      ]
-    },
-    {
-      "title": "高质量代码",
-      "url": "http://blog.cjhe.top/design-pattern/quantity-code.html",
-      "id": "http://blog.cjhe.top/design-pattern/quantity-code.html",
-      "summary": "提示 什么样的代码才是高质量的代码❓",
-      "content_html": "<div class=\"hint-container tip\">\n<p class=\"hint-container-title\">提示</p>\n<p>什么样的代码才是高质量的代码❓</p>\n</div>\n<!-- more -->\n<h2>什么是高质量代码</h2>\n<p>代码质量的评价有很强的主观性，描述代码质量的词汇也有很多，比如可读性、可维护性、灵活、优雅、简洁等，这些词汇是从不同的维度去评价代码质量的。它们之间有互相作用，并不是独立的，比如，代码的可读性好、可扩展性好就意味着代码的可维护性好。代码质量高低是一个综合各种因素得到的结论。我们并不能通过单一的维度去评价一段代码的好坏。</p>\n<h3>可维护性（maintainability）</h3>\n<blockquote>\n<p>维护：无外乎就是修改bug、修改老的代码、添加新的代码之类的工作。</p>\n</blockquote>\n<p><strong>维护代码的时间远远大于编写代码的时间</strong>\n其中：</p>\n<ul>\n<li>代码易维护：在不破坏原有代码设计、不引入新的bug的情况下，能够快速地修改或者添加代码。</li>\n<li>代码不易维护：修改或者添加代码需要冒着极大的引入新bug的风险，并且需要花费很长的时间才能完成。</li>\n</ul>\n<h3>可读性（readability）</h3>\n<blockquote>\n<p>可读：代码易读易理解</p>\n</blockquote>\n<p><strong>代码被阅读的次数远远超过被编写的次数</strong>\n我们可以从以下方面来评价：</p>\n<ol>\n<li>代码是否符合编码规范；</li>\n<li>命名是否达意；</li>\n<li>注释是否详尽；</li>\n<li>函数是否长短合适；</li>\n<li>模块划分是否清晰；</li>\n<li>是否符合高内聚低耦合；</li>\n</ol>\n<h3>可扩展性（extensibility）</h3>\n<blockquote>\n<p>可扩展：代码应对未来需求变化的能力</p>\n</blockquote>\n<p><strong>开闭原则：对修改关闭，对扩展开放</strong>\n评判标准：</p>\n<ul>\n<li>我们在不修改或少量修改原有代码的情况，通过扩展的方式添加新的功能代码；</li>\n<li>代码预留了一些功能扩展点，不需要因为添加一个功能而大动干戈，改动大量的原始代码；</li>\n</ul>\n<h3>灵活性（flexibility）</h3>\n<blockquote>\n<p>灵活：代码易扩展、易复用或者易用</p>\n</blockquote>\n<p>举例如下：</p>\n<ul>\n<li>\n<p>易扩展：当我们添加一个新的功能代码的时候，原有的代码已经预留好了扩展点，我们不需要修改原有的代码，只要在扩展点上添加新的代码即可。这个时候，我们除了可以说代码易扩展，还可以说代码写得好灵活。</p>\n</li>\n<li>\n<p>易复用：当我们要实现一个功能的时候，发现原有代码中，已经抽象出了很多底层可以复用的模块、类等代码，我们可以拿来直接使用。这个时候，我们除了可以说代码易复用之外，还可以说代码写得好灵活。</p>\n</li>\n<li>\n<p>易用：当我们使用某组接口的时候，如果这组接口可以应对各种使用场景，满足各种不同的需求，我们除了可以说接口易用之外，还可以说这个接口设计得好灵活或者代码写得好灵活。</p>\n</li>\n</ul>\n<h3>简洁性（simplicity）</h3>\n<blockquote>\n<p>简洁：代码简单、逻辑清晰</p>\n</blockquote>\n<p><strong>KISS原则：“Keep it Simple,Stupid”</strong>\n怎么评判呢？每个人的标准都不一样，我觉得能够快速理解业务逻辑就是简单的。\"思从深而行从简，真正的高手能云淡风轻地用最简单的方法解决最复杂的问题。\"</p>\n<h3>可复用性（reusability）</h3>\n<blockquote>\n<p>可复用：尽量减少重复代码的编写，复用已有的代码。</p>\n</blockquote>\n<p><strong>DRY原则：“Don't Repeat Yourself”</strong>\n使用技巧：</p>\n<ul>\n<li>面向对象特性：继承和多态就是为了提高可复用性；</li>\n<li>解耦、高内聚、模块化等思想都能提高代码的可复用性；</li>\n<li>单一职责原则与可复用性相关；</li>\n</ul>\n<h3>可测试性（testability）</h3>\n<blockquote>\n<p>可测试：能否方便地测试代码逻辑</p>\n</blockquote>\n<p>评判标准：</p>\n<ul>\n<li>即便有存储和第三方服务也能测试；</li>\n<li>不依赖各个环境；</li>\n</ul>\n",
-      "date_published": "2022-11-01T00:00:00.000Z",
-      "date_modified": "2024-05-06T02:44:40.000Z",
       "authors": [],
       "tags": [
         "设计模式"
