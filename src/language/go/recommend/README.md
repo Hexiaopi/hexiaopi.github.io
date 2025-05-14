@@ -1,5 +1,5 @@
 ---
-title: Go推荐
+title: 推荐
 icon: hand-holding-heart
 date: 2024-04-15
 tag:

@@ -1,5 +1,5 @@
 ---
-title: Go进阶
+title: 进阶
 icon: paper-plane
 date: 2023-08-24
 tag:

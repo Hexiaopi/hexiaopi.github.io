@@ -1,5 +1,5 @@
 ---
-title: Go测试
+title: 测试
 icon: vial-circle-check
 date: 2024-06-11
 tag:
