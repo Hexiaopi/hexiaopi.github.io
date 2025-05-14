@@ -412,12 +412,12 @@
       ]
     },
     {
-      "title": "Go测试",
+      "title": "测试",
       "url": "http://blog.cjhe.top/language/go/test/",
       "id": "http://blog.cjhe.top/language/go/test/",
       "content_html": "",
       "date_published": "2024-06-11T00:00:00.000Z",
-      "date_modified": "2025-02-27T15:41:25.000Z",
+      "date_modified": "2025-05-14T01:36:37.000Z",
       "authors": [],
       "tags": [
         "编程语言"
@@ -759,12 +759,12 @@
       ]
     },
     {
-      "title": "Go推荐",
+      "title": "推荐",
       "url": "http://blog.cjhe.top/language/go/recommend/",
       "id": "http://blog.cjhe.top/language/go/recommend/",
       "content_html": "",
       "date_published": "2024-04-15T00:00:00.000Z",
-      "date_modified": "2025-02-27T15:41:25.000Z",
+      "date_modified": "2025-05-14T01:36:37.000Z",
       "authors": [],
       "tags": [
         "编程语言"
@@ -1131,26 +1131,26 @@
       ]
     },
     {
-      "title": "Go进阶",
+      "title": "进阶",
       "url": "http://blog.cjhe.top/language/go/advance/",
       "id": "http://blog.cjhe.top/language/go/advance/",
       "summary": "介绍Go语言进阶知识，包括遇到的一些坑和底层原理，进阶知识对于入门童鞋来说可以不用了解，并不会影响日常开发，属于深度探讨",
       "content_html": "<blockquote>\n<p>介绍Go语言进阶知识，包括遇到的一些坑和底层原理，进阶知识对于入门童鞋来说可以不用了解，并不会影响日常开发，属于深度探讨</p>\n</blockquote>\n",
       "date_published": "2023-08-24T00:00:00.000Z",
-      "date_modified": "2025-02-27T15:41:25.000Z",
+      "date_modified": "2025-05-14T01:36:37.000Z",
       "authors": [],
       "tags": [
         "编程语言"
       ]
     },
     {
-      "title": "Go基础",
+      "title": "基础",
       "url": "http://blog.cjhe.top/language/go/base/",
       "id": "http://blog.cjhe.top/language/go/base/",
       "summary": "介绍Go语言基础知识，也会涉及到底层原理，这些是我认为要掌握的知识。",
       "content_html": "<blockquote>\n<p>介绍Go语言基础知识，也会涉及到底层原理，这些是我认为要掌握的知识。</p>\n</blockquote>\n",
       "date_published": "2023-08-24T00:00:00.000Z",
-      "date_modified": "2025-02-27T14:25:55.000Z",
+      "date_modified": "2025-05-14T01:36:37.000Z",
       "authors": [],
       "tags": [
         "编程语言"

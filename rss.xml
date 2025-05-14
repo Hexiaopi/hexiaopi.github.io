@@ -6,8 +6,8 @@
     <link>http://blog.cjhe.top/</link>
     <description>何小进童鞋的个人博客</description>
     <language>zh-CN</language>
-    <pubDate>Wed, 14 May 2025 01:06:13 GMT</pubDate>
-    <lastBuildDate>Wed, 14 May 2025 01:06:13 GMT</lastBuildDate>
+    <pubDate>Wed, 14 May 2025 01:37:35 GMT</pubDate>
+    <lastBuildDate>Wed, 14 May 2025 01:37:35 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>编程语言</category>
@@ -2893,10 +2893,10 @@ Go官方代码审查</description>
 ]]></content:encoded>
     </item>
     <item>
-      <title>Go测试</title>
+      <title>测试</title>
       <link>http://blog.cjhe.top/language/go/test/</link>
       <guid>http://blog.cjhe.top/language/go/test/</guid>
-      <source url="http://blog.cjhe.top/rss.xml">Go测试</source>
+      <source url="http://blog.cjhe.top/rss.xml">测试</source>
       <category>编程语言</category>
       <pubDate>Tue, 11 Jun 2024 00:00:00 GMT</pubDate>
     </item>
@@ -4833,10 +4833,10 @@ mongodb-dashb...</description>
 </code></pre></div>]]></content:encoded>
     </item>
     <item>
-      <title>Go推荐</title>
+      <title>推荐</title>
       <link>http://blog.cjhe.top/language/go/recommend/</link>
       <guid>http://blog.cjhe.top/language/go/recommend/</guid>
-      <source url="http://blog.cjhe.top/rss.xml">Go推荐</source>
+      <source url="http://blog.cjhe.top/rss.xml">推荐</source>
       <category>编程语言</category>
       <pubDate>Mon, 15 Apr 2024 00:00:00 GMT</pubDate>
     </item>
@@ -6482,10 +6482,10 @@ Go要求包之间不能存在循环依赖，这样包的依赖关系便形成了
 ]]></content:encoded>
     </item>
     <item>
-      <title>Go进阶</title>
+      <title>进阶</title>
       <link>http://blog.cjhe.top/language/go/advance/</link>
       <guid>http://blog.cjhe.top/language/go/advance/</guid>
-      <source url="http://blog.cjhe.top/rss.xml">Go进阶</source>
+      <source url="http://blog.cjhe.top/rss.xml">进阶</source>
       <description>介绍Go语言进阶知识，包括遇到的一些坑和底层原理，进阶知识对于入门童鞋来说可以不用了解，并不会影响日常开发，属于深度探讨</description>
       <category>编程语言</category>
       <pubDate>Thu, 24 Aug 2023 00:00:00 GMT</pubDate>
@@ -6495,10 +6495,10 @@ Go要求包之间不能存在循环依赖，这样包的依赖关系便形成了
 ]]></content:encoded>
     </item>
     <item>
-      <title>Go基础</title>
+      <title>基础</title>
       <link>http://blog.cjhe.top/language/go/base/</link>
       <guid>http://blog.cjhe.top/language/go/base/</guid>
-      <source url="http://blog.cjhe.top/rss.xml">Go基础</source>
+      <source url="http://blog.cjhe.top/rss.xml">基础</source>
       <description>介绍Go语言基础知识，也会涉及到底层原理，这些是我认为要掌握的知识。</description>
       <category>编程语言</category>
       <pubDate>Thu, 24 Aug 2023 00:00:00 GMT</pubDate>

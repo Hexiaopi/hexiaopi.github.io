@@ -3,7 +3,7 @@
   <id>http://blog.cjhe.top/</id>
   <title>个人博客</title>
   <subtitle>何小进童鞋的个人博客</subtitle>
-  <updated>2025-05-14T01:06:13.671Z</updated>
+  <updated>2025-05-14T01:37:35.185Z</updated>
   <generator>@vuepress/plugin-feed</generator>
   <link rel="self" href="http://blog.cjhe.top/atom.xml"/>
   <link rel="alternate" href="http://blog.cjhe.top/"/>
@@ -2935,10 +2935,10 @@ Go官方代码审查</summary>
     <published>2024-04-16T00:00:00.000Z</published>
   </entry>
   <entry>
-    <title type="text">Go测试</title>
+    <title type="text">测试</title>
     <id>http://blog.cjhe.top/language/go/test/</id>
     <link href="http://blog.cjhe.top/language/go/test/"/>
-    <updated>2025-02-27T15:41:25.000Z</updated>
+    <updated>2025-05-14T01:36:37.000Z</updated>
     <category term="编程语言"/>
     <published>2024-06-11T00:00:00.000Z</published>
   </entry>
@@ -4892,10 +4892,10 @@ mongodb-dashb...</summary>
     <published>2024-04-16T00:00:00.000Z</published>
   </entry>
   <entry>
-    <title type="text">Go推荐</title>
+    <title type="text">推荐</title>
     <id>http://blog.cjhe.top/language/go/recommend/</id>
     <link href="http://blog.cjhe.top/language/go/recommend/"/>
-    <updated>2025-02-27T15:41:25.000Z</updated>
+    <updated>2025-05-14T01:36:37.000Z</updated>
     <category term="编程语言"/>
     <published>2024-04-15T00:00:00.000Z</published>
   </entry>
@@ -6589,10 +6589,10 @@ Go要求包之间不能存在循环依赖，这样包的依赖关系便形成了
     <published>2023-08-23T00:00:00.000Z</published>
   </entry>
   <entry>
-    <title type="text">Go进阶</title>
+    <title type="text">进阶</title>
     <id>http://blog.cjhe.top/language/go/advance/</id>
     <link href="http://blog.cjhe.top/language/go/advance/"/>
-    <updated>2025-02-27T15:41:25.000Z</updated>
+    <updated>2025-05-14T01:36:37.000Z</updated>
     <summary type="html"><![CDATA[<blockquote>
 <p>介绍Go语言进阶知识，包括遇到的一些坑和底层原理，进阶知识对于入门童鞋来说可以不用了解，并不会影响日常开发，属于深度探讨</p>
 </blockquote>
@@ -6605,10 +6605,10 @@ Go要求包之间不能存在循环依赖，这样包的依赖关系便形成了
     <published>2023-08-24T00:00:00.000Z</published>
   </entry>
   <entry>
-    <title type="text">Go基础</title>
+    <title type="text">基础</title>
     <id>http://blog.cjhe.top/language/go/base/</id>
     <link href="http://blog.cjhe.top/language/go/base/"/>
-    <updated>2025-02-27T14:25:55.000Z</updated>
+    <updated>2025-05-14T01:36:37.000Z</updated>
     <summary type="html"><![CDATA[<blockquote>
 <p>介绍Go语言基础知识，也会涉及到底层原理，这些是我认为要掌握的知识。</p>
 </blockquote>
