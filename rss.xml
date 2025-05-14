@@ -6,8 +6,8 @@
     <link>http://blog.cjhe.top/</link>
     <description>何小进童鞋的个人博客</description>
     <language>zh-CN</language>
-    <pubDate>Sat, 10 May 2025 08:51:44 GMT</pubDate>
-    <lastBuildDate>Sat, 10 May 2025 08:51:44 GMT</lastBuildDate>
+    <pubDate>Wed, 14 May 2025 01:06:13 GMT</pubDate>
+    <lastBuildDate>Wed, 14 May 2025 01:06:13 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>编程语言</category>
@@ -22,6 +22,150 @@
     <category>工具</category>
     <category>编程框架</category>
     <category>项目规范</category>
+    <item>
+      <title>工程实践</title>
+      <link>http://blog.cjhe.top/language/go/project-pratice/</link>
+      <guid>http://blog.cjhe.top/language/go/project-pratice/</guid>
+      <source url="http://blog.cjhe.top/rss.xml">工程实践</source>
+      <category>编程语言</category>
+      <pubDate>Wed, 14 May 2025 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Gin无侵入记录日志中间件</title>
+      <link>http://blog.cjhe.top/language/go/project-pratice/gin-log.html</link>
+      <guid>http://blog.cjhe.top/language/go/project-pratice/gin-log.html</guid>
+      <source url="http://blog.cjhe.top/rss.xml">Gin无侵入记录日志中间件</source>
+      <description>在项目中我们经常需要记录日志，例如：请求包、返回包、请求路径、请求方法、耗时等。但gin.ResponseWriter的并不支持获取返回包内容。很多时候需要业务代码里面去记录，对业务代码有侵入。本文通过中间件的方式，无侵入记录HTTP日志。
+代理模式
+既然gin.ResponseWriter不支持获取返回包内容，我们很容易想到使用代理模式来支持该功能。...</description>
+      <category>编程语言</category>
+      <pubDate>Wed, 14 May 2025 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<!-- more -->
+<p>在项目中我们经常需要记录日志，例如：请求包、返回包、请求路径、请求方法、耗时等。但<code>gin.ResponseWriter</code>的并不支持获取返回包内容。很多时候需要业务代码里面去记录，对业务代码有侵入。本文通过中间件的方式，无侵入记录HTTP日志。</p>
+<h2>代理模式</h2>
+<p>既然<code>gin.ResponseWriter</code>不支持获取返回包内容，我们很容易想到使用代理模式来支持该功能。</p>
+<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">type</span> ResponseWriterProxy <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+    gin<span class="token punctuation">.</span>ResponseWriter
+    body bytes<span class="token punctuation">.</span>Buffer
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>w <span class="token operator">*</span>ResponseWriterProxy<span class="token punctuation">)</span> <span class="token function">Write</span><span class="token punctuation">(</span>b <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token builtin">error</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    w<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">Write</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> w<span class="token punctuation">.</span>ResponseWriter<span class="token punctuation">.</span><span class="token function">Write</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>这里我们定义了一个<code>ResponseWriterProxy</code>结构体，它包含一个<code>gin.ResponseWriter</code>和一个<code>body</code>。这个<code>body</code>就用来存放返回包内容。
+此外我们重写<code>Write</code>方法中，我们先将数据写入<code>body</code>，然后再写入<code>gin.ResponseWriter</code>。</p>
+<h2>中间件逻辑</h2>
+<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">Logger</span><span class="token punctuation">(</span><span class="token punctuation">)</span> gin<span class="token punctuation">.</span>HandlerFunc <span class="token punctuation">{</span>
+	<span class="token keyword">return</span> <span class="token keyword">func</span><span class="token punctuation">(</span>c <span class="token operator">*</span>gin<span class="token punctuation">.</span>Context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		start <span class="token operator">:=</span> time<span class="token punctuation">.</span><span class="token function">Now</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+		<span class="token comment">//记录请求包</span>
+		buf<span class="token punctuation">,</span> <span class="token boolean">_</span> <span class="token operator">:=</span> io<span class="token punctuation">.</span><span class="token function">ReadAll</span><span class="token punctuation">(</span>c<span class="token punctuation">.</span>Request<span class="token punctuation">.</span>Body<span class="token punctuation">)</span>
+		rdr <span class="token operator">:=</span> io<span class="token punctuation">.</span><span class="token function">NopCloser</span><span class="token punctuation">(</span>bytes<span class="token punctuation">.</span><span class="token function">NewBuffer</span><span class="token punctuation">(</span>buf<span class="token punctuation">)</span><span class="token punctuation">)</span>
+		c<span class="token punctuation">.</span>Request<span class="token punctuation">.</span>Body <span class="token operator">=</span> rdr <span class="token comment">//rewrite</span>
+
+		<span class="token comment">//记录返回包</span>
+		wc <span class="token operator">:=</span> <span class="token operator">&amp;</span>ResponseWriterProxy<span class="token punctuation">{</span>
+			ResponseWriter<span class="token punctuation">:</span> c<span class="token punctuation">.</span>Writer<span class="token punctuation">,</span>
+			body<span class="token punctuation">:</span>           bytes<span class="token punctuation">.</span>Buffer<span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+		<span class="token punctuation">}</span>
+		c<span class="token punctuation">.</span>Writer <span class="token operator">=</span> wc
+
+		c<span class="token punctuation">.</span><span class="token function">Next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+		<span class="token keyword">defer</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			logger<span class="token punctuation">.</span><span class="token function">Info</span><span class="token punctuation">(</span><span class="token string">"receive request"</span><span class="token punctuation">,</span>
+				zap<span class="token punctuation">.</span><span class="token function">String</span><span class="token punctuation">(</span><span class="token string">"path"</span><span class="token punctuation">,</span> c<span class="token punctuation">.</span>Request<span class="token punctuation">.</span>URL<span class="token punctuation">.</span>Path<span class="token punctuation">)</span><span class="token punctuation">,</span>
+				zap<span class="token punctuation">.</span><span class="token function">String</span><span class="token punctuation">(</span><span class="token string">"method"</span><span class="token punctuation">,</span> c<span class="token punctuation">.</span>Request<span class="token punctuation">.</span>Method<span class="token punctuation">)</span><span class="token punctuation">,</span>
+				zap<span class="token punctuation">.</span><span class="token function">String</span><span class="token punctuation">(</span><span class="token string">"req"</span><span class="token punctuation">,</span> <span class="token function">string</span><span class="token punctuation">(</span>buf<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+				zap<span class="token punctuation">.</span><span class="token function">String</span><span class="token punctuation">(</span><span class="token string">"resp"</span><span class="token punctuation">,</span> wc<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">String</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+				zap<span class="token punctuation">.</span><span class="token function">Int</span><span class="token punctuation">(</span><span class="token string">"status"</span><span class="token punctuation">,</span> wc<span class="token punctuation">.</span><span class="token function">Status</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+				zap<span class="token punctuation">.</span><span class="token function">String</span><span class="token punctuation">(</span><span class="token string">"utm"</span><span class="token punctuation">,</span> time<span class="token punctuation">.</span><span class="token function">Since</span><span class="token punctuation">(</span>start<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">String</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+			<span class="token punctuation">)</span>
+		<span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>其中：</p>
+<ul>
+<li>5-7行：我们读取完请求包，需要重新写入<code>c.Request.Body</code>，因为<code>io.ReadAll</code>会读取完<code>c.Request.Body</code>，导致后续无法读取。</li>
+<li>10-14行：我们创建一个<code>ResponseWriterProxy</code>，并赋值给<code>c.Writer</code>，这样后续的<code>c.Writer.Write</code>就会写入到<code>wc.body</code>中。</li>
+</ul>
+<h2>集成中间件</h2>
+<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code>	apiGroup <span class="token operator">:=</span> router<span class="token punctuation">.</span><span class="token function">Group</span><span class="token punctuation">(</span><span class="token string">"/api"</span><span class="token punctuation">)</span>
+	apiGroup<span class="token punctuation">.</span><span class="token function">Use</span><span class="token punctuation">(</span>middleware<span class="token punctuation">.</span><span class="token function">Logger</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><p>这样我们就可以在<code>api</code>开头的接口记录日志。并且对业务代码无侵入。</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Gin无侵入记录指标中间件</title>
+      <link>http://blog.cjhe.top/language/go/project-pratice/gin-metrics.html</link>
+      <guid>http://blog.cjhe.top/language/go/project-pratice/gin-metrics.html</guid>
+      <source url="http://blog.cjhe.top/rss.xml">Gin无侵入记录指标中间件</source>
+      <description>在Gin框架如何记录HTTP指标，例如：请求次数，请求耗时，并发数等。本文通过中间件(middleware)的方式集成，减少对业务代码的耦合。
+定义Prometheus指标
+其中：
+
+HttpRequestCounter：记录请求次数
+HttpRequestLatency：记录请求耗时
+HttpRequestConcurrency：记录并发数
+
+初始化...</description>
+      <category>编程语言</category>
+      <pubDate>Wed, 14 May 2025 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<!-- more -->
+<p>在Gin框架如何记录HTTP指标，例如：请求次数，请求耗时，并发数等。本文通过中间件(middleware)的方式集成，减少对业务代码的耦合。</p>
+<h2>定义Prometheus指标</h2>
+<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">var</span> <span class="token punctuation">(</span>
+	HttpRequestCounter     <span class="token operator">*</span>prometheus<span class="token punctuation">.</span>CounterVec
+	HttpRequestLatency     <span class="token operator">*</span>prometheus<span class="token punctuation">.</span>HistogramVec
+	HttpRequestConcurrency <span class="token operator">*</span>prometheus<span class="token punctuation">.</span>GaugeVec
+<span class="token punctuation">)</span>
+</code></pre></div><p>其中：</p>
+<ul>
+<li>HttpRequestCounter：记录请求次数</li>
+<li>HttpRequestLatency：记录请求耗时</li>
+<li>HttpRequestConcurrency：记录并发数</li>
+</ul>
+<h2>初始化指标</h2>
+<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	HttpRequestCounter <span class="token operator">=</span> promauto<span class="token punctuation">.</span><span class="token function">NewCounterVec</span><span class="token punctuation">(</span>prometheus<span class="token punctuation">.</span>CounterOpts<span class="token punctuation">{</span>
+		Name<span class="token punctuation">:</span> <span class="token string">"http_request_counter"</span><span class="token punctuation">,</span>
+		Help<span class="token punctuation">:</span> <span class="token string">"each http request counter"</span><span class="token punctuation">,</span>
+	<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">{</span><span class="token string">"path"</span><span class="token punctuation">,</span> <span class="token string">"method"</span><span class="token punctuation">,</span> <span class="token string">"status"</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+	HttpRequestLatency <span class="token operator">=</span> promauto<span class="token punctuation">.</span><span class="token function">NewHistogramVec</span><span class="token punctuation">(</span>prometheus<span class="token punctuation">.</span>HistogramOpts<span class="token punctuation">{</span>
+		Name<span class="token punctuation">:</span>    <span class="token string">"http_request_latency_sec"</span><span class="token punctuation">,</span>
+		Help<span class="token punctuation">:</span>    <span class="token string">"http history request duration distribution"</span><span class="token punctuation">,</span>
+		Buckets<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">float64</span><span class="token punctuation">{</span><span class="token number">0.05</span><span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">{</span><span class="token string">"path"</span><span class="token punctuation">,</span> <span class="token string">"method"</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+	HttpRequestConcurrency <span class="token operator">=</span> promauto<span class="token punctuation">.</span><span class="token function">NewGaugeVec</span><span class="token punctuation">(</span>prometheus<span class="token punctuation">.</span>GaugeOpts<span class="token punctuation">{</span>
+		Name<span class="token punctuation">:</span> <span class="token string">"http_request_in_flight"</span><span class="token punctuation">,</span>
+		Help<span class="token punctuation">:</span> <span class="token string">"http request concurrency number"</span><span class="token punctuation">,</span>
+	<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">{</span><span class="token string">"path"</span><span class="token punctuation">,</span> <span class="token string">"method"</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2>中间件逻辑</h2>
+<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">Metrics</span><span class="token punctuation">(</span><span class="token punctuation">)</span> gin<span class="token punctuation">.</span>HandlerFunc <span class="token punctuation">{</span>
+	<span class="token keyword">return</span> <span class="token keyword">func</span><span class="token punctuation">(</span>c <span class="token operator">*</span>gin<span class="token punctuation">.</span>Context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		path <span class="token operator">:=</span> c<span class="token punctuation">.</span>Request<span class="token punctuation">.</span>URL<span class="token punctuation">.</span>Path
+		method <span class="token operator">:=</span> c<span class="token punctuation">.</span>Request<span class="token punctuation">.</span>Method
+		HttpRequestConcurrency<span class="token punctuation">.</span><span class="token function">WithLabelValues</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span> method<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Inc</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+		<span class="token keyword">defer</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			HttpRequestConcurrency<span class="token punctuation">.</span><span class="token function">WithLabelValues</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span> method<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Dec</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+		<span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+		start <span class="token operator">:=</span> time<span class="token punctuation">.</span><span class="token function">Now</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+		c<span class="token punctuation">.</span><span class="token function">Next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+		duration <span class="token operator">:=</span> time<span class="token punctuation">.</span><span class="token function">Since</span><span class="token punctuation">(</span>start<span class="token punctuation">)</span>
+		HttpRequestLatency<span class="token punctuation">.</span><span class="token function">WithLabelValues</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span> method<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Observe</span><span class="token punctuation">(</span>duration<span class="token punctuation">.</span><span class="token function">Seconds</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+		HttpRequestCounter<span class="token punctuation">.</span><span class="token function">WithLabelValues</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span> method<span class="token punctuation">,</span> strconv<span class="token punctuation">.</span><span class="token function">Itoa</span><span class="token punctuation">(</span>c<span class="token punctuation">.</span>Writer<span class="token punctuation">.</span><span class="token function">Status</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Inc</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2>集成中间件</h2>
+<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code>	apiGroup <span class="token operator">:=</span> router<span class="token punctuation">.</span><span class="token function">Group</span><span class="token punctuation">(</span><span class="token string">"/api"</span><span class="token punctuation">)</span>
+	apiGroup<span class="token punctuation">.</span><span class="token function">Use</span><span class="token punctuation">(</span>middleware<span class="token punctuation">.</span><span class="token function">Metrics</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><p>这样我们就可以在<code>api</code>开头的接口记录Prometheus指标。并且对业务代码无侵入。</p>
+]]></content:encoded>
+    </item>
     <item>
       <title>pprof实战</title>
       <link>http://blog.cjhe.top/language/go/reprint/pprof-practic.html</link>
@@ -7530,89 +7674,6 @@ time</description>
 <img src="https://raw.githubusercontent.com/Hexiaopi/Hexiaopi/master/profile-summary-card-output/github/4-productive-time.svg" alt="time" loading="lazy"></p>
 ]]></content:encoded>
       <enclosure url="http://blog.cjhe.top/assets/images/cover.gif" type="image/gif"/>
-    </item>
-    <item>
-      <title>幻灯片页</title>
-      <link>http://blog.cjhe.top/slides.html</link>
-      <guid>http://blog.cjhe.top/slides.html</guid>
-      <source url="http://blog.cjhe.top/rss.xml">幻灯片页</source>
-      <pubDate>Sun, 30 Jul 2023 09:20:01 GMT</pubDate>
-      <content:encoded><![CDATA[<!-- markdownlint-disable MD024 MD033 MD051 -->
-]]></content:encoded>
-      <enclosure url="http://blog.cjhe.top/logo.svg" type="image/svg+xml"/>
-    </item>
-    <item>
-      <title>设计模式</title>
-      <link>http://blog.cjhe.top/design-pattern/</link>
-      <guid>http://blog.cjhe.top/design-pattern/</guid>
-      <source url="http://blog.cjhe.top/rss.xml">设计模式</source>
-      <description>提示 面向对象是武器 设计模式是招式 设计原则是心法 以心法为基础，以武器运用招式应对复杂的编程问题</description>
-      <category>设计模式</category>
-      <pubDate>Sat, 10 Sep 2022 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<div class="hint-container tip">
-<p class="hint-container-title">提示</p>
-<p>面向对象是<strong>武器</strong></p>
-<p>设计模式是<strong>招式</strong></p>
-<p>设计原则是<strong>心法</strong></p>
-<p>以心法为基础，以武器运用招式应对复杂的编程问题</p>
-</div>
-<!-- more -->
-<h2>什么是设计模式</h2>
-<p>设计模式最早来源于建筑领域</p>
-<blockquote>
-<p>克里斯托弗.亚历山大在作品《建筑的永恒之道》中这样说："每个模式都描述了一个在我们的环境中不断出现的问题，然后描述了该问题的解决方案的核心，通过这种方式，我们可以无数次地重用那些已有的成功的解决方案，无须再重复相同的工作。"</p>
-</blockquote>
-<p>之后四人组（Gang of Four，简称GoF）将模式的概念应用在软件开发设计中，定义如下：</p>
-<blockquote>
-<p>它是一套被反复使用、多数人知晓的、经过分类编目的、代码设计经验的总结。</p>
-<p>它描述了在软件设计过程中的一些不断重复发生的问题，以及该问题的解决方案。</p>
-</blockquote>
-<p>简单来说，就是<strong>解决特定问题的一系列解决方案</strong>，是前辈们的代码设计经验的总结。</p>
-<h2>有哪些优点</h2>
-<ul>
-<li><strong>提高代码复用性</strong>：设计模式的核心目标之一是提供可复用的解决方案。通过使用设计模式，可以将通用的解决方法应用于不同的情况，从而减少代码的冗余和重复编写。</li>
-<li><strong>提高代码的可读性和可维护性</strong>：设计模式通过引入一定的结构和规范，使代码更有组织性和可读性。开发人员可以更轻松地理解和维护代码逻辑。</li>
-<li><strong>降低代码耦合度</strong>：设计模式通过将系统分解为多个独立的部分，每个部分都有明确定义的职责和接口，从而降低了代码的耦合度。这使得系统更易于扩展、修改和维护。</li>
-<li><strong>提高系统的可扩展性和灵活性</strong>：设计模式鼓励使用接口和抽象类进行编程，而不是具体的实现类。这种松耦合的设计使得系统更易于扩展，可以方便地引入新的功能和模块。</li>
-<li><strong>提高系统的可测试性</strong>：设计模式将系统分解为多个独立的部分，每个部分都可以独立测试。这样可以更容易地编写和执行单元测试，提高代码的质量和可靠性。</li>
-</ul>
-<h2>有哪些要素</h2>
-<ul>
-<li><strong>问题</strong>：问题或称为上下文、场景，指在软件开发中需要解决的某个问题或需求。设计模式通常解决针对特定上下文或场景中出现的问题。</li>
-<li><strong>解决方案</strong>：解决方案或称为模型、模式，是指用于解决上述问题的通用方法或最佳实践。设计模式描述了解决某问题的方法或模板，并提供了这些方法的实现细节，使得类似问题可以被解决且易于复用。</li>
-<li><strong>效果</strong>：效果或称为结果、贡献，是指使用该模式带来的好处和优点。设计模式提供了可重用、灵活的解决方案，增加可维护性、可扩展性和可重用性。</li>
-<li><strong>元素</strong>：元素或称为参与者、角色、类和对象，组成了设计模式的各个部分。这些元素可以是类、对象、接口、方法等等。元素描述了在特定上下文或场景中参与模式实现的各种组件。</li>
-</ul>
-<h2>具体分类</h2>
-<figure><figcaption>分类</figcaption></figure>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>设计原则</title>
-      <link>http://blog.cjhe.top/design-pattern/principle.html</link>
-      <guid>http://blog.cjhe.top/design-pattern/principle.html</guid>
-      <source url="http://blog.cjhe.top/rss.xml">设计原则</source>
-      <description>设计原则是心法，对于构建高质量的软件系统提供指导和约束，它具有以下作用：
-
-提高代码质量：设计原则强调代码的清晰性、可读性和可维护性。通过遵循设计原则，可以编写出更结构化、更模块化的代码，减少代码重复和冗余。
-降低耦合度：设计原则鼓励松散耦合的设计，将系统划分为更小的、相互独立的模块。这样可以减少模块之间的依赖关系，提高系统的灵活性和可扩展性。
-促进代...</description>
-      <category>设计模式</category>
-      <pubDate>Sat, 15 Oct 2022 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<!-- more -->
-<p>设计原则是心法，对于构建高质量的软件系统提供<strong>指导</strong>和<strong>约束</strong>，它具有以下作用：</p>
-<ul>
-<li>提高代码质量：设计原则强调代码的清晰性、可读性和可维护性。通过遵循设计原则，可以编写出更结构化、更模块化的代码，减少代码重复和冗余。</li>
-<li>降低耦合度：设计原则鼓励松散耦合的设计，将系统划分为更小的、相互独立的模块。这样可以减少模块之间的依赖关系，提高系统的灵活性和可扩展性。</li>
-<li>促进代码重用：设计原则推崇封装、继承、多态等面向对象的特性，使得代码更易于重用。通过设计模式和设计原则，可以将通用的解决方案抽象出来，并在不同的场景中重复应用。</li>
-<li>简化系统维护：良好的设计原则可以减少系统的耦合和复杂度，使系统更易于理解和维护。当需要对系统进行修改或扩展时，通过遵循设计原则，可以更快速、更安全地进行变更。</li>
-<li>提高团队协作效率：设计原则提供了一种通用的设计思维和规范，使整个团队在设计和开发过程中能够更好地进行交流和协作。团队成员可以共同理解和遵循设计原则，降低沟通成本，提高开发效率。</li>
-</ul>
-<h2>SOLID原则</h2>
-<p>SOLID原则是由罗伯特·C·马丁在21世纪早期引入，指代了面向对象编程和面向对象设计的五个基本原则。遵循SOLID原则可以确保我们设计的代码是易维护、易扩展、易阅读的。SOLID原则同样也适用于Go程序设计。具体SOLID编码原则见下表：</p>
-<p>| 简写 | 全称                                | 中文描述     |
-|</p>
-]]></content:encoded>
     </item>
   </channel>
 </rss>
