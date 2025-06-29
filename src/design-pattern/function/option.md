@@ -153,4 +153,5 @@ s3, _ := NewServer("0.0.0.0", 8080, WithTimeout(300*time.Second), WithMaxConns(1
 
 ## 参考链接
 
-[GO 编程模式：FUNCTIONAL OPTIONS](https://coolshell.cn/articles/21146.html)
+- [GO 编程模式：FUNCTIONAL OPTIONS](https://coolshell.cn/articles/21146.html)
+- [自引用函数与选项设计](https://commandcenter.blogspot.com/2014/01/self-referential-functions-and-design.html)
