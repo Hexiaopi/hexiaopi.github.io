@@ -3,7 +3,7 @@
   <id>http://blog.cjhe.top/</id>
   <title>个人博客</title>
   <subtitle>何小进童鞋的个人博客</subtitle>
-  <updated>2025-08-05T12:27:33.290Z</updated>
+  <updated>2025-08-05T12:39:21.689Z</updated>
   <generator>@vuepress/plugin-feed</generator>
   <link rel="self" href="http://blog.cjhe.top/atom.xml"/>
   <link rel="alternate" href="http://blog.cjhe.top/"/>
@@ -35,15 +35,13 @@
     <title type="text">UDP多播</title>
     <id>http://blog.cjhe.top/network/transport-layer/udp-multicast.html</id>
     <link href="http://blog.cjhe.top/network/transport-layer/udp-multicast.html"/>
-    <updated>2025-08-05T12:23:24.000Z</updated>
+    <updated>2025-08-05T12:38:24.000Z</updated>
     <summary type="text">项目上需要通过UDP多播实现设备发现功能，本文通过Go语言提供示例
 整体的流程如下：
 udp-multicastudp-multicast
 服务端代码
 客户端代码(不支持windows本机接收)
-这个示例能发送udp多播消息，但windows下却接收不到消息。具体原因如下：1、2
-客户端代码
-参考文献</summary>
+这个示例能发送udp多播消息，但windows下却接收不到消息。具体原因如下：[golang-udp-multicast-not-working-in-win...</summary>
     <content type="html"><![CDATA[<!-- more -->
 <p>项目上需要通过UDP多播实现设备发现功能，本文通过Go语言提供示例</p>
 <p>整体的流程如下：</p>
@@ -155,7 +153,7 @@ udp-multicastudp-multicast
 		<span class="token punctuation">}</span>
 	<span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
-</code></pre></div><p>这个示例能发送udp多播消息，但windows下却接收不到消息。具体原因如下：<a href="https://stackoverflow.com/questions/73062193/golang-udp-multicast-not-working-in-windows10" target="_blank" rel="noopener noreferrer">1</a>、<a href="https://stackoverflow.com/questions/43109552/how-to-set-ip-multicast-loop-on-multicast-udpconn-in-golang" target="_blank" rel="noopener noreferrer">2</a></p>
+</code></pre></div><p>这个示例能发送udp多播消息，但windows下却接收不到消息。具体原因如下：[golang-udp-multicast-not-working-in-windows10]、[how-to-set-ip-multicast-loop-on-multicast-udpconn-in-golang]</p>
 <h2>客户端代码</h2>
 <div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> main
 
@@ -215,9 +213,9 @@ udp-multicastudp-multicast
 <span class="token punctuation">}</span>
 </code></pre></div><h2>参考文献</h2>
 <ul>
-<li></li>
-<li></li>
-<li></li>
+<li><a href="https://stackoverflow.com/questions/73062193/golang-udp-multicast-not-working-in-windows10" target="_blank" rel="noopener noreferrer">golang-udp-multicast-not-working-in-windows10</a></li>
+<li><a href="https://stackoverflow.com/questions/43109552/how-to-set-ip-multicast-loop-on-multicast-udpconn-in-golang" target="_blank" rel="noopener noreferrer">how-to-set-ip-multicast-loop-on-multicast-udpconn-in-golang</a></li>
+<li><a href="https://colobu.com/2016/10/19/Go-UDP-Programming/" target="_blank" rel="noopener noreferrer">Go-UDP-Programming</a></li>
 </ul>
 ]]></content>
     <category term="网络"/>

@@ -6,8 +6,8 @@
     <link>http://blog.cjhe.top/</link>
     <description>何小进童鞋的个人博客</description>
     <language>zh-CN</language>
-    <pubDate>Tue, 05 Aug 2025 12:27:33 GMT</pubDate>
-    <lastBuildDate>Tue, 05 Aug 2025 12:27:33 GMT</lastBuildDate>
+    <pubDate>Tue, 05 Aug 2025 12:39:21 GMT</pubDate>
+    <lastBuildDate>Tue, 05 Aug 2025 12:39:21 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>网络</category>
@@ -32,9 +32,7 @@
 udp-multicastudp-multicast
 服务端代码
 客户端代码(不支持windows本机接收)
-这个示例能发送udp多播消息，但windows下却接收不到消息。具体原因如下：1、2
-客户端代码
-参考文献</description>
+这个示例能发送udp多播消息，但windows下却接收不到消息。具体原因如下：[golang-udp-multicast-not-working-in-win...</description>
       <category>网络</category>
       <pubDate>Tue, 05 Aug 2025 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[<!-- more -->
@@ -148,7 +146,7 @@ udp-multicastudp-multicast
 		<span class="token punctuation">}</span>
 	<span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
-</code></pre></div><p>这个示例能发送udp多播消息，但windows下却接收不到消息。具体原因如下：<a href="https://stackoverflow.com/questions/73062193/golang-udp-multicast-not-working-in-windows10" target="_blank" rel="noopener noreferrer">1</a>、<a href="https://stackoverflow.com/questions/43109552/how-to-set-ip-multicast-loop-on-multicast-udpconn-in-golang" target="_blank" rel="noopener noreferrer">2</a></p>
+</code></pre></div><p>这个示例能发送udp多播消息，但windows下却接收不到消息。具体原因如下：[golang-udp-multicast-not-working-in-windows10]、[how-to-set-ip-multicast-loop-on-multicast-udpconn-in-golang]</p>
 <h2>客户端代码</h2>
 <div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> main
 
@@ -208,9 +206,9 @@ udp-multicastudp-multicast
 <span class="token punctuation">}</span>
 </code></pre></div><h2>参考文献</h2>
 <ul>
-<li></li>
-<li></li>
-<li></li>
+<li><a href="https://stackoverflow.com/questions/73062193/golang-udp-multicast-not-working-in-windows10" target="_blank" rel="noopener noreferrer">golang-udp-multicast-not-working-in-windows10</a></li>
+<li><a href="https://stackoverflow.com/questions/43109552/how-to-set-ip-multicast-loop-on-multicast-udpconn-in-golang" target="_blank" rel="noopener noreferrer">how-to-set-ip-multicast-loop-on-multicast-udpconn-in-golang</a></li>
+<li><a href="https://colobu.com/2016/10/19/Go-UDP-Programming/" target="_blank" rel="noopener noreferrer">Go-UDP-Programming</a></li>
 </ul>
 ]]></content:encoded>
     </item>
