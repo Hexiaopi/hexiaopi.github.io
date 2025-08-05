@@ -6,15 +6,15 @@
     <link>http://blog.cjhe.top/</link>
     <description>何小进童鞋的个人博客</description>
     <language>zh-CN</language>
-    <pubDate>Tue, 05 Aug 2025 09:05:01 GMT</pubDate>
-    <lastBuildDate>Tue, 05 Aug 2025 09:05:01 GMT</lastBuildDate>
+    <pubDate>Tue, 05 Aug 2025 12:27:33 GMT</pubDate>
+    <lastBuildDate>Tue, 05 Aug 2025 12:27:33 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+    <category>网络</category>
     <category>编程语言</category>
     <category>devops</category>
     <category>开源项目</category>
     <category>数据存储</category>
-    <category>网络</category>
     <category>转载</category>
     <category>算法</category>
     <category>设计模式</category>
@@ -22,6 +22,198 @@
     <category>工具</category>
     <category>编程框架</category>
     <category>项目规范</category>
+    <item>
+      <title>UDP多播</title>
+      <link>http://blog.cjhe.top/network/transport-layer/udp-multicast.html</link>
+      <guid>http://blog.cjhe.top/network/transport-layer/udp-multicast.html</guid>
+      <source url="http://blog.cjhe.top/rss.xml">UDP多播</source>
+      <description>项目上需要通过UDP多播实现设备发现功能，本文通过Go语言提供示例
+整体的流程如下：
+udp-multicastudp-multicast
+服务端代码
+客户端代码(不支持windows本机接收)
+这个示例能发送udp多播消息，但windows下却接收不到消息。具体原因如下：1、2
+客户端代码
+参考文献</description>
+      <category>网络</category>
+      <pubDate>Tue, 05 Aug 2025 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<!-- more -->
+<p>项目上需要通过UDP多播实现设备发现功能，本文通过Go语言提供示例</p>
+<p>整体的流程如下：</p>
+<figure><figcaption>udp-multicast</figcaption></figure>
+<h2>服务端代码</h2>
+<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">"flag"</span>
+	<span class="token string">"fmt"</span>
+	<span class="token string">"net"</span>
+	<span class="token string">"os"</span>
+	<span class="token string">"time"</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">var</span> multicastAddress <span class="token operator">=</span> flag<span class="token punctuation">.</span><span class="token function">String</span><span class="token punctuation">(</span><span class="token string">"multicast"</span><span class="token punctuation">,</span> <span class="token string">"239.0.0.10"</span><span class="token punctuation">,</span> <span class="token string">"Multicast address"</span><span class="token punctuation">)</span>
+<span class="token keyword">var</span> duration <span class="token operator">=</span> flag<span class="token punctuation">.</span><span class="token function">Duration</span><span class="token punctuation">(</span><span class="token string">"duration"</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token operator">*</span>time<span class="token punctuation">.</span>Second<span class="token punctuation">,</span> <span class="token string">"Discovery duration"</span><span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	flag<span class="token punctuation">.</span><span class="token function">Parse</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	group <span class="token operator">:=</span> <span class="token operator">*</span>multicastAddress <span class="token operator">+</span> <span class="token string">":5000"</span>
+	addr<span class="token punctuation">,</span> err <span class="token operator">:=</span> net<span class="token punctuation">.</span><span class="token function">ResolveUDPAddr</span><span class="token punctuation">(</span><span class="token string">"udp"</span><span class="token punctuation">,</span> group<span class="token punctuation">)</span>
+	<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"ResolveUDPAddr failed:"</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span>
+		os<span class="token punctuation">.</span><span class="token function">Exit</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+	listenAddr<span class="token punctuation">,</span> err <span class="token operator">:=</span> net<span class="token punctuation">.</span><span class="token function">ResolveUDPAddr</span><span class="token punctuation">(</span><span class="token string">"udp"</span><span class="token punctuation">,</span> <span class="token string">"0.0.0.0:0"</span><span class="token punctuation">)</span>
+	<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"ResolveUDPAddr failed:"</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span>
+		os<span class="token punctuation">.</span><span class="token function">Exit</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+	replyConn<span class="token punctuation">,</span> err <span class="token operator">:=</span> net<span class="token punctuation">.</span><span class="token function">ListenUDP</span><span class="token punctuation">(</span><span class="token string">"udp"</span><span class="token punctuation">,</span> listenAddr<span class="token punctuation">)</span>
+	<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"ListenUDP failed:"</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span>
+		os<span class="token punctuation">.</span><span class="token function">Exit</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">defer</span> replyConn<span class="token punctuation">.</span><span class="token function">Close</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+	<span class="token comment">// 定时发送发现请求</span>
+	<span class="token keyword">go</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">for</span> <span class="token punctuation">{</span>
+			msg <span class="token operator">:=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byte</span><span class="token punctuation">(</span><span class="token string">"Who is online?"</span><span class="token punctuation">)</span>
+			<span class="token boolean">_</span><span class="token punctuation">,</span> err <span class="token operator">:=</span> replyConn<span class="token punctuation">.</span><span class="token function">WriteToUDP</span><span class="token punctuation">(</span>msg<span class="token punctuation">,</span> addr<span class="token punctuation">)</span>
+			<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+				fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"WriteToUDP failed:"</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span>
+				<span class="token keyword">return</span>
+			<span class="token punctuation">}</span>
+			fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Sent multicast discovery"</span><span class="token punctuation">)</span>
+			<span class="token comment">// 每隔5秒发送一次</span>
+			time<span class="token punctuation">.</span><span class="token function">Sleep</span><span class="token punctuation">(</span><span class="token operator">*</span>duration<span class="token punctuation">)</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+	<span class="token comment">// 接收设备回复</span>
+	buf <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span><span class="token punctuation">,</span> <span class="token number">1024</span><span class="token punctuation">)</span>
+	<span class="token keyword">for</span> <span class="token punctuation">{</span>
+		n<span class="token punctuation">,</span> src<span class="token punctuation">,</span> err <span class="token operator">:=</span> replyConn<span class="token punctuation">.</span><span class="token function">ReadFromUDP</span><span class="token punctuation">(</span>buf<span class="token punctuation">)</span>
+		<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+			fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"Receive error: %v\n"</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span>
+			<span class="token keyword">break</span>
+		<span class="token punctuation">}</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"Device reply from %s: %s\n"</span><span class="token punctuation">,</span> src<span class="token punctuation">,</span> <span class="token function">string</span><span class="token punctuation">(</span>buf<span class="token punctuation">[</span><span class="token punctuation">:</span>n<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2>客户端代码(不支持windows本机接收)</h2>
+<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">"fmt"</span>
+	<span class="token string">"net"</span>
+	<span class="token string">"os"</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	group <span class="token operator">:=</span> <span class="token string">"239.0.0.10:5000"</span>
+	addr<span class="token punctuation">,</span> <span class="token boolean">_</span> <span class="token operator">:=</span> net<span class="token punctuation">.</span><span class="token function">ResolveUDPAddr</span><span class="token punctuation">(</span><span class="token string">"udp"</span><span class="token punctuation">,</span> group<span class="token punctuation">)</span>
+
+	<span class="token comment">// 监听组播地址</span>
+	conn<span class="token punctuation">,</span> err <span class="token operator">:=</span> net<span class="token punctuation">.</span><span class="token function">ListenMulticastUDP</span><span class="token punctuation">(</span><span class="token string">"udp"</span><span class="token punctuation">,</span> <span class="token boolean">nil</span><span class="token punctuation">,</span> addr<span class="token punctuation">)</span>
+	<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"ListenMulticastUDP failed:"</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span>
+		os<span class="token punctuation">.</span><span class="token function">Exit</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">defer</span> conn<span class="token punctuation">.</span><span class="token function">Close</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	conn<span class="token punctuation">.</span><span class="token function">SetReadBuffer</span><span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span>
+
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Waiting for discovery..."</span><span class="token punctuation">)</span>
+
+	buf <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span><span class="token punctuation">,</span> <span class="token number">1024</span><span class="token punctuation">)</span>
+	<span class="token keyword">for</span> <span class="token punctuation">{</span>
+		n<span class="token punctuation">,</span> src<span class="token punctuation">,</span> err <span class="token operator">:=</span> conn<span class="token punctuation">.</span><span class="token function">ReadFromUDP</span><span class="token punctuation">(</span>buf<span class="token punctuation">)</span>
+		<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+			fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"ReadFromUDP failed:"</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span>
+			<span class="token keyword">continue</span>
+		<span class="token punctuation">}</span>
+		msg <span class="token operator">:=</span> <span class="token function">string</span><span class="token punctuation">(</span>buf<span class="token punctuation">[</span><span class="token punctuation">:</span>n<span class="token punctuation">]</span><span class="token punctuation">)</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"Received %s from %s\n"</span><span class="token punctuation">,</span> msg<span class="token punctuation">,</span> src<span class="token punctuation">)</span>
+
+		<span class="token comment">// 回复到服务端的IP:10000端口</span>
+		replyAddr <span class="token operator">:=</span> <span class="token operator">&amp;</span>net<span class="token punctuation">.</span>UDPAddr<span class="token punctuation">{</span>
+			IP<span class="token punctuation">:</span>   src<span class="token punctuation">.</span>IP<span class="token punctuation">,</span>
+			Port<span class="token punctuation">:</span> src<span class="token punctuation">.</span>Port<span class="token punctuation">,</span>
+		<span class="token punctuation">}</span>
+		hostname<span class="token punctuation">,</span> <span class="token boolean">_</span> <span class="token operator">:=</span> os<span class="token punctuation">.</span><span class="token function">Hostname</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+		resMsg <span class="token operator">:=</span> fmt<span class="token punctuation">.</span><span class="token function">Sprintf</span><span class="token punctuation">(</span><span class="token string">"Device: %s"</span><span class="token punctuation">,</span> hostname<span class="token punctuation">)</span>
+		<span class="token boolean">_</span><span class="token punctuation">,</span> err <span class="token operator">=</span> conn<span class="token punctuation">.</span><span class="token function">WriteToUDP</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byte</span><span class="token punctuation">(</span>resMsg<span class="token punctuation">)</span><span class="token punctuation">,</span> replyAddr<span class="token punctuation">)</span>
+		<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+			fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"WriteToUDP failed:"</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>这个示例能发送udp多播消息，但windows下却接收不到消息。具体原因如下：<a href="https://stackoverflow.com/questions/73062193/golang-udp-multicast-not-working-in-windows10" target="_blank" rel="noopener noreferrer">1</a>、<a href="https://stackoverflow.com/questions/43109552/how-to-set-ip-multicast-loop-on-multicast-udpconn-in-golang" target="_blank" rel="noopener noreferrer">2</a></p>
+<h2>客户端代码</h2>
+<div class="language-go" data-ext="go" data-title="go"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">"fmt"</span>
+	<span class="token string">"log"</span>
+	<span class="token string">"net"</span>
+	<span class="token string">"os"</span>
+
+	<span class="token string">"golang.org/x/net/ipv4"</span>
+<span class="token punctuation">)</span>
+
+<span class="token comment">// 组播地址和端口</span>
+<span class="token keyword">var</span> <span class="token punctuation">(</span>
+	multicastAddress <span class="token operator">=</span> <span class="token string">"239.0.0.10"</span>
+	port             <span class="token operator">=</span> <span class="token number">5000</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token comment">// 绑定IP和端口</span>
+	listener<span class="token punctuation">,</span> err <span class="token operator">:=</span> net<span class="token punctuation">.</span><span class="token function">ListenPacket</span><span class="token punctuation">(</span><span class="token string">"udp4"</span><span class="token punctuation">,</span> fmt<span class="token punctuation">.</span><span class="token function">Sprintf</span><span class="token punctuation">(</span><span class="token string">"0.0.0.0:%d"</span><span class="token punctuation">,</span> port<span class="token punctuation">)</span><span class="token punctuation">)</span>
+	<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		log<span class="token punctuation">.</span><span class="token function">Fatal</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+	<span class="token comment">// 关闭监听</span>
+	<span class="token keyword">defer</span> listener<span class="token punctuation">.</span><span class="token function">Close</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+	pc <span class="token operator">:=</span> ipv4<span class="token punctuation">.</span><span class="token function">NewPacketConn</span><span class="token punctuation">(</span>listener<span class="token punctuation">)</span>
+
+	<span class="token comment">// 加入组播</span>
+	<span class="token keyword">if</span> err <span class="token operator">:=</span> pc<span class="token punctuation">.</span><span class="token function">JoinGroup</span><span class="token punctuation">(</span><span class="token boolean">nil</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>net<span class="token punctuation">.</span>UDPAddr<span class="token punctuation">{</span>IP<span class="token punctuation">:</span> net<span class="token punctuation">.</span><span class="token function">ParseIP</span><span class="token punctuation">(</span>multicastAddress<span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		log<span class="token punctuation">.</span><span class="token function">Fatal</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+	<span class="token comment">// 离开组播</span>
+	<span class="token keyword">defer</span> pc<span class="token punctuation">.</span><span class="token function">LeaveGroup</span><span class="token punctuation">(</span><span class="token boolean">nil</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>net<span class="token punctuation">.</span>UDPAddr<span class="token punctuation">{</span>IP<span class="token punctuation">:</span> net<span class="token punctuation">.</span><span class="token function">ParseIP</span><span class="token punctuation">(</span>multicastAddress<span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+	<span class="token comment">// 创建一个缓冲区(切片)用于接收数据</span>
+	buffer <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span><span class="token punctuation">,</span> <span class="token number">1024</span><span class="token punctuation">)</span>
+	<span class="token keyword">for</span> <span class="token punctuation">{</span>
+		<span class="token comment">// 接收数据</span>
+		n<span class="token punctuation">,</span> cm<span class="token punctuation">,</span> src<span class="token punctuation">,</span> err <span class="token operator">:=</span> pc<span class="token punctuation">.</span><span class="token function">ReadFrom</span><span class="token punctuation">(</span>buffer<span class="token punctuation">)</span>
+		<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+			log<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Error reading:"</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span>
+			<span class="token keyword">continue</span>
+		<span class="token punctuation">}</span>
+		<span class="token comment">// 打印接收到的数据和源地址</span>
+		msg <span class="token operator">:=</span> buffer<span class="token punctuation">[</span><span class="token punctuation">:</span>n<span class="token punctuation">]</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"Received %s from %s, control message: %v\n"</span><span class="token punctuation">,</span> msg<span class="token punctuation">,</span> src<span class="token punctuation">,</span> cm<span class="token punctuation">)</span>
+
+		hostname<span class="token punctuation">,</span> <span class="token boolean">_</span> <span class="token operator">:=</span> os<span class="token punctuation">.</span><span class="token function">Hostname</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+		resMsg <span class="token operator">:=</span> fmt<span class="token punctuation">.</span><span class="token function">Sprintf</span><span class="token punctuation">(</span><span class="token string">"Device: %s"</span><span class="token punctuation">,</span> hostname<span class="token punctuation">)</span>
+		<span class="token boolean">_</span><span class="token punctuation">,</span> err <span class="token operator">=</span> pc<span class="token punctuation">.</span><span class="token function">WriteTo</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byte</span><span class="token punctuation">(</span>resMsg<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token boolean">nil</span><span class="token punctuation">,</span> src<span class="token punctuation">)</span>
+		<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+			fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"WriteToUDP failed:"</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2>参考文献</h2>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+]]></content:encoded>
+    </item>
     <item>
       <title>Go项目配置获取</title>
       <link>http://blog.cjhe.top/language/go/project-pratice/config.html</link>
@@ -7793,25 +7985,6 @@ lang...</description>
 <li><strong>project-manager:</strong> add api standard</li>
 <li><strong>project-manager:</strong> add api standard</li>
 </ul>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>工厂模式的比较</title>
-      <link>http://blog.cjhe.top/design-pattern/creational/factory-compare.html</link>
-      <guid>http://blog.cjhe.top/design-pattern/creational/factory-compare.html</guid>
-      <source url="http://blog.cjhe.top/rss.xml">工厂模式的比较</source>
-      <description>简单工厂模式、工厂方法模式、抽象工厂模式都可以统称为工厂模式，其中：
-简单工厂模式：适用于需要根据客户端的输入来创建对象的场景，但不符合开闭原则，随着产品的增加需要修改工厂类。
-工厂方法模式：通过将具体产品的创建延迟到子类中实现，符合开闭原则，每个具体工厂类负责创建一个具体产品。
-抽象工厂模式：适用于需要创建一组相关产品对象的场景，每个具体工厂类负责创...</description>
-      <category>设计模式</category>
-      <pubDate>Mon, 31 Jul 2023 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<!-- more -->
-<p>简单工厂模式、工厂方法模式、抽象工厂模式都可以统称为工厂模式，其中：</p>
-<p>简单工厂模式：适用于需要根据客户端的输入来创建对象的场景，但不符合<code>开闭原则</code>，随着产品的增加需要修改工厂类。</p>
-<p>工厂方法模式：通过将具体产品的创建延迟到子类中实现，符合<code>开闭原则</code>，每个具体工厂类负责创建一个具体产品。</p>
-<p>抽象工厂模式：适用于需要创建一组相关产品对象的场景，每个具体工厂类负责创建一组相关产品。</p>
-<p>选择适合的创建型设计模式取决于具体的项目需求和设计考虑，简单工厂模式简单易懂但可扩展性差，工厂方法模式更灵活但需要额外的子类，而抽象工厂模式适用于创建一组相关的产品对象。</p>
 ]]></content:encoded>
     </item>
   </channel>
