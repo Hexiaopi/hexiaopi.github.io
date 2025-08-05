@@ -130,7 +130,7 @@ func main() {
 }
 ```
 
-这个示例能发送udp多播消息，但windows下却接收不到消息。具体原因如下：[1]、[2]
+这个示例能发送udp多播消息，但windows下却接收不到消息。具体原因如下：[golang-udp-multicast-not-working-in-windows10]、[how-to-set-ip-multicast-loop-on-multicast-udpconn-in-golang]
 
 
 ## 客户端代码
@@ -196,6 +196,6 @@ func main() {
 
 ## 参考文献
 
-- [1]: https://stackoverflow.com/questions/73062193/golang-udp-multicast-not-working-in-windows10
-- [2]: https://stackoverflow.com/questions/43109552/how-to-set-ip-multicast-loop-on-multicast-udpconn-in-golang
-- [3]: https://colobu.com/2016/10/19/Go-UDP-Programming/
+- [golang-udp-multicast-not-working-in-windows10](https://stackoverflow.com/questions/73062193/golang-udp-multicast-not-working-in-windows10)
+- [how-to-set-ip-multicast-loop-on-multicast-udpconn-in-golang](https://stackoverflow.com/questions/43109552/how-to-set-ip-multicast-loop-on-multicast-udpconn-in-golang)
+- [Go-UDP-Programming](https://colobu.com/2016/10/19/Go-UDP-Programming/)
