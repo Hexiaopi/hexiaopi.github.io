@@ -47,3 +47,9 @@ category:
   link="https://www.golangprograms.com/"
   background="rgba(253, 230, 138, 0.15)"
 />
+
+<VPCard
+  title="Go Concurrency Explorer"
+  link="https://www.concurrency.rocks/"
+  background="rgba(253, 230, 138, 0.15)"
+/>
