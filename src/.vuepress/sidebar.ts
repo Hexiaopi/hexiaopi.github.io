@@ -104,6 +104,14 @@ export default sidebar({
       children: "structure",
     },
     {
+      text: "工具",
+      icon: "toolbox",
+      collapsible: true,
+      prefix: "tools/",
+      link: "tools/README.md",
+      children: "structure",
+    },
+    {
       text: "开源项目",
       icon: "code",
       collapsible: true,

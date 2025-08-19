@@ -12,6 +12,7 @@ update:
 install:
 	go install github.com/arnaud-deprez/gsemver@latest
 	go install github.com/git-chglog/git-chglog/cmd/git-chglog@latest
+	pnpm install
 
 gsemver:
 	gsemver bump

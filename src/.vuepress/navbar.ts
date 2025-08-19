@@ -9,6 +9,7 @@ export default navbar([
   "/devops/",
   "/project-standard/",
   "/share/",
+  "/tools/",
   "/open-source-project/",
   "CHANGELOG",
 ]);
