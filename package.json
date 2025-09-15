@@ -4,6 +4,7 @@
   "description": "hexiaopi's blog",
   "license": "MIT",
   "type": "module",
+  "packageManager": "pnpm@10.16.1",
   "scripts": {
     "docs:build": "vuepress-vite build src",
     "docs:dev": "vuepress-vite dev src",
