@@ -10,8 +10,6 @@ export default hopeTheme({
     url: "https://github.com/Hexiaopi",
   },
 
-  iconAssets: "fontawesome-with-brands",
-
   logo: "/logo.png",
 
   repo: "Hexiaopi/Hexiaopi.github.io",
@@ -88,7 +86,7 @@ export default hopeTheme({
   // 在这里配置主题提供的插件
   plugins: {
     blog: true,
-    searchPro: true,
+    slimsearch: true,
     comment: {
       provider: "Giscus",
       repo: "hexiaopi/hexiaopi.github.io",
@@ -96,12 +94,10 @@ export default hopeTheme({
       category: "Announcements",
       categoryId: "DIC_kwDOEGbkx84CYNSL",
     },
-    // 启用之前需安装 @waline/client
-    // 警告: 这是一个仅供演示的测试服务，在生产环境中请自行部署并使用自己的服务！
-    // comment: {
-    //   provider: "Waline",
-    //   serverURL: "https://waline-comment.vuejs.press",
-    // },
+
+    icon: {
+      assets: "fontawesome-with-brands",
+    },
 
     feed: {
       atom: true,
@@ -115,90 +111,7 @@ export default hopeTheme({
       components: ["Badge", "VPCard", "VPBanner", "PDF", "SiteInfo", "Share", "BiliBili"],
     },
 
-    // 此处开启了很多功能用于演示，你应仅保留用到的功能。
-    mdEnhance: {
-      alert: true,
-      align: true,
-      attrs: true,
-      codetabs: true,
-      component: true,
-      demo: true,
-      figure: true,
-      imgLazyload: true,
-      imgSize: true,
-      include: true,
-      mark: true,
-      stylize: [
-        {
-          matcher: "Recommended",
-          replacer: ({ tag }) => {
-            if (tag === "em")
-              return {
-                tag: "Badge",
-                attrs: { type: "tip" },
-                content: "Recommended",
-              };
-          },
-        },
-      ],
-      sub: true,
-      sup: true,
-      tabs: true,
-      tasklist: true,
-      vPre: true,
-
-      // 在启用之前安装 chart.js
-      // chart: true,
-
-      // insert component easily
-
-      // 在启用之前安装 echarts
-      echarts: true,
-
-      // 在启用之前安装 flowchart.ts
-      // flowchart: true,
-
-      // gfm requires mathjax-full to provide tex support
-      // gfm: true,
-
-      // 在启用之前安装 katex
-      katex: true,
-
-      // 在启用之前安装 mathjax-full
-      // mathjax: true,
-
-      // 在启用之前安装 mermaid
-      // mermaid: true,
-
-      playground: {
-        presets: ["ts", "vue"],
-      },
-
-      // 在启用之前安装 reveal.js
-      revealJs: {
-        plugins: ["highlight", "math", "search", "notes", "zoom"],
-        themes: [
-          "auto",
-          "beige",
-          "black",
-          "blood",
-          "league",
-          "moon",
-          "night",
-          "serif",
-          "simple",
-          "sky",
-          "solarized",
-          "white",
-        ],
-      },
-
-      // 在启用之前安装 @vue/repl
-      // vuePlayground: true,
-
-      // install sandpack-vue3 before enabling it
-      // sandpack: true,
-    },
+    
 
     // 如果你需要 PWA。安装 @vuepress/plugin-pwa 并取消下方注释
     // pwa: {
@@ -257,4 +170,88 @@ export default hopeTheme({
     //   },
     // },
   },
+
+  // 此处开启了很多功能用于演示，你应仅保留用到的功能。
+    markdown: {
+      alert: true,
+      align: true,
+      attrs: true,
+      codeTabs: true,
+      component: true,
+      demo: true,
+      figure: true,
+      imgLazyload: true,
+      imgSize: true,
+      include: true,
+      mark: true,
+      stylize: [
+        {
+          matcher: "Recommended",
+          replacer: ({ tag }) => {
+            if (tag === "em")
+              return {
+                tag: "Badge",
+                attrs: { type: "tip" },
+                content: "Recommended",
+              };
+          },
+        },
+      ],
+      sub: true,
+      sup: true,
+      tabs: true,
+      tasklist: true,
+      vPre: true,
+
+      // 在启用之前安装 chart.js
+      // chart: true,
+
+      // insert component easily
+
+      // 在启用之前安装 echarts
+      echarts: true,
+
+      // 在启用之前安装 flowchart.ts
+      // flowchart: true,
+
+      // gfm requires mathjax-full to provide tex support
+      // gfm: true,
+
+      math: true,
+
+      // 在启用之前安装 mathjax-full
+      // mathjax: true,
+
+      // 在启用之前安装 mermaid
+      // mermaid: true,
+
+      playground: {
+        presets: ["ts", "vue"],
+      },
+
+      // 在启用之前安装 @vue/repl
+      // vuePlayground: true,
+
+      // install sandpack-vue3 before enabling it
+      // sandpack: true,
+
+      // RevealJS slides support
+      revealjs: {
+        plugins: ["highlight", "math", "search", "notes", "zoom"],
+        themes: [
+          "auto",
+          "beige",
+          "black",
+          "blood",
+          "league",
+          "moon",
+          "night",
+          "serif",
+          "simple",
+          "sky",
+          "solarized",
+          "white",
+        ],
+      },
+    },
 });

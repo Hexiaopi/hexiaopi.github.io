@@ -1,7 +1,7 @@
 ---
 title: 幻灯片页
 icon: person-chalkboard
-layout: Slide
+layout: Slides
 ---
 
 <!-- markdownlint-disable MD024 MD033 MD051 -->
