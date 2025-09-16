@@ -1,6 +1,6 @@
 ---
 home: true
-layout: BlogHome
+layout: Blog
 icon: home
 title: 博客主页
 #heroImage: /logo.png
@@ -19,30 +19,30 @@ projects:
     link: https://theme-hope.vuejs.press/zh/
     icon: https://theme-hope-assets.vuejs.press/logo.svg
 
-  - icon: friend
+  - icon: link
     name: 阮一峰的个人网站
     desc: 阮老师的博客网站，非常推荐
     link: https://www.ruanyifeng.com
 
-  - icon: friend
+  - icon: link
     name: Go语言爱好者周刊
     desc: Go语言中文网站长发起的周刊
     link: https://studygolang.com/go/weekly
 
-  - icon: friend
+  - icon: link
     name: 陈皓的博客网站
     desc: 永远纪念左耳朵耗子
     link: https://coolshell.cn
 
-  - icon: friend
+  - icon: link
     name: 白明的博客网站
     desc: Tony Bai老师的书和文章质量很高，非常推荐
     link: https://tonybai.com
 
-  - icon: book
-    name: 自洽的程序员
-    desc: 如果你也心累了，可以看看这本书
-    link: https://self-consistent-coder.readthedocs.io/zh-cn/latest/
+  - icon: link
+    name: Golang中文学习文档站
+    desc: Go爱好者驱动的中文学习站
+    link: https://golang.halfiisland.com/
 
 footer: '<a href="http://beian.miit.gov.cn/" rel="noopener noreferrer" target="_blank">备案号: 皖ICP备2022000616号-1</a> | <a href="/about/site.html">关于网站</a>'
 ---
