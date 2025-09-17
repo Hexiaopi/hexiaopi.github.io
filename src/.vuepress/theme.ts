@@ -27,44 +27,15 @@ export default hopeTheme({
   footer: '<a href="http://beian.miit.gov.cn/" rel="noopener noreferrer" target="_blank">备案号: 皖ICP备2022000616号-1</a> | <a href="/about/site.html">关于网站</a>',
   displayFooter: true,
   editLink: false,
+  fullscreen: true,
 
   // 博客相关
   blog: {
     description: "一枚后端攻城狮",
     intro: "/intro.html",
     medias: {
-      // Baidu: "https://example.com",
-      // BiliBili: "https://example.com",
-      // Bitbucket: "https://example.com",
-      // Dingding: "https://example.com",
-      // Discord: "https://example.com",
-      // Dribbble: "https://example.com",
       Email: "mailto:info@hechangjie0619@icloud.com",
-      // Evernote: "https://example.com",
-      // Facebook: "https://example.com",
-      // Flipboard: "https://example.com",
-      // Gitee: "https://example.com",
       GitHub: "https://github.com/Hexiaopi",
-      // Gitlab: "https://example.com",
-      // Gmail: "mailto:info@example.com",
-      // Instagram: "https://example.com",
-      // Lark: "https://example.com",
-      // Lines: "https://example.com",
-      // Linkedin: "https://example.com",
-      // Pinterest: "https://example.com",
-      // Pocket: "https://example.com",
-      // QQ: "https://example.com",
-      // Qzone: "https://example.com",
-      // Reddit: "https://example.com",
-      // Rss: "https://example.com",
-      // Steam: "https://example.com",
-      // Twitter: "https://example.com",
-      // Wechat: "https://example.com",
-      // Weibo: "https://example.com",
-      // Whatsapp: "https://example.com",
-      // Youtube: "https://example.com",
-      // Zhihu: "https://example.com",
-      // MrHope: ["https://mister-hope.com", MR_HOPE_AVATAR],
     },
   },
 
@@ -115,7 +86,8 @@ export default hopeTheme({
   // 此处开启了很多功能用于演示，你应仅保留用到的功能。
     markdown: {
       alert: true,
-      align: true,
+      align: true, // 自定义对齐
+      footnote: true, // 脚注
       attrs: true,
       codeTabs: true,
       component: true,
