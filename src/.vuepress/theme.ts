@@ -9,10 +9,11 @@ export default hopeTheme({
     name: "Hexiaopi",
     url: "https://github.com/Hexiaopi",
   },
-
+  // 导航栏logo
   logo: "/logo.png",
-
+  // 代码仓库
   repo: "Hexiaopi/Hexiaopi.github.io",
+  repoLabel: "GitHub",
   repoDisplay: false,
 
   docsDir: "src",
@@ -83,36 +84,21 @@ export default hopeTheme({
     },
   },
 
-  // 此处开启了很多功能用于演示，你应仅保留用到的功能。
+  // Markdown 配置
     markdown: {
-      alert: true,
-      align: true, // 自定义对齐
-      footnote: true, // 脚注
-      attrs: true,
+      
+       
+      
       codeTabs: true,
+      // 组件
       component: true,
       demo: true,
-      figure: true,
-      imgLazyload: true,
-      imgSize: true,
-      include: true,
-      stylize: [
-        {
-          matcher: "Recommended",
-          replacer: ({ tag }) => {
-            if (tag === "em")
-              return {
-                tag: "Badge",
-                attrs: { type: "tip" },
-                content: "Recommended",
-              };
-          },
-        },
-      ],
-      sub: true,
-      sup: true,
-      tabs: true,
-      tasklist: true,
+     
+      
+      
+      
+      
+     
       vPre: true,
 
       // 在启用之前安装 chart.js
@@ -133,14 +119,25 @@ export default hopeTheme({
       vuePlayground: true,
 
       math: true,
-      mark: true,
+      
       preview: true,
 
-      playground: {
-        presets: ["ts", "vue"],
-      },
+      // 语法
+      // 任务列表
+      tasklist: true, 
+      // 图片说明
+      figure: true,
+      // 图片懒加载
+      imgLazyload: true,
+      // 图片大小
+      imgSize: true,
+      // 图片标记
+      imgMark: false,
 
-      // RevealJS slides support
+      // 内容
+      // 导入文件
+      include: true,
+      // 幻灯片
       revealjs: {
         plugins: ["highlight", "math", "search", "notes", "zoom"],
         themes: [
@@ -158,5 +155,46 @@ export default hopeTheme({
           "white",
         ],
       },
+      // 脚注
+      footnote: true,
+      // 选项卡
+      tabs: true,
+
+      // 样式化
+      // 提示容器
+      hint: true, // 默认true
+      // 剧透
+      spoiler: true,
+      // GFM警告
+      alert: true,
+      // 上下角标
+      sub: true,
+      sup: true,
+      // 属性支持
+      attrs: true,
+      // 标记
+      mark: true,
+      // 自定义对齐
+      align: true, 
+      // 样式化
+      stylize: [
+        {
+          matcher: "Recommended",
+          replacer: ({ tag }) => {
+            if (tag === "em")
+              return {
+                tag: "Badge",
+                attrs: { type: "tip" },
+                content: "Recommended",
+              };
+          },
+        },
+      ],
+
+      playground: {
+        presets: ["ts", "vue"],
+      },
+
+      
     },
 });
