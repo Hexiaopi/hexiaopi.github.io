@@ -86,19 +86,9 @@ export default hopeTheme({
 
   // Markdown 配置
     markdown: {
-      
-       
-      
-      codeTabs: true,
       // 组件
       component: true,
       demo: true,
-     
-      
-      
-      
-      
-     
       vPre: true,
 
       // 在启用之前安装 chart.js
@@ -190,6 +180,12 @@ export default hopeTheme({
           },
         },
       ],
+      // 代码高亮
+      highlighter: {
+        type: "shiki", // or "prismjs"
+      },
+      // 代码分组
+      codeTabs: true,
 
       playground: {
         presets: ["ts", "vue"],
