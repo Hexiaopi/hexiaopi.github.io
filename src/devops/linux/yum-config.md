@@ -2,7 +2,7 @@
 title: Linux配置yum源
 date: 2025-02-27
 tag:
- - linux
+ - Linux
  - yum
 category:
  - devops

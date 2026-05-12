@@ -2,6 +2,8 @@
 title: 算法推荐
 icon: hand-holding-heart
 date: 2023-08-14
+tag:
+ - 算法
 category:
  - 算法
 ---

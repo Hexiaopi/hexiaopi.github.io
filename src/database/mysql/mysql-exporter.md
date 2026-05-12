@@ -5,7 +5,7 @@ tag:
  - MySQL
  - 监控
 category:
- - devops
+ - 数据存储
 ---
 
 <!-- more -->

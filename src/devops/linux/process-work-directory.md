@@ -2,8 +2,8 @@
 title: 如何查看进程工作目录
 date: 2025-03-20
 tag:
- - linux
- - docker
+ - Linux
+ - Docker
 category:
  - devops
 ---

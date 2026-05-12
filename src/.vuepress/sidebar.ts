@@ -4,6 +4,22 @@ export default sidebar({
   "/": [
     "",
     {
+      text: "算法",
+      icon: "chart-line",
+      collapsible: true,
+      prefix: "algorithm/",
+      link: "algorithm/README.md",
+      children: "structure",
+    },
+    {
+      text: "数据结构",
+      icon: "diagram-project",
+      collapsible: true,
+      prefix: "data-structure/",
+      link: "data-structure/README.md",
+      children: "structure",
+    },
+    {
       text: "设计模式",
       icon: "palette",
       collapsible: true,
@@ -109,6 +125,22 @@ export default sidebar({
       collapsible: true,
       prefix: "tools/",
       link: "tools/README.md",
+      children: "structure",
+    },
+    {
+      text: "中间件",
+      icon: "gears",
+      collapsible: true,
+      prefix: "middleware/",
+      link: "middleware/README.md",
+      children: "structure",
+    },
+    {
+      text: "系统设计",
+      icon: "layer-group",
+      collapsible: true,
+      prefix: "system-design/",
+      link: "system-design/README.md",
       children: "structure",
     },
     {
