@@ -3,10 +3,14 @@
   <id>http://blog.cjhe.top/</id>
   <title>个人博客</title>
   <subtitle>何小进童鞋的个人博客</subtitle>
-  <updated>2026-04-27T15:24:47.358Z</updated>
+  <updated>2026-05-15T15:31:36.418Z</updated>
   <generator>@vuepress/plugin-feed</generator>
   <link rel="self" href="http://blog.cjhe.top/atom.xml"/>
   <link rel="alternate" href="http://blog.cjhe.top/"/>
+  <category term="算法"/>
+  <category term="数据结构"/>
+  <category term="中间件"/>
+  <category term="系统设计"/>
   <category term="编程语言"/>
   <category term="网络"/>
   <category term="工具"/>
@@ -14,9 +18,7 @@
   <category term="开源项目"/>
   <category term="数据存储"/>
   <category term="转载"/>
-  <category term="算法"/>
   <category term="设计模式"/>
-  <category term="中间件"/>
   <category term="编程框架"/>
   <category term="项目规范"/>
   <contributor>
@@ -25,6 +27,70 @@
   <contributor>
     <name>heroku</name>
   </contributor>
+  <entry>
+    <title type="text">算法</title>
+    <id>http://blog.cjhe.top/algorithm/</id>
+    <link href="http://blog.cjhe.top/algorithm/"/>
+    <updated>2026-05-12T08:19:45.000Z</updated>
+    <summary type="html"><![CDATA[<blockquote>
+<p>记录学习算法的过程</p>
+</blockquote>
+]]></summary>
+    <content type="html"><![CDATA[<blockquote>
+<p>记录学习算法的过程</p>
+</blockquote>
+]]></content>
+    <category term="算法"/>
+    <published>2023-08-14T00:00:00.000Z</published>
+  </entry>
+  <entry>
+    <title type="text">数据结构</title>
+    <id>http://blog.cjhe.top/data-structure/</id>
+    <link href="http://blog.cjhe.top/data-structure/"/>
+    <updated>2026-05-12T08:19:45.000Z</updated>
+    <summary type="html"><![CDATA[<blockquote>
+<p>记录学习数据结构的过程</p>
+</blockquote>
+]]></summary>
+    <content type="html"><![CDATA[<blockquote>
+<p>记录学习数据结构的过程</p>
+</blockquote>
+]]></content>
+    <category term="数据结构"/>
+    <published>2023-08-24T00:00:00.000Z</published>
+  </entry>
+  <entry>
+    <title type="text">中间件</title>
+    <id>http://blog.cjhe.top/middleware/</id>
+    <link href="http://blog.cjhe.top/middleware/"/>
+    <updated>2026-05-12T08:19:45.000Z</updated>
+    <summary type="html"><![CDATA[<blockquote>
+<p>记录学习中间件的过程</p>
+</blockquote>
+]]></summary>
+    <content type="html"><![CDATA[<blockquote>
+<p>记录学习中间件的过程</p>
+</blockquote>
+]]></content>
+    <category term="中间件"/>
+    <published>2023-08-14T00:00:00.000Z</published>
+  </entry>
+  <entry>
+    <title type="text">系统设计</title>
+    <id>http://blog.cjhe.top/system-design/</id>
+    <link href="http://blog.cjhe.top/system-design/"/>
+    <updated>2026-05-12T08:19:45.000Z</updated>
+    <summary type="html"><![CDATA[<blockquote>
+<p>记录学习系统设计的过程</p>
+</blockquote>
+]]></summary>
+    <content type="html"><![CDATA[<blockquote>
+<p>记录学习系统设计的过程</p>
+</blockquote>
+]]></content>
+    <category term="系统设计"/>
+    <published>2022-09-18T00:00:00.000Z</published>
+  </entry>
   <entry>
     <title type="text">Demo</title>
     <id>http://blog.cjhe.top/language/go/demo/</id>
@@ -222,7 +288,7 @@
     <title type="text">TCP粘包和拆包</title>
     <id>http://blog.cjhe.top/network/transport-layer/tcp-sticky.html</id>
     <link href="http://blog.cjhe.top/network/transport-layer/tcp-sticky.html"/>
-    <updated>2025-09-28T10:47:30.000Z</updated>
+    <updated>2026-05-12T08:19:45.000Z</updated>
     <summary type="html"><![CDATA[<p>这是一篇AI写的文章，用于解释TCP粘包和拆包的概念。我觉得写的很好，对我有帮助。</p>
 ]]></summary>
     <content type="html"><![CDATA[<p>这是一篇AI写的文章，用于解释TCP粘包和拆包的概念。我觉得写的很好，对我有帮助。</p>
@@ -375,7 +441,7 @@
     <title type="text">TCP转发</title>
     <id>http://blog.cjhe.top/network/transport-layer/tcp-tunnel.html</id>
     <link href="http://blog.cjhe.top/network/transport-layer/tcp-tunnel.html"/>
-    <updated>2025-09-28T03:17:04.000Z</updated>
+    <updated>2026-05-12T08:19:45.000Z</updated>
     <summary type="text">最近做的一个项目需要进行tcp转发名为tunnel，这里记录在此遇见的坑。
 tunnel架构
 tcp-tunneltcp-tunnel
@@ -796,7 +862,7 @@ imgimg</summary>
     <title type="text">UDP多播</title>
     <id>http://blog.cjhe.top/network/transport-layer/udp-multicast.html</id>
     <link href="http://blog.cjhe.top/network/transport-layer/udp-multicast.html"/>
-    <updated>2025-09-17T12:56:39.000Z</updated>
+    <updated>2026-05-12T08:19:45.000Z</updated>
     <summary type="text">项目上需要通过UDP多播实现设备发现功能，本文通过Go语言提供示例
 整体的流程如下：
 udp-multicastudp-multicast
@@ -1340,7 +1406,7 @@ HttpRequestConcurrency：记录并发数
     <title type="text">如何查看进程工作目录</title>
     <id>http://blog.cjhe.top/devops/linux/process-work-directory.html</id>
     <link href="http://blog.cjhe.top/devops/linux/process-work-directory.html"/>
-    <updated>2025-03-20T09:04:04.000Z</updated>
+    <updated>2026-05-12T08:19:45.000Z</updated>
     <summary type="html"><![CDATA[<p>工作中我们经常会遇到需要查看进程工作目录的情况，例如：停止进程修改配置并重新启动。</p>
 <p>但由于很多开发随意部署自己的应用，或者各种不规范原因，导致很难找到进程工作目录。</p>
 <p>常见的办法是通过搜索命令，但如果不知道应用名称呢？</p>
@@ -1395,7 +1461,7 @@ HttpRequestConcurrency：记录并发数
     <title type="text">linux</title>
     <id>http://blog.cjhe.top/devops/linux/</id>
     <link href="http://blog.cjhe.top/devops/linux/"/>
-    <updated>2025-02-27T06:15:22.000Z</updated>
+    <updated>2026-05-12T08:19:45.000Z</updated>
     <category term="devops"/>
     <published>2025-02-27T00:00:00.000Z</published>
   </entry>
@@ -1403,7 +1469,7 @@ HttpRequestConcurrency：记录并发数
     <title type="text">Linux配置yum源</title>
     <id>http://blog.cjhe.top/devops/linux/yum-config.html</id>
     <link href="http://blog.cjhe.top/devops/linux/yum-config.html"/>
-    <updated>2025-02-27T15:41:25.000Z</updated>
+    <updated>2026-05-12T08:19:45.000Z</updated>
     <summary type="html"><![CDATA[<p>Linux下载的yum源是国外的，下载速度较慢，我们可以配置国内的yum源，提高下载速度。</p>
 <p>本文以Centos 7为例，介绍如何配置Centos和epel阿里云yum源。</p>
 ]]></summary>
@@ -5257,7 +5323,7 @@ WaitGroup为何禁止拷贝
     <title type="text">算法推荐</title>
     <id>http://blog.cjhe.top/algorithm/recommend.html</id>
     <link href="http://blog.cjhe.top/algorithm/recommend.html"/>
-    <updated>2024-05-15T10:01:59.000Z</updated>
+    <updated>2026-05-12T08:19:45.000Z</updated>
     <summary type="text">在线书籍
 
 数据结构和算法动态可视化
@@ -5294,7 +5360,7 @@ WaitGroup为何禁止拷贝
     <title type="text">中间件推荐</title>
     <id>http://blog.cjhe.top/middleware/recommend.html</id>
     <link href="http://blog.cjhe.top/middleware/recommend.html"/>
-    <updated>2025-02-27T15:41:25.000Z</updated>
+    <updated>2026-05-12T08:19:45.000Z</updated>
     <summary type="text">在线书籍
 
 Prometheus告警</summary>
@@ -6105,7 +6171,7 @@ Redis连接数过多</summary>
     <title type="text">MySQL监控</title>
     <id>http://blog.cjhe.top/database/mysql/mysql-exporter.html</id>
     <link href="http://blog.cjhe.top/database/mysql/mysql-exporter.html"/>
-    <updated>2025-02-27T15:41:25.000Z</updated>
+    <updated>2026-05-12T08:19:45.000Z</updated>
     <summary type="text">MySQL监控
 我们通过mysqld-exporter去将MySQL相关状态转换成指标，从而进行监控
 mysql-exporter部署
@@ -6141,7 +6207,7 @@ password=your password</p>
 <h3>数据库慢查询</h3>
 <div class="language-promql line-numbers-mode" data-highlighter="shiki" data-ext="promql" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-promql"><span class="line"><span>increase(mysql_global_status_slow_queries[1m]) &gt; 0</span></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div>]]></content>
-    <category term="devops"/>
+    <category term="数据存储"/>
     <published>2024-04-12T00:00:00.000Z</published>
   </entry>
   <entry>
@@ -7780,196 +7846,5 @@ Go要求包之间不能存在循环依赖，这样包的依赖关系便形成了
 ]]></content>
     <category term="编程语言"/>
     <published>2023-08-24T00:00:00.000Z</published>
-  </entry>
-  <entry>
-    <title type="text">基础</title>
-    <id>http://blog.cjhe.top/language/go/base/</id>
-    <link href="http://blog.cjhe.top/language/go/base/"/>
-    <updated>2025-05-14T01:36:37.000Z</updated>
-    <summary type="html"><![CDATA[<blockquote>
-<p>介绍Go语言基础知识，也会涉及到底层原理，这些是我认为要掌握的知识。</p>
-</blockquote>
-]]></summary>
-    <content type="html"><![CDATA[<blockquote>
-<p>介绍Go语言基础知识，也会涉及到底层原理，这些是我认为要掌握的知识。</p>
-</blockquote>
-]]></content>
-    <category term="编程语言"/>
-    <published>2023-08-24T00:00:00.000Z</published>
-  </entry>
-  <entry>
-    <title type="text">转载</title>
-    <id>http://blog.cjhe.top/language/go/reprint/</id>
-    <link href="http://blog.cjhe.top/language/go/reprint/"/>
-    <updated>2025-02-27T15:41:25.000Z</updated>
-    <summary type="html"><![CDATA[<blockquote>
-<p>这里会转载我认为比较好的博文</p>
-</blockquote>
-]]></summary>
-    <content type="html"><![CDATA[<blockquote>
-<p>这里会转载我认为比较好的博文</p>
-</blockquote>
-]]></content>
-    <category term="编程语言"/>
-    <published>2023-08-24T00:00:00.000Z</published>
-  </entry>
-  <entry>
-    <title type="text">退出模式</title>
-    <id>http://blog.cjhe.top/design-pattern/concurrency/exit.html</id>
-    <link href="http://blog.cjhe.top/design-pattern/concurrency/exit.html"/>
-    <updated>2024-05-05T15:52:14.000Z</updated>
-    <summary type="text">退出模式
-使用关键字go很容易启动goroutine，这样创建的协程和当前协程已经分离，我们并不知道
-等待指定协程退出
-
-
-提示
-spawn函数创建的新goroutine与调用spawn函数的goroutine（main goroutine）之间通过channel建立了联系。
-
-等待多个协程退出
-
-
-提示
-通过sync.WaitGroup，对于每一个协...</summary>
-    <content type="html"><![CDATA[<!-- more -->
-<h2>退出模式</h2>
-<p>使用关键字<code>go</code>很容易启动goroutine，这样创建的协程和当前协程已经分离，我们并不知道</p>
-<h3>等待指定协程退出</h3>
-<div class="language-go line-numbers-mode" data-highlighter="shiki" data-ext="go" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-go"><span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">package</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B"> main</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">import</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> (</span></span>
-<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">	"fmt"</span></span>
-<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">	"time"</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">type</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B"> signal</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD"> struct</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">{}</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">func</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> worker</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">() {</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">	println</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"worker is working..."</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">	time</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">Sleep</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">1</span><span style="--shiki-light:#383A42;--shiki-dark:#C678DD"> *</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75"> time</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">Second</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">}</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">func</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> spawn</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#383A42;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">f</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD"> func</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">()) </span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">&lt;-</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">chan</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B"> signal</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">	c</span><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B"> :=</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> make</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">chan</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B"> signal</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span>
-<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">	go</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD"> func</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">() {</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">		println</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"worker start to work..."</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">		f</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">()</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">		c</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2"> &lt;-</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> signal</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">struct</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">{}{})</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">	}()</span></span>
-<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">	return</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75"> c</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">}</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">func</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> main</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">() {</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">	println</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"start a worker..."</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">	c</span><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B"> :=</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> spawn</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">worker</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">	&lt;-</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">c</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">	fmt</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">Println</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"worker work done!"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">}</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="hint-container tip">
-<p class="hint-container-title">提示</p>
-<p>spawn函数创建的新goroutine与调用spawn函数的goroutine（main goroutine）之间通过channel建立了联系。</p>
-</div>
-<h3>等待多个协程退出</h3>
-<div class="language-go line-numbers-mode" data-highlighter="shiki" data-ext="go" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-go"><span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">package</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B"> main</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">import</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> (</span></span>
-<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">	"fmt"</span></span>
-<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">	"sync"</span></span>
-<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">	"time"</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">type</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B"> signal</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD"> struct</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">{}</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">func</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> worker</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#383A42;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">i</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD"> int</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">) {</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">	fmt</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">Printf</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"worker </span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">%d</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">: is working...</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">\n</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">, </span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">i</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">	time</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">Sleep</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">1</span><span style="--shiki-light:#383A42;--shiki-dark:#C678DD"> *</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75"> time</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">Second</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">	fmt</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">Printf</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"worker </span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">%d</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">: works done</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">\n</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">, </span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">i</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">}</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">func</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> spawnGroup</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#383A42;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">f</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD"> func</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#383A42;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">i</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD"> int</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">), </span><span style="--shiki-light:#383A42;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">num</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD"> int</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">) </span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">&lt;-</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">chan</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B"> signal</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">	c</span><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B"> :=</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> make</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">chan</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B"> signal</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span>
-<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">	var</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75"> wg</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B"> sync</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B">WaitGroup</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">	for</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75"> i</span><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B"> :=</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 0</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">; </span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">i</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2"> &lt;</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75"> num</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">; </span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">i</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">++</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">		wg</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">Add</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">1</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span>
-<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">		go</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD"> func</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#383A42;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">i</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD"> int</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">) {</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">			fmt</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">Printf</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"worker </span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">%d</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">: start to work...</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">\n</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">, </span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">i</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">			f</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">i</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">			wg</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">Done</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">()</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">		}(</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">i</span><span style="--shiki-light:#383A42;--shiki-dark:#C678DD"> +</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 1</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">	}</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">	go</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD"> func</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">() {</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">		wg</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">Wait</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">()</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">		c</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2"> &lt;-</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> signal</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">struct</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">{}{})</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">	}()</span></span>
-<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">	return</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75"> c</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">}</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">func</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> main</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">() {</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">	fmt</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">Println</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"the group of workers start to work..."</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">	c</span><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B"> :=</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> spawnGroup</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">worker</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">, </span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">5</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">	&lt;-</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">c</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">	fmt</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">Println</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"the group of workers work done!"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">}</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="hint-container tip">
-<p class="hint-container-title">提示</p>
-<p>通过sync.WaitGroup，对于每一个协程处理前进行wg.Add(1)，退出时执行wg.Done()，并等待所有的协程退出wg.Wait()。保障所有的协程都会结束。</p>
-</div>
-]]></content>
-    <category term="设计模式"/>
-    <published>2023-08-22T00:00:00.000Z</published>
-  </entry>
-  <entry>
-    <title type="text">扇入/扇出模型</title>
-    <id>http://blog.cjhe.top/design-pattern/concurrency/fan-in-fan-out.html</id>
-    <link href="http://blog.cjhe.top/design-pattern/concurrency/fan-in-fan-out.html"/>
-    <updated>2024-05-05T15:52:14.000Z</updated>
-    <summary type="text">扇出模式
-即多个相同goroutine从同一个channel读取数据并处理
-fan-outfan-out
-
-输出结果
-
-我们使用三个协程从一个channel中过滤2的倍数，分别放在三个channel输出。由于Go语言调度不确定性，因此测试结果可能不一致。
-扇入模式
-从多个channel读取数据并处理，将结果放入一个channel
-fan-infan-i...</summary>
-    <content type="html"><![CDATA[<!-- more -->
-<h2>扇出模式</h2>
-<p>即多个相同goroutine从同一个channel读取数据并处理</p>
-<figure><figcaption>fan-out</figcaption></figure>
-<div class="language-go line-numbers-mode" data-highlighter="shiki" data-ext="go" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-go"><span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">func</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> TestFanOut</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#383A42;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">t</span><span style="--shiki-light:#383A42;--shiki-dark:#C678DD"> *</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B">testing</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B">T</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">) {</span></span>
-<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">	var</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75"> nums</span><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B"> =</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> []</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">int</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">{</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">1</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">, </span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">2</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">, </span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">3</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">, </span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">4</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">, </span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">5</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">, </span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">6</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">, </span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">7</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">, </span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">8</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">, </span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">9</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">, </span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">10</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">}</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">	in</span><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B"> :=</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> echo</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">nums</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">	c1</span><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B"> :=</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> odd</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">in</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">	c2</span><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B"> :=</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> odd</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">in</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">	c3</span><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B"> :=</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> odd</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">in</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">	t</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">Log</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"c1"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span>
-<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">	for</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75"> n</span><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B"> :=</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD"> range</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75"> c1</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">		t</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">Log</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">n</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">	}</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">	t</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">Log</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"c2"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span>
-<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">	for</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75"> n</span><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B"> :=</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD"> range</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75"> c2</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">		t</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">Log</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">n</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">	}</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">	t</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">Log</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"c3"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span>
-<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">	for</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75"> n</span><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B"> :=</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD"> range</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75"> c3</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">		t</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">Log</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">n</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">	}</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">}</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>输出结果</p>
-<div class="language-text line-numbers-mode" data-highlighter="shiki" data-ext="text" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-text"><span class="line"><span>=== RUN   TestFanOut</span></span>
-<span class="line"><span>    fan-in-fan-out_test.go:24: c1</span></span>
-<span class="line"><span>    fan-in-fan-out_test.go:26: 1</span></span>
-<span class="line"><span>    fan-in-fan-out_test.go:26: 7</span></span>
-<span class="line"><span>    fan-in-fan-out_test.go:26: 9</span></span>
-<span class="line"><span>    fan-in-fan-out_test.go:28: c2</span></span>
-<span class="line"><span>    fan-in-fan-out_test.go:30: 3</span></span>
-<span class="line"><span>    fan-in-fan-out_test.go:32: c3</span></span>
-<span class="line"><span>    fan-in-fan-out_test.go:34: 5</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content>
-    <category term="设计模式"/>
-    <published>2023-08-22T00:00:00.000Z</published>
   </entry>
 </feed>
